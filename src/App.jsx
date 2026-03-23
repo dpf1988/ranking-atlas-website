@@ -595,8 +595,8 @@ function Contact() {
             </div>
 
             <div>
-              <label htmlFor="website" className="block text-sm font-semibold mb-1.5" style={{ color: MIDNIGHT }}>Website</label>
-              <input id="website" name="website" type="url"
+              <label htmlFor="website" className="block text-sm font-semibold mb-1.5" style={{ color: MIDNIGHT }}>Website <span style={{ color: INDIGO }}>*</span></label>
+              <input id="website" name="website" type="url" required
                 value={form.website} onChange={handleChange} placeholder="https://yourwebsite.com"
                 className={inputClass} style={inputStyle}
                 onFocus={e => { e.target.style.borderColor = INDIGO; e.target.style.boxShadow = `0 0 0 3px ${INDIGO}22` }}
@@ -774,4 +774,6 @@ export default function App() {
     </div>
   )
 }
+
+
 
