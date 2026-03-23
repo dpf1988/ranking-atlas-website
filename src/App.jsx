@@ -583,7 +583,7 @@ function Contact() {
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold mb-1.5" style={{ color: MIDNIGHT }}>
-                  email <span style={{ color: INDIGO }}>*</span>
+                  Email <span style={{ color: INDIGO }}>*</span>
                 </label>
                 <input id="email" name="email" type="text" required
                   value={form.email} onChange={handleChange} placeholder="you@example.com"
@@ -774,6 +774,7 @@ export default function App() {
     </div>
   )
 }
+
 
 
 
