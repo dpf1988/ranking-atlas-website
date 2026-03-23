@@ -534,7 +534,7 @@ function CTASection() {
 
 // ─── CONTACT ──────────────────────────────────────────────────────────────────
 function Contact() {
-  const [form, setForm] = useState({ name: '', company: '', website: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', website: '', message: '' })
   const [status, setStatus] = useState(null)
 
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xojkolng'
@@ -549,7 +549,7 @@ function Contact() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ ...form, _replyto: 'contact@ranking-atlas.com' }),
       })
-      if (res.ok) { setStatus('success'); setForm({ name: '', company: '', website: '', message: '' }) }
+      if (res.ok) { setStatus('success'); setForm({ name: '', email: '', website: '', message: '' }) }
       else setStatus('error')
     } catch { setStatus('error') }
   }
@@ -582,11 +582,11 @@ function Contact() {
                 />
               </div>
               <div>
-                <label htmlFor="company" className="block text-sm font-semibold mb-1.5" style={{ color: MIDNIGHT }}>
-                  Company <span style={{ color: INDIGO }}>*</span>
+                <label htmlFor="email" className="block text-sm font-semibold mb-1.5" style={{ color: MIDNIGHT }}>
+                  email <span style={{ color: INDIGO }}>*</span>
                 </label>
-                <input id="company" name="company" type="text" required
-                  value={form.company} onChange={handleChange} placeholder="Acme Inc."
+                <input id="email" name="email" type="text" required
+                  value={form.email} onChange={handleChange} placeholder="you@example.com"
                   className={inputClass} style={inputStyle}
                   onFocus={e => { e.target.style.borderColor = INDIGO; e.target.style.boxShadow = `0 0 0 3px ${INDIGO}22` }}
                   onBlur={e => { e.target.style.borderColor = `${MIDNIGHT}22`; e.target.style.boxShadow = 'none' }}
@@ -774,3 +774,4 @@ export default function App() {
     </div>
   )
 }
+
