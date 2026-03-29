@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import {
   Menu, X, CheckCircle, TrendingUp, MessageSquare, BarChart3,
   Shield, Award, FileText, Zap, ExternalLink, Linkedin, Mail,
-  ChevronRight,
+  ChevronRight, ChevronDown, User,
   Link as LinkIcon,
 } from 'lucide-react'
 
@@ -120,19 +121,24 @@ function HeroIllustration() {
 // ─── NAVBAR ───────────────────────────────────────────────────────────────────
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'
+
   const links = [
-    { label: 'Home',       href: '#home' },
-    { label: 'Services',   href: '#services' },
-    { label: 'Case Study', href: '#case-study' },
-    { label: 'Contact',    href: '#contact' },
+    { label: 'Home',       href: isHome ? '#home'       : '/'          },
+    { label: 'Services',   href: isHome ? '#services'   : '/#services' },
+    { label: 'Case Study', href: isHome ? '#case-study' : '/#case-study' },
+    { label: 'About',      href: '/about' },
+    { label: 'Contact',    href: isHome ? '#contact'    : '/#contact'  },
   ]
+  const contactHref = isHome ? '#contact' : '/#contact'
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#0A0F1E]/10 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
 
-          <a href="#home" className="flex items-center gap-2.5">
+          <a href="/" className="flex items-center gap-2.5">
             <LogoIcon size={32} />
             <span
               className="font-bold text-[1.375rem] tracking-tight"
@@ -158,7 +164,7 @@ function Navbar() {
           </nav>
 
           <div className="hidden md:flex">
-            <a href="#contact"
+            <a href={contactHref}
               className="bg-[#4F46E5] hover:bg-[#4338CA] text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:shadow-[0_0_16px_2px_rgba(245,197,24,0.35)]">
               Start a Campaign
             </a>
@@ -179,7 +185,7 @@ function Navbar() {
               </a>
             ))}
             <div className="px-4 pt-3 pb-1">
-              <a href="#contact" onClick={() => setMenuOpen(false)}
+              <a href={contactHref} onClick={() => setMenuOpen(false)}
                 className="block bg-[#4F46E5] hover:bg-[#4338CA] text-white text-sm font-semibold px-5 py-2.5 rounded-lg text-center transition-colors duration-200">
                 Start a Campaign
               </a>
@@ -200,6 +206,11 @@ function Hero() {
 
           {/* Left */}
           <div>
+            {/* Category label */}
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: MID_GREY }}>
+              Digital PR Agency
+            </p>
+
             {/* Headline */}
             <h1 className="text-[64px] lg:text-[72px] font-black leading-[1.0] tracking-tight mb-2">
               <span style={{
@@ -208,7 +219,7 @@ function Hero() {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-              }}>Digital PR</span>
+              }}>Pay Per Campaign.</span>
               <br />
               <span className="relative" style={{
                 display: 'inline-block',
@@ -217,7 +228,7 @@ function Hero() {
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}>
-                That Delivers.
+                Not Per Month.
                 <svg
                   viewBox="0 0 340 12"
                   className="absolute left-0 w-full"
@@ -241,7 +252,7 @@ function Hero() {
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl leading-relaxed max-w-xl mb-6" style={{ color: MID_GREY }}>
-              <span style={{ color: INDIGO, fontWeight: 600 }}>Earned media placements</span> in the world's top publications. Minimum 8 links per campaign, guaranteed. No retainers. No filler. Just links that matter.
+              High-authority backlinks through earned media. Minimum 8 links guaranteed. No retainers, no contracts.
             </p>
 
             {/* Stat bar — fixed single row */}
@@ -423,6 +434,100 @@ function Guarantees() {
                 </div>
                 <h3 className="text-white font-bold text-lg mb-2">{item.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: MID_GREY }}>{item.desc}</p>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ─── FAQ ──────────────────────────────────────────────────────────────────────
+function FAQ() {
+  const [open, setOpen] = useState(null)
+
+  const faqs = [
+    {
+      q: "What happens if you don't hit the link guarantee?",
+      a: "We keep working at no additional cost until we do. The campaign isn't complete until your agreed link count is delivered.",
+    },
+    {
+      q: 'How long does a campaign take?',
+      a: 'Most campaigns deliver results within 30 to 60 days, depending on the campaign type and niche. Reactive PR can land links within days when the right news cycle hits. Data campaigns and expert commentary typically take longer because they require development and targeted pitching.',
+    },
+    {
+      q: 'What types of publications do you target?',
+      a: 'National news outlets, business and finance press, technology media, and industry-specific publications. We build a targeted media list for each campaign based on your niche, your audience, and the story angles we develop together.',
+    },
+    {
+      q: 'Do I get to approve stories before they go out?',
+      a: 'Yes. We develop the campaign angles in collaboration with you and nothing gets pitched without your sign-off.',
+    },
+    {
+      q: "What's included in a campaign?",
+      a: 'A full campaign includes: niche and competitor analysis, story angle development, targeted journalist list building, pitching and follow-up, and reporting on every placement secured. You get a clear brief before we start and updates throughout.',
+    },
+    {
+      q: 'Why no retainers?',
+      a: "Because retainers reward agencies for time spent, not results delivered. Our per-campaign model means you pay for a defined outcome — a minimum number of earned links in high-authority publications. If it works, you book another campaign. If it doesn't, you walk away. That's how it should be.",
+    },
+  ]
+
+  return (
+    <section id="faq" className="relative bg-[#0A0F1E] py-24 lg:py-32 overflow-hidden">
+
+      {/* Radial glow */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full"
+          style={{ background: 'radial-gradient(ellipse, rgba(79,70,229,0.12) 0%, transparent 70%)' }} />
+      </div>
+
+      {/* Watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden="true">
+        <span className="text-[22rem] font-black tracking-tighter leading-none"
+          style={{ color: INDIGO, opacity: 0.03 }}>FAQ</span>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-xl max-w-2xl mx-auto" style={{ color: MID_GREY }}>
+            Everything you need to know before starting a campaign.
+          </p>
+        </div>
+
+        <div className="max-w-3xl mx-auto divide-y divide-white/10">
+          {faqs.map((faq, i) => {
+            const isOpen = open === i
+            return (
+              <div key={i}>
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 py-6 text-left group"
+                >
+                  <span className="text-base sm:text-lg font-semibold transition-colors duration-200"
+                    style={{ color: isOpen ? INDIGO : WHITE }}>
+                    {faq.q}
+                  </span>
+                  <ChevronDown
+                    size={20}
+                    className="shrink-0 transition-transform duration-300"
+                    style={{
+                      color: isOpen ? INDIGO : MID_GREY,
+                      transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                    }}
+                  />
+                </button>
+                {isOpen && (
+                  <div className="pb-6">
+                    <p className="text-base leading-relaxed" style={{ color: MID_GREY }}>
+                      {faq.a}
+                    </p>
+                  </div>
+                )}
               </div>
             )
           })}
@@ -688,13 +793,101 @@ function Contact() {
   )
 }
 
+// ─── ABOUT PAGE ───────────────────────────────────────────────────────────────
+function AboutPage() {
+  const paragraphs = [
+    'Ranking Atlas is a digital PR agency built around a simple idea: you should know exactly what you\'re getting before you pay for it.',
+    'The agency was founded by Daniel Grainger, a digital PR specialist who has spent years pitching journalists, building media relationships, and securing earned coverage in national and industry press. That experience came with a front-row seat to a problem that runs through the PR industry — agencies locking clients into expensive monthly retainers, delivering vague reports about "brand awareness" and "media impressions," and leaving them to wonder whether anything actually moved the needle.',
+    'Ranking Atlas was built as the alternative. Every engagement is a single campaign with a defined deliverable: a minimum number of earned backlinks in high-authority, editorially independent publications. No retainers, no rolling contracts, no ambiguity about what you\'re paying for.',
+    'The model works because the methodology is focused. Each campaign starts with a deep analysis of the client\'s brand, niche, and competitors. From there, we develop genuine editorial story angles — reactive PR tied to breaking news and trends, expert commentary that positions the client as a thought leader, or original data campaigns built from proprietary or public datasets. Every angle is pitched to the right journalists at the right publications, and every placement is a real editorial decision, not a paid insert.',
+    'Ranking Atlas is currently accepting new clients for Q2 2026 campaigns.',
+  ]
+
+  return (
+    <>
+      {/* Main content */}
+      <section className="bg-white pt-28 lg:pt-36 pb-24 lg:pb-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: MID_GREY }}>
+              Our Story
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-black leading-[1.05] tracking-tight mb-14"
+              style={{ color: MIDNIGHT }}>
+              About Ranking Atlas
+            </h1>
+
+            {/* Two-col: photo + first two paragraphs */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-10">
+
+              {/* Founder photo placeholder */}
+              <div className="order-2 lg:order-1">
+                <div
+                  className="w-full rounded-2xl border-2 border-dashed flex flex-col items-center justify-center gap-3 py-16"
+                  style={{ background: LIGHT_GREY, borderColor: `${MIDNIGHT}15`, aspectRatio: '4/5' }}
+                >
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center"
+                    style={{ background: '#E2E8F0' }}>
+                    <User size={36} color={MID_GREY} />
+                  </div>
+                  <div className="text-center">
+                    <p className="text-sm font-semibold" style={{ color: MIDNIGHT }}>Daniel Grainger</p>
+                    <p className="text-xs mt-0.5" style={{ color: MID_GREY }}>Founder, Ranking Atlas</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* First two paragraphs */}
+              <div className="order-1 lg:order-2 space-y-5">
+                {paragraphs.slice(0, 2).map((p, i) => (
+                  <p key={i} className="text-lg leading-relaxed" style={{ color: MID_GREY }}>{p}</p>
+                ))}
+              </div>
+            </div>
+
+            {/* Remaining paragraphs */}
+            <div className="space-y-5 max-w-3xl">
+              {paragraphs.slice(2).map((p, i) => (
+                <p key={i} className="text-lg leading-relaxed" style={{ color: MID_GREY }}>{p}</p>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-[#0A0F1E] py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl sm:text-5xl font-black text-white mb-5 leading-tight">
+            Ready to Start a Campaign?
+          </h2>
+          <p className="text-xl mb-10 max-w-xl mx-auto" style={{ color: MID_GREY }}>
+            $3.5K per campaign. Minimum 8 links guaranteed. No long-term contracts.
+          </p>
+          <a href="/#contact"
+            className="inline-flex items-center gap-2 text-white font-bold px-10 py-4 rounded-xl text-base transition-all duration-200 hover:-translate-y-0.5"
+            style={{ background: INDIGO }}
+            onMouseEnter={e => { e.currentTarget.style.background = INDIGO_DK; e.currentTarget.style.boxShadow = '0 0 20px 4px rgba(245,197,24,0.35)' }}
+            onMouseLeave={e => { e.currentTarget.style.background = INDIGO; e.currentTarget.style.boxShadow = 'none' }}>
+            Start a Campaign – $3.5K
+            <ChevronRight size={18} />
+          </a>
+        </div>
+      </section>
+    </>
+  )
+}
+
 // ─── FOOTER ───────────────────────────────────────────────────────────────────
 function Footer() {
   const navLinks = [
-    { label: 'Home',       href: '#home' },
-    { label: 'Services',   href: '#services' },
-    { label: 'Case Study', href: '#case-study' },
-    { label: 'Contact',    href: '#contact' },
+    { label: 'Home',       href: '/'           },
+    { label: 'Services',   href: '/#services'  },
+    { label: 'Case Study', href: '/#case-study' },
+    { label: 'About',      href: '/about'      },
+    { label: 'Contact',    href: '/#contact'   },
   ]
 
   return (
@@ -702,7 +895,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <a href="#home" className="flex items-center gap-2.5 mb-4">
+            <a href="/" className="flex items-center gap-2.5 mb-4">
               <LogoIcon size={32} />
               <span className="text-white font-bold text-xl tracking-tight">Ranking Atlas</span>
             </a>
@@ -758,11 +951,10 @@ function Footer() {
   )
 }
 
-// ─── APP ──────────────────────────────────────────────────────────────────────
-export default function App() {
+// ─── HOME PAGE ────────────────────────────────────────────────────────────────
+function HomePage() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <>
       <Hero />
       <PublicationsBar />
       <Services />
@@ -770,8 +962,24 @@ export default function App() {
       <CaseStudy />
       <CTASection />
       <Contact />
-      <Footer />
-    </div>
+      <FAQ />
+    </>
+  )
+}
+
+// ─── APP ──────────────────────────────────────────────────────────────────────
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 
