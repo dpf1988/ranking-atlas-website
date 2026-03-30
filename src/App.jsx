@@ -129,9 +129,9 @@ function Navbar() {
     { label: 'Services',   href: isHome ? '#services'   : '/#services' },
     { label: 'Case Study', href: isHome ? '#case-study' : '/#case-study' },
     { label: 'About',      href: '/about' },
-    { label: 'Contact',    href: isHome ? '#contact'    : '/#contact'  },
+    { label: 'Contact',    href: isHome ? '#contact' : '/contact' },
   ]
-  const contactHref = isHome ? '#contact' : '/#contact'
+  const contactHref = isHome ? '#contact' : '/contact'
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#0A0F1E]/10 shadow-sm">
@@ -836,7 +836,7 @@ function AboutPage() {
           <p className="text-xl mb-10 max-w-xl mx-auto" style={{ color: MID_GREY }}>
             $3.5K per campaign. Minimum 8 links guaranteed. No long-term contracts.
           </p>
-          <a href="/#contact"
+          <a href="/contact"
             className="inline-flex items-center gap-2 text-white font-bold px-10 py-4 rounded-xl text-base transition-all duration-200 hover:-translate-y-0.5"
             style={{ background: INDIGO }}
             onMouseEnter={e => { e.currentTarget.style.background = INDIGO_DK; e.currentTarget.style.boxShadow = '0 0 20px 4px rgba(245,197,24,0.35)' }}
@@ -857,7 +857,7 @@ function Footer() {
     { label: 'Services',   href: '/#services'  },
     { label: 'Case Study', href: '/#case-study' },
     { label: 'About',      href: '/about'      },
-    { label: 'Contact',    href: '/#contact'   },
+    { label: 'Contact',    href: '/contact'    },
   ]
 
   return (
@@ -921,6 +921,15 @@ function Footer() {
   )
 }
 
+// ─── CONTACT PAGE ─────────────────────────────────────────────────────────────
+function ContactPage() {
+  return (
+    <div className="pt-16 lg:pt-20">
+      <Contact />
+    </div>
+  )
+}
+
 // ─── HOME PAGE ────────────────────────────────────────────────────────────────
 function HomePage() {
   return (
@@ -946,6 +955,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
       </div>
