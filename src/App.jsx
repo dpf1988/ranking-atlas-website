@@ -573,23 +573,21 @@ function CaseStudy() {
               <div>
                 <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: MID_GREY }}>The Client</p>
                 <p className="leading-relaxed" style={{ color: MID_GREY }}>
-                  A fast-growing SEO education brand looking to build domain authority through earned media.
-                  SEO Mandarin needed high-authority backlinks to strengthen its position in a competitive niche.
+                  A specialist agency helping foreign brands advertise, grow, and sell in China. SEO Mandarin needed to build domain authority to compete for high-value search terms in a crowded niche dominated by established players.
                 </p>
               </div>
               <div>
                 <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: MID_GREY }}>The Result</p>
                 <p className="leading-relaxed" style={{ color: MID_GREY }}>
-                  Secured earned backlinks in multiple high-authority publications including national news outlets.
-                  Campaign delivered measurable improvements to domain authority and organic search visibility within the first 60 days.
+                  Two campaigns delivered enough high-authority earned backlinks to move SEO Mandarin from the third page of Google to positions 3–4 for their most competitive search terms — in under two months. The increased visibility led directly to a client worth over $100,000 per year, turning a $7,000 digital PR investment into a 14x return within twelve months.
                 </p>
               </div>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
               {[
-                { label: 'High-Authority Publications', value: 'Multiple' },
-                { label: 'Links Delivered', value: '10–12' },
+                { label: 'Google Rankings',    value: 'Page 3 → Top 5' },
+                { label: 'Return on Investment', value: '14x' },
                 { label: 'Link Guarantee Met', value: '100%' },
               ].map((s) => (
                 <div key={s.label} className="bg-[#F1F5F9] border border-[#0A0F1E]/8 rounded-xl px-6 py-4 text-center">
