@@ -212,16 +212,16 @@ function Hero() {
             </p>
 
             {/* Headline */}
-            <h1 className="text-[64px] lg:text-[72px] font-black leading-[1.0] tracking-tight mb-2">
-              <span style={{
-                display: 'inline-block',
+            <h1 className="font-black leading-[1.05] tracking-tight mb-2">
+              <div className="whitespace-nowrap pb-2 text-[10vw] sm:text-[56px] lg:text-[60px]" style={{
                 background: 'linear-gradient(90deg, #0A0F1E 0%, #4F46E5 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-              }}>Pay Per Campaign.</span>
-              <br />
-              <span className="relative" style={{
+              }}>
+                Pay Per Campaign.
+              </div>
+              <div className="relative whitespace-nowrap text-[8.5vw] sm:text-[48px] lg:text-[52px]" style={{
                 display: 'inline-block',
                 background: 'linear-gradient(90deg, #0A0F1E 0%, #4F46E5 100%)',
                 WebkitBackgroundClip: 'text',
@@ -245,7 +245,7 @@ function Hero() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </span>
+              </div>
             </h1>
 
             <div className="mb-5" />
@@ -797,10 +797,9 @@ function Contact() {
 function AboutPage() {
   const paragraphs = [
     'Ranking Atlas is a digital PR agency built around a simple idea: you should know exactly what you\'re getting before you pay for it.',
-    'The agency was founded by Daniel Grainger, a digital PR specialist who has spent years pitching journalists, building media relationships, and securing earned coverage in national and industry press. That experience came with a front-row seat to a problem that runs through the PR industry — agencies locking clients into expensive monthly retainers, delivering vague reports about "brand awareness" and "media impressions," and leaving them to wonder whether anything actually moved the needle.',
+    'We started Ranking Atlas after years of pitching journalists, building media relationships, and securing earned coverage in national and industry press. That experience gave us a front-row seat to a problem that runs through the PR industry — agencies locking clients into expensive monthly retainers, delivering vague reports about "brand awareness" and "media impressions," and leaving them to wonder whether anything actually moved the needle.',
     'Ranking Atlas was built as the alternative. Every engagement is a single campaign with a defined deliverable: a minimum number of earned backlinks in high-authority, editorially independent publications. No retainers, no rolling contracts, no ambiguity about what you\'re paying for.',
-    'The model works because the methodology is focused. Each campaign starts with a deep analysis of the client\'s brand, niche, and competitors. From there, we develop genuine editorial story angles — reactive PR tied to breaking news and trends, expert commentary that positions the client as a thought leader, or original data campaigns built from proprietary or public datasets. Every angle is pitched to the right journalists at the right publications, and every placement is a real editorial decision, not a paid insert.',
-    'Ranking Atlas is currently accepting new clients for Q2 2026 campaigns.',
+    'Our methodology is focused. Each campaign starts with a deep analysis of the client\'s brand, niche, and competitors. From there, we develop genuine editorial story angles — reactive PR tied to breaking news and trends, expert commentary that positions the client as a thought leader, or original data campaigns built from proprietary or public datasets. Every angle is pitched to the right journalists at the right publications, and every placement is a real editorial decision, not a paid insert.',
   ]
 
   return (
@@ -808,7 +807,7 @@ function AboutPage() {
       {/* Main content */}
       <section className="bg-white pt-28 lg:pt-36 pb-24 lg:pb-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
 
             <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: MID_GREY }}>
               Our Story
@@ -818,37 +817,8 @@ function AboutPage() {
               About Ranking Atlas
             </h1>
 
-            {/* Two-col: photo + first two paragraphs */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-10">
-
-              {/* Founder photo placeholder */}
-              <div className="order-2 lg:order-1">
-                <div
-                  className="w-full rounded-2xl border-2 border-dashed flex flex-col items-center justify-center gap-3 py-16"
-                  style={{ background: LIGHT_GREY, borderColor: `${MIDNIGHT}15`, aspectRatio: '4/5' }}
-                >
-                  <div className="w-20 h-20 rounded-full flex items-center justify-center"
-                    style={{ background: '#E2E8F0' }}>
-                    <User size={36} color={MID_GREY} />
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm font-semibold" style={{ color: MIDNIGHT }}>Daniel Grainger</p>
-                    <p className="text-xs mt-0.5" style={{ color: MID_GREY }}>Founder, Ranking Atlas</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* First two paragraphs */}
-              <div className="order-1 lg:order-2 space-y-5">
-                {paragraphs.slice(0, 2).map((p, i) => (
-                  <p key={i} className="text-lg leading-relaxed" style={{ color: MID_GREY }}>{p}</p>
-                ))}
-              </div>
-            </div>
-
-            {/* Remaining paragraphs */}
-            <div className="space-y-5 max-w-3xl">
-              {paragraphs.slice(2).map((p, i) => (
+            <div className="space-y-6">
+              {paragraphs.map((p, i) => (
                 <p key={i} className="text-lg leading-relaxed" style={{ color: MID_GREY }}>{p}</p>
               ))}
             </div>
