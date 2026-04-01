@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import {
   Menu, X, CheckCircle, TrendingUp, MessageSquare, BarChart3,
@@ -132,7 +132,7 @@ function Navbar() {
     { label: 'About',      href: '/about' },
     { label: 'Contact',    href: isHome ? '#contact' : '/contact' },
   ]
-  const contactHref = isHome ? '#contact' : '/contact'
+  const contactHref = isHome ? '#contact' : '/#contact'
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#0A0F1E]/10 shadow-sm">
@@ -932,6 +932,15 @@ function ContactPage() {
 
 // ─── HOME PAGE ────────────────────────────────────────────────────────────────
 function HomePage() {
+  useEffect(() => {
+    const hash = window.location.hash
+    if (!hash) return
+    const el = document.querySelector(hash)
+    if (el) {
+      setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100)
+    }
+  }, [])
+
   return (
     <>
       <Hero />
