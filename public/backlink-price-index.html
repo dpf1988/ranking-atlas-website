@@ -38,8 +38,9 @@ a:hover{text-decoration:underline}
 .nav-dropdown{position:relative;display:flex;align-items:center}
 .nav-dropdown-toggle{display:flex;align-items:center;gap:4px;color:rgba(10,15,30,0.65);font-size:0.9375rem;font-weight:500;cursor:default;user-select:none;white-space:nowrap}
 .nav-dropdown:hover .nav-dropdown-toggle{color:#0A0F1E}
-.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;margin-top:8px;background:white;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.12);border:1px solid rgba(10,15,30,0.1);padding:4px 0;min-width:210px;z-index:200}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;padding-top:8px;min-width:210px;z-index:200}
 .nav-dropdown:hover .nav-dropdown-menu{display:block}
+.nav-dropdown-menu-inner{background:white;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.12);border:1px solid rgba(10,15,30,0.1);padding:4px 0}
 .nav-dropdown-menu a{display:block;padding:10px 16px;font-size:14px;color:rgba(10,15,30,0.65);text-decoration:none;transition:color 0.15s,background 0.15s;white-space:nowrap}
 .nav-dropdown-menu a:hover{color:#0A0F1E;background:#F1F5F9;text-decoration:none}
 .nav-dropdown-menu a.current{color:#4F46E5;font-weight:500}
@@ -144,9 +145,11 @@ tbody tr:hover{background:var(--bg2)}
       <a href="https://ranking-atlas.com">Home</a>
       <a href="https://ranking-atlas.com/#services">Services</a>
       <div class="nav-dropdown">
-        <span class="nav-dropdown-toggle">Resources <svg width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="nav-dropdown-toggle">Resources</span>
         <div class="nav-dropdown-menu">
-          <a href="https://ranking-atlas.com/backlink-price-index.html" class="current">Backlink Price Index</a>
+          <div class="nav-dropdown-menu-inner">
+            <a href="https://ranking-atlas.com/backlink-price-index.html" class="current">Backlink Price Index</a>
+          </div>
         </div>
       </div>
       <a href="https://ranking-atlas.com/#case-study">Case Study</a>

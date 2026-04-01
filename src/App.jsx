@@ -159,16 +159,17 @@ function Navbar() {
               onMouseLeave={() => setResourcesOpen(false)}>
               <button
                 onClick={() => setResourcesOpen(o => !o)}
-                className={`flex items-center gap-1 ${navLink}`}>
+                className={navLink}>
                 Resources
-                <ChevronDown size={14} style={{ transition: 'transform 0.2s', transform: resourcesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
               </button>
               {resourcesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-lg shadow-lg border border-[#0A0F1E]/10 py-1 z-50">
-                  <a href="/backlink-price-index.html"
-                    className="block px-4 py-2.5 text-sm text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors">
-                    Backlink Price Index
-                  </a>
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-52 bg-white rounded-lg shadow-lg border border-[#0A0F1E]/10 py-1">
+                    <a href="/backlink-price-index.html"
+                      className="block px-4 py-2.5 text-sm text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors">
+                      Backlink Price Index
+                    </a>
+                  </div>
                 </div>
               )}
             </div>
