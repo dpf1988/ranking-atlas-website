@@ -126,8 +126,9 @@ function Navbar() {
 
   const links = [
     { label: 'Home',       href: isHome ? '#home'       : '/'          },
-    { label: 'Services',   href: isHome ? '#services'   : '/#services' },
-    { label: 'Case Study', href: isHome ? '#case-study' : '/#case-study' },
+    { label: 'Services',            href: isHome ? '#services'   : '/#services' },
+    { label: 'Backlink Price Index', href: '/backlink-price-index.html' },
+    { label: 'Case Study',          href: isHome ? '#case-study' : '/#case-study' },
     { label: 'About',      href: '/about' },
     { label: 'Contact',    href: isHome ? '#contact' : '/contact' },
   ]
@@ -852,8 +853,9 @@ function AboutPage() {
 function Footer() {
   const navLinks = [
     { label: 'Home',       href: '/'           },
-    { label: 'Services',   href: '/#services'  },
-    { label: 'Case Study', href: '/#case-study' },
+    { label: 'Services',            href: '/#services'              },
+    { label: 'Backlink Price Index', href: '/backlink-price-index.html' },
+    { label: 'Case Study',          href: '/#case-study'            },
     { label: 'About',      href: '/about'      },
     { label: 'Contact',    href: '/contact'    },
   ]
