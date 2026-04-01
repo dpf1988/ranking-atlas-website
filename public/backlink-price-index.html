@@ -33,7 +33,16 @@ a:hover{text-decoration:underline}
 .site-nav-links .cta-nav{background:#4F46E5;color:white;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px;transition:background 0.2s}
 .site-nav-links .cta-nav:hover{background:#4338CA;color:white}
 @media(max-width:768px){.site-nav-links{gap:16px;font-size:13px}.site-nav-links .cta-nav{padding:8px 14px;font-size:13px}}
-@media(max-width:600px){.site-nav-links a:not(.cta-nav){display:none}.site-nav-links .cta-nav{display:inline-block}}
+@media(max-width:600px){.site-nav-links a:not(.cta-nav):not(.nav-dropdown-toggle){display:none}.nav-dropdown{display:none}.site-nav-links .cta-nav{display:inline-block}}
+
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.nav-dropdown-toggle{display:flex;align-items:center;gap:4px;color:rgba(10,15,30,0.65);font-size:0.9375rem;font-weight:500;cursor:default;user-select:none;white-space:nowrap}
+.nav-dropdown:hover .nav-dropdown-toggle{color:#0A0F1E}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;margin-top:8px;background:white;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.12);border:1px solid rgba(10,15,30,0.1);padding:4px 0;min-width:210px;z-index:200}
+.nav-dropdown:hover .nav-dropdown-menu{display:block}
+.nav-dropdown-menu a{display:block;padding:10px 16px;font-size:14px;color:rgba(10,15,30,0.65);text-decoration:none;transition:color 0.15s,background 0.15s;white-space:nowrap}
+.nav-dropdown-menu a:hover{color:#0A0F1E;background:#F1F5F9;text-decoration:none}
+.nav-dropdown-menu a.current{color:#4F46E5;font-weight:500}
 
 .site-footer{background:#0A0F1E;color:#64748B;padding:60px 40px 40px;font-family:'Inter',system-ui,sans-serif}
 .site-footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px}
@@ -134,7 +143,12 @@ tbody tr:hover{background:var(--bg2)}
     <div class="site-nav-links">
       <a href="https://ranking-atlas.com">Home</a>
       <a href="https://ranking-atlas.com/#services">Services</a>
-      <a href="/backlink-price-index.html" style="color:var(--accent);font-weight:500">Backlink Price Index</a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-toggle">Resources <svg width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="nav-dropdown-menu">
+          <a href="https://ranking-atlas.com/backlink-price-index.html" class="current">Backlink Price Index</a>
+        </div>
+      </div>
       <a href="https://ranking-atlas.com/#case-study">Case Study</a>
       <a href="https://ranking-atlas.com/about">About</a>
       <a href="https://ranking-atlas.com/#contact">Contact</a>
@@ -437,7 +451,7 @@ tbody tr:hover{background:var(--bg2)}
       <ul class="footer-links">
         <li><a href="https://ranking-atlas.com">Home</a></li>
         <li><a href="https://ranking-atlas.com/#services">Services</a></li>
-        <li><a href="/backlink-price-index.html">Backlink Price Index</a></li>
+        <li><a href="https://ranking-atlas.com/backlink-price-index.html">Backlink Price Index</a></li>
         <li><a href="https://ranking-atlas.com/#case-study">Case Study</a></li>
         <li><a href="https://ranking-atlas.com/about">About</a></li>
         <li><a href="https://ranking-atlas.com/#contact">Contact</a></li>

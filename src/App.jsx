@@ -121,18 +121,12 @@ function HeroIllustration() {
 // ─── NAVBAR ───────────────────────────────────────────────────────────────────
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [resourcesOpen, setResourcesOpen] = useState(false)
   const { pathname } = useLocation()
   const isHome = pathname === '/'
-
-  const links = [
-    { label: 'Home',       href: isHome ? '#home'       : '/'          },
-    { label: 'Services',            href: isHome ? '#services'   : '/#services' },
-    { label: 'Backlink Price Index', href: '/backlink-price-index.html' },
-    { label: 'Case Study',          href: isHome ? '#case-study' : '/#case-study' },
-    { label: 'About',      href: '/about' },
-    { label: 'Contact',    href: isHome ? '#contact' : '/contact' },
-  ]
   const contactHref = isHome ? '#contact' : '/#contact'
+  const navLink = 'text-[#0A0F1E]/65 hover:text-[#0A0F1E] text-[0.9375rem] font-medium transition-colors duration-200'
+  const mobileLink = 'block px-4 py-3 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors text-sm font-medium'
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#0A0F1E]/10 shadow-sm">
@@ -156,12 +150,32 @@ function Navbar() {
           </a>
 
           <nav className="hidden md:flex items-center gap-8 ml-auto mr-8">
-            {links.map((l) => (
-              <a key={l.label} href={l.href}
-                className="text-[#0A0F1E]/65 hover:text-[#0A0F1E] text-[0.9375rem] font-medium transition-colors duration-200">
-                {l.label}
-              </a>
-            ))}
+            <a href={isHome ? '#home' : '/'} className={navLink}>Home</a>
+            <a href={isHome ? '#services' : '/#services'} className={navLink}>Services</a>
+
+            {/* Resources dropdown */}
+            <div className="relative"
+              onMouseEnter={() => setResourcesOpen(true)}
+              onMouseLeave={() => setResourcesOpen(false)}>
+              <button
+                onClick={() => setResourcesOpen(o => !o)}
+                className={`flex items-center gap-1 ${navLink}`}>
+                Resources
+                <ChevronDown size={14} style={{ transition: 'transform 0.2s', transform: resourcesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+              </button>
+              {resourcesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-lg shadow-lg border border-[#0A0F1E]/10 py-1 z-50">
+                  <a href="/backlink-price-index.html"
+                    className="block px-4 py-2.5 text-sm text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors">
+                    Backlink Price Index
+                  </a>
+                </div>
+              )}
+            </div>
+
+            <a href={isHome ? '#case-study' : '/#case-study'} className={navLink}>Case Study</a>
+            <a href="/about" className={navLink}>About</a>
+            <a href={isHome ? '#contact' : '/contact'} className={navLink}>Contact</a>
           </nav>
 
           <div className="hidden md:flex">
@@ -179,12 +193,15 @@ function Navbar() {
 
         {menuOpen && (
           <div className="md:hidden bg-white border-t border-[#0A0F1E]/10 py-4">
-            {links.map((l) => (
-              <a key={l.label} href={l.href} onClick={() => setMenuOpen(false)}
-                className="block px-4 py-3 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors text-sm font-medium">
-                {l.label}
-              </a>
-            ))}
+            <a href={isHome ? '#home' : '/'} onClick={() => setMenuOpen(false)} className={mobileLink}>Home</a>
+            <a href={isHome ? '#services' : '/#services'} onClick={() => setMenuOpen(false)} className={mobileLink}>Services</a>
+            <a href="/backlink-price-index.html" onClick={() => setMenuOpen(false)}
+              className="block px-4 py-3 pl-8 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors text-sm font-medium">
+              ↳ Backlink Price Index
+            </a>
+            <a href={isHome ? '#case-study' : '/#case-study'} onClick={() => setMenuOpen(false)} className={mobileLink}>Case Study</a>
+            <a href="/about" onClick={() => setMenuOpen(false)} className={mobileLink}>About</a>
+            <a href={isHome ? '#contact' : '/contact'} onClick={() => setMenuOpen(false)} className={mobileLink}>Contact</a>
             <div className="px-4 pt-3 pb-1">
               <a href={contactHref} onClick={() => setMenuOpen(false)}
                 className="block bg-[#4F46E5] hover:bg-[#4338CA] text-white text-sm font-semibold px-5 py-2.5 rounded-lg text-center transition-colors duration-200">
@@ -853,9 +870,8 @@ function AboutPage() {
 function Footer() {
   const navLinks = [
     { label: 'Home',       href: '/'           },
-    { label: 'Services',            href: '/#services'              },
-    { label: 'Backlink Price Index', href: '/backlink-price-index.html' },
-    { label: 'Case Study',          href: '/#case-study'            },
+    { label: 'Services',   href: '/#services'  },
+    { label: 'Case Study', href: '/#case-study'},
     { label: 'About',      href: '/about'      },
     { label: 'Contact',    href: '/contact'    },
   ]
@@ -863,7 +879,7 @@ function Footer() {
   return (
     <footer className="bg-[#0A0F1E] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <a href="/" className="flex items-center gap-2.5 mb-4">
               <LogoIcon size={32} />
@@ -886,6 +902,19 @@ function Footer() {
                   {l.label}
                 </a>
               ))}
+            </nav>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-5">Resources</h4>
+            <nav className="space-y-3">
+              <a href="/backlink-price-index.html"
+                className="block text-sm transition-colors duration-200"
+                style={{ color: MID_GREY }}
+                onMouseEnter={e => e.currentTarget.style.color = INDIGO}
+                onMouseLeave={e => e.currentTarget.style.color = MID_GREY}>
+                Backlink Price Index
+              </a>
             </nav>
           </div>
 
