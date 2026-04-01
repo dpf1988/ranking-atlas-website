@@ -10,7 +10,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ranking-atlas.com/backlink-price-index">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#FAFAF8;--bg2:#F2F1ED;--text:#1A1A1A;--text2:#6B6B6B;--text3:#9A9A9A;--accent:#3B4CCA;--accent2:#2D3A9E;--border:#E5E4E0;--green:#1D9E75;--green-bg:#E1F5EE;--green-text:#0F6E56;--coral:#D85A30;--coral-bg:#FAECE7;--coral-text:#993C1D;--blue-bg:#E6F1FB;--blue-text:#185FA5;--amber:#BA7517;--amber-bg:#FAEEDA;--amber-text:#854F0B;--purple:#534AB7;--purple-bg:#EEEDFE;--purple-text:#3C3489;--font:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace}
@@ -19,32 +19,32 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 
-.site-nav{position:sticky;top:0;z-index:100;background:white;border-bottom:1px solid #eee;padding:0 40px}
-.site-nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
-.site-nav .logo{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+.site-nav{position:sticky;top:0;z-index:100;background:white;border-bottom:1px solid rgba(10,15,30,0.1);box-shadow:0 1px 2px rgba(0,0,0,0.05);padding:0 40px;font-family:'Inter',system-ui,sans-serif}
+.site-nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.site-nav .logo{display:flex;align-items:center;gap:10px;font-size:1.375rem;font-weight:700;text-decoration:none;letter-spacing:-0.025em}
+.site-nav .logo-text{background:linear-gradient(90deg,#0A0F1E 0%,#4F46E5 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .site-nav .logo:hover{text-decoration:none}
-.site-nav .logo svg{width:32px;height:32px}
-.site-nav-links{display:flex;align-items:center;gap:32px;font-size:14px;font-weight:400}
-.site-nav-links a{color:var(--text);text-decoration:none;transition:color 0.15s}
-.site-nav-links a:hover{color:var(--accent);text-decoration:none}
-.site-nav-links .cta-nav{background:var(--accent);color:white;padding:10px 20px;border-radius:6px;font-weight:600;font-size:14px;transition:background 0.2s}
-.site-nav-links .cta-nav:hover{background:var(--accent2);color:white}
+.site-nav-links{display:flex;align-items:center;gap:32px;font-size:0.9375rem;font-weight:500}
+.site-nav-links a{color:rgba(10,15,30,0.65);text-decoration:none;transition:color 0.2s}
+.site-nav-links a:hover{color:#0A0F1E;text-decoration:none}
+.site-nav-links .cta-nav{background:#4F46E5;color:white;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px;transition:background 0.2s}
+.site-nav-links .cta-nav:hover{background:#4338CA;color:white}
 @media(max-width:768px){.site-nav-links{gap:16px;font-size:13px}.site-nav-links .cta-nav{padding:8px 14px;font-size:13px}.site-nav{padding:0 20px}}
 @media(max-width:600px){.site-nav-links a:not(.cta-nav){display:none}.site-nav-links .cta-nav{display:inline-block}}
 
-.site-footer{background:#0f1729;color:#8892a7;padding:60px 40px 40px}
-.site-footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px}
-.site-footer .footer-brand{font-size:18px;font-weight:700;color:white;margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.site-footer .footer-desc{font-size:14px;line-height:1.6;color:#8892a7;max-width:320px}
-.site-footer .footer-heading{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:white;margin-bottom:16px}
+.site-footer{background:#0A0F1E;color:#64748B;padding:60px 40px 40px;font-family:'Inter',system-ui,sans-serif}
+.site-footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px}
+.site-footer .footer-brand{font-size:20px;font-weight:700;color:white;margin-bottom:12px;display:flex;align-items:center;gap:10px;letter-spacing:-0.025em}
+.site-footer .footer-desc{font-size:14px;line-height:1.6;color:#64748B;max-width:320px}
+.site-footer .footer-heading{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:white;margin-bottom:20px}
 .site-footer .footer-links{list-style:none;padding:0}
-.site-footer .footer-links li{margin-bottom:10px}
-.site-footer .footer-links a{color:#8892a7;text-decoration:none;font-size:14px;transition:color 0.15s}
-.site-footer .footer-links a:hover{color:white}
-.site-footer .footer-contact a{color:#8892a7;text-decoration:none;font-size:14px;display:flex;align-items:center;gap:8px;margin-bottom:10px}
-.site-footer .footer-contact a:hover{color:white}
-.site-footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:32px;margin-top:32px;border-top:1px solid #1e2a42;font-size:13px}
-.site-footer-bottom a{color:#8892a7;text-decoration:none}
+.site-footer .footer-links li{margin-bottom:12px}
+.site-footer .footer-links a{color:#64748B;text-decoration:none;font-size:14px;transition:color 0.2s}
+.site-footer .footer-links a:hover{color:#4F46E5}
+.site-footer .footer-contact a{color:#64748B;text-decoration:none;font-size:14px;display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.site-footer .footer-contact a:hover{color:#4F46E5}
+.site-footer-bottom{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:32px;margin-top:32px;border-top:1px solid rgba(255,255,255,0.1);font-size:14px;color:#64748B}
+.site-footer-bottom a{color:#64748B;text-decoration:none}
 .site-footer-bottom a:hover{color:white}
 @media(max-width:600px){.site-footer-inner{grid-template-columns:1fr;gap:32px}.site-footer{padding:40px 20px 30px}}
 
@@ -125,8 +125,8 @@ tbody tr:hover{background:var(--bg2)}
 <nav class="site-nav">
   <div class="site-nav-inner">
     <a href="https://ranking-atlas.com" class="logo">
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="14" stroke="#3B4CCA" stroke-width="2"/><ellipse cx="16" cy="16" rx="6" ry="14" stroke="#3B4CCA" stroke-width="1.5"/><line x1="2" y1="16" x2="30" y2="16" stroke="#3B4CCA" stroke-width="1.5"/><line x1="4" y1="9" x2="28" y2="9" stroke="#3B4CCA" stroke-width="1" opacity="0.5"/><line x1="4" y1="23" x2="28" y2="23" stroke="#3B4CCA" stroke-width="1" opacity="0.5"/></svg>
-      Ranking Atlas
+      <img src="/Logo.png" style="height:32px;width:auto;display:block">
+      <span class="logo-text">Ranking Atlas</span>
     </a>
     <div class="site-nav-links">
       <a href="https://ranking-atlas.com">Home</a>
@@ -424,7 +424,7 @@ tbody tr:hover{background:var(--bg2)}
   <div class="site-footer-inner">
     <div>
       <div class="footer-brand">
-        <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="14" stroke="#6C7AE0" stroke-width="2"/><ellipse cx="16" cy="16" rx="6" ry="14" stroke="#6C7AE0" stroke-width="1.5"/><line x1="2" y1="16" x2="30" y2="16" stroke="#6C7AE0" stroke-width="1.5"/><line x1="4" y1="9" x2="28" y2="9" stroke="#6C7AE0" stroke-width="1" opacity="0.4"/><line x1="4" y1="23" x2="28" y2="23" stroke="#6C7AE0" stroke-width="1" opacity="0.4"/></svg>
+        <img src="/Logo.png" style="height:28px;width:auto;display:block">
         Ranking Atlas
       </div>
       <p class="footer-desc">A results-focused digital PR agency securing high-authority backlinks through earned media placements.</p>
