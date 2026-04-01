@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Real Cost of Backlinks (2026) | Ranking Atlas</title>
+<meta name="description" content="Why most companies overpay for links that don't work. Analysis of 140,000+ publisher listings across 10 marketplaces reveals the true cost of link acquisition — and what actually moves rankings.">
+<meta property="og:title" content="The Real Cost of Backlinks (2026) | Ranking Atlas">
+<meta property="og:description" content="Why most companies overpay for links that don't work. Analysis of 140,000+ publisher listings reveals what backlinks actually cost.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ranking-atlas.com/backlink-price-index">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#FAFAF8;--bg2:#F2F1ED;--text:#1A1A1A;--text2:#6B6B6B;--text3:#9A9A9A;--accent:#3B4CCA;--accent2:#2D3A9E;--border:#E5E4E0;--green:#1D9E75;--green-bg:#E1F5EE;--green-text:#0F6E56;--coral:#D85A30;--coral-bg:#FAECE7;--coral-text:#993C1D;--blue-bg:#E6F1FB;--blue-text:#185FA5;--amber:#BA7517;--amber-bg:#FAEEDA;--amber-text:#854F0B;--purple:#534AB7;--purple-bg:#EEEDFE;--purple-text:#3C3489;--font:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.top-nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 24px}
+.top-nav-inner{max-width:940px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px}
+.top-nav .logo{font-size:15px;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:-0.01em}
+.top-nav .logo:hover{text-decoration:none}
+.top-nav-links{display:flex;gap:24px;font-size:13px}
+.top-nav-links a{color:var(--text3);text-decoration:none;transition:color 0.15s}
+.top-nav-links a:hover{color:var(--text);text-decoration:none}
+@media(max-width:600px){.top-nav-links{gap:12px;font-size:12px}}
+
+.hero{padding:80px 0 60px;border-bottom:1px solid var(--border)}
+.hero .badge{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--purple-bg);padding:6px 14px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(32px,5vw,48px);font-weight:700;line-height:1.15;margin-bottom:16px;letter-spacing:-0.02em}
+.hero .sub{font-size:18px;color:var(--text2);max-width:640px;line-height:1.6}
+.hero .meta{margin-top:24px;font-size:13px;color:var(--text3);display:flex;gap:20px;flex-wrap:wrap}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;padding:40px 0;border-bottom:1px solid var(--border)}
+.stat-card{background:var(--bg2);border-radius:10px;padding:20px 24px;position:relative;cursor:help}
+.stat-card .label{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--text3);margin-bottom:6px}
+.stat-card .val{font-size:28px;font-weight:700;letter-spacing:-0.02em}
+.stat-card .note{font-size:13px;color:var(--text2);margin-top:4px}
+.stat-card .info-icon{position:absolute;top:12px;right:12px;width:18px;height:18px;border-radius:50%;background:var(--border);color:var(--text3);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;line-height:1}
+.stat-card .tooltip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--text);color:white;font-size:13px;font-weight:400;line-height:1.5;padding:12px 16px;border-radius:8px;width:280px;z-index:10;pointer-events:none}
+.stat-card .tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--text)}
+.stat-card:hover .tooltip{display:block}
+section{padding:48px 0;border-bottom:1px solid var(--border)}
+section:last-of-type{border-bottom:none}
+h2{font-size:24px;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em}
+.section-sub{font-size:15px;color:var(--text2);margin-bottom:32px;max-width:640px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:24px 0}
+thead th{text-align:left;font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);padding:12px 16px;border-bottom:2px solid var(--border);white-space:nowrap}
+tbody td{padding:14px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+tbody tr:hover{background:var(--bg2)}
+.price{font-family:var(--mono);font-weight:500}
+.tag{display:inline-block;font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px}
+.tag-green{background:var(--green-bg);color:var(--green-text)}
+.tag-coral{background:var(--coral-bg);color:var(--coral-text)}
+.tag-blue{background:var(--blue-bg);color:var(--blue-text)}
+.tag-amber{background:var(--amber-bg);color:var(--amber-text)}
+.finding{background:white;border-left:3px solid var(--accent);padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0}
+.finding .num{font-size:22px;font-weight:700;color:var(--accent)}
+.finding .desc{font-size:14px;color:var(--text2);margin-top:4px}
+.accordion{border:1px solid var(--border);border-radius:10px;margin:12px 0;overflow:hidden}
+.accordion summary{padding:16px 20px;font-size:15px;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;transition:background 0.15s}
+.accordion summary:hover{background:var(--bg2)}
+.accordion summary::-webkit-details-marker{display:none}
+.accordion summary::after{content:'+';font-size:18px;font-weight:400;color:var(--text3);transition:transform 0.2s}
+.accordion[open] summary::after{content:'-'}
+.accordion .acc-body{padding:0 20px 20px;font-size:14px;color:var(--text2);line-height:1.7}
+.accordion .acc-body p{margin-bottom:10px}
+.accordion .acc-body p:last-child{margin-bottom:0}
+.calc{background:var(--bg2);border-radius:14px;padding:32px;margin:32px 0}
+.calc h3{font-size:18px;font-weight:700;margin-bottom:20px}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.calc label{display:block;font-size:13px;font-weight:500;color:var(--text2);margin-bottom:6px}
+.calc select,.calc input[type="number"]{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-family:var(--font);font-size:15px;background:white;color:var(--text);appearance:none}
+.calc select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6B6B' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.calc-result{background:white;border-radius:10px;padding:16px 20px;border:1px solid var(--border)}
+.calc-result .method{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.calc-result .total{font-size:22px;font-weight:700;font-family:var(--mono)}
+.calc-result .per-link{font-size:13px;color:var(--text2);margin-top:2px}
+.calc-result.best{border-color:var(--green);background:var(--green-bg)}
+.calc-result.best .method{color:var(--green-text)}
+.calc-result.neutral{border-color:var(--border);background:white}
+.methodology{background:var(--bg2);border-radius:14px;padding:32px;margin:32px 0}
+.methodology h3{font-size:18px;font-weight:700;margin-bottom:12px}
+.methodology p{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:12px}
+.methodology ul{font-size:14px;color:var(--text2);line-height:1.7;padding-left:20px}
+.methodology li{margin-bottom:6px}
+.cite-box{margin-top:20px;padding:16px;background:white;border-radius:8px;border:1px solid var(--border);font-size:13px;color:var(--text2);position:relative}
+.cite-box code{display:block;font-family:var(--mono);font-size:12px;line-height:1.6;white-space:pre-wrap;color:var(--text)}
+.cite-box button{position:absolute;top:12px;right:12px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:12px;font-family:var(--font);cursor:pointer;color:var(--text2)}
+.cite-box button:hover{background:var(--border)}
+.cta-box{text-align:center;padding:60px 24px;margin:40px 0;background:var(--bg2);border-radius:14px}
+.cta-box h2{margin-bottom:12px}
+.cta-box p{color:var(--text2);font-size:16px;margin-bottom:24px}
+.cta-btn{display:inline-block;background:var(--accent);color:white;font-weight:600;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;transition:background 0.2s}
+.cta-btn:hover{background:var(--accent2);text-decoration:none}
+.footer{padding:40px 0;text-align:center;font-size:13px;color:var(--text3);border-top:1px solid var(--border)}
+@media(max-width:600px){.calc-grid{grid-template-columns:1fr}.compare-grid{grid-template-columns:1fr!important}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <a href="https://ranking-atlas.com" class="logo">Ranking Atlas</a>
+    <div class="top-nav-links">
+      <a href="#data">Data</a>
+      <a href="#heatmap">Heatmap</a>
+      <a href="#learn">Learn</a>
+      <a href="#compare">Compare</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#methodology">Methodology</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="badge">2026 Edition</div>
+  <h1>The Real Cost of Backlinks</h1>
+  <p class="sub">Backlinks remain one of the strongest ranking signals in search. Yet the market for acquiring them is opaque, fragmented, and rife with inflated metrics.</p>
+  <p style="font-size:15px;color:var(--text2);line-height:1.7;margin-top:16px">This report analyses pricing data from over 140,000 publisher listings across 10 major link marketplaces, cross-referenced with published rates from named service providers and independent industry studies. It examines the cost of link acquisition across four dimensions:</p>
+  <ul style="font-size:15px;color:var(--text2);line-height:1.8;margin:12px 0 16px 20px">
+    <li>Domain Rating (DR 10 through DR 80+)</li>
+    <li>Organic traffic (zero-traffic sites through 50,000+ monthly visitors)</li>
+    <li>Niche and industry vertical</li>
+    <li>Acquisition method (guest posts, niche edits, and earned media through digital PR)</li>
+  </ul>
+  <p style="font-size:15px;color:var(--text2);line-height:1.7">The findings suggest that the majority of marketplace inventory fails basic quality thresholds, that pricing bears limited correlation to actual link value, and that earned media through digital PR delivers a structurally different — and more durable — outcome than purchased links at comparable or lower cost per placement.</p>
+  <div class="meta">
+    <span>Based on 140,000+ publisher listings across 10 marketplaces</span>
+    <span>Published March 2026</span>
+    <span>By Daniel Grainger</span>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat-card">
+    <span class="info-icon">i</span>
+    <div class="tooltip">The average price a publisher charges for a single guest post placement, bought directly through a marketplace. This is the base cost before any vendor or agency markup.</div>
+    <div class="label">Avg. guest post cost</div>
+    <div class="val">$365</div>
+    <div class="note">Direct from publisher</div>
+  </div>
+  <div class="stat-card">
+    <span class="info-icon">i</span>
+    <div class="tooltip">When you buy through an agency or managed service instead of directly on a marketplace, you pay an average of 75% more. A $365 direct placement becomes ~$1,459 through an intermediary.</div>
+    <div class="label">Avg. vendor markup</div>
+    <div class="val">75%</div>
+    <div class="note">Buying through intermediaries</div>
+  </div>
+  <div class="stat-card">
+    <span class="info-icon">i</span>
+    <div class="tooltip">When you filter marketplace listings to only include sites with DR50+ and real organic traffic (1,000+ monthly visitors), the average price jumps to $930. Quality links cost far more than the headline average suggests.</div>
+    <div class="label">Quality-filtered avg.</div>
+    <div class="val">$930</div>
+    <div class="note">DR50+ with real traffic</div>
+  </div>
+  <div class="stat-card">
+    <span class="info-icon">i</span>
+    <div class="tooltip">Of all guest post sites on marketplaces, only 4.6% meet basic quality criteria: minimum DR40 and minimum 1,000 monthly organic traffic. The other 95.4% are unlikely to deliver meaningful SEO value.</div>
+    <div class="label">Meet quality bar</div>
+    <div class="val">4.6%</div>
+    <div class="note">Of all marketplace listings</div>
+  </div>
+</div>
+
+<!-- ============ COST BY DR ============ -->
+<section id="data">
+  <h2>The Cost of Buying a Link</h2>
+  <p class="section-sub">Marketplace pricing for guest posts and niche edits, broken down by Domain Rating. Prices scale exponentially — a DR80+ placement costs 10–100x more than a DR20.</p>
+
+  <table>
+    <thead>
+      <tr><th>DR range</th><th>Guest post</th><th>Niche edit</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>DR 10–20</strong></td><td class="price">$70–150</td><td class="price">$49–100</td></tr>
+      <tr><td><strong>DR 20–30</strong></td><td class="price">$100–250</td><td class="price">$75–225</td></tr>
+      <tr><td><strong>DR 30–40</strong></td><td class="price">$150–400</td><td class="price">$150–350</td></tr>
+      <tr><td><strong>DR 40–50</strong></td><td class="price">$250–600</td><td class="price">$250–400</td></tr>
+      <tr><td><strong>DR 50–60</strong></td><td class="price">$400–700</td><td class="price">$350–600</td></tr>
+      <tr><td><strong>DR 60–70</strong></td><td class="price">$500–1,000</td><td class="price">$500–700</td></tr>
+      <tr><td><strong>DR 70–80</strong></td><td class="price">$800–2,000</td><td class="price">$700–1,000+</td></tr>
+      <tr><td><strong>DR 80+</strong></td><td class="price">$1,500–10,000+</td><td class="price">$1,000+</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;color:var(--text3);margin-top:8px">Prices reflect direct marketplace rates. Buying through a vendor or managed service typically adds a 75% markup.</p>
+</section>
+
+<!-- ============ HEATMAP ============ -->
+<section id="heatmap">
+  <h2>The Hidden Variable: Traffic</h2>
+  <p class="section-sub">DR alone is an unreliable guide to link value. A high-DR site with no traffic may have an inflated rating. This heatmap shows how organic traffic changes the price — and the value — of a link at every DR tier.</p>
+
+  <div style="margin:32px 0;overflow-x:auto">
+    <p style="font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);margin-bottom:12px">Average guest post price (USD) by DR and monthly organic traffic</p>
+    <div id="heatmapEl"></div>
+  </div>
+
+  <div class="finding">
+    <div class="num">19%</div>
+    <div class="desc">Of marketplace guest post sites receive fewer than 100 monthly organic visitors — yet many still charge mid-tier prices. A $300 link on a zero-traffic DR50 site delivers less value than a $150 link on a DR30 site with 10,000 real visitors.</div>
+  </div>
+  <div class="finding">
+    <div class="num">53%</div>
+    <div class="desc">Of DR71+ sites on marketplace databases fall into mid- or low-quality categories because they have under 50,000 monthly organic traffic. High DR without traffic is a red flag.</div>
+  </div>
+</section>
+
+<!-- ============ UNDERSTANDING LINK VALUE ============ -->
+<section id="learn">
+  <h2>Understanding Link Value</h2>
+  <p class="section-sub">Not all backlinks are equal. These factors determine whether a link moves rankings or wastes budget.</p>
+
+  <details class="accordion">
+    <summary>What is Domain Rating and why does it matter?</summary>
+    <div class="acc-body">
+      <p>Domain Rating is a metric developed by Ahrefs that scores a website's backlink profile strength on a scale of 0 to 100. Higher DR generally indicates a stronger domain. It's the most widely used proxy for link value, which is why higher-DR sites charge more.</p>
+      <p>However, DR can be artificially inflated through link schemes — which is why it should never be the sole factor in evaluating a link. Always cross-reference with organic traffic, editorial quality, and topical relevance.</p>
+    </div>
+  </details>
+
+  <details class="accordion">
+    <summary>Why traffic matters more than DR alone</summary>
+    <div class="acc-body">
+      <p>A site's organic traffic is a stronger indicator of genuine authority than its Domain Rating. Google's ranking systems have already validated a site that receives consistent organic traffic — it's earning real clicks from real search queries.</p>
+      <p>BuzzStream's analysis found that 53% of DR71+ sites on marketplace databases have under 50,000 monthly organic traffic. The DR number suggests premium value; the traffic data tells a different story.</p>
+    </div>
+  </details>
+
+  <details class="accordion">
+    <summary>What makes a link editorially valuable?</summary>
+    <div class="acc-body">
+      <p>An editorially valuable link is one placed by a journalist, editor, or content creator because it genuinely enhances their content — not because someone paid for it. These links appear in news articles, feature stories, expert roundups, and data-driven reporting.</p>
+      <p>Google's algorithm leak revealed that the search engine evaluates links from high-click areas of sites that are updated frequently — characteristics of genuine editorial content on active publications.</p>
+    </div>
+  </details>
+
+  <details class="accordion">
+    <summary>Dofollow vs nofollow in 2026</summary>
+    <div class="acc-body">
+      <p>Dofollow links pass ranking signals to the target page. Nofollow links include an attribute telling search engines not to pass credit. Most paid placements target dofollow links for the direct SEO benefit.</p>
+      <p>In practice, the distinction has blurred since Google began treating nofollow as a "hint" rather than a directive in 2019. A nofollow link from a major publication still provides referral traffic, brand visibility, and entity recognition. A natural link profile contains both.</p>
+    </div>
+  </details>
+
+  <h2 style="margin-top:48px">Risk and Compliance</h2>
+  <p class="section-sub">The cost of a link is not just the price you pay. It includes the risk you take.</p>
+
+  <details class="accordion">
+    <summary>What Google considers a link scheme</summary>
+    <div class="acc-body">
+      <p>Google's spam policies classify several practices as link schemes: buying or selling links that pass PageRank, exchanging goods or services for links, and large-scale guest posting campaigns with keyword-rich anchor text.</p>
+      <p>Both paid guest posts and paid niche edits fall within this definition. The practical risk depends on scale and detectability — a single placement is unlikely to trigger a penalty, but building a profile primarily through marketplace purchases creates a pattern Google's systems are designed to detect.</p>
+    </div>
+  </details>
+
+  <details class="accordion">
+    <summary>The Helpful Content Update and marketplace sites</summary>
+    <div class="acc-body">
+      <p>Google's Helpful Content Update specifically targeted sites that exist primarily to host third-party content for SEO purposes. Many sites that accepted paid guest posts at scale were deindexed or severely demoted.</p>
+      <p>Buyers who had invested in links on these sites found their backlink profiles devalued overnight with no recourse. Most marketplace services offer 6–12 month guarantees, but a replacement link on another marketplace site carries the same underlying risk.</p>
+    </div>
+  </details>
+
+  <details class="accordion">
+    <summary>Why earned editorial links carry zero penalty risk</summary>
+    <div class="acc-body">
+      <p>Links placed by journalists and editors through genuine editorial decisions are exactly what Google's ranking system was designed to reward. The link was not purchased, the publisher was not compensated, and the editorial decision was independent.</p>
+      <p>There is no mechanism by which a genuine editorial link can trigger a penalty. The publication also carries near-zero deindexation risk — established media outlets are not targets for Google's spam enforcement.</p>
+    </div>
+  </details>
+
+  <div class="finding">
+    <div class="num">20–40%</div>
+    <div class="desc">Increase in publisher placement fees over the past two years. The cost of buying links is rising. Meanwhile, the risk of those links being devalued by algorithm updates is also rising.</div>
+  </div>
+</section>
+
+<!-- ============ BOUGHT VS EARNED ============ -->
+<section id="compare">
+  <h2>Bought Links vs Earned Links</h2>
+  <p class="section-sub">Every link in the marketplace data above is a bought link. Anyone with a budget can acquire them. The question is whether that builds a lasting advantage — or just a temporary one.</p>
+
+  <div class="compare-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:32px 0">
+    <div style="background:white;border-radius:12px;padding:24px;border:1px solid var(--border)">
+      <p style="font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--coral-text);margin-bottom:12px">Bought links</p>
+      <p style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:16px">A commodity. Your competitors can buy the same link on the same site for the same price. The publisher's incentive is the fee, not the quality of your content.</p>
+      <div style="font-size:13px;color:var(--text2);line-height:2">
+        <div>Available to any competitor with budget</div>
+        <div>15–25% annual attrition rate</div>
+        <div>Host site deindexation risk</div>
+        <div>Classified as link scheme by Google</div>
+        <div>No brand recognition or audience exposure</div>
+        <div>95% of sites fail basic quality filters</div>
+      </div>
+    </div>
+    <div style="background:var(--green-bg);border-radius:12px;padding:24px;border:1px solid #9FE1CB">
+      <p style="font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--green-text);margin-bottom:12px">Earned links</p>
+      <p style="font-size:14px;color:var(--green-text);line-height:1.7;margin-bottom:16px">A signal that your brand has something worth covering. Requires a genuine story — original data, expert insight, or newsworthy commentary. Your competitors cannot buy this.</p>
+      <div style="font-size:13px;color:var(--green-text);line-height:2">
+        <div>Cannot be replicated by competitors with budget alone</div>
+        <div>Avg. link lifespan 10+ years on established publications</div>
+        <div>Zero deindexation risk on editorial sites</div>
+        <div>Exactly what Google's algorithm rewards</div>
+        <div>Brand mentions, expert positioning, real audience</div>
+        <div>Compounds — each placement builds authority</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:14px;color:var(--text2);line-height:1.7;margin-top:8px">Earned links are not free. They require investment in creating something worth covering — a data study, expert commentary, a newsworthy angle. They take longer to materialise than a marketplace purchase, and you don't control the exact anchor text or placement. But these constraints are features: they're what makes earned links defensible, durable, and valued by search engines.</p>
+
+  <p style="font-size:14px;color:var(--text2);line-height:1.7;margin-top:12px">Digital PR makes the most sense for businesses where a single lead, client, or conversion justifies the campaign investment. If your average customer is worth thousands, a $3,500 campaign that delivers 8–12+ earned placements — each one building lasting authority and brand recognition — pays for itself quickly. For businesses selling low-ticket products with thin margins, marketplace links at lower DR tiers may be a more practical starting point.</p>
+
+  <div class="finding">
+    <div class="num">$44 vs $250</div>
+    <div class="desc">Annual cost per link when accounting for lifespan. A $437 earned link lasting 10+ years costs $44/year. A $500 bought link with a two-year effective lifespan costs $250/year.</div>
+  </div>
+</section>
+
+<!-- ============ CALCULATOR ============ -->
+<section id="calculator">
+  <h2>Cost Calculator</h2>
+  <p class="section-sub">Compare the cost of buying links on marketplaces vs earning them through digital PR.</p>
+  
+  <div class="calc">
+    <h3>What Will Your Links Cost?</h3>
+    <div class="calc-grid">
+      <div>
+        <label for="numLinks">Number of links needed</label>
+        <input type="number" id="numLinks" value="10" min="1" max="100">
+      </div>
+      <div>
+        <label for="drRange">Target DR range (for marketplace)</label>
+        <select id="drRange">
+          <option value="20">DR 20–30</option>
+          <option value="30">DR 30–40</option>
+          <option value="40">DR 40–50</option>
+          <option value="50" selected>DR 50–60</option>
+          <option value="60">DR 60–70</option>
+          <option value="70">DR 70–80</option>
+          <option value="80">DR 80+</option>
+        </select>
+      </div>
+    </div>
+    <div id="calcResults"></div>
+    <p id="calcNote" style="font-size:13px;color:var(--text3);margin-top:16px"></p>
+  </div>
+</section>
+
+<!-- ============ METHODOLOGY ============ -->
+<section id="methodology">
+  <div class="methodology">
+    <h3>Methodology</h3>
+    <p>The Real Cost of Backlinks aggregates pricing data from multiple independent marketplace studies and live platform data:</p>
+    <ul>
+      <li><strong>BuzzStream (2025)</strong> — Analysis of 26,000+ guest post sites from a major vendor database, with quality tiering by traffic and DR</li>
+      <li><strong>Adsy (2025)</strong> — Pricing analysis across 37,542 publisher websites</li>
+      <li><strong>Serpzilla (2026)</strong> — Live marketplace data from thousands of guest post and niche edit listings</li>
+      <li><strong>Linkhouse (2026)</strong> — Validated against live pricing from 76,861 publisher listings across 25 languages</li>
+      <li><strong>Additional platforms</strong> — Collaborator, Getfluence, WhitePress, GuestPostLinks, Bazoom, and LinkPublishers</li>
+      <li><strong>Service providers</strong> — Published pricing from 10+ named agencies and services</li>
+    </ul>
+    <p>All prices converted to USD at March 2026 exchange rates. Vendor markup estimates based on BuzzStream's methodology. Quality filtering follows BuzzStream's criteria: minimum 1,000 monthly organic traffic and minimum DR 40.</p>
+    <p>This index will be updated annually. Corrections or data contributions welcome at <a href="mailto:contact@ranking-atlas.com">contact@ranking-atlas.com</a>.</p>
+
+    <div class="cite-box">
+      <p style="font-weight:500;margin-bottom:8px;color:var(--text)">Cite this resource</p>
+      <code id="citeText">Ranking Atlas. "The Real Cost of Backlinks (2026)." ranking-atlas.com/backlink-price-index. Published March 2026.</code>
+      <button onclick="navigator.clipboard.writeText(document.getElementById('citeText').textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',2000)">Copy</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<div style="background:white;border:1px solid var(--border);border-radius:14px;padding:32px;margin:40px 0">
+  <h3 style="font-size:18px;font-weight:700;margin-bottom:12px">How the Ranking Atlas Guarantee Works</h3>
+  <p style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:12px">Most digital PR agencies charge monthly retainers with no link guarantees. You pay for their time and hope for the best. We do the opposite.</p>
+  <p style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:12px">Every Ranking Atlas campaign costs $3,500. That's the price whether we deliver 8 links or 15. We keep running story angles — reactive PR, expert commentary, data campaigns — until a minimum of 8 earned placements are secured. If a campaign overdelivers, you don't pay more. If it takes longer than expected, we keep working at no additional cost.</p>
+  <p style="font-size:14px;color:var(--text2);line-height:1.7">No retainers. No rolling contracts. One campaign, one price, a guaranteed minimum outcome. Most campaigns deliver 8–12+ placements across publications with real editorial standards and real audiences.</p>
+</div>
+
+<div class="cta-box">
+  <h2>Stop Buying Links. Start Earning Them.</h2>
+  <p>Data campaigns, expert commentary, and reactive PR — editorial backlinks your competitors can't buy.</p>
+  <a href="https://ranking-atlas.com/#contact" class="cta-btn">Start a campaign — $3.5K</a>
+</div>
+
+<div class="footer">
+  <p>&copy; 2026 Ranking Atlas. The Real Cost of Backlinks is a free resource. Cite freely with attribution.</p>
+</div>
+</div>
+
+<script>
+var pricingData = {
+  20: { gp: 175, ne: 150 },
+  30: { gp: 282, ne: 225 },
+  40: { gp: 365, ne: 300 },
+  50: { gp: 500, ne: 400 },
+  60: { gp: 650, ne: 500 },
+  70: { gp: 930, ne: 700 },
+  80: { gp: 1500, ne: 1000 }
+};
+
+function updateCalc() {
+  var n = Math.max(1, Math.min(100, parseInt(document.getElementById('numLinks').value) || 10));
+  var dr = document.getElementById('drRange').value;
+  var drNum = parseInt(dr);
+  var d = pricingData[dr];
+  var gpTotal = d.gp * n;
+  var neTotal = d.ne * n;
+  var campaigns = Math.ceil(n / 12);
+  var dprTotal = campaigns * 3500;
+  var dprPer = Math.round(dprTotal / n);
+  var minLinks = campaigns * 8;
+  var marketplaceCheaper = (drNum <= 40 && d.ne * n < dprTotal);
+
+  var html = '<p style="font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);margin:20px 0 12px">Buying links (marketplace)</p>';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">';
+  
+  if (marketplaceCheaper) {
+    html += '<div class="calc-result best"><div class="method" style="color:var(--green-text)">Guest post</div><div class="total">$' + gpTotal.toLocaleString() + '</div><div class="per-link">$' + d.gp.toLocaleString() + ' per link</div></div>';
+    html += '<div class="calc-result best"><div class="method" style="color:var(--green-text)">Niche edit</div><div class="total">$' + neTotal.toLocaleString() + '</div><div class="per-link">$' + d.ne.toLocaleString() + ' per link</div></div>';
+  } else {
+    html += '<div class="calc-result"><div class="method" style="color:var(--text3)">Guest post</div><div class="total">$' + gpTotal.toLocaleString() + '</div><div class="per-link">$' + d.gp.toLocaleString() + ' per link</div></div>';
+    html += '<div class="calc-result"><div class="method" style="color:var(--text3)">Niche edit</div><div class="total">$' + neTotal.toLocaleString() + '</div><div class="per-link">$' + d.ne.toLocaleString() + ' per link</div></div>';
+  }
+  html += '</div>';
+
+  html += '<p style="font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--green-text);margin-bottom:12px">Earning links (Ranking Atlas digital PR)</p>';
+  
+  if (marketplaceCheaper) {
+    html += '<div class="calc-result neutral"><div class="method" style="color:var(--text3)">' + campaigns + ' digital PR campaign' + (campaigns > 1 ? 's' : '') + ' &middot; $3,500 each</div><div class="total">$' + dprTotal.toLocaleString() + '</div><div class="per-link">Minimum ' + minLinks + ' earned placements guaranteed &middot; most campaigns deliver 8–12+ links &middot; fixed price regardless of how many links are secured</div></div>';
+  } else {
+    html += '<div class="calc-result best"><div class="method" style="color:var(--green-text)">' + campaigns + ' digital PR campaign' + (campaigns > 1 ? 's' : '') + ' &middot; $3,500 each</div><div class="total">$' + dprTotal.toLocaleString() + '</div><div class="per-link">Minimum ' + minLinks + ' earned placements guaranteed &middot; most campaigns deliver 8–12+ links &middot; fixed price regardless of how many links are secured</div></div>';
+  }
+
+  document.getElementById('calcResults').innerHTML = html;
+  
+  var note = document.getElementById('calcNote');
+  if (marketplaceCheaper) {
+    note.textContent = 'At this DR range, marketplace links are more cost-effective for building foundational link diversity. Digital PR delivers links on publications with higher authority, real traffic, and editorial standards — consider it when you need links that also build brand recognition.';
+  } else {
+    note.textContent = 'At this DR range, earned links through digital PR are more cost-effective per link — and come with zero compliance risk, guaranteed real traffic, and brand-building benefits that marketplace links cannot deliver.';
+  }
+}
+
+document.getElementById('numLinks').addEventListener('input', updateCalc);
+document.getElementById('drRange').addEventListener('change', updateCalc);
+updateCalc();
+
+var heatmapData = {
+  drTiers: ['DR 20-30','DR 30-40','DR 40-50','DR 50-60','DR 60-70','DR 70-80','DR 80+'],
+  trafficTiers: ['0–100','100–1k','1k–10k','10k–50k','50k+'],
+  prices: [
+    [50, 80, 130, 200, 300],
+    [80, 140, 220, 340, 500],
+    [120, 200, 320, 500, 750],
+    [150, 280, 450, 700, 1200],
+    [200, 380, 600, 950, 1800],
+    [300, 550, 850, 1400, 2500],
+    [500, 800, 1300, 2500, null]
+  ]
+};
+
+function priceColor(val) {
+  if (val === null) return '#F2F1ED';
+  if (val <= 100) return '#E1F5EE';
+  if (val <= 200) return '#9FE1CB';
+  if (val <= 400) return '#5DCAA5';
+  if (val <= 700) return '#BA7517';
+  if (val <= 1200) return '#D85A30';
+  return '#993C1D';
+}
+
+function textColor(val) {
+  if (val === null) return '#9A9A9A';
+  if (val <= 400) return '#04342C';
+  return '#FFFFFF';
+}
+
+function buildHeatmap() {
+  var el = document.getElementById('heatmapEl');
+  var d = heatmapData;
+  var h = '<table style="width:100%;border-collapse:collapse;font-size:13px">';
+  h += '<thead><tr><th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:#9A9A9A;border-bottom:2px solid #E5E4E0;min-width:90px">DR \\ Traffic</th>';
+  for (var t = 0; t < d.trafficTiers.length; t++) {
+    h += '<th style="padding:10px 12px;text-align:center;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:#9A9A9A;border-bottom:2px solid #E5E4E0;min-width:80px">' + d.trafficTiers[t] + '</th>';
+  }
+  h += '</tr></thead><tbody>';
+  for (var i = 0; i < d.drTiers.length; i++) {
+    h += '<tr><td style="padding:12px;font-weight:600;border-bottom:1px solid #E5E4E0">' + d.drTiers[i] + '</td>';
+    for (var j = 0; j < d.trafficTiers.length; j++) {
+      var val = d.prices[i][j];
+      var bg = priceColor(val);
+      var tc = textColor(val);
+      var display = val === null ? '—' : '$' + val.toLocaleString();
+      h += '<td style="padding:12px;text-align:center;font-family:\'DM Mono\',monospace;font-weight:500;font-size:13px;background:' + bg + ';color:' + tc + ';border-bottom:1px solid #E5E4E0;border-left:2px solid #FAFAF8">' + display + '</td>';
+    }
+    h += '</tr>';
+  }
+  h += '</tbody></table>';
+  el.innerHTML = h;
+}
+buildHeatmap();
+
+document.querySelectorAll('.top-nav-links a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    var href = this.getAttribute('href');
+    var target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
