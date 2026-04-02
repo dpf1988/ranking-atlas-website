@@ -82,10 +82,24 @@ const mobileLink = 'block px-4 py-3 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#0A0F1E]/10 py-4">
       <a href={isHome ? '#home' : '/'} class={mobileLink} data-mobile-link>Home</a>
       <a href={isHome ? '#services' : '/#services'} class={mobileLink} data-mobile-link>Services</a>
-      <a href="/backlink-price-index.html"
-        class="block px-4 py-3 pl-8 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors text-sm font-medium">
-        ↳ Backlink Price Index
-      </a>
+
+      <!-- Mobile Resources accordion -->
+      <button id="mobile-resources-btn" type="button"
+        class="flex items-center justify-between w-full px-4 py-3 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors text-sm font-medium"
+        aria-expanded="false">
+        Resources
+        <svg id="mobile-resources-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div id="mobile-resources-submenu" class="hidden">
+        <a href="/backlink-price-index.html"
+          class="block px-4 py-2.5 pl-8 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors text-sm font-medium"
+          data-mobile-link>
+          Backlink Price Index
+        </a>
+      </div>
+
       <a href={isHome ? '#case-study' : '/#case-study'} class={mobileLink} data-mobile-link>Case Study</a>
       <a href="/about" class={mobileLink} data-mobile-link>About</a>
       <a href={isHome ? '#contact' : '/contact'} class={mobileLink} data-mobile-link>Contact</a>
@@ -128,7 +142,7 @@ const mobileLink = 'block px-4 py-3 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover
     });
   });
 
-  // Resources dropdown
+  // Desktop Resources dropdown (hover)
   const resourcesDropdown = document.getElementById('resources-dropdown');
   const resourcesMenu = document.getElementById('resources-menu');
 
@@ -137,5 +151,31 @@ const mobileLink = 'block px-4 py-3 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover
   });
   resourcesDropdown?.addEventListener('mouseleave', () => {
     resourcesMenu?.classList.add('hidden');
+  });
+
+  // Mobile Resources accordion (tap to toggle)
+  const mobileResourcesBtn = document.getElementById('mobile-resources-btn');
+  const mobileResourcesSubmenu = document.getElementById('mobile-resources-submenu');
+  const mobileResourcesChevron = document.getElementById('mobile-resources-chevron');
+
+  mobileResourcesBtn?.addEventListener('click', () => {
+    const isOpen = !mobileResourcesSubmenu?.classList.contains('hidden');
+    if (isOpen) {
+      mobileResourcesSubmenu?.classList.add('hidden');
+      mobileResourcesChevron?.classList.remove('rotate-180');
+      mobileResourcesBtn?.setAttribute('aria-expanded', 'false');
+    } else {
+      mobileResourcesSubmenu?.classList.remove('hidden');
+      mobileResourcesChevron?.classList.add('rotate-180');
+      mobileResourcesBtn?.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  // Also collapse the Resources submenu when the mobile menu closes
+  menuToggle?.addEventListener('click', () => {
+    if (!mobileMenu?.classList.contains('hidden')) return; // menu just opened, do nothing
+    mobileResourcesSubmenu?.classList.add('hidden');
+    mobileResourcesChevron?.classList.remove('rotate-180');
+    mobileResourcesBtn?.setAttribute('aria-expanded', 'false');
   });
 </script>
