@@ -1,0 +1,93 @@
+---
+const navLinks = [
+  { label: 'Home',       href: '/'            },
+  { label: 'Services',   href: '/#services'   },
+  { label: 'Case Study', href: '/#case-study' },
+  { label: 'About',      href: '/about'       },
+  { label: 'Contact',    href: '/contact'     },
+];
+---
+
+<footer class="bg-[#0A0F1E] border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+      <!-- Brand -->
+      <div>
+        <a href="/" class="flex items-center gap-2.5 mb-4">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="15" cy="15" r="13" fill="#4F46E5" />
+            <ellipse cx="15" cy="15" rx="13" ry="5.5" stroke="white" stroke-width="1.1" fill="none" opacity="0.45" />
+            <ellipse cx="15" cy="15" rx="5.5" ry="13" stroke="white" stroke-width="1.1" fill="none" opacity="0.45" />
+            <line x1="2" y1="15" x2="28" y2="15" stroke="white" stroke-width="1.1" opacity="0.45" />
+            <rect x="17" y="17" width="13" height="13" rx="2.5" fill="#0A0F1E" />
+            <rect x="19" y="19.5" width="9" height="2" rx="1" fill="#F5C518" />
+            <rect x="19" y="23" width="7" height="1.2" rx="0.6" fill="#F5C518" opacity="0.85" />
+            <rect x="19" y="25.2" width="8" height="1.2" rx="0.6" fill="#F5C518" opacity="0.85" />
+            <rect x="19" y="27.4" width="5" height="1.2" rx="0.6" fill="#F5C518" opacity="0.85" />
+          </svg>
+          <span class="text-white font-bold text-xl tracking-tight">Ranking Atlas</span>
+        </a>
+        <p class="text-sm leading-relaxed text-[#64748B]">
+          A results-focused digital PR agency securing high-authority backlinks through earned media placements.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-5">Navigation</h4>
+        <nav class="space-y-3">
+          {navLinks.map((l) => (
+            <a href={l.href}
+              class="block text-sm text-[#64748B] hover:text-[#4F46E5] transition-colors duration-200">
+              {l.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-5">Resources</h4>
+        <nav class="space-y-3">
+          <a href="/backlink-price-index.html"
+            class="block text-sm text-[#64748B] hover:text-[#4F46E5] transition-colors duration-200">
+            Backlink Price Index
+          </a>
+        </nav>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-5">Contact</h4>
+        <div class="space-y-4">
+          <a href="mailto:contact@ranking-atlas.com"
+            class="flex items-center gap-2.5 text-sm text-[#64748B] hover:text-[#4F46E5] transition-colors duration-200">
+            <!-- Mail icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            contact@ranking-atlas.com
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
+            class="flex items-center gap-2.5 text-sm text-[#64748B] hover:text-[#4F46E5] transition-colors duration-200">
+            <!-- LinkedIn icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-[#64748B]">&copy; 2026 Ranking Atlas. All rights reserved.</p>
+      <p class="text-xs" style="color: rgba(100,116,139,0.53);">ranking-atlas.com</p>
+    </div>
+  </div>
+</footer>

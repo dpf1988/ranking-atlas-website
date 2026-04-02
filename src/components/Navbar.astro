@@ -1,0 +1,141 @@
+---
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/';
+const contactHref = isHome ? '#contact' : '/#contact';
+const navLink = 'text-[#0A0F1E]/65 hover:text-[#0A0F1E] text-[0.9375rem] font-medium transition-colors duration-200';
+const mobileLink = 'block px-4 py-3 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors text-sm font-medium';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#0A0F1E]/10 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2.5">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="15" cy="15" r="13" fill="#4F46E5" />
+          <ellipse cx="15" cy="15" rx="13" ry="5.5" stroke="white" stroke-width="1.1" fill="none" opacity="0.45" />
+          <ellipse cx="15" cy="15" rx="5.5" ry="13" stroke="white" stroke-width="1.1" fill="none" opacity="0.45" />
+          <line x1="2" y1="15" x2="28" y2="15" stroke="white" stroke-width="1.1" opacity="0.45" />
+          <rect x="17" y="17" width="13" height="13" rx="2.5" fill="#0A0F1E" />
+          <rect x="19" y="19.5" width="9" height="2" rx="1" fill="#F5C518" />
+          <rect x="19" y="23" width="7" height="1.2" rx="0.6" fill="#F5C518" opacity="0.85" />
+          <rect x="19" y="25.2" width="8" height="1.2" rx="0.6" fill="#F5C518" opacity="0.85" />
+          <rect x="19" y="27.4" width="5" height="1.2" rx="0.6" fill="#F5C518" opacity="0.85" />
+        </svg>
+        <span
+          class="font-bold text-[1.375rem] tracking-tight"
+          style="background: linear-gradient(90deg, #0A0F1E 0%, #4F46E5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block;"
+        >
+          Ranking Atlas
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8 ml-auto mr-8">
+        <a href={isHome ? '#home' : '/'} class={navLink}>Home</a>
+        <a href={isHome ? '#services' : '/#services'} class={navLink}>Services</a>
+
+        <!-- Resources dropdown -->
+        <div class="relative" id="resources-dropdown">
+          <button id="resources-btn" class={navLink} type="button">
+            Resources
+          </button>
+          <div id="resources-menu" class="hidden absolute top-full left-0 pt-2 z-50">
+            <div class="w-52 bg-white rounded-lg shadow-lg border border-[#0A0F1E]/10 py-1">
+              <a href="/backlink-price-index.html"
+                class="block px-4 py-2.5 text-sm text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors">
+                Backlink Price Index
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href={isHome ? '#case-study' : '/#case-study'} class={navLink}>Case Study</a>
+        <a href="/about" class={navLink}>About</a>
+        <a href={isHome ? '#contact' : '/contact'} class={navLink}>Contact</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:flex">
+        <a href={contactHref}
+          class="bg-[#4F46E5] hover:bg-[#4338CA] text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:shadow-[0_0_16px_2px_rgba(245,197,24,0.35)]">
+          Start a Campaign
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menu-toggle" class="md:hidden text-[#0A0F1E] hover:text-[#4F46E5] transition-colors" aria-label="Toggle menu" type="button">
+        <svg id="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <svg id="menu-icon-close" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#0A0F1E]/10 py-4">
+      <a href={isHome ? '#home' : '/'} class={mobileLink} data-mobile-link>Home</a>
+      <a href={isHome ? '#services' : '/#services'} class={mobileLink} data-mobile-link>Services</a>
+      <a href="/backlink-price-index.html"
+        class="block px-4 py-3 pl-8 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors text-sm font-medium">
+        ↳ Backlink Price Index
+      </a>
+      <a href={isHome ? '#case-study' : '/#case-study'} class={mobileLink} data-mobile-link>Case Study</a>
+      <a href="/about" class={mobileLink} data-mobile-link>About</a>
+      <a href={isHome ? '#contact' : '/contact'} class={mobileLink} data-mobile-link>Contact</a>
+      <div class="px-4 pt-3 pb-1">
+        <a href={contactHref} data-mobile-link
+          class="block bg-[#4F46E5] hover:bg-[#4338CA] text-white text-sm font-semibold px-5 py-2.5 rounded-lg text-center transition-colors duration-200">
+          Start a Campaign
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
+
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    if (isOpen) {
+      mobileMenu?.classList.add('hidden');
+      menuIconOpen?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
+    } else {
+      mobileMenu?.classList.remove('hidden');
+      menuIconOpen?.classList.add('hidden');
+      menuIconClose?.classList.remove('hidden');
+    }
+  });
+
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll('[data-mobile-link]').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      menuIconOpen?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
+    });
+  });
+
+  // Resources dropdown
+  const resourcesDropdown = document.getElementById('resources-dropdown');
+  const resourcesMenu = document.getElementById('resources-menu');
+
+  resourcesDropdown?.addEventListener('mouseenter', () => {
+    resourcesMenu?.classList.remove('hidden');
+  });
+  resourcesDropdown?.addEventListener('mouseleave', () => {
+    resourcesMenu?.classList.add('hidden');
+  });
+</script>

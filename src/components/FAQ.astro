@@ -1,0 +1,119 @@
+---
+const faqs = [
+  {
+    q: "What happens if you don't hit the link guarantee?",
+    a: "We keep working at no additional cost until we do. The campaign isn't complete until your agreed link count is delivered.",
+  },
+  {
+    q: 'How long does a campaign take?',
+    a: 'Most campaigns deliver results within 30 to 60 days, depending on the campaign type and niche. Reactive PR can land links within days when the right news cycle hits. Data campaigns and expert commentary typically take longer because they require development and targeted pitching.',
+  },
+  {
+    q: 'What types of publications do you target?',
+    a: 'National news outlets, business and finance press, technology media, and industry-specific publications. We build a targeted media list for each campaign based on your niche, your audience, and the story angles we develop together.',
+  },
+  {
+    q: 'Do I get to approve stories before they go out?',
+    a: 'Yes. We develop the campaign angles in collaboration with you and nothing gets pitched without your sign-off.',
+  },
+  {
+    q: "What's included in a campaign?",
+    a: 'A full campaign includes: niche and competitor analysis, story angle development, targeted journalist list building, pitching and follow-up, and reporting on every placement secured. You get a clear brief before we start and updates throughout.',
+  },
+  {
+    q: 'Why no retainers?',
+    a: "Because retainers reward agencies for time spent, not results delivered. Our per-campaign model means you pay for a defined outcome — a minimum number of earned links in high-authority publications. If it works, you book another campaign. If it doesn't, you walk away. That's how it should be.",
+  },
+];
+---
+
+<section id="faq" class="relative bg-[#0A0F1E] py-24 lg:py-32 overflow-hidden">
+
+  <!-- Radial glow -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full"
+      style="background: radial-gradient(ellipse, rgba(79,70,229,0.12) 0%, transparent 70%);">
+    </div>
+  </div>
+
+  <!-- Watermark -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden="true">
+    <span class="text-[22rem] font-black tracking-tighter leading-none" style="color: rgba(79,70,229,0.03);">FAQ</span>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-black text-white mb-4">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-xl max-w-2xl mx-auto text-[#64748B]">
+        Everything you need to know before starting a campaign.
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto divide-y divide-white/10" id="faq-list">
+      {faqs.map((faq, i) => (
+        <div class="faq-item">
+          <button
+            class="faq-btn w-full flex items-center justify-between gap-4 py-6 text-left group"
+            data-index={String(i)}
+            type="button"
+          >
+            <span class="faq-question text-base sm:text-lg font-semibold text-white transition-colors duration-200">
+              {faq.q}
+            </span>
+            <svg class="faq-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer hidden pb-6">
+            <p class="text-base leading-relaxed text-[#64748B]">
+              {faq.a}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  var openIndex = null;
+
+  document.querySelectorAll('.faq-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var i = parseInt(btn.getAttribute('data-index') || '0');
+      var item = btn.closest('.faq-item');
+      var answer = item ? item.querySelector('.faq-answer') : null;
+      var chevron = item ? item.querySelector('.faq-chevron') : null;
+      var question = item ? item.querySelector('.faq-question') : null;
+
+      if (openIndex === i) {
+        // Close
+        if (answer) answer.classList.add('hidden');
+        if (chevron) chevron.setAttribute('style', 'color: #64748B; transform: rotate(0deg)');
+        if (question) question.setAttribute('style', 'color: white');
+        openIndex = null;
+      } else {
+        // Close previously open
+        if (openIndex !== null) {
+          var prevBtn = document.querySelector('[data-index="' + openIndex + '"]');
+          var prevItem = prevBtn ? prevBtn.closest('.faq-item') : null;
+          if (prevItem) {
+            var pa = prevItem.querySelector('.faq-answer');
+            var pc = prevItem.querySelector('.faq-chevron');
+            var pq = prevItem.querySelector('.faq-question');
+            if (pa) pa.classList.add('hidden');
+            if (pc) pc.setAttribute('style', 'color: #64748B; transform: rotate(0deg)');
+            if (pq) pq.setAttribute('style', 'color: white');
+          }
+        }
+        // Open current
+        if (answer) answer.classList.remove('hidden');
+        if (chevron) chevron.setAttribute('style', 'color: #4F46E5; transform: rotate(180deg)');
+        if (question) question.setAttribute('style', 'color: #4F46E5');
+        openIndex = i;
+      }
+    });
+  });
+</script>

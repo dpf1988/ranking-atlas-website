@@ -1,0 +1,181 @@
+---
+---
+
+<section id="contact" class="bg-[#F8FAFC] py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl sm:text-5xl font-black mb-4 text-[#0A0F1E]">Start Your First Campaign</h2>
+        <p class="text-xl text-[#64748B]">
+          No commitment required. Tell us about your brand and we'll put together a campaign proposal within one business day.
+        </p>
+      </div>
+
+      <form id="contact-form" class="bg-white rounded-3xl border border-[#0A0F1E]/8 shadow-md p-8 lg:p-10 space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
+              Name <span class="text-[#4F46E5]">*</span>
+            </label>
+            <input id="name" name="name" type="text" required placeholder="Jane Smith"
+              class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E]"
+              style="border-color: rgba(10,15,30,0.13);" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
+              Email <span class="text-[#4F46E5]">*</span>
+            </label>
+            <input id="email" name="email" type="text" required placeholder="you@example.com"
+              class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E]"
+              style="border-color: rgba(10,15,30,0.13);" />
+          </div>
+        </div>
+
+        <div>
+          <label for="website" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
+            Website <span class="text-[#4F46E5]">*</span>
+          </label>
+          <input id="website" name="website" type="text" required placeholder="https://yourwebsite.com"
+            class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E]"
+            style="border-color: rgba(10,15,30,0.13);" />
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
+            Message <span class="text-[#4F46E5]">*</span>
+          </label>
+          <textarea id="message" name="message" required rows="5"
+            placeholder="Tell us about your goals and what you'd like to achieve with Digital PR..."
+            class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E] resize-none"
+            style="border-color: rgba(10,15,30,0.13);"></textarea>
+        </div>
+
+        <!-- Status messages -->
+        <div id="form-success" class="hidden items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-sm rounded-lg px-4 py-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          Message sent! We'll be in touch within one business day.
+        </div>
+        <div id="form-error" class="hidden bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3">
+          Something went wrong. Please email <a href="mailto:contact@ranking-atlas.com" class="underline font-medium">contact@ranking-atlas.com</a>
+        </div>
+
+        <!-- What happens next -->
+        <div class="pt-2 pb-2">
+          <p class="text-xs font-semibold uppercase tracking-widest mb-4 text-[#64748B]">What happens next</p>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="flex flex-col gap-2">
+              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 bg-[#4F46E5]">1</div>
+              <p class="text-sm font-semibold text-[#0A0F1E]">You Apply</p>
+              <p class="text-xs leading-relaxed text-[#64748B]">Fill in the form with your brand details and goals.</p>
+            </div>
+            <div class="flex flex-col gap-2">
+              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 bg-[#4F46E5]">2</div>
+              <p class="text-sm font-semibold text-[#0A0F1E]">We Review</p>
+              <p class="text-xs leading-relaxed text-[#64748B]">We assess your site, niche, and link profile to plan your campaign.</p>
+            </div>
+            <div class="flex flex-col gap-2">
+              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 bg-[#4F46E5]">3</div>
+              <p class="text-sm font-semibold text-[#0A0F1E]">You Get a Proposal</p>
+              <p class="text-xs leading-relaxed text-[#64748B]">We send a tailored campaign proposal within one business day. No obligation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reassurance -->
+        <p class="text-center text-xs text-[#64748B]">
+          No retainers. No long-term commitments. Just results.
+        </p>
+
+        <!-- Submit button -->
+        <div class="flex justify-center">
+          <button id="form-submit" type="submit"
+            class="text-white font-bold py-4 px-10 rounded-xl text-base transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center gap-2 bg-[#4F46E5] hover:bg-[#4338CA] hover:shadow-[0_0_20px_4px_rgba(245,197,24,0.35)]"
+            style="width: 100%; max-width: 300px;">
+            <svg id="submit-mail-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span id="submit-text">Send Message</span>
+            <div id="submit-spinner" class="hidden w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+          </button>
+        </div>
+      </form>
+
+      <!-- Direct email -->
+      <p class="text-center text-sm mt-6 text-[#64748B]">
+        Prefer to reach out directly? Email us at
+        <a href="mailto:contact@ranking-atlas.com"
+          class="font-medium text-[#4F46E5] hover:text-[#4338CA] transition-colors">
+          contact@ranking-atlas.com
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-input:focus {
+    border-color: #4F46E5 !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.13);
+  }
+</style>
+
+<script>
+  var form = document.getElementById('contact-form');
+  var submitBtn = document.getElementById('form-submit');
+  var submitText = document.getElementById('submit-text');
+  var submitSpinner = document.getElementById('submit-spinner');
+  var submitMailIcon = document.getElementById('submit-mail-icon');
+  var successMsg = document.getElementById('form-success');
+  var errorMsg = document.getElementById('form-error');
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitText) submitText.textContent = 'Sending...';
+      if (submitMailIcon) submitMailIcon.classList.add('hidden');
+      if (submitSpinner) submitSpinner.classList.remove('hidden');
+      if (successMsg) successMsg.classList.add('hidden');
+      if (errorMsg) errorMsg.classList.add('hidden');
+
+      var data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        website: document.getElementById('website').value,
+        message: document.getElementById('message').value,
+        _replyto: 'contact@ranking-atlas.com',
+      };
+
+      fetch('https://formspree.io/f/xojkolng', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data),
+      })
+        .then(function(res) {
+          if (res.ok) {
+            if (successMsg) {
+              successMsg.classList.remove('hidden');
+              successMsg.style.display = 'flex';
+            }
+            form.reset();
+          } else {
+            if (errorMsg) errorMsg.classList.remove('hidden');
+          }
+        })
+        .catch(function() {
+          if (errorMsg) errorMsg.classList.remove('hidden');
+        })
+        .finally(function() {
+          if (submitBtn) submitBtn.disabled = false;
+          if (submitText) submitText.textContent = 'Send Message';
+          if (submitMailIcon) submitMailIcon.classList.remove('hidden');
+          if (submitSpinner) submitSpinner.classList.add('hidden');
+        });
+    });
+  }
+</script>
