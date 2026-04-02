@@ -124,15 +124,14 @@
 </style>
 
 <script>
-  var form = document.getElementById('contact-form');
-  var submitBtn = document.getElementById('form-submit');
-  var submitText = document.getElementById('submit-text');
-  var submitSpinner = document.getElementById('submit-spinner');
-  var submitMailIcon = document.getElementById('submit-mail-icon');
-  var successMsg = document.getElementById('form-success');
-  var errorMsg = document.getElementById('form-error');
+  document.querySelectorAll('#contact-form').forEach(function(form) {
+    var submitBtn = form.querySelector('#form-submit');
+    var submitText = form.querySelector('#submit-text');
+    var submitSpinner = form.querySelector('#submit-spinner');
+    var submitMailIcon = form.querySelector('#submit-mail-icon');
+    var successMsg = form.querySelector('#form-success');
+    var errorMsg = form.querySelector('#form-error');
 
-  if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
 
@@ -144,10 +143,10 @@
       if (errorMsg) errorMsg.classList.add('hidden');
 
       var data = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        website: document.getElementById('website').value,
-        message: document.getElementById('message').value,
+        name: form.querySelector('#name').value,
+        email: form.querySelector('#email').value,
+        website: form.querySelector('#website').value,
+        message: form.querySelector('#message').value,
         _replyto: 'contact@ranking-atlas.com',
       };
 
@@ -177,5 +176,5 @@
           if (submitSpinner) submitSpinner.classList.add('hidden');
         });
     });
-  }
+  });
 </script>
