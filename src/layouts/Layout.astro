@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = 'Ranking Atlas — Digital PR Agency',
-  description = 'Ranking Atlas — Digital PR Agency securing placements in the world\'s most reputable publications.',
+  title = 'Ranking Atlas — Digital PR Agency | High-Authority Backlinks, No Retainer',
+  description = 'A digital PR agency earning high-authority backlinks for SaaS, e-commerce, and tech brands through data-driven campaigns and expert commentary. No retainers, no contracts, minimum 8 links guaranteed per campaign.',
 } = Astro.props;
 ---
 
@@ -21,12 +21,24 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Ranking Atlas",
+      "url": "https://ranking-atlas.com",
+      "description": "A digital PR agency that earns high-authority backlinks for SaaS, e-commerce, and tech brands through data-driven campaigns and expert commentary. No retainers, no contracts, minimum 8 links guaranteed per campaign.",
+      "knowsAbout": ["Digital PR", "Link Building", "High-Authority Backlinks", "Editorial Backlinks", "Earned Media", "Data-Driven PR Campaigns", "Expert Commentary", "Journalist Outreach", "Newsjacking", "Reactive PR"],
+      "serviceType": "Digital PR Agency"
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
-  <body class="font-sans antialiased min-h-screen">
+  <body class="bg-[#F5F4EF] font-sans antialiased min-h-screen">
+    <div style="position: fixed; inset: 0; pointer-events: none; z-index: -1; background-image: linear-gradient(rgba(93,79,224,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(93,79,224,0.04) 1px, transparent 1px); background-size: 40px 40px;"></div>
     <Navbar />
     <slot />
     <Footer />
