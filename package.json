@@ -8,11 +8,12 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^4.16.18"
+    "astro": "^4.16.18",
+    "lucide-astro": "^0.556.0"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.17",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.1"
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17"
   }
 }

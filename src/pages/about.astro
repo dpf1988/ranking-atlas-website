@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PrimaryCTA from '../components/PrimaryCTA.astro';
 ---
 
 <Layout title="About — Ranking Atlas" description="Learn about Ranking Atlas, a digital PR agency built around earned results, not retainers.">
@@ -44,13 +45,7 @@ import Layout from '../layouts/Layout.astro';
       <p class="text-xl mb-10 max-w-xl mx-auto text-[#64748B]">
         $3.5K per campaign. Minimum 8 links guaranteed. No long-term contracts.
       </p>
-      <a href="/contact"
-        class="inline-flex items-center gap-2 bg-[#4F46E5] hover:bg-[#4338CA] text-white font-bold px-10 py-4 rounded-xl text-base transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_20px_4px_rgba(245,197,24,0.35)]">
-        Start a Campaign – $3.5K
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-      </a>
+      <PrimaryCTA href="/contact" />
     </div>
   </section>
 

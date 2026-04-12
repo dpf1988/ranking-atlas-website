@@ -27,4 +27,21 @@
       transform: translateX(-50%);
     }
   }
+
+  .animate-marquee-slow {
+    animation: marquee-slow 50s linear infinite;
+  }
+
+  .animate-marquee-slow:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-slow {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }

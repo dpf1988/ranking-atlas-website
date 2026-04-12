@@ -1,0 +1,18 @@
+---
+interface Props {
+  label: string;
+  variant?: 'light' | 'dark';
+}
+const { label, variant = 'light' } = Astro.props;
+---
+{variant === 'dark' ? (
+  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 mb-6">
+    <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+    <span class="text-xs font-semibold tracking-[0.15em] uppercase text-white">{label}</span>
+  </div>
+) : (
+  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#5D4FE0]/10 border border-[#5D4FE0]/15 mb-6">
+    <span class="w-1.5 h-1.5 rounded-full bg-[#5D4FE0]"></span>
+    <span class="text-xs font-semibold tracking-[0.15em] uppercase text-[#5D4FE0]">{label}</span>
+  </div>
+)}

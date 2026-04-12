@@ -1,0 +1,355 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrimaryCTA from '../components/PrimaryCTA.astro';
+import SecondaryCTA from '../components/SecondaryCTA.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import { Network, TrendingDown, Quote, Check, X } from 'lucide-astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Search Visibility: How ChatGPT, Perplexity, and Gemini Pick Sources",
+  "description": "A practical guide to how AI search engines pick which brands to cite, why editorial coverage is the signal that matters, and how B2B SaaS brands are earning visibility in ChatGPT, Perplexity, Gemini, and Google AI Overviews.",
+  "author": { "@type": "Organization", "name": "Ranking Atlas" },
+  "datePublished": "2026-04-13",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas" }
+};
+---
+
+<Layout
+  title="AI Search Visibility: How ChatGPT, Perplexity, and Gemini Pick Sources — Ranking Atlas"
+  description="A practical guide to how AI search engines pick which brands to cite, why editorial coverage is the signal that matters, and how B2B SaaS brands are earning visibility in ChatGPT, Perplexity, Gemini, and Google AI Overviews."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <!-- ── 1. HERO ── -->
+  <section class="relative overflow-hidden py-24 lg:py-32">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full opacity-[0.10] blur-[140px]"
+           style="background: radial-gradient(circle, #5D4FE0 0%, transparent 70%);"></div>
+    </div>
+    <div class="absolute inset-0 opacity-[0.02] pointer-events-none" aria-hidden="true"
+      style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <Eyebrow label="The Guide" />
+      <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-black leading-[1.08] tracking-tighter text-[#0A0F1E] mb-6">
+        How AI search picks <span class="relative inline-block pb-2">which brands to cite<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3 text-[#5D4FE0]" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
+      </h1>
+      <p class="text-lg text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-8">
+        A practical breakdown of how ChatGPT, Perplexity, Gemini, and Google AI Overviews decide who to surface — and why editorial coverage is the signal that matters.
+      </p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <PrimaryCTA href="/contact" />
+        <SecondaryCTA href="#framework" label="How we build citation equity" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. THE SHIFT ── -->
+  <section id="the-shift" class="bg-white py-24 lg:py-32">
+    <div class="max-w-3xl mx-auto px-6">
+      <Eyebrow label="The Shift" />
+      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-6">
+        AI search is a vendor-research channel now.
+      </h2>
+      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium">
+        B2B buyers are no longer starting on Google. They're asking ChatGPT, Perplexity, and Gemini who to trust — and the brands those tools cite enter the consideration set before a sales team ever hears the buyer's name.
+      </p>
+      <p class="text-base text-[#475569] leading-relaxed mb-6">
+        The shift isn't theoretical. <a class="inline-link" href="https://digitalcontentnext.org/blog/2025/05/06/googles-ai-overviews-linked-to-lower-publisher-clicks/" target="_blank" rel="noopener noreferrer">Digital Content Next</a> reported that median Google referral traffic fell 10% year-over-year in 2025, with non-news brands down 14%. <a class="inline-link" href="https://www.dataslayer.ai/blog/google-ai-overviews-the-end-of-traditional-ctr-and-how-to-adapt-in-2025" target="_blank" rel="noopener noreferrer">Seer Interactive</a> found organic click-through rates dropped 61% on queries where an AI Overview appeared. That traffic is going somewhere — increasingly, it's staying inside ChatGPT, Perplexity, and the Google AI Overview itself.
+      </p>
+      <p class="text-base text-[#475569] leading-relaxed mb-6">
+        The shift is sharpest in categories where trust and authority matter most — fintech, privacy, cybersecurity, data infrastructure. These are the categories where B2B buyers most want an authoritative voice to validate their shortlist. Which is exactly what AI search now offers: a synthesised answer with named brands, citing trusted publishers. If your category is one where buyers trust editorial sources more than vendor marketing, your brand's presence inside AI answers is no longer marginal. It's the top of the funnel.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 3. HOW AI PICKS SOURCES ── -->
+  <section id="how-ai-picks" class="py-24 lg:py-32" style="background: #F8F7FA;">
+    <div class="max-w-5xl mx-auto px-6">
+      <Eyebrow label="The Mechanism" />
+      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-6 max-w-3xl">
+        How ChatGPT, Perplexity, and Gemini decide who to cite.
+      </h2>
+      <p class="text-xl text-[#475569] leading-relaxed mb-12 font-medium max-w-3xl">
+        AI search engines are not ranking pages. They're selecting sources. The difference matters.
+      </p>
+      <p class="text-base text-[#475569] leading-relaxed mb-10 max-w-3xl">
+        When someone asks ChatGPT "best fintech compliance tools" or "most trusted B2B data security vendors", the model isn't ranking results the way Google does. It's retrieving content from sources it treats as trustworthy, synthesising an answer, and citing the domains that contributed. The brands that get cited are the brands whose footprint matches the model's trust signals.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
+          <div class="w-12 h-12 rounded-xl bg-[#5D4FE0]/10 flex items-center justify-center mb-6">
+            <Network size={22} class="text-[#5D4FE0]" />
+          </div>
+          <p class="text-4xl font-black text-[#0A0F1E] mb-2">#1</p>
+          <p class="text-sm font-semibold text-[#64748B] mb-4">predictor of AI citations</p>
+          <p class="text-base text-[#475569] leading-relaxed">
+            <a class="inline-link" href="https://www.searchenginejournal.com/new-data-top-factors-influencing-chatgpt-citations/561954/" target="_blank" rel="noopener noreferrer">SE Ranking's analysis of 129,000 domains</a> found referring domains — the number of distinct trusted publishers linking to you — is the single strongest signal of whether ChatGPT will cite your brand.
+          </p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
+          <div class="w-12 h-12 rounded-xl bg-[#5D4FE0]/10 flex items-center justify-center mb-6">
+            <TrendingDown size={22} class="text-[#5D4FE0]" />
+          </div>
+          <p class="text-4xl font-black text-[#0A0F1E] mb-2">46.7%</p>
+          <p class="text-sm font-semibold text-[#64748B] mb-4">click-through drop with AI Overviews</p>
+          <p class="text-base text-[#475569] leading-relaxed">
+            <a class="inline-link" href="https://digitalcontentnext.org/blog/2025/05/06/googles-ai-overviews-linked-to-lower-publisher-clicks/" target="_blank" rel="noopener noreferrer">Pew Research's study of 68,000 real search queries</a> found users clicked results only 8% of the time when an AI summary appeared, versus 15% without — nearly a halving of downstream traffic.
+          </p>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
+          <div class="w-12 h-12 rounded-xl bg-[#5D4FE0]/10 flex items-center justify-center mb-6">
+            <Quote size={22} class="text-[#5D4FE0]" />
+          </div>
+          <p class="text-4xl font-black text-[#0A0F1E] mb-2">680M</p>
+          <p class="text-sm font-semibold text-[#64748B] mb-4">citations analysed</p>
+          <p class="text-base text-[#475569] leading-relaxed">
+            <a class="inline-link" href="https://almcorp.com/blog/ai-search-press-release-citations/" target="_blank" rel="noopener noreferrer">Profound's analysis</a> of 680 million citations across ChatGPT, Google AI Overviews, and Perplexity found platforms have meaningfully different preferences — but they share a strong bias toward earned editorial coverage over owned content.
+          </p>
+        </div>
+      </div>
+
+      <p class="text-base text-[#475569] leading-relaxed mt-10 max-w-3xl">
+        The pattern across every large-scale study is the same. AI search systems rely on third-party validation signals — who links to you, who cites you, who references your brand in trusted editorial — to decide whose answers deserve to appear. Content you publish on your own domain barely moves the needle. Coverage earned on authoritative publishers does.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 4. GEO VS SEO ── -->
+  <section id="geo-vs-seo" class="bg-white py-24 lg:py-32">
+    <div class="max-w-5xl mx-auto px-6">
+      <Eyebrow label="GEO vs SEO" />
+      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-6 max-w-3xl">
+        Generative engine optimisation isn't SEO with a rebrand.
+      </h2>
+      <p class="text-xl text-[#475569] leading-relaxed mb-12 font-medium max-w-3xl">
+        Generative engine optimisation — GEO — is the practice of earning visibility in AI-generated answers. It overlaps with SEO but diverges on the fundamentals that matter most.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- SEO card (muted) -->
+        <div class="bg-[#F1F5F9] rounded-2xl p-8 border border-[#0A0F1E]/8">
+          <h3 class="text-lg font-bold text-[#0A0F1E] mb-4">Traditional SEO</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm text-[#475569]">
+              <X size={16} class="text-[#94A3B8] shrink-0 mt-0.5" />
+              Optimises pages on your own domain
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[#475569]">
+              <X size={16} class="text-[#94A3B8] shrink-0 mt-0.5" />
+              Measured by keyword rankings and clicks
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[#475569]">
+              <X size={16} class="text-[#94A3B8] shrink-0 mt-0.5" />
+              Rewards on-page signals: titles, headings, schema
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[#475569]">
+              <X size={16} class="text-[#94A3B8] shrink-0 mt-0.5" />
+              Assumes a list of ten blue links
+            </li>
+          </ul>
+        </div>
+        <!-- GEO card (brand-emphasis) -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-[#5D4FE0]/20 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
+          <h3 class="text-lg font-bold text-[#5D4FE0] mb-4">Generative engine optimisation</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium">
+              <Check size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />
+              Earns coverage across third-party authority publishers
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium">
+              <Check size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />
+              Measured by citation frequency in AI answers
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium">
+              <Check size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />
+              Rewards off-domain signals: who links, who mentions, who cites
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium">
+              <Check size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />
+              Assumes a synthesised answer that names three or four brands
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-base text-[#475569] leading-relaxed mt-10 max-w-3xl">
+        There's overlap. A strong SEO foundation helps — <a class="inline-link" href="https://www.ekamoira.com/blog/chatgpt-seo-the-complete-guide-to-ranking-in-chatgpt-search-results-2026" target="_blank" rel="noopener noreferrer">Seer Interactive found a 0.65 correlation</a> between Google rankings and LLM mentions. But it's not enough. The brands cited by AI are the brands with editorial footprints across publishers, not the brands with the most optimised landing pages.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 5. FRAMEWORK ── -->
+  <section id="framework" class="py-24 lg:py-32" style="background: #F8F7FA;">
+    <div class="max-w-5xl mx-auto px-6">
+      <Eyebrow label="The Practice" />
+      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-6 max-w-3xl">
+        How we build citation equity.
+      </h2>
+      <p class="text-xl text-[#475569] leading-relaxed mb-12 font-medium max-w-3xl">
+        The signal AI search systems use is pattern — repeated mentions across trusted publishers. Earning that pattern is a practice, not a tactic. This is how Ranking Atlas runs it.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Step 01 -->
+        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
+          <p class="text-4xl font-black text-[#5D4FE0]/30 mb-4">01</p>
+          <h3 class="text-lg font-bold text-[#0A0F1E] mb-3">Audit your citation footprint</h3>
+          <p class="text-base text-[#475569] leading-relaxed">Before we can move visibility, we map where you stand. Which publishers already cite your brand? Where do your competitors appear that you don't? Which AI queries in your category surface you today, and which surface someone else? The audit is the baseline every campaign measures against.</p>
+        </div>
+        <!-- Step 02 -->
+        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
+          <p class="text-4xl font-black text-[#5D4FE0]/30 mb-4">02</p>
+          <h3 class="text-lg font-bold text-[#0A0F1E] mb-3">Build stories publishers want to cover</h3>
+          <p class="text-base text-[#475569] leading-relaxed">Journalists don't run press releases. They run stories. We develop data-led research, original analysis, and contrarian angles anchored in evidence — the material that earns coverage on authority publishers instead of being ignored.</p>
+        </div>
+        <!-- Step 03 -->
+        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
+          <p class="text-4xl font-black text-[#5D4FE0]/30 mb-4">03</p>
+          <h3 class="text-lg font-bold text-[#0A0F1E] mb-3">Place the story repeatedly, not once</h3>
+          <p class="text-base text-[#475569] leading-relaxed">One article in Forbes is a line on a press page. A pattern of coverage across Forbes, Bloomberg, The Telegraph, and three trade publications is what AI search systems treat as an authority signal. Omnipresence is the asset we build.</p>
+        </div>
+        <!-- Step 04 -->
+        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
+          <p class="text-4xl font-black text-[#5D4FE0]/30 mb-4">04</p>
+          <h3 class="text-lg font-bold text-[#0A0F1E] mb-3">Measure AI visibility, not just rankings</h3>
+          <p class="text-base text-[#475569] leading-relaxed">Every campaign includes before-and-after measurement of citation frequency across ChatGPT, Perplexity, Gemini, and Google AI Overviews on your category queries. Ranking #3 on Google doesn't tell you whether ChatGPT names you. Direct measurement does.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <PrimaryCTA href="/contact" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. FAQ ── -->
+  <section class="relative bg-[#0A0F1E] py-24 lg:py-32 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full"
+        style="background: radial-gradient(ellipse, rgba(93,79,224,0.12) 0%, transparent 70%);">
+      </div>
+    </div>
+    <div class="relative max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <Eyebrow label="FAQ" variant="dark" />
+        <h2 class="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
+          Questions about AI search visibility.
+        </h2>
+      </div>
+
+      <div class="divide-y divide-white/10" id="ai-faq-list">
+
+        <div class="ai-faq-item">
+          <button class="ai-faq-btn w-full flex items-center justify-between gap-4 py-6 text-left group" data-ai-index="0" type="button">
+            <span class="ai-faq-question text-base sm:text-lg font-semibold text-white transition-colors duration-200">Is GEO the same as AEO?</span>
+            <svg class="ai-faq-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ai-faq-answer hidden pb-6">
+            <p class="text-base leading-relaxed text-[#64748B]">GEO (generative engine optimisation) and AEO (answer engine optimisation) are used roughly interchangeably. Both describe the practice of optimising for AI-generated answers rather than traditional search results. GEO is becoming the more common industry term.</p>
+          </div>
+        </div>
+
+        <div class="ai-faq-item">
+          <button class="ai-faq-btn w-full flex items-center justify-between gap-4 py-6 text-left group" data-ai-index="1" type="button">
+            <span class="ai-faq-question text-base sm:text-lg font-semibold text-white transition-colors duration-200">Can I optimise my own content to get cited?</span>
+            <svg class="ai-faq-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ai-faq-answer hidden pb-6">
+            <p class="text-base leading-relaxed text-[#64748B]">On-page structure matters at the margin — clean headings, factual accuracy, schema — but every large-scale study finds the dominant signal is off-domain: who else cites you. You cannot optimise your own content into an AI citation. You can earn the editorial coverage that triggers one.</p>
+          </div>
+        </div>
+
+        <div class="ai-faq-item">
+          <button class="ai-faq-btn w-full flex items-center justify-between gap-4 py-6 text-left group" data-ai-index="2" type="button">
+            <span class="ai-faq-question text-base sm:text-lg font-semibold text-white transition-colors duration-200">How long does it take for editorial coverage to move AI visibility?</span>
+            <svg class="ai-faq-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ai-faq-answer hidden pb-6">
+            <p class="text-base leading-relaxed text-[#64748B]">AI systems update their source rankings continuously. In practice, coverage tends to show up in citation tracking within four to eight weeks of publication, depending on the publisher's crawl frequency and the AI platform.</p>
+          </div>
+        </div>
+
+        <div class="ai-faq-item">
+          <button class="ai-faq-btn w-full flex items-center justify-between gap-4 py-6 text-left group" data-ai-index="3" type="button">
+            <span class="ai-faq-question text-base sm:text-lg font-semibold text-white transition-colors duration-200">Does Wikipedia presence matter?</span>
+            <svg class="ai-faq-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ai-faq-answer hidden pb-6">
+            <p class="text-base leading-relaxed text-[#64748B]">Yes, significantly — especially for ChatGPT. But Wikipedia pages require pre-existing notability, which usually means sustained editorial coverage across independent publishers first. Citation equity comes before Wikipedia, not the other way round.</p>
+          </div>
+        </div>
+
+        <div class="ai-faq-item">
+          <button class="ai-faq-btn w-full flex items-center justify-between gap-4 py-6 text-left group" data-ai-index="4" type="button">
+            <span class="ai-faq-question text-base sm:text-lg font-semibold text-white transition-colors duration-200">What's the minimum editorial footprint to start showing up?</span>
+            <svg class="ai-faq-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ai-faq-answer hidden pb-6">
+            <p class="text-base leading-relaxed text-[#64748B]">There's no single threshold. SE Ranking's data shows an inflection around 32,000 referring domains, but that's for broad consumer queries. In narrower B2B categories, meaningful presence can emerge at a fraction of that, particularly when coverage is concentrated in a few authoritative publishers your buyers already read.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. FINAL CTA BAND ── -->
+  <section class="relative overflow-hidden py-24 lg:py-32 text-center" style="background: #5D4FE0;">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
+    <div class="relative max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6">
+        Be the brand <span class="relative inline-block pb-2">AI recommends<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
+      </h2>
+      <p class="text-lg text-white/80 mb-10">Per-campaign. Fixed price. Guaranteed placements on authority publishers.</p>
+      <a href="/contact"
+        class="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white text-[#5D4FE0] font-bold text-base hover:bg-white/95 transition-all duration-200 hover:-translate-y-0.5 shadow-[0_8px_30px_-8px_rgba(0,0,0,0.3)]">
+        Start a Campaign — $3.5K →
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  var aiOpenIndex: number | null = null;
+
+  document.querySelectorAll('.ai-faq-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var i = parseInt((btn as HTMLElement).getAttribute('data-ai-index') || '0');
+      var item = (btn as HTMLElement).closest('.ai-faq-item');
+      var answer = item ? item.querySelector('.ai-faq-answer') : null;
+      var chevron = item ? item.querySelector('.ai-faq-chevron') : null;
+      var question = item ? item.querySelector('.ai-faq-question') : null;
+
+      if (aiOpenIndex === i) {
+        if (answer) answer.classList.add('hidden');
+        if (chevron) (chevron as HTMLElement).setAttribute('style', 'color: #64748B; transform: rotate(0deg)');
+        if (question) (question as HTMLElement).setAttribute('style', 'color: white');
+        aiOpenIndex = null;
+      } else {
+        if (aiOpenIndex !== null) {
+          var prevBtn = document.querySelector('[data-ai-index="' + aiOpenIndex + '"]');
+          var prevItem = prevBtn ? (prevBtn as HTMLElement).closest('.ai-faq-item') : null;
+          if (prevItem) {
+            var pa = prevItem.querySelector('.ai-faq-answer');
+            var pc = prevItem.querySelector('.ai-faq-chevron');
+            var pq = prevItem.querySelector('.ai-faq-question');
+            if (pa) pa.classList.add('hidden');
+            if (pc) (pc as HTMLElement).setAttribute('style', 'color: #64748B; transform: rotate(0deg)');
+            if (pq) (pq as HTMLElement).setAttribute('style', 'color: white');
+          }
+        }
+        if (answer) answer.classList.remove('hidden');
+        if (chevron) (chevron as HTMLElement).setAttribute('style', 'color: #5D4FE0; transform: rotate(180deg)');
+        if (question) (question as HTMLElement).setAttribute('style', 'color: #5D4FE0');
+        aiOpenIndex = i;
+      }
+    });
+  });
+</script>

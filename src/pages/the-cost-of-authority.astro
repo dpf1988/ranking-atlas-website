@@ -1,0 +1,658 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrimaryCTA from '../components/PrimaryCTA.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import { Check, X, ArrowRight } from 'lucide-astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Real Cost of Backlinks (2026) — SaaS Price Index",
+  "description": "Research and pricing data on editorial citation acquisition in 2026, published by Ranking Atlas.",
+  "author": { "@type": "Organization", "name": "Ranking Atlas" },
+  "datePublished": "2026-03-01",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas" }
+};
+---
+
+<Layout
+  title="The SaaS Price Index 2026 — Ranking Atlas"
+  description="Research and pricing data on editorial citation acquisition in 2026, published by Ranking Atlas."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <!-- ── HERO ── -->
+  <section class="relative overflow-hidden py-24 lg:py-32">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full opacity-[0.10] blur-[140px]"
+           style="background: radial-gradient(circle, #5D4FE0 0%, transparent 70%);"></div>
+    </div>
+    <div class="absolute inset-0 opacity-[0.02] pointer-events-none" aria-hidden="true"
+      style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <Eyebrow label="2026 Edition" />
+      <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-black leading-[1.08] tracking-tighter text-[#0A0F1E] mb-6">
+        The Real Cost of Backlinks
+      </h1>
+      <p class="text-xl text-[#475569] leading-relaxed max-w-2xl mx-auto mb-6 font-medium">
+        Backlinks remain one of the strongest ranking signals in search. Yet the market for acquiring them is opaque, fragmented, and rife with inflated metrics.
+      </p>
+      <p class="text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-4">
+        This report analyses pricing data from over 140,000 publisher listings across 10 major link marketplaces, cross-referenced with published rates from named service providers and independent industry studies. It examines the cost of link acquisition across four dimensions:
+      </p>
+      <ul class="text-base text-[#64748B] text-left inline-block mb-6 space-y-1">
+        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Domain Rating (DR 10 through DR 80+)</li>
+        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Organic traffic (zero-traffic sites through 50,000+ monthly visitors)</li>
+        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Niche and industry vertical</li>
+        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Acquisition method (guest posts, niche edits, and earned media through digital PR)</li>
+      </ul>
+      <p class="text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-10">
+        The findings suggest that the majority of marketplace inventory fails basic quality thresholds, that pricing bears limited correlation to actual link value, and that earned media through digital PR delivers a structurally different — and more durable — outcome than purchased links at comparable or lower cost per placement.
+      </p>
+      <p class="text-sm text-[#94A3B8] mb-12">Based on 140,000+ publisher listings across 10 marketplaces &nbsp;·&nbsp; Published March 2026 &nbsp;·&nbsp; By Daniel Grainger</p>
+
+      <!-- 4 stat cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#94A3B8] mb-2">Avg. guest post cost</p>
+          <p class="text-4xl font-black text-[#0A0F1E] mb-1">$365</p>
+          <p class="text-xs text-[#64748B]">Direct from publisher</p>
+          <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-[#0A0F1E] text-white text-xs rounded-lg p-3 leading-relaxed z-10 pointer-events-none">
+            The average price a publisher charges for a single guest post placement, bought directly through a marketplace. This is the base cost before any vendor or agency markup.
+          </div>
+        </div>
+        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#94A3B8] mb-2">Avg. vendor markup</p>
+          <p class="text-4xl font-black text-[#0A0F1E] mb-1">75%</p>
+          <p class="text-xs text-[#64748B]">Buying through intermediaries</p>
+          <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-[#0A0F1E] text-white text-xs rounded-lg p-3 leading-relaxed z-10 pointer-events-none">
+            When you buy through an agency or managed service instead of directly on a marketplace, you pay an average of 75% more. A $365 direct placement becomes ~$1,459 through an intermediary.
+          </div>
+        </div>
+        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#94A3B8] mb-2">Quality-filtered avg.</p>
+          <p class="text-4xl font-black text-[#0A0F1E] mb-1">$930</p>
+          <p class="text-xs text-[#64748B]">DR50+ with real traffic</p>
+          <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-[#0A0F1E] text-white text-xs rounded-lg p-3 leading-relaxed z-10 pointer-events-none">
+            When you filter marketplace listings to only include sites with DR50+ and real organic traffic (1,000+ monthly visitors), the average price jumps to $930. Quality links cost far more than the headline average suggests.
+          </div>
+        </div>
+        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#94A3B8] mb-2">Meet quality bar</p>
+          <p class="text-4xl font-black text-[#0A0F1E] mb-1">4.6%</p>
+          <p class="text-xs text-[#64748B]">Of all marketplace listings</p>
+          <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-[#0A0F1E] text-white text-xs rounded-lg p-3 leading-relaxed z-10 pointer-events-none">
+            Of all guest post sites on marketplaces, only 4.6% meet basic quality criteria: minimum DR40 and minimum 1,000 monthly organic traffic. The other 95.4% are unlikely to deliver meaningful SEO value.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING DATA ── -->
+  <section id="data" class="bg-white py-24 lg:py-32">
+    <div class="max-w-4xl mx-auto px-6">
+      <Eyebrow label="Pricing Data" />
+      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
+        The Cost of Buying a Link
+      </h2>
+      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium max-w-2xl">
+        Marketplace pricing for guest posts and niche edits, broken down by Domain Rating. Prices scale exponentially — a DR80+ placement costs 10–100x more than a DR20.
+      </p>
+
+      <div class="overflow-hidden rounded-2xl border border-[#0A0F1E]/8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-[#F1F5F9]">
+              <th class="text-left px-6 py-4 text-xs font-semibold uppercase tracking-widest text-[#64748B]">DR range</th>
+              <th class="text-left px-6 py-4 text-xs font-semibold uppercase tracking-widest text-[#64748B]">Guest post</th>
+              <th class="text-left px-6 py-4 text-xs font-semibold uppercase tracking-widest text-[#64748B]">Niche edit</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="bg-white hover:bg-[#F8F7FA] transition-colors">
+              <td class="px-6 py-4 font-semibold text-[#0A0F1E]">DR 10–20</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$70–150</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$49–100</td>
+            </tr>
+            <tr class="bg-[#F8F7FA]/50 hover:bg-[#F8F7FA] transition-colors">
+              <td class="px-6 py-4 font-semibold text-[#0A0F1E]">DR 20–30</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$100–250</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$75–225</td>
+            </tr>
+            <tr class="bg-white hover:bg-[#F8F7FA] transition-colors">
+              <td class="px-6 py-4 font-semibold text-[#0A0F1E]">DR 30–40</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$150–400</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$150–350</td>
+            </tr>
+            <tr class="bg-[#F8F7FA]/50 hover:bg-[#F8F7FA] transition-colors">
+              <td class="px-6 py-4 font-semibold text-[#0A0F1E]">DR 40–50</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$250–600</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$250–400</td>
+            </tr>
+            <tr class="bg-white hover:bg-[#F8F7FA] transition-colors">
+              <td class="px-6 py-4 font-semibold text-[#0A0F1E]">DR 50–60</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$400–700</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$350–600</td>
+            </tr>
+            <tr class="bg-[#F8F7FA]/50 hover:bg-[#F8F7FA] transition-colors">
+              <td class="px-6 py-4 font-semibold text-[#0A0F1E]">DR 60–70</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$500–1,000</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$500–700</td>
+            </tr>
+            <tr class="bg-white hover:bg-[#F8F7FA] transition-colors">
+              <td class="px-6 py-4 font-semibold text-[#0A0F1E]">DR 70–80</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$800–2,000</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$700–1,000+</td>
+            </tr>
+            <tr class="bg-[#F8F7FA]/50 hover:bg-[#F8F7FA] transition-colors">
+              <td class="px-6 py-4 font-semibold text-[#0A0F1E]">DR 80+</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$1,500–10,000+</td>
+              <td class="px-6 py-4 font-mono font-medium text-[#0A0F1E]">$1,000+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-[#94A3B8] mt-4">Prices reflect direct marketplace rates. Buying through a vendor or managed service typically adds a 75% markup.</p>
+    </div>
+  </section>
+
+  <!-- ── TRAFFIC HEATMAP ── -->
+  <section id="heatmap" class="py-24 lg:py-32" style="background: #F8F7FA;">
+    <div class="max-w-4xl mx-auto px-6">
+      <Eyebrow label="Traffic vs DR" />
+      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
+        The Hidden Variable: Traffic
+      </h2>
+      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium max-w-2xl">
+        DR alone is an unreliable guide to link value. A high-DR site with no traffic may have an inflated rating. This heatmap shows how organic traffic changes the price — and the value — of a link at every DR tier.
+      </p>
+
+      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] p-6 mb-10 overflow-x-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#94A3B8] mb-4">Average guest post price (USD) by DR and monthly organic traffic</p>
+        <div id="heatmapEl"></div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="bg-white border-l-4 border-[#5D4FE0] rounded-r-2xl p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
+          <p class="text-3xl font-black text-[#5D4FE0] mb-2">19%</p>
+          <p class="text-sm text-[#475569] leading-relaxed">Of marketplace guest post sites receive fewer than 100 monthly organic visitors — yet many still charge mid-tier prices. A $300 link on a zero-traffic DR50 site delivers less value than a $150 link on a DR30 site with 10,000 real visitors.</p>
+        </div>
+        <div class="bg-white border-l-4 border-[#5D4FE0] rounded-r-2xl p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
+          <p class="text-3xl font-black text-[#5D4FE0] mb-2">53%</p>
+          <p class="text-sm text-[#475569] leading-relaxed">Of DR71+ sites on marketplace databases fall into mid- or low-quality categories because they have under 50,000 monthly organic traffic. High DR without traffic is a red flag.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── UNDERSTANDING LINK VALUE ── -->
+  <section id="learn" class="bg-white py-24 lg:py-32">
+    <div class="max-w-4xl mx-auto px-6">
+      <Eyebrow label="Link Quality" />
+      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
+        Understanding Link Value
+      </h2>
+      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium max-w-2xl">
+        Not all backlinks are equal. These factors determine whether a link moves rankings or wastes budget.
+      </p>
+
+      <div class="divide-y divide-[#0A0F1E]/8 border border-[#0A0F1E]/8 rounded-2xl overflow-hidden mb-12" id="pi-acc-list-1">
+        <div class="pi-acc-item">
+          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="0" type="button">
+            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">What is Domain Rating and why does it matter?</span>
+            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
+            <p class="text-base text-[#475569] leading-relaxed mb-3">Domain Rating is a metric developed by Ahrefs that scores a website's backlink profile strength on a scale of 0 to 100. Higher DR generally indicates a stronger domain. It's the most widely used proxy for link value, which is why higher-DR sites charge more.</p>
+            <p class="text-base text-[#475569] leading-relaxed">However, DR can be artificially inflated through link schemes — which is why it should never be the sole factor in evaluating a link. Always cross-reference with organic traffic, editorial quality, and topical relevance.</p>
+          </div>
+        </div>
+        <div class="pi-acc-item">
+          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="1" type="button">
+            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">Why traffic matters more than DR alone</span>
+            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
+            <p class="text-base text-[#475569] leading-relaxed mb-3">A site's organic traffic is a stronger indicator of genuine authority than its Domain Rating. Google's ranking systems have already validated a site that receives consistent organic traffic — it's earning real clicks from real search queries.</p>
+            <p class="text-base text-[#475569] leading-relaxed">BuzzStream's analysis found that 53% of DR71+ sites on marketplace databases have under 50,000 monthly organic traffic. The DR number suggests premium value; the traffic data tells a different story.</p>
+          </div>
+        </div>
+        <div class="pi-acc-item">
+          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="2" type="button">
+            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">What makes a link editorially valuable?</span>
+            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
+            <p class="text-base text-[#475569] leading-relaxed mb-3">An editorially valuable link is one placed by a journalist, editor, or content creator because it genuinely enhances their content — not because someone paid for it. These links appear in news articles, feature stories, expert roundups, and data-driven reporting.</p>
+            <p class="text-base text-[#475569] leading-relaxed">Google's algorithm leak revealed that the search engine evaluates links from high-click areas of sites that are updated frequently — characteristics of genuine editorial content on active publications.</p>
+          </div>
+        </div>
+        <div class="pi-acc-item">
+          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="3" type="button">
+            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">Dofollow vs nofollow in 2026</span>
+            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
+            <p class="text-base text-[#475569] leading-relaxed mb-3">Dofollow links pass ranking signals to the target page. Nofollow links include an attribute telling search engines not to pass credit. Most paid placements target dofollow links for the direct SEO benefit.</p>
+            <p class="text-base text-[#475569] leading-relaxed">In practice, the distinction has blurred since Google began treating nofollow as a "hint" rather than a directive in 2019. A nofollow link from a major publication still provides referral traffic, brand visibility, and entity recognition. A natural link profile contains both.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-[#0A0F1E] mb-2 mt-4">Risk and Compliance</h3>
+      <p class="text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-2xl">
+        The cost of a link is not just the price you pay. It includes the risk you take.
+      </p>
+
+      <div class="divide-y divide-[#0A0F1E]/8 border border-[#0A0F1E]/8 rounded-2xl overflow-hidden mb-10" id="pi-acc-list-2">
+        <div class="pi-acc-item">
+          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="4" type="button">
+            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">What Google considers a link scheme</span>
+            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
+            <p class="text-base text-[#475569] leading-relaxed mb-3">Google's spam policies classify several practices as link schemes: buying or selling links that pass PageRank, exchanging goods or services for links, and large-scale guest posting campaigns with keyword-rich anchor text.</p>
+            <p class="text-base text-[#475569] leading-relaxed">Both paid guest posts and paid niche edits fall within this definition. The practical risk depends on scale and detectability — a single placement is unlikely to trigger a penalty, but building a profile primarily through marketplace purchases creates a pattern Google's systems are designed to detect.</p>
+          </div>
+        </div>
+        <div class="pi-acc-item">
+          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="5" type="button">
+            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">The Helpful Content Update and marketplace sites</span>
+            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
+            <p class="text-base text-[#475569] leading-relaxed mb-3">Google's Helpful Content Update specifically targeted sites that exist primarily to host third-party content for SEO purposes. Many sites that accepted paid guest posts at scale were deindexed or severely demoted.</p>
+            <p class="text-base text-[#475569] leading-relaxed">Buyers who had invested in links on these sites found their backlink profiles devalued overnight with no recourse. Most marketplace services offer 6–12 month guarantees, but a replacement link on another marketplace site carries the same underlying risk.</p>
+          </div>
+        </div>
+        <div class="pi-acc-item">
+          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="6" type="button">
+            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">Why earned editorial links carry zero penalty risk</span>
+            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
+            <p class="text-base text-[#475569] leading-relaxed mb-3">Links placed by journalists and editors through genuine editorial decisions are exactly what Google's ranking system was designed to reward. The link was not purchased, the publisher was not compensated, and the editorial decision was independent.</p>
+            <p class="text-base text-[#475569] leading-relaxed">There is no mechanism by which a genuine editorial link can trigger a penalty. The publication also carries near-zero deindexation risk — established media outlets are not targets for Google's spam enforcement.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border-l-4 border-[#5D4FE0] rounded-r-2xl p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
+        <p class="text-3xl font-black text-[#5D4FE0] mb-2">20–40%</p>
+        <p class="text-sm text-[#475569] leading-relaxed">Increase in publisher placement fees over the past two years. The cost of buying links is rising. Meanwhile, the risk of those links being devalued by algorithm updates is also rising.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOUGHT VS EARNED ── -->
+  <section id="compare" class="py-24 lg:py-32" style="background: #F8F7FA;">
+    <div class="max-w-4xl mx-auto px-6">
+      <Eyebrow label="Comparison" />
+      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
+        Bought Links vs Earned Links
+      </h2>
+      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium max-w-2xl">
+        Every link in the marketplace data above is a bought link. Anyone with a budget can acquire them. The question is whether that builds a lasting advantage — or just a temporary one.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <!-- Bought -->
+        <div class="bg-[#F1F5F9] rounded-2xl p-8 border border-[#0A0F1E]/8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#DC2626] mb-4">Bought links</p>
+          <p class="text-sm text-[#475569] leading-relaxed mb-6">A commodity. Your competitors can buy the same link on the same site for the same price. The publisher's incentive is the fee, not the quality of your content.</p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />Available to any competitor with budget</li>
+            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />15–25% annual attrition rate</li>
+            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />Host site deindexation risk</li>
+            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />Classified as link scheme by Google</li>
+            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />No brand recognition or audience exposure</li>
+            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />95% of sites fail basic quality filters</li>
+          </ul>
+        </div>
+        <!-- Earned -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-[#5D4FE0]/20 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#15803D] mb-4">Earned links</p>
+          <p class="text-sm text-[#475569] leading-relaxed mb-6">A signal that your brand has something worth covering. Requires a genuine story — original data, expert insight, or newsworthy commentary. Your competitors cannot buy this.</p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Cannot be replicated by competitors with budget alone</li>
+            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Avg. link lifespan 10+ years on established publications</li>
+            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Zero deindexation risk on editorial sites</li>
+            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Exactly what Google's algorithm rewards</li>
+            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Brand mentions, expert positioning, real audience</li>
+            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Compounds — each placement builds authority</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-base text-[#475569] leading-relaxed mb-4">
+        Earned links are not free. They require investment in creating something worth covering — a data study, expert commentary, a newsworthy angle. They take longer to materialise than a marketplace purchase, and you don't control the exact anchor text or placement. But these constraints are features: they're what makes earned links defensible, durable, and valued by search engines.
+      </p>
+      <p class="text-base text-[#475569] leading-relaxed mb-8">
+        Digital PR makes the most sense for businesses where a single lead, client, or conversion justifies the campaign investment. If your average customer is worth thousands, a $3,500 campaign that delivers 8–12+ earned placements — each one building lasting authority and brand recognition — pays for itself quickly. For businesses selling low-ticket products with thin margins, marketplace links at lower DR tiers may be a more practical starting point.
+      </p>
+
+      <div class="bg-white border-l-4 border-[#5D4FE0] rounded-r-2xl p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
+        <p class="text-3xl font-black text-[#5D4FE0] mb-2">$44 vs $250</p>
+        <p class="text-sm text-[#475569] leading-relaxed">Annual cost per link when accounting for lifespan. A $437 earned link lasting 10+ years costs $44/year. A $500 bought link with a two-year effective lifespan costs $250/year.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CALCULATOR ── -->
+  <section id="calculator" class="bg-white py-24 lg:py-32">
+    <div class="max-w-4xl mx-auto px-6">
+      <Eyebrow label="Calculator" />
+      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
+        Cost Calculator
+      </h2>
+      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium max-w-2xl">
+        Compare the cost of buying links on marketplaces vs earning them through digital PR.
+      </p>
+
+      <div class="bg-[#F8F7FA] rounded-2xl border border-[#0A0F1E]/8 p-8">
+        <h3 class="text-xl font-black text-[#0A0F1E] mb-6">What Will Your Links Cost?</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label for="numLinks" class="block text-sm font-semibold text-[#0A0F1E] mb-2">Number of links needed</label>
+            <input type="number" id="numLinks" value="10" min="1" max="100"
+              class="w-full px-4 py-3 border border-[#0A0F1E]/13 rounded-lg text-sm text-[#0A0F1E] bg-white focus:outline-none focus:ring-2 focus:ring-[#5D4FE0]/20 focus:border-[#5D4FE0] transition-colors" />
+          </div>
+          <div>
+            <label for="drRange" class="block text-sm font-semibold text-[#0A0F1E] mb-2">Target DR range (for marketplace)</label>
+            <select id="drRange"
+              class="w-full px-4 py-3 border border-[#0A0F1E]/13 rounded-lg text-sm text-[#0A0F1E] bg-white focus:outline-none focus:ring-2 focus:ring-[#5D4FE0]/20 focus:border-[#5D4FE0] transition-colors appearance-none">
+              <option value="20">DR 20–30</option>
+              <option value="30">DR 30–40</option>
+              <option value="40">DR 40–50</option>
+              <option value="50" selected>DR 50–60</option>
+              <option value="60">DR 60–70</option>
+              <option value="70">DR 70–80</option>
+              <option value="80">DR 80+</option>
+            </select>
+          </div>
+        </div>
+        <div id="calcResults"></div>
+        <p id="calcNote" class="text-xs text-[#94A3B8] mt-4"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── METHODOLOGY ── -->
+  <section id="methodology" class="py-24 lg:py-32" style="background: #F8F7FA;">
+    <div class="max-w-4xl mx-auto px-6">
+      <Eyebrow label="Methodology" />
+      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
+        Methodology
+      </h2>
+
+      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] mb-8">
+        <p class="text-base text-[#475569] leading-relaxed mb-6">The Real Cost of Backlinks aggregates pricing data from multiple independent marketplace studies and live platform data:</p>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">BuzzStream (2025)</strong> — Analysis of 26,000+ guest post sites from a major vendor database, with quality tiering by traffic and DR</span></li>
+          <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Adsy (2025)</strong> — Pricing analysis across 37,542 publisher websites</span></li>
+          <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Serpzilla (2026)</strong> — Live marketplace data from thousands of guest post and niche edit listings</span></li>
+          <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Linkhouse (2026)</strong> — Validated against live pricing from 76,861 publisher listings across 25 languages</span></li>
+          <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Additional platforms</strong> — Collaborator, Getfluence, WhitePress, GuestPostLinks, Bazoom, and LinkPublishers</span></li>
+          <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Service providers</strong> — Published pricing from 10+ named agencies and services</span></li>
+        </ul>
+        <p class="text-sm text-[#475569] leading-relaxed mb-3">All prices converted to USD at March 2026 exchange rates. Vendor markup estimates based on BuzzStream's methodology. Quality filtering follows BuzzStream's criteria: minimum 1,000 monthly organic traffic and minimum DR 40.</p>
+        <p class="text-sm text-[#475569] leading-relaxed">This index will be updated annually. Corrections or data contributions welcome at <a href="mailto:contact@ranking-atlas.com" class="inline-link">contact@ranking-atlas.com</a>.</p>
+      </div>
+
+      <!-- Cite box -->
+      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] relative">
+        <p class="text-sm font-semibold text-[#0A0F1E] mb-3">Cite this resource</p>
+        <code id="citeText" class="block font-mono text-xs text-[#475569] leading-relaxed bg-[#F8F7FA] rounded-lg p-4 pr-20">Ranking Atlas. "The Real Cost of Backlinks (2026)." ranking-atlas.com/the-cost-of-authority. Published March 2026.</code>
+        <button id="copyBtn"
+          class="absolute top-6 right-6 bg-[#F1F5F9] hover:bg-[#E2E8F0] border border-[#0A0F1E]/10 rounded-lg px-3 py-1.5 text-xs font-medium text-[#475569] transition-colors">
+          Copy
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GUARANTEE / HOW IT WORKS ── -->
+  <section class="bg-white py-24 lg:py-32">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-[#5D4FE0]/5 border border-[#5D4FE0]/20 rounded-2xl p-8">
+        <h3 class="text-xl font-black text-[#0A0F1E] mb-4">How the Ranking Atlas Guarantee Works</h3>
+        <p class="text-base text-[#475569] leading-relaxed mb-3">Most digital PR agencies charge monthly retainers with no link guarantees. You pay for their time and hope for the best. We do the opposite.</p>
+        <p class="text-base text-[#475569] leading-relaxed mb-3">Every Ranking Atlas campaign costs $3,500. That's the price whether we deliver 8 links or 15. We keep running story angles — reactive PR, expert commentary, data campaigns — until a minimum of 8 earned placements are secured. If a campaign overdelivers, you don't pay more. If it takes longer than expected, we keep working at no additional cost.</p>
+        <p class="text-base text-[#475569] leading-relaxed mb-6">No retainers. No rolling contracts. One campaign, one price, a guaranteed minimum outcome. Most campaigns deliver 8–12+ placements across publications with real editorial standards and real audiences.</p>
+        <PrimaryCTA href="/contact" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA BAND ── -->
+  <section class="relative overflow-hidden py-24 lg:py-32 text-center" style="background: #5D4FE0;">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
+    <div class="relative max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6">
+        Be the brand <span class="relative inline-block pb-2">AI recommends<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
+      </h2>
+      <p class="text-lg text-white/80 mb-10">Per-campaign. Fixed price. Guaranteed placements on authority publishers.</p>
+      <a href="/contact"
+        class="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white text-[#5D4FE0] font-bold text-base hover:bg-white/95 transition-all duration-200 hover:-translate-y-0.5 shadow-[0_8px_30px_-8px_rgba(0,0,0,0.3)]">
+        Start a Campaign — $3.5K →
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<style is:global>
+  .calc-result {
+    background: white;
+    border-radius: 10px;
+    padding: 16px 20px;
+    border: 1px solid rgba(10,15,30,0.1);
+    margin-bottom: 8px;
+  }
+  .calc-result.best {
+    border-color: #15803D;
+    background: #F0FDF4;
+  }
+  .calc-result.neutral {
+    border-color: rgba(10,15,30,0.1);
+    background: white;
+  }
+  .calc-result .method {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+    color: #94A3B8;
+  }
+  .calc-result .total {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: ui-monospace, monospace;
+    color: #0A0F1E;
+  }
+  .calc-result .per-link {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+</style>
+
+<script>
+  // ── Accordion ──
+  var piOpenIndex: number | null = null;
+
+  document.querySelectorAll('.pi-acc-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var i = parseInt((btn as HTMLElement).getAttribute('data-pi-index') || '0');
+      var item = (btn as HTMLElement).closest('.pi-acc-item');
+      var answer = item ? item.querySelector('.pi-acc-answer') : null;
+      var chevron = item ? item.querySelector('.pi-acc-chevron') : null;
+      var question = item ? item.querySelector('.pi-acc-question') : null;
+
+      if (piOpenIndex === i) {
+        if (answer) answer.classList.add('hidden');
+        if (chevron) (chevron as HTMLElement).setAttribute('style', 'color: #64748B; transform: rotate(0deg)');
+        if (question) (question as HTMLElement).setAttribute('style', 'color: #0A0F1E');
+        piOpenIndex = null;
+      } else {
+        if (piOpenIndex !== null) {
+          var prevBtn = document.querySelector('[data-pi-index="' + piOpenIndex + '"]');
+          var prevItem = prevBtn ? (prevBtn as HTMLElement).closest('.pi-acc-item') : null;
+          if (prevItem) {
+            var pa = prevItem.querySelector('.pi-acc-answer');
+            var pc = prevItem.querySelector('.pi-acc-chevron');
+            var pq = prevItem.querySelector('.pi-acc-question');
+            if (pa) pa.classList.add('hidden');
+            if (pc) (pc as HTMLElement).setAttribute('style', 'color: #64748B; transform: rotate(0deg)');
+            if (pq) (pq as HTMLElement).setAttribute('style', 'color: #0A0F1E');
+          }
+        }
+        if (answer) answer.classList.remove('hidden');
+        if (chevron) (chevron as HTMLElement).setAttribute('style', 'color: #5D4FE0; transform: rotate(180deg)');
+        if (question) (question as HTMLElement).setAttribute('style', 'color: #5D4FE0');
+        piOpenIndex = i;
+      }
+    });
+  });
+
+  // ── Copy cite button ──
+  var copyBtn = document.getElementById('copyBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function() {
+      var citeText = document.getElementById('citeText');
+      if (citeText) {
+        navigator.clipboard.writeText(citeText.textContent || '');
+        copyBtn!.textContent = 'Copied!';
+        setTimeout(function() { copyBtn!.textContent = 'Copy'; }, 2000);
+      }
+    });
+  }
+
+  // ── Calculator ──
+  var pricingData: Record<string, {gp: number, ne: number}> = {
+    '20': { gp: 175, ne: 150 },
+    '30': { gp: 282, ne: 225 },
+    '40': { gp: 365, ne: 300 },
+    '50': { gp: 500, ne: 400 },
+    '60': { gp: 650, ne: 500 },
+    '70': { gp: 930, ne: 700 },
+    '80': { gp: 1500, ne: 1000 }
+  };
+
+  function updateCalc() {
+    var numLinksEl = document.getElementById('numLinks') as HTMLInputElement;
+    var drRangeEl = document.getElementById('drRange') as HTMLSelectElement;
+    if (!numLinksEl || !drRangeEl) return;
+
+    var n = Math.max(1, Math.min(100, parseInt(numLinksEl.value) || 10));
+    var dr = drRangeEl.value;
+    var drNum = parseInt(dr);
+    var d = pricingData[dr];
+    var gpTotal = d.gp * n;
+    var neTotal = d.ne * n;
+    var campaigns = Math.ceil(n / 12);
+    var dprTotal = campaigns * 3500;
+    var dprPer = Math.round(dprTotal / n);
+    var minLinks = campaigns * 8;
+    var marketplaceCheaper = (drNum <= 40 && d.ne * n < dprTotal);
+
+    var html = '<p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#94A3B8;margin:0 0 10px">Buying links (marketplace)</p>';
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">';
+
+    if (marketplaceCheaper) {
+      html += '<div class="calc-result best"><div class="method" style="color:#15803D">Guest post</div><div class="total">$' + gpTotal.toLocaleString() + '</div><div class="per-link">$' + d.gp.toLocaleString() + ' per link</div></div>';
+      html += '<div class="calc-result best"><div class="method" style="color:#15803D">Niche edit</div><div class="total">$' + neTotal.toLocaleString() + '</div><div class="per-link">$' + d.ne.toLocaleString() + ' per link</div></div>';
+    } else {
+      html += '<div class="calc-result"><div class="method">Guest post</div><div class="total">$' + gpTotal.toLocaleString() + '</div><div class="per-link">$' + d.gp.toLocaleString() + ' per link</div></div>';
+      html += '<div class="calc-result"><div class="method">Niche edit</div><div class="total">$' + neTotal.toLocaleString() + '</div><div class="per-link">$' + d.ne.toLocaleString() + ' per link</div></div>';
+    }
+    html += '</div>';
+
+    html += '<p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#15803D;margin:0 0 10px">Earning links (Ranking Atlas digital PR)</p>';
+
+    if (marketplaceCheaper) {
+      html += '<div class="calc-result neutral"><div class="method">' + campaigns + ' digital PR campaign' + (campaigns > 1 ? 's' : '') + ' &middot; $3,500 each</div><div class="total">$' + dprTotal.toLocaleString() + '</div><div class="per-link">Minimum ' + minLinks + ' earned placements guaranteed &middot; most campaigns deliver 8–12+ links &middot; fixed price regardless of how many links are secured</div></div>';
+    } else {
+      html += '<div class="calc-result best"><div class="method" style="color:#15803D">' + campaigns + ' digital PR campaign' + (campaigns > 1 ? 's' : '') + ' &middot; $3,500 each</div><div class="total">$' + dprTotal.toLocaleString() + '</div><div class="per-link">Minimum ' + minLinks + ' earned placements guaranteed &middot; most campaigns deliver 8–12+ links &middot; fixed price regardless of how many links are secured</div></div>';
+    }
+
+    var calcResultsEl = document.getElementById('calcResults');
+    if (calcResultsEl) calcResultsEl.innerHTML = html;
+
+    var note = document.getElementById('calcNote');
+    if (note) {
+      if (marketplaceCheaper) {
+        note.textContent = 'At this DR range, marketplace links are more cost-effective for building foundational link diversity. Digital PR delivers links on publications with higher authority, real traffic, and editorial standards — consider it when you need links that also build brand recognition.';
+      } else {
+        note.textContent = 'At this DR range, earned links through digital PR are more cost-effective per link — and come with zero compliance risk, guaranteed real traffic, and brand-building benefits that marketplace links cannot deliver.';
+      }
+    }
+  }
+
+  var numLinksInput = document.getElementById('numLinks');
+  var drRangeSelect = document.getElementById('drRange');
+  if (numLinksInput) numLinksInput.addEventListener('input', updateCalc);
+  if (drRangeSelect) drRangeSelect.addEventListener('change', updateCalc);
+  updateCalc();
+
+  // ── Heatmap ──
+  var heatmapData = {
+    drTiers: ['DR 20-30','DR 30-40','DR 40-50','DR 50-60','DR 60-70','DR 70-80','DR 80+'],
+    trafficTiers: ['0–100','100–1k','1k–10k','10k–50k','50k+'],
+    prices: [
+      [50, 80, 130, 200, 300],
+      [80, 140, 220, 340, 500],
+      [120, 200, 320, 500, 750],
+      [150, 280, 450, 700, 1200],
+      [200, 380, 600, 950, 1800],
+      [300, 550, 850, 1400, 2500],
+      [500, 800, 1300, 2500, null]
+    ]
+  };
+
+  function priceColor(val: number | null): string {
+    if (val === null) return '#F1F5F9';
+    if (val <= 100) return '#DCFCE7';
+    if (val <= 200) return '#86EFAC';
+    if (val <= 400) return '#4ADE80';
+    if (val <= 700) return '#FCD34D';
+    if (val <= 1200) return '#F97316';
+    return '#EF4444';
+  }
+
+  function textColor(val: number | null): string {
+    if (val === null) return '#94A3B8';
+    if (val <= 400) return '#14532D';
+    return '#FFFFFF';
+  }
+
+  function buildHeatmap() {
+    var el = document.getElementById('heatmapEl');
+    if (!el) return;
+    var d = heatmapData;
+    var h = '<table style="width:100%;border-collapse:collapse;font-size:13px">';
+    h += '<thead><tr><th style="padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:#94A3B8;border-bottom:2px solid rgba(10,15,30,0.08);min-width:90px">DR \\ Traffic</th>';
+    for (var t = 0; t < d.trafficTiers.length; t++) {
+      h += '<th style="padding:10px 12px;text-align:center;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:#94A3B8;border-bottom:2px solid rgba(10,15,30,0.08);min-width:80px">' + d.trafficTiers[t] + '</th>';
+    }
+    h += '</tr></thead><tbody>';
+    for (var i = 0; i < d.drTiers.length; i++) {
+      h += '<tr><td style="padding:12px;font-weight:600;color:#0A0F1E;border-bottom:1px solid rgba(10,15,30,0.06)">' + d.drTiers[i] + '</td>';
+      for (var j = 0; j < d.trafficTiers.length; j++) {
+        var val = d.prices[i][j];
+        var bg = priceColor(val);
+        var tc = textColor(val);
+        var display = val === null ? '—' : '$' + val.toLocaleString();
+        h += '<td style="padding:12px;text-align:center;font-family:ui-monospace,monospace;font-weight:500;font-size:13px;background:' + bg + ';color:' + tc + ';border-bottom:1px solid rgba(10,15,30,0.06);border-left:2px solid white">' + display + '</td>';
+      }
+      h += '</tr>';
+    }
+    h += '</tbody></table>';
+    el.innerHTML = h;
+  }
+  buildHeatmap();
+</script>
