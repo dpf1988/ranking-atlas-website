@@ -15,6 +15,18 @@
 }
 
 @layer utilities {
+  .inline-link {
+    color: #5D4FE0;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(93, 79, 224, 0.3);
+    transition: color 200ms, text-decoration-color 200ms;
+  }
+  .inline-link:hover {
+    color: #4338CA;
+    text-decoration-color: #5D4FE0;
+  }
+
   .animate-scroll {
     animation: scroll 35s linear infinite;
   }
