@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -390,20 +391,6 @@ const jsonLd = {
   </div>
 </article>
 
-<div class="border-t border-[#0A0F1E]/8 bg-[#F8F7FA]">
-  <div class="max-w-3xl mx-auto px-6 py-10">
-    <div class="flex flex-col sm:flex-row items-start gap-5">
-      <a href="/about" class="shrink-0">
-        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-16 h-16 rounded-full object-cover" width="64" height="64" />
-      </a>
-      <div>
-        <p class="text-sm uppercase tracking-wider text-brand font-medium mb-2">About the author</p>
-        <p class="text-lg font-semibold text-ink mb-1"><a href="/about" class="hover:text-brand transition-colors">Daniel Grainger</a></p>
-        <p class="text-sm text-[#64748B] mb-3">Founder, Ranking Atlas</p>
-        <p class="text-base text-body leading-relaxed">Daniel Grainger is the founder of Ranking Atlas. He runs fixed-price campaigns that earn editorial coverage on authoritative publishers, building the citation equity that puts B2B SaaS brands in AI answers.</p>
-      </div>
-    </div>
-  </div>
-</div>
+<AuthorBio />
 
 </Layout>

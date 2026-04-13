@@ -1,0 +1,54 @@
+---
+/*
+  Author bio footer component. Include on every long-form article
+  authored by Daniel Grainger.
+
+  Usage:
+    import AuthorBio from '../components/AuthorBio.astro';
+    <AuthorBio />
+
+  Placement: after next-steps links, before site footer.
+
+  To update bio copy: edit only this file. Changes propagate
+  site-wide on rebuild.
+*/
+---
+
+<div class="border-t border-[#0A0F1E]/10 bg-[#F8F7FA]">
+  <div class="max-w-3xl mx-auto px-6 py-10">
+    <div class="flex flex-col sm:flex-row items-start gap-6">
+      <a href="/about" class="shrink-0">
+        <img
+          src="/assets/images/author/daniel-headshot.jpg"
+          alt="Daniel Grainger"
+          class="w-16 h-16 rounded-full object-cover"
+          width="64"
+          height="64"
+        />
+      </a>
+      <div>
+        <p class="text-sm uppercase tracking-wider text-brand font-medium mb-2">About the author</p>
+        <p class="text-lg font-semibold text-ink mb-1">
+          <a href="/about" class="hover:text-brand transition-colors">Daniel Grainger</a>
+        </p>
+        <p class="text-sm text-[#64748B] mb-2">Founder, Ranking Atlas</p>
+        <a
+          href="https://www.linkedin.com/in/daniel-grainger/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-sm text-[#64748B] hover:text-brand transition-colors mb-4"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+        <p class="text-base text-body leading-relaxed">
+          Daniel Grainger is the founder of Ranking Atlas. He runs fixed-price campaigns that earn editorial coverage on authoritative publishers, building the citation equity that puts B2B SaaS brands in AI answers. He runs ongoing original research into what moves citation equity, publishing the findings as <a href="/resources/" class="text-brand hover:text-brand-dark underline underline-offset-2">primary-source reports</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
