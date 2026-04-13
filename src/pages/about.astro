@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PrimaryCTA from '../components/PrimaryCTA.astro';
+import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -32,75 +33,69 @@ const jsonLd = {
     <div class="max-w-3xl mx-auto px-6">
 
       <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4 text-[#64748B]">Our Story</p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-10">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-8">
         About Ranking Atlas
       </h1>
 
-      <div class="space-y-6 text-body text-lg md:text-xl leading-relaxed">
-        <p>
-          Ranking Atlas is a digital PR agency for B2B SaaS brands. We run fixed-price campaigns that earn editorial coverage on authoritative publishers, building the citation equity that puts brands in AI answers.
-        </p>
-        <p>
-          What makes Ranking Atlas different is how we approach the work.
-        </p>
-      </div>
+      <p class="text-body text-lg md:text-xl leading-relaxed mb-8">
+        Ranking Atlas is a digital PR agency for B2B SaaS brands. We run fixed-price campaigns that earn editorial coverage on authoritative publishers, building the citation equity that puts brands in AI answers.
+      </p>
+      <p class="text-body text-lg md:text-xl leading-relaxed mt-8">
+        What makes Ranking Atlas different is how we approach the work.
+      </p>
 
     </div>
   </section>
 
   <!-- Section 2: Founded on Research Principles -->
-  <section class="py-16 md:py-24 bg-bg-cream">
+  <section class="py-12 md:py-16 bg-bg-cream">
     <div class="max-w-3xl mx-auto px-6">
 
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-8">
         Founded on Research Principles
       </h2>
 
-      <div class="flex flex-col sm:flex-row gap-8 mb-8">
-        <div class="shrink-0 flex flex-col items-center sm:items-start gap-2">
-          <a href="https://www.linkedin.com/in/daniel-grainger/" target="_blank" rel="noopener noreferrer">
-            <img
-              src="/assets/images/author/daniel-headshot.jpg"
-              alt="Daniel Grainger, Founder of Ranking Atlas"
-              class="w-24 h-24 rounded-full object-cover shadow-card"
-              width="96"
-              height="96"
-            />
-          </a>
-          <p class="text-sm text-[#64748B] text-center sm:text-left">Daniel Grainger, Founder</p>
-          <a
-            href="https://www.linkedin.com/in/daniel-grainger/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 text-sm text-[#64748B] hover:text-brand transition-colors"
-          >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
-            LinkedIn
-          </a>
-        </div>
+      <!-- Stacked byline block -->
+      <div class="mb-8">
+        <a href="https://www.linkedin.com/in/daniel-grainger/" target="_blank" rel="noopener noreferrer" class="inline-block mb-3">
+          <img
+            src="/assets/images/author/daniel-headshot.jpg"
+            alt="Daniel Grainger, Founder of Ranking Atlas"
+            class="w-24 h-24 rounded-full object-cover shadow-card"
+            width="96"
+            height="96"
+          />
+        </a>
+        <p class="text-base font-semibold text-ink mb-0.5">Daniel Grainger</p>
+        <p class="text-sm text-[#64748B] mb-2">Founder, Ranking Atlas</p>
+        <a
+          href="https://www.linkedin.com/in/daniel-grainger/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-sm text-brand hover:text-brand-dark transition-colors"
+        >
+          <LinkedInIcon />
+          LinkedIn
+        </a>
+      </div>
 
-        <div class="space-y-6 text-body text-lg leading-relaxed">
-          <p>
-            Ranking Atlas was founded by Daniel Grainger. Before starting the agency, he trained as a scientist and <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/eth.12280" target="_blank" rel="noopener" class="text-brand hover:text-brand-dark underline underline-offset-2">published peer-reviewed research in <em>Ethology</em></a>, a Wiley journal.
-          </p>
-          <p>
-            That training shaped how Ranking Atlas operates. Most PR agencies run on intuition: pitch a lot, see what lands, report on volume. We treat editorial coverage as an observable system with measurable signals. Campaigns are structured interventions. Outcomes are evidenced against data.
-          </p>
-          <p>
-            The research discipline is the agency's foundation.
-          </p>
-        </div>
+      <div class="space-y-6 text-body text-lg leading-relaxed">
+        <p>
+          Ranking Atlas was founded by Daniel Grainger. Before starting the agency, he trained as a scientist and <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/eth.12280" target="_blank" rel="noopener" class="text-brand hover:text-brand-dark underline underline-offset-2">published peer-reviewed research in <em>Ethology</em></a>, a Wiley journal.
+        </p>
+        <p>
+          That training shaped how Ranking Atlas operates. Most PR agencies run on intuition: pitch a lot, see what lands, report on volume. We treat editorial coverage as an observable system with measurable signals. Campaigns are structured interventions. Outcomes are evidenced against data.
+        </p>
+        <p>
+          The research discipline is the agency's foundation.
+        </p>
       </div>
 
     </div>
   </section>
 
   <!-- Section 3: How We Work -->
-  <section class="py-16 md:py-24">
+  <section class="py-12 md:py-16">
     <div class="max-w-3xl mx-auto px-6">
 
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-8">
@@ -111,7 +106,7 @@ const jsonLd = {
         <p>
           We run every campaign as a structured intervention. We baseline a brand's citation pattern before the campaign starts, identify the authoritative publishers AI systems cite in the client's vertical, target editorial coverage on those publishers, and measure the citation pattern after.
         </p>
-        <p>
+        <p class="font-semibold text-ink">
           Each step is documented. Each output is evidenced.
         </p>
         <p>
@@ -123,7 +118,7 @@ const jsonLd = {
   </section>
 
   <!-- Section 4: What a Campaign Looks Like -->
-  <section class="py-16 md:py-24 bg-bg-cream">
+  <section class="py-12 md:py-16 bg-bg-cream">
     <div class="max-w-3xl mx-auto px-6">
 
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-8">
@@ -139,6 +134,9 @@ const jsonLd = {
         </p>
         <p>
           No retainers. No monthly billing. One campaign, one price, one measurable outcome.
+        </p>
+        <p>
+          If that's what you're looking for, start a campaign.
         </p>
       </div>
 
