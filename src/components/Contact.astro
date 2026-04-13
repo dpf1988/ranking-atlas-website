@@ -6,7 +6,7 @@
     <div class="max-w-2xl mx-auto">
 
       <form id="contact-form" class="bg-white rounded-3xl border border-[#0A0F1E]/8 shadow-md p-8 lg:p-10 space-y-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label for="name" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
               Name <span class="text-[#5D4FE0]">*</span>
@@ -56,39 +56,11 @@
           Something went wrong. Please email <a href="mailto:contact@ranking-atlas.com" class="underline font-medium">contact@ranking-atlas.com</a>
         </div>
 
-        <!-- What happens next -->
-        <div class="pt-2 pb-2">
-          <p class="text-xs font-semibold uppercase tracking-widest mb-4 text-[#64748B]">What happens next</p>
-          <div class="grid grid-cols-3 gap-4">
-            <div class="flex flex-col gap-2">
-              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 bg-[#5D4FE0]">1</div>
-              <p class="text-sm font-semibold text-[#0A0F1E]">You Reach Out</p>
-              <p class="text-xs leading-relaxed text-[#64748B]">Send the form with your brand details and category context.</p>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 bg-[#5D4FE0]">2</div>
-              <p class="text-sm font-semibold text-[#0A0F1E]">We Review</p>
-              <p class="text-xs leading-relaxed text-[#64748B]">We baseline your brand's citation pattern across the authoritative publishers AI systems already cite in your vertical.</p>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 bg-[#5D4FE0]">3</div>
-              <p class="text-sm font-semibold text-[#0A0F1E]">You Get a Proposal</p>
-              <p class="text-xs leading-relaxed text-[#64748B]">We send a campaign proposal with a defined scope and guaranteed placement count. Within one business day. No obligation.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Reassurance -->
-        <p class="text-center text-xs text-[#64748B]">
-          No retainers. No monthly billing. One campaign, one price, one defined outcome.
-        </p>
-
         <!-- Submit button -->
         <div class="flex justify-center">
           <button id="form-submit" type="submit"
             class="text-white font-bold py-4 px-10 rounded-lg text-base transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center gap-2 hover:shadow-[0_8px_30px_-4px_rgba(93,79,224,0.6)]"
-            style="background: linear-gradient(180deg, #6B5CE8 0%, #5D4FE0 50%, #4F41D0 100%); box-shadow: 0 4px 20px -4px rgba(93,79,224,0.5), 0 1px 2px rgba(93,79,224,0.2), inset 0 1px 0 rgba(255,255,255,0.15);"
-            style="width: 100%; max-width: 300px;">
+            style="background: linear-gradient(180deg, #6B5CE8 0%, #5D4FE0 50%, #4F41D0 100%); box-shadow: 0 4px 20px -4px rgba(93,79,224,0.5), 0 1px 2px rgba(93,79,224,0.2), inset 0 1px 0 rgba(255,255,255,0.15);">
             <svg id="submit-mail-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
@@ -99,14 +71,42 @@
         </div>
       </form>
 
+      <!-- Tagline -->
+      <p class="text-center text-sm text-[#64748B] my-8">
+        No retainers. No monthly billing. One campaign, one price, one defined outcome.
+      </p>
+
+      <!-- What happens next -->
+      <div class="mb-8">
+        <p class="text-xs font-semibold uppercase tracking-widest mb-6 text-[#64748B]">What happens next</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="flex flex-col gap-2">
+            <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 bg-[#5D4FE0]">1</div>
+            <p class="text-sm font-semibold text-[#0A0F1E]">You Reach Out</p>
+            <p class="text-xs leading-relaxed text-[#64748B]">Send the form with your brand details and category context.</p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 bg-[#5D4FE0]">2</div>
+            <p class="text-sm font-semibold text-[#0A0F1E]">We Review</p>
+            <p class="text-xs leading-relaxed text-[#64748B]">We baseline your brand's citation pattern across the authoritative publishers AI systems already cite in your vertical.</p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 bg-[#5D4FE0]">3</div>
+            <p class="text-sm font-semibold text-[#0A0F1E]">You Get a Proposal</p>
+            <p class="text-xs leading-relaxed text-[#64748B]">We send a campaign proposal with a defined scope and guaranteed placement count. Within one business day. No obligation.</p>
+          </div>
+        </div>
+      </div>
+
       <!-- Direct email -->
-      <p class="text-center text-sm mt-6 text-[#64748B]">
+      <p class="text-center text-sm text-[#64748B]">
         Prefer to reach out directly? Email us at
         <a href="mailto:contact@ranking-atlas.com"
           class="font-medium text-[#5D4FE0] hover:text-[#4338CA] transition-colors">
           contact@ranking-atlas.com
         </a>
       </p>
+
     </div>
   </div>
 </section>
