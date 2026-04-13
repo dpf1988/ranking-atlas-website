@@ -7,7 +7,7 @@ import { Check, X, ArrowRight } from 'lucide-astro';
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "The Cost of Authority: 2026 Backlink Pricing Index",
+  "headline": "The Cost of Authority: 2026 Publisher Access Pricing",
   "description": "Our proprietary dataset: 140,000+ publisher listings collected and analyzed over six years. What editorial access costs, how pricing has moved 2020–2026, and why the market is solving the wrong problem.",
   "author": {
     "@type": "Person",
@@ -31,8 +31,8 @@ const jsonLd = {
 ---
 
 <Layout
-  title="The Cost of Authority: 2026 Backlink Pricing Index — Ranking Atlas"
-  description="Primary-source backlink pricing data for 2026: cost of authority across DR tiers, agency vs publisher-direct rates, and longitudinal pricing trends. Published by Ranking Atlas."
+  title="The Cost of Authority: 2026 Publisher Access Pricing — Ranking Atlas"
+  description="Primary-source pricing analysis of editorial coverage and link marketplace rates from 140,000+ publisher listings, 2020–2026."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
@@ -46,25 +46,10 @@ const jsonLd = {
       style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
 
     <div class="relative max-w-4xl mx-auto px-6 text-center">
-      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">2026 Backlink Pricing Index</div>
+      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">2026 Publisher Access Pricing</div>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
         The Cost of Authority
       </h1>
-      <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-6">
-        Backlinks remain one of the strongest ranking signals in search. Yet the market for acquiring them is opaque, fragmented, and rife with inflated metrics.
-      </p>
-      <p class="text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-4">
-        This report analyses pricing data from over 140,000 publisher listings across 10 major link marketplaces, cross-referenced with published rates from named service providers and independent industry studies. It examines the cost of link acquisition across four dimensions:
-      </p>
-      <ul class="text-base text-[#64748B] text-left inline-block mb-6 space-y-1">
-        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Domain Rating (DR 10 through DR 80+)</li>
-        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Organic traffic (zero-traffic sites through 50,000+ monthly visitors)</li>
-        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Niche and industry vertical</li>
-        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Acquisition method (guest posts, niche edits, and earned media through digital PR)</li>
-      </ul>
-      <p class="text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-10">
-        The findings suggest that the majority of marketplace inventory fails basic quality thresholds, that pricing bears limited correlation to actual link value, and that earned media through digital PR delivers a structurally different — and more durable — outcome than purchased links at comparable or lower cost per placement.
-      </p>
       <div class="flex items-center justify-center gap-3 mb-8">
         <a href="/about" class="shrink-0">
           <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
@@ -74,6 +59,21 @@ const jsonLd = {
           <p class="text-sm text-[#64748B]">Published March 2026 &nbsp;·&nbsp; Based on 140,000+ publisher listings</p>
         </div>
       </div>
+      <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-6">
+        The coverage that search engines and AI systems treat as a trust signal has a market price. That market is opaque, fragmented, and rife with inflated metrics.
+      </p>
+      <p class="text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-4">
+        This report analyses primary-source pricing data from 140,000+ publisher listings across 10 major link marketplaces, cross-referenced with six years of agency price snapshots and independent industry studies. It measures the cost of authority across four dimensions:
+      </p>
+      <ul class="text-base text-[#64748B] text-left inline-block mb-6 space-y-1">
+        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Domain Rating (DR 10 through DR 80+)</li>
+        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Organic traffic (zero-traffic sites through 50,000+ monthly visitors)</li>
+        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Niche and industry vertical</li>
+        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Acquisition method (guest posts, niche edits, and earned media through editorial coverage)</li>
+      </ul>
+      <p class="text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-10">
+        The findings: most marketplace inventory fails basic quality thresholds. Pricing bears limited correlation to actual signal value. Earned editorial coverage delivers a structurally different outcome than purchased links, and at lower effective cost per year of useful life.
+      </p>
 
       <!-- 4 stat cards -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
@@ -110,8 +110,39 @@ const jsonLd = {
           </div>
         </div>
       </div>
+      <p class="text-sm text-[#94A3B8] mt-4 text-center">Stat sources: BuzzStream guest post analysis (2025), Adsy pricing study (2025). This is what the citation signal costs when you buy it. Full methodology below.</p>
     </div>
   </section>
+
+  <!-- ── AI SEARCH BRIDGE ── -->
+  <section class="py-16 md:py-24 bg-white">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="mb-10">
+      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">AI Search Context</div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
+        Why This Data Matters for AI Search Visibility
+      </h2>
+    </div>
+
+    <div class="prose prose-lg text-body max-w-none space-y-6 leading-relaxed">
+      <p>
+        Every data point on this page measures the same thing: the cost of a signal that used to tell search engines which brands to surface. The assumption behind buying that signal was that Google would read it, weigh it, and rank you accordingly.
+      </p>
+      <p>
+        That assumption is now splitting in two. Google still reads links, but an increasing share of commercial intent now resolves inside AI systems (ChatGPT, Perplexity, Gemini, Google's AI Overviews) that decide which brands to mention based on different evidence. They read editorial coverage on authority publishers. They read citation context, not anchor text. They read whether your brand appears inside answers humans trust, not whether it appears inside backlink indexes bots crawl.
+      </p>
+      <p>
+        A DR50 marketplace link on a traffic-light site was always a questionable investment for Google rankings. It's worthless for AI answer surfaces. The sites AI systems cite are a different population from the sites link marketplaces sell access to, and the gap is widening as AI answer engines refine which sources they trust.
+      </p>
+      <p>
+        This is the mechanism behind citation equity: the editorial coverage on real publishers that accumulates as a brand signal across both search and AI systems. It is what our campaigns are built to earn. The pricing data below is useful context for anyone comparing options, but it describes a market that's solving yesterday's problem.
+      </p>
+      <p class="text-sm text-muted italic">
+        For the full argument and evidence, see <a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">Citation equity: earned vs paid links</a>. For background on how AI systems choose which brands to surface, see <a href="/resources/ai-search-visibility" class="text-brand hover:text-brand-dark underline underline-offset-2">our AI search visibility guide</a>.
+      </p>
+    </div>
+  </div>
+</section>
 
   <!-- ── PRICING DATA ── -->
   <section id="data" class="bg-white py-16 md:py-24">
@@ -120,8 +151,11 @@ const jsonLd = {
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
         How Much Guest Posts and Niche Edits Cost in 2026
       </h2>
+      <p class="text-base text-[#475569] leading-relaxed mb-4 max-w-3xl">
+        These are the prices agencies and brands pay today to buy into the backlink signal.
+      </p>
       <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
-        Marketplace pricing for guest posts and niche edits, broken down by Domain Rating. Prices scale exponentially — a DR80+ placement costs 10–100x more than a DR20.
+        Marketplace pricing for guest posts and niche edits, broken down by Domain Rating. Prices scale exponentially. A DR80+ placement costs 10–100x more than a DR20.
       </p>
 
       <div class="overflow-hidden rounded-2xl border border-[#0A0F1E]/8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
@@ -417,7 +451,7 @@ const jsonLd = {
           </button>
           <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
             <p class="text-base text-[#475569] leading-relaxed mb-3">Domain Rating is a metric developed by Ahrefs that scores a website's backlink profile strength on a scale of 0 to 100. Higher DR generally indicates a stronger domain. It's the most widely used proxy for link value, which is why higher-DR sites charge more.</p>
-            <p class="text-base text-[#475569] leading-relaxed">However, DR can be artificially inflated through link schemes — which is why it should never be the sole factor in evaluating a link. Always cross-reference with organic traffic, editorial quality, and topical relevance.</p>
+            <p class="text-base text-[#475569] leading-relaxed">DR can be artificially inflated through link schemes. It should never be the sole factor in evaluating a link. Always cross-reference with organic traffic, editorial quality, and topical relevance.</p>
           </div>
         </div>
         <div class="pi-acc-item">
@@ -505,7 +539,7 @@ const jsonLd = {
         Paid Backlinks vs Earned Editorial Placements
       </h2>
       <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
-        Every link in the marketplace data above is a bought link. Anyone with a budget can acquire them. The question is whether that builds a lasting advantage — or just a temporary one.
+        Every link in the marketplace data above is a paid link. Anyone with a budget can acquire them. The question is whether that builds a lasting advantage, or just a temporary one.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
@@ -532,54 +566,24 @@ const jsonLd = {
             <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Zero deindexation risk on editorial sites</li>
             <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Exactly what Google's algorithm rewards</li>
             <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Brand mentions, expert positioning, real audience</li>
-            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Compounds — each placement builds authority</li>
+            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Compounds: each placement builds authority</li>
           </ul>
         </div>
       </div>
 
       <p class="text-base text-[#475569] leading-relaxed mb-4">
-        Earned links are not free. They require investment in creating something worth covering — a data study, expert commentary, a newsworthy angle. They take longer to materialise than a marketplace purchase, and you don't control the exact anchor text or placement. But these constraints are features: they're what makes earned links defensible, durable, and valued by search engines.
+        Earned links are not free. They require investment in creating something worth covering: a data study, expert commentary, a newsworthy angle. They take longer to materialise than a marketplace purchase, and you don't control the exact anchor text or placement. But these constraints are features. They're what makes earned coverage defensible, durable, and valued by the systems AI answer engines rely on.
       </p>
       <p class="text-base text-[#475569] leading-relaxed mb-8">
-        Digital PR makes the most sense for businesses where a single lead, client, or conversion justifies the campaign investment. If your average customer is worth thousands, a $3,500 campaign that delivers 8–12+ earned placements — each one building lasting authority and brand recognition — pays for itself quickly. For businesses selling low-ticket products with thin margins, marketplace links at lower DR tiers may be a more practical starting point.
+        Earned editorial coverage makes the most sense for businesses where a single lead, client, or conversion justifies the campaign investment. If your average customer is worth thousands, a $3,500 campaign that delivers 8–12+ earned placements pays for itself quickly. Each placement builds lasting authority and citation equity.
       </p>
 
       <div class="bg-white border-l-4 border-[#5D4FE0] rounded-r-2xl p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
         <p class="text-3xl font-black text-[#5D4FE0] mb-2">$44 vs $250</p>
-        <p class="text-sm text-[#475569] leading-relaxed">Annual cost per link when accounting for lifespan. A $437 earned link lasting 10+ years costs $44/year. A $500 bought link with a two-year effective lifespan costs $250/year.</p>
+        <p class="text-sm text-[#475569] leading-relaxed">Annual cost per link when accounting for lifespan. A $437 earned mention lasting 10+ years costs $44/year. A $500 paid link with a two-year effective lifespan costs $250/year.</p>
       </div>
     </div>
   </section>
-
-  <!-- ── AI SEARCH BRIDGE ── -->
-  <section class="py-16 md:py-24 bg-white">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="mb-10">
-      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">AI Search Context</div>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        Why Backlink Pricing Matters for AI Search Visibility
-      </h2>
-    </div>
-
-    <div class="prose prose-lg text-body max-w-none space-y-6 leading-relaxed">
-      <p>
-        Every data point on this page measures the same thing: the cost of a signal that used to tell search engines which brands to surface. The assumption behind buying that signal was that Google would read it, weigh it, and rank you accordingly.
-      </p>
-      <p>
-        That assumption is now splitting in two. Google still reads links, but an increasing share of commercial intent now resolves inside AI systems — ChatGPT, Perplexity, Google's AI Overviews, Claude — that decide which brands to mention based on different evidence. They read editorial coverage on authority publishers. They read citation context, not anchor text. They read whether your brand appears inside answers humans trust, not whether it appears inside backlink indexes bots crawl.
-      </p>
-      <p>
-        A DR50 marketplace link on a traffic-light site was always a questionable investment for Google rankings. It's worthless for AI answer surfaces. The sites AI systems cite are a different population from the sites link marketplaces sell access to, and the gap is widening as AI answer engines refine which sources they trust.
-      </p>
-      <p>
-        This is the mechanism behind citation equity: the editorial coverage on real publishers that accumulates as a brand signal across both search and AI systems. It is what our campaigns are built to earn. The pricing data above is useful context for anyone comparing options, but it describes a market that's solving yesterday's problem.
-      </p>
-      <p class="text-sm text-muted italic">
-        For the full argument and evidence, see <a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">Citation equity: earned vs paid links</a>. For background on how AI systems choose which brands to surface, see <a href="/resources/ai-search-visibility" class="text-brand hover:text-brand-dark underline underline-offset-2">our AI search visibility guide</a>.
-      </p>
-    </div>
-  </div>
-</section>
 
   <!-- ── METHODOLOGY ── -->
   <section id="methodology" class="py-16 md:py-24" style="background: #F8F7FA;">
@@ -619,25 +623,12 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- ── GUARANTEE / HOW IT WORKS ── -->
-  <section class="bg-white py-16 md:py-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="bg-[#5D4FE0]/5 border border-[#5D4FE0]/20 rounded-2xl p-8">
-        <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">How the Ranking Atlas Guarantee Works</h3>
-        <p class="text-base text-[#475569] leading-relaxed mb-3">Most digital PR agencies charge monthly retainers with no link guarantees. You pay for their time and hope for the best. We do the opposite.</p>
-        <p class="text-base text-[#475569] leading-relaxed mb-3">Every Ranking Atlas campaign costs $3,500. That's the price whether we deliver 8 links or 15. We keep running story angles — reactive PR, expert commentary, data campaigns — until a minimum of 8 earned placements are secured. If a campaign overdelivers, you don't pay more. If it takes longer than expected, we keep working at no additional cost.</p>
-        <p class="text-base text-[#475569] leading-relaxed mb-6">No retainers. No rolling contracts. One campaign, one price, a guaranteed minimum outcome. Most campaigns deliver 8–12+ placements across publications with real editorial standards and real audiences.</p>
-        <PrimaryCTA href="/contact" />
-      </div>
-    </div>
-  </section>
-
   <!-- ── FINAL CTA BAND ── -->
   <section class="relative overflow-hidden py-16 md:py-20 text-center" style="background: #5D4FE0;">
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
     <div class="relative max-w-4xl mx-auto px-6">
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
-        Be the Brand <span class="relative inline-block pb-2">AI Recommends<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
+        Be the Brand <span class="relative inline-block pb-2">AI Cites<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
       </h2>
       <p class="text-lg text-white/80 mb-10">Per-campaign. Fixed price. Guaranteed placements on authority publishers.</p>
       <a href="/contact"
