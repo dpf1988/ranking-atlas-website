@@ -1,13 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PrimaryCTA from '../components/PrimaryCTA.astro';
-import Eyebrow from '../components/Eyebrow.astro';
+import Layout from '../../layouts/Layout.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
 import { Check, X, ArrowRight } from 'lucide-astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "The Real Cost of Backlinks (2026) — SaaS Price Index",
+  "headline": "The Cost of Authority: 2026 Backlink Pricing Index",
   "description": "Research and pricing data on editorial citation acquisition in 2026, published by Ranking Atlas.",
   "author": { "@type": "Organization", "name": "Ranking Atlas" },
   "datePublished": "2026-03-01",
@@ -16,13 +15,13 @@ const jsonLd = {
 ---
 
 <Layout
-  title="The SaaS Price Index 2026 — Ranking Atlas"
-  description="Research and pricing data on editorial citation acquisition in 2026, published by Ranking Atlas."
+  title="The Cost of Authority: 2026 Backlink Pricing Index — Ranking Atlas"
+  description="Primary-source backlink pricing data for 2026: cost of authority across DR tiers, agency vs publisher-direct rates, and longitudinal pricing trends. Published by Ranking Atlas."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
   <!-- ── HERO ── -->
-  <section class="relative overflow-hidden py-24 lg:py-32">
+  <section class="relative overflow-hidden py-20 md:py-28">
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full opacity-[0.10] blur-[140px]"
            style="background: radial-gradient(circle, #5D4FE0 0%, transparent 70%);"></div>
@@ -31,11 +30,11 @@ const jsonLd = {
       style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
 
     <div class="relative max-w-4xl mx-auto px-6 text-center">
-      <Eyebrow label="2026 Edition" />
-      <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-black leading-[1.08] tracking-tighter text-[#0A0F1E] mb-6">
-        The Real Cost of Backlinks
+      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">2026 Backlink Pricing Index</div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
+        The Cost of Authority
       </h1>
-      <p class="text-xl text-[#475569] leading-relaxed max-w-2xl mx-auto mb-6 font-medium">
+      <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-6">
         Backlinks remain one of the strongest ranking signals in search. Yet the market for acquiring them is opaque, fragmented, and rife with inflated metrics.
       </p>
       <p class="text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-4">
@@ -50,7 +49,7 @@ const jsonLd = {
       <p class="text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-10">
         The findings suggest that the majority of marketplace inventory fails basic quality thresholds, that pricing bears limited correlation to actual link value, and that earned media through digital PR delivers a structurally different — and more durable — outcome than purchased links at comparable or lower cost per placement.
       </p>
-      <p class="text-sm text-[#94A3B8] mb-12">Based on 140,000+ publisher listings across 10 marketplaces &nbsp;·&nbsp; Published March 2026 &nbsp;·&nbsp; By Daniel Grainger</p>
+      <p class="text-sm text-[#94A3B8] mb-8">Based on 140,000+ publisher listings across 10 marketplaces &nbsp;·&nbsp; Published March 2026 &nbsp;·&nbsp; By Daniel Grainger</p>
 
       <!-- 4 stat cards -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
@@ -91,13 +90,13 @@ const jsonLd = {
   </section>
 
   <!-- ── PRICING DATA ── -->
-  <section id="data" class="bg-white py-24 lg:py-32">
+  <section id="data" class="bg-white py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-6">
-      <Eyebrow label="Pricing Data" />
-      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
-        The Cost of Buying a Link
+      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Pricing Data</div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
+        How Much Guest Posts and Niche Edits Cost in 2026
       </h2>
-      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium max-w-2xl">
+      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
         Marketplace pricing for guest posts and niche edits, broken down by Domain Rating. Prices scale exponentially — a DR80+ placement costs 10–100x more than a DR20.
       </p>
 
@@ -159,13 +158,12 @@ const jsonLd = {
   </section>
 
   <!-- ── TRAFFIC HEATMAP ── -->
-  <section id="heatmap" class="py-24 lg:py-32" style="background: #F8F7FA;">
+  <section id="heatmap" class="py-16 md:py-24" style="background: #F8F7FA;">
     <div class="max-w-4xl mx-auto px-6">
-      <Eyebrow label="Traffic vs DR" />
-      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
-        The Hidden Variable: Traffic
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
+        Why Domain Rating Alone Is an Unreliable Guide to Pricing
       </h2>
-      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium max-w-2xl">
+      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
         DR alone is an unreliable guide to link value. A high-DR site with no traffic may have an inflated rating. This heatmap shows how organic traffic changes the price — and the value — of a link at every DR tier.
       </p>
 
@@ -187,14 +185,203 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- ── UNDERSTANDING LINK VALUE ── -->
-  <section id="learn" class="bg-white py-24 lg:py-32">
-    <div class="max-w-4xl mx-auto px-6">
-      <Eyebrow label="Link Quality" />
-      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
-        Understanding Link Value
+  <!-- ── LONGITUDINAL PRICING ── -->
+  <section class="py-16 md:py-24 bg-bg-cream">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="mb-10">
+      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Longitudinal Data</div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
+        How Agency Link Prices Have Changed, 2020–2026
       </h2>
-      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium max-w-2xl">
+      <p class="text-body text-lg leading-relaxed max-w-3xl">
+        Primary-source pricing data for five established link-building agencies, extracted from timestamped Wayback Machine snapshots of their public pricing pages. Each data point is a direct observation of what the agency charged in that year, not a secondary-source estimate. DR30+ equivalent shown (the most commonly listed tier across all vendors and years).
+      </p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-card p-6 md:p-10 mb-6">
+      <svg viewBox="0 0 780 440" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chart-title chart-desc">
+        <title id="chart-title">Agency DR30+ link prices, 2020 to 2026</title>
+        <desc id="chart-desc">Line chart showing per-link pricing over time for FATJOE, Searcharoo, Loganix, RhinoRank, and a publisher-direct industry benchmark.</desc>
+        <g stroke="#E5E7EB" stroke-width="1">
+          <line x1="80" y1="60"  x2="740" y2="60"/>
+          <line x1="80" y1="124" x2="740" y2="124"/>
+          <line x1="80" y1="188" x2="740" y2="188"/>
+          <line x1="80" y1="252" x2="740" y2="252"/>
+          <line x1="80" y1="316" x2="740" y2="316"/>
+          <line x1="80" y1="380" x2="740" y2="380" stroke="#9CA3AF"/>
+        </g>
+        <g font-family="ui-sans-serif, system-ui" font-size="12" fill="#6B7280" text-anchor="end">
+          <text x="70" y="64">$250</text>
+          <text x="70" y="128">$200</text>
+          <text x="70" y="192">$150</text>
+          <text x="70" y="256">$100</text>
+          <text x="70" y="320">$50</text>
+          <text x="70" y="384">$0</text>
+        </g>
+        <g font-family="ui-sans-serif, system-ui" font-size="12" fill="#6B7280" text-anchor="middle">
+          <text x="110" y="405">2020</text>
+          <text x="215" y="405">2021</text>
+          <text x="320" y="405">2022</text>
+          <text x="425" y="405">2023</text>
+          <text x="530" y="405">2024</text>
+          <text x="635" y="405">2025</text>
+          <text x="740" y="405">2026</text>
+        </g>
+        <g stroke="#5D4FE0" stroke-width="2.5" fill="none">
+          <polyline points="110,259 215,276 635,227 740,227"/>
+        </g>
+        <g fill="#5D4FE0">
+          <circle cx="110" cy="259" r="4"/>
+          <circle cx="215" cy="276" r="4"/>
+          <circle cx="635" cy="227" r="4"/>
+          <circle cx="740" cy="227" r="4"/>
+        </g>
+        <g stroke="#059669" stroke-width="2.5" fill="none" stroke-dasharray="6 3">
+          <polyline points="110,209 530,124 635,124 740,124"/>
+        </g>
+        <g fill="#059669">
+          <circle cx="110" cy="209" r="4"/>
+          <circle cx="530" cy="124" r="4"/>
+          <circle cx="635" cy="124" r="4"/>
+          <circle cx="740" cy="124" r="4"/>
+        </g>
+        <g stroke="#DB2777" stroke-width="2.5" fill="none">
+          <polyline points="320,230 635,150"/>
+        </g>
+        <g fill="#DB2777">
+          <circle cx="320" cy="230" r="4"/>
+          <circle cx="635" cy="150" r="4"/>
+        </g>
+        <g stroke="#D97706" stroke-width="2.5" fill="none">
+          <polyline points="320,227 740,227"/>
+        </g>
+        <g fill="#D97706">
+          <circle cx="320" cy="227" r="4"/>
+          <circle cx="740" cy="227" r="4"/>
+        </g>
+        <g stroke="#6B7280" stroke-width="2" fill="none" stroke-dasharray="2 3">
+          <polyline points="110,342 530,264"/>
+        </g>
+        <g fill="#6B7280">
+          <circle cx="110" cy="342" r="3"/>
+          <circle cx="530" cy="264" r="3"/>
+        </g>
+        <g font-family="ui-sans-serif, system-ui" font-size="13" fill="#374151">
+          <g transform="translate(100, 30)">
+            <rect width="14" height="3" y="5" fill="#5D4FE0"/>
+            <text x="22" y="10">FATJOE</text>
+          </g>
+          <g transform="translate(200, 30)">
+            <line x1="0" y1="6" x2="14" y2="6" stroke="#059669" stroke-width="3" stroke-dasharray="4 2"/>
+            <text x="22" y="10">Loganix</text>
+          </g>
+          <g transform="translate(300, 30)">
+            <rect width="14" height="3" y="5" fill="#DB2777"/>
+            <text x="22" y="10">Searcharoo</text>
+          </g>
+          <g transform="translate(420, 30)">
+            <rect width="14" height="3" y="5" fill="#D97706"/>
+            <text x="22" y="10">RhinoRank</text>
+          </g>
+          <g transform="translate(540, 30)">
+            <line x1="0" y1="6" x2="14" y2="6" stroke="#6B7280" stroke-width="2" stroke-dasharray="2 2"/>
+            <text x="22" y="10">Publisher-direct (FatRank)</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <p class="text-sm text-muted italic mb-12">
+      Lines connect only the years for which a given vendor has a verified snapshot. Gaps reflect missing Wayback coverage for that URL in that year, not pricing gaps.
+    </p>
+
+    <div class="mb-10">
+      <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">Per-Vendor Pricing, DR30+ Equivalent</h3>
+      <div class="overflow-x-auto rounded-xl shadow-card bg-white">
+        <table class="w-full text-sm">
+          <thead class="bg-bg-paper text-ink">
+            <tr>
+              <th class="text-left px-4 py-3 font-semibold">Vendor</th>
+              <th class="text-right px-4 py-3 font-semibold">2020</th>
+              <th class="text-right px-4 py-3 font-semibold">2021</th>
+              <th class="text-right px-4 py-3 font-semibold">2022</th>
+              <th class="text-right px-4 py-3 font-semibold">2023</th>
+              <th class="text-right px-4 py-3 font-semibold">2024</th>
+              <th class="text-right px-4 py-3 font-semibold">2025</th>
+              <th class="text-right px-4 py-3 font-semibold">2026</th>
+              <th class="text-right px-4 py-3 font-semibold text-brand">Change</th>
+            </tr>
+          </thead>
+          <tbody class="text-body divide-y divide-subtle">
+            <tr>
+              <td class="px-4 py-3 font-medium text-ink">FATJOE</td>
+              <td class="px-4 py-3 text-right">$95</td>
+              <td class="px-4 py-3 text-right">$81</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right">$120</td>
+              <td class="px-4 py-3 text-right">$120</td>
+              <td class="px-4 py-3 text-right font-medium">+26%</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-ink">Loganix</td>
+              <td class="px-4 py-3 text-right">$134</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right">$200</td>
+              <td class="px-4 py-3 text-right">$200</td>
+              <td class="px-4 py-3 text-right">$200</td>
+              <td class="px-4 py-3 text-right font-medium">+49%</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-ink">Searcharoo</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right">$117</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right">$180</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right font-medium">+54%</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-ink">RhinoRank</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right">$120</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right">$120</td>
+              <td class="px-4 py-3 text-right font-medium">0%</td>
+            </tr>
+            <tr class="bg-bg-cream">
+              <td class="px-4 py-3 font-medium text-ink">Publisher-direct (FatRank)</td>
+              <td class="px-4 py-3 text-right">$30</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right">$91</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right text-muted">—</td>
+              <td class="px-4 py-3 text-right font-medium">+203%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ── UNDERSTANDING LINK VALUE ── -->
+  <section id="learn" class="bg-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
+        What Actually Determines the Value of a Backlink
+      </h2>
+      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
         Not all backlinks are equal. These factors determine whether a link moves rankings or wastes budget.
       </p>
 
@@ -241,7 +428,7 @@ const jsonLd = {
         </div>
       </div>
 
-      <h3 class="text-2xl font-black text-[#0A0F1E] mb-2 mt-4">Risk and Compliance</h3>
+      <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3 mt-4">Risk and Compliance</h3>
       <p class="text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-2xl">
         The cost of a link is not just the price you pay. It includes the risk you take.
       </p>
@@ -280,20 +467,20 @@ const jsonLd = {
       </div>
 
       <div class="bg-white border-l-4 border-[#5D4FE0] rounded-r-2xl p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
-        <p class="text-3xl font-black text-[#5D4FE0] mb-2">20–40%</p>
-        <p class="text-sm text-[#475569] leading-relaxed">Increase in publisher placement fees over the past two years. The cost of buying links is rising. Meanwhile, the risk of those links being devalued by algorithm updates is also rising.</p>
+        <p class="text-3xl font-black text-[#5D4FE0] mb-1">+203%</p>
+        <p class="text-sm font-semibold text-[#0A0F1E] mb-2">Increase in publisher-direct DR30 pricing, 2020–2024</p>
+        <p class="text-sm text-[#475569] leading-relaxed">Pricing collected direct from publishers has tripled over four years (FatRank industry benchmark). Agency-managed pricing has moved more slowly. The pressure is coming from the supply side.</p>
       </div>
     </div>
   </section>
 
   <!-- ── BOUGHT VS EARNED ── -->
-  <section id="compare" class="py-24 lg:py-32" style="background: #F8F7FA;">
+  <section id="compare" class="py-16 md:py-24" style="background: #F8F7FA;">
     <div class="max-w-4xl mx-auto px-6">
-      <Eyebrow label="Comparison" />
-      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
-        Bought Links vs Earned Links
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
+        Paid Backlinks vs Earned Editorial Placements
       </h2>
-      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium max-w-2xl">
+      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
         Every link in the marketplace data above is a bought link. Anyone with a budget can acquire them. The question is whether that builds a lasting advantage — or just a temporary one.
       </p>
 
@@ -340,55 +527,46 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- ── CALCULATOR ── -->
-  <section id="calculator" class="bg-white py-24 lg:py-32">
-    <div class="max-w-4xl mx-auto px-6">
-      <Eyebrow label="Calculator" />
-      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
-        Cost Calculator
+  <!-- ── AI SEARCH BRIDGE ── -->
+  <section class="py-16 md:py-24 bg-white">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="mb-10">
+      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">AI Search Context</div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
+        Why Backlink Pricing Matters for AI Search Visibility
       </h2>
-      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium max-w-2xl">
-        Compare the cost of buying links on marketplaces vs earning them through digital PR.
-      </p>
-
-      <div class="bg-[#F8F7FA] rounded-2xl border border-[#0A0F1E]/8 p-8">
-        <h3 class="text-xl font-black text-[#0A0F1E] mb-6">What Will Your Links Cost?</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-          <div>
-            <label for="numLinks" class="block text-sm font-semibold text-[#0A0F1E] mb-2">Number of links needed</label>
-            <input type="number" id="numLinks" value="10" min="1" max="100"
-              class="w-full px-4 py-3 border border-[#0A0F1E]/13 rounded-lg text-sm text-[#0A0F1E] bg-white focus:outline-none focus:ring-2 focus:ring-[#5D4FE0]/20 focus:border-[#5D4FE0] transition-colors" />
-          </div>
-          <div>
-            <label for="drRange" class="block text-sm font-semibold text-[#0A0F1E] mb-2">Target DR range (for marketplace)</label>
-            <select id="drRange"
-              class="w-full px-4 py-3 border border-[#0A0F1E]/13 rounded-lg text-sm text-[#0A0F1E] bg-white focus:outline-none focus:ring-2 focus:ring-[#5D4FE0]/20 focus:border-[#5D4FE0] transition-colors appearance-none">
-              <option value="20">DR 20–30</option>
-              <option value="30">DR 30–40</option>
-              <option value="40">DR 40–50</option>
-              <option value="50" selected>DR 50–60</option>
-              <option value="60">DR 60–70</option>
-              <option value="70">DR 70–80</option>
-              <option value="80">DR 80+</option>
-            </select>
-          </div>
-        </div>
-        <div id="calcResults"></div>
-        <p id="calcNote" class="text-xs text-[#94A3B8] mt-4"></p>
-      </div>
     </div>
-  </section>
+
+    <div class="prose prose-lg text-body max-w-none space-y-6 leading-relaxed">
+      <p>
+        Every data point on this page measures the same thing: the cost of a signal that used to tell search engines which brands to surface. The assumption behind buying that signal was that Google would read it, weigh it, and rank you accordingly.
+      </p>
+      <p>
+        That assumption is now splitting in two. Google still reads links, but an increasing share of commercial intent now resolves inside AI systems — ChatGPT, Perplexity, Google's AI Overviews, Claude — that decide which brands to mention based on different evidence. They read editorial coverage on authority publishers. They read citation context, not anchor text. They read whether your brand appears inside answers humans trust, not whether it appears inside backlink indexes bots crawl.
+      </p>
+      <p>
+        A DR50 marketplace link on a traffic-light site was always a questionable investment for Google rankings. It's worthless for AI answer surfaces. The sites AI systems cite are a different population from the sites link marketplaces sell access to, and the gap is widening as AI answer engines refine which sources they trust.
+      </p>
+      <p>
+        This is the mechanism behind citation equity: the editorial coverage on real publishers that accumulates as a brand signal across both search and AI systems. It is what our campaigns are built to earn. The pricing data above is useful context for anyone comparing options, but it describes a market that's solving yesterday's problem.
+      </p>
+      <p class="text-sm text-muted italic">
+        For the full argument and evidence, see <a href="/resources/citation-equity-vs-link-building" class="text-brand hover:text-brand-dark underline underline-offset-2">Citation equity vs link building</a>. For background on how AI systems choose which brands to surface, see <a href="/resources/ai-search-visibility" class="text-brand hover:text-brand-dark underline underline-offset-2">our AI search visibility guide</a>.
+      </p>
+    </div>
+  </div>
+</section>
 
   <!-- ── METHODOLOGY ── -->
-  <section id="methodology" class="py-24 lg:py-32" style="background: #F8F7FA;">
+  <section id="methodology" class="py-16 md:py-24" style="background: #F8F7FA;">
     <div class="max-w-4xl mx-auto px-6">
-      <Eyebrow label="Methodology" />
-      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-4">
-        Methodology
+      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Methodology</div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
+        How This Data Was Collected
       </h2>
 
       <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] mb-8">
-        <p class="text-base text-[#475569] leading-relaxed mb-6">The Real Cost of Backlinks aggregates pricing data from multiple independent marketplace studies and live platform data:</p>
+        <p class="text-base text-[#475569] leading-relaxed mb-6">The Cost of Authority: 2026 Backlink Pricing Index aggregates pricing data from multiple independent marketplace studies and live platform data:</p>
         <ul class="space-y-3 mb-6">
           <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">BuzzStream (2025)</strong> — Analysis of 26,000+ guest post sites from a major vendor database, with quality tiering by traffic and DR</span></li>
           <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Adsy (2025)</strong> — Pricing analysis across 37,542 publisher websites</span></li>
@@ -396,15 +574,19 @@ const jsonLd = {
           <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Linkhouse (2026)</strong> — Validated against live pricing from 76,861 publisher listings across 25 languages</span></li>
           <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Additional platforms</strong> — Collaborator, Getfluence, WhitePress, GuestPostLinks, Bazoom, and LinkPublishers</span></li>
           <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Service providers</strong> — Published pricing from 10+ named agencies and services</span></li>
+          <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Wayback Machine (2020–2026)</strong> — Primary-source pricing snapshots across FATJOE, Searcharoo, Loganix, RhinoRank, and The HOTH, extracted via the Internet Archive CDX API. 104 observations, audit trail preserved.</span></li>
+          <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">FatRank industry cost study (2024)</strong> — Cross-network pricing analysis from an investor in multiple link-building platforms, providing publisher-direct vs agency-managed cost comparison.</span></li>
+          <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Vendor-published review articles (2020–2026)</strong> — Dated third-party reviews citing then-current vendor pricing tables, used to corroborate and fill gaps in Wayback coverage.</span></li>
         </ul>
         <p class="text-sm text-[#475569] leading-relaxed mb-3">All prices converted to USD at March 2026 exchange rates. Vendor markup estimates based on BuzzStream's methodology. Quality filtering follows BuzzStream's criteria: minimum 1,000 monthly organic traffic and minimum DR 40.</p>
+        <p class="text-sm text-[#475569] leading-relaxed mb-3">For the longitudinal dataset, one representative Wayback snapshot per year was selected per vendor (closest to mid-year) and parsed for tier pricing. DR/DA tiers are treated as equivalent since major vendors switched labeling conventions mid-window without changing the underlying product. LinksThatRank was excluded from the longitudinal chart because their pricing is rendered client-side; Wayback captures only the empty shell. The HOTH was excluded because their SKU mix changed substantially across years. Raw dataset available on request.</p>
         <p class="text-sm text-[#475569] leading-relaxed">This index will be updated annually. Corrections or data contributions welcome at <a href="mailto:contact@ranking-atlas.com" class="inline-link">contact@ranking-atlas.com</a>.</p>
       </div>
 
       <!-- Cite box -->
       <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] relative">
         <p class="text-sm font-semibold text-[#0A0F1E] mb-3">Cite this resource</p>
-        <code id="citeText" class="block font-mono text-xs text-[#475569] leading-relaxed bg-[#F8F7FA] rounded-lg p-4 pr-20">Ranking Atlas. "The Real Cost of Backlinks (2026)." ranking-atlas.com/the-cost-of-authority. Published March 2026.</code>
+        <code id="citeText" class="block font-mono text-xs text-[#475569] leading-relaxed bg-[#F8F7FA] rounded-lg p-4 pr-20">Ranking Atlas. "The Cost of Authority: 2026 Backlink Pricing Index." ranking-atlas.com/resources/the-cost-of-authority. Published March 2026.</code>
         <button id="copyBtn"
           class="absolute top-6 right-6 bg-[#F1F5F9] hover:bg-[#E2E8F0] border border-[#0A0F1E]/10 rounded-lg px-3 py-1.5 text-xs font-medium text-[#475569] transition-colors">
           Copy
@@ -414,10 +596,10 @@ const jsonLd = {
   </section>
 
   <!-- ── GUARANTEE / HOW IT WORKS ── -->
-  <section class="bg-white py-24 lg:py-32">
+  <section class="bg-white py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-6">
       <div class="bg-[#5D4FE0]/5 border border-[#5D4FE0]/20 rounded-2xl p-8">
-        <h3 class="text-xl font-black text-[#0A0F1E] mb-4">How the Ranking Atlas Guarantee Works</h3>
+        <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">How the Ranking Atlas Guarantee Works</h3>
         <p class="text-base text-[#475569] leading-relaxed mb-3">Most digital PR agencies charge monthly retainers with no link guarantees. You pay for their time and hope for the best. We do the opposite.</p>
         <p class="text-base text-[#475569] leading-relaxed mb-3">Every Ranking Atlas campaign costs $3,500. That's the price whether we deliver 8 links or 15. We keep running story angles — reactive PR, expert commentary, data campaigns — until a minimum of 8 earned placements are secured. If a campaign overdelivers, you don't pay more. If it takes longer than expected, we keep working at no additional cost.</p>
         <p class="text-base text-[#475569] leading-relaxed mb-6">No retainers. No rolling contracts. One campaign, one price, a guaranteed minimum outcome. Most campaigns deliver 8–12+ placements across publications with real editorial standards and real audiences.</p>
@@ -427,10 +609,10 @@ const jsonLd = {
   </section>
 
   <!-- ── FINAL CTA BAND ── -->
-  <section class="relative overflow-hidden py-24 lg:py-32 text-center" style="background: #5D4FE0;">
+  <section class="relative overflow-hidden py-16 md:py-20 text-center" style="background: #5D4FE0;">
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
     <div class="relative max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
         Be the brand <span class="relative inline-block pb-2">AI recommends<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
       </h2>
       <p class="text-lg text-white/80 mb-10">Per-campaign. Fixed price. Guaranteed placements on authority publishers.</p>
@@ -443,43 +625,6 @@ const jsonLd = {
 
 </Layout>
 
-<style is:global>
-  .calc-result {
-    background: white;
-    border-radius: 10px;
-    padding: 16px 20px;
-    border: 1px solid rgba(10,15,30,0.1);
-    margin-bottom: 8px;
-  }
-  .calc-result.best {
-    border-color: #15803D;
-    background: #F0FDF4;
-  }
-  .calc-result.neutral {
-    border-color: rgba(10,15,30,0.1);
-    background: white;
-  }
-  .calc-result .method {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 4px;
-    color: #94A3B8;
-  }
-  .calc-result .total {
-    font-size: 22px;
-    font-weight: 700;
-    font-family: ui-monospace, monospace;
-    color: #0A0F1E;
-  }
-  .calc-result .per-link {
-    font-size: 12px;
-    color: #64748B;
-    margin-top: 2px;
-    line-height: 1.5;
-  }
-</style>
 
 <script>
   // ── Accordion ──
@@ -531,73 +676,6 @@ const jsonLd = {
       }
     });
   }
-
-  // ── Calculator ──
-  var pricingData: Record<string, {gp: number, ne: number}> = {
-    '20': { gp: 175, ne: 150 },
-    '30': { gp: 282, ne: 225 },
-    '40': { gp: 365, ne: 300 },
-    '50': { gp: 500, ne: 400 },
-    '60': { gp: 650, ne: 500 },
-    '70': { gp: 930, ne: 700 },
-    '80': { gp: 1500, ne: 1000 }
-  };
-
-  function updateCalc() {
-    var numLinksEl = document.getElementById('numLinks') as HTMLInputElement;
-    var drRangeEl = document.getElementById('drRange') as HTMLSelectElement;
-    if (!numLinksEl || !drRangeEl) return;
-
-    var n = Math.max(1, Math.min(100, parseInt(numLinksEl.value) || 10));
-    var dr = drRangeEl.value;
-    var drNum = parseInt(dr);
-    var d = pricingData[dr];
-    var gpTotal = d.gp * n;
-    var neTotal = d.ne * n;
-    var campaigns = Math.ceil(n / 12);
-    var dprTotal = campaigns * 3500;
-    var dprPer = Math.round(dprTotal / n);
-    var minLinks = campaigns * 8;
-    var marketplaceCheaper = (drNum <= 40 && d.ne * n < dprTotal);
-
-    var html = '<p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#94A3B8;margin:0 0 10px">Buying links (marketplace)</p>';
-    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">';
-
-    if (marketplaceCheaper) {
-      html += '<div class="calc-result best"><div class="method" style="color:#15803D">Guest post</div><div class="total">$' + gpTotal.toLocaleString() + '</div><div class="per-link">$' + d.gp.toLocaleString() + ' per link</div></div>';
-      html += '<div class="calc-result best"><div class="method" style="color:#15803D">Niche edit</div><div class="total">$' + neTotal.toLocaleString() + '</div><div class="per-link">$' + d.ne.toLocaleString() + ' per link</div></div>';
-    } else {
-      html += '<div class="calc-result"><div class="method">Guest post</div><div class="total">$' + gpTotal.toLocaleString() + '</div><div class="per-link">$' + d.gp.toLocaleString() + ' per link</div></div>';
-      html += '<div class="calc-result"><div class="method">Niche edit</div><div class="total">$' + neTotal.toLocaleString() + '</div><div class="per-link">$' + d.ne.toLocaleString() + ' per link</div></div>';
-    }
-    html += '</div>';
-
-    html += '<p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#15803D;margin:0 0 10px">Earning links (Ranking Atlas digital PR)</p>';
-
-    if (marketplaceCheaper) {
-      html += '<div class="calc-result neutral"><div class="method">' + campaigns + ' digital PR campaign' + (campaigns > 1 ? 's' : '') + ' &middot; $3,500 each</div><div class="total">$' + dprTotal.toLocaleString() + '</div><div class="per-link">Minimum ' + minLinks + ' earned placements guaranteed &middot; most campaigns deliver 8–12+ links &middot; fixed price regardless of how many links are secured</div></div>';
-    } else {
-      html += '<div class="calc-result best"><div class="method" style="color:#15803D">' + campaigns + ' digital PR campaign' + (campaigns > 1 ? 's' : '') + ' &middot; $3,500 each</div><div class="total">$' + dprTotal.toLocaleString() + '</div><div class="per-link">Minimum ' + minLinks + ' earned placements guaranteed &middot; most campaigns deliver 8–12+ links &middot; fixed price regardless of how many links are secured</div></div>';
-    }
-
-    var calcResultsEl = document.getElementById('calcResults');
-    if (calcResultsEl) calcResultsEl.innerHTML = html;
-
-    var note = document.getElementById('calcNote');
-    if (note) {
-      if (marketplaceCheaper) {
-        note.textContent = 'At this DR range, marketplace links are more cost-effective for building foundational link diversity. Digital PR delivers links on publications with higher authority, real traffic, and editorial standards — consider it when you need links that also build brand recognition.';
-      } else {
-        note.textContent = 'At this DR range, earned links through digital PR are more cost-effective per link — and come with zero compliance risk, guaranteed real traffic, and brand-building benefits that marketplace links cannot deliver.';
-      }
-    }
-  }
-
-  var numLinksInput = document.getElementById('numLinks');
-  var drRangeSelect = document.getElementById('drRange');
-  if (numLinksInput) numLinksInput.addEventListener('input', updateCalc);
-  if (drRangeSelect) drRangeSelect.addEventListener('change', updateCalc);
-  updateCalc();
 
   // ── Heatmap ──
   var heatmapData = {

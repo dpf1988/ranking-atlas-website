@@ -1,8 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PrimaryCTA from '../components/PrimaryCTA.astro';
-import SecondaryCTA from '../components/SecondaryCTA.astro';
-import Eyebrow from '../components/Eyebrow.astro';
+import Layout from '../../layouts/Layout.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import SecondaryCTA from '../../components/SecondaryCTA.astro';
 import { Network, TrendingDown, Quote, Check, X } from 'lucide-astro';
 
 const jsonLd = {
@@ -23,7 +22,7 @@ const jsonLd = {
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
   <!-- ── 1. HERO ── -->
-  <section class="relative overflow-hidden py-24 lg:py-32">
+  <section class="relative overflow-hidden py-20 md:py-28">
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full opacity-[0.10] blur-[140px]"
            style="background: radial-gradient(circle, #5D4FE0 0%, transparent 70%);"></div>
@@ -31,11 +30,11 @@ const jsonLd = {
     <div class="absolute inset-0 opacity-[0.02] pointer-events-none" aria-hidden="true"
       style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
     <div class="relative max-w-4xl mx-auto px-6 text-center">
-      <Eyebrow label="The Guide" />
-      <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-black leading-[1.08] tracking-tighter text-[#0A0F1E] mb-6">
-        How AI search picks <span class="relative inline-block pb-2">which brands to cite<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3 text-[#5D4FE0]" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
+      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">The Guide</div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
+        How AI Search Picks <span class="relative inline-block pb-2">Which Brands to Cite<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3 text-[#5D4FE0]" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
       </h1>
-      <p class="text-lg text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-8">
+      <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
         A practical breakdown of how ChatGPT, Perplexity, Gemini, and Google AI Overviews decide who to surface — and why editorial coverage is the signal that matters.
       </p>
       <div class="flex flex-wrap gap-3 justify-center">
@@ -46,13 +45,12 @@ const jsonLd = {
   </section>
 
   <!-- ── 2. THE SHIFT ── -->
-  <section id="the-shift" class="bg-white py-24 lg:py-32">
+  <section id="the-shift" class="bg-white py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-6">
-      <Eyebrow label="The Shift" />
-      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-6">
-        AI search is a vendor-research channel now.
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
+        AI Search Is a Vendor-Research Channel Now.
       </h2>
-      <p class="text-xl text-[#475569] leading-relaxed mb-10 font-medium">
+      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-6 font-medium">
         B2B buyers are no longer starting on Google. They're asking ChatGPT, Perplexity, and Gemini who to trust — and the brands those tools cite enter the consideration set before a sales team ever hears the buyer's name.
       </p>
       <p class="text-base text-[#475569] leading-relaxed mb-6">
@@ -65,16 +63,15 @@ const jsonLd = {
   </section>
 
   <!-- ── 3. HOW AI PICKS SOURCES ── -->
-  <section id="how-ai-picks" class="py-24 lg:py-32" style="background: #F8F7FA;">
+  <section id="how-ai-picks" class="py-16 md:py-24" style="background: #F8F7FA;">
     <div class="max-w-5xl mx-auto px-6">
-      <Eyebrow label="The Mechanism" />
-      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-6 max-w-3xl">
-        How ChatGPT, Perplexity, and Gemini decide who to cite.
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5 max-w-3xl">
+        How ChatGPT, Perplexity, and Gemini Decide Who to Cite.
       </h2>
-      <p class="text-xl text-[#475569] leading-relaxed mb-12 font-medium max-w-3xl">
+      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
         AI search engines are not ranking pages. They're selecting sources. The difference matters.
       </p>
-      <p class="text-base text-[#475569] leading-relaxed mb-10 max-w-3xl">
+      <p class="text-base text-[#475569] leading-relaxed mb-8 max-w-3xl">
         When someone asks ChatGPT "best fintech compliance tools" or "most trusted B2B data security vendors", the model isn't ranking results the way Google does. It's retrieving content from sources it treats as trustworthy, synthesising an answer, and citing the domains that contributed. The brands that get cited are the brands whose footprint matches the model's trust signals.
       </p>
 
@@ -114,27 +111,26 @@ const jsonLd = {
         </div>
       </div>
 
-      <p class="text-base text-[#475569] leading-relaxed mt-10 max-w-3xl">
+      <p class="text-base text-[#475569] leading-relaxed mt-8 max-w-3xl">
         The pattern across every large-scale study is the same. AI search systems rely on third-party validation signals — who links to you, who cites you, who references your brand in trusted editorial — to decide whose answers deserve to appear. Content you publish on your own domain barely moves the needle. Coverage earned on authoritative publishers does.
       </p>
     </div>
   </section>
 
   <!-- ── 4. GEO VS SEO ── -->
-  <section id="geo-vs-seo" class="bg-white py-24 lg:py-32">
+  <section id="geo-vs-seo" class="bg-white py-16 md:py-24">
     <div class="max-w-5xl mx-auto px-6">
-      <Eyebrow label="GEO vs SEO" />
-      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-6 max-w-3xl">
-        Generative engine optimisation isn't SEO with a rebrand.
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5 max-w-3xl">
+        Generative Engine Optimisation Isn't SEO With a Rebrand.
       </h2>
-      <p class="text-xl text-[#475569] leading-relaxed mb-12 font-medium max-w-3xl">
+      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
         Generative engine optimisation — GEO — is the practice of earning visibility in AI-generated answers. It overlaps with SEO but diverges on the fundamentals that matter most.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- SEO card (muted) -->
         <div class="bg-[#F1F5F9] rounded-2xl p-8 border border-[#0A0F1E]/8">
-          <h3 class="text-lg font-bold text-[#0A0F1E] mb-4">Traditional SEO</h3>
+          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">Traditional SEO</h3>
           <ul class="space-y-3">
             <li class="flex items-start gap-3 text-sm text-[#475569]">
               <X size={16} class="text-[#94A3B8] shrink-0 mt-0.5" />
@@ -156,7 +152,7 @@ const jsonLd = {
         </div>
         <!-- GEO card (brand-emphasis) -->
         <div class="bg-white rounded-2xl p-8 border-2 border-[#5D4FE0]/20 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
-          <h3 class="text-lg font-bold text-[#5D4FE0] mb-4">Generative engine optimisation</h3>
+          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">Generative Engine Optimisation</h3>
           <ul class="space-y-3">
             <li class="flex items-start gap-3 text-sm text-[#475569] font-medium">
               <Check size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />
@@ -178,20 +174,19 @@ const jsonLd = {
         </div>
       </div>
 
-      <p class="text-base text-[#475569] leading-relaxed mt-10 max-w-3xl">
+      <p class="text-base text-[#475569] leading-relaxed mt-8 max-w-3xl">
         There's overlap. A strong SEO foundation helps — <a class="inline-link" href="https://www.ekamoira.com/blog/chatgpt-seo-the-complete-guide-to-ranking-in-chatgpt-search-results-2026" target="_blank" rel="noopener noreferrer">Seer Interactive found a 0.65 correlation</a> between Google rankings and LLM mentions. But it's not enough. The brands cited by AI are the brands with editorial footprints across publishers, not the brands with the most optimised landing pages.
       </p>
     </div>
   </section>
 
   <!-- ── 5. FRAMEWORK ── -->
-  <section id="framework" class="py-24 lg:py-32" style="background: #F8F7FA;">
+  <section id="framework" class="py-16 md:py-24" style="background: #F8F7FA;">
     <div class="max-w-5xl mx-auto px-6">
-      <Eyebrow label="The Practice" />
-      <h2 class="text-4xl md:text-5xl font-black text-[#5D4FE0] leading-tight tracking-tight mb-6 max-w-3xl">
-        How we build citation equity.
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5 max-w-3xl">
+        How We Build Citation Equity.
       </h2>
-      <p class="text-xl text-[#475569] leading-relaxed mb-12 font-medium max-w-3xl">
+      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
         The signal AI search systems use is pattern — repeated mentions across trusted publishers. Earning that pattern is a practice, not a tactic. This is how Ranking Atlas runs it.
       </p>
 
@@ -199,47 +194,47 @@ const jsonLd = {
         <!-- Step 01 -->
         <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
           <p class="text-4xl font-black text-[#5D4FE0]/30 mb-4">01</p>
-          <h3 class="text-lg font-bold text-[#0A0F1E] mb-3">Audit your citation footprint</h3>
+          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">Audit Your Citation Footprint</h3>
           <p class="text-base text-[#475569] leading-relaxed">Before we can move visibility, we map where you stand. Which publishers already cite your brand? Where do your competitors appear that you don't? Which AI queries in your category surface you today, and which surface someone else? The audit is the baseline every campaign measures against.</p>
         </div>
         <!-- Step 02 -->
         <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
           <p class="text-4xl font-black text-[#5D4FE0]/30 mb-4">02</p>
-          <h3 class="text-lg font-bold text-[#0A0F1E] mb-3">Build stories publishers want to cover</h3>
+          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">Build Stories Publishers Want to Cover</h3>
           <p class="text-base text-[#475569] leading-relaxed">Journalists don't run press releases. They run stories. We develop data-led research, original analysis, and contrarian angles anchored in evidence — the material that earns coverage on authority publishers instead of being ignored.</p>
         </div>
         <!-- Step 03 -->
         <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
           <p class="text-4xl font-black text-[#5D4FE0]/30 mb-4">03</p>
-          <h3 class="text-lg font-bold text-[#0A0F1E] mb-3">Place the story repeatedly, not once</h3>
+          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">Place the Story Repeatedly, Not Once</h3>
           <p class="text-base text-[#475569] leading-relaxed">One article in Forbes is a line on a press page. A pattern of coverage across Forbes, Bloomberg, The Telegraph, and three trade publications is what AI search systems treat as an authority signal. Omnipresence is the asset we build.</p>
         </div>
         <!-- Step 04 -->
         <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
           <p class="text-4xl font-black text-[#5D4FE0]/30 mb-4">04</p>
-          <h3 class="text-lg font-bold text-[#0A0F1E] mb-3">Measure AI visibility, not just rankings</h3>
+          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">Measure AI Visibility, Not Just Rankings</h3>
           <p class="text-base text-[#475569] leading-relaxed">Every campaign includes before-and-after measurement of citation frequency across ChatGPT, Perplexity, Gemini, and Google AI Overviews on your category queries. Ranking #3 on Google doesn't tell you whether ChatGPT names you. Direct measurement does.</p>
         </div>
       </div>
 
-      <div class="text-center mt-16">
+      <div class="text-center mt-10">
         <PrimaryCTA href="/contact" />
       </div>
     </div>
   </section>
 
   <!-- ── 6. FAQ ── -->
-  <section class="relative bg-[#0A0F1E] py-24 lg:py-32 overflow-hidden">
+  <section class="relative bg-[#0A0F1E] py-16 md:py-24 overflow-hidden">
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full"
         style="background: radial-gradient(ellipse, rgba(93,79,224,0.12) 0%, transparent 70%);">
       </div>
     </div>
     <div class="relative max-w-3xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <Eyebrow label="FAQ" variant="dark" />
-        <h2 class="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
-          Questions about AI search visibility.
+      <div class="text-center mb-8">
+        <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">FAQ</div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight mb-5">
+          Questions About AI Search Visibility.
         </h2>
       </div>
 
@@ -300,10 +295,10 @@ const jsonLd = {
   </section>
 
   <!-- ── 7. FINAL CTA BAND ── -->
-  <section class="relative overflow-hidden py-24 lg:py-32 text-center" style="background: #5D4FE0;">
+  <section class="relative overflow-hidden py-16 md:py-20 text-center" style="background: #5D4FE0;">
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
     <div class="relative max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
         Be the brand <span class="relative inline-block pb-2">AI recommends<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
       </h2>
       <p class="text-lg text-white/80 mb-10">Per-campaign. Fixed price. Guaranteed placements on authority publishers.</p>

@@ -3,16 +3,36 @@
   publish = "dist"
 
 [[redirects]]
+  from = "/the-cost-of-authority"
+  to = "/resources/the-cost-of-authority/"
+  status = 301
+
+[[redirects]]
+  from = "/the-cost-of-authority/"
+  to = "/resources/the-cost-of-authority/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-search-visibility"
+  to = "/resources/ai-search-visibility/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-search-visibility/"
+  to = "/resources/ai-search-visibility/"
+  status = 301
+
+[[redirects]]
   from = "/backlink-price-index"
-  to = "/the-cost-of-authority"
+  to = "/resources/the-cost-of-authority/"
   status = 301
 
 [[redirects]]
   from = "/backlink-price-index.html"
-  to = "/the-cost-of-authority"
+  to = "/resources/the-cost-of-authority/"
   status = 301
 
 [[redirects]]
   from = "/saas-price-index"
-  to = "/the-cost-of-authority"
+  to = "/resources/the-cost-of-authority/"
   status = 301

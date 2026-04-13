@@ -34,24 +34,7 @@ const mobileLink = 'block px-4 py-3 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover
       <nav class="hidden md:flex items-center gap-8 ml-auto mr-8">
         <a href={isHome ? '#home' : '/'} class={navLink}>Home</a>
 
-        <!-- Resources dropdown -->
-        <div class="relative" id="resources-dropdown">
-          <button id="resources-btn" class={navLink} type="button">
-            Resources
-          </button>
-          <div id="resources-menu" class="hidden absolute top-full left-0 pt-2 z-50">
-            <div class="w-52 bg-white rounded-lg shadow-lg border border-[#0A0F1E]/10 py-1">
-              <a href="/ai-search-visibility"
-                class="block px-4 py-2.5 text-sm text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors">
-                AI Search Visibility Guide
-              </a>
-              <a href="/the-cost-of-authority"
-                class="block px-4 py-2.5 text-sm text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors">
-                The Cost of Authority
-              </a>
-            </div>
-          </div>
-        </div>
+        <a href="/resources/" class={navLink}>Resources</a>
 
         <a href="/about" class={navLink}>About</a>
         <a href="/contact" class={navLink}>Contact</a>
@@ -83,27 +66,7 @@ const mobileLink = 'block px-4 py-3 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#0A0F1E]/10 py-4">
       <a href={isHome ? '#home' : '/'} class={mobileLink} data-mobile-link>Home</a>
 
-      <!-- Mobile Resources accordion -->
-      <button id="mobile-resources-btn" type="button"
-        class="flex items-center justify-between w-full px-4 py-3 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors text-sm font-medium"
-        aria-expanded="false">
-        Resources
-        <svg id="mobile-resources-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div id="mobile-resources-submenu" class="hidden">
-        <a href="/ai-search-visibility"
-          class="block px-4 py-2.5 pl-8 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors text-sm font-medium"
-          data-mobile-link>
-          AI Search Visibility Guide
-        </a>
-        <a href="/the-cost-of-authority"
-          class="block px-4 py-2.5 pl-8 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover:bg-[#F1F5F9] transition-colors text-sm font-medium"
-          data-mobile-link>
-          The Cost of Authority
-        </a>
-      </div>
+      <a href="/resources/" class={mobileLink} data-mobile-link>Resources</a>
 
       <a href="/about" class={mobileLink} data-mobile-link>About</a>
       <a href="/contact" class={mobileLink} data-mobile-link>Contact</a>
@@ -146,40 +109,4 @@ const mobileLink = 'block px-4 py-3 text-[#0A0F1E]/65 hover:text-[#0A0F1E] hover
     });
   });
 
-  // Desktop Resources dropdown (hover)
-  const resourcesDropdown = document.getElementById('resources-dropdown');
-  const resourcesMenu = document.getElementById('resources-menu');
-
-  resourcesDropdown?.addEventListener('mouseenter', () => {
-    resourcesMenu?.classList.remove('hidden');
-  });
-  resourcesDropdown?.addEventListener('mouseleave', () => {
-    resourcesMenu?.classList.add('hidden');
-  });
-
-  // Mobile Resources accordion (tap to toggle)
-  const mobileResourcesBtn = document.getElementById('mobile-resources-btn');
-  const mobileResourcesSubmenu = document.getElementById('mobile-resources-submenu');
-  const mobileResourcesChevron = document.getElementById('mobile-resources-chevron');
-
-  mobileResourcesBtn?.addEventListener('click', () => {
-    const isOpen = !mobileResourcesSubmenu?.classList.contains('hidden');
-    if (isOpen) {
-      mobileResourcesSubmenu?.classList.add('hidden');
-      mobileResourcesChevron?.classList.remove('rotate-180');
-      mobileResourcesBtn?.setAttribute('aria-expanded', 'false');
-    } else {
-      mobileResourcesSubmenu?.classList.remove('hidden');
-      mobileResourcesChevron?.classList.add('rotate-180');
-      mobileResourcesBtn?.setAttribute('aria-expanded', 'true');
-    }
-  });
-
-  // Also collapse the Resources submenu when the mobile menu closes
-  menuToggle?.addEventListener('click', () => {
-    if (!mobileMenu?.classList.contains('hidden')) return; // menu just opened, do nothing
-    mobileResourcesSubmenu?.classList.add('hidden');
-    mobileResourcesChevron?.classList.remove('rotate-180');
-    mobileResourcesBtn?.setAttribute('aria-expanded', 'false');
-  });
 </script>
