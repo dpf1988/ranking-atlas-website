@@ -1,10 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Contact from '../components/Contact.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Ranking Atlas",
+  "url": "https://ranking-atlas.com/contact",
+  "description": "Start a fixed-price editorial PR campaign with Ranking Atlas. Guaranteed placements on authoritative publishers. No retainers.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Ranking Atlas",
+    "url": "https://ranking-atlas.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contact@ranking-atlas.com",
+      "contactType": "sales",
+      "availableLanguage": "English"
+    }
+  }
+};
 ---
 
-<Layout title="Contact — Ranking Atlas" description="Start your first Digital PR campaign with Ranking Atlas. Get in touch for a proposal within one business day.">
-  <div class="pt-16 lg:pt-20">
-    <Contact paddingTop={false} />
-  </div>
+<Layout
+  title="Contact — Ranking Atlas"
+  description="Start a fixed-price editorial PR campaign with Ranking Atlas. Guaranteed placements on authoritative publishers. No retainers. One business day turnaround on proposals."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <!-- Hero -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Start a Campaign</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
+        Let's Talk About Your Citation Equity
+      </h1>
+      <p class="text-lg text-[#475569] leading-relaxed max-w-2xl">
+        Ranking Atlas runs fixed-price campaigns that earn editorial coverage on authoritative publishers. Tell us about your brand and your category, and we'll put together a proposal within one business day.
+      </p>
+    </div>
+  </section>
+
+  <Contact />
 </Layout>
