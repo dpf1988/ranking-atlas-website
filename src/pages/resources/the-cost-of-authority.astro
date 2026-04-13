@@ -8,8 +8,17 @@ const jsonLd = {
   "@type": "Article",
   "headline": "The Cost of Authority: 2026 Backlink Pricing Index",
   "description": "Research and pricing data on editorial citation acquisition in 2026, published by Ranking Atlas.",
-  "author": { "@type": "Organization", "name": "Ranking Atlas" },
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Grainger",
+    "url": "https://ranking-atlas.com/about",
+    "sameAs": [
+      "https://www.linkedin.com/in/daniel-grainger/",
+      "https://ranking-atlas.com/about"
+    ]
+  },
   "datePublished": "2026-03-01",
+  "dateModified": "2026-04-01",
   "publisher": { "@type": "Organization", "name": "Ranking Atlas" }
 };
 ---
@@ -49,7 +58,15 @@ const jsonLd = {
       <p class="text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-10">
         The findings suggest that the majority of marketplace inventory fails basic quality thresholds, that pricing bears limited correlation to actual link value, and that earned media through digital PR delivers a structurally different — and more durable — outcome than purchased links at comparable or lower cost per placement.
       </p>
-      <p class="text-sm text-[#94A3B8] mb-8">Based on 140,000+ publisher listings across 10 marketplaces &nbsp;·&nbsp; Published March 2026 &nbsp;·&nbsp; By Daniel Grainger</p>
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <a href="/about" class="shrink-0">
+          <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+        </a>
+        <div class="text-left">
+          <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+          <p class="text-sm text-[#64748B]">Published March 2026 &nbsp;·&nbsp; Based on 140,000+ publisher listings</p>
+        </div>
+      </div>
 
       <!-- 4 stat cards -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
