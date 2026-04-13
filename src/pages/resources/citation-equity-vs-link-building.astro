@@ -1,11 +1,32 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Citation Equity vs Link Building: Why the Old Playbook Stops Working",
+  "description": "Link-building was designed for a search system that no longer exists. Citation equity is what AI systems use to decide which brands to cite.",
+  "url": "https://ranking-atlas.com/resources/citation-equity-vs-link-building",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Grainger",
+    "url": "https://ranking-atlas.com/about",
+    "sameAs": [
+      "https://www.linkedin.com/in/daniel-grainger/",
+      "https://ranking-atlas.com/about"
+    ]
+  },
+  "datePublished": "2026-03-01",
+  "dateModified": "2026-04-01",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
+};
 ---
 
 <Layout
   title="Citation Equity vs Link Building: Why the Old Playbook Stops Working — Ranking Atlas"
   description="Link-building was built for a search system that is being replaced. Citation equity is what AI systems use to decide which brands to surface in answers. The difference, the evidence, and what to do about it."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
 <article class="py-20 md:py-28">
   <div class="max-w-3xl mx-auto px-6">
@@ -14,6 +35,15 @@ import Layout from '../../layouts/Layout.astro';
     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
       Citation Equity Vs Link Building: Why The Old Playbook Stops Working
     </h1>
+    <div class="flex items-center gap-3 mb-6">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published March 2026 &nbsp;·&nbsp; Updated April 2026</p>
+      </div>
+    </div>
     <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-8">
       Link-building was designed for a search system that is being replaced. Citation equity is what AI systems use to decide which brands to surface in answers. One compounds. The other decays.
     </p>
