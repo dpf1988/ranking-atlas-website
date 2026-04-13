@@ -2,13 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import PrimaryCTA from '../../components/PrimaryCTA.astro';
 import AuthorBio from '../../components/AuthorBio.astro';
-import { Check, X, ArrowRight } from 'lucide-astro';
+import { ArrowRight } from 'lucide-astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "The Cost of Authority: 2026 Publisher Access Pricing",
-  "description": "Our proprietary dataset: 140,000+ publisher listings collected and analyzed over six years. What editorial access costs, how pricing has moved 2020–2026, and why the market is solving the wrong problem.",
+  "description": "Primary-source pricing analysis of editorial coverage and link marketplace rates from 140,000+ publisher listings and six years of agency snapshots.",
   "author": {
     "@type": "Person",
     "name": "Daniel Grainger",
@@ -36,135 +36,118 @@ const jsonLd = {
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-  <!-- ── HERO ── -->
-  <section class="relative overflow-hidden py-20 md:py-28">
-    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full opacity-[0.10] blur-[140px]"
-           style="background: radial-gradient(circle, #5D4FE0 0%, transparent 70%);"></div>
-    </div>
-    <div class="absolute inset-0 opacity-[0.02] pointer-events-none" aria-hidden="true"
-      style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
-
-    <div class="relative max-w-4xl mx-auto px-6 text-center">
-      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">2026 Publisher Access Pricing</div>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
-        The Cost of Authority
-      </h1>
-      <div class="flex items-center justify-center gap-3 mb-8">
-        <a href="/about" class="shrink-0">
-          <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
-        </a>
-        <div class="text-left">
-          <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
-          <p class="text-sm text-[#64748B]">Published March 2026 &nbsp;·&nbsp; Based on 140,000+ publisher listings</p>
-        </div>
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Data Report</div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
+      The Cost Of Authority: 2026 Publisher Access Pricing
+    </h1>
+    <div class="flex items-center gap-3 mb-6">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published March 2026 &nbsp;·&nbsp; Based on 140,000+ publisher listings</p>
       </div>
-      <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-6">
-        The coverage that search engines and AI systems treat as a trust signal has a market price. That market is opaque, fragmented, and rife with inflated metrics.
-      </p>
-      <p class="text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-4">
-        This report analyses primary-source pricing data from 140,000+ publisher listings across 10 major link marketplaces, cross-referenced with six years of agency price snapshots and independent industry studies. It measures the cost of authority across four dimensions:
-      </p>
-      <ul class="text-base text-[#64748B] text-left inline-block mb-6 space-y-1">
-        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Domain Rating (DR 10 through DR 80+)</li>
-        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Organic traffic (zero-traffic sites through 50,000+ monthly visitors)</li>
-        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Niche and industry vertical</li>
-        <li class="flex items-start gap-2"><ArrowRight size={16} class="text-[#5D4FE0] shrink-0 mt-0.5" />Acquisition method (guest posts, niche edits, and earned media through editorial coverage)</li>
-      </ul>
-      <p class="text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-10">
-        The findings: most marketplace inventory fails basic quality thresholds. Pricing bears limited correlation to actual signal value. Earned editorial coverage delivers a structurally different outcome than purchased links, and at lower effective cost per year of useful life.
-      </p>
+    </div>
 
-      <!-- 4 stat cards -->
+    <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
+      <img
+        src="/assets/images/resources/the-cost-of-authority/hero.jpg"
+        alt="The Cost of Authority: 2026 Publisher Access Pricing"
+        class="w-full h-full object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+      />
+      <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
+        <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero Image Slot</div>
+        <div class="text-sm">Drop hero.jpg into /public/assets/images/resources/the-cost-of-authority/ when ready.</div>
+      </div>
+    </div>
+
+    <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-4">
+      Every paid link you buy assumes two things: that Google will count it, and that the site hosting it will still exist next year.
+    </p>
+    <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-4 font-semibold text-ink">
+      Both assumptions are breaking.
+    </p>
+    <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-4">
+      Google has been deindexing marketplace sites in waves since the <a href="https://developers.google.com/search/blog/2022/08/helpful-content-update" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Helpful Content Update rolled out in 2022</a>. AI answer engines like ChatGPT and Perplexity have never read those sites as authoritative. The signal being priced is losing value faster than the market is repricing it.
+    </p>
+    <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-6">
+      This report uses six years of primary-source pricing data to measure the gap.
+    </p>
+
+    <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 mb-10 shadow-card">
+      <p class="text-sm font-semibold text-ink mb-3">In this report, you'll see:</p>
+      <ul class="space-y-2 text-sm text-[#475569] mb-4 list-disc pl-5">
+        <li>What marketplace links actually cost in 2026, by Domain Rating and real organic traffic</li>
+        <li>Why Domain Rating alone misprices the signal, and what correlates with real value</li>
+        <li>How agency-managed and publisher-direct prices have diverged, 2020–2026</li>
+        <li>How indexing is destroying paid link value overnight</li>
+        <li>What the economics look like for paid vs. earned coverage, annualised across useful lifespan</li>
+      </ul>
+      <p class="text-sm text-[#64748B] italic">Let's start with what the market charges today.</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
+        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
           <p class="text-xs font-semibold uppercase tracking-widest text-[#94A3B8] mb-2">Avg. guest post cost</p>
-          <p class="text-4xl font-black text-[#0A0F1E] mb-1">$365</p>
+          <p class="text-4xl md:text-5xl font-black tracking-tight text-ink mb-1">$365</p>
           <p class="text-xs text-[#64748B]">Direct from publisher</p>
           <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-[#0A0F1E] text-white text-xs rounded-lg p-3 leading-relaxed z-10 pointer-events-none">
             The average price a publisher charges for a single guest post placement, bought directly through a marketplace. This is the base cost before any vendor or agency markup.
           </div>
         </div>
-        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
+        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
           <p class="text-xs font-semibold uppercase tracking-widest text-[#94A3B8] mb-2">Avg. vendor markup</p>
-          <p class="text-4xl font-black text-[#0A0F1E] mb-1">75%</p>
+          <p class="text-4xl md:text-5xl font-black tracking-tight text-ink mb-1">75%</p>
           <p class="text-xs text-[#64748B]">Buying through intermediaries</p>
           <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-[#0A0F1E] text-white text-xs rounded-lg p-3 leading-relaxed z-10 pointer-events-none">
-            When you buy through an agency or managed service instead of directly on a marketplace, you pay an average of 75% more. A $365 direct placement becomes ~$1,459 through an intermediary.
+            When you buy through an agency or managed service instead of directly on a marketplace, you pay an average of 75% more. A $365 direct placement becomes ~$638 through an intermediary.
           </div>
         </div>
-        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
+        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
           <p class="text-xs font-semibold uppercase tracking-widest text-[#94A3B8] mb-2">Quality-filtered avg.</p>
-          <p class="text-4xl font-black text-[#0A0F1E] mb-1">$930</p>
+          <p class="text-4xl md:text-5xl font-black tracking-tight text-ink mb-1">$930</p>
           <p class="text-xs text-[#64748B]">DR50+ with real traffic</p>
           <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-[#0A0F1E] text-white text-xs rounded-lg p-3 leading-relaxed z-10 pointer-events-none">
             When you filter marketplace listings to only include sites with DR50+ and real organic traffic (1,000+ monthly visitors), the average price jumps to $930. Quality links cost far more than the headline average suggests.
           </div>
         </div>
-        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
+        <div class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20 relative">
           <p class="text-xs font-semibold uppercase tracking-widest text-[#94A3B8] mb-2">Meet quality bar</p>
-          <p class="text-4xl font-black text-[#0A0F1E] mb-1">4.6%</p>
+          <p class="text-4xl md:text-5xl font-black tracking-tight text-ink mb-1">4.6%</p>
           <p class="text-xs text-[#64748B]">Of all marketplace listings</p>
           <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-[#0A0F1E] text-white text-xs rounded-lg p-3 leading-relaxed z-10 pointer-events-none">
-            Of all guest post sites on marketplaces, only 4.6% meet basic quality criteria: minimum DR40 and minimum 1,000 monthly organic traffic. The other 95.4% are unlikely to deliver meaningful SEO value.
+            Of all guest post sites on marketplaces, only 4.6% meet basic quality criteria: minimum DR40 and minimum 1,000 monthly organic traffic. The other 95.4% are unlikely to deliver meaningful authority signal.
           </div>
         </div>
       </div>
-      <p class="text-sm text-[#94A3B8] mt-4 text-center">Stat sources: BuzzStream guest post analysis (2025), Adsy pricing study (2025). This is what the citation signal costs when you buy it. Full methodology below.</p>
+      <p class="text-sm text-[#94A3B8] mt-4 text-center">Stat sources: <a href="https://www.buzzstream.com/blog/guest-post-sites/" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">BuzzStream guest post analysis (2025)</a>, <a href="https://adsy.com/blog/backlink-pricing/" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Adsy pricing study (2025)</a>. Full methodology below.</p>
     </div>
-  </section>
+</article>
 
-  <!-- ── AI SEARCH BRIDGE ── -->
-  <section class="py-16 md:py-24 bg-white">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="mb-10">
-      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">AI Search Context</div>
+  <!-- ── SECTION 1: What The 2026 Marketplace Actually Charges ── -->
+  <section id="data" class="py-16 md:py-24" style="background: #F8F7FA;">
+    <div class="max-w-5xl mx-auto px-6">
+
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        Why This Data Matters for AI Search Visibility
+        1. What The 2026 Marketplace Actually Charges
       </h2>
-    </div>
-
-    <div class="prose prose-lg text-body max-w-none space-y-6 leading-relaxed">
-      <p>
-        Every data point on this page measures the same thing: the cost of a signal that used to tell search engines which brands to surface. The assumption behind buying that signal was that Google would read it, weigh it, and rank you accordingly.
-      </p>
-      <p>
-        That assumption is now splitting in two. Google still reads links, but an increasing share of commercial intent now resolves inside AI systems (ChatGPT, Perplexity, Gemini, Google's AI Overviews) that decide which brands to mention based on different evidence. They read editorial coverage on authority publishers. They read citation context, not anchor text. They read whether your brand appears inside answers humans trust, not whether it appears inside backlink indexes bots crawl.
-      </p>
-      <p>
-        A DR50 marketplace link on a traffic-light site was always a questionable investment for Google rankings. It's worthless for AI answer surfaces. The sites AI systems cite are a different population from the sites link marketplaces sell access to, and the gap is widening as AI answer engines refine which sources they trust.
-      </p>
-      <p>
-        This is the mechanism behind citation equity: the editorial coverage on real publishers that accumulates as a brand signal across both search and AI systems. It is what our campaigns are built to earn. The pricing data below is useful context for anyone comparing options, but it describes a market that's solving yesterday's problem.
-      </p>
-      <p class="text-sm text-muted italic">
-        For the full argument and evidence, see <a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">Citation equity: earned vs paid links</a>. For background on how AI systems choose which brands to surface, see <a href="/resources/ai-search-visibility" class="text-brand hover:text-brand-dark underline underline-offset-2">our AI search visibility guide</a>.
-      </p>
-    </div>
-  </div>
-</section>
-
-  <!-- ── PRICING DATA ── -->
-  <section id="data" class="bg-white py-16 md:py-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Pricing Data</div>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        How Much Guest Posts and Niche Edits Cost in 2026
-      </h2>
-      <p class="text-base text-[#475569] leading-relaxed mb-4 max-w-3xl">
-        These are the prices agencies and brands pay today to buy into the backlink signal.
-      </p>
       <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
-        Marketplace pricing for guest posts and niche edits, broken down by Domain Rating. Prices scale exponentially. A DR80+ placement costs 10–100x more than a DR20.
+        These are the direct marketplace prices agencies and brands pay for a single placement. Buy through an intermediary and you'll pay 75% more on top.
       </p>
 
-      <div class="overflow-hidden rounded-2xl border border-[#0A0F1E]/8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
+      <div class="overflow-hidden rounded-2xl border border-[#0A0F1E]/8 shadow-card mb-6">
         <table class="w-full text-sm">
           <thead>
             <tr class="bg-[#F1F5F9]">
-              <th class="text-left px-6 py-4 text-xs font-semibold uppercase tracking-widest text-[#64748B]">DR range</th>
-              <th class="text-left px-6 py-4 text-xs font-semibold uppercase tracking-widest text-[#64748B]">Guest post</th>
-              <th class="text-left px-6 py-4 text-xs font-semibold uppercase tracking-widest text-[#64748B]">Niche edit</th>
+              <th class="text-left px-6 py-4 text-xs font-semibold uppercase tracking-widest text-[#64748B]">DR Range</th>
+              <th class="text-left px-6 py-4 text-xs font-semibold uppercase tracking-widest text-[#64748B]">Guest Post</th>
+              <th class="text-left px-6 py-4 text-xs font-semibold uppercase tracking-widest text-[#64748B]">Niche Edit</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#0A0F1E]/6">
@@ -211,390 +194,346 @@ const jsonLd = {
           </tbody>
         </table>
       </div>
-      <p class="text-xs text-[#94A3B8] mt-4">Prices reflect direct marketplace rates. Buying through a vendor or managed service typically adds a 75% markup.</p>
+      <p class="text-xs text-[#94A3B8] mb-8">Prices reflect direct marketplace rates. Buying through a vendor or managed service typically adds a 75% markup.</p>
+
+      <div class="max-w-3xl">
+        <p class="text-base text-[#475569] leading-relaxed font-semibold mb-4">The range is the story.</p>
+        <p class="text-base text-[#475569] leading-relaxed mb-4">A DR80+ placement costs 10–100x more than a DR20. The top tier is where the publisher-direct premium lives. The headline averages hide enormous variance within each tier.</p>
+        <p class="text-base text-[#475569] leading-relaxed mb-6">A $365 average conceals the reality: if you need a placement that actually moves AI and search signals, you are buying in the DR50+ range at $400–700 per placement, minimum.</p>
+
+        <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 shadow-card">
+          <p class="text-sm font-semibold text-ink mb-1">Note:</p>
+          <p class="text-sm text-[#475569] leading-relaxed">Every price in this table is for a paid placement. The publisher is paid to run your content. By Google's definition, that is a link scheme. Risk and value both change accordingly.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ── TRAFFIC HEATMAP ── -->
-  <section id="heatmap" class="py-16 md:py-24" style="background: #F8F7FA;">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        Why Domain Rating Alone Is an Unreliable Guide to Pricing
+  <!-- ── SECTION 2: Why Domain Rating Alone Misprices The Signal ── -->
+  <section id="heatmap" class="py-16 md:py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5 max-w-3xl">
+        2. Why Domain Rating Alone Misprices The Signal
       </h2>
       <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
-        DR alone is an unreliable guide to link value. A high-DR site with no traffic may have an inflated rating. This heatmap shows how organic traffic changes the price — and the value — of a link at every DR tier.
+        DR measures a site's backlink profile. It does not measure whether anyone actually reads the site. Marketplaces price on DR anyway.
       </p>
 
-      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] p-6 mb-10 overflow-x-auto">
+      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 shadow-card p-6 mb-8 overflow-x-auto">
         <p class="text-xs font-semibold uppercase tracking-widest text-[#94A3B8] mb-4">Average guest post price (USD) by DR and monthly organic traffic</p>
         <div id="heatmapEl"></div>
       </div>
 
-      <div class="space-y-4">
-        <div class="bg-white border-l-4 border-[#5D4FE0] rounded-r-2xl p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
-          <p class="text-3xl font-black text-[#5D4FE0] mb-2">19%</p>
-          <p class="text-sm text-[#475569] leading-relaxed">Of marketplace guest post sites receive fewer than 100 monthly organic visitors — yet many still charge mid-tier prices. A $300 link on a zero-traffic DR50 site delivers less value than a $150 link on a DR30 site with 10,000 real visitors.</p>
-        </div>
-        <div class="bg-white border-l-4 border-[#5D4FE0] rounded-r-2xl p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
-          <p class="text-3xl font-black text-[#5D4FE0] mb-2">53%</p>
-          <p class="text-sm text-[#475569] leading-relaxed">Of DR71+ sites on marketplace databases fall into mid- or low-quality categories because they have under 50,000 monthly organic traffic. High DR without traffic is a red flag.</p>
+      <div class="max-w-3xl">
+        <p class="text-base text-[#475569] leading-relaxed mb-4">Two numbers explain the mispricing.</p>
+        <p class="text-base text-[#475569] leading-relaxed mb-4">19% of marketplace guest post sites receive fewer than 100 monthly organic visitors. Many of them still charge mid-tier prices. A $300 link on a zero-traffic DR50 site delivers less ranking value than a $150 link on a DR30 site with 10,000 real visitors.</p>
+        <p class="text-base text-[#475569] leading-relaxed mb-6">At the high end, 53% of DR71+ sites fall into mid- or low-quality tiers because they have under 50,000 monthly organic traffic. High DR without traffic is a red flag.</p>
+
+        <p class="text-base text-[#475569] leading-relaxed font-semibold mb-4">Here's what that means in practice:</p>
+        <p class="text-base text-[#475569] leading-relaxed mb-6">Any buyer using DR as their primary filter is overpaying for signal. Traffic is the cleaner proxy. Editorial quality is cleaner still. Neither is priced accurately by the marketplace.</p>
+
+        <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 shadow-card">
+          <p class="text-sm font-semibold text-ink mb-1">Pro tip:</p>
+          <p class="text-sm text-[#475569] leading-relaxed">When auditing a marketplace listing, divide the price by monthly organic traffic. A DR50 site charging $300 with 500 visitors costs $0.60 per monthly visitor reached. A DR30 site charging $150 with 10,000 visitors costs $0.015 per visitor. The DR30 site is 40x more efficient on that measure.</p>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ── LONGITUDINAL PRICING ── -->
-  <section class="py-16 md:py-24 bg-bg-cream">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="mb-10">
-      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Longitudinal Data</div>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        How Agency Link Prices Have Changed, 2020–2026
+  <!-- ── SECTION 3: How Agency And Publisher-Direct Prices Have Diverged ── -->
+  <section class="py-16 md:py-24" style="background: #F8F7FA;">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5 max-w-3xl">
+        3. How Agency And Publisher-Direct Prices Have Diverged
       </h2>
-      <p class="text-body text-lg leading-relaxed max-w-3xl">
-        Primary-source pricing data for five established link-building agencies, extracted from timestamped Wayback Machine snapshots of their public pricing pages. Each data point is a direct observation of what the agency charged in that year, not a secondary-source estimate. DR30+ equivalent shown (the most commonly listed tier across all vendors and years).
-      </p>
-    </div>
-
-    <div class="bg-white rounded-2xl shadow-card p-6 md:p-10 mb-6">
-      <svg viewBox="0 0 780 440" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chart-title chart-desc">
-        <title id="chart-title">Agency DR30+ link prices, 2020 to 2026</title>
-        <desc id="chart-desc">Line chart showing per-link pricing over time for FATJOE, Searcharoo, Loganix, RhinoRank, and a publisher-direct industry benchmark.</desc>
-        <g stroke="#E5E7EB" stroke-width="1">
-          <line x1="80" y1="60"  x2="740" y2="60"/>
-          <line x1="80" y1="124" x2="740" y2="124"/>
-          <line x1="80" y1="188" x2="740" y2="188"/>
-          <line x1="80" y1="252" x2="740" y2="252"/>
-          <line x1="80" y1="316" x2="740" y2="316"/>
-          <line x1="80" y1="380" x2="740" y2="380" stroke="#9CA3AF"/>
-        </g>
-        <g font-family="ui-sans-serif, system-ui" font-size="12" fill="#6B7280" text-anchor="end">
-          <text x="70" y="64">$250</text>
-          <text x="70" y="128">$200</text>
-          <text x="70" y="192">$150</text>
-          <text x="70" y="256">$100</text>
-          <text x="70" y="320">$50</text>
-          <text x="70" y="384">$0</text>
-        </g>
-        <g font-family="ui-sans-serif, system-ui" font-size="12" fill="#6B7280" text-anchor="middle">
-          <text x="110" y="405">2020</text>
-          <text x="215" y="405">2021</text>
-          <text x="320" y="405">2022</text>
-          <text x="425" y="405">2023</text>
-          <text x="530" y="405">2024</text>
-          <text x="635" y="405">2025</text>
-          <text x="740" y="405">2026</text>
-        </g>
-        <g stroke="#5D4FE0" stroke-width="2.5" fill="none">
-          <polyline points="110,259 215,276 635,227 740,227"/>
-        </g>
-        <g fill="#5D4FE0">
-          <circle cx="110" cy="259" r="4"/>
-          <circle cx="215" cy="276" r="4"/>
-          <circle cx="635" cy="227" r="4"/>
-          <circle cx="740" cy="227" r="4"/>
-        </g>
-        <g stroke="#059669" stroke-width="2.5" fill="none" stroke-dasharray="6 3">
-          <polyline points="110,209 530,124 635,124 740,124"/>
-        </g>
-        <g fill="#059669">
-          <circle cx="110" cy="209" r="4"/>
-          <circle cx="530" cy="124" r="4"/>
-          <circle cx="635" cy="124" r="4"/>
-          <circle cx="740" cy="124" r="4"/>
-        </g>
-        <g stroke="#DB2777" stroke-width="2.5" fill="none">
-          <polyline points="320,230 635,150"/>
-        </g>
-        <g fill="#DB2777">
-          <circle cx="320" cy="230" r="4"/>
-          <circle cx="635" cy="150" r="4"/>
-        </g>
-        <g stroke="#D97706" stroke-width="2.5" fill="none">
-          <polyline points="320,227 740,227"/>
-        </g>
-        <g fill="#D97706">
-          <circle cx="320" cy="227" r="4"/>
-          <circle cx="740" cy="227" r="4"/>
-        </g>
-        <g stroke="#6B7280" stroke-width="2" fill="none" stroke-dasharray="2 3">
-          <polyline points="110,342 530,264"/>
-        </g>
-        <g fill="#6B7280">
-          <circle cx="110" cy="342" r="3"/>
-          <circle cx="530" cy="264" r="3"/>
-        </g>
-        <g font-family="ui-sans-serif, system-ui" font-size="13" fill="#374151">
-          <g transform="translate(100, 30)">
-            <rect width="14" height="3" y="5" fill="#5D4FE0"/>
-            <text x="22" y="10">FATJOE</text>
-          </g>
-          <g transform="translate(200, 30)">
-            <line x1="0" y1="6" x2="14" y2="6" stroke="#059669" stroke-width="3" stroke-dasharray="4 2"/>
-            <text x="22" y="10">Loganix</text>
-          </g>
-          <g transform="translate(300, 30)">
-            <rect width="14" height="3" y="5" fill="#DB2777"/>
-            <text x="22" y="10">Searcharoo</text>
-          </g>
-          <g transform="translate(420, 30)">
-            <rect width="14" height="3" y="5" fill="#D97706"/>
-            <text x="22" y="10">RhinoRank</text>
-          </g>
-          <g transform="translate(540, 30)">
-            <line x1="0" y1="6" x2="14" y2="6" stroke="#6B7280" stroke-width="2" stroke-dasharray="2 2"/>
-            <text x="22" y="10">Publisher-direct (FatRank)</text>
-          </g>
-        </g>
-      </svg>
-    </div>
-
-    <p class="text-sm text-muted italic mb-12">
-      Lines connect only the years for which a given vendor has a verified snapshot. Gaps reflect missing Wayback coverage for that URL in that year, not pricing gaps.
-    </p>
-
-    <div class="mb-10">
-      <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">Per-Vendor Pricing, DR30+ Equivalent</h3>
-      <div class="overflow-x-auto rounded-xl shadow-card bg-white">
-        <table class="w-full text-sm">
-          <thead class="bg-bg-paper text-ink">
-            <tr>
-              <th class="text-left px-4 py-3 font-semibold">Vendor</th>
-              <th class="text-right px-4 py-3 font-semibold">2020</th>
-              <th class="text-right px-4 py-3 font-semibold">2021</th>
-              <th class="text-right px-4 py-3 font-semibold">2022</th>
-              <th class="text-right px-4 py-3 font-semibold">2023</th>
-              <th class="text-right px-4 py-3 font-semibold">2024</th>
-              <th class="text-right px-4 py-3 font-semibold">2025</th>
-              <th class="text-right px-4 py-3 font-semibold">2026</th>
-              <th class="text-right px-4 py-3 font-semibold text-brand">Change</th>
-            </tr>
-          </thead>
-          <tbody class="text-body divide-y divide-subtle">
-            <tr>
-              <td class="px-4 py-3 font-medium text-ink">FATJOE</td>
-              <td class="px-4 py-3 text-right">$95</td>
-              <td class="px-4 py-3 text-right">$81</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right">$120</td>
-              <td class="px-4 py-3 text-right">$120</td>
-              <td class="px-4 py-3 text-right font-medium">+26%</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-medium text-ink">Loganix</td>
-              <td class="px-4 py-3 text-right">$134</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right">$200</td>
-              <td class="px-4 py-3 text-right">$200</td>
-              <td class="px-4 py-3 text-right">$200</td>
-              <td class="px-4 py-3 text-right font-medium">+49%</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-medium text-ink">Searcharoo</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right">$117</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right">$180</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right font-medium">+54%</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-medium text-ink">RhinoRank</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right">$120</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right">$120</td>
-              <td class="px-4 py-3 text-right font-medium">0%</td>
-            </tr>
-            <tr class="bg-bg-cream">
-              <td class="px-4 py-3 font-medium text-ink">Publisher-direct (FatRank)</td>
-              <td class="px-4 py-3 text-right">$30</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right">$91</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right text-muted">—</td>
-              <td class="px-4 py-3 text-right font-medium">+203%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- ── UNDERSTANDING LINK VALUE ── -->
-  <section id="learn" class="bg-white py-16 md:py-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        What Actually Determines the Value of a Backlink
-      </h2>
-      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
-        Not all backlinks are equal. These factors determine whether a link moves rankings or wastes budget.
+      <p class="text-base text-[#475569] leading-relaxed mb-8 max-w-3xl">
+        Primary-source Wayback data for five established link agencies, 2020 to 2026. Each data point is a verified snapshot of what the agency charged in that year. DR30+ equivalent tier shown, the most commonly listed tier across all vendors and years.
       </p>
 
-      <div class="divide-y divide-[#0A0F1E]/8 border border-[#0A0F1E]/8 rounded-2xl overflow-hidden mb-12" id="pi-acc-list-1">
-        <div class="pi-acc-item">
-          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="0" type="button">
-            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">What is Domain Rating and why does it matter?</span>
-            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
-            <p class="text-base text-[#475569] leading-relaxed mb-3">Domain Rating is a metric developed by Ahrefs that scores a website's backlink profile strength on a scale of 0 to 100. Higher DR generally indicates a stronger domain. It's the most widely used proxy for link value, which is why higher-DR sites charge more.</p>
-            <p class="text-base text-[#475569] leading-relaxed">DR can be artificially inflated through link schemes. It should never be the sole factor in evaluating a link. Always cross-reference with organic traffic, editorial quality, and topical relevance.</p>
-          </div>
-        </div>
-        <div class="pi-acc-item">
-          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="1" type="button">
-            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">Why traffic matters more than DR alone</span>
-            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
-            <p class="text-base text-[#475569] leading-relaxed mb-3">A site's organic traffic is a stronger indicator of genuine authority than its Domain Rating. Google's ranking systems have already validated a site that receives consistent organic traffic — it's earning real clicks from real search queries.</p>
-            <p class="text-base text-[#475569] leading-relaxed">BuzzStream's analysis found that 53% of DR71+ sites on marketplace databases have under 50,000 monthly organic traffic. The DR number suggests premium value; the traffic data tells a different story.</p>
-          </div>
-        </div>
-        <div class="pi-acc-item">
-          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="2" type="button">
-            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">What makes a link editorially valuable?</span>
-            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
-            <p class="text-base text-[#475569] leading-relaxed mb-3">An editorially valuable link is one placed by a journalist, editor, or content creator because it genuinely enhances their content — not because someone paid for it. These links appear in news articles, feature stories, expert roundups, and data-driven reporting.</p>
-            <p class="text-base text-[#475569] leading-relaxed">Google's algorithm leak revealed that the search engine evaluates links from high-click areas of sites that are updated frequently — characteristics of genuine editorial content on active publications.</p>
-          </div>
-        </div>
-        <div class="pi-acc-item">
-          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="3" type="button">
-            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">Dofollow vs nofollow in 2026</span>
-            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
-            <p class="text-base text-[#475569] leading-relaxed mb-3">Dofollow links pass ranking signals to the target page. Nofollow links include an attribute telling search engines not to pass credit. Most paid placements target dofollow links for the direct SEO benefit.</p>
-            <p class="text-base text-[#475569] leading-relaxed">In practice, the distinction has blurred since Google began treating nofollow as a "hint" rather than a directive in 2019. A nofollow link from a major publication still provides referral traffic, brand visibility, and entity recognition. A natural link profile contains both.</p>
-          </div>
+      <div class="bg-white rounded-2xl shadow-card p-6 md:p-10 mb-4">
+        <svg viewBox="0 0 780 440" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chart-title chart-desc">
+          <title id="chart-title">Agency DR30+ link prices, 2020 to 2026</title>
+          <desc id="chart-desc">Line chart showing per-link pricing over time for FATJOE, Searcharoo, Loganix, RhinoRank, and a publisher-direct industry benchmark.</desc>
+          <g stroke="#E5E7EB" stroke-width="1">
+            <line x1="80" y1="60"  x2="740" y2="60"/>
+            <line x1="80" y1="124" x2="740" y2="124"/>
+            <line x1="80" y1="188" x2="740" y2="188"/>
+            <line x1="80" y1="252" x2="740" y2="252"/>
+            <line x1="80" y1="316" x2="740" y2="316"/>
+            <line x1="80" y1="380" x2="740" y2="380" stroke="#9CA3AF"/>
+          </g>
+          <g font-family="ui-sans-serif, system-ui" font-size="12" fill="#6B7280" text-anchor="end">
+            <text x="70" y="64">$250</text>
+            <text x="70" y="128">$200</text>
+            <text x="70" y="192">$150</text>
+            <text x="70" y="256">$100</text>
+            <text x="70" y="320">$50</text>
+            <text x="70" y="384">$0</text>
+          </g>
+          <g font-family="ui-sans-serif, system-ui" font-size="12" fill="#6B7280" text-anchor="middle">
+            <text x="110" y="405">2020</text>
+            <text x="215" y="405">2021</text>
+            <text x="320" y="405">2022</text>
+            <text x="425" y="405">2023</text>
+            <text x="530" y="405">2024</text>
+            <text x="635" y="405">2025</text>
+            <text x="740" y="405">2026</text>
+          </g>
+          <g stroke="#5D4FE0" stroke-width="2.5" fill="none">
+            <polyline points="110,259 215,276 635,227 740,227"/>
+          </g>
+          <g fill="#5D4FE0">
+            <circle cx="110" cy="259" r="4"/>
+            <circle cx="215" cy="276" r="4"/>
+            <circle cx="635" cy="227" r="4"/>
+            <circle cx="740" cy="227" r="4"/>
+          </g>
+          <g stroke="#059669" stroke-width="2.5" fill="none" stroke-dasharray="6 3">
+            <polyline points="110,209 530,124 635,124 740,124"/>
+          </g>
+          <g fill="#059669">
+            <circle cx="110" cy="209" r="4"/>
+            <circle cx="530" cy="124" r="4"/>
+            <circle cx="635" cy="124" r="4"/>
+            <circle cx="740" cy="124" r="4"/>
+          </g>
+          <g stroke="#DB2777" stroke-width="2.5" fill="none">
+            <polyline points="320,230 635,150"/>
+          </g>
+          <g fill="#DB2777">
+            <circle cx="320" cy="230" r="4"/>
+            <circle cx="635" cy="150" r="4"/>
+          </g>
+          <g stroke="#D97706" stroke-width="2.5" fill="none">
+            <polyline points="320,227 740,227"/>
+          </g>
+          <g fill="#D97706">
+            <circle cx="320" cy="227" r="4"/>
+            <circle cx="740" cy="227" r="4"/>
+          </g>
+          <g stroke="#6B7280" stroke-width="2" fill="none" stroke-dasharray="2 3">
+            <polyline points="110,342 530,264"/>
+          </g>
+          <g fill="#6B7280">
+            <circle cx="110" cy="342" r="3"/>
+            <circle cx="530" cy="264" r="3"/>
+          </g>
+          <g font-family="ui-sans-serif, system-ui" font-size="13" fill="#374151">
+            <g transform="translate(100, 30)">
+              <rect width="14" height="3" y="5" fill="#5D4FE0"/>
+              <text x="22" y="10">FATJOE</text>
+            </g>
+            <g transform="translate(200, 30)">
+              <line x1="0" y1="6" x2="14" y2="6" stroke="#059669" stroke-width="3" stroke-dasharray="4 2"/>
+              <text x="22" y="10">Loganix</text>
+            </g>
+            <g transform="translate(300, 30)">
+              <rect width="14" height="3" y="5" fill="#DB2777"/>
+              <text x="22" y="10">Searcharoo</text>
+            </g>
+            <g transform="translate(420, 30)">
+              <rect width="14" height="3" y="5" fill="#D97706"/>
+              <text x="22" y="10">RhinoRank</text>
+            </g>
+            <g transform="translate(540, 30)">
+              <line x1="0" y1="6" x2="14" y2="6" stroke="#6B7280" stroke-width="2" stroke-dasharray="2 2"/>
+              <text x="22" y="10">Publisher-direct (FatRank)</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <p class="text-sm text-muted italic mb-8">Lines connect only the years for which a given vendor has a verified snapshot. Gaps reflect missing Wayback coverage for that URL in that year, not pricing gaps.</p>
+
+      <div class="mb-8">
+        <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">Per-Vendor Pricing, DR30+ Equivalent</h3>
+        <div class="overflow-x-auto rounded-xl shadow-card bg-white">
+          <table class="w-full text-sm">
+            <thead class="bg-bg-paper text-ink">
+              <tr>
+                <th class="text-left px-4 py-3 font-semibold">Vendor</th>
+                <th class="text-right px-4 py-3 font-semibold">2020</th>
+                <th class="text-right px-4 py-3 font-semibold">2021</th>
+                <th class="text-right px-4 py-3 font-semibold">2022</th>
+                <th class="text-right px-4 py-3 font-semibold">2023</th>
+                <th class="text-right px-4 py-3 font-semibold">2024</th>
+                <th class="text-right px-4 py-3 font-semibold">2025</th>
+                <th class="text-right px-4 py-3 font-semibold">2026</th>
+                <th class="text-right px-4 py-3 font-semibold text-brand">Change</th>
+              </tr>
+            </thead>
+            <tbody class="text-body divide-y divide-subtle">
+              <tr>
+                <td class="px-4 py-3 font-medium text-ink">FATJOE</td>
+                <td class="px-4 py-3 text-right">$95</td>
+                <td class="px-4 py-3 text-right">$81</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right">$120</td>
+                <td class="px-4 py-3 text-right">$120</td>
+                <td class="px-4 py-3 text-right font-medium">+26%</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium text-ink">Loganix</td>
+                <td class="px-4 py-3 text-right">$134</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right">$200</td>
+                <td class="px-4 py-3 text-right">$200</td>
+                <td class="px-4 py-3 text-right">$200</td>
+                <td class="px-4 py-3 text-right font-medium">+49%</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium text-ink">Searcharoo</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right">$117</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right">$180</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right font-medium">+54%</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium text-ink">RhinoRank</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right">$120</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right">$120</td>
+                <td class="px-4 py-3 text-right font-medium">0%</td>
+              </tr>
+              <tr class="bg-bg-cream">
+                <td class="px-4 py-3 font-medium text-ink">Publisher-direct (FatRank)</td>
+                <td class="px-4 py-3 text-right">$30</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right">$91</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right text-muted">—</td>
+                <td class="px-4 py-3 text-right font-medium">+203%</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3 mt-4">Risk and Compliance</h3>
-      <p class="text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-2xl">
-        The cost of a link is not just the price you pay. It includes the risk you take.
-      </p>
+      <div class="max-w-3xl">
+        <p class="text-base text-[#475569] leading-relaxed mb-4">Publisher-direct pricing has tripled in four years. Agency-managed pricing has moved less than half as fast.</p>
+        <p class="text-base text-[#475569] leading-relaxed mb-4">The supply side is charging more. The agency tier is absorbing margin to stay competitive. The squeeze is structural.</p>
 
-      <div class="divide-y divide-[#0A0F1E]/8 border border-[#0A0F1E]/8 rounded-2xl overflow-hidden mb-10" id="pi-acc-list-2">
-        <div class="pi-acc-item">
-          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="4" type="button">
-            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">What Google considers a link scheme</span>
-            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
-            <p class="text-base text-[#475569] leading-relaxed mb-3">Google's spam policies classify several practices as link schemes: buying or selling links that pass PageRank, exchanging goods or services for links, and large-scale guest posting campaigns with keyword-rich anchor text.</p>
-            <p class="text-base text-[#475569] leading-relaxed">Both paid guest posts and paid niche edits fall within this definition. The practical risk depends on scale and detectability — a single placement is unlikely to trigger a penalty, but building a profile primarily through marketplace purchases creates a pattern Google's systems are designed to detect.</p>
-          </div>
-        </div>
-        <div class="pi-acc-item">
-          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="5" type="button">
-            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">The Helpful Content Update and marketplace sites</span>
-            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
-            <p class="text-base text-[#475569] leading-relaxed mb-3">Google's Helpful Content Update specifically targeted sites that exist primarily to host third-party content for SEO purposes. Many sites that accepted paid guest posts at scale were deindexed or severely demoted.</p>
-            <p class="text-base text-[#475569] leading-relaxed">Buyers who had invested in links on these sites found their backlink profiles devalued overnight with no recourse. Most marketplace services offer 6–12 month guarantees, but a replacement link on another marketplace site carries the same underlying risk.</p>
-          </div>
-        </div>
-        <div class="pi-acc-item">
-          <button class="pi-acc-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-[#F8F7FA] transition-colors" data-pi-index="6" type="button">
-            <span class="pi-acc-question text-base font-semibold text-[#0A0F1E]">Why earned editorial links carry zero penalty risk</span>
-            <svg class="pi-acc-chevron shrink-0 transition-transform duration-300 text-[#64748B]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="pi-acc-answer hidden px-6 pb-5 bg-white">
-            <p class="text-base text-[#475569] leading-relaxed mb-3">Links placed by journalists and editors through genuine editorial decisions are exactly what Google's ranking system was designed to reward. The link was not purchased, the publisher was not compensated, and the editorial decision was independent.</p>
-            <p class="text-base text-[#475569] leading-relaxed">There is no mechanism by which a genuine editorial link can trigger a penalty. The publication also carries near-zero deindexation risk — established media outlets are not targets for Google's spam enforcement.</p>
-          </div>
-        </div>
+        <p class="text-base text-[#475569] leading-relaxed font-semibold mb-4">Which raises a question:</p>
+        <p class="text-base text-[#475569] leading-relaxed">If publishers can charge 3x more for direct access and agencies can barely pass through inflation, what's the agency layer adding? Not pricing power. Not access the buyer couldn't secure themselves. The agency markup is buying convenience, not signal.</p>
       </div>
 
-      <div class="bg-white border-l-4 border-[#5D4FE0] rounded-r-2xl p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
-        <p class="text-3xl font-black text-[#5D4FE0] mb-1">+203%</p>
-        <p class="text-sm font-semibold text-[#0A0F1E] mb-2">Increase in publisher-direct DR30 pricing, 2020–2024</p>
-        <p class="text-sm text-[#475569] leading-relaxed">Pricing collected direct from publishers has tripled over four years (FatRank industry benchmark). Agency-managed pricing has moved more slowly. The pressure is coming from the supply side.</p>
-      </div>
     </div>
   </section>
 
-  <!-- ── BOUGHT VS EARNED ── -->
-  <section id="compare" class="py-16 md:py-24" style="background: #F8F7FA;">
-    <div class="max-w-4xl mx-auto px-6">
+  <!-- ── SECTION 4: How Indexing Is Destroying Paid Link Value ── -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        Paid Backlinks vs Earned Editorial Placements
+        4. How Indexing Is Destroying Paid Link Value
       </h2>
-      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl">
-        Every link in the marketplace data above is a paid link. Anyone with a budget can acquire them. The question is whether that builds a lasting advantage, or just a temporary one.
+      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium">
+        A backlink only passes signal if the page hosting it is indexed. The moment Google deindexes a domain, every link on that domain disappears from the graph. The money spent on those links goes to zero overnight.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        <!-- Bought -->
-        <div class="bg-[#F1F5F9] rounded-2xl p-8 border border-[#0A0F1E]/8">
-          <p class="text-xs font-semibold uppercase tracking-widest text-[#DC2626] mb-4">Bought links</p>
-          <p class="text-sm text-[#475569] leading-relaxed mb-6">A commodity. Your competitors can buy the same link on the same site for the same price. The publisher's incentive is the fee, not the quality of your content.</p>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />Available to any competitor with budget</li>
-            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />15–25% annual attrition rate</li>
-            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />Host site deindexation risk</li>
-            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />Classified as link scheme by Google</li>
-            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />No brand recognition or audience exposure</li>
-            <li class="flex items-start gap-3 text-sm text-[#475569]"><X size={15} class="text-[#94A3B8] shrink-0 mt-0.5" />95% of sites fail basic quality filters</li>
-          </ul>
-        </div>
-        <!-- Earned -->
-        <div class="bg-white rounded-2xl p-8 border-2 border-[#5D4FE0]/20 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
-          <p class="text-xs font-semibold uppercase tracking-widest text-[#15803D] mb-4">Earned links</p>
-          <p class="text-sm text-[#475569] leading-relaxed mb-6">A signal that your brand has something worth covering. Requires a genuine story — original data, expert insight, or newsworthy commentary. Your competitors cannot buy this.</p>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Cannot be replicated by competitors with budget alone</li>
-            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Avg. link lifespan 10+ years on established publications</li>
-            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Zero deindexation risk on editorial sites</li>
-            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Exactly what Google's algorithm rewards</li>
-            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Brand mentions, expert positioning, real audience</li>
-            <li class="flex items-start gap-3 text-sm text-[#475569] font-medium"><Check size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" />Compounds: each placement builds authority</li>
-          </ul>
-        </div>
+      <div class="prose prose-lg text-body max-w-none space-y-5 leading-relaxed">
+        <p>Google has been running indexation enforcement at scale since the <a href="https://developers.google.com/search/blog/2022/08/helpful-content-update" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">2022 Helpful Content Update</a>. Follow-up core updates have escalated it. The targets have been clear: sites that exist to host third-party content for SEO purposes.</p>
+        <p>Marketplace guest post sites fit that profile exactly. Many have already been deindexed. Many more are in the queue.</p>
+        <p>When your link host gets deindexed, you do not get a refund. Most marketplace services offer 6–12 month guarantees, but a replacement on another marketplace site carries the same underlying risk.</p>
+        <p class="font-semibold text-ink">The result?</p>
+        <p class="font-semibold text-ink">The signal is being deindexed.</p>
+        <p>Indexation is the threshold for every retrieval system AI answer engines rely on. ChatGPT, Perplexity, Gemini, and Google's AI Overviews all cite what their retrieval layer can see. Deindexed content is invisible to both Google and the corpora AI systems retrieve from. Paid links on marketplace sites are failing this threshold systematically.</p>
       </div>
 
-      <p class="text-base text-[#475569] leading-relaxed mb-4">
-        Earned links are not free. They require investment in creating something worth covering: a data study, expert commentary, a newsworthy angle. They take longer to materialise than a marketplace purchase, and you don't control the exact anchor text or placement. But these constraints are features. They're what makes earned coverage defensible, durable, and valued by the systems AI answer engines rely on.
-      </p>
-      <p class="text-base text-[#475569] leading-relaxed mb-8">
-        Earned editorial coverage makes the most sense for businesses where a single lead, client, or conversion justifies the campaign investment. If your average customer is worth thousands, a $3,500 campaign that delivers 8–12+ earned placements pays for itself quickly. Each placement builds lasting authority and citation equity.
-      </p>
-
-      <div class="bg-white border-l-4 border-[#5D4FE0] rounded-r-2xl p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]">
-        <p class="text-3xl font-black text-[#5D4FE0] mb-2">$44 vs $250</p>
-        <p class="text-sm text-[#475569] leading-relaxed">Annual cost per link when accounting for lifespan. A $437 earned mention lasting 10+ years costs $44/year. A $500 paid link with a two-year effective lifespan costs $250/year.</p>
+      <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 mt-8 shadow-card">
+        <p class="text-sm font-semibold text-ink mb-1">Further reading</p>
+        <p class="text-sm text-[#475569] leading-relaxed">The full mechanism of how AI systems choose which brands to surface, and why indexed editorial coverage is the durable signal, is covered in <a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">Citation Equity: Why Earned Links Beat Paid Links</a>.</p>
       </div>
+
     </div>
   </section>
 
-  <!-- ── METHODOLOGY ── -->
+  <!-- ── SECTION 5: What The Economics Look Like Over Useful Lifespan ── -->
+  <section class="py-16 md:py-24" style="background: #F8F7FA;">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
+        5. What The Economics Look Like Over Useful Lifespan
+      </h2>
+      <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium">
+        Same upfront cost. Different half-lives. Annualised, the comparison inverts the common assumption that earned coverage is more expensive.
+      </p>
+
+      <div class="prose prose-lg text-body max-w-none space-y-5 leading-relaxed">
+        <p>A $437 paid link on a marketplace site has a one-year effective lifespan before the site is deindexed, the link drops, or the signal decays. That is $437 per useful year.</p>
+        <p>A $437 earned mention on an authority publisher has a five-year useful lifespan, minimum. Established publications do not get deindexed. The mention stays in the editorial record. That is $87 per useful year.</p>
+        <p class="font-semibold text-ink">Same upfront cost. Five times the useful life.</p>
+        <p class="font-semibold text-ink">The expensive option is the cheap one.</p>
+        <p>The comparison holds at lower price points too. A $150 marketplace link with a one-year lifespan costs $150 per useful year. A $150 earned mention on a mid-tier trade publication, held for five years, costs $30 per useful year. Earned coverage wins on annualised economics at every tier.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CLOSING: What The Pricing Really Measures ── -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
+        What The Pricing Really Measures
+      </h2>
+
+      <div class="prose prose-lg text-body max-w-none space-y-5 leading-relaxed mb-10">
+        <p>Every price on this page measures the cost of a signal that used to tell search engines which brands to surface. The assumption behind buying that signal was durable ranking value in Google search.</p>
+        <p>That assumption is breaking. Marketplace sites are being deindexed in waves. The links sitting on them lose their signal overnight. AI answer engines have never read those sites as authoritative — they read the pattern of your brand's name appearing across publications with accumulated editorial credibility.</p>
+        <p class="font-semibold text-ink">Earned editorial coverage works in the opposite direction.</p>
+        <p>A placement on a recognised publication doesn't expire. It doesn't get caught in the next HCU wave. It accumulates as a brand signal across both Google and the AI systems that decide which brands to surface in answers. Every additional placement compounds the footprint those systems read.</p>
+        <p>That is what a Ranking Atlas campaign earns: fixed-price editorial placements on authoritative publishers, guaranteed per campaign. The same kind of coverage that survives algorithm updates. The same signal AI systems cite. No marketplace. No retainer.</p>
+        <p class="font-semibold text-ink">The expensive option is the cheap one.</p>
+      </div>
+
+      <div class="my-10 rounded-xl bg-white border border-[#0A0F1E]/8 shadow-card p-8 text-center">
+        <p class="text-lg font-semibold text-ink mb-2">Earn editorial placements that last. Get cited in AI answers.</p>
+        <p class="text-sm text-[#475569] mb-6 max-w-lg mx-auto">Fixed-price campaigns. Guaranteed placements on authoritative publishers. Coverage that survives Google updates and builds the signal AI systems read.</p>
+        <PrimaryCTA href="/contact" />
+      </div>
+
+      <div class="mt-8 mb-2">
+        <p class="text-sm font-medium text-ink mb-3">Further reading:</p>
+        <ul class="space-y-2 text-sm list-disc pl-5">
+          <li><a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">Citation Equity: Why Earned Links Beat Paid Links</a></li>
+          <li><a href="/resources/ai-search-visibility" class="text-brand hover:text-brand-dark underline underline-offset-2">AI Search Visibility: How ChatGPT, Perplexity, Gemini, and Google AI Overviews Choose Which Brands to Cite</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── METHODOLOGY AND CITATION ── -->
   <section id="methodology" class="py-16 md:py-24" style="background: #F8F7FA;">
     <div class="max-w-4xl mx-auto px-6">
-      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Methodology</div>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        How This Data Was Collected
+
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-8">
+        Methodology And Citation
       </h2>
 
-      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] mb-8">
-        <p class="text-base text-[#475569] leading-relaxed mb-6">The Cost of Authority: 2026 Backlink Pricing Index aggregates pricing data from multiple independent marketplace studies and live platform data:</p>
+      <h3 class="text-xl md:text-2xl font-semibold tracking-tight text-ink leading-snug mb-5">How This Data Was Collected</h3>
+
+      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-card mb-8">
+        <p class="text-base text-[#475569] leading-relaxed mb-6">The Cost of Authority: 2026 Publisher Access Pricing aggregates pricing data from multiple independent marketplace studies and live platform data:</p>
         <ul class="space-y-3 mb-6">
           <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">BuzzStream (2025)</strong> — Analysis of 26,000+ guest post sites from a major vendor database, with quality tiering by traffic and DR</span></li>
           <li class="flex items-start gap-3 text-sm text-[#475569]"><ArrowRight size={15} class="text-[#5D4FE0] shrink-0 mt-0.5" /><span><strong class="text-[#0A0F1E]">Adsy (2025)</strong> — Pricing analysis across 37,542 publisher websites</span></li>
@@ -608,33 +547,36 @@ const jsonLd = {
         </ul>
         <p class="text-sm text-[#475569] leading-relaxed mb-3">All prices converted to USD at March 2026 exchange rates. Vendor markup estimates based on BuzzStream's methodology. Quality filtering follows BuzzStream's criteria: minimum 1,000 monthly organic traffic and minimum DR 40.</p>
         <p class="text-sm text-[#475569] leading-relaxed mb-3">For the longitudinal dataset, one representative Wayback snapshot per year was selected per vendor (closest to mid-year) and parsed for tier pricing. DR/DA tiers are treated as equivalent since major vendors switched labeling conventions mid-window without changing the underlying product. LinksThatRank was excluded from the longitudinal chart because their pricing is rendered client-side; Wayback captures only the empty shell. The HOTH was excluded because their SKU mix changed substantially across years. Raw dataset available on request.</p>
-        <p class="text-sm text-[#475569] leading-relaxed">This index will be updated annually. Corrections or data contributions welcome at <a href="mailto:contact@ranking-atlas.com" class="inline-link">contact@ranking-atlas.com</a>.</p>
+        <p class="text-sm text-[#475569] leading-relaxed">This index updates annually. Corrections or data contributions: <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.</p>
       </div>
 
-      <!-- Cite box -->
-      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] relative">
-        <p class="text-sm font-semibold text-[#0A0F1E] mb-3">Cite this resource</p>
-        <code id="citeText" class="block font-mono text-xs text-[#475569] leading-relaxed bg-[#F8F7FA] rounded-lg p-4 pr-20">Ranking Atlas. "The Cost of Authority: 2026 Backlink Pricing Index." ranking-atlas.com/resources/the-cost-of-authority. Published March 2026.</code>
+      <h3 class="text-xl md:text-2xl font-semibold tracking-tight text-ink leading-snug mb-5">How To Cite This Report</h3>
+
+      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 shadow-card relative">
+        <code id="citeText" class="block font-mono text-xs text-[#475569] leading-relaxed bg-[#F8F7FA] rounded-lg p-4 pr-20">Ranking Atlas. "The Cost of Authority: 2026 Publisher Access Pricing." ranking-atlas.com/resources/the-cost-of-authority. Published March 2026.</code>
         <button id="copyBtn"
           class="absolute top-6 right-6 bg-[#F1F5F9] hover:bg-[#E2E8F0] border border-[#0A0F1E]/10 rounded-lg px-3 py-1.5 text-xs font-medium text-[#475569] transition-colors">
           Copy
         </button>
       </div>
+
     </div>
   </section>
 
   <!-- ── FINAL CTA BAND ── -->
-  <section class="relative overflow-hidden py-16 md:py-20 text-center" style="background: #5D4FE0;">
+  <section class="py-16 md:py-24 bg-[#0A0F1E] text-center relative overflow-hidden">
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
     <div class="relative max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
-        Be the Brand <span class="relative inline-block pb-2">AI Cites<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
+        Be The Brand <span class="relative inline-block pb-2 pr-1">
+          <span style="background: linear-gradient(135deg, #7C3AED 0%, #9B6DFF 50%, #7C3AED 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AI Cites</span>
+          <svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3" aria-hidden="true">
+            <path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </span>.
       </h2>
-      <p class="text-lg text-white/80 mb-10">Per-campaign. Fixed price. Guaranteed placements on authority publishers.</p>
-      <a href="/contact"
-        class="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white text-[#5D4FE0] font-bold text-base hover:bg-white/95 transition-all duration-200 hover:-translate-y-0.5 shadow-[0_8px_30px_-8px_rgba(0,0,0,0.3)]">
-        Start a Campaign — $3.5K →
-      </a>
+      <p class="text-lg text-white/70 mb-10">Per-campaign. Fixed price. Guaranteed placements on authority publishers.</p>
+      <PrimaryCTA href="/contact" />
     </div>
   </section>
 
@@ -644,43 +586,6 @@ const jsonLd = {
 
 
 <script>
-  // ── Accordion ──
-  var piOpenIndex: number | null = null;
-
-  document.querySelectorAll('.pi-acc-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var i = parseInt((btn as HTMLElement).getAttribute('data-pi-index') || '0');
-      var item = (btn as HTMLElement).closest('.pi-acc-item');
-      var answer = item ? item.querySelector('.pi-acc-answer') : null;
-      var chevron = item ? item.querySelector('.pi-acc-chevron') : null;
-      var question = item ? item.querySelector('.pi-acc-question') : null;
-
-      if (piOpenIndex === i) {
-        if (answer) answer.classList.add('hidden');
-        if (chevron) (chevron as HTMLElement).setAttribute('style', 'color: #64748B; transform: rotate(0deg)');
-        if (question) (question as HTMLElement).setAttribute('style', 'color: #0A0F1E');
-        piOpenIndex = null;
-      } else {
-        if (piOpenIndex !== null) {
-          var prevBtn = document.querySelector('[data-pi-index="' + piOpenIndex + '"]');
-          var prevItem = prevBtn ? (prevBtn as HTMLElement).closest('.pi-acc-item') : null;
-          if (prevItem) {
-            var pa = prevItem.querySelector('.pi-acc-answer');
-            var pc = prevItem.querySelector('.pi-acc-chevron');
-            var pq = prevItem.querySelector('.pi-acc-question');
-            if (pa) pa.classList.add('hidden');
-            if (pc) (pc as HTMLElement).setAttribute('style', 'color: #64748B; transform: rotate(0deg)');
-            if (pq) (pq as HTMLElement).setAttribute('style', 'color: #0A0F1E');
-          }
-        }
-        if (answer) answer.classList.remove('hidden');
-        if (chevron) (chevron as HTMLElement).setAttribute('style', 'color: #5D4FE0; transform: rotate(180deg)');
-        if (question) (question as HTMLElement).setAttribute('style', 'color: #5D4FE0');
-        piOpenIndex = i;
-      }
-    });
-  });
-
   // ── Copy cite button ──
   var copyBtn = document.getElementById('copyBtn');
   if (copyBtn) {
