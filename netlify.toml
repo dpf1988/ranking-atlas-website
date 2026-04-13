@@ -36,3 +36,13 @@
   from = "/saas-price-index"
   to = "/resources/the-cost-of-authority/"
   status = 301
+
+[[redirects]]
+  from = "/resources/citation-equity-vs-link-building"
+  to = "/resources/earned-links-vs-paid-links/"
+  status = 301
+
+[[redirects]]
+  from = "/resources/citation-equity-vs-link-building/"
+  to = "/resources/earned-links-vs-paid-links/"
+  status = 301

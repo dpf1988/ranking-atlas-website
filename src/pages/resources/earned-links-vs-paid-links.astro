@@ -1,0 +1,435 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Citation Equity: Why Earned Links Beat Paid Links",
+  "description": "The framework we apply across client campaigns. AI systems cite brands mentioned across heavy-hitting domains. Earned links produce those mentions. Paid links get deindexed and disappear. Here's the difference, the evidence, and the economics.",
+  "url": "https://ranking-atlas.com/resources/earned-links-vs-paid-links",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Grainger",
+    "url": "https://ranking-atlas.com/about",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ranking Atlas",
+      "url": "https://ranking-atlas.com"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/daniel-grainger/",
+      "https://ranking-atlas.com/about"
+    ]
+  },
+  "datePublished": "2026-03-01",
+  "dateModified": "2026-04-13",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
+};
+---
+
+<Layout
+  title="Citation Equity: Why Earned Links Beat Paid Links — Ranking Atlas"
+  description="AI systems cite brands mentioned across heavy-hitting domains. Earned links produce those mentions. Paid links get deindexed. Here's the difference, the evidence, and the economics."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Essay</div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
+      Citation Equity: Why Earned Links Beat Paid Links
+    </h1>
+    <div class="flex items-center gap-3 mb-6">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published March 2026 &nbsp;·&nbsp; Updated April 2026</p>
+      </div>
+    </div>
+
+    <!-- VISUAL 1: Hero image slot -->
+    <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
+      <img
+        src="/assets/images/resources/citation-equity-vs-link-building/hero.jpg"
+        alt="Earned links vs paid links — hero illustration"
+        class="w-full h-full object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+      />
+      <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
+        <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero Image Slot</div>
+        <div class="text-sm">Drop hero.jpg into /public/assets/images/resources/citation-equity-vs-link-building/ when ready.</div>
+      </div>
+    </div>
+
+    <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-4">
+      Research shows AI systems cite brands mentioned across heavy-hitting domains. The mention on the heavy-hitting domain is the authority signal AI systems read.
+    </p>
+    <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-4">
+      Earned links produce those mentions. Paid links don't. They sit on marketplace sites that are increasingly being deindexed, and every link on them loses its signal overnight.
+    </p>
+    <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-6">
+      One compounds. The other decays.
+    </p>
+    <p class="text-base text-[#475569] leading-relaxed mb-8">
+      The shift is already showing up in the data. <a class="text-brand hover:text-brand-dark underline underline-offset-2" href="https://www.dataslayer.ai/blog/google-ai-overviews-the-end-of-traditional-ctr-and-how-to-adapt-in-2025" target="_blank" rel="noopener noreferrer">Seer Interactive</a> found organic CTR dropped 61% on queries where an AI Overview appeared. The click never happens. The answer is the destination.
+    </p>
+
+    <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 mb-10 shadow-card">
+      <p class="text-sm font-semibold text-ink mb-3">In this essay, you'll learn:</p>
+      <ul class="space-y-2 text-sm text-[#475569] mb-4 list-none">
+        <li class="flex items-start gap-2"><span class="text-brand shrink-0 mt-0.5">→</span>Why paid links on marketplace sites are a structural dead end, not just a shrinking one</li>
+        <li class="flex items-start gap-2"><span class="text-brand shrink-0 mt-0.5">→</span>What AI systems actually read when they decide which brands to surface in answers</li>
+        <li class="flex items-start gap-2"><span class="text-brand shrink-0 mt-0.5">→</span>Why earned mentions on heavy-hitting domains compound while paid links decay</li>
+        <li class="flex items-start gap-2"><span class="text-brand shrink-0 mt-0.5">→</span>The economics of paid links versus earned mentions, and why the expensive option is the cheap one</li>
+        <li class="flex items-start gap-2"><span class="text-brand shrink-0 mt-0.5">→</span>What this means for B2B SaaS marketing teams planning 2026 and beyond</li>
+      </ul>
+      <p class="text-sm text-[#64748B] italic">Let's start with what paid links were built to do.</p>
+    </div>
+
+    <!-- PROSE BLOCK 1: Paid Links section + What AI Systems start -->
+    <div class="prose prose-lg text-body max-w-none space-y-6 leading-relaxed">
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">The Job Paid Links Were Built to Do</h2>
+      <p>
+        For twenty years, the job was to get your page ranked in a list of ten blue links. Google read the web's link graph, counted votes, and the page with the most trusted incoming votes won the top spot.
+      </p>
+      <p>
+        Paid links existed because the ranking mechanism rewarded them. Buy the right links on the right domains, and the algorithm moved you up.
+      </p>
+      <p class="font-semibold text-ink">The mechanism rewarded volume.</p>
+      <p>
+        The paid-guest-post model grew because it was a direct route to that volume. A marketplace order produced links at scale without the friction of building genuine press relationships.
+      </p>
+      <p class="font-semibold text-ink">Then the mechanism changed.</p>
+      <p>
+        A growing share of commercial searches never surface ten blue links at all. They surface an AI answer: sometimes from Google's AI Overviews, sometimes from a direct query into ChatGPT, Perplexity, or Gemini. The buyer reads the answer and either trusts the brands it mentions or keeps looking. No link ever gets clicked.
+      </p>
+      <p>
+        The tactic was built on two assumptions: links on marketplace sites would persist, and Google would count them. Both assumptions are breaking.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">What AI Systems Actually Read</h2>
+      <p>
+        AI systems don't count links. They read the pattern of your brand's name appearing across heavy-hitting domains.
+      </p>
+      <p>
+        When a buyer asks ChatGPT, Perplexity, Gemini, or Google's AI Overviews which tool to use in their category, the AI surfaces the brands whose names appear most consistently across the domains it has learned to treat as authoritative. Some of those domains are major publications. Some are established trade publications. Some are authoritative vendor-adjacent sites with deep editorial track records. What they share is accumulated authority, built over years of editorial references and cross-domain citation.
+      </p>
+
+    </div>
+
+    <!-- VISUAL 4: AI Answer Screenshot -->
+    <div class="relative w-full rounded-2xl overflow-hidden bg-white border border-[#0A0F1E]/8 shadow-card my-10 aspect-[4/3] flex items-center justify-center">
+      <img
+        src="/assets/images/resources/citation-equity-vs-link-building/ai-answer-example.png"
+        alt="ChatGPT answer showing heavy-hitting domain citations and brand mentions in a B2B SaaS category query"
+        class="w-full h-full object-contain p-4"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+      />
+      <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
+        <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">AI Answer Screenshot Slot</div>
+        <div class="text-sm max-w-md">Capture a real ChatGPT, Perplexity, or Gemini answer for a B2B SaaS category query showing heavy-hitting domain citations. Save as ai-answer-example.png in this resource's image folder.</div>
+      </div>
+    </div>
+    <p class="text-sm text-[#64748B] italic mt-3 text-center max-w-2xl mx-auto mb-8">
+      ChatGPT answering a real category query. The sources cited are the domains that have accumulated authority in cybersecurity. The brands named are the ones whose coverage pattern aligns with that authority signal. Editorial coverage is how both the domains and the brands got there.
+    </p>
+
+    <!-- Definition callout -->
+    <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card">
+      <p class="text-sm font-semibold text-ink mb-1">Citation equity (n.)</p>
+      <p class="text-sm text-[#475569] leading-relaxed">The accumulated pattern of a brand's name appearing across heavy-hitting domains. Same underlying logic as PageRank. Different mechanism.</p>
+    </div>
+
+    <!-- PROSE BLOCK 2: Citation equity continuation -->
+    <div class="prose prose-lg text-body max-w-none space-y-6 leading-relaxed">
+
+      <p>
+        This is citation equity. The accumulated pattern of a brand's name appearing across heavy-hitting domains. It is PageRank for AI: the same underlying logic (trust flowing through a network), a different mechanism (semantic citation context instead of anchor-text links).
+      </p>
+      <p>
+        The brands surfaced in AI answers are not the brands with the largest backlink profiles. They are the brands whose mention pattern best matches the authority graph of their category.
+      </p>
+      <p>
+        The gap between those two populations is the positioning opportunity.
+      </p>
+
+    </div>
+
+    <!-- VISUAL 2: Mechanics contrast diagram -->
+    <div class="my-10 w-full">
+      <svg viewBox="0 0 680 390" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto"
+           role="img" aria-labelledby="mech-title mech-desc">
+        <title id="mech-title">Mechanics comparison: paid links vs earned links</title>
+        <desc id="mech-desc">Diagram contrasting paid link mechanics — marketplace domains that risk deindexing, with broken signal flow to a page — against earned link mechanics — heavy-hitting domains citing a brand that flows through an AI answer engine to surface to the buyer.</desc>
+
+        <defs>
+          <marker id="arr-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#94A3B8"/>
+          </marker>
+          <marker id="arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#5D4FE0"/>
+          </marker>
+          <marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#EF4444"/>
+          </marker>
+        </defs>
+
+        <!-- Dividing line -->
+        <line x1="340" y1="5" x2="340" y2="375" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+
+        <!-- LEFT COLUMN -->
+        <text x="170" y="20" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="13" font-weight="700" fill="#0A0F1E">The 2010 Mechanism</text>
+        <text x="170" y="35" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" fill="#64748B">Paid Links</text>
+
+        <!-- Domain node 1 -->
+        <rect x="18" y="52" width="90" height="26" rx="5" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+        <text x="63" y="69" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#64748B">Linking domain</text>
+
+        <!-- Domain node 2 — deindexed -->
+        <rect x="120" y="52" width="90" height="26" rx="5" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+        <text x="165" y="69" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#94A3B8" text-decoration="line-through">Linking domain</text>
+        <line x1="125" y1="56" x2="205" y2="74" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <line x1="125" y1="74" x2="205" y2="56" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <text x="165" y="90" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="9" fill="#EF4444" font-style="italic">deindexed</text>
+
+        <!-- Domain node 3 -->
+        <rect x="222" y="52" width="90" height="26" rx="5" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+        <text x="267" y="69" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#64748B">Linking domain</text>
+
+        <!-- Arrows: domains to Your page -->
+        <line x1="63" y1="78" x2="152" y2="168" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arr-gray)"/>
+        <line x1="165" y1="78" x2="165" y2="168" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arr-red)"/>
+        <line x1="267" y1="78" x2="178" y2="168" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arr-gray)"/>
+
+        <!-- Arrow edge labels -->
+        <text x="100" y="122" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="9" fill="#94A3B8">link</text>
+        <text x="185" y="128" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="9" fill="#EF4444" font-style="italic">gone</text>
+        <text x="228" y="122" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="9" fill="#94A3B8">link</text>
+
+        <!-- Your page node -->
+        <rect x="100" y="170" width="130" height="30" rx="6" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
+        <text x="165" y="189" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="12" font-weight="600" fill="#475569">Your page</text>
+
+        <!-- Your page to outcome -->
+        <line x1="165" y1="200" x2="165" y2="258" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arr-gray)"/>
+
+        <!-- Ranked in top 10 node -->
+        <rect x="72" y="260" width="186" height="30" rx="6" fill="#F1F5F9" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="165" y="279" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" fill="#64748B">Ranked in top 10</text>
+
+        <!-- RIGHT COLUMN -->
+        <text x="515" y="20" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="13" font-weight="700" fill="#0A0F1E">The 2026 Mechanism</text>
+        <text x="515" y="35" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" font-weight="600" fill="#5D4FE0">Earned Links</text>
+
+        <!-- Publisher nodes -->
+        <rect x="358" y="52" width="76" height="26" rx="5" fill="white" stroke="#5D4FE0" stroke-width="1.5"/>
+        <text x="396" y="69" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" font-weight="600" fill="#5D4FE0">Forbes</text>
+
+        <rect x="463" y="52" width="100" height="26" rx="5" fill="white" stroke="#5D4FE0" stroke-width="1.5"/>
+        <text x="513" y="69" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" font-weight="600" fill="#5D4FE0">TechCrunch</text>
+
+        <rect x="580" y="52" width="90" height="26" rx="5" fill="white" stroke="#5D4FE0" stroke-width="1.5"/>
+        <text x="625" y="63" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="9" font-weight="600" fill="#5D4FE0">Financial</text>
+        <text x="625" y="74" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="9" font-weight="600" fill="#5D4FE0">Times</text>
+
+        <!-- Arrows: publishers to Your brand -->
+        <line x1="396" y1="78" x2="492" y2="168" stroke="#5D4FE0" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+        <line x1="513" y1="78" x2="513" y2="168" stroke="#5D4FE0" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+        <line x1="625" y1="78" x2="536" y2="168" stroke="#5D4FE0" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+
+        <!-- cite labels -->
+        <text x="440" y="121" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="9" fill="#5D4FE0">cite</text>
+        <text x="520" y="121" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="9" fill="#5D4FE0">cite</text>
+        <text x="589" y="121" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="9" fill="#5D4FE0">cite</text>
+
+        <!-- Your brand node -->
+        <rect x="450" y="170" width="130" height="30" rx="6" fill="white" stroke="#5D4FE0" stroke-width="2"/>
+        <text x="515" y="189" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="12" font-weight="700" fill="#5D4FE0">Your brand</text>
+
+        <!-- Your brand to AI answer engine -->
+        <line x1="515" y1="200" x2="515" y2="240" stroke="#5D4FE0" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+
+        <!-- AI answer engine node -->
+        <rect x="422" y="242" width="186" height="30" rx="6" fill="white" stroke="#5D4FE0" stroke-width="1.5"/>
+        <text x="515" y="261" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" fill="#0A0F1E">AI answer engine</text>
+
+        <!-- AI answer engine to Surfaced to buyer -->
+        <line x1="515" y1="272" x2="515" y2="312" stroke="#5D4FE0" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+
+        <!-- Surfaced to buyer node -->
+        <rect x="427" y="314" width="176" height="30" rx="6" fill="white" stroke="#5D4FE0" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="515" y="333" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" fill="#5D4FE0">Surfaced to buyer</text>
+
+      </svg>
+      <p class="text-sm text-[#64748B] italic mt-3 text-center">Paid links sit on sites that get deindexed. Earned mentions on heavy-hitting domains are what AI systems cite.</p>
+    </div>
+
+    <!-- PROSE BLOCK 3: Why One Compounds + Economics -->
+    <div class="prose prose-lg text-body max-w-none space-y-6 leading-relaxed">
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Why One Compounds and the Other Decays</h2>
+      <p>
+        A paid link on a guest-post marketplace has a deindexing problem. The publisher's incentive is the fee, not your content. The site exists to sell placements.
+      </p>
+      <p>
+        Google has been deindexing marketplace sites in waves since the Helpful Content Updates started in 2022. When a marketplace domain gets deindexed, every paid link on it disappears from the index overnight. The money is gone. The signal is gone.
+      </p>
+      <p>
+        Indexation is the threshold every retrieval system relies on. AI systems cite what retrieval can see. Deindexed content is invisible to Google, to Bing, and to the corpora ChatGPT, Perplexity, and Gemini retrieve from. Paid links sit on exactly the kind of content that fails this threshold systematically.
+      </p>
+      <p>
+        An earned link on a heavy-hitting domain does not face this problem. Established publications, trade pubs, analyst sites, and authoritative vendor properties do not get deindexed. They are the domains retrieval systems are tuned to trust.
+      </p>
+      <p>
+        The citation becomes part of the permanent record of the category. When a new AI system is trained or a new retrieval index is built, the mention is part of the corpus.
+      </p>
+      <p>
+        It compounds. Each additional mention on a heavy-hitting domain adds to a pattern AI systems read as: this brand is recognised in this category.
+      </p>
+      <p class="font-semibold text-ink">The economics are inverted:</p>
+      <p>
+        <strong>A $437 paid link</strong> with a two-year effective lifespan costs $218 per year.
+      </p>
+      <p>
+        <strong>A $437 earned mention on a heavy-hitting domain</strong>, with a ten-year-plus lifespan and AI-era durability, costs $44 per year.
+      </p>
+      <p class="font-semibold text-ink">
+        The expensive option is the cheap one.
+      </p>
+
+    </div>
+
+    <!-- VISUAL 3: Economics data viz -->
+    <div class="my-10 w-full max-w-2xl mx-auto">
+      <svg viewBox="0 0 520 310" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto"
+           role="img" aria-labelledby="econ-title econ-desc">
+        <title id="econ-title">Cost per useful year: paid link vs earned mention on a heavy-hitting domain</title>
+        <desc id="econ-desc">Bar chart comparing cost per useful year. A $437 paid link on a marketplace site with a 2-year effective lifespan and deindex risk costs $218 per year. A $437 earned mention on a heavy-hitting domain with a 10-year-plus lifespan costs $44 per year.</desc>
+
+        <!-- Chart title -->
+        <text x="260" y="24" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="14" font-weight="700" fill="#0A0F1E">Cost per Useful Year</text>
+        <text x="260" y="40" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" fill="#64748B">Same $437 upfront. Different half-lives.</text>
+
+        <!-- Y-axis grid lines -->
+        <line x1="60" y1="57" x2="460" y2="57" stroke="#F1F5F9" stroke-width="1"/>
+        <line x1="60" y1="103" x2="460" y2="103" stroke="#F1F5F9" stroke-width="1"/>
+        <line x1="60" y1="149" x2="460" y2="149" stroke="#F1F5F9" stroke-width="1"/>
+        <line x1="60" y1="195" x2="460" y2="195" stroke="#F1F5F9" stroke-width="1"/>
+
+        <!-- Y-axis labels -->
+        <text x="52" y="61" text-anchor="end" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#94A3B8">$200</text>
+        <text x="52" y="107" text-anchor="end" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#94A3B8">$150</text>
+        <text x="52" y="153" text-anchor="end" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#94A3B8">$100</text>
+        <text x="52" y="199" text-anchor="end" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#94A3B8">$50</text>
+
+        <!-- Baseline -->
+        <line x1="60" y1="240" x2="460" y2="240" stroke="#E2E8F0" stroke-width="2"/>
+
+        <!-- Bar 1: Paid link — $218/yr -->
+        <rect x="110" y="60" width="120" height="180" rx="4" fill="#EF4444" opacity="0.85"/>
+        <text x="170" y="52" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="14" font-weight="700" fill="#EF4444">$218/yr</text>
+
+        <!-- Bar 2: Earned mention — $44/yr -->
+        <rect x="290" y="203" width="120" height="37" rx="4" fill="#5D4FE0"/>
+        <text x="350" y="195" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="14" font-weight="700" fill="#5D4FE0">$44/yr</text>
+
+        <!-- Bar 1 labels -->
+        <text x="170" y="257" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="12" font-weight="600" fill="#475569">Paid link</text>
+        <text x="170" y="271" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#94A3B8">$437 total · 2-year lifespan</text>
+        <text x="170" y="283" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#EF4444">deindex risk</text>
+
+        <!-- Bar 2 labels -->
+        <text x="350" y="257" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="12" font-weight="600" fill="#475569">Earned mention</text>
+        <text x="350" y="270" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#64748B">heavy-hitting domain</text>
+        <text x="350" y="283" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#94A3B8">$437 total · 10-year+ lifespan</text>
+        <text x="350" y="296" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#5D4FE0">compound value</text>
+
+      </svg>
+      <p class="text-sm text-[#64748B] italic mt-3 text-center">Same $437 upfront. Different half-lives. The expensive option is the cheap one.</p>
+    </div>
+
+    <!-- Pro Tip callout -->
+    <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card">
+      <p class="text-sm font-semibold text-ink mb-1">Pro tip</p>
+      <p class="text-sm text-[#475569] leading-relaxed">When evaluating link spend, divide cost by useful lifespan. A $437 paid link with a two-year half-life costs more per useful year than a $437 earned mention on a heavy-hitting domain that survives every algorithm update.</p>
+    </div>
+
+    <!-- PROSE BLOCK 4: Evidence -->
+    <div class="prose prose-lg text-body max-w-none space-y-6 leading-relaxed">
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">The Evidence</h2>
+      <p>
+        Google's March 2024 core update and every Helpful Content Update since have pushed harder on source authority and editorial quality. Marketplace domains have been purged in waves.
+      </p>
+      <p>
+        Research on retrieval-augmented systems (the architecture behind every major AI answer engine) shows retrieval consistently weights sources that appear across multiple heavy-hitting domains over sources that appear once across many low-authority sites.
+      </p>
+      <p>
+        On the pricing side, our longitudinal analysis of agency-managed link prices 2020–2026 shows the agency tier barely keeping pace with inflation while publisher-direct prices have tripled. The market is pricing in what indexation enforcement is doing to marketplace link value. Manufactured authority is getting cheaper because its shelf life is collapsing. Earned authority is getting more expensive because the durable supply is capped.
+      </p>
+
+    </div>
+
+    <!-- Further Reading callout -->
+    <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card">
+      <p class="text-sm font-semibold text-ink mb-1">Further reading</p>
+      <p class="text-sm text-[#475569] leading-relaxed"><a href="/resources/the-cost-of-authority" class="text-brand hover:text-brand-dark underline underline-offset-2">The Cost of Authority</a>: our pricing analysis of 140,000+ publisher listings across six years, showing exactly how agency-managed and publisher-direct link prices have moved 2020–2026.</p>
+    </div>
+
+    <!-- PROSE BLOCK 5: What This Means + Closing -->
+    <div class="prose prose-lg text-body max-w-none space-y-6 leading-relaxed">
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">What This Means for B2B SaaS Marketing Teams</h2>
+      <p>
+        If your buyer is asking ChatGPT, Perplexity, Gemini, or Google's AI Overviews which tool to use in your category, your brand either shows up or doesn't. Paid links on marketplace sites will not put you in those answers. A pattern of earned mentions across the heavy-hitting domains in your category will.
+      </p>
+      <p class="font-semibold text-ink">The trajectory is set:</p>
+      <p>
+        Every B2B SaaS category will converge on this. The only variable is whether you build earned coverage before or after your competitors.
+      </p>
+      <p>
+        The brands accumulating mentions on heavy-hitting domains now are the brands that will be surfaced as the defaults when their categories fully shift to AI-mediated search. That shift has already started.
+      </p>
+      <p>
+        Stop buying links on marketplace sites. Redirect the budget into producing the kind of data, commentary, and expert insight that heavy-hitting domains want to cover. Earned coverage is slower to produce than a marketplace order. It is also the only output that survives the mechanism change.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Build Earned Coverage Before the Shift Finishes</h2>
+      <p>
+        AI systems will keep evolving. The domains they treat as heavy-hitters will keep changing. But the underlying principle does not move: brands mentioned across heavy-hitting domains get cited by AI.
+      </p>
+      <p>
+        Paid links buy into a mechanism that is decaying. Earned coverage buys into the one that is replacing it.
+      </p>
+      <p>
+        The only variable is whether you build it before or after your competitors.
+      </p>
+      <p>Check out these resources for next steps:</p>
+      <ul>
+        <li><a href="/resources/ai-search-visibility" class="text-brand hover:text-brand-dark underline underline-offset-2">AI Search Visibility: How ChatGPT, Perplexity, Gemini, and Google AI Overviews Choose Which Brands to Cite</a></li>
+        <li><a href="/resources/the-cost-of-authority" class="text-brand hover:text-brand-dark underline underline-offset-2">The Cost of Authority: 2026 Publisher Access Pricing</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+</article>
+
+<section class="relative overflow-hidden py-16 md:py-20 text-center" style="background: #5D4FE0;">
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
+  <div class="relative max-w-4xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
+      Be the Brand <span class="relative inline-block pb-2">AI Cites<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
+    </h2>
+    <p class="text-lg text-white/80 mb-10">Per-campaign. Fixed price. Guaranteed placements on heavy-hitting publishers.</p>
+    <PrimaryCTA href="/contact" />
+  </div>
+</section>
+
+</Layout>
