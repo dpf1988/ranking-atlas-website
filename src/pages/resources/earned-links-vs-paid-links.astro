@@ -292,54 +292,33 @@ const jsonLd = {
       </p>
       <p class="font-semibold text-ink">The economics are inverted:</p>
       <p>
-        A <strong>$437 paid link</strong> lasts roughly <strong>a year</strong> before the site gets deindexed or the link loses signal. Cost per useful year: <strong>$437</strong>.
+        A <strong>$437 paid link</strong> sits on a marketplace site built to sell placements. When that site gets deindexed — and Google has been deindexing them in waves since 2022 — the investment goes to zero overnight. The money is gone. The signal is gone.
       </p>
       <p>
-        A <strong>$437 earned mention</strong> on an authoritative site compounds for <strong>five years or more</strong>. Cost per useful year: <strong>$87</strong>.
+        A <strong>$437 earned mention</strong> on an authoritative site has no deindex risk. It compounds. Each additional mention adds to the pattern AI systems read as: this brand belongs in this category.
       </p>
       <p>
-        Same $437 upfront. Five times the useful life. The expensive option is the cheap one.
+        Same upfront cost. Opposite trajectories.
       </p>
 
     </div>
 
-    <!-- VISUAL 3: Economics data viz -->
-    <div class="my-10 w-full max-w-2xl mx-auto">
-      <h3 class="text-lg font-bold tracking-tight text-ink text-center mb-4">Cost per useful year</h3>
-      <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto"
-           role="img" aria-labelledby="econ-title econ-desc">
-        <title id="econ-title">Cost per useful year: paid link vs earned mention on an authoritative site</title>
-        <desc id="econ-desc">Bar chart comparing cost per useful year. A $437 paid link with a one-year effective lifespan costs $437 per useful year. A $437 earned mention on an authoritative site with a five-year lifespan costs $87 per useful year.</desc>
-
-        <!-- Y-axis tick labels (de-emphasised) -->
-        <text x="58" y="79"  text-anchor="end" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" fill="#CBD5E1">$500</text>
-        <text x="58" y="129" text-anchor="end" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" fill="#CBD5E1">$400</text>
-        <text x="58" y="179" text-anchor="end" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" fill="#CBD5E1">$300</text>
-        <text x="58" y="229" text-anchor="end" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" fill="#CBD5E1">$200</text>
-        <text x="58" y="279" text-anchor="end" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" fill="#CBD5E1">$100</text>
-
-        <!-- Baseline -->
-        <line x1="65" y1="325" x2="545" y2="325" stroke="#CBD5E1" stroke-width="1"/>
-
-        <!-- Bar 1: Paid link — $437/yr (height=219, top=106) -->
-        <rect x="140" y="106" width="110" height="219" rx="4" fill="#EF4444"/>
-        <text x="195" y="96" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="24" font-weight="700" fill="#EF4444">$437/yr</text>
-
-        <!-- Bar 2: Earned mention — $87/yr (height=44, top=281) -->
-        <rect x="360" y="281" width="110" height="44" rx="4" fill="#5D4FE0"/>
-        <text x="415" y="271" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="24" font-weight="700" fill="#5D4FE0">$87/yr</text>
-
-        <!-- Bar 1 labels -->
-        <text x="195" y="344" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="18" font-weight="700" fill="#0A0F1E">Paid link</text>
-        <text x="195" y="364" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="14" fill="#64748B">1-year lifespan</text>
-
-        <!-- Bar 2 labels -->
-        <text x="415" y="344" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="18" font-weight="700" fill="#0A0F1E">Earned mention</text>
-        <text x="415" y="364" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="14" fill="#64748B">5-year lifespan</text>
-
-      </svg>
-      <p class="text-sm text-[#64748B] italic mt-3 text-center max-w-xl mx-auto">Same $437 upfront. Five times the useful life. The expensive option is the cheap one.</p>
+    <!-- VISUAL 3: Economics comparison -->
+    <div class="my-10 w-full max-w-2xl mx-auto grid grid-cols-2 gap-4">
+      <div class="rounded-xl border-2 border-[#EF4444]/60 bg-white p-6">
+        <div class="text-xs uppercase tracking-wider font-semibold text-[#EF4444] mb-2">Paid link</div>
+        <div class="text-4xl font-bold text-[#EF4444] mb-4">$437</div>
+        <p class="text-sm text-[#475569] leading-relaxed mb-3">Sits on a marketplace site built to sell placements, not produce editorial coverage.</p>
+        <p class="text-sm font-semibold text-[#EF4444]">Deindex risk: value drops to $0 overnight when the site is deindexed.</p>
+      </div>
+      <div class="rounded-xl border-2 border-[#5D4FE0]/60 bg-white p-6">
+        <div class="text-xs uppercase tracking-wider font-semibold text-[#5D4FE0] mb-2">Earned mention</div>
+        <div class="text-4xl font-bold text-[#5D4FE0] mb-4">$437</div>
+        <p class="text-sm text-[#475569] leading-relaxed mb-3">On an established publication that won't be deindexed.</p>
+        <p class="text-sm font-semibold text-[#5D4FE0]">Compounds: each mention strengthens the pattern AI systems cite.</p>
+      </div>
     </div>
+    <p class="text-sm text-[#64748B] italic text-center max-w-xl mx-auto -mt-4 mb-10">Same upfront cost. Opposite trajectories.</p>
 
     <!-- Pro Tip callout -->
     <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card">
