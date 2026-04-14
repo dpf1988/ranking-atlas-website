@@ -107,7 +107,7 @@ On dark backgrounds, use `stroke="white"` instead of `currentColor`.
 | Section lead paragraph | `text-lg text-[#64748B] max-w-3xl mx-auto` |
 | Card body copy | `text-base text-[#475569] leading-relaxed` |
 | Small card body (dark bg) | `text-sm text-white/70 leading-relaxed` |
-| Article prose | `prose prose-lg text-body max-w-none space-y-6 leading-relaxed` |
+| Article prose | `prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]` |
 | Lead paragraph in report | `text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium max-w-3xl` |
 | Caption / metadata | `text-sm text-[#64748B]` |
 | Eyebrow label | `text-sm uppercase tracking-wider text-brand font-medium mb-3` |

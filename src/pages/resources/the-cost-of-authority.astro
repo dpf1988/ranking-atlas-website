@@ -36,6 +36,7 @@ const jsonLd = {
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
+<div class="bg-white">
 <article class="py-20 md:py-28">
   <div class="max-w-3xl mx-auto px-6">
     <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Data Report</div>
@@ -65,26 +66,25 @@ const jsonLd = {
       </div>
     </div>
 
-    <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-4">
+    <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-4">
       Paid links are more expensive than they've ever been. They're also less effective than they've ever been.
     </p>
-    <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-4">
-      Demand for backlinks has climbed as more brands compete for coverage, but at the same time, Google has been deindexing low-authority sites in waves since the <a href="https://developers.google.com/search/blog/2022/08/helpful-content-update" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Helpful Content Update rolled out in 2022</a>. Those are the sites most paid links live on. A link on a deindexed site passes no authority, drives no referral traffic, and can't be cited by anything, human or machine.
+    <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-4">
+      Demand for backlinks has climbed as more brands compete for coverage. At the same time, Google has been deindexing low-authority sites in waves since the <a href="https://developers.google.com/search/blog/2022/08/helpful-content-update" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">2022 Helpful Content Update</a>. Those are the sites most paid links live on. A link on a deindexed site passes no authority, drives no referral traffic, and can't be cited by anything, human or machine.
     </p>
-    <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-6">
-      This report uses six years of pricing data across 140,000+ paid link listings from major marketplaces to analyze the price of links over time, and how much of what's being sold still matters.
+    <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-6">
+      This report uses six years of pricing data across 140,000+ paid link listings from the major marketplaces. It covers how prices have moved, and how much of what's being sold still works.
     </p>
 
     <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 mb-10 shadow-card">
       <p class="text-sm font-semibold text-ink mb-3">In this report, you'll see:</p>
       <ul class="space-y-2 text-sm text-[#475569] mb-4 list-disc pl-5">
-        <li>What marketplace links actually cost in 2026, by Domain Rating and real organic traffic</li>
-        <li>Why Domain Rating alone misprices the signal, and what correlates with real value</li>
-        <li>How agency-managed and publisher-direct prices have diverged, 2020–2026</li>
-        <li>How indexing is destroying paid link value overnight</li>
-        <li>What the economics look like for paid vs. earned coverage, annualised across useful lifespan</li>
+        <li>What marketplace links cost in 2026, by Domain Rating and organic traffic</li>
+        <li>Why Domain Rating alone misprices links, and what correlates with value</li>
+        <li>How agency and publisher-direct prices have diverged, 2020–2026</li>
+        <li>How deindexing wipes out paid link value</li>
+        <li>How paid and earned coverage compare on annualised cost</li>
       </ul>
-      <p class="text-sm text-[#64748B] italic">Let's start with what the market charges today.</p>
     </div>
   </div>
 
@@ -138,7 +138,7 @@ const jsonLd = {
   <section id="data" class="py-16 md:py-24" style="background: #F8F7FA;">
     <div class="max-w-3xl mx-auto px-6 mb-8">
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        1. What The 2026 Marketplace Actually Charges
+        1. What The 2026 Marketplace Charges
       </h2>
       <p class="text-lg md:text-xl text-[#475569] leading-relaxed font-medium">
         These are the direct marketplace prices agencies and brands pay for a single placement. Buy through an intermediary and you'll pay 75% more on top.
@@ -203,13 +203,12 @@ const jsonLd = {
     </div>
 
     <div class="max-w-3xl mx-auto px-6">
-      <p class="text-base text-[#475569] leading-relaxed font-semibold mb-4">The range is the story.</p>
-      <p class="text-base text-[#475569] leading-relaxed mb-4">A DR80+ placement costs 10–100x more than a DR20. The top tier is where the publisher-direct premium lives. The headline averages hide enormous variance within each tier.</p>
-      <p class="text-base text-[#475569] leading-relaxed mb-6">A $365 average conceals the reality: if you need a placement that actually moves AI and search signals, you are buying in the DR50+ range at $400–700 per placement, minimum.</p>
+      <p class="text-base text-[#475569] leading-relaxed mb-4">A DR80+ placement costs 10–100x more than a DR20. The headline averages hide wide variance inside each tier, and the top tier is where publisher-direct premiums sit.</p>
+      <p class="text-base text-[#475569] leading-relaxed mb-6">The $365 average is misleading for most buyers. A placement that moves rankings starts at DR50+, which means $400–700 per placement at minimum.</p>
 
       <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 shadow-card">
         <p class="text-sm font-semibold text-ink mb-1">Note:</p>
-        <p class="text-sm text-[#475569] leading-relaxed">Every price in this table is for a paid placement. The publisher is paid to run your content. Risk and value both change accordingly.</p>
+        <p class="text-sm text-[#475569] leading-relaxed">Every price in this table buys a paid placement — the publisher is paid to run your content. Risk and value shift accordingly.</p>
       </div>
     </div>
 
@@ -219,10 +218,10 @@ const jsonLd = {
   <section id="heatmap" class="py-16 md:py-24 bg-white">
     <div class="max-w-3xl mx-auto px-6 mb-8">
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        2. Why Domain Rating Alone Misprices The Signal
+        2. Why Domain Rating Alone Misprices Links
       </h2>
       <p class="text-lg md:text-xl text-[#475569] leading-relaxed font-medium">
-        DR measures a site's backlink profile. It does not measure whether anyone actually reads the site. Marketplaces price on DR anyway.
+        DR measures a site's backlink profile. It does not measure whether anyone reads the site. Marketplaces price on DR anyway.
       </p>
     </div>
 
@@ -234,12 +233,10 @@ const jsonLd = {
     </div>
 
     <div class="max-w-3xl mx-auto px-6">
-      <p class="text-base text-[#475569] leading-relaxed mb-4">Two numbers explain the mispricing.</p>
-      <p class="text-base text-[#475569] leading-relaxed mb-4">19% of marketplace guest post sites receive fewer than 100 monthly organic visitors. Many of them still charge mid-tier prices. A $300 link on a zero-traffic DR50 site delivers less ranking value than a $150 link on a DR30 site with 10,000 real visitors.</p>
+      <p class="text-base text-[#475569] leading-relaxed mb-4">19% of marketplace guest post sites receive fewer than 100 monthly organic visitors. Many still charge mid-tier prices. A $300 link on a zero-traffic DR50 site delivers less ranking value than a $150 link on a DR30 site with 10,000 visitors.</p>
       <p class="text-base text-[#475569] leading-relaxed mb-6">At the high end, 53% of DR71+ sites fall into mid- or low-quality tiers because they have under 50,000 monthly organic traffic. High DR without traffic is a red flag.</p>
 
-      <p class="text-base text-[#475569] leading-relaxed font-semibold mb-4">Here's what that means in practice:</p>
-      <p class="text-base text-[#475569] leading-relaxed mb-6">Any buyer using DR as their primary filter is overpaying for reach they're not getting. Traffic is the cleaner proxy. Editorial quality is cleaner still. Neither is priced accurately by the marketplace.</p>
+      <p class="text-base text-[#475569] leading-relaxed mb-6">Any buyer filtering on DR alone is overpaying for reach they aren't getting. Traffic is a cleaner proxy. Editorial quality is cleaner still. Neither is priced accurately by the marketplace.</p>
 
       <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 shadow-card">
         <p class="text-sm font-semibold text-ink mb-1">Pro tip:</p>
@@ -253,10 +250,10 @@ const jsonLd = {
   <section class="py-16 md:py-24" style="background: #F8F7FA;">
     <div class="max-w-3xl mx-auto px-6 mb-8">
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        3. How Agency And Publisher-Direct Prices Have Diverged
+        3. How Agency And Publisher-Direct Prices Diverged
       </h2>
       <p class="text-base text-[#475569] leading-relaxed">
-        Primary-source Wayback data for five established link agencies, 2020 to 2026. Each data point is a verified snapshot of what the agency charged in that year. DR30+ equivalent tier shown, the most commonly listed tier across all vendors and years.
+        Wayback Machine snapshots for five link agencies, 2020 to 2026. Each data point is a verified record of what the agency charged that year. The chart shows the DR30+ tier, which appears most consistently across vendors and years.
       </p>
     </div>
 
@@ -438,7 +435,7 @@ const jsonLd = {
     </div>
 
     <div class="max-w-3xl mx-auto px-6">
-      <p class="text-base text-[#475569] leading-relaxed">Publisher-direct pricing has tripled in four years. Agency-managed pricing has moved less than half as fast. The supply side is charging more; the middle layer is absorbing margin to stay competitive. Either way, the buyer is paying more for the same underlying product — and that product is getting worse.</p>
+      <p class="text-base text-[#475569] leading-relaxed">Publisher-direct pricing has tripled in four years. Agency pricing has moved less than half as fast. Publishers are charging more, and agencies are absorbing the difference to stay competitive. Either way, the buyer is paying more for a product that is getting worse.</p>
     </div>
 
   </section>
@@ -448,19 +445,17 @@ const jsonLd = {
     <div class="max-w-3xl mx-auto px-6">
 
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        4. How Indexing Is Destroying Paid Link Value
+        4. How Deindexing Destroys Paid Link Value
       </h2>
       <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium">
-        A backlink only passes signal if the page hosting it is indexed. The moment Google deindexes a domain, every link on that domain disappears from the graph. The money spent on those links goes to zero overnight.
+        A backlink only counts if the page hosting it is indexed. The moment Google deindexes a domain, every link on it disappears from the link graph. The money spent on those links goes to zero.
       </p>
 
-      <div class="prose prose-lg text-body max-w-none space-y-5 leading-relaxed">
-        <p>Google has been running indexation enforcement at scale since the <a href="https://developers.google.com/search/blog/2022/08/helpful-content-update" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">2022 Helpful Content Update</a>. Follow-up core updates have escalated it. The targets have been clear: sites that exist to host third-party content for SEO purposes.</p>
+      <div class="prose prose-lg text-body max-w-none space-y-5 text-[21px] leading-[1.7]">
+        <p>Google has been deindexing sites at scale since the <a href="https://developers.google.com/search/blog/2022/08/helpful-content-update" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">2022 Helpful Content Update</a>, and the following core updates have escalated it. The targets are consistent: sites that exist to host third-party content for SEO.</p>
         <p>Marketplace guest post sites fit that profile exactly. Many have already been deindexed. Many more are in the queue.</p>
-        <p>When your link host gets deindexed, you do not get a refund. Most marketplace services offer 6–12 month guarantees, but a replacement on another marketplace site carries the same underlying risk.</p>
-        <p class="font-semibold text-ink">The result?</p>
-        <p class="font-semibold text-ink">The signal is being deindexed.</p>
-        <p>Indexation is the threshold for every retrieval system AI answer engines rely on. ChatGPT, Perplexity, Gemini, and Google's AI Overviews all cite what their retrieval layer can see — and every one of those retrieval layers depends on what a search index has crawled and kept. Deindexed content fails that threshold. Paid links on marketplace sites are failing it systematically.</p>
+        <p>When your link host gets deindexed, you don't get a refund. Most marketplaces offer 6–12 month guarantees, but a replacement on another marketplace site carries the same risk.</p>
+        <p>AI answer engines can only cite what their retrieval layer has access to, and every one of those retrieval layers depends on a search index. ChatGPT, Perplexity, Gemini, and Google's AI Overviews all work this way. Deindexed content fails the threshold. Paid links on marketplace sites are failing it at scale.</p>
       </div>
 
       <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 mt-8 shadow-card">
@@ -479,31 +474,31 @@ const jsonLd = {
         5. What The Economics Look Like Over Useful Lifespan
       </h2>
       <p class="text-lg md:text-xl text-[#475569] leading-relaxed mb-8 font-medium">
-        Same upfront cost. Different half-lives. Annualised, the comparison inverts the common assumption that earned coverage is more expensive.
+        Same upfront cost. Different useful lifespans. Annualised, the comparison inverts the assumption that earned coverage is more expensive.
       </p>
 
-      <div class="prose prose-lg text-body max-w-none space-y-5 leading-relaxed">
-        <p>Take a $400–700 paid link on a DR50–60 marketplace site — the range where buyers go when they want "quality." Effective lifespan: one year, before the site is deindexed, the link drops, or the signal decays. That is $400–700 per useful year.</p>
-        <p>A placement in the same price range on an authority publisher has a five-year useful lifespan, minimum. Established publications do not get deindexed. The mention stays in the editorial record. That is $80–140 per useful year.</p>
+      <div class="prose prose-lg text-body max-w-none space-y-5 text-[21px] leading-[1.7]">
+        <p>Take a $400–700 paid link on a DR50–60 marketplace site, the tier buyers choose when they want "quality." Useful lifespan: one year, before the site is deindexed, the link drops, or the page gets pruned. That works out to $400–700 per useful year.</p>
+        <p>A placement at the same price on an authority publisher holds for five years, minimum. Established publications don't get deindexed. The coverage stays in the editorial record. That works out to $80–140 per useful year.</p>
         <p class="font-semibold text-ink">Same upfront cost. Five times the useful life.</p>
-        <p>The comparison holds at lower price points too. A $150 marketplace link with a one-year lifespan costs $150 per useful year. A $150 earned mention on a mid-tier trade publication, held for five years, costs $30 per useful year. Earned coverage wins on annualised economics at every tier.</p>
+        <p>The same pattern holds at lower price points. A $150 marketplace link lasting one year costs $150 per useful year. A $150 earned placement on a mid-tier trade publication, held for five years, costs $30 per useful year. Earned coverage wins on annualised cost at every tier.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- ── CLOSING: What The Pricing Really Measures ── -->
+  <!-- ── CLOSING: What The Pricing Measures ── -->
   <section class="py-16 md:py-24 bg-white">
     <div class="max-w-3xl mx-auto px-6">
 
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-5">
-        What The Pricing Really Measures
+        What The Pricing Measures
       </h2>
 
-      <div class="prose prose-lg text-body max-w-none space-y-5 leading-relaxed mb-10">
-        <p>Every price on this page measures the cost of a signal that used to be durable. Buy a link on a DR50 marketplace site in 2020 and it worked. Buy the same link in 2026 and you're betting the site survives the next core update.</p>
-        <p>Earned editorial coverage works in the opposite direction. A placement on a recognised publication doesn't expire. It doesn't get caught in the next HCU wave. It accumulates as a footprint across both Google's index and the publications AI systems are trained on. Every additional placement compounds.</p>
-        <p>That is what a Ranking Atlas campaign earns: fixed-price editorial placements on authoritative publishers, guaranteed per campaign. The same kind of coverage that survives algorithm updates. The same signal AI systems cite. No marketplace. No retainer.</p>
+      <div class="prose prose-lg text-body max-w-none space-y-5 text-[21px] leading-[1.7] mb-10">
+        <p>Every price on this page is the cost of a link that used to be durable. Buy one on a DR50 marketplace site in 2020 and it worked. Buy the same link in 2026 and you're betting the site survives the next core update.</p>
+        <p>Earned editorial coverage moves in the opposite direction. A placement on a recognised publication doesn't expire and doesn't get caught in the next HCU wave. It adds to a footprint that sits inside both Google's index and the publications AI systems draw from. Every additional placement compounds.</p>
+        <p>A Ranking Atlas campaign earns this kind of coverage: fixed-price editorial placements on authoritative publishers, guaranteed per campaign. Coverage that survives algorithm updates. Coverage AI systems cite. No marketplace, no retainer.</p>
         <p class="font-semibold text-ink">The expensive option is the cheap one.</p>
       </div>
 
@@ -517,7 +512,6 @@ const jsonLd = {
         <p class="text-sm font-medium text-ink mb-3">Further reading:</p>
         <ul class="space-y-2 text-sm list-disc pl-5">
           <li><a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">Why Earned Links Beat Paid Links</a></li>
-          <li><a href="/resources/ai-search-visibility" class="text-brand hover:text-brand-dark underline underline-offset-2">AI Search Visibility: How ChatGPT, Perplexity, Gemini, and Google AI Overviews Choose Which Brands to Cite</a></li>
         </ul>
       </div>
 
@@ -583,6 +577,7 @@ const jsonLd = {
   </section>
 
 <AuthorBio />
+</div>
 
 </Layout>
 
