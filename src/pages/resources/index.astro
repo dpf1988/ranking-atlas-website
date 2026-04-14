@@ -84,56 +84,77 @@ const jsonLd = {
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
 <section class="py-20 md:py-28">
-  <div class="max-w-4xl mx-auto px-6">
-    <Eyebrow label="Resources" />
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
-      Research, Guides, and Analysis
-    </h1>
-    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-12">
-      The state of citation equity, AI search visibility, and editorial authority in 2026.
-    </h2>
-  </div>
-</section>
+  <div class="max-w-5xl mx-auto px-6">
 
-<section class="py-16 md:py-24 bg-bg-cream">
-  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-8">
-
-    <a href="/resources/ai-search-visibility" class="group bg-white rounded-2xl shadow-card p-8 hover:shadow-lg transition-shadow block">
-      <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3">Guide</div>
-      <h2 class="text-xl md:text-2xl font-bold tracking-tight text-ink mb-4 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-        AI Search Visibility
+    <!-- Header box -->
+    <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 shadow-card p-8 md:p-12 mb-12">
+      <Eyebrow label="Resources" />
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
+        Industry Insights
+      </h1>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight">
+        The state of citation equity, AI search visibility, and editorial authority in 2026.
       </h2>
-      <p class="text-body leading-relaxed mb-4">
-        Built from our client campaign data: how ChatGPT, Perplexity, Gemini, and Google AI Overviews choose which brands to mention, and what we've seen move the pattern. Citation equity is what puts you in the answer.
-      </p>
-      <p class="text-sm text-[#64748B] mb-4">Updated April 2026</p>
-      <div class="text-sm text-brand font-medium group-hover:underline">Read the guide →</div>
-    </a>
+    </div>
 
-    <a href="/resources/the-cost-of-authority" class="group bg-white rounded-2xl shadow-card p-8 hover:shadow-lg transition-shadow block">
-      <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3">Data Report</div>
-      <h2 class="text-xl md:text-2xl font-bold tracking-tight text-ink mb-4 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-        The Cost of Authority: 2026 Publisher Access Pricing
-      </h2>
-      <p class="text-body leading-relaxed mb-4">
-        Primary-source pricing analysis of editorial coverage and link marketplace rates from 140,000+ publisher listings and six years of agency snapshots.
-      </p>
-      <p class="text-sm text-[#64748B] mb-4">Updated April 2026</p>
-      <div class="text-sm text-brand font-medium group-hover:underline">Read the report →</div>
-    </a>
+    <!-- Resource card grid -->
+    <div class="grid md:grid-cols-2 gap-8">
 
-    <a href="/resources/earned-links-vs-paid-links" class="group bg-white rounded-2xl shadow-card p-8 hover:shadow-lg transition-shadow block md:col-span-2">
-      <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3">Essay</div>
-      <h2 class="text-xl md:text-2xl font-bold tracking-tight text-ink mb-4 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-        Citation Equity: Why Earned Links Beat Paid Links
-      </h2>
-      <p class="text-body leading-relaxed mb-4">
-        The framework we apply across client campaigns. AI systems cite brands mentioned across heavy-hitting domains. Earned links produce those mentions. Paid links get deindexed and disappear. Here's the difference, the evidence, and the economics.
-      </p>
-      <p class="text-sm text-[#64748B] mb-4">Updated April 2026</p>
-      <div class="text-sm text-brand font-medium group-hover:underline">Read the essay →</div>
-    </a>
+      <a href="/resources/ai-search-visibility" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-8 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
+        <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3">Guide</div>
+        <h2 class="text-xl md:text-2xl font-bold tracking-tight text-ink mb-4 leading-snug group-hover:text-[#5D4FE0] transition-colors">
+          AI Search Visibility
+        </h2>
+        <p class="text-body leading-relaxed mb-4">
+          Built from our client campaign data: how ChatGPT, Perplexity, Gemini, and Google AI Overviews choose which brands to mention, and what we've seen move the pattern. Citation equity is what puts you in the answer.
+        </p>
+        <p class="text-sm text-muted mb-6">Updated April 2026</p>
+        <div class="mt-auto flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-8 h-8 rounded-full object-cover" width="32" height="32" />
+            <span class="text-sm text-muted">Daniel Grainger</span>
+          </div>
+          <div class="text-sm text-brand font-medium group-hover:underline">Read the guide →</div>
+        </div>
+      </a>
 
+      <a href="/resources/the-cost-of-authority" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-8 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
+        <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3">Data Report</div>
+        <h2 class="text-xl md:text-2xl font-bold tracking-tight text-ink mb-4 leading-snug group-hover:text-[#5D4FE0] transition-colors">
+          The Cost of Authority: 2026 Publisher Access Pricing
+        </h2>
+        <p class="text-body leading-relaxed mb-4">
+          Primary-source pricing analysis of editorial coverage and link marketplace rates from 140,000+ publisher listings and six years of agency snapshots.
+        </p>
+        <p class="text-sm text-muted mb-6">Updated April 2026</p>
+        <div class="mt-auto flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-8 h-8 rounded-full object-cover" width="32" height="32" />
+            <span class="text-sm text-muted">Daniel Grainger</span>
+          </div>
+          <div class="text-sm text-brand font-medium group-hover:underline">Read the report →</div>
+        </div>
+      </a>
+
+      <a href="/resources/earned-links-vs-paid-links" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-8 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block md:col-span-2 flex flex-col">
+        <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3">Essay</div>
+        <h2 class="text-xl md:text-2xl font-bold tracking-tight text-ink mb-4 leading-snug group-hover:text-[#5D4FE0] transition-colors">
+          Citation Equity: Why Earned Links Beat Paid Links
+        </h2>
+        <p class="text-body leading-relaxed mb-4">
+          The framework we apply across client campaigns. AI systems cite brands mentioned across heavy-hitting domains. Earned links produce those mentions. Paid links get deindexed and disappear. Here's the difference, the evidence, and the economics.
+        </p>
+        <p class="text-sm text-muted mb-6">Updated April 2026</p>
+        <div class="mt-auto flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-8 h-8 rounded-full object-cover" width="32" height="32" />
+            <span class="text-sm text-muted">Daniel Grainger</span>
+          </div>
+          <div class="text-sm text-brand font-medium group-hover:underline">Read the essay →</div>
+        </div>
+      </a>
+
+    </div>
   </div>
 </section>
 
