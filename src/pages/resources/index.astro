@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -84,26 +85,13 @@ const jsonLd = {
 
 <section class="py-20 md:py-28">
   <div class="max-w-4xl mx-auto px-6">
+    <Eyebrow label="Resources" />
     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
-      Research and Analysis for B2B SaaS Marketing Teams
+      Research, Guides, and Analysis
     </h1>
-
-    <div class="flex items-center gap-3 mb-6">
-      <a href="/about" class="shrink-0">
-        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
-      </a>
-      <div>
-        <p class="text-sm font-medium text-ink">Research and analysis by <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
-        <p class="text-sm text-[#64748B]">Updated April 2026</p>
-      </div>
-    </div>
-
-    <p class="text-body text-lg md:text-xl leading-relaxed max-w-3xl mb-4">
-      Original research and proprietary data from Ranking Atlas.
-    </p>
-    <div class="border-l-4 border-[#5D4FE0] pl-4 mb-4 max-w-3xl">
-      <p class="text-sm text-[#475569] italic leading-relaxed">Every resource here draws from the same data work that powers Ranking Atlas campaigns. When you run a campaign with us, this is the research layer working in your vertical.</p>
-    </div>
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-12">
+      The state of citation equity, AI search visibility, and editorial authority in 2026.
+    </h2>
   </div>
 </section>
 
