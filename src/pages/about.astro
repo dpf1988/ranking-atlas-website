@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import PrimaryCTA from '../components/PrimaryCTA.astro';
 import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
+import Eyebrow from '../components/Eyebrow.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -31,7 +32,7 @@ const jsonLd = {
   <!-- Hero -->
   <section class="pt-16 pb-12 md:pt-20 md:pb-16">
     <div class="max-w-3xl mx-auto px-6">
-      <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-3 text-[#64748B]">Our Story</p>
+      <Eyebrow label="Our Story" />
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
         About Ranking Atlas
       </h1>
