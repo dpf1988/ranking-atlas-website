@@ -3,7 +3,20 @@
     "allow": [
       "Bash(npm install:*)",
       "Bash(npm run:*)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(git stash:*)",
+      "Bash(python3:*)",
+      "Bash(py --version)",
+      "Bash(python:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(sed -i 's/your category and/your business and/g; s/One business day turnaround/One working day turnaround/g; s/within one business day/within one working day/g; s/We''''ll be in touch within one business day/We''''ll be in touch within one working day/g' src/pages/contact.astro src/components/Contact.astro)",
+      "Bash(sed -i 's/your category, your/your business, your/g; s/category context/business context/g' src/components/Contact.astro)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/resources/the-cost-of-authority)",
+      "Bash(where python:*)",
+      "Bash(where py:*)",
+      "Bash(curl:*)"
     ]
   }
 }
