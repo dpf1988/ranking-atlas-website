@@ -1,12 +1,19 @@
 // JSON-LD helpers for structured data emission on pillar pages
 // Organization + Person schema already emitted sitewide in Layout.astro
 
+/** Normalise a date-only string ("2026-04-21") or Date to full ISO 8601 with UTC timezone. */
+function toISODateTime(date: string | Date): string {
+  if (date instanceof Date) return date.toISOString();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(date)) return `${date}T00:00:00+00:00`;
+  return date;
+}
+
 export function articleSchema(args: {
   title: string;
   description: string;
   url: string;
-  datePublished: string;  // ISO date
-  dateModified?: string;
+  datePublished: string | Date;
+  dateModified?: string | Date;
   image?: string;
 }) {
   return {
@@ -15,8 +22,8 @@ export function articleSchema(args: {
     headline: args.title,
     description: args.description,
     url: args.url,
-    datePublished: args.datePublished,
-    dateModified: args.dateModified ?? args.datePublished,
+    datePublished: toISODateTime(args.datePublished),
+    dateModified: toISODateTime(args.dateModified ?? args.datePublished),
     author: {
       "@type": "Person",
       name: "Daniel Grainger",

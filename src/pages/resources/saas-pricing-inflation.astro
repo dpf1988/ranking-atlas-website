@@ -4,10 +4,11 @@ import AuthorBio from '../../components/AuthorBio.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Dataset",
-  "name": "SaaS Price Comparison 2020–2026 Dataset",
+  "@type": "Article",
+  "headline": "SaaS Price Comparison 2020\u20132026",
   "description": "Lowest monthly entry-tier pricing for 65 SaaS tools, captured from Wayback Machine snapshots (January 2020) and current vendor pricing pages (April 2026). Category medians, methodology, and archived source material.",
   "url": "https://ranking-atlas.com/resources/saas-pricing-inflation",
+  "image": "https://ranking-atlas.com/assets/images/resources/saas-pricing-inflation/hero.jpg",
   "author": {
     "@type": "Person",
     "name": "Daniel Grainger",
@@ -23,14 +24,9 @@ const jsonLd = {
       "https://ranking-atlas.com/about"
     ]
   },
-  "datePublished": "2026-04-13",
-  "dateModified": "2026-04-13",
-  "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
-  "distribution": {
-    "@type": "DataDownload",
-    "encodingFormat": "text/csv",
-    "contentUrl": "https://ranking-atlas.com/downloads/saas-pricing-inflation-2020-2026.csv"
-  }
+  "datePublished": "2026-04-13T00:00:00+00:00",
+  "dateModified": "2026-04-13T00:00:00+00:00",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas" }
 };
 ---
 
@@ -53,7 +49,7 @@ const jsonLd = {
         We pulled the lowest-priced monthly subscription from 65 SaaS vendor pricing pages in January 2020, then repeated the exercise in April 2026. 2020 prices were verified against the closest available <a href="https://web.archive.org" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Wayback Machine</a> snapshot for each tool. 2026 prices were taken from live pricing pages captured in the same month. The result is a like-for-like record of entry-tier price movement across 12 software categories over six years.
       </p>
       <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-6">
-        The pattern is consistent: tools whose core function can be approximated by a vibe-coded side project have no pricing power. The categories most exposed to AI replication — CRM, project management, productivity, dev tooling — show median price changes at or below zero. Categories that require human process, compliance, or integrations that AI cannot yet replicate — HR, accounting, support, analytics — raised prices well above inflation.
+        The pattern is consistent: tools whose core function can be approximated by a vibe-coded side project have no pricing power. The categories most exposed to AI replication (CRM, project management, productivity, dev tooling) show median price changes at or below zero. Categories that require human process, compliance, or integrations that AI cannot yet replicate (HR, accounting, support, analytics) raised prices well above inflation.
       </p>
       <div class="flex items-center gap-3 mb-4">
         <a href="/about" class="shrink-0">
@@ -81,13 +77,13 @@ const jsonLd = {
 
       <!-- Kayako -->
       <div class="mb-12">
-        <h3 class="text-lg font-bold tracking-tight text-ink mb-2">Kayako — Entry Tier 2020 vs 2026</h3>
+        <h3 class="text-lg font-bold tracking-tight text-ink mb-2">Kayako: Entry Tier 2020 vs 2026</h3>
         <p class="text-body text-[16px] leading-[1.7] mb-6 max-w-3xl">Kayako's lowest paid monthly subscription rose from $15 per agent per month in January 2020 to $79 per agent per month for Kayako One in April 2026, a 427% increase.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <figure>
             <img
               src="/assets/images/saas-pricing/kayako-2020.png"
-              alt="Kayako pricing page, January 2020 — $15 per agent per month"
+              alt="Kayako pricing page, January 2020, $15 per agent per month"
               class="w-full rounded-xl border border-[#0A0F1E]/8 shadow-card"
               onerror="this.style.opacity='0.3'"
             />
@@ -98,7 +94,7 @@ const jsonLd = {
           <figure>
             <img
               src="/assets/images/saas-pricing/kayako-2026.png"
-              alt="Kayako pricing page, April 2026 — $79 per agent per month"
+              alt="Kayako pricing page, April 2026, $79 per agent per month"
               class="w-full rounded-xl border border-[#0A0F1E]/8 shadow-card"
               onerror="this.style.opacity='0.3'"
             />
@@ -111,13 +107,13 @@ const jsonLd = {
 
       <!-- Asana -->
       <div>
-        <h3 class="text-lg font-bold tracking-tight text-ink mb-2">Asana — Six Years Unchanged</h3>
+        <h3 class="text-lg font-bold tracking-tight text-ink mb-2">Asana: Six Years Unchanged</h3>
         <p class="text-body text-[16px] leading-[1.7] mb-6 max-w-3xl">Asana's Premium tier (now Starter) has held at $10.99 per user per month since January 2020.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <figure>
             <img
               src="/assets/images/saas-pricing/asana-2020.png"
-              alt="Asana pricing page, January 2020 — $10.99 per user per month"
+              alt="Asana pricing page, January 2020, $10.99 per user per month"
               class="w-full rounded-xl border border-[#0A0F1E]/8 shadow-card"
               onerror="this.style.opacity='0.3'"
             />
@@ -128,7 +124,7 @@ const jsonLd = {
           <figure>
             <img
               src="/assets/images/saas-pricing/asana-2026.png"
-              alt="Asana pricing page, April 2026 — $10.99 per user per month"
+              alt="Asana pricing page, April 2026, $10.99 per user per month"
               class="w-full rounded-xl border border-[#0A0F1E]/8 shadow-card"
               onerror="this.style.opacity='0.3'"
             />
@@ -343,7 +339,7 @@ const jsonLd = {
       <div class="space-y-5 text-body text-[18px] leading-[1.75]">
         <p>The dataset tracks the lowest-priced monthly subscription published on each vendor's default pricing page in January 2020 and April 2026. 2020 prices were taken from the closest available <a href="https://web.archive.org" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Wayback Machine</a> snapshot to January 2020. 2026 prices were taken from live vendor pricing pages captured in April 2026.</p>
         <p>Inclusion rules: a tool was included only if it published a monthly-billed entry-tier price on its default pricing page in both years, and if its pricing model remained directly comparable between the two dates. Tools that moved from seat-based to consumption-based pricing (or vice versa) were excluded as non-comparable. Tools where the 2020 Wayback snapshot was incomplete, missing, or ambiguous were excluded.</p>
-        <p>Price selection: the lowest-priced paid standalone subscription, on monthly billing (not annual-billed-monthly-equivalent), exact figure as published. Free tiers, trials, usage add-ons, SMS and AI credit packs, and per-user fees beyond the base plan were excluded. Where a vendor showed both monthly and annual billing, the monthly figure was taken in both years — annual discounts have widened at many vendors during the period, which would obscure underlying price movement.</p>
+        <p>Price selection: the lowest-priced paid standalone subscription, on monthly billing (not annual-billed-monthly-equivalent), exact figure as published. Free tiers, trials, usage add-ons, SMS and AI credit packs, and per-user fees beyond the base plan were excluded. Where a vendor showed both monthly and annual billing, the monthly figure was taken in both years. Annual discounts have widened at many vendors during the period, which would obscure underlying price movement.</p>
         <p>Category assignment: each tool was assigned to a single category based on its primary product function in 2026. Categories with fewer than three tools were excluded, with one exception: Visual Design (n=2, Framer and Venngage) was retained as a standalone category because both tools directly represent the creative design software segment most exposed to generative AI substitution.</p>
         <p>AI-replicability classification: categories were labelled as "Replicable" or "Resistant" based on whether the core product function could reasonably be approximated by a small team using 2026 AI coding assistants and generative AI tools. This is a judgement label, not a measurement. Marketing is labelled "Mixed" because the category contains tools with materially different replaceability profiles.</p>
         <p>Inflation comparison: US Consumer Price Index (all urban consumers) rose 27.1% between January 2020 and March 2026, per <a href="https://www.bls.gov/cpi/" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Bureau of Labor Statistics</a> data.</p>
