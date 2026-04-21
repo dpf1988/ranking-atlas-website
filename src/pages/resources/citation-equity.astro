@@ -1,0 +1,147 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import Definition from '../../components/Definition.astro';
+import { articleSchema, definedTermSchema, breadcrumbSchema } from '../../lib/schema';
+
+// Draft: do not ship placeholder content to production. Remove this guard when the pillar content is finalised.
+if (import.meta.env.PROD) {
+  return Astro.redirect('/resources/');
+}
+
+const url = "https://ranking-atlas.com/resources/citation-equity/";
+const pubDate = "2026-04-21";
+
+const article = articleSchema({
+  title: "How Brands Get Cited By AI: The 2026 Guide To Citation Equity",
+  description: "The definitional framework for citation equity. How ChatGPT, Perplexity, Gemini, and Google AI Overviews choose which brands to cite, and what builds the pattern that puts you in the answer.",
+  url,
+  datePublished: pubDate,
+  image: "/assets/images/resources/citation-equity/hero.jpg",
+});
+
+// DEFINITION: 100-150 words. This is the most important paragraph on the page.
+// First sentence must work as a standalone short-form definition.
+const definitionProse = `Citation equity is the accumulated pattern of a brand's name appearing across authority publishers that AI systems treat as trusted sources. It works on the same underlying principle as PageRank (trust flows through a network of references), applied via a different mechanism. Where PageRank counted hyperlinks, citation equity reads semantic co-occurrence across the editorial corpora that ChatGPT, Perplexity, Gemini, and Google AI Overviews draw from. Brands surfaced in AI answers are those whose mention pattern aligns with the authority graph of their category. Citation equity is built through earned editorial coverage, not bought through paid placements.`;
+
+const defined = definedTermSchema({
+  term: "Citation Equity",
+  definition: definitionProse,
+  url,
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", url: "https://ranking-atlas.com/" },
+  { name: "Resources", url: "https://ranking-atlas.com/resources/" },
+  { name: "Citation Equity", url },
+]);
+---
+
+<Layout
+  title="How Brands Get Cited By AI: The 2026 Guide To Citation Equity – Ranking Atlas"
+  description="The definitional framework for citation equity. How ChatGPT, Perplexity, Gemini, and Google AI Overviews choose which brands to cite."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(article)} />
+  <script type="application/ld+json" set:html={JSON.stringify(defined)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+
+<div class="bg-white">
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Mandatory Article Header Pattern -->
+    <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Guide</div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
+      How Brands Get Cited By AI: The 2026 Guide To Citation Equity
+    </h1>
+    <div class="flex items-center gap-3 mb-6">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published April 2026</p>
+      </div>
+    </div>
+
+    <!-- Hero image slot (required per Article Header Pattern) -->
+    <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
+      <img
+        src="/assets/images/resources/citation-equity/hero.jpg"
+        alt="Citation Equity: the pattern AI systems read to decide which brands to cite"
+        class="w-full h-full object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+      />
+      <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
+        <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero Image Slot</div>
+        <div class="text-sm">Drop hero.jpg into /public/assets/images/resources/citation-equity/ when ready.</div>
+      </div>
+    </div>
+
+    <!-- Opening hook (placeholder - replace with real 3,200-word body) -->
+    <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-4">
+      [OPENING HOOK - paste real body content here]
+    </p>
+
+    <!-- "In this guide, you'll learn..." box -->
+    <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 mb-10 shadow-card">
+      <p class="text-sm font-semibold text-ink mb-3">In this guide, you'll learn:</p>
+      <ul class="space-y-2 text-sm text-[#475569] mb-4 list-disc pl-5">
+        <li>[Bullet 1 - specific outcome]</li>
+        <li>[Bullet 2]</li>
+        <li>[Bullet 3]</li>
+        <li>[Bullet 4]</li>
+      </ul>
+      <p class="text-sm text-[#64748B] italic">[Transition line into body]</p>
+    </div>
+
+    <!-- BODY PROSE BLOCK - paste 3,200-word body here -->
+    <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">What Is Citation Equity?</h2>
+
+      <Definition term="Citation Equity">
+        <p>{definitionProse}</p>
+      </Definition>
+
+      <p>[Paragraph after the definition block - paste real body content here]</p>
+
+      <!-- Numbered strategy / mechanism sections per writing-style.md page architecture -->
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">[H2: Second Section Title In Start Case]</h2>
+      <p>[Body content per writing-style.md rhythm rules]</p>
+
+      <!-- ... remaining body sections ... -->
+
+      <!-- Closing formula per writing-style.md -->
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">[Decisive H2 Closing Title]</h2>
+      <p>[2–3 short paragraphs restating the core principle]</p>
+
+      <p>Check out these resources for next steps:</p>
+      <ul>
+        <li><a href="/resources/earned-links-vs-paid-links" class="inline-link">Why Earned Links Beat Paid Links</a></li>
+        <li><a href="/resources/the-cost-of-authority" class="inline-link">How Paid Link Prices Rose While Their Value Collapsed</a></li>
+        <li><a href="/resources/ai-names-ict-experts/" class="inline-link">Who AI Names When You Ask For ICT Experts</a></li>
+      </ul>
+
+    </div>
+  </div>
+</article>
+</div>
+
+<!-- Final CTA band per design-system.md -->
+<section class="bg-[#0A0F1E] py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
+      Be The Brand AI Cites.
+    </h2>
+    <p class="text-lg md:text-xl text-white/70 leading-relaxed mb-8">
+      Per-campaign. Fixed price. Guaranteed placements on authority publishers.
+    </p>
+    <PrimaryCTA href="/contact" />
+  </div>
+</section>
+
+<AuthorBio />
+
+</Layout>
