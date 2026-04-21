@@ -1,3 +1,27 @@
+# [DEPRECATED] Ranking Atlas — Brand DNA
+
+> **This document is deprecated and retained for historical reference only.**
+>
+> It reflects the pre-2026 "Digital PR Without The Retainer" positioning. Every substantive rule in this document has been superseded by one or more of:
+>
+> - `positioning-core.md` (category frame, vocabulary, voice rules)
+> - `writing-style.md` (voice, rhythm, structure)
+> - `design-system.md` (headings, typography, start-case capitalisation)
+> - `CLAUDE.md` (mandatory patterns and enforced rules)
+>
+> Conflicts to note if anyone references this file:
+> - Says "Sentence case headings" → current standard is start-case (every word capitalised)
+> - Says "Em dashes (—) not hyphens for parenthetical clauses" → current standard is no em dashes in prose
+> - Uses "backlinks" and "digital PR" as primary vocabulary → current primary term is citation equity
+>
+> Do not treat this document as a style or positioning source.
+
+---
+
+[Original content preserved below]
+
+---
+
 # Ranking Atlas — Brand DNA
 
 ## Core DNA sentence

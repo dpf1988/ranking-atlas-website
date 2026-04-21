@@ -1,0 +1,30 @@
+---
+/*
+  Extractable definition block. Use at the top of "What Is [Concept]?" H2 sections
+  on pillar pages. Self-contained, declarative, copy-paste-able by LLMs.
+
+  Usage:
+    import Definition from '../../components/Definition.astro';
+    <Definition term="Citation Equity">
+      <Fragment slot="default">
+        [100-150 words of clean definition prose. First sentence is the short-form definition.]
+      </Fragment>
+    </Definition>
+*/
+interface Props {
+  term: string;
+}
+const { term } = Astro.props;
+---
+<aside
+  class="bg-[#F8F7FA] border-l-4 border-brand rounded-r-xl p-6 md:p-8 my-8 max-w-3xl"
+  aria-label={`Definition of ${term}`}
+  data-definition-block={term}
+>
+  <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">
+    {term} <span class="text-muted normal-case tracking-normal">(n.)</span>
+  </div>
+  <div class="text-body text-lg leading-relaxed [&>p]:mb-3 [&>p:last-child]:mb-0">
+    <slot />
+  </div>
+</aside>

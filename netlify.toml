@@ -14,12 +14,22 @@
 
 [[redirects]]
   from = "/ai-search-visibility"
-  to = "/resources/ai-search-visibility/"
+  to = "/resources/citation-equity/"
   status = 301
 
 [[redirects]]
   from = "/ai-search-visibility/"
-  to = "/resources/ai-search-visibility/"
+  to = "/resources/citation-equity/"
+  status = 301
+
+[[redirects]]
+  from = "/resources/ai-search-visibility"
+  to = "/resources/citation-equity/"
+  status = 301
+
+[[redirects]]
+  from = "/resources/ai-search-visibility/"
+  to = "/resources/citation-equity/"
   status = 301
 
 [[redirects]]

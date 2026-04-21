@@ -1,0 +1,601 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import Definition from '../../components/Definition.astro';
+import { articleSchema, definedTermSchema, breadcrumbSchema } from '../../lib/schema';
+
+const url = "https://ranking-atlas.com/resources/citation-equity/";
+const pubDate = "2026-04-21";
+
+const article = articleSchema({
+  title: "How Brands Get Cited By AI: The 2026 Guide To Citation Equity",
+  description: "The definitional framework for citation equity. How ChatGPT, Perplexity, Gemini, and Google AI Overviews choose which brands to cite, and what builds the pattern that puts you in the answer.",
+  url,
+  datePublished: pubDate,
+  image: "/assets/images/resources/citation-equity/hero.jpg",
+});
+
+// DEFINITION: existing 130-word draft retained over source article's opening paragraph.
+// Source opens outcome-focused ("compounding asset a brand builds"); this draft is
+// mechanistic and more extractable as a standalone LLM-cited fragment.
+// First sentence works as a standalone short-form definition.
+const definitionProse = `Citation equity is the accumulated pattern of a brand's name appearing across authority publishers that AI systems treat as trusted sources. It works on the same underlying principle as PageRank (trust flows through a network of references), applied via a different mechanism. Where PageRank counted hyperlinks, citation equity reads semantic co-occurrence across the editorial corpora that ChatGPT, Perplexity, Gemini, and Google AI Overviews draw from. Brands surfaced in AI answers are those whose mention pattern aligns with the authority graph of their category. Citation equity is built through earned editorial coverage, not bought through paid placements.`;
+
+const defined = definedTermSchema({
+  term: "Citation Equity",
+  definition: definitionProse,
+  url,
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", url: "https://ranking-atlas.com/" },
+  { name: "Resources", url: "https://ranking-atlas.com/resources/" },
+  { name: "Citation Equity", url },
+]);
+---
+
+<Layout
+  title="How Brands Get Cited By AI: The 2026 Guide To Citation Equity – Ranking Atlas"
+  description="The definitional framework for citation equity. How ChatGPT, Perplexity, Gemini, and Google AI Overviews choose which brands to cite."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(article)} />
+  <script type="application/ld+json" set:html={JSON.stringify(defined)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+
+<div class="bg-white">
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Mandatory Article Header Pattern -->
+    <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Guide</div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
+      How Brands Get Cited By AI: The 2026 Guide To Citation Equity
+    </h1>
+    <div class="flex items-center gap-3 mb-6">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published April 2026</p>
+      </div>
+    </div>
+
+    <!-- Hero image slot -->
+    <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
+      <img
+        src="/assets/images/resources/citation-equity/hero.jpg"
+        alt="Citation equity: the pattern AI systems read to decide which brands to cite"
+        class="w-full h-full object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+      />
+      <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
+        <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero Image Slot</div>
+        <div class="text-sm">Drop hero.jpg into /public/assets/images/resources/citation-equity/ when ready.</div>
+      </div>
+    </div>
+
+    <!-- Opening hook -->
+    <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-4">
+      Brands get cited by AI the same way they used to earn rankings in Google: through repeated verification across sources the system trusts. The asset being built has a name: citation equity. It compounds.
+    </p>
+    <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-4">
+      Across every major 2025-2026 study of ChatGPT, Perplexity, and Gemini, one signal predicts citation more than any other: consistent editorial coverage across authoritative publishers. This guide breaks down the mechanism, the diagnostic, and the playbook.
+    </p>
+
+    <!-- ToC box -->
+    <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 mb-10 shadow-card">
+      <p class="text-sm font-semibold text-ink mb-3">In this guide, you'll learn:</p>
+      <ul class="space-y-2 text-sm text-[#475569] mb-4 list-disc pl-5">
+        <li>Why LLMs retrieve roughly six pages for every one they cite, and why the selection problem matters more than retrieval.</li>
+        <li>What citation equity is and why it operates like PageRank for AI: an earned signal that compounds and survives algorithm changes.</li>
+        <li>The five structural causes of the retrieval-citation gap and how to fix all of them on a single content pass.</li>
+        <li>What every major 2025-2026 study says about which signals actually predict AI citation, reconciled in one place.</li>
+        <li>A practical six-step playbook for B2B SaaS teams starting from zero.</li>
+      </ul>
+      <p class="text-sm text-[#64748B] italic">Let's start with what citation equity actually is.</p>
+    </div>
+
+    <!-- Body prose -->
+    <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">What Is Citation Equity?</h2>
+
+      <Definition term="Citation Equity">
+        <p>{definitionProse}</p>
+      </Definition>
+
+      <p>
+        The term is deliberate. In the old search economy, PageRank measured a site's authority through its link graph: which other trusted sites pointed to it, and in what context. In the new search economy, AI systems don't rank pages. They synthesise answers from sources. And the sources they reach for are the ones with established citation equity: brands verified through repeated appearance across publishers, reviews, directories, and community surfaces the models have learned to trust.
+      </p>
+
+      <p>
+        One mention is noise. Ten mentions across ten trusted surfaces. That's the signal. A brand mentioned positively across at least four non-affiliated surfaces is 2.8x more likely to appear in ChatGPT responses than brands only mentioned on their own websites, per <a href="https://www.clearscope.io" class="inline-link" target="_blank" rel="noopener">Clearscope</a> research cited by <a href="https://www.evertune.ai/resources/insights-on-ai/how-ai-systems-choose-which-brands-to-cite-in-search-results" class="inline-link" target="_blank" rel="noopener">Evertune</a>.
+      </p>
+
+      <p>
+        This is the frame the rest of the guide sits inside. Everything LLMs do (retrieve, chunk, embed, synthesise, cite) reduces to a single question the model is trying to answer: is this brand real enough, verified enough, and consistently enough described that I can stake my response on it? Citation equity is the answer.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">How Do LLMs Actually Decide What To Cite?</h2>
+
+      <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
+        <img
+          src="/assets/images/resources/citation-equity/selection-funnel.jpg"
+          alt="An AI chatbot examines a towering pile of retrieved pages and selects only a small stack for citation"
+          class="w-full h-full object-cover"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+        />
+        <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
+          <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
+          <div class="text-sm">Drop selection-funnel.jpg into /public/assets/images/resources/citation-equity/ when ready.</div>
+        </div>
+      </div>
+
+      <p>
+        LLMs don't browse the web the way you do. They break every prompt into multiple sub-queries through a process called query fan-out, send those sub-queries to a search index (primarily Bing for ChatGPT, Google's own index for AI Overviews), retrieve a set of candidate pages, chunk those pages into semantic passages, score the passages for relevance, and select which passages survive into the final answer. Every stage is a filter. Every filter eliminates brands.
+      </p>
+
+      <p>Two gates matter most.</p>
+
+      <p>
+        <strong>Gate 1: Retrieval.</strong> Can the system find your content at all? This is where traditional SEO still does work. ChatGPT's search results overlap with Bing's index 73% of the time. Google AI Overviews cite content that ranks in Google's top 10 in 76.1% of cases. If you can't be found, you can't be cited.
+      </p>
+
+      <p>
+        <strong>Gate 2: Selection.</strong> Of everything retrieved, which pages actually appear in the answer? This is where most brands lose. <a href="https://www.airops.com/report/influence-of-retrieval-fanout-and-google-serps-in-chatgpt" class="inline-link" target="_blank" rel="noopener">AirOps</a>' analysis of 548,534 pages across 15,000 prompts found that ChatGPT cites roughly 15% of the pages it retrieves. The other 85% are pulled into the pipeline, evaluated, and discarded.
+      </p>
+
+      <p>
+        That ratio is the single most important fact in AI citation. The retrieval game and the selection game are different games. SEO wins retrieval. Citation equity wins selection. Teams that only optimise for the first gate are building a bigger pool of pages that never get cited.
+      </p>
+
+      <p>
+        <a href="https://www.growth-memo.com/p/the-science-of-how-ai-picks-its-sources" class="inline-link" target="_blank" rel="noopener">Kevin Indig</a>'s research on 815,000 query-page pairs across 10 industries found that a page at retrieval position 1 has a 58% chance of being cited, versus 14% at position 10. Even at the top of the retrieval pool, a page only converts to a citation 58% of the time. At position 10, only one in seven pages gets through. The bottleneck is selection, not discovery.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">What Is The Retrieval-Citation Gap?</h2>
+
+      <p>
+        The retrieval-citation gap is the diagnostic name for what happens when your page enters the retrieval pool but gets eliminated at the selection stage. It's the 85% of retrieved pages that never appear in an answer. Most teams don't measure it because most AI visibility tools report citation counts, not retrieval-to-citation conversion rates.
+      </p>
+
+      <p>The gap has five specific causes, each with a structural fix.</p>
+
+      <ol class="list-decimal pl-6 space-y-5 my-6">
+        <li>
+          <strong>No answer block under H2s.</strong> Indig's analysis of 1.2 million ChatGPT responses found that 44.2% of citations come from the first 30% of content. At the section level, the same pattern holds: LLMs read the first 40-60 words of each H2 and decide whether to cite. If the answer is buried after three paragraphs of context, the model moves to the next source. Fix: a 40-80 word answer block directly under every H2, before any elaboration.
+        </li>
+        <li>
+          <strong>Entity ambiguity on first mention.</strong> When a page mentions "Datadog" or "Snyk" or "Okta" without contextualising them as the specific companies they are, the model can't tie the content to the entity graph it's using to evaluate relevance. Fix: every named brand, tool, person, or publication gets a brief contextualisation on first mention.
+        </li>
+        <li>
+          <strong>Hero stat or claim buried past the first 600 words.</strong> The ski-ramp pattern Indig identified applies at the document level too. If the page's strongest claim or statistic appears at word 900, it's already past the citation-probability peak. Fix: front-load the most memorable, most attributable claim in the first 200 words.
+        </li>
+        <li>
+          <strong>Prose-formatted lists where numbered or bulleted lists belong.</strong> LLMs extract list items individually. Each item needs to be a complete, self-contained statement. "Brands with 9+ structured facts achieve 78% average AI coverage" is citable. "9+ structured facts" is not. Fix: reformat list-like content as numbered or bulleted lists where every item stands alone as a sentence.
+        </li>
+        <li>
+          <strong>Load-bearing claims without inline attribution.</strong> Unattributed claims get weighted lower in selection because the model can't corroborate them against other retrieved sources. "B2B buyers increasingly use AI to research vendors" carries no citation weight. Attach a specific number and a named source, and the same sentence becomes extractable.
+        </li>
+      </ol>
+
+      <p>
+        These five causes account for most of the retrieval-citation gap. None of them are about authority, traffic, or domain rating. All of them are structural, which means all of them are fixable on a single content refresh pass.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">What Predicts Which Brands Get Cited? A Cross-Study Synthesis</h2>
+
+      <p>
+        Every major 2025-2026 study publishes its own findings in isolation. Kevin Indig analysed 1.2M ChatGPT responses. <a href="https://ahrefs.com/blog/llm-citations" class="inline-link" target="_blank" rel="noopener">Ahrefs</a> analysed 17 million citations across 7 platforms. <a href="https://seranking.com/blog/ranking-factors-for-chatgpt/" class="inline-link" target="_blank" rel="noopener">SE Ranking</a> analysed 216,524 pages. <a href="https://beomniscient.com/blog/how-llms-source-brand-information" class="inline-link" target="_blank" rel="noopener">Omniscient Digital</a> analysed 23,387 citations. AirOps analysed 548,534 retrieved pages. Nobody has put these findings next to each other and done the reconciliation work.
+      </p>
+
+      <p>Three patterns emerge when you do.</p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">The Citation Economy Has Bifurcated By Query Intent</h3>
+
+      <p>
+        Every study that segments by query type finds the same split. Omniscient's analysis of 23,387 citations found that 57% of citations on branded queries go to reviews, listicles, forums, and case studies; 17% to directory sites; 12% to product pages; only 5.4% to thought leadership. <a href="https://www.brightedge.com/resources/weekly-ai-search-insights/how-different-ai-search-engines-choose-which-brands-to-recommend" class="inline-link" target="_blank" rel="noopener">BrightEdge</a>'s study across ChatGPT, Perplexity, and Google's AI engines found ChatGPT mentions brands in 99.3% of eCommerce responses versus just 6.2% for Google AI Overviews. <a href="https://writesonic.com/blog/llm-ai-search-industry-citation-study" class="inline-link" target="_blank" rel="noopener">Writesonic</a>'s model-behaviour analysis found that reasoning-capable models route more citations to pricing pages, homepages, and product pages, while default models stay anchored in blog content.
+      </p>
+
+      <p>
+        AI systems treat "teach me" queries and "validate my decision" queries as structurally different retrieval problems. Informational queries pull from educational content and third-party context. Commercial queries pull from reviews, comparisons, and first-party brand pages. Get the match wrong, and your best-written page gets skipped.
+      </p>
+
+      <p>
+        Every piece of content needs to be classified by the query intent it serves, not by the keyword it targets, and structured accordingly. A brand writing "Best Fintech CRM" in the blog-post voice of an educational guide is optimising for the wrong shelf.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">The Authority Paradox</h3>
+
+      <p>
+        Evertune's analysis of 7,000+ citations found something counterintuitive: the top 10% of most-cited pages across major LLMs have less traffic, rank for fewer keywords, and get fewer backlinks than the bottom 90%. Nearly 90% of ChatGPT citations come from pages not on the first or second page of Google results.
+      </p>
+
+      <p>
+        Meanwhile, Ahrefs' analysis of the top 1,000 sites most frequently mentioned by ChatGPT found a clear bias toward domains with Domain Rating above 60, with most citations concentrated in the DR 80-100 range. SE Ranking found sites with 32,000+ referring domains are 3.5x more likely to be cited than sites with under 200.
+      </p>
+
+      <p>
+        These findings appear to contradict. They don't. Domain authority feeds retrieval: high-DR sites rank for more queries, so more of their pages enter the candidate pool. But within the retrieval pool, DR becomes a weaker predictor. AirOps found that mid-authority pages in the DR 40-80 range show citation rates comparable to higher-authority domains once retrieved.
+      </p>
+
+      <p>
+        Ranking authority buys you retrieval. Extractability wins selection. Both matter. Neither alone is enough.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">Freshness, Authority, And Third-Party Consensus Compound</h3>
+
+      <p>
+        Ahrefs' analysis of 17 million citations across 7 AI search platforms found strong bias toward recently published or updated content. Indig's domain-concentration analysis found that roughly 30 domains capture 67% of all AI citations within any topic. Omniscient found that for branded queries, 68-85% of citations come from third-party sources rather than the brand's own website.
+      </p>
+
+      <p>
+        The signal that satisfies all three simultaneously (domain concentration, third-party dominance, freshness) is earned editorial coverage at authoritative publishers. Reviews satisfy two. Wikipedia satisfies two but fails freshness. Reddit satisfies one reliably and another situationally. Editorial coverage on authority publishers satisfies all three.
+      </p>
+
+      <p>
+        This is not an argument against G2, Reddit, or Wikipedia presence. The data supports investing in all of them. The argument is about which signal gates the others. A brand with editorial coverage across TechCrunch, Forbes, and category-specific publishers looks like a brand the wider web has verified as a real category player. Every other signal gets weighted against that editorial baseline.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-[#0A0F1E]/10">
+              <th class="py-3 pr-6 font-semibold text-ink">Signal Type</th>
+              <th class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">Domain Authority</th>
+              <th class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">Third-Party Origin</th>
+              <th class="py-3 pr-4 font-semibold text-ink">Freshness</th>
+              <th class="py-3 font-semibold text-ink">Compounding</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/8">
+            <tr>
+              <td class="py-3 pr-6 text-body font-medium">Editorial coverage (Forbes, TechCrunch, vertical publishers)</td>
+              <td class="py-3 pr-4 text-body text-center">&#10003;</td>
+              <td class="py-3 pr-4 text-body text-center">&#10003;</td>
+              <td class="py-3 pr-4 text-body text-center">&#10003;</td>
+              <td class="py-3 text-body font-medium text-brand">High</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-6 text-body">G2, Capterra, TrustRadius</td>
+              <td class="py-3 pr-4 text-body text-center">Partial</td>
+              <td class="py-3 pr-4 text-body text-center">&#10003;</td>
+              <td class="py-3 pr-4 text-body text-center">Partial</td>
+              <td class="py-3 text-body">Medium</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-6 text-body">Wikipedia</td>
+              <td class="py-3 pr-4 text-body text-center">&#10003;</td>
+              <td class="py-3 pr-4 text-body text-center">&#10003;</td>
+              <td class="py-3 pr-4 text-body text-center">Low</td>
+              <td class="py-3 text-body">High</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-6 text-body">Reddit</td>
+              <td class="py-3 pr-4 text-body text-center">Partial</td>
+              <td class="py-3 pr-4 text-body text-center">&#10003;</td>
+              <td class="py-3 pr-4 text-body text-center">&#10003;</td>
+              <td class="py-3 text-body">Medium (volatile)</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-6 text-body">Your own website</td>
+              <td class="py-3 pr-4 text-body text-center">Depends on DR</td>
+              <td class="py-3 pr-4 text-body text-center">&#10007;</td>
+              <td class="py-3 pr-4 text-body text-center">Controllable</td>
+              <td class="py-3 text-body">Low without other signals</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Why Editorial Coverage Is The Verification Layer</h2>
+
+      <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
+        <img
+          src="/assets/images/resources/citation-equity/editorial-verification.jpg"
+          alt="Multiple independent publishers writing about the same brand, the AI reads their consensus"
+          class="w-full h-full object-cover"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+        />
+        <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
+          <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
+          <div class="text-sm">Drop editorial-verification.jpg into /public/assets/images/resources/citation-equity/ when ready.</div>
+        </div>
+      </div>
+
+      <p>
+        LLMs treat editorial coverage as the verification layer. Everything else (reviews, UGC, directory listings, your own site) gets weighted against whether editorial coverage exists first.
+      </p>
+
+      <p>
+        The mechanism is consensus. When a buyer asks ChatGPT "best B2B data observability platforms," the model isn't retrieving one source and quoting it. It's retrieving 10-30 candidate pages across its fan-out queries, reading through them, and synthesising an answer that reconciles what those sources say. The brands that survive synthesis are the brands described consistently across multiple independent sources.
+      </p>
+
+      <p>
+        Editorial coverage is the source type most likely to describe a brand consistently across independent surfaces. TechCrunch's writeup of a Series B funding round, a Forbes piece on the category, a vertical publication's competitive analysis: these are independent observations of the same brand by sources with editorial accountability. When they converge, the model has consensus. When they don't exist, the model falls back to whichever sources do talk about the brand: its own website (low trust), its G2 reviews (useful but controlled), its Reddit mentions (noisy).
+      </p>
+
+      <p>
+        <a href="https://higoodie.com/blog/most-cited-b2b-saas-domains-in-ai-search" class="inline-link" target="_blank" rel="noopener">Goodie</a>'s analysis of 5.7 million B2B SaaS citations across ChatGPT, Gemini, Claude, and Perplexity found that news and publisher domains (Forbes, TechCrunch, Gartner) remain core to citation patterns, particularly on Claude and Perplexity. Ahrefs' research across 75,000 brands found brand mentions correlate with AI Overview presence at a ratio of roughly 3:1 over backlinks, with branded anchor text and branded search volume as stronger predictors than Domain Rating.
+      </p>
+
+      <p>
+        The practical implication reshapes how B2B SaaS teams should allocate citation-building effort. The on-site work is the foundation: Indig's ski-ramp data and the five causes of the retrieval-citation gap are real and must be fixed. Editorial coverage is the compounding asset that accumulates on top of it.
+      </p>
+
+      <p>
+        A brand with a DR30 domain, clean structural SEO, a solid G2 profile, and consistent editorial coverage across five authority publishers in its vertical will outperform a DR70 competitor with polished content and no editorial presence. The compounding is that strong.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">How Do Different AI Platforms Cite Different Sources?</h2>
+
+      <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
+        <img
+          src="/assets/images/resources/citation-equity/platform-plurality.jpg"
+          alt="Five distinct AI chatbot characters each reading from a different mix of source materials"
+          class="w-full h-full object-cover"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+        />
+        <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
+          <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
+          <div class="text-sm">Drop platform-plurality.jpg into /public/assets/images/resources/citation-equity/ when ready.</div>
+        </div>
+      </div>
+
+      <p>
+        A durable citation strategy has to be multi-platform because the platforms themselves are diverging. Writesonic found minimal citation overlap between default and reasoning-capable ChatGPT models: the same prompt run against different model tiers returns substantially different sources. <a href="https://tinuiti.com/research-insights/research/ai-citation-trends-report/" class="inline-link" target="_blank" rel="noopener">Tinuiti</a>'s Q1 2026 analysis across seven AI platforms concluded there's no universal top source. <a href="https://www.semrush.com/blog/most-cited-domains-ai/" class="inline-link" target="_blank" rel="noopener">Semrush</a> tracked Reddit's share of ChatGPT citations dropping from 60% to 10% in a matter of weeks.
+      </p>
+
+      <p>Each platform has distinct retrieval behaviour shaped by its search index, model generation, and the query types it optimises for:</p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-[#0A0F1E]/10">
+              <th class="py-3 pr-6 font-semibold text-ink">Platform</th>
+              <th class="py-3 pr-4 font-semibold text-ink">Primary Source Bias</th>
+              <th class="py-3 pr-4 font-semibold text-ink">Top-Cited Category</th>
+              <th class="py-3 font-semibold text-ink">Key Characteristic</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/8">
+            <tr>
+              <td class="py-3 pr-6 text-body font-medium">ChatGPT</td>
+              <td class="py-3 pr-4 text-body">Bing index overlap (~73-87%)</td>
+              <td class="py-3 pr-4 text-body">Third-party reviews, listicles, Wikipedia</td>
+              <td class="py-3 text-body">Concentrated domain set, citation volatility</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-6 text-body font-medium">Perplexity</td>
+              <td class="py-3 pr-4 text-body">Most diverse (8,000+ domains)</td>
+              <td class="py-3 pr-4 text-body">Reddit (up to 46.7% of citations), editorial</td>
+              <td class="py-3 text-body">Transparency-focused, broad source mix</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-6 text-body font-medium">Google AI Overviews</td>
+              <td class="py-3 pr-4 text-body">Google organic index</td>
+              <td class="py-3 pr-4 text-body">Top-10 ranking pages (76.1%)</td>
+              <td class="py-3 text-body">Closest to traditional SEO, YouTube-heavy</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-6 text-body font-medium">Gemini</td>
+              <td class="py-3 pr-4 text-body">Google search graph</td>
+              <td class="py-3 pr-4 text-body">Moderate brand mentions, editorial</td>
+              <td class="py-3 text-body">Middle ground on brand inclusion</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-6 text-body font-medium">Claude</td>
+              <td class="py-3 pr-4 text-body">Editorial and reference sources</td>
+              <td class="py-3 pr-4 text-body">News, publishers, Wikipedia</td>
+              <td class="py-3 text-body">Most conservative on commercial recommendations</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        A citation-equity strategy isn't a ChatGPT strategy. Reddit presence lifts Perplexity and moderately lifts ChatGPT; it has almost no effect on Claude. YouTube content lifts Google AI Overviews dramatically; it's nearly invisible on ChatGPT. Editorial coverage at major publishers is the only signal that shows up consistently as a citation driver across all five platforms.
+      </p>
+
+      <p>
+        Platform-specific tactics decay as platforms evolve. Citation equity built through editorial coverage compounds across platforms because every platform is optimising, at some layer, for brand verification.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Do Google Rankings Help You Get Cited By ChatGPT?</h2>
+
+      <p>Partially. The answer is more nuanced than the cited pack usually admits.</p>
+
+      <p>
+        Indig's analysis found that among pages ranking first in Google, 43.2% were cited by ChatGPT: 3.5x higher than pages ranking beyond position 20. That's a real correlation. For Google AI Overviews specifically, the overlap is strongest: 76.1% of cited URLs rank in Google's top 10. AI Overviews are built on top of Google's organic index, and rankings feed directly into citation.
+      </p>
+
+      <p>
+        For ChatGPT, the picture is more fragmented. 47% of ChatGPT's cited domains also rank on Google, but 44% come from domains not on Google or Bing at all. Reasoning-capable ChatGPT models push the ratio further: Writesonic's research suggests roughly 75% of cited domains for thinking-model queries don't appear in either Google or Bing's primary results.
+      </p>
+
+      <p>
+        Traditional SEO is necessary but insufficient. Strong rankings feed retrieval and matter enormously for AI Overviews specifically. But as LLMs increasingly query brand sites directly, build from parametric knowledge, and route through fan-out queries with zero traditional search volume, the ceiling of what SEO alone delivers drops. <a href="https://www.erlin.ai/blog/chatgpt-search-optimization" class="inline-link" target="_blank" rel="noopener">Erlin</a>'s analysis found that 44% of SaaS brands with strong Google rankings have no ChatGPT visibility at all.
+      </p>
+
+      <p>
+        Once the SEO foundation is solid, every additional dollar is better spent on editorial coverage, third-party presence, and structural extractability than on squeezing more keyword rankings out of an already-optimised content library.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">How Long Does It Take To Build Citation Equity?</h2>
+
+      <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
+        <img
+          src="/assets/images/resources/citation-equity/compounding-timeline.jpg"
+          alt="A brand character walks a path past four increasingly bright milestones, each with more accumulated editorial coverage"
+          class="w-full h-full object-cover"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+        />
+        <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
+          <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
+          <div class="text-sm">Drop compounding-timeline.jpg into /public/assets/images/resources/citation-equity/ when ready.</div>
+        </div>
+      </div>
+
+      <p>
+        Citation equity is a compounding asset, and compounding assets reward patience in ways that tactical channels don't.
+      </p>
+
+      <p>
+        On-site structural fixes show up fastest. Pages refreshed with proper answer blocks, updated dateModified timestamps, and restructured H2s can see citation frequency changes within 14-21 days. Adding FAQ schema produces a measurable citation lift in roughly three weeks. These are the lowest-effort, fastest-signal wins. Every team should do them first.
+      </p>
+
+      <p>
+        Third-party signals take longer. G2 profile improvements, Reddit presence building, and directory placements typically show citation impact in 30-60 days. Wikipedia presence, where notability thresholds can be met, correlates with ChatGPT citations appearing roughly 28 days after optimisation, versus 52 days for brands without a Wikipedia entry.
+      </p>
+
+      <p>
+        Editorial coverage operates on a different timescale entirely. A single piece of tier-1 editorial coverage rarely moves the needle on its own. Six to twelve placements in a vertical, accumulated over two to three quarters, begins to produce measurable citation share shifts. The compounding kicks in at roughly the 18-24 month mark, when the model has seen the brand mentioned consistently across enough independent publishers that it's treating the brand as a category-verified entity.
+      </p>
+
+      <p>
+        That timeline is longer than most marketing channels can justify, which is exactly why citation equity is a moat. The brands investing in it now will be structurally harder to displace than the brands that start in 2027.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">How To Start Building Citation Equity In B2B SaaS</h2>
+
+      <p>A practical playbook for a VP Marketing at a Series A-C B2B SaaS company starting from zero.</p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">1. Audit The Retrieval-Citation Gap On Your Existing Content</h3>
+
+      <p>
+        Run your top 10 priority prompts through ChatGPT, Perplexity, and Gemini. Log where competitors appear and where you don't. For every prompt where a competitor is cited, identify which of the five gap causes is blocking your comparable content. Fix those causes first: it's the lowest-cost, fastest-signal intervention available.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">2. Structure Every Piece For Chunk-Level Extractability</h3>
+
+      <p>
+        Answer block under every H2 (40-80 words). Question-phrased H2s that match how the prompt is actually asked. Comparison tables for comparative concepts. FAQ sections with schema. Inline attribution on every statistic. This is table stakes.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">3. Map Your Citation Equity Baseline</h3>
+
+      <p>
+        Which authoritative publishers in your vertical currently cite your brand? Which cite your competitors? The gap between those two lists is your editorial coverage plan. In fintech: Finextra, PYMNTS, The Banker. In cybersecurity: Dark Reading, CSO Online, Security Week. In privacy: IAPP, The Record, Privacy Affairs. In data infrastructure: The New Stack, Datanami, DBTA.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">4. Build Off-Site Surfaces In Parallel</h3>
+
+      <p>
+        Complete and actively maintain your G2 profile. Pursue review velocity, not just review count. Participate authentically in the 2-3 subreddits where your buyer lives. Create a Wikipedia entry if notability allows. These signals don't replace editorial coverage: they support it and accelerate the compounding.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">5. Run Targeted Editorial Campaigns At The Publishers LLMs Already Cite</h3>
+
+      <p>
+        This is the highest-leverage investment. Not volume PR. Not generic citation building. Placement at the specific publishers your retrieved-but-not-cited competitors are getting placed at. Reverse-engineer those domains, understand the editorial angles that earn coverage, and pitch accordingly. This is how Ranking Atlas helps B2B SaaS clients in fintech, privacy, and cybersecurity: reverse-engineering the editorial publishers LLMs actually cite in each vertical, then running placement campaigns to build citation equity at those exact surfaces.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">6. Track The Compounding, Not The Tactics</h3>
+
+      <p>
+        Set up LLM referral tracking in GA4. Run monthly share-of-voice audits across your priority prompts. Watch the trend line, not the weekly volatility. Citation equity compounds quarterly. A measurement cadence that matches the asset's actual behaviour is the difference between seeing progress and chasing noise.
+      </p>
+
+      <p>
+        Every piece of editorial coverage, every structural fix, every third-party mention adds a unit of verification to the model's picture of your brand. The brands that start accumulating now will be structurally harder to catch. The window is still open.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Frequently Asked Questions</h2>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">What Is Citation Equity?</h3>
+
+      <p>
+        Citation equity is the compounding asset a brand builds through repeated appearance across authoritative sources LLMs trust. It's the AI-era equivalent of PageRank: an earned signal of verification that determines which brands appear in ChatGPT, Perplexity, and Gemini responses when buyers research a category. It compounds over months and quarters, and editorial coverage is the single strongest predictor of its accumulation.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">How Do LLMs Decide Which Brands To Cite?</h3>
+
+      <p>
+        LLMs decompose a prompt into multiple sub-queries, retrieve candidate pages from a search index (primarily Bing for ChatGPT), chunk the pages into semantic passages, and select the passages most relevant to each sub-query. Citation happens at the passage level. Selection factors include domain authority, content freshness, passage-level extractability, entity clarity, and cross-source consensus. Content structure often matters more than content length.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">What Is The Retrieval-Citation Gap?</h3>
+
+      <p>
+        The retrieval-citation gap is the diagnostic term for pages that enter the retrieval pool but fail to survive selection. AirOps found that ChatGPT cites only about 15% of the pages it retrieves. The gap has five structural causes: missing answer blocks under H2s, entity ambiguity, buried hero claims, prose-formatted lists, and unattributed claims. All five are fixable through structural content edits.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">Do Google Rankings Affect ChatGPT Citations?</h3>
+
+      <p>
+        Partially. About 47% of ChatGPT's cited domains rank on Google, but 44% come from domains not on Google or Bing. Google AI Overviews show the strongest rank correlation: 76.1% of cited URLs rank in Google's top 10. Reasoning-capable ChatGPT models bypass traditional search more aggressively. A strong SEO foundation feeds citation equity but isn't sufficient on its own.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">Why Does ChatGPT Cite Different Sources For The Same Question?</h3>
+
+      <p>
+        LLMs are probabilistic systems. Temperature settings, model version, location, query timing, and phrasing variations all influence which sources appear in any given response. Semrush found that 40-60% of cited sources rotate monthly. Only 30% of brands remain visible in back-to-back responses for the same query. Citation equity has to be measured as share-of-voice over time.
+      </p>
+
+      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">How Long Does It Take To Build Citation Equity?</h3>
+
+      <p>
+        On-site structural fixes produce measurable lift in 14-21 days. Third-party signals like G2 and Reddit presence take 30-60 days to affect citation patterns. Editorial coverage operates on a longer timescale: six to twelve placements accumulated over two to three quarters begins to shift citation share meaningfully. The compounding effect reaches full weight at 18-24 months. That timeline is the moat.
+      </p>
+
+      <!-- Primary research sources callout -->
+      <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 my-10 shadow-card">
+        <p class="text-sm font-semibold text-ink mb-3">Primary Research Sources</p>
+        <ul class="space-y-2 text-sm text-body list-none pl-0">
+          <li><a href="https://www.growth-memo.com/p/the-science-of-how-ai-picks-its-sources" class="inline-link" target="_blank" rel="noopener">Kevin Indig</a>:retrieval position and citation attention across 1.2M ChatGPT responses</li>
+          <li><a href="https://ahrefs.com/blog/llm-citations" class="inline-link" target="_blank" rel="noopener">Ahrefs</a>:LLM citation predictors across 17 million citations and 7 platforms</li>
+          <li><a href="https://beomniscient.com/blog/how-llms-source-brand-information" class="inline-link" target="_blank" rel="noopener">Omniscient Digital</a>:B2B SaaS citation patterns across ChatGPT, Gemini, Claude, and Perplexity</li>
+          <li><a href="https://www.evertune.ai/resources/insights-on-ai/how-ai-systems-choose-which-brands-to-cite-in-search-results" class="inline-link" target="_blank" rel="noopener">Evertune</a>:verification mechanisms and the authority paradox across 7,000+ citations</li>
+          <li><a href="https://seranking.com/blog/ranking-factors-for-chatgpt/" class="inline-link" target="_blank" rel="noopener">SE Ranking</a>:domain authority correlations across 216,524 pages</li>
+          <li><a href="https://www.airops.com/report/influence-of-retrieval-fanout-and-google-serps-in-chatgpt" class="inline-link" target="_blank" rel="noopener">AirOps</a>:retrieval-to-citation conversion rates across 548,534 pages</li>
+          <li><a href="https://higoodie.com/blog/most-cited-b2b-saas-domains-in-ai-search" class="inline-link" target="_blank" rel="noopener">Goodie</a>:most-cited B2B SaaS domains across 5.7 million citations</li>
+          <li><a href="https://www.brightedge.com/resources/weekly-ai-search-insights/how-different-ai-search-engines-choose-which-brands-to-recommend" class="inline-link" target="_blank" rel="noopener">BrightEdge</a>:cross-platform brand mention frequency across ChatGPT, Perplexity, and Google</li>
+          <li><a href="https://www.erlin.ai/blog/chatgpt-search-optimization" class="inline-link" target="_blank" rel="noopener">Erlin</a>:ChatGPT visibility gaps among SaaS brands with strong Google rankings</li>
+        </ul>
+      </div>
+
+      <!-- Closing formula per writing-style.md -->
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Build The Citation Equity That Compounds</h2>
+
+      <p>
+        The brands that show up in AI answers are the brands the wider web has verified. That verification doesn't come from content volume. It comes from editorial coverage accumulated across the authority publishers LLMs already trust in your category.
+      </p>
+
+      <p>
+        Every placement is a unit of verification. Every structural fix improves your conversion rate from retrieval to citation. The compounding starts on the first placement and doesn't stop.
+      </p>
+
+      <p>
+        The window for first-mover advantage in citation equity is still open. The brands building it now will be structurally harder to displace than the brands that start in 2027.
+      </p>
+
+      <p>Check out these resources for next steps:</p>
+      <ul>
+        <li><a href="/resources/earned-links-vs-paid-links" class="inline-link">Why Earned Links Beat Paid Links</a></li>
+        <li><a href="/resources/the-cost-of-authority" class="inline-link">How Paid Link Prices Rose While Their Value Collapsed</a></li>
+        <li><a href="/resources/ai-names-ict-experts/" class="inline-link">Who AI Names When You Ask For ICT Experts</a></li>
+      </ul>
+
+    </div>
+  </div>
+</article>
+</div>
+
+<!-- Final CTA band per design-system.md -->
+<section class="bg-[#0A0F1E] py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
+      Be The Brand AI Cites.
+    </h2>
+    <p class="text-lg md:text-xl text-white/70 leading-relaxed mb-8">
+      Per-campaign. Fixed price. Guaranteed placements on authority publishers.
+    </p>
+    <PrimaryCTA href="/contact" />
+  </div>
+</section>
+
+<AuthorBio />
+
+</Layout>

@@ -24,14 +24,15 @@ const jsonLd = {
       "https://ranking-atlas.com/about"
     ]
   },
-  "datePublished": "2026-03-01",
-  "dateModified": "2026-04-13",
+  "datePublished": "2026-03-01T00:00:00+00:00",
+  "dateModified": "2026-04-13T00:00:00+00:00",
+  "image": "https://ranking-atlas.com/assets/images/resources/earned-links-vs-paid-links/hero.jpg",
   "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
 };
 ---
 
 <Layout
-  title="Why Earned Links Beat Paid Links — Ranking Atlas"
+  title="Why Earned Links Beat Paid Links – Ranking Atlas"
   description="AI systems cite brands mentioned across authoritative publications. Earned links produce those mentions. Paid links get deindexed. Here's the difference, the evidence, and the economics."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -58,7 +59,7 @@ const jsonLd = {
     <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
       <img
         src="/assets/images/resources/earned-links-vs-paid-links/hero.jpg"
-        alt="Earned links vs paid links — hero illustration"
+        alt="Earned links vs paid links: hero illustration"
         class="w-full h-full object-cover"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
       />
@@ -164,7 +165,7 @@ const jsonLd = {
       <svg viewBox="0 0 680 390" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto"
            role="img" aria-labelledby="mech-title mech-desc">
         <title id="mech-title">Mechanics comparison: paid links vs earned links</title>
-        <desc id="mech-desc">Diagram contrasting paid links on marketplace domains that risk deindexing, with broken signal flow to a page, against earned links — mentions on authoritative sites — that flow through an AI answer engine and surface to the buyer.</desc>
+        <desc id="mech-desc">Diagram contrasting paid links on marketplace domains that risk deindexing, with broken signal flow to a page, against earned links, mentions on authoritative sites, flowing through an AI answer engine and surfacing to the buyer.</desc>
 
         <defs>
           <marker id="arr-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
@@ -189,7 +190,7 @@ const jsonLd = {
         <rect x="18" y="52" width="90" height="26" rx="5" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
         <text x="63" y="69" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#64748B">Linking domain</text>
 
-        <!-- Domain node 2 — deindexed -->
+        <!-- Domain node 2 - deindexed -->
         <rect x="120" y="52" width="90" height="26" rx="5" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
         <text x="165" y="69" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="10" fill="#94A3B8" text-decoration="line-through">Linking domain</text>
         <line x1="125" y1="56" x2="205" y2="74" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3,2"/>
