@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "example-campaign",
+    "title": "Example Campaign Title",
+    "date": "2026-04-21",
+    "subtitle": "One-line description of what the campaign found.",
+    "findings": [
+      "First key finding with a specific stat",
+      "Second key finding",
+      "Third key finding"
+    ],
+    "press_release_body": "Full press release text goes here. Multiple paragraphs supported via double line breaks in the JSON string.",
+    "quote": "Attributable quote from Daniel Grainger about the research findings.",
+    "methodology": "Source, sample size, date range, what was analysed.",
+    "sources": [
+      { "name": "Source 1", "url": "https://example.com" }
+    ],
+    "asset_downloads": []
+  }
+]
