@@ -1,0 +1,155 @@
+---
+import LibraryLayout from '../../layouts/LibraryLayout.astro';
+import libraryData from '../../data/library.json';
+
+export function getStaticPaths() {
+  return libraryData.map((campaign) => ({
+    params: { slug: campaign.slug },
+    props: { campaign },
+  }));
+}
+
+interface Campaign {
+  slug: string;
+  title: string;
+  date: string;
+  subtitle: string;
+  findings: string[];
+  press_release_body: string;
+  quote: string;
+  methodology: string;
+  sources: { name: string; url: string }[];
+  asset_downloads: string[];
+}
+
+const { campaign } = Astro.props as { campaign: Campaign };
+
+function toISODateTime(dateStr: string): string {
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) return `${dateStr}T00:00:00+00:00`;
+  return dateStr;
+}
+
+function formatDate(dateStr: string): string {
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric',
+  });
+}
+
+function formatMonthYear(dateStr: string): string {
+  const [year, month] = dateStr.split('-').map(Number);
+  return new Date(year, month - 1, 1).toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long',
+  });
+}
+
+const paragraphs = campaign.press_release_body.split(/\n\n+/);
+const citationString = `Ranking Atlas. "${campaign.title}." ranking-atlas.com/library/${campaign.slug}. Published ${formatMonthYear(campaign.date)}.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Report",
+  "headline": campaign.title,
+  "description": campaign.subtitle,
+  "url": `https://ranking-atlas.com/library/${campaign.slug}`,
+  "datePublished": toISODateTime(campaign.date),
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Grainger",
+    "url": "https://ranking-atlas.com/about",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ranking Atlas",
+      "url": "https://ranking-atlas.com",
+    },
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ranking Atlas",
+    "url": "https://ranking-atlas.com",
+  },
+};
+---
+
+<LibraryLayout
+  title={`${campaign.title} — Ranking Atlas Library`}
+  description={campaign.subtitle}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <a href="/library/" class="inline-link text-sm mb-8 block">← Back to Library</a>
+
+  <p class="text-sm text-muted mb-4">Published {formatDate(campaign.date)}</p>
+
+  <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-4">
+    {campaign.title}
+  </h1>
+
+  <p class="text-lg md:text-xl text-muted leading-relaxed mb-10">{campaign.subtitle}</p>
+
+  <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Key Findings</h2>
+  <ul class="list-disc pl-5 space-y-2 text-body leading-relaxed mb-10">
+    {campaign.findings.map((finding) => (
+      <li>{finding}</li>
+    ))}
+  </ul>
+
+  <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Press Release</h2>
+  <div class="space-y-4 text-body leading-relaxed mb-10">
+    {paragraphs.map((para) => (
+      <p>{para}</p>
+    ))}
+  </div>
+
+  <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Quote</h2>
+  <blockquote class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card">
+    <p class="text-body leading-relaxed italic">"{campaign.quote}"</p>
+    <p class="text-sm text-muted mt-2">— Daniel Grainger, Founder, Ranking Atlas</p>
+  </blockquote>
+
+  <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Methodology</h2>
+  <p class="text-body leading-relaxed mb-10">{campaign.methodology}</p>
+
+  {campaign.sources.length > 0 && (
+    <div>
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Sources</h2>
+      <ul class="list-disc pl-5 space-y-2 mb-10">
+        {campaign.sources.map((source) => (
+          <li>
+            <a href={source.url} class="inline-link" target="_blank" rel="noopener">{source.name}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 shadow-card mt-12 mb-8">
+    <p class="text-sm font-semibold text-ink mb-3">Cite This Research</p>
+    <p id="citation-text" class="text-sm text-body leading-relaxed font-mono mb-4">{citationString}</p>
+    <button
+      id="copy-citation"
+      class="text-sm text-brand hover:text-brand-dark font-medium transition-colors"
+      data-citation={citationString}
+    >
+      Copy citation
+    </button>
+  </div>
+  <script is:inline>
+    const btn = document.getElementById('copy-citation');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-citation') ?? '';
+        navigator.clipboard.writeText(text).then(() => {
+          btn.textContent = 'Copied!';
+          setTimeout(() => { btn.textContent = 'Copy citation'; }, 2000);
+        });
+      });
+    }
+  </script>
+
+  <p class="text-sm text-muted">
+    <span class="font-medium text-ink">Press contact:</span>{' '}
+    <a href="mailto:contact@ranking-atlas.com" class="inline-link">contact@ranking-atlas.com</a>
+  </p>
+</LibraryLayout>
