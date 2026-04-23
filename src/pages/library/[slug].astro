@@ -43,7 +43,41 @@ function formatMonthYear(dateStr: string): string {
   });
 }
 
-const paragraphs = campaign.press_release_body.split(/\n\n+/);
+type Block =
+  | { type: 'paragraph'; text: string }
+  | { type: 'table'; headers: string[]; rows: string[][] };
+
+function parseCells(line: string): string[] {
+  return line.split('|').slice(1, -1).map((c) => c.trim());
+}
+
+function isDividerRow(line: string): boolean {
+  return /^\|[\s\-|]+\|$/.test(line.trim());
+}
+
+function parseBlock(block: string): Block {
+  const trimmed = block.trim();
+  if (!trimmed.startsWith('|')) return { type: 'paragraph', text: trimmed };
+  const lines = trimmed.split('\n').map((l) => l.trim()).filter(Boolean);
+  const contentLines = lines.filter((l) => !isDividerRow(l));
+  if (contentLines.length < 1) return { type: 'paragraph', text: trimmed };
+  const [headerLine, ...dataLines] = contentLines;
+  return {
+    type: 'table',
+    headers: parseCells(headerLine),
+    rows: dataLines.map(parseCells),
+  };
+}
+
+const blocks: Block[] = campaign.press_release_body.split(/\n\n+/).map(parseBlock);
+
+const YOUGOV_URL = 'https://yougov.com/en-gb/ratings/national-and-religious-events';
+function linkifyYouGov(text: string): string {
+  return text.replace(
+    /YouGov/g,
+    `<a href="${YOUGOV_URL}" class="inline-link" target="_blank" rel="noopener">YouGov</a>`
+  );
+}
 const citationString = `Ranking Atlas. "${campaign.title}." ranking-atlas.com/library/${campaign.slug}. Published ${formatMonthYear(campaign.date)}.`;
 
 const jsonLd = {
@@ -86,7 +120,7 @@ const jsonLd = {
     {campaign.title}
   </h1>
 
-  <p class="text-lg md:text-xl text-muted leading-relaxed mb-10">{campaign.subtitle}</p>
+  <p class="text-lg md:text-xl text-muted leading-relaxed mb-10" set:html={linkifyYouGov(campaign.subtitle)} />
 
   <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Key Findings</h2>
   <ul class="list-disc pl-5 space-y-2 text-body leading-relaxed mb-10">
@@ -97,9 +131,34 @@ const jsonLd = {
 
   <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Press Release</h2>
   <div class="space-y-4 text-body leading-relaxed mb-10">
-    {paragraphs.map((para) => (
-      <p>{para}</p>
-    ))}
+    {blocks.map((block) =>
+      block.type === 'table' ? (
+        <div class="overflow-x-auto my-2">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr>
+                {block.headers.map((h) => (
+                  <th class="text-left text-xs uppercase tracking-wider text-muted font-medium px-4 py-2 bg-surface border border-[#0A0F1E]/8 whitespace-nowrap">
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.rows.map((row) => (
+                <tr>
+                  {row.map((cell) => (
+                    <td class="px-4 py-2 text-body border border-[#0A0F1E]/8">{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <p>{block.text}</p>
+      )
+    )}
   </div>
 
   <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Quote</h2>
@@ -109,7 +168,7 @@ const jsonLd = {
   </blockquote>
 
   <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Methodology</h2>
-  <p class="text-body leading-relaxed mb-10">{campaign.methodology}</p>
+  <p class="text-body leading-relaxed mb-10" set:html={linkifyYouGov(campaign.methodology)} />
 
   {campaign.sources.length > 0 && (
     <div>
