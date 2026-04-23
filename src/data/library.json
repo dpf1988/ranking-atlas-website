@@ -4,6 +4,14 @@
     "title": "Most Brits Recognise St George's Day, But Fewer Than 60% Say They Care",
     "date": "2026-04-23",
     "subtitle": "Analysis of YouGov tracking data shows a clear gap between awareness and active engagement with St George's Day in the UK, with younger generations consistently less engaged than Baby Boomers.",
+    "attribution_line": "Analysis of YouGov Ratings data by Ranking Atlas",
+    "standfirst": "New analysis of YouGov tracking data shows that while St George's Day is recognised by 94 to 99 percent of UK adults, no demographic group exceeds 68 percent engagement. The awareness-to-engagement gap is widest among Millennials.",
+    "summary": [
+      "Awareness of St George's Day exceeds 94 percent across all measured groups",
+      "No group exceeds 68 percent positive engagement with the occasion",
+      "Millennials show the largest awareness-to-engagement gap at 38 percentage points"
+    ],
+    "dataset_label": "Dataset: St George's Day popularity and awareness by demographic, YouGov 2026",
     "findings": [
       "Baby Boomers: 68% popularity (5th overall), 99% awareness",
       "Millennials: 58% popularity (10th), 96% awareness",
