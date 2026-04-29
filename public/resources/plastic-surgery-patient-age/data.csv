@@ -1,0 +1,83 @@
+procedure,year,mean_age,source
+Breast augmentation,2018,32.45,ASPS
+Breast augmentation,2020,30.06,ASPS
+Breast augmentation,2021,32.83,Interpolated (no 2021 ASPS data)
+Breast augmentation,2022,35.59,ASPS
+Breast augmentation,2023,35.5,ASPS
+Breast augmentation,2024,35.51,ASPS
+Breast lift,2018,40.94,ASPS
+Breast lift,2020,36.65,ASPS
+Breast lift,2021,38.15,Interpolated (no 2021 ASPS data)
+Breast lift,2022,39.65,ASPS
+Breast lift,2023,40.1,ASPS
+Breast lift,2024,40.1,ASPS
+Breast reduction,2020,37.35,ASPS
+Breast reduction,2021,37.88,Interpolated (no 2021 ASPS data)
+Breast reduction,2022,38.4,ASPS
+Breast reduction,2023,38.4,ASPS
+Breast reduction,2024,38.4,ASPS
+Gynecomastia,2018,28.51,ASPS
+Gynecomastia,2020,31.08,ASPS
+Gynecomastia,2021,32.0,Interpolated (no 2021 ASPS data)
+Gynecomastia,2022,32.92,ASPS
+Gynecomastia,2023,32.57,ASPS
+Gynecomastia,2024,32.6,ASPS
+Abdominoplasty,2018,37.55,ASPS
+Abdominoplasty,2020,35.78,ASPS
+Abdominoplasty,2021,36.6,Interpolated (no 2021 ASPS data)
+Abdominoplasty,2022,37.42,ASPS
+Abdominoplasty,2023,37.79,ASPS
+Abdominoplasty,2024,37.79,ASPS
+Liposuction,2018,35.0,ASPS
+Liposuction,2020,35.79,ASPS
+Liposuction,2021,35.97,Interpolated (no 2021 ASPS data)
+Liposuction,2022,36.16,ASPS
+Liposuction,2023,36.84,ASPS
+Liposuction,2024,36.84,ASPS
+Eyelid surgery,2018,53.58,ASPS
+Eyelid surgery,2020,50.58,ASPS
+Eyelid surgery,2021,50.78,Interpolated (no 2021 ASPS data)
+Eyelid surgery,2022,50.99,ASPS
+Eyelid surgery,2023,51.14,ASPS
+Eyelid surgery,2024,51.13,ASPS
+Facelift,2018,56.03,ASPS
+Facelift,2020,56.93,ASPS
+Facelift,2021,56.11,Interpolated (no 2021 ASPS data)
+Facelift,2022,55.29,ASPS
+Facelift,2023,55.34,ASPS
+Facelift,2024,55.34,ASPS
+Forehead lift,2018,51.08,ASPS
+Forehead lift,2020,50.7,ASPS
+Forehead lift,2021,50.63,Interpolated (no 2021 ASPS data)
+Forehead lift,2022,50.56,ASPS
+Forehead lift,2023,50.68,ASPS
+Forehead lift,2024,50.69,ASPS
+Neck lift,2020,53.41,ASPS
+Neck lift,2021,52.81,Interpolated (no 2021 ASPS data)
+Neck lift,2022,52.22,ASPS
+Neck lift,2023,52.24,ASPS
+Neck lift,2024,52.25,ASPS
+Rhinoplasty,2018,31.81,ASPS
+Rhinoplasty,2020,32.26,ASPS
+Rhinoplasty,2021,32.77,Interpolated (no 2021 ASPS data)
+Rhinoplasty,2022,33.27,ASPS
+Rhinoplasty,2023,33.27,ASPS
+Rhinoplasty,2024,33.26,ASPS
+Otoplasty,2018,25.53,ASPS
+Otoplasty,2020,23.52,ASPS
+Otoplasty,2021,24.77,Interpolated (no 2021 ASPS data)
+Otoplasty,2022,26.02,ASPS
+Otoplasty,2023,25.82,ASPS
+Otoplasty,2024,25.83,ASPS
+Botulinum Toxin,2018,45.99,ASPS
+Botulinum Toxin,2020,44.93,ASPS
+Botulinum Toxin,2021,44.88,Interpolated (no 2021 ASPS data)
+Botulinum Toxin,2022,44.83,ASPS
+Botulinum Toxin,2023,44.83,ASPS
+Botulinum Toxin,2024,44.83,ASPS
+HA fillers,2018,47.71,ASPS
+HA fillers,2020,46.2,ASPS
+HA fillers,2021,46.14,Interpolated (no 2021 ASPS data)
+HA fillers,2022,46.07,ASPS
+HA fillers,2023,46.07,ASPS
+HA fillers,2024,46.07,ASPS
