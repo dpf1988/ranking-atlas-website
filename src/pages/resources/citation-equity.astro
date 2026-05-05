@@ -7,12 +7,14 @@ import { articleSchema, definedTermSchema, breadcrumbSchema } from '../../lib/sc
 
 const url = "https://ranking-atlas.com/resources/citation-equity/";
 const pubDate = "2026-04-21";
+const updatedDate = "2026-05-05";
 
 const article = articleSchema({
   title: "How Brands Get Cited By AI: The 2026 Guide To Citation Equity",
   description: "The definitional framework for citation equity. How ChatGPT, Perplexity, Gemini, and Google AI Overviews choose which brands to cite, and what builds the pattern that puts you in the answer.",
   url,
   datePublished: pubDate,
+  dateModified: updatedDate,
   image: "/assets/images/resources/citation-equity/hero.jpg",
 });
 
@@ -58,7 +60,7 @@ const breadcrumbs = breadcrumbSchema([
       </a>
       <div>
         <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
-        <p class="text-sm text-[#64748B]">Published April 2026</p>
+        <p class="text-sm text-[#64748B]">Published <time datetime="2026-04-21">April 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-05-05" class="text-ink font-medium">May 2026</time></p>
       </div>
     </div>
 
