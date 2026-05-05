@@ -1,0 +1,434 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Makes a Press Release Get Cited by ChatGPT in 2026?",
+  "description": "Press release citations in AI tools grew 5x in the second half of 2025. Here's the structure cited releases share, where press releases sit in the citation hierarchy, and what separates a cited release from one that gets ignored.",
+  "url": "https://ranking-atlas.com/resources/press-release-ai-citation-2026",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Grainger",
+    "url": "https://ranking-atlas.com/about",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ranking Atlas",
+      "url": "https://ranking-atlas.com"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/daniel-grainger/",
+      "https://ranking-atlas.com/about"
+    ]
+  },
+  "datePublished": "2026-05-05T00:00:00+00:00",
+  "dateModified": "2026-05-05T00:00:00+00:00",
+  "image": "https://ranking-atlas.com/assets/images/resources/press-release-ai-citation-2026/hero.jpg",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long should a press release be in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "400-600 words for most release types. AI extracts at the paragraph level, so additional length doesn't increase citation likelihood and often dilutes the extractable claims. Earnings and regulatory filings are exceptions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do AI tools cite press releases differently from regular articles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Press releases are labelled as company-provided content by Perplexity. ChatGPT and Gemini cite them more selectively, with confirmed citation behaviour primarily for high-authority distribution paths like Yahoo Finance /news/. The same content distributed across multiple paths can get cited by some platforms and ignored by others."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which press release distribution wires get cited most?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wire-distributed releases account for roughly 1% of all AI citations after the second half of 2025 growth. PRNewswire and GlobeNewswire have the strongest citation footprint among major wires, primarily because their syndication paths reach the financial portals AI tools weight heavily."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a press release alone build AI citation visibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Earned media drives 82% of AI citations. Press releases sit inside that 82% as one signal. They contribute to citation footprint but don't, by themselves, build the durable visibility that compounds over years. The brands earning sustained AI citation use press releases as the trigger for editorial coverage, not the replacement for it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly do AI tools cite a new press release?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The highest citation rate occurs within the first seven days of publication. Half of all citations come from content less than 11 months old. After 12 months, citation rate drops sharply. Recency compounds, and older releases without follow-up coverage fade out of AI memory."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Press Release Citation in ChatGPT (2026 Data) | Ranking Atlas"
+  description="Press release citations in AI tools grew 5x in late 2025. The structure cited releases share, and what separates a cited release from one that's ignored."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+<div class="bg-white">
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Guide</div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
+      What Makes a Press Release Get Cited by ChatGPT in 2026?
+    </h1>
+    <div class="flex items-center gap-3 mb-6">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published May 2026</p>
+      </div>
+    </div>
+
+    <!-- Hero image slot -->
+    <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
+      <img
+        src="/assets/images/resources/press-release-ai-citation-2026/hero.jpg"
+        alt="What makes a press release get cited by ChatGPT in 2026: hero illustration"
+        class="w-full h-full object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+      />
+      <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
+        <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero Image Slot</div>
+        <div class="text-sm">Drop hero.jpg into /public/assets/images/resources/press-release-ai-citation-2026/ when ready.</div>
+      </div>
+    </div>
+
+    <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-4">
+      Press releases now compete for AI citation, not just journalist attention.<br /><br />
+      According to <a href="https://www.globenewswire.com/news-release/2025/12/02/3198248/0/en/Earned-Media-Still-Drives-Generative-AI-Citations-as-Press-Release-Visibility-Grows.html" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Muck Rack's December 2025 "What Is AI Reading?" report</a>, which analysed more than one million AI citations across ChatGPT, Claude, Gemini, and Perplexity, press release citations grew fivefold between July and December 2025.<br /><br />
+      The releases that won those citations share a structure most companies don't write to.
+    </p>
+    <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-6">
+      This piece walks through what changed, where press releases actually sit in the wider citation hierarchy, and what separates a cited release from one that quietly gets ignored.
+    </p>
+
+    <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 mb-10 shadow-card">
+      <p class="text-sm font-semibold text-ink mb-3">Key takeaways:</p>
+      <ul class="space-y-2 text-sm text-[#475569] list-disc pl-5">
+        <li>Press release citations in AI tools grew 5x in the second half of 2025 (Muck Rack)</li>
+        <li>Earned media drives 82% of all AI citations. Press releases are a sub-component, not a substitute.</li>
+        <li>Cited releases contain 2x more statistics and 2.5x more bullet points than non-cited ones (Muck Rack)</li>
+        <li>Half of all AI citations are from content published within the last 11 months. Recency compounds.</li>
+        <li>Press releases earn citation durability. Editorial coverage earns citation gravity. Both matter, in different ways.</li>
+      </ul>
+    </div>
+
+    <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Why Are Press Releases Suddenly Getting Cited By ChatGPT?</h2>
+      <p>
+        Press releases used to be a backlink tactic. You distributed via wire, picked up syndication on Yahoo Finance and MarketWatch, collected a few referring domains, called it earned media. SEO gravity, not editorial gravity.
+      </p>
+      <p>
+        That changed in the second half of 2025. According to Muck Rack's analysis of more than one million AI citations, press release citations across ChatGPT, Claude, Gemini, and Perplexity grew fivefold between July and December 2025. The growth was concentrated in ChatGPT and Gemini specifically. Wire-distributed releases rose from 0.2% to 1% of all AI citations in that window. Including syndicated placements on Yahoo Finance, news aggregators, and financial portals, press release citations grew from roughly 1.2% to 6%.
+      </p>
+      <p>
+        But the headline number obscures the actual story. A <a href="https://almcorp.com/blog/ai-search-press-release-citations/" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">separate analysis from almcorp.com</a>, looking at over four million AI citations, found that syndicated press releases on platforms like Yahoo Finance and MSN still account for just 0.04% of all citations. PRNewswire-direct citations sit at 0.21%. The 5x growth is real. The base rate it grew from is small.
+      </p>
+      <p>
+        What this means in practice: press releases are now a citable category, but they aren't the citable category. Earned media, journalist-written coverage, accounts for 82% of all AI citations. Press releases sit inside that 82% as one input. They don't replace it.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Where Do Press Releases Sit In The Citation Hierarchy?</h2>
+      <p>
+        This is the framework most "how to write a press release for AI" guides skip, and it's the one that determines whether the time you spend writing one is worth it.
+      </p>
+      <p>
+        At Ranking Atlas we classify AI citations into three layers: syndication, editorial, and entity. They are not interchangeable. They compound differently. They decay differently. Every press release operates at one or more of them, and the layer you reach is the variable that determines whether the work pays back.
+      </p>
+      <p class="font-semibold text-ink">Layer 1, syndication citations.</p>
+      <p>
+        Your release runs on the wire and gets indexed across syndicating outlets. AI can cite the syndicated version (Yahoo Finance /news/, MarketWatch, Benzinga). Citation strength is moderate, citation durability is weeks to months. The release fades from AI memory as fresher content displaces it. Half of all AI citations come from content less than 11 months old.
+      </p>
+      <p class="font-semibold text-ink">Layer 2, editorial citations.</p>
+      <p>
+        A journalist reads the release, finds it useful, writes their own original story citing the announcement. The journalist's article, not your release, becomes the cited source. Citation strength is high, citation durability is years. AI tools weight independent journalism more heavily than wire copy because the editorial layer signals validation.
+      </p>
+      <p class="font-semibold text-ink">Layer 3, entity citations.</p>
+      <p>
+        Sustained coverage builds a recognised brand entity in AI training data. Once you're an entity AI knows about, you get cited even without a specific recent placement triggering it. Citation strength is highest, citation durability is the longest. This is the layer most companies haven't earned yet.
+      </p>
+      <p>
+        A well-distributed press release operates at Layer 1. A press release that earns editorial pickup operates at Layers 1 and 2. A company that has been earning editorial coverage for 18-24 months operates at all three.
+      </p>
+
+    </div>
+
+    <!-- Citation hierarchy table -->
+    <div class="my-10 overflow-x-auto rounded-xl border border-[#0A0F1E]/8 shadow-card">
+      <table class="w-full text-sm">
+        <thead class="bg-[#F8FAFC] text-ink">
+          <tr>
+            <th class="text-left font-semibold px-4 py-3 border-b border-[#0A0F1E]/8">Citation Layer</th>
+            <th class="text-left font-semibold px-4 py-3 border-b border-[#0A0F1E]/8">Strength</th>
+            <th class="text-left font-semibold px-4 py-3 border-b border-[#0A0F1E]/8">Durability</th>
+            <th class="text-left font-semibold px-4 py-3 border-b border-[#0A0F1E]/8">What Drives It</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#475569]">
+          <tr>
+            <td class="px-4 py-3 border-b border-[#0A0F1E]/8 font-medium text-ink">Syndication</td>
+            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">Moderate</td>
+            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">Weeks to months</td>
+            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">Wire distribution, structure, recency</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 border-b border-[#0A0F1E]/8 font-medium text-ink">Editorial</td>
+            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">High</td>
+            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">Years</td>
+            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">Journalist pickup, story angle, source authority</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium text-ink">Entity</td>
+            <td class="px-4 py-3">Highest</td>
+            <td class="px-4 py-3">Compounds indefinitely</td>
+            <td class="px-4 py-3">Sustained earned coverage at Layers 1 and 2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pull-quote: Ranking Atlas framing -->
+    <figure class="my-10 border-l-4 border-brand bg-white rounded-r-xl pl-6 pr-5 py-5 shadow-card">
+      <blockquote class="text-xl md:text-2xl font-semibold text-ink leading-snug">
+        A press release on its own is a Layer 1 asset with a six-month decay curve. A release converted into editorial coverage is a Layer 2 asset with a multi-year compound. The brands winning AI citation in 2026 are using press releases as the trigger for editorial work, not the substitute for it.
+      </blockquote>
+      <figcaption class="mt-3 text-sm text-[#64748B]">Ranking Atlas analysis</figcaption>
+    </figure>
+
+    <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
+      <p>
+        The mistake most companies make is writing every press release as a Layer 1 announcement and never doing the work that converts it to Layer 2. Layer 1 alone produces a small, decaying citation footprint. Pair it with targeted journalist outreach and the same release can earn editorial coverage that compounds for years.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">What Does A Press Release That Gets Cited Actually Look Like?</h2>
+      <p>
+        <a href="https://muckrack.com/blog/how-to-optimize-a-press-release-for-ai-visibility" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Muck Rack's research on the structural traits of cited releases</a> is the most useful publicly available data on this. Cited releases contain 2x more statistics than non-cited releases. They contain 2.5x more bullet points. They use a 30% higher rate of objective sentences and a measurably higher frequency of action verbs and data-rich claims.
+      </p>
+      <p class="font-semibold text-ink">The pattern across the cited set:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>A specific number in the headline or first paragraph</li>
+        <li>A dateline that's accurate and current. Recency is one of the strongest signals.</li>
+        <li>Bullet-formatted data points rather than narrative paragraphs</li>
+        <li>Quotes attributed to a named executive with title, offering perspective rather than rephrasing the headline</li>
+        <li>A boilerplate that's three to four sentences of factual company description, not marketing copy</li>
+        <li>Hyperlinks to primary sources where claims are made</li>
+      </ul>
+      <p class="font-semibold text-ink">The pattern across releases that get retrieved but not cited:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Headlines led with company name rather than the specific news</li>
+        <li>Adjective-heavy lead paragraphs ("excited," "thrilled," "innovative," "leading")</li>
+        <li>Generic boilerplate that doesn't differentiate the company</li>
+        <li>Quotes that read as marketing-approved messaging rather than human commentary</li>
+        <li>No specific numbers or comparison points</li>
+        <li>Buried claims that AI can't cleanly extract as standalone facts</li>
+      </ul>
+      <p>
+        The structural difference matters because AI extracts at the paragraph level. A release written as a 600-word narrative gives AI nothing to pull cleanly. A release written as discrete factual claims with bullet-formatted data points gives AI extractable chunks.
+      </p>
+
+    </div>
+
+    <!-- Worked example: before/after rewrite -->
+    <div class="my-10 grid md:grid-cols-2 gap-4">
+      <div class="rounded-xl border-2 border-[#EF4444]/40 bg-white p-6">
+        <div class="text-xs uppercase tracking-wider font-semibold text-[#EF4444] mb-3">Before: typical release opener</div>
+        <p class="text-sm text-[#475569] leading-relaxed italic">
+          "Acme Inc., a leading provider of innovative cloud security solutions, is excited to announce the launch of its transformative new platform that empowers enterprise teams to defend against next-generation threats."
+        </p>
+        <p class="text-sm font-semibold text-[#EF4444] mt-4">Six adjectives. Zero numbers. No extractable claim. Retrieved, not cited.</p>
+      </div>
+      <div class="rounded-xl border-2 border-[#5D4FE0]/50 bg-white p-6">
+        <div class="text-xs uppercase tracking-wider font-semibold text-[#5D4FE0] mb-3">After: same news, citation-shaped</div>
+        <p class="text-sm text-[#475569] leading-relaxed italic">
+          "Acme Inc. today released a cloud security platform that reduced average incident response time from 47 minutes to 9 minutes across 12 enterprise pilot deployments between June and November 2025."
+        </p>
+        <p class="text-sm font-semibold text-[#5D4FE0] mt-4">Specific number. Comparison. Time window. Sample size. Extractable as a standalone fact.</p>
+      </div>
+    </div>
+    <p class="text-sm text-[#64748B] italic text-center max-w-2xl mx-auto -mt-4 mb-10">Illustrative example. The "after" line answers the prompt "how do enterprises reduce incident response time" without any further context.</p>
+
+    <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Which Press Release Types Actually Drive AI Citation In B2B SaaS?</h2>
+      <p>
+        Not all release types perform equally. Across the eight categories most agencies template, event, product launch, funding, executive hire, partnership, award, earnings, rebrand, the citation distribution is uneven.
+      </p>
+      <p class="font-semibold text-ink">Highest citation likelihood for B2B SaaS:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><span class="font-semibold text-ink">Funding rounds</span> with named investors and specific use of capital. AI cites these as evidence of company traction in category overviews.</li>
+        <li><span class="font-semibold text-ink">Product launches</span> anchored to a measurable customer outcome. "Reduces X process from Y weeks to Z days" gets cited; "introduces new platform features" doesn't.</li>
+        <li><span class="font-semibold text-ink">Earnings or operating milestones</span> with specific year-over-year comparison data. Public companies have an advantage here, but private SaaS companies that release ARR milestones with actual numbers earn citations too.</li>
+      </ul>
+      <p class="font-semibold text-ink">Moderate citation likelihood:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><span class="font-semibold text-ink">Partnership announcements</span>, only when the partnership enables a specific customer outcome rather than just announcing the relationship.</li>
+        <li><span class="font-semibold text-ink">Executive hires</span>, citable when the hire signals strategic direction (CRO from named scaling background) rather than just title fills.</li>
+      </ul>
+      <p class="font-semibold text-ink">Low citation likelihood:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><span class="font-semibold text-ink">Award and recognition releases</span> unless the granting body is itself a recognised authority and the criteria are specific.</li>
+        <li><span class="font-semibold text-ink">Rebranding announcements</span> unless paired with substantive strategic change. Logo refreshes don't get cited.</li>
+        <li><span class="font-semibold text-ink">Event announcements</span> decay quickly, citable in the week before the event, then dormant.</li>
+      </ul>
+      <p>
+        The release types that compound for B2B SaaS in fintech, cybersecurity, data infrastructure, and privacy are the ones that contribute factual claims AI can use across multiple future queries. A funding round release becomes citation material whenever someone asks "who are the leading [category] companies." A product launch release with specific outcome data becomes citation material whenever someone asks "how do companies solve [problem]." Awards and rebrands rarely get a second citation life.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">When Should You Send A Press Release For Maximum Pickup?</h2>
+      <p>
+        Timing matters less than people claim, but it isn't zero. <a href="https://prowly.com/magazine/when-to-send-press-releases/" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Prowly's</a> analysis of 55,470 press releases gives the cleanest available data.
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><span class="font-semibold text-ink">Thursday:</span> ~27% open rate, highest of the week</li>
+        <li><span class="font-semibold text-ink">Tuesday:</span> ~19% open rate, second highest</li>
+        <li><span class="font-semibold text-ink">Wednesday:</span> ~15% open rate</li>
+        <li><span class="font-semibold text-ink">Friday:</span> ~15% open rate, near-dead zone</li>
+        <li><span class="font-semibold text-ink">Weekend:</span> ~2% open rate, don't bother</li>
+        <li><span class="font-semibold text-ink">Monday:</span> low open rate plus 1,000+ email inboxes, buried before you start</li>
+      </ul>
+      <p>
+        The 10am-2pm window captures roughly 33% of all email opens. Before 10am you're competing with the overnight backlog. After 2pm, content calendars are set and journalists are filing rather than scanning.
+      </p>
+      <p>
+        One operational adjustment most distribution tools miss: schedule for an odd time. Most automated tools fire at 9:00, 9:30, 10:00. Your release lands in a cluster of others. Sending at 10:17 or 10:43 ET breaks you out of the cluster and into a quieter inbox window.
+      </p>
+      <p>
+        For US B2B SaaS audiences specifically, calibrate everything to US Eastern Time. New York, DC, and Boston cover the largest concentration of relevant journalists, even for tech companies based on the West Coast.
+      </p>
+      <p>
+        The honest caveat: a perfectly timed mediocre release still gets ignored. Timing is the marginal advantage that breaks ties between two equally good releases, not a substitute for newsworthiness or structure.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">What's The Most Common Reason Good Press Releases Don't Get Cited?</h2>
+      <p class="font-semibold text-ink">Promotional language.</p>
+      <p>
+        Across the cited and non-cited release sets in Muck Rack's research, the strongest single differentiator wasn't word count, distribution channel, or even data density taken alone. It was the rate of objective versus promotional sentences. Cited releases use a 30% higher rate of objective claims. Non-cited releases lean on adjectives, brand-led framing, and self-evaluative language ("the leading provider," "innovative," "best-in-class," "transforms the industry").
+      </p>
+      <p>
+        AI tools appear to be detecting promotional intent and deprioritising it for citation. The release can be technically well-structured, well-distributed, and well-timed, and still get retrieved without being cited because the language reads as marketing rather than reportage.
+      </p>
+      <p>
+        The fix is easier to describe than to execute. Lead every claim with the fact, not the framing. Replace adjectives with numbers. Replace self-evaluative language with attributable third-party recognition. Replace "we are excited to announce" openers with the actual news. The release that reads as if a journalist could file it without changing a sentence is the release AI tools cite.
+      </p>
+
+    </div>
+
+    <!-- Pro tip callout -->
+    <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card">
+      <p class="text-sm font-semibold text-ink mb-1">Pro tip</p>
+      <p class="text-sm text-[#475569] leading-relaxed">Run a draft release through a "delete every adjective" pass before distribution. If the news still stands without "leading," "innovative," "transformative," or "best-in-class," you have a release with a chance of citation. If the news collapses without them, you don't have news.</p>
+    </div>
+
+    <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">How Do You Build A Press Release Strategy Around Citation Durability?</h2>
+      <p>
+        The companies winning AI citations in 2026 aren't running press release programmes. They're running citation programmes where press releases are one tactic.
+      </p>
+      <p>
+        The pattern across the brands earning durable AI visibility:
+      </p>
+      <p>
+        A baseline cadence of well-structured press releases, distributed through wire services that get indexed by the right outlets. This is Layer 1, moderate strength, decaying durability. It maintains a citation footprint but doesn't grow one.
+      </p>
+      <p>
+        On top of that, deliberate journalist outreach for the announcements that warrant it. Funding rounds, product launches with substantive customer outcomes, and operating milestones get a personalised pitch to 5-15 journalists covering the category beat. The goal isn't wire pickup. The goal is converting the release into editorial coverage that operates at Layer 2.
+      </p>
+      <p>
+        On top of that, sustained editorial presence between announcements, bylined contributions, expert commentary in others' coverage, podcast and analyst interviews. This is what builds the entity recognition AI uses for Layer 3 citations.
+      </p>
+      <p>
+        A press release on its own is a Layer 1 asset with a six-month decay curve. A press release converted to editorial coverage is a Layer 2 asset with a multi-year compound. A company sustaining both for two years builds the Layer 3 entity that gets cited even when there's no recent news to anchor on.
+      </p>
+      <p>
+        The mistake is treating Layer 1 as the strategy. Wire distribution alone produces a small citation footprint that decays as fresher content displaces it. The companies winning durable AI citations are the ones using press releases as the trigger for the editorial work, not the substitute for it.
+      </p>
+
+    </div>
+
+    <!-- Further Reading callout -->
+    <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card">
+      <p class="text-sm font-semibold text-ink mb-1">Further reading</p>
+      <p class="text-sm text-[#475569] leading-relaxed"><a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">Why Earned Links Beat Paid Links</a>: the underlying logic for why editorial coverage on authoritative publications is what AI systems cite, and why marketplace-distributed alternatives don't survive the shift.</p>
+    </div>
+
+    <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
+
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">FAQ</h2>
+
+      <h3 class="text-xl md:text-2xl font-bold tracking-tight text-ink leading-tight mt-8 mb-3">How Long Should A Press Release Be In 2026?</h3>
+      <p>
+        400-600 words for most release types. AI extracts at the paragraph level, so additional length doesn't increase citation likelihood and often dilutes the extractable claims. Earnings and regulatory filings are exceptions.
+      </p>
+
+      <h3 class="text-xl md:text-2xl font-bold tracking-tight text-ink leading-tight mt-8 mb-3">Do AI Tools Cite Press Releases Differently From Regular Articles?</h3>
+      <p>
+        Yes. Press releases are labelled as company-provided content by Perplexity. ChatGPT and Gemini cite them more selectively, with confirmed citation behaviour primarily for high-authority distribution paths like Yahoo Finance /news/. The same content distributed across multiple paths can get cited by some platforms and ignored by others.
+      </p>
+
+      <h3 class="text-xl md:text-2xl font-bold tracking-tight text-ink leading-tight mt-8 mb-3">Which Press Release Distribution Wires Get Cited Most?</h3>
+      <p>
+        Wire-distributed releases account for roughly 1% of all AI citations after the second half of 2025 growth (Muck Rack). PRNewswire and GlobeNewswire have the strongest citation footprint among major wires, primarily because their syndication paths reach the financial portals AI tools weight heavily.
+      </p>
+
+      <h3 class="text-xl md:text-2xl font-bold tracking-tight text-ink leading-tight mt-8 mb-3">Can A Press Release Alone Build AI Citation Visibility?</h3>
+      <p>
+        No. Earned media drives 82% of AI citations. Press releases sit inside that 82% as one signal. They contribute to citation footprint but don't, by themselves, build the durable visibility that compounds over years. The brands earning sustained AI citation use press releases as the trigger for editorial coverage, not the replacement for it.
+      </p>
+
+      <h3 class="text-xl md:text-2xl font-bold tracking-tight text-ink leading-tight mt-8 mb-3">How Quickly Do AI Tools Cite A New Press Release?</h3>
+      <p>
+        The highest citation rate occurs within the first seven days of publication (Muck Rack). Half of all citations come from content less than 11 months old. After 12 months, citation rate drops sharply. Recency compounds, and older releases without follow-up coverage fade out of AI memory.
+      </p>
+
+    </div>
+
+    <!-- CTA card -->
+    <div class="my-10 rounded-xl bg-white border border-[#0A0F1E]/8 shadow-card p-8 text-center">
+      <p class="text-lg font-semibold text-ink mb-2">Turn announcements into editorial coverage AI cites.</p>
+      <p class="text-sm text-[#475569] mb-6 max-w-lg mx-auto">Fixed-price campaigns. Guaranteed placements on authoritative publications. Press releases are the trigger. Editorial coverage is the asset.</p>
+      <PrimaryCTA href="/contact" />
+    </div>
+
+    <!-- Next steps -->
+    <div class="mt-8 mb-2">
+      <p class="text-sm font-medium text-ink mb-3">Further reading:</p>
+      <ul class="space-y-2 text-sm list-disc pl-5">
+        <li><a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">Why Earned Links Beat Paid Links</a></li>
+        <li><a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">What Is Citation Equity</a></li>
+        <li><a href="/resources/the-cost-of-authority" class="text-brand hover:text-brand-dark underline underline-offset-2">The Cost of Authority</a></li>
+      </ul>
+    </div>
+
+  </div>
+</article>
+
+<AuthorBio />
+</div>
+
+</Layout>
