@@ -1,15 +1,12 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import RelatedResearch from '../../../components/RelatedResearch.astro';
 ---
 
 <Layout
   title="Methodology: Plastic Surgery Patient Age Dataset | Ranking Atlas"
   description="How Ranking Atlas computed mean patient age from ASPS bracket data. Source selection, midpoints, 2021 interpolation, coverage notes, and known limitations for both the Modern (2018–2024) and Historical (2001–2024) products."
 >
-  <fragment slot="head">
-    <link rel="canonical" href="https://ranking-atlas.com/resources/plastic-surgery-patient-age/methodology" />
-  </fragment>
-
 <div class="bg-white">
   <section class="pt-20 md:pt-28 pb-16 border-b border-[#0A0F1E]/8">
     <div class="max-w-3xl mx-auto px-6">
@@ -20,7 +17,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p class="text-body text-[19px] leading-[1.7] mb-4">
         Compiled by Ranking Atlas, April 2026. This document covers both data products: the Modern series (ASPS, 2018–2024) and the Historical Atlas (ASAPS + ASPS, 2001–2024). The split is deliberate, and the reasons are explained below.
       </p>
-      <a href="/resources/plastic-surgery-patient-age/" class="inline-flex items-center gap-1.5 text-sm text-brand hover:text-brand-dark transition-colors font-medium">
+      <a href="/resources/plastic-surgery-patient-age" class="inline-flex items-center gap-1.5 text-sm text-brand hover:text-brand-dark transition-colors font-medium">
         ← Back to the full report
       </a>
     </div>
@@ -214,14 +211,18 @@ import Layout from '../../../layouts/Layout.astro';
         </div>
       </div>
 
-      <div class="pt-4">
-        <a href="/resources/plastic-surgery-patient-age/" class="inline-flex items-center gap-1.5 text-sm text-brand hover:text-brand-dark transition-colors font-medium">
-          ← Back to the full report
-        </a>
-      </div>
-
     </div>
   </section>
+
+  <RelatedResearch
+    items={[
+      {
+        title: "How Old Are Plastic Surgery Patients In The US: Mean Age By Procedure 2018-2024",
+        description: "This data report compiles ASPS Plastic Surgery Statistics into mean patient ages across 14 procedures, with full per-procedure tables and an interactive chart.",
+        href: "/resources/plastic-surgery-patient-age",
+      },
+    ]}
+  />
 </div>
 
 </Layout>

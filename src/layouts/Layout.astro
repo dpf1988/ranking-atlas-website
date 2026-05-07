@@ -12,6 +12,13 @@ const {
   title = 'Ranking Atlas — Editorial Coverage for Google & AI Search Visibility',
   description = 'Editorial PR that earns coverage on the publishers AI engines cite and Google trusts. Per-campaign, fixed price, guaranteed minimum placements. A modern digital PR alternative to retainer-based agencies.',
 } = Astro.props;
+
+// Canonical: site origin + pathname, with any trailing slash stripped from
+// non-root paths and any query string discarded. Page-level overrides are
+// possible via the head slot.
+const rawPath = Astro.url.pathname;
+const canonicalPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
+const canonicalHref = `https://ranking-atlas.com${canonicalPath}`;
 ---
 
 <!doctype html>
@@ -21,6 +28,7 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalHref} />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",

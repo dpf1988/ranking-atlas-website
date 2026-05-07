@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import AuthorBio from '../../../components/AuthorBio.astro';
+import RelatedResearch from '../../../components/RelatedResearch.astro';
 
 const canonicalUrl = "https://ranking-atlas.com/resources/plastic-surgery-patient-age/";
 const ogImage = "https://ranking-atlas.com/assets/images/resources/plastic-surgery-patient-age/hero.jpg";
@@ -170,7 +171,6 @@ const citationText = `Ranking Atlas (2026). How Old Are Plastic Surgery Patients
   description={pageDescription}
 >
   <fragment slot="head">
-    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="article" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
@@ -602,16 +602,28 @@ const citationText = `Ranking Atlas (2026). How Old Are Plastic Surgery Patients
         </li>
       </ul>
 
-      <div class="pt-8 border-t border-[#0A0F1E]/8">
-        <p class="text-sm font-semibold text-ink mb-3">More primary-source research from Ranking Atlas</p>
-        <ul class="space-y-2 text-sm text-body">
-          <li><a href="/resources/ai-names-ict-experts/" class="text-brand hover:text-brand-dark underline underline-offset-2">Who AI Names When You Ask for ICT Experts</a></li>
-          <li><a href="/resources/saas-pricing-inflation" class="text-brand hover:text-brand-dark underline underline-offset-2">SaaS Price Comparison 2020–2026</a></li>
-          <li><a href="/resources/the-cost-of-authority" class="text-brand hover:text-brand-dark underline underline-offset-2">How Paid Link Prices Rose While Their Value Collapsed</a></li>
-        </ul>
-      </div>
     </div>
   </section>
+
+  <RelatedResearch
+    items={[
+      {
+        title: "Which AI Names ICT Experts",
+        description: "This data report tests how AI answer engines name analysts and consultants in the ICT sector, and which sources each engine pulls from.",
+        href: "/resources/ai-names-ict-experts",
+      },
+      {
+        title: "SaaS Price Comparison 2020-2026",
+        description: "This data report benchmarks six years of B2B SaaS list prices against US CPI, exposing where vendors raised prices faster than inflation.",
+        href: "/resources/saas-pricing-inflation",
+      },
+      {
+        title: "The Cost Of Authority",
+        description: "This essay explains why the brands AI engines cite are the ones that have paid for editorial proof, not the ones that have optimised for keywords.",
+        href: "/resources/the-cost-of-authority",
+      },
+    ]}
+  />
 
   <AuthorBio />
 

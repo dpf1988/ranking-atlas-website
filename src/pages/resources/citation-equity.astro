@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import PrimaryCTA from '../../components/PrimaryCTA.astro';
 import AuthorBio from '../../components/AuthorBio.astro';
+import RelatedResearch from '../../components/RelatedResearch.astro';
 import Definition from '../../components/Definition.astro';
 import { articleSchema, definedTermSchema, breadcrumbSchema } from '../../lib/schema';
 
@@ -573,15 +574,6 @@ const breadcrumbs = breadcrumbSchema([
         The window for first-mover advantage in citation equity is still open. The brands building it now will be structurally harder to displace than the brands that start in 2027.
       </p>
 
-      <p>Check out these resources for next steps:</p>
-      <ul>
-        <li><a href="/resources/chatgpt-search-visibility" class="inline-link">What Is ChatGPT Search Visibility? (And How to Track It)</a></li>
-        <li><a href="/resources/earned-links-vs-paid-links" class="inline-link">Why Earned Links Beat Paid Links</a></li>
-        <li><a href="/resources/press-release-ai-citation-2026" class="inline-link">What Makes a Press Release Get Cited by ChatGPT in 2026?</a></li>
-        <li><a href="/resources/the-cost-of-authority" class="inline-link">How Paid Link Prices Rose While Their Value Collapsed</a></li>
-        <li><a href="/resources/ai-names-ict-experts/" class="inline-link">Who AI Names When You Ask For ICT Experts</a></li>
-      </ul>
-
     </div>
   </div>
 </article>
@@ -599,6 +591,26 @@ const breadcrumbs = breadcrumbSchema([
     <PrimaryCTA href="/contact" />
   </div>
 </section>
+
+<RelatedResearch
+  items={[
+    {
+      title: "What Is ChatGPT Search Visibility? (And How to Track It)",
+      description: "This guide defines ChatGPT search visibility, names the three credible tools that track it, and lays out the editorial moves that improve it.",
+      href: "/resources/chatgpt-search-visibility",
+    },
+    {
+      title: "Why Earned Links Beat Paid Links",
+      description: "This essay shows why earned editorial coverage compounds across organic search and AI answers, while paid links decay in citation value.",
+      href: "/resources/earned-links-vs-paid-links",
+    },
+    {
+      title: "What Makes a Press Release Get Cited by ChatGPT in 2026?",
+      description: "This guide breaks down which press release patterns AI engines cite in 2026, and how to write a release that earns coverage on authoritative publishers.",
+      href: "/resources/press-release-ai-citation-2026",
+    },
+  ]}
+/>
 
 <AuthorBio />
 

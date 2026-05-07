@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import PrimaryCTA from '../../components/PrimaryCTA.astro';
 import AuthorBio from '../../components/AuthorBio.astro';
+import RelatedResearch from '../../components/RelatedResearch.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -371,12 +372,6 @@ const faqJsonLd = {
 
     </div>
 
-    <!-- Further Reading callout -->
-    <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card">
-      <p class="text-sm font-semibold text-ink mb-1">Further reading</p>
-      <p class="text-sm text-[#475569] leading-relaxed"><a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">Why Earned Links Beat Paid Links</a>: the underlying logic for why editorial coverage on authoritative publications is what AI systems cite, and why marketplace-distributed alternatives don't survive the shift.</p>
-    </div>
-
     <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
 
       <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">FAQ</h2>
@@ -415,19 +410,28 @@ const faqJsonLd = {
       <PrimaryCTA href="/contact" />
     </div>
 
-    <!-- Next steps -->
-    <div class="mt-8 mb-2">
-      <p class="text-sm font-medium text-ink mb-3">Further reading:</p>
-      <ul class="space-y-2 text-sm list-disc pl-5">
-        <li><a href="/resources/chatgpt-search-visibility" class="text-brand hover:text-brand-dark underline underline-offset-2">What Is ChatGPT Search Visibility? (And How to Track It)</a></li>
-        <li><a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">Why Earned Links Beat Paid Links</a></li>
-        <li><a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">What Is Citation Equity</a></li>
-        <li><a href="/resources/the-cost-of-authority" class="text-brand hover:text-brand-dark underline underline-offset-2">The Cost of Authority</a></li>
-      </ul>
-    </div>
-
   </div>
 </article>
+
+<RelatedResearch
+  items={[
+    {
+      title: "How Brands Get Cited By AI: The 2026 Guide To Citation Equity",
+      description: "This guide explains how ChatGPT, Perplexity, Gemini, and Google AI Overviews choose which brands to cite, and what produces the editorial pattern that puts you in the answer.",
+      href: "/resources/citation-equity",
+    },
+    {
+      title: "Why Earned Links Beat Paid Links",
+      description: "This essay shows why earned editorial coverage compounds across organic search and AI answers, while paid links decay in citation value.",
+      href: "/resources/earned-links-vs-paid-links",
+    },
+    {
+      title: "How Paid Link Prices Rose While Their Value Collapsed",
+      description: "This data report tracks 140,000 publisher listings from 2020 to 2026, mapping the gap between rising paid link prices and falling citation value.",
+      href: "/resources/the-cost-of-authority",
+    },
+  ]}
+/>
 
 <AuthorBio />
 </div>

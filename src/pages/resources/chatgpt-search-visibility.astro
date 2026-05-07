@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedResearch from '../../components/RelatedResearch.astro';
 import { breadcrumbSchema } from '../../lib/schema';
 
 const breadcrumbs = breadcrumbSchema([
@@ -394,7 +395,7 @@ const faqJsonLd = {
     </figure>
 
     <p class="text-body text-lg leading-relaxed mb-10">
-      This is what we mean by <a href="/resources/citation-equity/" class="text-brand hover:text-brand-dark underline">citation equity</a>. The phrase describes the compounding asset that earned editorial coverage builds across organic search, AI answer engines, brand recall, and direct referral traffic. It is not separate from SEO or PR or content marketing. It is the connective layer between them. Every brand that ranks in ChatGPT today got there through a media footprint accumulated over months or years. The brands that will rank in 2027 are accumulating that footprint right now.
+      This is what we mean by <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline">citation equity</a>. The phrase describes the compounding asset that earned editorial coverage builds across organic search, AI answer engines, brand recall, and direct referral traffic. It is not separate from SEO or PR or content marketing. It is the connective layer between them. Every brand that ranks in ChatGPT today got there through a media footprint accumulated over months or years. The brands that will rank in 2027 are accumulating that footprint right now.
     </p>
 
     <p class="text-body text-lg leading-relaxed mb-5">
@@ -461,7 +462,7 @@ const faqJsonLd = {
     </div>
 
     <p class="text-body text-lg leading-relaxed mb-12">
-      The longer answer is in our <a href="/resources/citation-equity/" class="text-brand hover:text-brand-dark underline">citation equity guide</a>, which covers the mechanics in depth. The short answer is that ChatGPT search visibility is a measurable, trackable, and improvable metric. The improving is downstream of earning coverage on the publishers AI engines already trust, not of optimising the page itself.
+      The longer answer is in our <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline">citation equity guide</a>, which covers the mechanics in depth. The short answer is that ChatGPT search visibility is a measurable, trackable, and improvable metric. The improving is downstream of earning coverage on the publishers AI engines already trust, not of optimising the page itself.
     </p>
 
     <!-- CTA -->
@@ -476,17 +477,27 @@ const faqJsonLd = {
       </a>
     </div>
 
-    <!-- Further reading -->
-    <div class="border-t border-[#0A0F1E]/10 pt-10 mt-10">
-      <h3 class="text-xl font-bold text-ink mb-4 tracking-tight">Further Reading</h3>
-      <ul class="space-y-3 text-body">
-        <li><a href="/resources/citation-equity/" class="text-brand hover:text-brand-dark underline">How Brands Get Cited By AI: The 2026 Guide To Citation Equity</a></li>
-        <li><a href="/resources/press-release-ai-citation-2026" class="text-brand hover:text-brand-dark underline">What Makes a Press Release Get Cited by ChatGPT in 2026?</a></li>
-        <li><a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline">Why Earned Links Beat Paid Links</a></li>
-      </ul>
-    </div>
-
   </div>
 </article>
 </div>
+
+<RelatedResearch
+  items={[
+    {
+      title: "How Brands Get Cited By AI: The 2026 Guide To Citation Equity",
+      description: "This guide explains how ChatGPT, Perplexity, Gemini, and Google AI Overviews choose which brands to cite, and what produces the editorial pattern that puts you in the answer.",
+      href: "/resources/citation-equity",
+    },
+    {
+      title: "What Makes a Press Release Get Cited by ChatGPT in 2026?",
+      description: "This guide breaks down which press release patterns AI engines cite in 2026, and how to write a release that earns coverage on authoritative publishers.",
+      href: "/resources/press-release-ai-citation-2026",
+    },
+    {
+      title: "Why Earned Links Beat Paid Links",
+      description: "This essay shows why earned editorial coverage compounds across organic search and AI answers, while paid links decay in citation value.",
+      href: "/resources/earned-links-vs-paid-links",
+    },
+  ]}
+/>
 </Layout>

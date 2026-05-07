@@ -4,55 +4,63 @@
 
 [[redirects]]
   from = "/the-cost-of-authority"
-  to = "/resources/the-cost-of-authority/"
+  to = "/resources/the-cost-of-authority"
   status = 301
 
 [[redirects]]
   from = "/the-cost-of-authority/"
-  to = "/resources/the-cost-of-authority/"
+  to = "/resources/the-cost-of-authority"
   status = 301
 
 [[redirects]]
   from = "/ai-search-visibility"
-  to = "/resources/citation-equity/"
+  to = "/resources/citation-equity"
   status = 301
 
 [[redirects]]
   from = "/ai-search-visibility/"
-  to = "/resources/citation-equity/"
+  to = "/resources/citation-equity"
   status = 301
 
 [[redirects]]
   from = "/resources/ai-search-visibility"
-  to = "/resources/citation-equity/"
+  to = "/resources/citation-equity"
   status = 301
 
 [[redirects]]
   from = "/resources/ai-search-visibility/"
-  to = "/resources/citation-equity/"
+  to = "/resources/citation-equity"
   status = 301
 
 [[redirects]]
   from = "/backlink-price-index"
-  to = "/resources/the-cost-of-authority/"
+  to = "/resources/the-cost-of-authority"
   status = 301
 
 [[redirects]]
   from = "/backlink-price-index.html"
-  to = "/resources/the-cost-of-authority/"
+  to = "/resources/the-cost-of-authority"
   status = 301
 
 [[redirects]]
   from = "/saas-price-index"
-  to = "/resources/the-cost-of-authority/"
+  to = "/resources/the-cost-of-authority"
   status = 301
 
 [[redirects]]
   from = "/resources/citation-equity-vs-link-building"
-  to = "/resources/earned-links-vs-paid-links/"
+  to = "/resources/earned-links-vs-paid-links"
   status = 301
 
 [[redirects]]
   from = "/resources/citation-equity-vs-link-building/"
-  to = "/resources/earned-links-vs-paid-links/"
+  to = "/resources/earned-links-vs-paid-links"
   status = 301
+
+# Trailing-slash policy: strip trailing slash from any non-root URL.
+# Root "/" is exempt because the pattern requires a path segment before the slash.
+[[redirects]]
+  from = "/*/"
+  to = "/:splat"
+  status = 301
+  force = true

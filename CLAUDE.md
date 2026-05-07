@@ -1,70 +1,95 @@
-# Ranking Atlas — Claude Code Instructions
+# Ranking Atlas - Site Rules
 
-This file is loaded automatically into every Claude Code session for this project. Follow all rules below without being prompted.
+## Author
+The author of every resource page is Daniel Grainger, founder of Ranking Atlas. No other author appears on the site.
 
----
+## URLs
+- Trailing slash policy: never. Set in astro.config.mjs as trailingSlash: "never". Enforced at the edge in netlify.toml.
+- Slugs: lowercase, hyphenated, descriptive. No dates, no IDs.
+- Do not change a published slug. If a page needs a new slug, add a 301 redirect from the old slug.
 
-## Mandatory: Article Header Pattern
+## Canonicals
+- The root layout emits a single canonical tag pointing to the absolute production URL with no trailing slash and no query string.
+- Page-level canonical overrides are reserved for syndication cases. Default to the layout-level canonical.
 
-Every resource page (essay, guide, data report) **must** use the Article Header Pattern defined in `docs/design-system.md` under "Article / Resource Page Template".
+## Every new resource page must include
+- A canonical tag (handled by the layout)
+- The author byline (Daniel Grainger)
+- Three contextual internal links inside the body: one to the homepage, one to /resources/citation-equity, one to a topically related resource page. Distribute across intro, middle, and conclusion. Use anchor text from the positioning-core "use" list.
+- The RelatedResearch component at the bottom of the body, with three topically relevant sibling resources passed as props.
+- Article schema with author "Daniel Grainger" and dateModified reflecting the most recent edit.
 
-The reference implementation is `src/pages/resources/earned-links-vs-paid-links.astro`.
+## Article header pattern
 
-**The pattern in brief:**
-1. `<article class="py-20 md:py-28">` wrapping the header block
-2. `<div class="max-w-3xl mx-auto px-6">` — left-aligned, never centred
-3. Flat eyebrow — content type label only: `Essay` | `Guide` | `Data Report`
-4. H1 — full title
-5. Author row — avatar + name + date, left-aligned
-6. Hero image slot — `aspect-[16/9]` with onerror fallback, always present
-7. Intro paragraphs — `text-body text-lg md:text-xl`
-8. ToC / summary box — `bg-white border border-[#0A0F1E]/8 rounded-xl p-6 mb-10 shadow-card`
+Every resource page header must include, in order:
+1. Eyebrow label (e.g. "Guide", "Data report", "Essay") in Title Case
+2. H1 in start case
+3. Subhead one sentence long, no em dashes
+4. Author byline: "By Daniel Grainger" with avatar
+5. Published date, ISO format in source, formatted human-readable in render
+6. Last updated date, only when it differs from published date
+7. Estimated reading time
+8. Table of contents anchor links for any page over 1000 words
 
-**Never:**
-- Centre the article header (`text-center`, `justify-center` on the header container)
-- Add decorative radial glow or noise texture overlays to the article header
-- Use the eyebrow to repeat the subtitle — eyebrow is the content type only
-- Split the title across eyebrow + H1
-- Omit the hero image slot
-- Put CTA buttons inside the article header block
+Reference implementation: src/pages/resources/earned-links-vs-paid-links.astro
 
-This applies to all future resource pages without exception. Do not ask — apply the pattern.
+## Vocabulary
+Use:
+- Citation equity, editorial citations, editorial coverage
+- Authoritative publishers, authority publishers
+- AI search era, AI Overviews, ChatGPT, Perplexity, Gemini
+- Omnipresence, pattern, cited, surfaced, verified
+- Campaign, placement, pickup, guaranteed minimum
 
----
+Avoid:
+- Backlinks, link building, DR, domain rating, DA
+- SEO as a primary value proposition
+- Future-proof
+- Rankings as a primary outcome
+- Retainer, monthly, ongoing
+- Hedging verbs: might, could, supports
+- Click here, read more, learn more, this, here as anchor text
 
-## Build Rules
+## Voice
+- No em dashes anywhere
+- No filler: genuinely, honestly, straightforward
+- Active voice
+- Short sentences mixed with longer
+- British English
+- Do not announce the link. Write the sentence with the linked phrase inline.
+- Do not invent statistics, claims, or quotes.
 
-- **Never commit or push** unless the user explicitly asks.
-- Always run `npm run build` after writing a resource page to confirm clean compilation.
-- Run `npm run dev` to start the local preview server at `http://localhost:4321`.
+## Design
+- All new components conform to design-system.md
+- Use existing tokens for colour, typography, spacing, padding
+- No new colours, fonts, or spacing values without a design decision logged
+- Do not invent UI elements. If the spec does not include an icon, badge, button, or animation, do not add one.
 
----
+## Design tokens
 
-## Vocabulary (from `docs/positioning-core.md`)
+Defined in tailwind.config.js. Always use token names, not raw hex:
+- text-brand / text-brand-dark, not text-[#5D4FE0]
+- text-ink, not text-[#0A0F1E]
+- text-body, not text-[#475569]
+- text-muted, not text-[#64748B]
+- shadow-card, not inline shadow values
 
-- Use: citation equity, earned editorial coverage, authoritative publishers, AI answer engines
-- Avoid: digital PR, backlinks, bought links, SEO links, link building
+Full reference: docs/design-system.md
 
----
+## Headings
 
-## Style (from `docs/writing-style.md`)
+- Body headings (H1, H2, H3 in page bodies): start case
+- Eyebrow labels above hero headings: Title Case
+- Section headings inside content: start case
 
-- No em dashes in prose. Use commas or full stops.
-- No hedging verbs (consider, might, could, perhaps).
-- 1–2 sentence paragraphs. Isolated emphasis lines for key points.
-- Bucket brigade pivot lines to pull readers forward.
-- Start-case capitalisation on all headings (every word capitalised).
-- Eyebrow labels: start-case is NOT used — eyebrow labels are Title Case only for the content type word itself.
+Full reference: docs/writing-style.md
 
----
+## Build and deploy
+- Build locally with npm run build before any commit
+- Batch changes into single Netlify deploys to conserve build credits
+- Do not push incremental commits
+- Do not include "Co-Authored-By: Claude" in commit messages
+- PowerShell command chaining: ; not &&
 
-## Design Tokens
-
-Defined in `tailwind.config.js`. Always use token names, not raw hex:
-- `text-brand` / `text-brand-dark` — not `text-[#5D4FE0]`
-- `text-ink` — not `text-[#0A0F1E]`
-- `text-body` — not `text-[#475569]`
-- `text-muted` — not `text-[#64748B]`
-- `shadow-card` — not inline shadow values
-
-Full reference: `docs/design-system.md`
+## Updating canonical references
+If positioning-core.md, design-system.md, or writing-style.md is updated in the project knowledge base, treat that update as authoritative and bring this CLAUDE.md into alignment.

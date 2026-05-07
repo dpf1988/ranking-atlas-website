@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import AuthorBio from '../../../components/AuthorBio.astro';
+import RelatedResearch from '../../../components/RelatedResearch.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -52,7 +53,7 @@ const jsonLd = {
         Here, we queried ChatGPT, Claude, Gemini, and Perplexity across 10 query variants and seven ICT categories, extracted 2,286 unique named individuals, and classified each by gender, role type, and sub-category. This is not a knowledge gap. It is a retrieval pattern. This study measures who AI names, not who actually holds expertise. The two are different.
       </p>
       <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-6">
-        The findings show not just who is visible in ICT, but how AI systems construct authority when generating answers.
+        In the <a href="/" class="text-brand hover:text-brand-dark underline underline-offset-2">AI search era</a>, the findings show not just who is visible in ICT, but how AI systems construct authority when generating answers.
       </p>
 
       <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card relative">
@@ -338,7 +339,7 @@ const jsonLd = {
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-3">By Model</h2>
       <p class="text-body text-[18px] leading-[1.75] mb-8 max-w-3xl">
-        All four models underrepresent women relative to the 28% workforce baseline. The three parametric models (OpenAI, Anthropic, Gemini) averaged <strong>21.0%</strong> female across 8,640 mentions. Perplexity, the only retrieval-augmented model, returned <strong>18.5%</strong> across 2,071 mentions. Retrieval-augmented models draw from live sources. The gap suggests the web of authoritative ICT content Perplexity pulls from is at least as male-dominated as the models trained on it.
+        All four models underrepresent women relative to the 28% workforce baseline. The three parametric models (OpenAI, Anthropic, Gemini) averaged <strong>21.0%</strong> female across 8,640 mentions. Perplexity, the only retrieval-augmented model, returned <strong>18.5%</strong> across 2,071 mentions. Retrieval-augmented models draw from live sources. The gap suggests the web of authoritative ICT content Perplexity pulls from is at least as male-dominated as the models trained on it. Whoever holds <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity</a> inside that web shows up disproportionately in retrieval-augmented outputs.
       </p>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left mb-6">
@@ -562,7 +563,7 @@ const jsonLd = {
         <p>LLM responses are probabilistic. Running the same queries on the same models at a different time would produce some variation. Results reflect the models as they operated in April 2026.</p>
         <p>Asking "who are the top experts" favours people who are already well-known. That pool skews male for historical reasons. This study measures what LLMs return within that frame.</p>
         <p>Workforce baselines vary by source and methodology. The figures used here are composites drawn from multiple studies and should be treated as approximate benchmarks, not precise measurements.</p>
-        <p>We ran the full study 15 times. The headline number landed between 15.6% and 22.9% every time, with a standard deviation of 1.8 points. The gap from the workforce baseline (7.5 points) is four times larger than the run-to-run variation. The finding holds.</p>
+        <p>We ran the full study 15 times. The headline number landed between 15.6% and 22.9% every time, with a standard deviation of 1.8 points. The gap from the workforce baseline (7.5 points) is four times larger than the run-to-run variation. The finding holds. The same retrieval mechanics decide which brands AI names in commercial queries, a pattern that runs on <a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">editorial citations</a> rather than paid placements.</p>
       </div>
     </div>
   </section>
@@ -589,6 +590,26 @@ const jsonLd = {
       </p>
     </div>
   </section>
+
+  <RelatedResearch
+    items={[
+      {
+        title: "How Brands Get Cited By AI: The 2026 Guide To Citation Equity",
+        description: "This guide explains how AI answer engines choose which brands to cite, and what produces the editorial pattern that puts you in the answer.",
+        href: "/resources/citation-equity",
+      },
+      {
+        title: "SaaS Price Comparison 2020-2026",
+        description: "This data report benchmarks six years of B2B SaaS list prices against US CPI, exposing where vendors raised prices faster than inflation.",
+        href: "/resources/saas-pricing-inflation",
+      },
+      {
+        title: "The Cost Of Authority",
+        description: "This essay explains why the brands AI engines cite are the ones that have paid for editorial proof, not the ones that have optimised for keywords.",
+        href: "/resources/the-cost-of-authority",
+      },
+    ]}
+  />
 
   <AuthorBio />
 

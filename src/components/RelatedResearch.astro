@@ -1,0 +1,37 @@
+---
+interface Item {
+  title: string;
+  description: string;
+  href: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+const cards = items.slice(0, 3);
+---
+
+<section class="py-16 md:py-24 bg-white border-t border-[#0A0F1E]/8">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-12">
+      Related Research
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {cards.map((item) => (
+        <a
+          href={item.href}
+          class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20"
+        >
+          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3 group-hover:text-brand transition-colors">
+            {item.title}
+          </h3>
+          <p class="text-base text-body leading-relaxed">
+            {item.description}
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
