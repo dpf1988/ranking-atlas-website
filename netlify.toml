@@ -58,9 +58,22 @@
   status = 301
 
 # Trailing-slash policy: strip trailing slash from any non-root URL.
-# Root "/" is exempt because the pattern requires a path segment before the slash.
+# Explicit named-segment patterns guarantee the root "/" never matches,
+# avoiding the redirect loop that "/*/" produces when the splat matches empty.
 [[redirects]]
-  from = "/*/"
-  to = "/:splat"
+  from = "/:a/"
+  to = "/:a"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/:a/:b/"
+  to = "/:a/:b"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/:a/:b/:c/"
+  to = "/:a/:b/:c"
   status = 301
   force = true
