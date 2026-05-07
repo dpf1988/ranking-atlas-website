@@ -31,7 +31,7 @@ const jsonLd = {
   "@type": "ItemList",
   "name": "Ranking Atlas Library",
   "description": "Press archive. Research and data campaigns issued by Ranking Atlas.",
-  "url": "https://ranking-atlas.com/library/",
+  "url": "https://ranking-atlas.com/library",
   "itemListElement": sorted.map((entry, i) => ({
     "@type": "ListItem",
     "position": i + 1,
@@ -46,7 +46,7 @@ const jsonLd = {
 ---
 
 <LibraryLayout
-  title="Library — Ranking Atlas"
+  title="Library: Ranking Atlas"
   description="Press archive. Research and data campaigns issued by Ranking Atlas."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -66,7 +66,7 @@ const jsonLd = {
       <div>
         {byYear.get(year)!.map((entry, i, arr) => (
           <a
-            href={`/library/${entry.slug}/`}
+            href={`/library/${entry.slug}`}
             class:list={[
               'flex items-baseline gap-4 py-3 group transition-colors',
               i < arr.length - 1 ? 'border-b border-[#0A0F1E]/8' : '',
