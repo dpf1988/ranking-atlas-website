@@ -58,22 +58,22 @@
   status = 301
 
 # Trailing-slash policy: strip trailing slash from any non-root URL.
-# Explicit named-segment patterns guarantee the root "/" never matches,
-# avoiding the redirect loop that "/*/" produces when the splat matches empty.
+# force = false lets static files (CSS, JS, fonts, images in _astro/ and assets/)
+# serve normally before redirect logic runs. Without this, asset routing breaks.
 [[redirects]]
-  from = "/:a/"
-  to = "/:a"
+  from = "/:path/"
+  to = "/:path"
   status = 301
-  force = true
+  force = false
 
 [[redirects]]
-  from = "/:a/:b/"
-  to = "/:a/:b"
+  from = "/:first/:second/"
+  to = "/:first/:second"
   status = 301
-  force = true
+  force = false
 
 [[redirects]]
-  from = "/:a/:b/:c/"
-  to = "/:a/:b/:c"
+  from = "/:first/:second/:third/"
+  to = "/:first/:second/:third"
   status = 301
-  force = true
+  force = false
