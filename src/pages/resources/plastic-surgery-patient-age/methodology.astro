@@ -14,7 +14,7 @@ import RelatedResearch from '../../../components/RelatedResearch.astro';
       <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
         The Plastic Surgery Patient Age Dataset: Methodology
       </h1>
-      <p class="text-body text-[19px] leading-[1.7] mb-4">
+      <p class="text-body text-[21px] leading-[1.7] mb-4">
         Compiled by Ranking Atlas, April 2026. This document covers both data products: the Modern series (ASPS, 2018–2024) and the Historical Atlas (ASAPS + ASPS, 2001–2024). The split is deliberate, and the reasons are explained below.
       </p>
       <a href="/resources/plastic-surgery-patient-age" class="inline-flex items-center gap-1.5 text-sm text-brand hover:text-brand-dark transition-colors font-medium">
@@ -30,45 +30,45 @@ import RelatedResearch from '../../../components/RelatedResearch.astro';
         <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">The Two Products</h2>
 
         <h3 class="text-lg font-bold text-ink mb-2">Product 1 (Primary): The Modern Plastic Surgery Patient: Age, 2018–2024</h3>
-        <p class="text-body text-[17px] leading-[1.7] mb-3">
+        <p class="text-body text-[21px] leading-[1.7] mb-3">
           <strong>Source:</strong> American Society of Plastic Surgeons (ASPS) only.<br />
           <strong>Years:</strong> 2018, 2020, 2021 (interpolated), 2022, 2023, 2024.<br />
           <strong>Procedures:</strong> 14, with one mean-age value per procedure-year.
         </p>
-        <p class="text-body text-[17px] leading-[1.7] mb-4">
+        <p class="text-body text-[21px] leading-[1.7] mb-4">
           This is the credible product. One reporting body, one bracket structure, one survey methodology. Apparent changes between years are far more likely to reflect real demographic shifts than measurement artifacts.
         </p>
 
         <h3 class="text-lg font-bold text-ink mb-2">Product 2 (Supporting): The Plastic Surgery Patient Age Atlas, 2001–2024</h3>
-        <p class="text-body text-[17px] leading-[1.7] mb-3">
+        <p class="text-body text-[21px] leading-[1.7] mb-3">
           <strong>Sources:</strong> ASAPS (Aesthetic Society) for 2001–2017 and 2019; ASPS for 2018, 2020, 2022, 2023, 2024; interpolated for 2021.<br />
           <strong>Years:</strong> 24 consecutive years, 2001 through 2024.<br />
           <strong>Procedures:</strong> 14, with mixed coverage (some procedures lack early-year data).
         </p>
-        <p class="text-body text-[17px] leading-[1.7]">
+        <p class="text-body text-[21px] leading-[1.7]">
           This is the historical context product. It exists to answer the question "what does the long-arc look like?" but it cannot be used to make confident year-to-year claims because of methodological discontinuities at 2018 and 2019.
         </p>
       </div>
 
       <div>
         <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">Why The Split</h2>
-        <p class="text-body text-[17px] leading-[1.7] mb-3">
+        <p class="text-body text-[21px] leading-[1.7] mb-3">
           A defensible research asset needs three things: a single coherent dataset, a clear narrative, and the ability to answer follow-up questions without methodology reversals.
         </p>
-        <p class="text-body text-[17px] leading-[1.7]">
+        <p class="text-body text-[21px] leading-[1.7]">
           The 2018–2024 ASPS dataset gives all three. The 24-year reconstruction gives long-arc context but makes the central narrative harder to defend if a reader asks "what changed in 2018?" The split lets the strong, narrow story lead, with the long history as supporting documentation.
         </p>
       </div>
 
       <div>
         <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">Mean Age Computation</h2>
-        <p class="text-body text-[17px] leading-[1.7] mb-4">
+        <p class="text-body text-[21px] leading-[1.7] mb-4">
           For each (procedure, year), the source report provides patient counts in age brackets. We apply each bracket's arithmetic midpoint as the assumed within-bracket mean and compute a count-weighted average:
         </p>
         <div class="bg-[#F8F7FA] rounded-xl border border-[#0A0F1E]/8 px-6 py-4 font-mono text-sm text-ink mb-4">
           mean_age = &Sigma;(count<sub>i</sub> &times; midpoint<sub>i</sub>) / &Sigma;(count<sub>i</sub>)
         </div>
-        <p class="text-body text-[17px] leading-[1.7]">
+        <p class="text-body text-[21px] leading-[1.7]">
           This is a standard demographic technique for working with bracketed count data.
         </p>
       </div>
@@ -94,7 +94,7 @@ import RelatedResearch from '../../../components/RelatedResearch.astro';
             </tbody>
           </table>
         </div>
-        <p class="text-body text-[16px] leading-[1.7] mb-6">
+        <p class="text-body text-[21px] leading-[1.7] mb-6">
           Where ASPS reports separate 55–69 and 70+ counts, they are summed and treated as a combined 55+ bracket with midpoint 65.0.
         </p>
 
@@ -139,13 +139,13 @@ import RelatedResearch from '../../../components/RelatedResearch.astro';
 
       <div>
         <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">Why The Modern Dataset Is More Credible</h2>
-        <p class="text-body text-[17px] leading-[1.7] mb-4">
+        <p class="text-body text-[21px] leading-[1.7] mb-4">
           Two methodological events make 2001–2017 ASAPS data and 2018+ ASPS data not directly comparable:
         </p>
-        <p class="text-body text-[17px] leading-[1.7] mb-3">
+        <p class="text-body text-[21px] leading-[1.7] mb-3">
           <strong>1. Different age brackets.</strong> ASAPS pre-2019 used a 19–34 lump that ASPS splits into 20–29 and 30–39. The ASPS structure exposes finer age resolution and pulls weighted means in the direction of whichever sub-bracket is heaviest, typically 20–29 for elective procedures. This single bracket-design difference produces apparent age shifts of 1–3 years that reflect measurement, not demographics.
         </p>
-        <p class="text-body text-[17px] leading-[1.7]">
+        <p class="text-body text-[21px] leading-[1.7]">
           <strong>2. Different sampling frames.</strong> ASAPS pre-2018 surveyed plastic surgeons, dermatologists, and otolaryngologists in a multi-specialty sample. ASAPS 2019 narrowed to plastic surgeons only. ASPS surveys ASPS members and a wider physician network including non-ASPS providers. The compositions are different, and they capture different patient pools.
         </p>
       </div>
@@ -183,7 +183,7 @@ import RelatedResearch from '../../../components/RelatedResearch.astro';
 
       <div>
         <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">Years With No Data</h2>
-        <ul class="space-y-3 text-body text-[17px] leading-[1.7] list-disc pl-5">
+        <ul class="space-y-3 text-body text-[21px] leading-[1.7] list-disc pl-5">
           <li><strong>2000:</strong> ASAPS skipped publication of a 2000 report.</li>
           <li><strong>2018 ASAPS:</strong> ASAPS did not publish a 2018 report; ASPS 2018 is used instead.</li>
           <li><strong>2021:</strong> Neither organization published a standalone 2021 dataset. ASPS combined 2020 and 2021 into one report. The 2021 value is the linear midpoint of the 2020 and 2022 ASPS values. On the chart, interpolated points use an open marker.</li>
@@ -193,11 +193,11 @@ import RelatedResearch from '../../../components/RelatedResearch.astro';
 
       <div>
         <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">Sources</h2>
-        <p class="text-body text-[17px] leading-[1.7] mb-3">
+        <p class="text-body text-[21px] leading-[1.7] mb-3">
           <strong>ASPS (primary):</strong> Plastic Surgery Statistics Report, 2018, 2020, 2022, 2023, and 2024 editions.<br />
           Index: <a href="https://www.plasticsurgery.org/news/plastic-surgery-statistics" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">plasticsurgery.org/news/plastic-surgery-statistics</a>
         </p>
-        <p class="text-body text-[17px] leading-[1.7]">
+        <p class="text-body text-[21px] leading-[1.7]">
           <strong>ASAPS (supporting):</strong> Cosmetic Surgery National Data Bank, 2001–2017 and 2019 editions.<br />
           Index: <a href="https://www.theaestheticsociety.org/media/procedural-statistics" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">theaestheticsociety.org/media/procedural-statistics</a>
         </p>
@@ -205,7 +205,7 @@ import RelatedResearch from '../../../components/RelatedResearch.astro';
 
       <div>
         <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">Citation</h2>
-        <div class="bg-[#F8F7FA] rounded-xl border border-[#0A0F1E]/8 px-6 py-5 space-y-3 text-body text-[16px] leading-[1.7]">
+        <div class="bg-[#F8F7FA] rounded-xl border border-[#0A0F1E]/8 px-6 py-5 space-y-3 text-body text-[21px] leading-[1.7]">
           <p>Ranking Atlas (2026). <em>The Modern Plastic Surgery Patient: Age, 2018–2024.</em> Compiled from the ASPS Plastic Surgery Statistics Report. https://ranking-atlas.com/resources/plastic-surgery-patient-age/</p>
           <p>Ranking Atlas (2026). <em>The Plastic Surgery Patient Age Atlas, 2001–2024.</em> Compiled from the ASAPS Cosmetic Surgery National Data Bank (2001–2019) and the ASPS Plastic Surgery Statistics Report (2018, 2020, 2022–2024).</p>
         </div>
