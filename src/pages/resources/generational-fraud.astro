@@ -1,0 +1,447 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import RelatedResearch from '../../components/RelatedResearch.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Americans Aged 50\u201364 Are the Most Fraud-Vulnerable Generation in the United States",
+  "description": "A composite index using six federal and survey sources ranks generational fraud risk on victimisation rate, complaint volume, and loss severity. Americans aged 50\u201364 record the highest identity theft rate of any US age cohort (BJS).",
+  "url": "https://ranking-atlas.com/resources/generational-fraud",
+  "image": "https://ranking-atlas.com/assets/images/resources/generational-fraud/hero.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Grainger",
+    "url": "https://ranking-atlas.com/about",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ranking Atlas",
+      "url": "https://ranking-atlas.com"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/daniel-grainger/",
+      "https://ranking-atlas.com/about"
+    ]
+  },
+  "datePublished": "2026-03-15T00:00:00+00:00",
+  "dateModified": "2026-03-15T00:00:00+00:00",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
+};
+---
+
+<Layout
+  title="The 2026 Generational Fraud Index | Ranking Atlas"
+  description="Americans aged 50–64 have the highest identity theft rate in the United States, according to BJS data. A new composite index ranks generational fraud risk across six federal sources."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+<div class="bg-white">
+
+  <!-- ── 1. Hero ──────────────────────────────────────────────────────── -->
+  <section class="pt-20 md:pt-28 pb-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Data Study · March 2026</div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
+        Americans aged 50–64 are the most fraud-vulnerable generation in the United States
+      </h1>
+      <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-4">
+        A new composite index using six federal and survey sources ranks generational fraud risk on victimisation rate, complaint volume, and loss severity. The age group most likely to lose their identity isn't the one you'd guess.
+      </p>
+      <div class="flex items-center gap-3 mb-6">
+        <a href="/about" class="shrink-0">
+          <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+        </a>
+        <div>
+          <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+          <p class="text-sm text-[#64748B]">Published <time datetime="2026-03-15">March 2026</time> &nbsp;·&nbsp; 16-minute read</p>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="/assets/resources/generational-fraud/generational-fraud-index-2026.pdf"
+          class="inline-flex items-center justify-center gap-2 text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-4px_rgba(93,79,224,0.6)]"
+          style="background: linear-gradient(180deg, #6B5CE8 0%, #5D4FE0 50%, #4F41D0 100%); box-shadow: 0 4px 20px -4px rgba(93,79,224,0.5), 0 1px 2px rgba(93,79,224,0.2), inset 0 1px 0 rgba(255,255,255,0.15);"
+        >
+          Download the full white paper (PDF)
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+        <a
+          href="#index"
+          class="inline-flex items-center justify-center gap-2 font-bold px-6 py-3 border-2 border-[#5D4FE0] text-[#5D4FE0] rounded-lg text-base transition-all duration-200 hover:bg-[#5D4FE0]/5"
+        >
+          Read the index methodology
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. Stat cards ────────────────────────────────────────────────── -->
+  <section class="py-12 md:py-16 bg-[#F8F7FA] border-b border-[#0A0F1E]/8">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 shadow-card p-6">
+          <div class="text-3xl md:text-4xl font-bold text-brand mb-2">10.9%</div>
+          <p class="text-sm text-[#64748B] leading-snug">Identity theft rate, ages 50–64. Highest of any US cohort (BJS).</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 shadow-card p-6">
+          <div class="text-3xl md:text-4xl font-bold text-brand mb-2">$12.5B</div>
+          <p class="text-sm text-[#64748B] leading-snug">Total reported US fraud losses, 2024 (FTC).</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 shadow-card p-6">
+          <div class="text-3xl md:text-4xl font-bold text-brand mb-2">41%</div>
+          <p class="text-sm text-[#64748B] leading-snug">US adults who have experienced fraud (AARP 2025).</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 shadow-card p-6">
+          <div class="text-3xl md:text-4xl font-bold text-brand mb-2">6.6%</div>
+          <p class="text-sm text-[#64748B] leading-snug">Identity theft victims who file a police report (BJS).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. Essay intro ───────────────────────────────────────────────── -->
+  <section class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none text-body space-y-6 text-[19px] leading-[1.75]">
+        <p>
+          The widely held assumption is that older adults are the primary targets of fraud in America. Identity theft awareness campaigns, family-safety guides, and consumer protection messaging are overwhelmingly aimed at protecting people aged 65 and older. The federal data tells a different story.
+        </p>
+        <p>
+          The 50–64 cohort, not the over-65s, records the highest identity theft victimisation rate of any US age group. Working-age Americans aged 35 to 64 carry victimisation rates higher than every other group on the chart. While older adults do lose substantially more money per incident when fraud succeeds, younger adults report being defrauded far more often.
+        </p>
+        <p>
+          <a href="/" class="text-brand hover:text-brand-dark underline underline-offset-2">Ranking Atlas</a> built this report on six federal and nationally representative sources: the FBI IC3 2024 Annual Report, the FTC Consumer Sentinel Network 2024, the BJS Victims of Identity Theft 2021 study, US Census 2024 population estimates, the AARP 2025 Fraud Survey, and the FDIC 2023 Household Survey. The full methodology, source citations, and limitations are disclosed in section 6.
+        </p>
+
+        <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 my-8 shadow-card not-prose">
+          <p class="text-sm font-semibold text-ink mb-3">In this report, you'll see:</p>
+          <ul class="space-y-2 text-base text-[#475569] list-disc pl-5">
+            <li>The full BJS victimisation table, and why the 50–64 number is the most consequential single statistic in US fraud data</li>
+            <li>Why younger adults lose money more frequently and older adults lose more per incident: a structural inversion FTC data makes unambiguous</li>
+            <li>The Generational Fraud Risk Index: a composite score combining six federal and survey sources into a single ranking</li>
+            <li>The reporting gap that distorts every published fraud number, including the ones in this report</li>
+            <li>The full source list, every methodological caveat, and the data behind each chart</li>
+          </ul>
+        </div>
+
+        <p>Here's what the data says.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. Section 1: BJS victimisation table ───────────────────────── -->
+  <section id="identity-theft-by-age" class="py-16 bg-[#F8F7FA] border-b border-[#0A0F1E]/8">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">1. The age group most likely to have their identity stolen isn't who you think</h2>
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75] mb-8">
+        <p>The Bureau of Justice Statistics asks a clean question every few years through the National Crime Victimization Survey: in the past twelve months, did anyone misuse your personal information? The most recent published wave (2021) is the cleanest population-level estimate of identity theft prevalence in the United States. The survey covers 263 million Americans aged 16 or older.</p>
+        <p>The result by age band:</p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-[#0A0F1E]/8 bg-[#F8F7FA]">
+              <th class="px-4 py-3 font-semibold text-ink">Age group</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">BJS victimisation rate (12-month)</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">2024 US population</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Implied affected population</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">16–17</td><td class="px-4 py-3 text-right text-[#64748B]">1.4%</td><td class="px-4 py-3 text-right text-[#64748B]">9,070,885</td><td class="px-4 py-3 text-right text-[#64748B]">~127,000</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">18–24</td><td class="px-4 py-3 text-right text-[#64748B]">7.0%</td><td class="px-4 py-3 text-right text-[#64748B]">31,363,181</td><td class="px-4 py-3 text-right text-[#64748B]">~2.2 million</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">25–34</td><td class="px-4 py-3 text-right text-[#64748B]">8.9%</td><td class="px-4 py-3 text-right text-[#64748B]">46,453,864</td><td class="px-4 py-3 text-right text-[#64748B]">~4.1 million</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">35–49</td><td class="px-4 py-3 text-right text-[#64748B]">9.9%</td><td class="px-4 py-3 text-right text-[#64748B]">65,833,273</td><td class="px-4 py-3 text-right text-[#64748B]">~6.5 million</td></tr>
+            <tr class="bg-brand/5 hover:bg-brand/10 transition-colors"><td class="px-4 py-3 font-semibold text-ink">50–64</td><td class="px-4 py-3 text-right text-ink font-semibold">10.9% (highest)</td><td class="px-4 py-3 text-right text-ink">62,148,032</td><td class="px-4 py-3 text-right text-ink font-semibold">~6.8 million</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">65+</td><td class="px-4 py-3 text-right text-[#64748B]">8.6%</td><td class="px-4 py-3 text-right text-[#64748B]">55,747,169</td><td class="px-4 py-3 text-right text-[#64748B]">~4.8 million</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-[#64748B] max-w-3xl">
+        Source: BJS NCJ 306474, Table 2 (2021 survey data). Population denominators: US Census Bureau NC-EST2024-AGESEX-RES. Implied affected population applies 2021 BJS rates to 2024 Census figures for directional illustration.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75] mt-8">
+        <p>Roughly 1 in 9 Americans aged 50 to 64 experienced identity theft in a single twelve-month window. The 65-and-older group, the demographic most consumer protection messaging targets, recorded the second-lowest rate among adults at 8.6%, lower than every working-age cohort above 35.</p>
+      </div>
+
+      <aside class="bg-white border-l-4 border-brand rounded-r-xl p-6 md:p-8 my-8 max-w-3xl shadow-card not-prose">
+        <p class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Note</p>
+        <p class="text-body text-lg leading-relaxed mb-3">
+          The BJS data does not directly explain why the 50–64 cohort tops the chart. What it does establish is that the working-age population in their accumulation years, the cohort with the most active credit accounts, the largest investable assets, and the most exposure to financial fraud surface area, carries the highest fraud frequency. The narrative that fraud is primarily a senior issue is contradicted by the population data.
+        </p>
+        <p class="text-body text-lg leading-relaxed">
+          This is not an argument that older adults face less harm. It is an argument that the population most exposed to fraud isn't the one currently being told that.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ── 5. Section 2: FTC frequency vs severity ─────────────────────── -->
+  <section id="frequency-vs-severity" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">2. Younger adults lose money more often. Older adults lose more when they do.</h2>
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75] mb-8">
+        <p>If victimisation rate is the first dimension of fraud risk, financial loss is the second. The FTC Consumer Sentinel Network Data Book 2024 tracks both whether complainants reported losing money and how much they lost. The two metrics move in opposite directions across the age curve.</p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-[#0A0F1E]/8 bg-[#F8F7FA]">
+              <th class="px-4 py-3 font-semibold text-ink">Age group</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">% reporting a fraud loss</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Median loss per incident</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Total reported losses</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">20–29</td><td class="px-4 py-3 text-right text-[#64748B]">44%</td><td class="px-4 py-3 text-right text-[#64748B]">$417</td><td class="px-4 py-3 text-right text-[#64748B]">$430M</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">30–39</td><td class="px-4 py-3 text-right text-[#64748B]">35%</td><td class="px-4 py-3 text-right text-[#64748B]">$450</td><td class="px-4 py-3 text-right text-[#64748B]">$810M</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">40–49</td><td class="px-4 py-3 text-right text-[#64748B]">38%</td><td class="px-4 py-3 text-right text-[#64748B]">$500</td><td class="px-4 py-3 text-right text-[#64748B]">$971M</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">50–59</td><td class="px-4 py-3 text-right text-[#64748B]">40%</td><td class="px-4 py-3 text-right text-[#64748B]">$520</td><td class="px-4 py-3 text-right text-[#64748B]">$1.18B</td></tr>
+            <tr class="bg-brand/5 hover:bg-brand/10 transition-colors"><td class="px-4 py-3 font-semibold text-ink">60–69</td><td class="px-4 py-3 text-right text-ink font-semibold">51%</td><td class="px-4 py-3 text-right text-ink font-semibold">$691</td><td class="px-4 py-3 text-right text-ink">$1.01B</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">70–79</td><td class="px-4 py-3 text-right text-[#64748B]">24%</td><td class="px-4 py-3 text-right text-[#64748B]">$1,000</td><td class="px-4 py-3 text-right text-[#64748B]">$887M</td></tr>
+            <tr class="bg-brand/5 hover:bg-brand/10 transition-colors"><td class="px-4 py-3 font-semibold text-ink">80+</td><td class="px-4 py-3 text-right text-ink">21%</td><td class="px-4 py-3 text-right text-ink font-semibold">$1,650</td><td class="px-4 py-3 text-right text-ink">$319M</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-[#64748B] max-w-3xl">
+        Source: FTC Consumer Sentinel Network Data Book 2024, p. 13.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75] mt-8">
+        <p>Younger Americans get caught by fraud more often. Older Americans get caught less often but lose more when they do. The 80+ group loses 4 times more per incident than the 20–29 group. The 70–79 group loses 2.4 times more.</p>
+        <p>The 60–69 band sits in the middle of both axes and arguably represents the most damaging position on the curve: 51% of complainants report a loss (highest of any older cohort) combined with a median loss of $691 (above every younger cohort). High frequency, elevated severity. No other cohort combines both pressures to the same degree.</p>
+      </div>
+
+      <aside class="bg-[#F8F7FA] border-l-4 border-brand rounded-r-xl p-6 md:p-8 my-8 max-w-3xl not-prose">
+        <p class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Note</p>
+        <p class="text-body text-lg leading-relaxed">
+          What this means for prevention design is structural. Programmes targeting younger adults reduce the volume of fraud incidents. Programmes targeting older adults reduce the per-incident harm. They are different problems requiring different interventions. Generic awareness campaigns treat them as one issue and address neither efficiently.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ── 6. Section 3: Social media contact method ───────────────────── -->
+  <section id="social-media" class="py-16 bg-[#F8F7FA] border-b border-[#0A0F1E]/8">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">3. Social media is now the highest-loss-rate fraud contact method in the United States</h2>
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75] mb-8">
+        <p>The FTC also tracks how fraud reaches its victims. Among complaints where the contact method was identified, social media and websites or apps are now the two channels most likely to extract money from the target.</p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-[#0A0F1E]/8 bg-[#F8F7FA]">
+              <th class="px-4 py-3 font-semibold text-ink">Contact method</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">% of reports</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">% with dollar loss</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Aggregate loss</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Median loss</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Social media</td><td class="px-4 py-3 text-right text-[#64748B]">13%</td><td class="px-4 py-3 text-right text-[#64748B]">70%</td><td class="px-4 py-3 text-right text-[#64748B]">$1,858M</td><td class="px-4 py-3 text-right text-[#64748B]">$1,500</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Website or app</td><td class="px-4 py-3 text-right text-[#64748B]">12%</td><td class="px-4 py-3 text-right text-[#64748B]">68%</td><td class="px-4 py-3 text-right text-[#64748B]">$976M</td><td class="px-4 py-3 text-right text-[#64748B]">$990</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Mail</td><td class="px-4 py-3 text-right text-[#64748B]">3%</td><td class="px-4 py-3 text-right text-[#64748B]">62%</td><td class="px-4 py-3 text-right text-[#64748B]">$470M</td><td class="px-4 py-3 text-right text-[#64748B]">$1,000</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Phone call</td><td class="px-4 py-3 text-right text-[#64748B]">19%</td><td class="px-4 py-3 text-right text-[#64748B]">19%</td><td class="px-4 py-3 text-right text-[#64748B]">$948M</td><td class="px-4 py-3 text-right text-[#64748B]">$1,000</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Text</td><td class="px-4 py-3 text-right text-[#64748B]">16%</td><td class="px-4 py-3 text-right text-[#64748B]">12%</td><td class="px-4 py-3 text-right text-[#64748B]">$1,072M</td><td class="px-4 py-3 text-right text-[#64748B]">$633</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Email</td><td class="px-4 py-3 text-right text-[#64748B]">25%</td><td class="px-4 py-3 text-right text-[#64748B]">11%</td><td class="px-4 py-3 text-right text-[#64748B]">$502M</td><td class="px-4 py-3 text-right text-[#64748B]">$600</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Online ad or pop-up</td><td class="px-4 py-3 text-right text-[#64748B]">3%</td><td class="px-4 py-3 text-right text-[#64748B]">40%</td><td class="px-4 py-3 text-right text-[#64748B]">$246M</td><td class="px-4 py-3 text-right text-[#64748B]">$180</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-[#64748B] max-w-3xl">
+        Source: FTC Consumer Sentinel Network Data Book 2024, p. 12. Based on 1,509,002 reports with contact method identified out of 2,600,678 total fraud reports.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75] mt-8">
+        <p>Email is the most common contact method (25% of reports) but the lowest conversion to actual loss (11%). The volume of email-based fraud means it still produces $502M in aggregate reported losses, but the per-attempt success rate is low. Phishing, by design, is a low-conversion mass channel.</p>
+        <p>Social media inverts that. Only 13% of fraud reports identify social media as the contact method, but when fraud arrives via social media, 70% of complainants report a financial loss, by some distance the highest conversion rate of any channel. Combined social media and website or app losses exceeded $2.8 billion in 2024.</p>
+        <p>This matters because the same digital surface that has become the dominant fraud delivery channel is also the dominant financial transaction channel. The FDIC's 2023 household survey records that 48.3% of US banked households now use mobile banking as their primary account access method, up from 5.4% in 2013. Among the 65-and-older cohort, mobile banking adoption more than doubled between 2019 and 2023, reaching 19.3%. The attack surface and the financial surface are converging.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. Section 4: The Generational Fraud Risk Index ─────────────── -->
+  <section id="index" class="py-16 border-b border-[#0A0F1E]/8 scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">4. The Generational Fraud Risk Index combines all of this into a single ranking</h2>
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75] mb-8">
+        <p>The preceding sections present each source separately. The question that no individual source answers is: which age cohort faces the greatest overall fraud burden when victimisation, complaint volume, and loss severity are weighed together?</p>
+        <p>The Generational Fraud Risk Index combines those three dimensions into a single composite score per age band. The methodology is fully disclosed in the full white paper and summarised here. Three components feed the score:</p>
+      </div>
+
+      <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 md:p-8 mb-10 shadow-card">
+        <ul class="space-y-4 text-base text-[#475569] list-disc pl-5">
+          <li><span class="font-semibold text-ink">Victimisation rate (40% weight):</span> BJS 2021 12-month identity theft prevalence per cohort. Weighted highest because it is the only component not dependent on whether a victim chose to report.</li>
+          <li><span class="font-semibold text-ink">Per-capita complaint volume (25% weight):</span> FTC 2024 fraud complaints divided by 2024 Census population. Weighted lowest because complaint data is known to be biased downward for older adults who report less often.</li>
+          <li><span class="font-semibold text-ink">Financial severity (35% weight):</span> expected loss per complainant, calculated as the product of the percentage of complainants reporting a loss and the median reported loss.</li>
+        </ul>
+      </div>
+
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75] mb-8">
+        <p>Each component is normalised 0 to 100 across the five cohorts using min-max scaling, then combined with the weights above.</p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-[#0A0F1E]/8 bg-[#F8F7FA]">
+              <th class="px-4 py-3 font-semibold text-ink">Rank</th>
+              <th class="px-4 py-3 font-semibold text-ink">Cohort</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Vic score (40%)</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Volume score (25%)</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Severity score (35%)</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Composite</th>
+              <th class="px-4 py-3 font-semibold text-ink">Primary driver</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="bg-brand/5 hover:bg-brand/10 transition-colors"><td class="px-4 py-3 font-semibold text-ink">#1</td><td class="px-4 py-3 font-semibold text-ink">Ages 50–64</td><td class="px-4 py-3 text-right text-ink">100.0</td><td class="px-4 py-3 text-right text-ink">63.3</td><td class="px-4 py-3 text-right text-ink">82.2</td><td class="px-4 py-3 text-right text-ink font-bold">84.6</td><td class="px-4 py-3 text-[#475569]">Highest BJS victimisation rate; strong volume + severity</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">#2</td><td class="px-4 py-3 font-medium text-ink">Ages 25–34</td><td class="px-4 py-3 text-right text-[#64748B]">48.7</td><td class="px-4 py-3 text-right text-[#64748B]">100.0</td><td class="px-4 py-3 text-right text-[#64748B]">45.5</td><td class="px-4 py-3 text-right text-ink font-semibold">60.4</td><td class="px-4 py-3 text-[#64748B]">Highest per-capita complaint volume of any cohort</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">#3</td><td class="px-4 py-3 font-medium text-ink">Ages 35–49</td><td class="px-4 py-3 text-right text-[#64748B]">74.4</td><td class="px-4 py-3 text-right text-[#64748B]">17.1</td><td class="px-4 py-3 text-right text-[#64748B]">52.6</td><td class="px-4 py-3 text-right text-ink font-semibold">52.4</td><td class="px-4 py-3 text-[#64748B]">Second-highest BJS victimisation rate (9.9%)</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">#4</td><td class="px-4 py-3 font-medium text-ink">Ages 65+</td><td class="px-4 py-3 text-right text-[#64748B]">41.0</td><td class="px-4 py-3 text-right text-[#64748B]">0.0</td><td class="px-4 py-3 text-right text-[#64748B]">100.0</td><td class="px-4 py-3 text-right text-ink font-semibold">51.4</td><td class="px-4 py-3 text-[#64748B]">Highest severity score; volume suppressed by underreporting</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">#5</td><td class="px-4 py-3 font-medium text-ink">Ages 18–24</td><td class="px-4 py-3 text-right text-[#64748B]">0.0</td><td class="px-4 py-3 text-right text-[#64748B]">49.5</td><td class="px-4 py-3 text-right text-[#64748B]">0.0</td><td class="px-4 py-3 text-right text-ink font-semibold">12.4</td><td class="px-4 py-3 text-[#64748B]">Lowest victimisation rate; lowest severity score</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-[#64748B] max-w-3xl">
+        Component scores normalised 0 to 100 within each dimension. Composite = 40% Victimisation + 25% Volume + 35% Severity.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75] mt-8">
+        <p>Ages 50–64 rank first because they are the only cohort scoring above the midpoint on all three dimensions simultaneously. Ages 25–34 rank second on the strength of complaint volume alone: the highest per-capita FTC complaint rate of any cohort, suggesting fraud touches younger adults more often than the BJS victimisation rate captures.</p>
+        <p>Ages 65+ rank fourth despite scoring 100 on the severity dimension. The composite rank is suppressed almost entirely by the lowest per-capita complaint volume in the index, which almost certainly reflects chronic underreporting rather than lower actual exposure. If the volume component is removed and the index weighted only on victimisation rate and severity, the 65+ cohort ranks second. The fourth-place position should be read as a data infrastructure problem as much as a risk ranking.</p>
+      </div>
+
+      <aside class="bg-[#F8F7FA] border-l-4 border-brand rounded-r-xl p-6 md:p-8 my-8 max-w-3xl not-prose">
+        <p class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Note</p>
+        <p class="text-body text-lg leading-relaxed">
+          The 50–64 finding survives every reasonable reweighting of the index. The 65+ finding does not. That asymmetry is one of the most important things this analysis surfaces: the federal data infrastructure systematically underestimates fraud exposure among the cohort that loses the most per incident. The same pattern shows up in any field where reporting is voluntary; for parallel evidence in a different domain, see <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">how citation equity is measured</a>.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ── 8. Section 5: Reporting gap ─────────────────────────────────── -->
+  <section id="reporting-gap" class="py-16 bg-[#F8F7FA] border-b border-[#0A0F1E]/8">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-4">5. The reporting gap is the largest single problem in US fraud data</h2>
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75] mb-8">
+        <p>Every number in this report is built on top of a reporting layer that captures a small fraction of actual fraud activity.</p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-[#0A0F1E]/8 bg-[#F8F7FA]">
+              <th class="px-4 py-3 font-semibold text-ink">Data point</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Figure</th>
+              <th class="px-4 py-3 font-semibold text-ink">Source</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Identity theft victims who reported to police (2021)</td><td class="px-4 py-3 text-right text-[#64748B]">6.6%</td><td class="px-4 py-3 text-[#64748B]">BJS NCJ 306474</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Existing credit card ID theft victims who reported to police</td><td class="px-4 py-3 text-right text-[#64748B]">2.7%</td><td class="px-4 py-3 text-[#64748B]">BJS NCJ 306474</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Fraud victims who reported to FTC or FBI (2025 survey)</td><td class="px-4 py-3 text-right text-[#64748B]">18%</td><td class="px-4 py-3 text-[#64748B]">AARP 2025</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Fraud victims who reported to local law enforcement</td><td class="px-4 py-3 text-right text-[#64748B]">20%</td><td class="px-4 py-3 text-[#64748B]">AARP 2025</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Fraud victims who contacted financial institution</td><td class="px-4 py-3 text-right text-[#64748B]">67%</td><td class="px-4 py-3 text-[#64748B]">AARP 2025</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Fraud victims who warned family or friends instead</td><td class="px-4 py-3 text-right text-[#64748B]">40%</td><td class="px-4 py-3 text-[#64748B]">AARP 2025</td></tr>
+            <tr class="hover:bg-[#F8F7FA] transition-colors"><td class="px-4 py-3 font-medium text-ink">Fraud victims who told no one</td><td class="px-4 py-3 text-right text-[#64748B]">6%</td><td class="px-4 py-3 text-[#64748B]">AARP 2025</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-[#64748B] max-w-3xl">
+        Sources: BJS Victims of Identity Theft 2021 (NCJ 306474). AARP 2025 Fraud Survey, p. 11.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75] mt-8">
+        <p>The FTC's own underreporting analysis of 2023 figures produced two scenario estimates: a conservative $23.7 billion and an upper bound of $158.3 billion in true fraud losses. The agency reported $10 billion that year. Both scenarios place true losses at multiples of the published figure.</p>
+        <p>The structural reason for underreporting is straightforward enough to state plainly. The BJS 2021 data records that the primary reason victims did not report identity theft to police was that the matter was handled in another way, most commonly by the victim or their financial institution. 67% of AARP respondents contacted their bank or card issuer after being defrauded. Roughly two-thirds of fraud is resolved through private channels that produce no public record.</p>
+        <p>Until reporting to federal agencies produces a tangible benefit to the individual reporter, the structural incentive to file is weak. The data infrastructure that policymakers, researchers, and the press rely on to size the fraud problem will continue to undercount it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. Section 6: Methodology ───────────────────────────────────── -->
+  <section id="methodology" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mb-6">6. Methodology and sources</h2>
+      <div class="prose prose-lg max-w-none text-body space-y-5 text-[18px] leading-[1.75]">
+        <p>This report synthesises data from six federal and nationally representative sources. All figures are drawn directly from published primary sources or calculated using disclosed methodology from those sources.</p>
+        <ul class="space-y-3 list-disc pl-5">
+          <li><span class="font-semibold text-ink">FBI IC3 Annual Report 2024:</span> cybercrime complaint volumes and internet fraud losses.</li>
+          <li><span class="font-semibold text-ink">FTC Consumer Sentinel Network Data Book 2024:</span> consumer-reported fraud, identity theft, and loss data by age and contact method.</li>
+          <li><span class="font-semibold text-ink">BJS Victims of Identity Theft 2021 (NCJ 306474):</span> survey-based population victimisation rates from the National Crime Victimization Survey Identity Theft Supplement. The 2021 ITS questionnaire was redesigned; BJS states the data is not comparable to prior years.</li>
+          <li><span class="font-semibold text-ink">US Census Bureau Vintage 2024 Population Estimates (NC-EST2024-AGESEX-RES):</span> national population denominators by age group.</li>
+          <li><span class="font-semibold text-ink">AARP 2025 Fraud Survey:</span> probability-based national sample (n=1,423, ±3.4% confidence interval) conducted via NORC AmeriSpeak, February 2025.</li>
+          <li><span class="font-semibold text-ink">FDIC 2023 National Survey of Unbanked and Underbanked Households:</span> used for digital banking access data only; FDIC does not measure fraud directly.</li>
+        </ul>
+        <p>Where rates, population-level comparisons, or age-normalised metrics appear in this report, they are calculated using published denominators and identified as derived. These sources measure different dimensions of fraud and are not arithmetically addable. The methodological discipline behind this index mirrors the approach we applied in <a href="/resources/saas-pricing-inflation" class="text-brand hover:text-brand-dark underline underline-offset-2">our 2026 SaaS pricing study</a>: every figure traced to a primary source, every derived metric disclosed in line.</p>
+        <p>The full white paper includes the complete index methodology, the raw data inputs table behind every composite score, the geographic distribution data by state and metro area, the post-fraud recovery data, the full digital security behaviour breakdown, and the cross-source methodological notes.</p>
+        <p>
+          <a
+            href="/assets/resources/generational-fraud/generational-fraud-index-2026.pdf"
+            class="inline-flex items-center gap-2 text-brand hover:text-brand-dark font-semibold underline underline-offset-2"
+          >
+            Download the full 2026 Generational Fraud Index white paper (PDF)
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 10. Closing CTA band ────────────────────────────────────────── -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-[#0A0F1E] rounded-2xl p-8 md:p-12 text-white">
+        <h2 class="text-2xl md:text-4xl font-bold tracking-tight mb-3 leading-tight">Earn citations from research, not retainers.</h2>
+        <p class="text-base md:text-lg text-white/80 mb-8 leading-relaxed max-w-2xl">
+          Ranking Atlas runs per-campaign editorial PR for B2B SaaS. Fixed price. Guaranteed placements on authoritative publishers.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+            Start a campaign
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="/ai-search-visibility" class="inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 border-2 border-white/30 text-white hover:bg-white/5 rounded-lg transition-colors">
+            How citation equity works
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <RelatedResearch
+    items={[
+      {
+        title: "How Brands Get Cited By AI: The 2026 Guide To Citation Equity",
+        description: "This guide explains how AI answer engines choose which brands to cite, and what produces the editorial pattern that puts you in the answer.",
+        href: "/resources/citation-equity",
+      },
+      {
+        title: "SaaS Price Comparison 2020–2026",
+        description: "Entry-tier pricing for 65 SaaS tools tracked across six years and 12 categories. Original primary-source data with full Wayback methodology disclosed.",
+        href: "/resources/saas-pricing-inflation",
+      },
+      {
+        title: "Who AI Names When You Ask for ICT Experts",
+        description: "2,286 named individuals from 2,520 AI responses across ChatGPT, Claude, Gemini, and Perplexity. Gender, role, and consensus data for every person cited.",
+        href: "/resources/ai-names-ict-experts",
+      },
+    ]}
+  />
+
+  <AuthorBio />
+
+</div>
+
+</Layout>
