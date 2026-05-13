@@ -52,7 +52,7 @@ const breadcrumbs = breadcrumbSchema([
 
     <!-- Mandatory Article Header Pattern -->
     <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Guide</div>
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
+    <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-6">
       How Brands Get Cited By AI: The 2026 Guide To Citation Equity
     </h1>
     <div class="flex items-center gap-3 mb-6">
@@ -103,7 +103,7 @@ const breadcrumbs = breadcrumbSchema([
     <!-- Body prose -->
     <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
 
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">What Is Citation Equity?</h2>
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">What Is Citation Equity?</h2>
 
       <Definition term="Citation Equity">
         <p>{definitionProse}</p>
@@ -121,7 +121,7 @@ const breadcrumbs = breadcrumbSchema([
         This is the frame the rest of the guide sits inside. Everything LLMs do (retrieve, chunk, embed, synthesise, cite) reduces to a single question the model is trying to answer: is this brand real enough, verified enough, and consistently enough described that I can stake my response on it? Citation equity is the answer.
       </p>
 
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">How Do LLMs Actually Decide What To Cite?</h2>
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">How Do LLMs Actually Decide What To Cite?</h2>
 
       <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
         <img
@@ -158,7 +158,7 @@ const breadcrumbs = breadcrumbSchema([
         <a href="https://www.growth-memo.com/p/the-science-of-how-ai-picks-its-sources" class="inline-link" target="_blank" rel="noopener">Kevin Indig</a>'s research on 815,000 query-page pairs across 10 industries found that a page at retrieval position 1 has a 58% chance of being cited, versus 14% at position 10. Even at the top of the retrieval pool, a page only converts to a citation 58% of the time. At position 10, only one in seven pages gets through. The bottleneck is selection, not discovery.
       </p>
 
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">What Is The Retrieval-Citation Gap?</h2>
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">What Is The Retrieval-Citation Gap?</h2>
 
       <p>
         The retrieval-citation gap is the diagnostic name for what happens when your page enters the retrieval pool but gets eliminated at the selection stage. It's the 85% of retrieved pages that never appear in an answer. Most teams don't measure it because most AI visibility tools report citation counts, not retrieval-to-citation conversion rates.
@@ -188,7 +188,7 @@ const breadcrumbs = breadcrumbSchema([
         These five causes account for most of the retrieval-citation gap. None of them are about authority, traffic, or domain rating. All of them are structural, which means all of them are fixable on a single content refresh pass.
       </p>
 
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">What Predicts Which Brands Get Cited? A Cross-Study Synthesis</h2>
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">What Predicts Which Brands Get Cited? A Cross-Study Synthesis</h2>
 
       <p>
         Every major 2025-2026 study publishes its own findings in isolation. Kevin Indig analysed 1.2M ChatGPT responses. <a href="https://ahrefs.com/blog/llm-citations" class="inline-link" target="_blank" rel="noopener">Ahrefs</a> analysed 17 million citations across 7 platforms. <a href="https://seranking.com/blog/ranking-factors-for-chatgpt/" class="inline-link" target="_blank" rel="noopener">SE Ranking</a> analysed 216,524 pages. <a href="https://beomniscient.com/blog/how-llms-source-brand-information" class="inline-link" target="_blank" rel="noopener">Omniscient Digital</a> analysed 23,387 citations. AirOps analysed 548,534 retrieved pages. Nobody has put these findings next to each other and done the reconciliation work.
@@ -196,7 +196,7 @@ const breadcrumbs = breadcrumbSchema([
 
       <p>Three patterns emerge when you do.</p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">The Citation Economy Has Bifurcated By Query Intent</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">The Citation Economy Has Bifurcated By Query Intent</h3>
 
       <p>
         Every study that segments by query type finds the same split. Omniscient's analysis of 23,387 citations found that 57% of citations on branded queries go to reviews, listicles, forums, and case studies; 17% to directory sites; 12% to product pages; only 5.4% to thought leadership. <a href="https://www.brightedge.com/resources/weekly-ai-search-insights/how-different-ai-search-engines-choose-which-brands-to-recommend" class="inline-link" target="_blank" rel="noopener">BrightEdge</a>'s study across ChatGPT, Perplexity, and Google's AI engines found ChatGPT mentions brands in 99.3% of eCommerce responses versus just 6.2% for Google AI Overviews. <a href="https://writesonic.com/blog/llm-ai-search-industry-citation-study" class="inline-link" target="_blank" rel="noopener">Writesonic</a>'s model-behaviour analysis found that reasoning-capable models route more citations to pricing pages, homepages, and product pages, while default models stay anchored in blog content.
@@ -210,7 +210,7 @@ const breadcrumbs = breadcrumbSchema([
         Every piece of content needs to be classified by the query intent it serves, not by the keyword it targets, and structured accordingly. A brand writing "Best Fintech CRM" in the blog-post voice of an educational guide is optimising for the wrong shelf.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">The Authority Paradox</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">The Authority Paradox</h3>
 
       <p>
         Evertune's analysis of 7,000+ citations found something counterintuitive: the top 10% of most-cited pages across major LLMs have less traffic, rank for fewer keywords, and get fewer backlinks than the bottom 90%. Nearly 90% of ChatGPT citations come from pages not on the first or second page of Google results.
@@ -228,7 +228,7 @@ const breadcrumbs = breadcrumbSchema([
         Ranking authority buys you retrieval. Extractability wins selection. Both matter. Neither alone is enough.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">Freshness, Authority, And Third-Party Consensus Compound</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">Freshness, Authority, And Third-Party Consensus Compound</h3>
 
       <p>
         Ahrefs' analysis of 17 million citations across 7 AI search platforms found strong bias toward recently published or updated content. Indig's domain-concentration analysis found that roughly 30 domains capture 67% of all AI citations within any topic. Omniscient found that for branded queries, 68-85% of citations come from third-party sources rather than the brand's own website.
@@ -293,7 +293,7 @@ const breadcrumbs = breadcrumbSchema([
         </table>
       </div>
 
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Why Editorial Coverage Is The Verification Layer</h2>
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">Why Editorial Coverage Is The Verification Layer</h2>
 
       <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
         <img
@@ -332,7 +332,7 @@ const breadcrumbs = breadcrumbSchema([
         A brand with a DR30 domain, clean structural SEO, a solid G2 profile, and consistent editorial coverage across five authority publishers in its vertical will outperform a DR70 competitor with polished content and no editorial presence. The compounding is that strong.
       </p>
 
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">How Do Different AI Platforms Cite Different Sources?</h2>
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">How Do Different AI Platforms Cite Different Sources?</h2>
 
       <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
         <img
@@ -406,7 +406,7 @@ const breadcrumbs = breadcrumbSchema([
         Platform-specific tactics decay as platforms evolve. Citation equity built through editorial coverage compounds across platforms because every platform is optimising, at some layer, for brand verification.
       </p>
 
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Do Google Rankings Help You Get Cited By ChatGPT?</h2>
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">Do Google Rankings Help You Get Cited By ChatGPT?</h2>
 
       <p>Partially. The answer is more nuanced than the cited pack usually admits.</p>
 
@@ -426,7 +426,7 @@ const breadcrumbs = breadcrumbSchema([
         Once the SEO foundation is solid, every additional dollar is better spent on editorial coverage, third-party presence, and structural extractability than on squeezing more keyword rankings out of an already-optimised content library.
       </p>
 
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">How Long Does It Take To Build Citation Equity?</h2>
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">How Long Does It Take To Build Citation Equity?</h2>
 
       <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
         <img
@@ -461,41 +461,41 @@ const breadcrumbs = breadcrumbSchema([
         That timeline is longer than most marketing channels can justify, which is exactly why citation equity is a moat. The brands investing in it now will be structurally harder to displace than the brands that start in 2027.
       </p>
 
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">How To Start Building Citation Equity In B2B SaaS</h2>
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">How To Start Building Citation Equity In B2B SaaS</h2>
 
       <p>A practical playbook for a VP Marketing at a Series A-C B2B SaaS company starting from zero.</p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">1. Audit The Retrieval-Citation Gap On Your Existing Content</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">1. Audit The Retrieval-Citation Gap On Your Existing Content</h3>
 
       <p>
         Run your top 10 priority prompts through ChatGPT, Perplexity, and Gemini. Log where competitors appear and where you don't. For every prompt where a competitor is cited, identify which of the five gap causes is blocking your comparable content. Fix those causes first: it's the lowest-cost, fastest-signal intervention available.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">2. Structure Every Piece For Chunk-Level Extractability</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">2. Structure Every Piece For Chunk-Level Extractability</h3>
 
       <p>
         Answer block under every H2 (40-80 words). Question-phrased H2s that match how the prompt is actually asked. Comparison tables for comparative concepts. FAQ sections with schema. Inline attribution on every statistic. This is table stakes.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">3. Map Your Citation Equity Baseline</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">3. Map Your Citation Equity Baseline</h3>
 
       <p>
         Which authoritative publishers in your vertical currently cite your brand? Which cite your competitors? The gap between those two lists is your editorial coverage plan. In fintech: Finextra, PYMNTS, The Banker. In cybersecurity: Dark Reading, CSO Online, Security Week. In privacy: IAPP, The Record, Privacy Affairs. In data infrastructure: The New Stack, Datanami, DBTA.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">4. Build Off-Site Surfaces In Parallel</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">4. Build Off-Site Surfaces In Parallel</h3>
 
       <p>
         Complete and actively maintain your G2 profile. Pursue review velocity, not just review count. Participate authentically in the 2-3 subreddits where your buyer lives. Create a Wikipedia entry if notability allows. These signals don't replace editorial coverage: they support it and accelerate the compounding.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">5. Run Targeted Editorial Campaigns At The Publishers LLMs Already Cite</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">5. Run Targeted Editorial Campaigns At The Publishers LLMs Already Cite</h3>
 
       <p>
         This is the highest-leverage investment. Not volume PR. Not generic citation building. Placement at the specific publishers your retrieved-but-not-cited competitors are getting placed at. Reverse-engineer those domains, understand the editorial angles that earn coverage, and pitch accordingly. This is how Ranking Atlas helps B2B SaaS clients in fintech, privacy, and cybersecurity: reverse-engineering the editorial publishers LLMs actually cite in each vertical, then running placement campaigns to build citation equity at those exact surfaces.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">6. Track The Compounding, Not The Tactics</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">6. Track The Compounding, Not The Tactics</h3>
 
       <p>
         Set up LLM referral tracking in GA4. Run monthly share-of-voice audits across your priority prompts. Watch the trend line, not the weekly volatility. Citation equity compounds quarterly. A measurement cadence that matches the asset's actual behaviour is the difference between seeing progress and chasing noise.
@@ -505,39 +505,39 @@ const breadcrumbs = breadcrumbSchema([
         Every piece of editorial coverage, every structural fix, every third-party mention adds a unit of verification to the model's picture of your brand. The brands that start accumulating now will be structurally harder to catch. The window is still open.
       </p>
 
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Frequently Asked Questions</h2>
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">Frequently Asked Questions</h2>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">What Is Citation Equity?</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">What Is Citation Equity?</h3>
 
       <p>
         Citation equity is the compounding asset a brand builds through repeated appearance across authoritative sources LLMs trust. It's the AI-era equivalent of PageRank: an earned signal of verification that determines which brands appear in ChatGPT, Perplexity, and Gemini responses when buyers research a category. It compounds over months and quarters, and editorial coverage is the single strongest predictor of its accumulation.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">How Do LLMs Decide Which Brands To Cite?</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">How Do LLMs Decide Which Brands To Cite?</h3>
 
       <p>
         LLMs decompose a prompt into multiple sub-queries, retrieve candidate pages from a search index (primarily Bing for ChatGPT), chunk the pages into semantic passages, and select the passages most relevant to each sub-query. Citation happens at the passage level. Selection factors include domain authority, content freshness, passage-level extractability, entity clarity, and cross-source consensus. Content structure often matters more than content length.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">What Is The Retrieval-Citation Gap?</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">What Is The Retrieval-Citation Gap?</h3>
 
       <p>
         The retrieval-citation gap is the diagnostic term for pages that enter the retrieval pool but fail to survive selection. AirOps found that ChatGPT cites only about 15% of the pages it retrieves. The gap has five structural causes: missing answer blocks under H2s, entity ambiguity, buried hero claims, prose-formatted lists, and unattributed claims. All five are fixable through structural content edits.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">Do Google Rankings Affect ChatGPT Citations?</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">Do Google Rankings Affect ChatGPT Citations?</h3>
 
       <p>
         Partially. About 47% of ChatGPT's cited domains rank on Google, but 44% come from domains not on Google or Bing. Google AI Overviews show the strongest rank correlation: 76.1% of cited URLs rank in Google's top 10. Reasoning-capable ChatGPT models bypass traditional search more aggressively. A strong SEO foundation feeds citation equity but isn't sufficient on its own.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">Why Does ChatGPT Cite Different Sources For The Same Question?</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">Why Does ChatGPT Cite Different Sources For The Same Question?</h3>
 
       <p>
         LLMs are probabilistic systems. Temperature settings, model version, location, query timing, and phrasing variations all influence which sources appear in any given response. Semrush found that 40-60% of cited sources rotate monthly. Only 30% of brands remain visible in back-to-back responses for the same query. Citation equity has to be measured as share-of-voice over time.
       </p>
 
-      <h3 class="text-xl font-semibold tracking-tight text-ink leading-snug mt-8 mb-3">How Long Does It Take To Build Citation Equity?</h3>
+      <h3 class="font-serif font-semibold text-xl tracking-tight text-ink leading-snug mt-8 mb-3">How Long Does It Take To Build Citation Equity?</h3>
 
       <p>
         On-site structural fixes produce measurable lift in 14-21 days. Third-party signals like G2 and Reddit presence take 30-60 days to affect citation patterns. Editorial coverage operates on a longer timescale: six to twelve placements accumulated over two to three quarters begins to shift citation share meaningfully. The compounding effect reaches full weight at 18-24 months. That timeline is the moat.
@@ -560,7 +560,7 @@ const breadcrumbs = breadcrumbSchema([
       </div>
 
       <!-- Closing formula per writing-style.md -->
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight mt-10 mb-4">Build The Citation Equity That Compounds</h2>
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">Build The Citation Equity That Compounds</h2>
 
       <p>
         The brands that show up in AI answers are the brands the wider web has verified. That verification doesn't come from content volume. It comes from editorial coverage accumulated across the authority publishers LLMs already trust in your category.

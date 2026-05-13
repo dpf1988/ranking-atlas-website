@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PrimaryCTA from '../components/PrimaryCTA.astro';
-import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
 import Eyebrow from '../components/Eyebrow.astro';
+import PrimaryCTA from '../components/PrimaryCTA.astro';
+import SecondaryCTA from '../components/SecondaryCTA.astro';
+import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -15,140 +16,159 @@ const jsonLd = {
     "name": "Ranking Atlas",
     "url": "https://ranking-atlas.com"
   },
-  "description": "Founder of Ranking Atlas. Applies research methodology to citation equity for B2B SaaS brands.",
+  "description": "Founder of Ranking Atlas. Leads research direction, methodology design, and editorial standards.",
   "sameAs": [
-    "https://www.linkedin.com/in/daniel-grainger/",
-    "https://onlinelibrary.wiley.com/doi/abs/10.1111/eth.12280"
+    "https://www.linkedin.com/in/daniel-grainger/"
   ]
 };
 ---
 
 <Layout
   title="About — Ranking Atlas"
-  description="Ranking Atlas is an editorial PR agency for B2B SaaS brands. We run fixed-price campaigns that earn editorial coverage on authoritative publishers, building the citation equity that puts brands in AI answers."
+  description="Ranking Atlas produces editorial studies built from commissioned surveys, Freedom of Information requests, public records, and proprietary datasets. Each campaign begins with a research question and is structured for journalists, editors, and researchers who need source material they can verify independently."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-  <!-- Hero -->
-  <section class="pt-20 pb-12 md:pt-28 md:pb-16">
-    <div class="max-w-3xl mx-auto px-6">
-      <Eyebrow label="Our Story" />
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-4">
-        About Ranking Atlas
+  <!-- 1. HERO -->
+  <section class="pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-20">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="flex justify-center">
+        <Eyebrow label="About · Ranking Atlas" />
+      </div>
+      <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-6">
+        Original Research Built for Editorial Coverage.
       </h1>
-      <p class="text-lg md:text-xl text-muted leading-relaxed">
-        Ranking Atlas is an editorial PR agency for B2B SaaS brands. We run fixed-price campaigns that earn editorial coverage on authoritative publishers, building the citation equity that puts brands in AI answers. Think of it as PageRank for AI.
-      </p>
+      <div class="space-y-5 max-w-[640px] mx-auto mb-8">
+        <p class="text-lg md:text-xl text-body leading-relaxed">
+          Ranking Atlas produces editorial studies built from <span class="font-semibold text-[#1E3A8A]">commissioned surveys, Freedom of Information requests, public records, and proprietary datasets</span>.
+        </p>
+        <p class="text-lg md:text-xl text-body leading-relaxed">
+          Each campaign begins with a research question and is structured for journalists, editors, and researchers who need source material they can verify independently.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <PrimaryCTA href="/contact" label="Start a campaign" />
+        <SecondaryCTA href="/resources" label="See our research" />
+      </div>
     </div>
   </section>
 
-  <!-- Section 2: Founded on Research Principles -->
-  <section class="py-8 md:py-10 bg-bg-cream">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-6">
-        Founded on Research Principles
-      </h2>
+  <!-- 2. WHAT WE DO -->
+  <section class="py-16 md:py-20 bg-white border-y border-[#0A0F1E]/8">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto mb-12">
+        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6 text-center">
+          What We Do
+        </h2>
+        <div class="space-y-5 text-lg text-body leading-relaxed">
+          <p>
+            Ranking Atlas was built around a single observation: editorial references increasingly influence how brands surface in search results and AI-generated answers. Publishers Google trusts and AI engines cite increasingly function as the verification layer other discovery systems inherit from.
+          </p>
+          <p>
+            We produce data campaigns that journalists can cite. Each campaign starts with a research question and draws on primary-source datasets or commissioned analysis. Each study is structured for editorial use, with source attribution, supporting documentation, and a named contact for follow-up.
+          </p>
+        </div>
+      </div>
 
-      <!-- Float-based founder intro -->
-      <figure class="md:float-left md:mr-8 md:mb-2 mb-5 flex flex-col items-start">
-        <a href="https://www.linkedin.com/in/daniel-grainger/" target="_blank" rel="noopener">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="bg-[#FBFAF7] border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
+          <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mb-3">Original Research</h3>
+          <p class="text-base text-body leading-relaxed">
+            Every campaign begins with a question worth answering. We work from federal datasets, commissioned surveys, proprietary client data, and publicly available primary sources. Never repackaged secondary research.
+          </p>
+        </div>
+        <div class="bg-[#FBFAF7] border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
+          <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mb-3">Editorial Production</h3>
+          <p class="text-base text-body leading-relaxed">
+            Findings are written for editorial use. Each study includes a press release, a structured landing page, downloadable data, and a named author contact. Designed to be cited, not just read.
+          </p>
+        </div>
+        <div class="bg-[#FBFAF7] border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
+          <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mb-3">Targeted Outreach</h3>
+          <p class="text-base text-body leading-relaxed">
+            Studies are distributed to journalists who cover the topic, in publications where the audience already reads. Outreach is targeted, verified, and documented.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. EDITORIAL PRINCIPLES -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-8">
+        <Eyebrow label="Standards" />
+        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight">
+          How We Work
+        </h2>
+      </div>
+      <div class="space-y-6 text-lg text-body leading-relaxed">
+        <p>
+          Every study Ranking Atlas publishes is built to a single standard: could the underlying work withstand editorial scrutiny if a journalist requested the raw source material? As public trust in online information continues to fragment and AI systems increasingly inherit from publisher references, that standard shapes the work before, during, and after publication.
+        </p>
+        <p>
+          Research draws from commissioned surveys, federal and regulatory datasets, procurement records, proprietary client data, public filings, and Freedom of Information requests where relevant. Studies include source attribution, methodological notes, and supporting documentation where appropriate. Every claim in the copy maps to a line in the source. <span class="font-semibold text-[#1E3A8A]">Anything that cannot be sourced does not appear.</span>
+        </p>
+        <p>
+          The standard is straightforward: a journalist should be able to trace any claim back to the underlying evidence without relying on interpretation or unpublished context. Where possible, datasets and source documentation are published alongside the study itself so findings can be reproduced independently.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FOUNDER -->
+  <section class="py-16 md:py-20 bg-white border-y border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-8 text-center">
+        Founder
+      </h2>
+      <div class="flex flex-col sm:flex-row items-start justify-center gap-6">
+        <a href="https://www.linkedin.com/in/daniel-grainger/" target="_blank" rel="noopener" class="shrink-0">
           <img
             src="/assets/images/author/daniel-headshot.jpg"
             alt="Daniel Grainger, founder of Ranking Atlas"
-            class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover shadow-card"
-            width="144"
-            height="144"
+            class="w-24 h-24 rounded-full object-cover"
+            width="96"
+            height="96"
           />
         </a>
-        <figcaption class="mt-3 text-sm leading-tight">
-          <div class="font-semibold text-ink">Daniel Grainger</div>
-          <div class="text-[#64748B] mt-0.5">Founder, Ranking Atlas</div>
+        <div>
+          <p class="text-lg font-semibold text-ink mb-1">Daniel Grainger</p>
+          <p class="text-sm text-muted mb-4">Founder & Research Lead</p>
+          <p class="text-base text-body leading-relaxed mb-4">
+            Daniel founded Ranking Atlas in 2026 after a decade in editorial writing, content strategy, and search visibility work across technology and cybersecurity sectors. He leads research direction, methodology design, and editorial standards at the firm.
+          </p>
           <a
             href="https://www.linkedin.com/in/daniel-grainger/"
             target="_blank"
             rel="noopener"
-            class="inline-flex items-center gap-1.5 mt-2 text-brand hover:text-[#4338CA] transition-colors"
+            class="inline-flex items-center gap-1.5 text-sm text-brand hover:text-brand-dark transition-colors"
           >
             <LinkedInIcon class="w-3.5 h-3.5" />
             <span>LinkedIn</span>
           </a>
-        </figcaption>
-      </figure>
-
-      <div class="space-y-3 text-body text-lg leading-relaxed">
-        <p>
-          Ranking Atlas was founded by Daniel Grainger. He has spent years as a digital PR specialist, pitching journalists, building media relationships, and earning coverage on authoritative publishers for B2B brands. He is also a <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/eth.12280" target="_blank" rel="noopener" class="text-brand hover:text-brand-dark underline underline-offset-2">published scientific author</a>.
-        </p>
-        <p>
-          That combined discipline shaped how Ranking Atlas operates. Most PR agencies run on intuition: pitch a lot, see what lands, report on volume. We treat citation equity as an observable system with measurable signals. Campaigns are structured interventions. Outcomes are evidenced against data.
-        </p>
-        <p>
-          The work respects everyone at the editorial table. Journalists deserve stories worth publishing. Readers deserve coverage worth reading. Clients deserve the citations they paid for.
-        </p>
-        <p class="font-semibold text-ink">
-          The research discipline is the agency's foundation.
-        </p>
-      </div>
-
-      <div class="clear-both"></div>
-    </div>
-  </section>
-
-  <!-- Section 3: How We Work -->
-  <section class="py-8 md:py-10">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-6">
-        How We Work
-      </h2>
-      <div class="space-y-3 text-body text-lg leading-relaxed">
-        <p>
-          We run every campaign as a structured intervention.
-        </p>
-        <p>
-          We baseline a brand's citation pattern before the campaign starts. We identify the authoritative publishers AI systems cite in the client's vertical. We target editorial coverage on those publishers. We measure the citation pattern after.
-        </p>
-        <p class="font-semibold text-ink">
-          Each step is documented. Each output is evidenced.
-        </p>
-        <p>
-          Our published research follows the same discipline. The Cost of Authority report is built on a proprietary dataset of 140,000+ publisher listings collected over six years. The research we publish is the research we apply to client work.
-        </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 4: What a Campaign Looks Like -->
-  <section class="py-8 md:py-10 bg-bg-cream">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-6">
-        What a Campaign Looks Like
-      </h2>
-      <div class="space-y-3 text-body text-lg leading-relaxed">
-        <p>
-          Fixed-price campaigns, not retainers. Every engagement has defined scope and a guaranteed minimum number of editorial placements. If we do not hit the guarantee, we keep working until we do.
-        </p>
-        <p>
-          Every campaign includes before-and-after AI citation measurement across ChatGPT, Perplexity, Gemini, and Google AI Overviews. Clients see exactly how their brand's presence in AI answers shifted.
-        </p>
-        <p>
-          We work primarily with fintech, privacy, cybersecurity, and data infrastructure SaaS companies, where the pattern of AI citation is most established.
-        </p>
-        <p>
-          No retainers. No monthly billing. One campaign, one price, one defined outcome.
-        </p>
+  <!-- 5. CONTACT CTA -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-10 md:p-14 text-center">
+        <div class="max-w-[640px] mx-auto">
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6">
+            Discuss a Campaign
+          </h2>
+          <p class="text-lg text-body leading-relaxed mb-8">
+            Each campaign is scoped, priced, and delivered as a discrete piece of work. Get in touch to discuss a data campaign built around your industry, market, or proprietary research.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <PrimaryCTA href="/contact" label="Start a campaign" />
+            <SecondaryCTA href="/resources" label="See our research" />
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- CTA band -->
-  <section class="relative overflow-hidden py-16 md:py-20 text-center" style="background: #5D4FE0;">
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
-    <div class="relative max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
-        Ready to Start a Campaign?
-      </h2>
-      <p class="text-lg text-white/80 mb-10">$3.5K per campaign. Guaranteed editorial placements on authoritative publishers. No retainers.</p>
-      <PrimaryCTA href="/contact" />
     </div>
   </section>
 

@@ -16,15 +16,15 @@
 
 @layer utilities {
   .inline-link {
-    color: #5D4FE0;
+    color: #1E3A8A;
     text-decoration: underline;
     text-underline-offset: 2px;
-    text-decoration-color: rgba(93, 79, 224, 0.3);
+    text-decoration-color: rgba(30, 58, 138, 0.3);
     transition: color 200ms, text-decoration-color 200ms;
   }
   .inline-link:hover {
-    color: #4338CA;
-    text-decoration-color: #5D4FE0;
+    color: #1E40AF;
+    text-decoration-color: #1E3A8A;
   }
 
   .animate-scroll {
@@ -55,5 +55,63 @@
     100% {
       transform: translateX(-50%);
     }
+  }
+
+  /* Editorial brush highlight — sits behind text like a highlighter swipe.
+     Skewed, irregular edges, subtle gradient for brushed texture. */
+  .brush-highlight {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    white-space: nowrap;
+  }
+  .brush-highlight::before {
+    content: '';
+    position: absolute;
+    left: -0.2em;
+    right: -0.2em;
+    top: 0.04em;
+    bottom: 0.08em;
+    z-index: -1;
+    background-image: linear-gradient(
+      102deg,
+      rgba(235, 192, 74, 0.5) 0%,
+      rgba(235, 192, 74, 0.72) 22%,
+      rgba(245, 197, 24, 0.65) 48%,
+      rgba(235, 192, 74, 0.55) 74%,
+      rgba(245, 197, 24, 0.68) 100%
+    );
+    border-radius: 4px 12px 5px 9px / 10px 4px 11px 5px;
+    transform: skewX(-3deg) rotate(-0.4deg);
+    filter: blur(0.3px);
+  }
+
+  /* Editorial brush underline — same yellow as the highlight, sits below
+     H2 section headings like a hand-drawn underline. */
+  .brush-underline {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    padding-bottom: 0.32em;
+  }
+  .brush-underline::after {
+    content: '';
+    position: absolute;
+    left: -0.08em;
+    right: -0.08em;
+    bottom: 0.05em;
+    height: 0.2em;
+    z-index: -1;
+    background-image: linear-gradient(
+      102deg,
+      rgba(235, 192, 74, 0.55) 0%,
+      rgba(235, 192, 74, 0.78) 22%,
+      rgba(245, 197, 24, 0.7) 48%,
+      rgba(235, 192, 74, 0.58) 74%,
+      rgba(245, 197, 24, 0.72) 100%
+    );
+    border-radius: 3px 9px 4px 7px / 7px 3px 8px 4px;
+    transform: skewX(-3deg) rotate(-0.4deg);
+    filter: blur(0.2px);
   }
 }

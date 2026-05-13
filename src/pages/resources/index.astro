@@ -155,10 +155,10 @@ const jsonLd = {
       <!-- Header -->
       <div class="mb-16">
         <Eyebrow label="Resources" />
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-4">
+        <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-5">
           Resources
         </h1>
-        <p class="text-lg md:text-xl text-muted leading-relaxed max-w-3xl">
+        <p class="text-lg md:text-xl text-body leading-relaxed max-w-3xl">
           Original research, analysis, and editorial thinking on citation equity and the AI search era.
         </p>
       </div>
@@ -166,14 +166,16 @@ const jsonLd = {
       <!-- Featured Research -->
       <section class="mb-20">
         <div class="mb-8">
-          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink mb-2">Featured Research</h2>
-          <p class="text-base text-muted max-w-2xl">Primary-source data and original studies.</p>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-3">
+            <span class="brush-underline">Featured Research</span>
+          </h2>
+          <p class="text-base text-body max-w-2xl">Primary-source data and original studies.</p>
         </div>
         <div class="grid sm:grid-cols-2 gap-6">
           {featuredResearch.map((item) => (
-            <a href={item.href} class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-8 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
+            <a href={item.href} class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-8 hover:shadow-lg hover:border-[#1E3A8A]/40 transition-all duration-300 block flex flex-col">
               <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-3">{item.eyebrow}</div>
-              <h3 class="text-lg md:text-xl font-bold tracking-tight text-ink mb-3 leading-snug group-hover:text-[#5D4FE0] transition-colors">
+              <h3 class="font-serif font-semibold text-lg md:text-xl tracking-tight text-ink mb-3 leading-snug group-hover:text-brand transition-colors">
                 {item.title}
               </h3>
               <p class="text-base text-body leading-relaxed mb-4">
@@ -192,14 +194,16 @@ const jsonLd = {
       <!-- Essays & Guides -->
       <section>
         <div class="mb-8">
-          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink mb-2">Essays & Guides</h2>
-          <p class="text-base text-muted max-w-2xl">Strategic analysis and editorial thinking.</p>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-3">
+            <span class="brush-underline">Essays & Guides</span>
+          </h2>
+          <p class="text-base text-body max-w-2xl">Strategic analysis and editorial thinking.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-5">
           {essaysAndGuides.map((item) => (
-            <a href={item.href} class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-6 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
+            <a href={item.href} class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-6 hover:shadow-lg hover:border-[#1E3A8A]/40 transition-all duration-300 block flex flex-col">
               <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">{item.eyebrow}</div>
-              <h3 class="text-base md:text-lg font-bold tracking-tight text-ink mb-2 leading-snug group-hover:text-[#5D4FE0] transition-colors">
+              <h3 class="font-serif font-semibold text-base md:text-lg tracking-tight text-ink mb-2 leading-snug group-hover:text-brand transition-colors">
                 {item.title}
               </h3>
               <p class="text-sm text-body leading-relaxed mb-3">
