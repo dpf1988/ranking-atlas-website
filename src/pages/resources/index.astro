@@ -2,159 +2,135 @@
 import Layout from '../../layouts/Layout.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
 
-// Dev-only: citation equity pillar card (production draft guard active on the pillar page itself)
-const citationEquityListItem = {
-  "@type": "ListItem",
-  "position": 1,
-  "item": {
-    "@type": "Article",
-    "headline": "How Brands Get Cited By AI: The 2026 Guide To Citation Equity",
-    "description": "The definitional framework for citation equity. How ChatGPT, Perplexity, Gemini, and Google AI Overviews choose which brands to cite, and what builds the pattern that puts you in the answer.",
-    "url": "https://ranking-atlas.com/resources/citation-equity/",
-    "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }, "sameAs": ["https://www.linkedin.com/in/daniel-grainger/", "https://ranking-atlas.com/about"] },
-    "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
-    "datePublished": "2026-04-21T00:00:00+00:00",
-    "dateModified": "2026-04-21T00:00:00+00:00"
-  }
-};
-
-const coreListItems = [
+const featuredResearch = [
   {
-    "@type": "ListItem",
-    "position": 1,
-    "item": {
-      "@type": "Article",
-      "headline": "Americans Aged 50\u201364 Are the Most Fraud-Vulnerable Generation in the United States",
-      "description": "A composite index using six federal and survey sources ranks generational fraud risk on victimisation rate, complaint volume, and loss severity.",
-      "url": "https://ranking-atlas.com/resources/generational-fraud",
-      "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }, "sameAs": ["https://www.linkedin.com/in/daniel-grainger/", "https://ranking-atlas.com/about"] },
-      "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
-      "datePublished": "2026-03-15T00:00:00+00:00",
-      "dateModified": "2026-03-15T00:00:00+00:00"
-    }
+    href: "/resources/generational-fraud",
+    eyebrow: "Data Report",
+    title: "The 2026 Generational Fraud Index",
+    description: "A composite index built from six federal and survey sources ranks generational fraud risk across the United States.",
+    published: "Published March 2026",
+    publishedISO: "2026-03-15T00:00:00+00:00",
+    schemaUrl: "https://ranking-atlas.com/resources/generational-fraud",
   },
   {
-    "@type": "ListItem",
-    "position": 1,
-    "item": {
-      "@type": "Article",
-      "headline": "What Is ChatGPT Search Visibility? (And How to Track It)",
-      "description": "ChatGPT search visibility is how often your brand appears in ChatGPT's answers. It's measured differently from SEO, and most marketing dashboards don't track it. Here's what it is, why it matters, and how to monitor it.",
-      "url": "https://ranking-atlas.com/resources/chatgpt-search-visibility",
-      "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }, "sameAs": ["https://www.linkedin.com/in/daniel-grainger/", "https://ranking-atlas.com/about"] },
-      "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
-      "datePublished": "2026-05-05T00:00:00+00:00",
-      "dateModified": "2026-05-05T00:00:00+00:00"
-    }
+    href: "/resources/the-cost-of-authority",
+    eyebrow: "Data Report",
+    title: "How Paid Link Prices Rose While Their Value Collapsed",
+    description: "Six years of paid link pricing data across 140,000+ publisher listings, with marketplace deindexing risk analysis.",
+    published: "Published March 2026",
+    publishedISO: "2026-03-01T00:00:00+00:00",
+    schemaUrl: "https://ranking-atlas.com/resources/the-cost-of-authority",
   },
   {
-    "@type": "ListItem",
-    "position": 2,
-    "item": {
-      "@type": "Article",
-      "headline": "What Makes a Press Release Get Cited by ChatGPT in 2026?",
-      "description": "Press release citations in AI tools grew 5x in late 2025. The three-layer citation hierarchy, the structure cited releases share, and what separates a cited release from one that's ignored.",
-      "url": "https://ranking-atlas.com/resources/press-release-ai-citation-2026",
-      "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }, "sameAs": ["https://www.linkedin.com/in/daniel-grainger/", "https://ranking-atlas.com/about"] },
-      "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
-      "datePublished": "2026-05-05T00:00:00+00:00",
-      "dateModified": "2026-05-05T00:00:00+00:00"
-    }
+    href: "/resources/saas-pricing-inflation",
+    eyebrow: "Data Report",
+    title: "SaaS Price Comparison 2020–2026",
+    description: "Entry-tier pricing for 65 SaaS tools tracked over six years across 12 categories, with Wayback Machine verification.",
+    published: "Published April 2026",
+    publishedISO: "2026-04-13T00:00:00+00:00",
+    schemaUrl: "https://ranking-atlas.com/resources/saas-pricing-inflation",
   },
   {
-    "@type": "ListItem",
-    "position": 2,
-    "item": {
-      "@type": "Article",
-      "headline": "How Old Are Plastic Surgery Patients in the US? Mean Age by Procedure, 2018–2024",
-      "description": "Mean age of US plastic surgery patients across 14 procedures from 2018 to 2024, drawn entirely from ASPS Statistics Reports. Full procedure-by-procedure data, interactive chart, and methodology.",
-      "url": "https://ranking-atlas.com/resources/plastic-surgery-patient-age/",
-      "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }, "sameAs": ["https://www.linkedin.com/in/daniel-grainger/", "https://ranking-atlas.com/about"] },
-      "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
-      "datePublished": "2026-04-29T00:00:00+00:00",
-      "dateModified": "2026-04-29T00:00:00+00:00"
-    }
+    href: "/resources/ai-names-ict-experts",
+    eyebrow: "Data Report",
+    title: "Who AI Names When You Ask for ICT Experts",
+    description: "2,286 individuals extracted from 2,520 AI responses across ChatGPT, Claude, Gemini, and Perplexity.",
+    published: "Published April 2026",
+    publishedISO: "2026-04-24T00:00:00+00:00",
+    schemaUrl: "https://ranking-atlas.com/resources/ai-names-ict-experts",
   },
-  {
-    "@type": "ListItem",
-    "position": 2,
-    "item": {
-      "@type": "Article",
-      "headline": "Who AI Names When You Ask for ICT Experts",
-      "description": "2,286 named individuals from 2,520 AI responses across ChatGPT, Claude, Gemini, and Perplexity. Gender, role, sub-category, and consensus data for every person named as an ICT expert.",
-      "url": "https://ranking-atlas.com/resources/ai-names-ict-experts/",
-      "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }, "sameAs": ["https://www.linkedin.com/in/daniel-grainger/", "https://ranking-atlas.com/about"] },
-      "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
-      "datePublished": "2026-04-24T00:00:00+00:00",
-      "dateModified": "2026-04-24T00:00:00+00:00"
-    }
-  },
-  {
-    "@type": "ListItem",
-    "position": 2,
-    "item": {
-      "@type": "Article",
-      "headline": "SaaS Price Comparison 2020\u20132026",
-      "description": "Entry-tier pricing for 65 SaaS tools tracked over six years across 12 categories, with Wayback Machine verification.",
-      "url": "https://ranking-atlas.com/resources/saas-pricing-inflation",
-      "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }, "sameAs": ["https://www.linkedin.com/in/daniel-grainger/", "https://ranking-atlas.com/about"] },
-      "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
-      "datePublished": "2026-04-13T00:00:00+00:00",
-      "dateModified": "2026-04-13T00:00:00+00:00"
-    }
-  },
-  {
-    "@type": "ListItem",
-    "position": 3,
-    "item": {
-      "@type": "Article",
-      "headline": "How Paid Link Prices Rose While Their Value Collapsed",
-      "description": "Primary-source pricing analysis of editorial coverage and link marketplace rates from 140,000+ publisher listings and six years of agency snapshots.",
-      "url": "https://ranking-atlas.com/resources/the-cost-of-authority",
-      "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }, "sameAs": ["https://www.linkedin.com/in/daniel-grainger/", "https://ranking-atlas.com/about"] },
-      "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
-      "datePublished": "2026-03-01T00:00:00+00:00",
-      "dateModified": "2026-04-01T00:00:00+00:00"
-    }
-  },
-  {
-    "@type": "ListItem",
-    "position": 4,
-    "item": {
-      "@type": "Article",
-      "headline": "Why Earned Links Beat Paid Links",
-      "description": "The framework we apply across client campaigns. AI systems cite brands mentioned across heavy-hitting domains. Earned links produce those mentions. Paid links get deindexed and disappear. Here's the difference, the evidence, and the economics.",
-      "url": "https://ranking-atlas.com/resources/earned-links-vs-paid-links",
-      "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }, "sameAs": ["https://www.linkedin.com/in/daniel-grainger/", "https://ranking-atlas.com/about"] },
-      "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
-      "datePublished": "2026-03-01T00:00:00+00:00",
-      "dateModified": "2026-04-01T00:00:00+00:00"
-    }
-  }
 ];
 
-const itemListElement = [citationEquityListItem, ...coreListItems.map((item, i) => ({ ...item, position: i + 2 }))];
+const essaysAndGuides = [
+  {
+    href: "/resources/citation-equity",
+    eyebrow: "Guide",
+    title: "How Brands Get Cited By AI: The 2026 Guide To Citation Equity",
+    description: "The definitional framework for citation equity, and what builds the pattern that puts brands in AI answers.",
+    published: "Published April 2026",
+    publishedISO: "2026-04-21T00:00:00+00:00",
+    schemaUrl: "https://ranking-atlas.com/resources/citation-equity",
+    cta: "Read the guide",
+  },
+  {
+    href: "/resources/chatgpt-search-visibility",
+    eyebrow: "Guide",
+    title: "What Is ChatGPT Search Visibility? (And How to Track It)",
+    description: "ChatGPT search visibility is how often your brand appears in ChatGPT's answers. It's measured differently from SEO.",
+    published: "Published May 2026",
+    publishedISO: "2026-05-05T00:00:00+00:00",
+    schemaUrl: "https://ranking-atlas.com/resources/chatgpt-search-visibility",
+    cta: "Read the guide",
+  },
+  {
+    href: "/resources/press-release-ai-citation-2026",
+    eyebrow: "Guide",
+    title: "What Makes a Press Release Get Cited by ChatGPT in 2026?",
+    description: "Press release citations in AI tools grew 5x in late 2025. What separates a cited release from one that's ignored.",
+    published: "Published May 2026",
+    publishedISO: "2026-05-05T00:00:00+00:00",
+    schemaUrl: "https://ranking-atlas.com/resources/press-release-ai-citation-2026",
+    cta: "Read the guide",
+  },
+  {
+    href: "/resources/earned-links-vs-paid-links",
+    eyebrow: "Essay",
+    title: "Why Earned Links Beat Paid Links",
+    description: "Earned editorial coverage compounds across organic search and AI answers. Paid links decay in citation value.",
+    published: "Published March 2026",
+    publishedISO: "2026-03-01T00:00:00+00:00",
+    schemaUrl: "https://ranking-atlas.com/resources/earned-links-vs-paid-links",
+    cta: "Read the essay",
+  },
+];
+
+const personAuthor = {
+  "@type": "Person",
+  "name": "Daniel Grainger",
+  "url": "https://ranking-atlas.com/about",
+  "jobTitle": "Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Ranking Atlas",
+    "url": "https://ranking-atlas.com"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/daniel-grainger/",
+    "https://ranking-atlas.com/about"
+  ]
+};
+
+const orgAuthor = {
+  "@type": "Organization",
+  "name": "Ranking Atlas",
+  "url": "https://ranking-atlas.com"
+};
+
+const featuredItems = featuredResearch.map((item) => ({ item, author: orgAuthor }));
+const essayItems = essaysAndGuides.map((item) => ({ item, author: personAuthor }));
+const allItems = [...featuredItems, ...essayItems];
+
+const itemListElement = allItems.map(({ item, author }, i) => ({
+  "@type": "ListItem",
+  "position": i + 1,
+  "item": {
+    "@type": "Article",
+    "headline": item.title,
+    "description": item.description,
+    "url": item.schemaUrl,
+    "author": author,
+    "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
+    "datePublished": item.publishedISO,
+    "dateModified": item.publishedISO,
+  },
+}));
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Research and Analysis for B2B SaaS Marketing Teams",
   "url": "https://ranking-atlas.com/resources/",
-  "author": {
-    "@type": "Person",
-    "name": "Daniel Grainger",
-    "url": "https://ranking-atlas.com/about",
-    "jobTitle": "Founder",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Ranking Atlas",
-      "url": "https://ranking-atlas.com"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/daniel-grainger/",
-      "https://ranking-atlas.com/about"
-    ]
-  },
+  "author": personAuthor,
   "publisher": {
     "@type": "Organization",
     "name": "Ranking Atlas",
@@ -169,258 +145,80 @@ const jsonLd = {
 
 <Layout
   title="Resources | Ranking Atlas"
-  description="Primary-source research on paid link pricing, AI search visibility, and citation equity for B2B SaaS marketing teams."
+  description="Original research, analysis, and editorial thinking on citation equity and the AI search era."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-<section class="py-20 md:py-28">
-  <div class="max-w-6xl mx-auto px-6">
+  <section class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
 
-    <!-- Header -->
-    <div class="mb-12">
-      <Eyebrow label="Resources" />
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-4">
-        Industry Insights
-      </h1>
-      <p class="text-lg md:text-xl text-muted leading-relaxed">
-        The state of citation equity, AI search visibility, and editorial authority in 2026.
-      </p>
-    </div>
-
-    <!-- Foundational card -->
-    <div class="mb-16">
-      <a href="/resources/citation-equity" class="group bg-white rounded-2xl shadow-card border-2 border-brand/30 p-8 hover:shadow-lg hover:border-brand transition-all duration-300 block flex flex-col relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-brand/5 to-transparent pointer-events-none"></div>
-        <div class="flex items-center gap-3 mb-3">
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brand/10 border border-brand/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
-            <span class="text-xs uppercase tracking-wider text-brand font-semibold">Foundational</span>
-          </span>
-          <div class="text-xs uppercase tracking-wider text-muted font-medium">Guide</div>
-        </div>
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink mb-4 leading-snug group-hover:text-brand transition-colors">
-          How Brands Get Cited By AI: The 2026 Guide To Citation Equity
-        </h2>
-        <p class="text-body leading-relaxed mb-4 text-lg">
-          The definitional framework for citation equity. How ChatGPT, Perplexity, Gemini, and Google AI Overviews choose which brands to cite, and what builds the pattern that puts you in the answer.
+      <!-- Header -->
+      <div class="mb-16">
+        <Eyebrow label="Resources" />
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-4">
+          Resources
+        </h1>
+        <p class="text-lg md:text-xl text-muted leading-relaxed max-w-3xl">
+          Original research, analysis, and editorial thinking on citation equity and the AI search era.
         </p>
-        <p class="text-xs text-muted mb-4">Published April 2026</p>
-        <div class="mt-auto flex items-center justify-between">
-          <div class="flex items-center gap-2.5">
-            <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
-            <span class="text-xs text-muted">Daniel Grainger</span>
-          </div>
-          <div class="text-xs text-brand font-medium group-hover:underline">Read the guide →</div>
+      </div>
+
+      <!-- Featured Research -->
+      <section class="mb-20">
+        <div class="mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink mb-2">Featured Research</h2>
+          <p class="text-base text-muted max-w-2xl">Primary-source data and original studies.</p>
         </div>
-      </a>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {featuredResearch.map((item) => (
+            <a href={item.href} class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-8 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
+              <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-3">{item.eyebrow}</div>
+              <h3 class="text-lg md:text-xl font-bold tracking-tight text-ink mb-3 leading-snug group-hover:text-[#5D4FE0] transition-colors">
+                {item.title}
+              </h3>
+              <p class="text-base text-body leading-relaxed mb-4">
+                {item.description}
+              </p>
+              <p class="text-xs text-muted mb-5">{item.published}</p>
+              <div class="mt-auto flex items-center justify-between">
+                <span class="text-xs text-muted">Ranking Atlas</span>
+                <div class="text-xs text-brand font-medium group-hover:underline">Read the report →</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Essays & Guides -->
+      <section>
+        <div class="mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink mb-2">Essays & Guides</h2>
+          <p class="text-base text-muted max-w-2xl">Strategic analysis and editorial thinking.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-5">
+          {essaysAndGuides.map((item) => (
+            <a href={item.href} class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-6 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
+              <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">{item.eyebrow}</div>
+              <h3 class="text-base md:text-lg font-bold tracking-tight text-ink mb-2 leading-snug group-hover:text-[#5D4FE0] transition-colors">
+                {item.title}
+              </h3>
+              <p class="text-sm text-body leading-relaxed mb-3">
+                {item.description}
+              </p>
+              <p class="text-xs text-muted mb-4">{item.published}</p>
+              <div class="mt-auto flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
+                  <span class="text-xs text-muted">Daniel Grainger</span>
+                </div>
+                <div class="text-xs text-brand font-medium group-hover:underline">{item.cta} →</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
     </div>
-
-    <!-- Data reports -->
-    <section class="mb-16">
-      <div class="mb-8">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink mb-2">Data reports</h2>
-        <p class="text-base text-muted max-w-2xl">Primary-source research. Original datasets traced to every figure.</p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-        <a href="/resources/generational-fraud" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-5 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
-          <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">Data Report</div>
-          <h3 class="text-base md:text-lg font-bold tracking-tight text-ink mb-2 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-            Americans Aged 50–64 Are the Most Fraud-Vulnerable Generation
-          </h3>
-          <p class="text-sm text-body leading-relaxed mb-3">
-            A composite index built from six federal and survey sources ranks generational fraud risk. The age group most likely to lose their identity isn't the one you'd guess.
-          </p>
-          <p class="text-xs text-muted mb-4">Published March 2026</p>
-          <div class="mt-auto flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
-              <span class="text-xs text-muted">Daniel Grainger</span>
-            </div>
-            <div class="text-xs text-brand font-medium group-hover:underline">Read the report →</div>
-          </div>
-        </a>
-
-        <a href="/resources/the-cost-of-authority" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-5 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
-          <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">Data Report</div>
-          <h3 class="text-base md:text-lg font-bold tracking-tight text-ink mb-2 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-            How Paid Link Prices Rose While Their Value Collapsed
-          </h3>
-          <p class="text-sm text-body leading-relaxed mb-3">
-            Paid links are more expensive than ever, and lower quality than ever. Six years of pricing data shows the gap.
-          </p>
-          <p class="text-xs text-muted mb-4">Updated April 2026</p>
-          <div class="mt-auto flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
-              <span class="text-xs text-muted">Daniel Grainger</span>
-            </div>
-            <div class="text-xs text-brand font-medium group-hover:underline">Read the report →</div>
-          </div>
-        </a>
-
-        <a href="/resources/saas-pricing-inflation" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-5 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
-          <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">Data Report</div>
-          <h3 class="text-base md:text-lg font-bold tracking-tight text-ink mb-2 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-            SaaS Price Comparison 2020–2026
-          </h3>
-          <p class="text-sm text-body leading-relaxed mb-3">
-            Entry-tier pricing for 65 tools tracked over six years. Tools replicable by AI show no pricing power. Tools that aren't raised prices well above inflation.
-          </p>
-          <p class="text-xs text-muted mb-4">Published April 2026</p>
-          <div class="mt-auto flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
-              <span class="text-xs text-muted">Daniel Grainger</span>
-            </div>
-            <div class="text-xs text-brand font-medium group-hover:underline">Read the report →</div>
-          </div>
-        </a>
-
-        <a href="/resources/ai-names-ict-experts" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-5 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
-          <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">Data Report</div>
-          <h3 class="text-base md:text-lg font-bold tracking-tight text-ink mb-2 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-            Who AI Names When You Ask for ICT Experts
-          </h3>
-          <p class="text-sm text-body leading-relaxed mb-3">
-            2,286 individuals extracted from 2,520 AI responses. Women are named 20.5% of the time, against a 28% workforce share. Query phrasing shifts that figure by 16 percentage points.
-          </p>
-          <p class="text-xs text-muted mb-4">Published April 2026</p>
-          <div class="mt-auto flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
-              <span class="text-xs text-muted">Daniel Grainger</span>
-            </div>
-            <div class="text-xs text-brand font-medium group-hover:underline">Read the report →</div>
-          </div>
-        </a>
-
-        <a href="/resources/plastic-surgery-patient-age" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-5 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
-          <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">Data Report</div>
-          <h3 class="text-base md:text-lg font-bold tracking-tight text-ink mb-2 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-            How Old Are Plastic Surgery Patients in the US?
-          </h3>
-          <p class="text-sm text-body leading-relaxed mb-3">
-            Mean age across 14 procedures from 2018 to 2024, drawn entirely from ASPS Statistics Reports. The patient base is not getting younger. Nine of 14 procedures have been flat since 2022.
-          </p>
-          <p class="text-xs text-muted mb-4">Published April 2026</p>
-          <div class="mt-auto flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
-              <span class="text-xs text-muted">Daniel Grainger</span>
-            </div>
-            <div class="text-xs text-brand font-medium group-hover:underline">Read the report →</div>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- Guides -->
-    <section class="mb-16">
-      <div class="mb-8">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink mb-2">Guides</h2>
-        <p class="text-base text-muted max-w-2xl">Explainers and frameworks for the AI search surface.</p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-        <a href="/resources/chatgpt-search-visibility" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-5 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
-          <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">Guide</div>
-          <h3 class="text-base md:text-lg font-bold tracking-tight text-ink mb-2 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-            What Is ChatGPT Search Visibility? (And How to Track It)
-          </h3>
-          <p class="text-sm text-body leading-relaxed mb-3">
-            ChatGPT now drives 20% of search traffic and most marketing dashboards don't track it. What visibility actually means, how it's measured, the three credible tools, and what to do about it.
-          </p>
-          <p class="text-xs text-muted mb-4">Published May 2026</p>
-          <div class="mt-auto flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
-              <span class="text-xs text-muted">Daniel Grainger</span>
-            </div>
-            <div class="text-xs text-brand font-medium group-hover:underline">Read the guide →</div>
-          </div>
-        </a>
-
-        <a href="/resources/press-release-ai-citation-2026" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-5 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
-          <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">Guide</div>
-          <h3 class="text-base md:text-lg font-bold tracking-tight text-ink mb-2 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-            What Makes a Press Release Get Cited by ChatGPT in 2026?
-          </h3>
-          <p class="text-sm text-body leading-relaxed mb-3">
-            Press release citations in AI tools grew 5x in late 2025. The three-layer citation hierarchy, the structure cited releases share, and what separates a cited release from one that's ignored.
-          </p>
-          <p class="text-xs text-muted mb-4">Published May 2026</p>
-          <div class="mt-auto flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
-              <span class="text-xs text-muted">Daniel Grainger</span>
-            </div>
-            <div class="text-xs text-brand font-medium group-hover:underline">Read the guide →</div>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- Essays -->
-    <section class="mb-16">
-      <div class="mb-8">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink mb-2">Essays</h2>
-        <p class="text-base text-muted max-w-2xl">Arguments on the link and citation economy.</p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-        <a href="/resources/earned-links-vs-paid-links" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-5 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
-          <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">Essay</div>
-          <h3 class="text-base md:text-lg font-bold tracking-tight text-ink mb-2 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-            Why Earned Links Beat Paid Links
-          </h3>
-          <p class="text-sm text-body leading-relaxed mb-3">
-            Earned links get cited in AI answers. Paid links get deindexed. Here's the difference and the economics.
-          </p>
-          <p class="text-xs text-muted mb-4">Updated April 2026</p>
-          <div class="mt-auto flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
-              <span class="text-xs text-muted">Daniel Grainger</span>
-            </div>
-            <div class="text-xs text-brand font-medium group-hover:underline">Read the essay →</div>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- For journalists -->
-    <section>
-      <div class="mb-8">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-ink mb-2">For journalists</h2>
-        <p class="text-base text-muted max-w-2xl">Citable data campaigns, copy-ready findings, methodology.</p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-        <a href="/library" class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-5 hover:shadow-lg hover:border-[#5D4FE0]/20 transition-all duration-300 block flex flex-col">
-          <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">Press Archive</div>
-          <h3 class="text-base md:text-lg font-bold tracking-tight text-ink mb-2 leading-snug group-hover:text-[#5D4FE0] transition-colors">
-            Press archive for journalists
-          </h3>
-          <p class="text-sm text-body leading-relaxed mb-3">
-            Citable data campaigns issued by Ranking Atlas. Each entry includes the press release, full methodology, source links, and copy-ready findings.
-          </p>
-          <p class="text-xs text-muted mb-4">Updated April 2026</p>
-          <div class="mt-auto flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
-              <span class="text-xs text-muted">Daniel Grainger</span>
-            </div>
-            <div class="text-xs text-brand font-medium group-hover:underline">Browse archive →</div>
-          </div>
-        </a>
-
-      </div>
-    </section>
-  </div>
-</section>
+  </section>
 
 </Layout>

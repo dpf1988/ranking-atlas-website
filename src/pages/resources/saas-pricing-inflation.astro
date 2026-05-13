@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import AuthorBio from '../../components/AuthorBio.astro';
+import InstitutionalBio from '../../components/InstitutionalBio.astro';
 import RelatedResearch from '../../components/RelatedResearch.astro';
 
 const jsonLd = {
@@ -10,21 +10,7 @@ const jsonLd = {
   "description": "Lowest monthly entry-tier pricing for 65 SaaS tools, captured from Wayback Machine snapshots (January 2020) and current vendor pricing pages (April 2026). Category medians, methodology, and archived source material.",
   "url": "https://ranking-atlas.com/resources/saas-pricing-inflation",
   "image": "https://ranking-atlas.com/assets/images/resources/saas-pricing-inflation/hero.jpg",
-  "author": {
-    "@type": "Person",
-    "name": "Daniel Grainger",
-    "url": "https://ranking-atlas.com/about",
-    "jobTitle": "Founder",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Ranking Atlas",
-      "url": "https://ranking-atlas.com"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/daniel-grainger/",
-      "https://ranking-atlas.com/about"
-    ]
-  },
+  "author": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" },
   "datePublished": "2026-04-13T00:00:00+00:00",
   "dateModified": "2026-04-13T00:00:00+00:00",
   "publisher": { "@type": "Organization", "name": "Ranking Atlas" }
@@ -52,14 +38,9 @@ const jsonLd = {
       <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-6">
         The pattern is consistent: tools whose core function can be approximated by a vibe-coded side project have no pricing power. The categories most exposed to AI replication (CRM, project management, productivity, dev tooling) show median price changes at or below zero. Categories that require human process, compliance, or integrations that AI cannot yet replicate (HR, accounting, support, analytics) raised prices well above inflation.
       </p>
-      <div class="flex items-center gap-3 mb-4">
-        <a href="/about" class="shrink-0">
-          <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
-        </a>
-        <div>
-          <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
-          <p class="text-sm text-[#64748B]">Published April 2026 &nbsp;·&nbsp; 65 tools across 12 categories</p>
-        </div>
+      <div class="mb-4">
+        <p class="text-sm font-medium text-ink">By Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published April 2026 &nbsp;·&nbsp; 65 tools across 12 categories</p>
       </div>
       <a href="/downloads/saas-pricing-inflation-2020-2026.csv" class="inline-flex items-center gap-1.5 text-sm text-brand hover:text-brand-dark transition-colors font-medium">
         Download CSV
@@ -348,6 +329,15 @@ const jsonLd = {
     </div>
   </section>
 
+  <!-- Press contact sign-off. Restrained, editorial. Do not convert to a styled CTA. -->
+  <section class="py-12 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-body text-[21px] leading-[1.7]">
+        For a different cut of this dataset, additional category or vendor breakouts, or methodology questions, contact <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.
+      </p>
+    </div>
+  </section>
+
   <RelatedResearch
     items={[
       {
@@ -368,7 +358,7 @@ const jsonLd = {
     ]}
   />
 
-  <AuthorBio />
+  <InstitutionalBio />
 
 </div>
 

@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import AuthorBio from '../../components/AuthorBio.astro';
+import InstitutionalBio from '../../components/InstitutionalBio.astro';
 import RelatedResearch from '../../components/RelatedResearch.astro';
 
 const jsonLd = {
@@ -10,21 +10,7 @@ const jsonLd = {
   "description": "A composite index using six federal and survey sources ranks generational fraud risk on victimisation rate, complaint volume, and loss severity. Americans aged 50\u201364 record the highest identity theft rate of any US age cohort (BJS).",
   "url": "https://ranking-atlas.com/resources/generational-fraud",
   "image": "https://ranking-atlas.com/assets/images/resources/generational-fraud/hero.jpg",
-  "author": {
-    "@type": "Person",
-    "name": "Daniel Grainger",
-    "url": "https://ranking-atlas.com/about",
-    "jobTitle": "Founder",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Ranking Atlas",
-      "url": "https://ranking-atlas.com"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/daniel-grainger/",
-      "https://ranking-atlas.com/about"
-    ]
-  },
+  "author": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" },
   "datePublished": "2026-03-15T00:00:00+00:00",
   "dateModified": "2026-03-15T00:00:00+00:00",
   "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
@@ -47,14 +33,9 @@ const jsonLd = {
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.1] mb-6">
         Americans aged 50–64 are the most fraud-vulnerable generation in the United States
       </h1>
-      <div class="flex items-center gap-3 mb-6">
-        <a href="/about" class="shrink-0">
-          <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
-        </a>
-        <div>
-          <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
-          <p class="text-sm text-[#64748B]">Published <time datetime="2026-03-15">March 2026</time></p>
-        </div>
+      <div class="mb-6">
+        <p class="text-sm font-medium text-ink">By Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published <time datetime="2026-03-15">March 2026</time></p>
       </div>
 
       <!-- Hero image slot -->
@@ -335,24 +316,12 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- ── 10. Closing CTA band ────────────────────────────────────────── -->
-  <section class="py-16 md:py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="bg-[#0A0F1E] rounded-2xl p-8 md:p-12 text-white">
-        <h2 class="text-2xl md:text-4xl font-bold tracking-tight mb-3 leading-tight">Earn citations from research, not retainers.</h2>
-        <p class="text-base md:text-lg text-white/80 mb-8 leading-relaxed max-w-2xl">
-          Ranking Atlas runs per-campaign editorial PR for B2B SaaS. Fixed price. Guaranteed placements on authoritative publishers.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors">
-            Start a campaign
-            <span aria-hidden="true">→</span>
-          </a>
-          <a href="/ai-search-visibility" class="inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 border-2 border-white/30 text-white hover:bg-white/5 rounded-lg transition-colors">
-            How citation equity works
-          </a>
-        </div>
-      </div>
+  <!-- Press contact sign-off. Restrained, editorial. Do not convert to a styled CTA. -->
+  <section class="py-12 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-body text-[21px] leading-[1.7]">
+        For a different cut of this data, additional regional or demographic breakouts, or methodology questions, contact <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.
+      </p>
     </div>
   </section>
 
@@ -376,7 +345,7 @@ const jsonLd = {
     ]}
   />
 
-  <AuthorBio />
+  <InstitutionalBio />
 
 </div>
 
