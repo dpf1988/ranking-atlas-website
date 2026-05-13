@@ -1,83 +1,53 @@
 ---
 const faqs = [
   {
-    q: "What happens if you don't hit the placement guarantee?",
-    a: "We keep working at no additional cost until we do. The campaign isn't complete until your agreed placement count is delivered.",
+    q: 'What does a Ranking Atlas campaign cost?',
+    a: 'Campaigns start at $3,500. Each campaign is quoted as a fixed price based on scope, target publications, and research depth required. There are no retainers and no monthly minimums.',
+  },
+  {
+    q: 'How many placements does a campaign earn?',
+    a: 'Each campaign is delivered with a guaranteed minimum number of placements on agreed publications. The exact number is defined in advance based on scope and target outlets. Most campaigns earn additional placements beyond the guaranteed minimum.',
   },
   {
     q: 'How long does a campaign take?',
-    a: 'Most campaigns deliver results within 30 to 60 days, depending on the campaign type and vertical. Reactive coverage can land within days when the right news cycle hits. Data-led campaigns and expert commentary typically take longer because they require asset development and targeted pitching.',
+    a: 'Campaigns typically run for two to three weeks from launch to delivery. Research and study preparation precedes this; the active outreach window is short and focused.',
   },
   {
-    q: 'What types of publications do you target?',
-    a: 'National news outlets, business and finance press, technology media, and B2B vertical publications relevant to your category. We build a targeted media list for each campaign based on which publishers AI systems already cite in your vertical, plus the publishers your buyers read.',
+    q: 'How are campaigns sourced?',
+    a: 'Every campaign is built around primary-source data: client-owned datasets, commissioned surveys, freedom-of-information requests, or publicly available primary records. No campaign relies on press-release rehashes or third-party data summaries.',
   },
   {
-    q: "What's included in a campaign?",
-    a: 'Vertical and competitor citation analysis, AI visibility baseline, story angle development, targeted journalist list, pitching and follow-up, placement reporting, and a post-campaign AI citation measurement showing before/after visibility across ChatGPT, Perplexity, Gemini, and AI Overviews.',
+    q: 'What standards do you use for research?',
+    a: 'Methodology is documented in full and published alongside every study. Sources are named and verifiable. Author attribution is direct. Contact details are provided for editorial follow-up. The standard is what a serious newsroom would accept.',
   },
   {
-    q: 'Do I get to approve angles before they go out?',
-    a: 'Yes. We develop campaign angles in collaboration with you and nothing gets pitched without your sign-off.',
+    q: 'How is coverage measured?',
+    a: 'Each campaign closes with a documented list of placements, citation tracking across publications that subsequently reference the work, and visibility measurement across the search environments where the study appears.',
   },
   {
-    q: 'Why no retainers?',
-    a: "Retainers reward agencies for time spent, not results delivered. Per-campaign means you pay for a defined outcome: a minimum number of placements on authority publishers. If it works, you book another. If it doesn't, you walk away.",
+    q: 'Do journalists have access to methodology and data?',
+    a: 'Yes. Every published study includes downloadable data, full methodology, and a verified contact for follow-up questions, regional cuts, or additional analysis.',
   },
   {
-    q: 'Do you guarantee AI citations?',
-    a: "We guarantee placements on authority publishers. We don't guarantee specific AI citations because no agency that's honest can. AI systems are probabilistic and change with model updates. What we guarantee is the input — the editorial coverage that the data shows is the strongest predictor of AI citation. We measure AI citation outcomes on every campaign so you see what the coverage produces.",
-  },
-  {
-    q: 'How do you measure AI visibility?',
-    a: 'We baseline your brand\'s citation rate across ChatGPT, Perplexity, Gemini, and Google AI Overviews on category queries before the campaign starts, then measure again after coverage lands. You see which queries you appeared on, which publishers were cited, and how the pattern shifted.',
-  },
-  {
-    q: 'How is this different from SEO?',
-    a: "SEO optimises pages on your own domain to rank in Google. Citation equity earns coverage on third-party authority publishers, which is the signal AI systems use to decide who to surface. Seer Interactive's September 2025 study found organic CTR dropped 61% on queries where AI Overviews appeared. Ranking on Google matters less every quarter. Being cited by the publishers AI trusts matters more.",
-    sources: [{ url: 'https://www.dataslayer.ai/blog/google-ai-overviews-the-end-of-traditional-ctr-and-how-to-adapt-in-2025', label: 'Dataslayer' }],
-  },
-  {
-    q: "What's the impact of AI search on traditional traffic?",
-    a: "It's measurable and worsening. A March 2025 study by Law and Guan found average click-through rate for the #1 Google result fell from 7.3% to 2.6% when an AI Overview appeared, a 34.5% reduction. Digital Content Next's August 2025 publisher data showed median Google referral traffic down 10% year over year, with non-news brands down 14%. The ground is moving. Citation equity is what holds visibility while it does.",
-    sources: [
-      { url: 'https://digitalcontentnext.org/blog/2025/05/06/googles-ai-overviews-linked-to-lower-publisher-clicks/', label: 'Digital Content Next' },
-      { url: 'https://digiday.com/media/google-ai-overviews-linked-to-25-drop-in-publisher-referral-traffic-new-data-shows/', label: 'Digiday' },
-    ],
-  },
-  {
-    q: 'Why does editorial coverage matter for AI visibility?',
-    a: "AI systems decide which brands to surface based on patterns of mentions across trusted sources. SE Ranking's analysis of 129,000 domains identified the number of referring domains as the single strongest predictor of ChatGPT citations, with the citation gap widening sharply at higher coverage levels. The pattern is consistent across studies: brands with broad editorial coverage get cited; brands without it do not.",
-    sources: [{ url: 'https://www.searchenginejournal.com/new-data-top-factors-influencing-chatgpt-citations/561954/', label: 'Search Engine Journal' }],
+    q: 'Which publications does Ranking Atlas target?',
+    a: "Outreach targets are defined per campaign, focused on the publications and reporters most relevant to the client's industry. Past placements span national and trade outlets across the United States and United Kingdom.",
   },
 ];
 ---
 
-<section id="faq" class="relative bg-[#0A0F1E] py-20 lg:py-28 overflow-hidden">
+<section id="faq" class="bg-[#1A2138] py-16 lg:py-20">
 
-  <!-- Radial glow -->
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full"
-      style="background: radial-gradient(ellipse, rgba(79,70,229,0.12) 0%, transparent 70%);">
-    </div>
-  </div>
-
-  <!-- Watermark -->
-  <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden="true">
-    <span class="text-[22rem] font-black tracking-tighter leading-none" style="color: rgba(79,70,229,0.03);">FAQ</span>
-  </div>
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl sm:text-5xl font-black text-white mb-4">
+  <div class="max-w-[720px] mx-auto px-6">
+    <div class="mb-10">
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-white mb-3">
         Frequently Asked Questions
       </h2>
-      <p class="text-xl max-w-2xl mx-auto text-[#64748B]">
+      <p class="text-base text-[#94A3B8] leading-relaxed">
         Everything you need to know before starting a campaign.
       </p>
     </div>
 
-    <div class="max-w-3xl mx-auto divide-y divide-white/10" id="faq-list">
+    <div class="divide-y divide-white/10" id="faq-list">
       {faqs.map((faq, i) => (
         <div class="faq-item">
           <button
@@ -100,7 +70,7 @@ const faqs = [
               <div class="flex flex-wrap gap-4 mt-3">
                 {faq.sources.map((s: { url: string; label: string }) => (
                   <a href={s.url} target="_blank" rel="noopener noreferrer"
-                    class="text-xs text-[#4F46E5]/70 hover:text-[#4F46E5] transition-colors underline underline-offset-2">
+                    class="text-xs text-[#8FA4D9]/70 hover:text-[#8FA4D9] transition-colors underline underline-offset-2">
                     {s.label} ↗
                   </a>
                 ))}
@@ -146,8 +116,8 @@ const faqs = [
         }
         // Open current
         if (answer) answer.classList.remove('hidden');
-        if (chevron) chevron.setAttribute('style', 'color: #4F46E5; transform: rotate(180deg)');
-        if (question) question.setAttribute('style', 'color: #4F46E5');
+        if (chevron) chevron.setAttribute('style', 'color: #8FA4D9; transform: rotate(180deg)');
+        if (question) question.setAttribute('style', 'color: #8FA4D9');
         openIndex = i;
       }
     });

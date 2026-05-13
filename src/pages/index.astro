@@ -1,242 +1,610 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FAQ from '../components/FAQ.astro';
-import PrimaryCTA from '../components/PrimaryCTA.astro';
-import SecondaryCTA from '../components/SecondaryCTA.astro';
-import Eyebrow from '../components/Eyebrow.astro';
-import { DollarSign, CheckCircle, Receipt, Tag, ShieldCheck, Calendar, LineChart, FileText, CreditCard, Bot, ExternalLink, TrendingUp, Newspaper, FlaskConical } from 'lucide-astro';
+
+const featuredResearch = [
+  {
+    href: "/resources/generational-fraud",
+    eyebrow: "Data Report",
+    title: "The 2026 Generational Fraud Index",
+    description: "A composite index ranking generational fraud risk across the United States, built from six federal and survey sources.",
+  },
+  {
+    href: "/resources/ai-names-ict-experts",
+    eyebrow: "Data Report",
+    title: "Who AI Names When You Ask for ICT Experts",
+    description: "2,286 individuals extracted from 2,520 AI responses across ChatGPT, Claude, Gemini, and Perplexity. Gender, role, and consensus data for every person cited.",
+  },
+  {
+    href: "/resources/saas-pricing-inflation",
+    eyebrow: "Data Report",
+    title: "SaaS Price Comparison 2020–2026",
+    description: "Entry-tier pricing for 65 SaaS tools tracked over six years across 12 categories, with Wayback Machine verification on every data point.",
+  },
+];
+
+// Editorial eyebrow — pill with navy dot.
+const eyebrow = "inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#0A0F1E]/12 mb-5";
+const eyebrowDot = "h-1.5 w-1.5 rounded-full bg-[#1E3A8A]";
+const eyebrowText = "text-[11px] uppercase tracking-[0.14em] font-semibold text-ink";
+
+// Restrained CTAs — administrative, not conversion-aggressive.
+const primaryCta = "inline-flex items-center justify-center bg-[#1E3A8A] hover:bg-[#1E40AF] text-white font-semibold px-5 py-2.5 rounded-md text-sm transition-colors duration-200";
+const secondaryCta = "inline-flex items-center justify-center font-semibold px-5 py-2.5 border border-[#1E3A8A] text-[#1E3A8A] rounded-md text-sm transition-colors duration-200 hover:bg-[#1E3A8A]/5";
 ---
 
 <Layout
-  title="Ranking Atlas — Editorial Coverage for Google & AI Search Visibility"
-  description="Editorial PR that earns coverage on the publishers AI engines cite and Google trusts. Per-campaign, fixed price, guaranteed minimum placements."
+  title="Ranking Atlas — Editorial campaigns built on original research and data"
+  description="Ranking Atlas produces commissioned studies, proprietary data analysis, and editorial campaigns used by publishers, journalists, and brands seeking broader visibility online."
 >
 
-  <!-- ── 1. HERO ── -->
-  <section id="home" class="relative overflow-hidden pt-20 md:pt-24 lg:pt-28 pb-16 md:pb-16 lg:pb-20">
-    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <div class="absolute top-1/3 left-1/4 w-[700px] h-[700px] rounded-full opacity-[0.10] blur-[140px]"
-           style="background: radial-gradient(circle, #5D4FE0 0%, transparent 70%);"></div>
-    </div>
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center">
-
-        <!-- Text -->
-          <Eyebrow label="Editorial authority for AI & Google search" />
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-[1.1] mb-5">
-            <span class="text-[#0A0F1E]">Be the Brand </span><span class="relative inline-block pb-2 pr-1"><span style="background: linear-gradient(135deg, #5D4FE0 0%, #7C3AED 50%, #4338CA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AI Cites</span><svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3 text-[#5D4FE0]" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>
-          </h1>
-          <p class="text-lg leading-relaxed mb-6 text-[#475569]">
-            AI systems cite authoritative publishers.<br />
-            Editorial coverage builds that authority.<br />
-            We earn it for you.
-          </p>
-          <div class="flex flex-wrap justify-center items-center gap-3 mb-8">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#0A0F1E]/8 shadow-[0_2px_8px_-2px_rgba(10,15,30,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_-4px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/30 text-sm font-medium text-[#0A0F1E]">
-              <CheckCircle size={16} class="text-[#5D4FE0] shrink-0" />
-              8+ placements on authority publishers
-            </div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#0A0F1E]/8 shadow-[0_2px_8px_-2px_rgba(10,15,30,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_-4px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/30 text-sm font-medium text-[#0A0F1E]">
-              <DollarSign size={16} class="text-[#5D4FE0] shrink-0" />
-              Fixed $3.5K campaign
-            </div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#0A0F1E]/8 shadow-[0_2px_8px_-2px_rgba(10,15,30,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_-4px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/30 text-sm font-medium text-[#0A0F1E]">
-              <Receipt size={16} class="text-[#5D4FE0] shrink-0" />
-              No retainers
-            </div>
+  <!-- ── 1. HERO ── editorial pill + asymmetric layout with right-side study card -->
+  <section id="home" class="pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#0A0F1E]/12 mb-7">
+            <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-[#1E3A8A]"></span>
+            <span class="text-[11px] uppercase tracking-[0.14em] font-semibold text-ink">Editorial PR · Research-led</span>
           </div>
-          <div class="flex flex-wrap justify-center gap-3">
-            <PrimaryCTA href="/contact" />
+          <h1 class="font-serif font-medium text-[2rem] sm:text-[2.5rem] lg:text-[3.25rem] tracking-tight text-ink leading-[1.05] mb-6">
+            Research-Led Stories For <span class="brush-highlight">Trusted Publications</span>
+          </h1>
+          <p class="text-lg text-body leading-relaxed mb-7 max-w-[580px]">
+            We're a specialist data campaigns firm, turning <span class="font-semibold text-[#1E3A8A]">proprietary data, commissioned research, and original analysis</span> into editorial studies that earn authoritative coverage.
+          </p>
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="/contact" class={primaryCta}>Start a Campaign</a>
+            <a href="/resources" class={secondaryCta}>See our research</a>
           </div>
         </div>
 
+        <!-- Right-side: editorial diagram of the relationship between editorial coverage, AI visibility, and search discovery -->
+        <div class="lg:col-span-5 hidden lg:block">
+          <div class="bg-[#FCFAF6] border border-[#0F1B3D]/8 rounded-2xl p-8 relative">
+            <h3 class="font-serif font-semibold text-[15px] tracking-tight text-ink leading-snug mb-4">
+              Editorial Citations And AI Visibility
+            </h3>
+
+            <!-- Legend -->
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 mb-4">
+              <span class="inline-flex items-center gap-1.5 text-[11px] text-body font-medium">
+                <span aria-hidden="true" class="h-[2px] w-4 rounded-sm bg-[#0F1B3D]"></span>
+                Editorial citations
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-[11px] text-body font-medium">
+                <span aria-hidden="true" class="h-[2px] w-4 rounded-sm bg-[#1E3A8A]/75"></span>
+                AI engine mentions
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-[11px] text-body font-medium">
+                <span aria-hidden="true" class="h-[2px] w-4 rounded-sm bg-[#8FA4D9]"></span>
+                Organic traffic
+              </span>
+            </div>
+
+            <!-- Chart -->
+            <div class="relative">
+              <svg viewBox="0 0 360 200" class="w-full h-auto" role="img" aria-label="Illustrative diagram showing editorial citations, AI engine mentions, and organic traffic rising in relationship to one another">
+                <!-- Single quiet baseline -->
+                <line x1="20" y1="186" x2="340" y2="186" stroke="#0F1B3D" stroke-opacity="0.08" stroke-width="1"/>
+
+                <!-- Editorial citations: steady, deliberate climb (deep navy) -->
+                <path
+                  d="M 20,168 C 70,160 110,150 160,128 C 200,110 240,86 280,58 S 320,28 340,22"
+                  fill="none"
+                  stroke="#0F1B3D"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="340" cy="22" r="2.5" fill="#0F1B3D"/>
+
+                <!-- AI engine mentions: lags, then follows (medium navy, reduced saturation) -->
+                <path
+                  d="M 20,182 C 80,180 130,176 180,166 C 220,158 250,134 280,96 S 320,46 340,34"
+                  fill="none"
+                  stroke="#1E3A8A"
+                  stroke-opacity="0.75"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="340" cy="34" r="2.5" fill="#1E3A8A" fill-opacity="0.75"/>
+
+                <!-- Organic traffic: gentle lift, lowest saturation -->
+                <path
+                  d="M 20,184 C 90,182 150,178 200,170 C 240,164 280,140 310,108 S 335,76 340,72"
+                  fill="none"
+                  stroke="#8FA4D9"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="340" cy="72" r="2.5" fill="#8FA4D9"/>
+              </svg>
+            </div>
+
+            <!-- Editorial caption -->
+            <p class="mt-3 text-xs italic text-body/70 leading-relaxed">
+              Editorial coverage increasingly influences both AI visibility and search discovery.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── 2. PUBLISHER PILLS STRIP ── -->
-  <div class="bg-white py-8 border-y border-[#0A0F1E]/8">
-    <div class="max-w-6xl mx-auto px-6 mb-8">
-      <p class="text-center text-xs uppercase tracking-[0.2em] font-semibold text-[#64748B]">Publishers We Target</p>
+  <!-- ── 2. PUBLISHER MARQUEE ── "Featured In" eyebrow + contained marquee -->
+  <div class="bg-white py-10 border-y border-[#0A0F1E]/10">
+    <div class="max-w-5xl mx-auto px-6 mb-6">
+      <div class="flex items-center justify-center gap-3">
+        <span aria-hidden="true" class="h-px w-8 bg-[#0A0F1E]/20"></span>
+        <span class="text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Featured in</span>
+        <span aria-hidden="true" class="h-px w-8 bg-[#0A0F1E]/20"></span>
+      </div>
     </div>
     <div class="relative overflow-hidden w-full">
-      <!-- Left fade -->
       <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-      <!-- Right fade -->
       <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
-      <!-- Scrolling track (duplicated for seamless loop) -->
       <div class="flex gap-3 animate-marquee-slow whitespace-nowrap w-max">
-        <!-- First copy -->
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Forbes</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Bloomberg</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">The New York Times</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">TechCrunch</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Wired</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Financial Times</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Ars Technica</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">VentureBeat</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Dark Reading</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">SecurityWeek</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">American Banker</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Fintech Futures</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Forbes</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Bloomberg</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">The New York Times</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">TechCrunch</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Wired</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Financial Times</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Ars Technica</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">VentureBeat</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Dark Reading</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">SecurityWeek</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">American Banker</span>
-        <span class="px-5 py-2.5 rounded-full border border-[#0A0F1E]/10 bg-white text-sm font-semibold text-[#0A0F1E] whitespace-nowrap shrink-0">Fintech Futures</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Forbes</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Bloomberg</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">The New York Times</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">TechCrunch</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Wired</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Financial Times</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Ars Technica</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">VentureBeat</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Dark Reading</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">SecurityWeek</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">American Banker</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Fintech Futures</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Forbes</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Bloomberg</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">The New York Times</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">TechCrunch</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Wired</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Financial Times</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Ars Technica</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">VentureBeat</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Dark Reading</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">SecurityWeek</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">American Banker</span>
+        <span class="px-5 py-2 rounded-full border border-[#0A0F1E]/15 bg-white text-sm font-medium text-[#0A0F1E] whitespace-nowrap shrink-0">Fintech Futures</span>
       </div>
     </div>
   </div>
 
-  <!-- ── 3. WHAT YOU GET ── -->
-  <section class="bg-white py-16 lg:py-24">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4 pb-1" style="background: linear-gradient(135deg, #5D4FE0 0%, #7C3AED 50%, #4338CA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">What AI Systems Trust</h2>
-        <p class="text-lg text-[#64748B] max-w-3xl mx-auto">Publisher authority and omnipresence across authoritative sources are the pattern LLMs and Google use to decide which brands to surface. Earning that pattern means originating stories worth covering.</p>
+  <!-- ── 3. WHAT WE DO ── three elegant cards with restrained iconography + check details -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center max-w-[720px] mx-auto mb-10">
+        <div class={eyebrow}>
+          <span aria-hidden="true" class={eyebrowDot}></span>
+          <span class={eyebrowText}>What we do</span>
+        </div>
+        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">Research, Editorial Production, Placement</span></h2>
+        <p class="text-lg text-body leading-relaxed">
+          Every campaign begins with <span class="font-semibold text-[#1E3A8A]">original research and primary-source data</span>, then moves through full editorial production and targeted outreach.
+        </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <!-- Card 1: Authority + Omnipresence -->
-        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
-          <div class="w-12 h-12 rounded-xl bg-[#5D4FE0]/10 flex items-center justify-center mb-6">
-            <TrendingUp size={22} class="text-[#5D4FE0]" />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
+          <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3"/><path d="M3 8h18"/><path d="M7 12h10"/><path d="M7 16h6"/><rect x="3" y="8" width="18" height="13" rx="1"/>
+            </svg>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-[#5D4FE0] leading-snug mb-3">Authority + Omnipresence</h3>
-          <p class="text-base text-[#475569] leading-relaxed">Publisher authority and repeated mentions across trusted publishers form the pattern LLMs and search engines use to decide who to cite. One mention doesn't move visibility. Consistent coverage across authority sources does.</p>
+          <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Original Research</h3>
+          <p class="text-sm text-body leading-relaxed mb-5 flex-1">Studies built from proprietary datasets, commissioned research, and publicly available primary sources.</p>
+          <ul class="space-y-1.5 text-[12px] text-muted pt-4 border-t border-[#0A0F1E]/08">
+            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Proprietary datasets</li>
+            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Commissioned surveys</li>
+            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Federal records</li>
+          </ul>
         </div>
 
-        <!-- Card 2: Editorial citations -->
-        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
-          <div class="w-12 h-12 rounded-xl bg-[#5D4FE0]/10 flex items-center justify-center mb-6">
-            <Newspaper size={22} class="text-[#5D4FE0]" />
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
+          <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/>
+            </svg>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-[#5D4FE0] leading-snug mb-3">Editorial Citations</h3>
-          <p class="text-base text-[#475569] leading-relaxed">Self-published content does not build the pattern. Editorial mentions on authority publishers do. The brands surfaced in ChatGPT, Perplexity, Gemini, and Google AI Overviews are the ones with broad editorial coverage.</p>
+          <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Editorial Production</h3>
+          <p class="text-sm text-body leading-relaxed mb-5 flex-1">Research structured for editorial use, including documented methodology, downloadable data, and verified contact attribution.</p>
+          <ul class="space-y-1.5 text-[12px] text-muted pt-4 border-t border-[#0A0F1E]/08">
+            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Documented methodology</li>
+            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Downloadable datasets</li>
+            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Named author attribution</li>
+          </ul>
         </div>
 
-        <!-- Card 3: Data-Led Research -->
-        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
-          <div class="w-12 h-12 rounded-xl bg-[#5D4FE0]/10 flex items-center justify-center mb-6">
-            <FlaskConical size={22} class="text-[#5D4FE0]" />
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
+          <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.5" fill="#1E3A8A"/>
+            </svg>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-[#5D4FE0] leading-snug mb-3">Data-Led Research</h3>
-          <p class="text-base text-[#475569] leading-relaxed">Authority publishers cite stories, not brands. Ranking Atlas runs data-led campaigns that give journalists something to cover: original research, proprietary data, industry studies. That is what earns the citations.</p>
+          <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Targeted Placement</h3>
+          <p class="text-sm text-body leading-relaxed mb-5 flex-1">Outreach focused on the publications, reporters, and subject areas most relevant to the client's industry.</p>
+          <ul class="space-y-1.5 text-[12px] text-muted pt-4 border-t border-[#0A0F1E]/08">
+            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Industry-relevant outlets</li>
+            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Named reporter targeting</li>
+            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Guaranteed minimums</li>
+          </ul>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 4. HOW RANKING ATLAS WORKS ── -->
-  <section class="relative overflow-hidden py-16 lg:py-24" style="background: #5D4FE0;">
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
-    <div class="relative max-w-6xl mx-auto px-6 text-center">
-      <div class="mb-12">
-        <Eyebrow label="How it works" variant="dark" />
-        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">Everything You Need, Nothing You Don't.</h2>
-        <p class="text-lg text-white/80 max-w-2xl mx-auto">Fixed-scope campaigns. Citations on the publishers AI trusts. Measurement that proves it worked.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-        <div class="relative bg-white/[0.06] backdrop-blur-sm rounded-2xl border border-white/10 p-8 text-left transition-all duration-300 hover:bg-white/[0.09] hover:border-white/20 hover:-translate-y-1">
-          <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-            <Tag size={22} class="text-white" />
-          </div>
-          <h3 class="text-base md:text-lg font-semibold tracking-tight text-white leading-snug mb-3">One Price, on the Page</h3>
-          <p class="text-sm text-white/70 leading-relaxed">Every campaign is fixed-scope and fixed-price, starting at $3.5K. No hidden tiers, no retainer pitch, no surprises at invoice time.</p>
-        </div>
-
-        <div class="relative bg-white/[0.06] backdrop-blur-sm rounded-2xl border border-white/10 p-8 text-left transition-all duration-300 hover:bg-white/[0.09] hover:border-white/20 hover:-translate-y-1">
-          <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-            <ShieldCheck size={22} class="text-white" />
-          </div>
-          <h3 class="text-base md:text-lg font-semibold tracking-tight text-white leading-snug mb-3">Placements, Guaranteed</h3>
-          <p class="text-sm text-white/70 leading-relaxed">Every campaign commits to a minimum number of placements on authority publishers. If we don't hit it, we keep working until we do.</p>
-        </div>
-
-        <div class="relative bg-white/[0.06] backdrop-blur-sm rounded-2xl border border-white/10 p-8 text-left transition-all duration-300 hover:bg-white/[0.09] hover:border-white/20 hover:-translate-y-1">
-          <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-            <Calendar size={22} class="text-white" />
-          </div>
-          <h3 class="text-base md:text-lg font-semibold tracking-tight text-white leading-snug mb-3">Campaign Windows, Not Contracts</h3>
-          <p class="text-sm text-white/70 leading-relaxed">Engagements are defined by a campaign, not a month. Book one when you need coverage. Leave when you don't.</p>
-        </div>
-
-        <div class="relative bg-white/[0.06] backdrop-blur-sm rounded-2xl border border-white/10 p-8 text-left transition-all duration-300 hover:bg-white/[0.09] hover:border-white/20 hover:-translate-y-1">
-          <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-            <LineChart size={22} class="text-white" />
-          </div>
-          <h3 class="text-base md:text-lg font-semibold tracking-tight text-white leading-snug mb-3">Proof of Visibility</h3>
-          <p class="text-sm text-white/70 leading-relaxed">Every campaign includes before-and-after measurement across ChatGPT, Perplexity, Gemini, and Google AI Overviews. You see exactly what the coverage produced.</p>
-        </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ── 6. COMPOUND ── -->
-  <section class="bg-white py-16 lg:py-24">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <Eyebrow label="Why it matters now" />
-        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4 pb-1" style="background: linear-gradient(135deg, #5D4FE0 0%, #7C3AED 50%, #4338CA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Editorial Citations Compound What You're Already Running.</h2>
-        <p class="text-lg text-[#64748B] max-w-3xl mx-auto">Content needs external authority to rank. In search. In LLMs. Paid ads are eating organic results, which makes LLM visibility a primary acquisition channel. Editorial citations are what put you in the cited set.</p>
+  <!-- ── 3b. WHY EDITORIAL COVERAGE MATTERS ── split-layout intro + stat callouts + pullquote -->
+  <section class="bg-[#F4F0E9] py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center max-w-[760px] mx-auto mb-14">
+        <div class={eyebrow}>
+          <span aria-hidden="true" class={eyebrowDot}></span>
+          <span class={eyebrowText}>Context</span>
+        </div>
+        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6">
+          <span class="brush-underline">Why Editorial Coverage Matters In Search</span>
+        </h2>
+        <p class="text-lg text-body leading-relaxed">
+          Google and AI search engines <span class="font-semibold text-[#1E3A8A]">increasingly rely on publisher references</span> when determining which brands surface in results and generated answers. The mechanism is the same across both: <span class="font-semibold text-[#1E3A8A]">brands cited by trusted publications appear more often</span>, in more places, to more buyers.
+        </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
-          <div class="w-12 h-12 rounded-xl bg-[#5D4FE0]/10 flex items-center justify-center mb-6">
-            <FileText size={22} class="text-[#5D4FE0]" />
+      <!-- Stat callouts: three numeric pillars, staggered vertical rhythm -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
+          <div class="flex items-baseline gap-1 mb-3">
+            <span class="font-serif font-semibold text-[2.25rem] text-[#1E3A8A] leading-none">61</span>
+            <span class="font-serif font-semibold text-2xl text-[#1E3A8A] leading-none">%</span>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">Content Needs the Authority Signal</h3>
-          <p class="text-base text-[#475569] leading-relaxed"><a href="https://ahrefs.com/blog/search-traffic-study/" target="_blank" rel="noopener noreferrer" class="text-[#5D4FE0] hover:text-[#4338CA] underline underline-offset-2 decoration-[#5D4FE0]/30 hover:decoration-[#5D4FE0] transition-colors">Ahrefs</a> found 90.63% of pages get zero organic traffic from Google. The most common reason: no inbound coverage from trusted sources. Editorial citations are the authority signal search engines and LLMs look for.</p>
+          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Organic Results Are Shrinking</h3>
+          <p class="text-sm text-body leading-relaxed">
+            When Google shows an AI Overview, click-through to the underlying pages drops by 61% on average <span class="text-muted">(<a href="https://www.dataslayer.ai/blog/google-ai-overviews-the-end-of-traditional-ctr-and-how-to-adapt-in-2025" target="_blank" rel="noopener noreferrer" class="text-brand-navy hover:underline">Seer Interactive, 2024</a>)</span>. The traditional path of ranking a page and earning the click is narrowing.
+          </p>
         </div>
-
-        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
-          <div class="w-12 h-12 rounded-xl bg-[#5D4FE0]/10 flex items-center justify-center mb-6">
-            <CreditCard size={22} class="text-[#5D4FE0]" />
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 md:mt-8 hover:border-[#0A0F1E]/25 transition-colors">
+          <div class="flex items-baseline gap-1 mb-3">
+            <span class="font-serif font-semibold text-[2.25rem] text-[#1E3A8A] leading-none">10–14</span>
+            <span class="font-serif font-semibold text-2xl text-[#1E3A8A] leading-none">%</span>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">Paid Is Compensating for Shrinking Organic</h3>
-          <p class="text-base text-[#475569] leading-relaxed"><a href="https://www.dataslayer.ai/blog/google-ai-overviews-the-end-of-traditional-ctr-and-how-to-adapt-in-2025" target="_blank" rel="noopener noreferrer" class="text-[#5D4FE0] hover:text-[#4338CA] underline underline-offset-2 decoration-[#5D4FE0]/30 hover:decoration-[#5D4FE0] transition-colors">Seer Interactive</a> found organic CTR dropped 61% on queries where an AI Overview appeared. Budget shifts into paid. The brands AI cites still win the click. Editorial coverage is what puts you there.</p>
+          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">AI Engines Move Buyer Research</h3>
+          <p class="text-sm text-body leading-relaxed">
+            Referral traffic to publishers from ChatGPT, Perplexity, Claude, and Gemini grew from negligible to 10–14% of total traffic over 18 months <span class="text-muted">(<a href="https://digitalcontentnext.org/blog/2025/05/06/googles-ai-overviews-linked-to-lower-publisher-clicks/" target="_blank" rel="noopener noreferrer" class="text-brand-navy hover:underline">Digital Content Next, 2025</a>)</span>.
+          </p>
         </div>
-
-        <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
-          <div class="w-12 h-12 rounded-xl bg-[#5D4FE0]/10 flex items-center justify-center mb-6">
-            <Bot size={22} class="text-[#5D4FE0]" />
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
+          <div class="flex items-baseline gap-1 mb-3">
+            <span class="font-serif font-semibold text-[2.25rem] text-[#1E3A8A] leading-none">96.55</span>
+            <span class="font-serif font-semibold text-2xl text-[#1E3A8A] leading-none">%</span>
           </div>
-          <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3">AI Search Is Where Buyers Now Research Vendors</h3>
-          <p class="text-base text-[#475569] leading-relaxed"><a href="https://digitalcontentnext.org/blog/2025/05/06/googles-ai-overviews-linked-to-lower-publisher-clicks/" target="_blank" rel="noopener noreferrer" class="text-[#5D4FE0] hover:text-[#4338CA] underline underline-offset-2 decoration-[#5D4FE0]/30 hover:decoration-[#5D4FE0] transition-colors">Digital Content Next</a> reported Google referral traffic fell 10% year-over-year in 2025, 14% for non-news brands. That intent is moving to <a href="/resources/chatgpt-search-visibility" class="text-[#5D4FE0] hover:text-[#4338CA] underline underline-offset-2 decoration-[#5D4FE0]/30 hover:decoration-[#5D4FE0] transition-colors">ChatGPT</a>, Perplexity, and Gemini. The brands surfaced in those answers are the ones with broad editorial coverage.</p>
+          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Publisher References Are The Signal</h3>
+          <p class="text-sm text-body leading-relaxed">
+            96.55% of pages on the web receive no organic search traffic at all <span class="text-muted">(<a href="https://ahrefs.com/blog/search-traffic-study/" target="_blank" rel="noopener noreferrer" class="text-brand-navy hover:underline">Ahrefs, 2024</a>)</span>. Pages that do receive meaningful visibility are disproportionately referenced by established publications and trusted domains.
+          </p>
         </div>
+      </div>
 
+      <blockquote class="max-w-[760px] mx-auto text-center font-serif text-xl md:text-2xl italic text-ink leading-snug">
+        <span aria-hidden="true" class="block mx-auto mb-5 h-px w-12 bg-[#1E3A8A]"></span>
+        Search visibility increasingly depends on whether brands are referenced by publishers Google and AI engines already trust.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ── 4. RESEARCH PROCESS ── structured horizontal process system with connector line -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center max-w-[640px] mx-auto mb-12">
+        <div class={eyebrow}>
+          <span aria-hidden="true" class={eyebrowDot}></span>
+          <span class={eyebrowText}>Research process</span>
+        </div>
+        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">From Primary Data To Placement</span></h2>
+        <p class="text-base text-body leading-relaxed">
+          Four stages, run sequentially. Each stage produces an <span class="font-semibold text-[#1E3A8A]">editorial artefact</span> a serious newsroom can use.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
+          <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5 font-mono text-[11px] font-semibold text-[#1E3A8A] tracking-wider">01</div>
+          <h4 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Data Sourcing</h4>
+          <p class="text-sm text-body leading-relaxed">Official datasets, commissioned surveys, proprietary client data, and publicly available primary records.</p>
+        </div>
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
+          <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5 font-mono text-[11px] font-semibold text-[#1E3A8A] tracking-wider">02</div>
+          <h4 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Analysis</h4>
+          <p class="text-sm text-body leading-relaxed">Statistical analysis, trend identification, and editorial angle development.</p>
+        </div>
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
+          <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5 font-mono text-[11px] font-semibold text-[#1E3A8A] tracking-wider">03</div>
+          <h4 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Editorial Production</h4>
+          <p class="text-sm text-body leading-relaxed">Methodology, downloadable datasets, source attribution, and publication-ready formatting.</p>
+        </div>
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
+          <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5 font-mono text-[11px] font-semibold text-[#1E3A8A] tracking-wider">04</div>
+          <h4 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Outreach</h4>
+          <p class="text-sm text-body leading-relaxed">Distribution focused on the publications, reporters, and subject areas most relevant to the campaign.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── 7. FAQ ── -->
+  <!-- ── 5. FEATURED RESEARCH ── flagship + 2 secondary, study metadata pills -->
+  <section class="bg-[#F4F0E9] py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center max-w-[640px] mx-auto mb-10">
+        <div class={eyebrow}>
+          <span aria-hidden="true" class={eyebrowDot}></span>
+          <span class={eyebrowText}>Research</span>
+        </div>
+        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">Featured Research</span></h2>
+        <p class="text-lg text-body leading-relaxed mb-5">
+          Original studies built around primary-source data, published with full methodology.
+        </p>
+        <a href="/resources" class="text-sm text-[#1E3A8A] hover:text-[#1E40AF] font-semibold">
+          View all research →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <!-- Flagship -->
+        <a href={featuredResearch[0].href} class="group lg:col-span-7 bg-white border border-[#0A0F1E]/12 rounded-md p-10 md:p-12 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-[10px] uppercase tracking-[0.16em] text-[#1E3A8A] font-semibold">Featured Study</span>
+            <span aria-hidden="true" class="h-px w-8 bg-[#1E3A8A]/40"></span>
+            <span class="text-[10px] uppercase tracking-[0.14em] text-muted font-medium">{featuredResearch[0].eyebrow}</span>
+          </div>
+          <h3 class="font-serif font-semibold text-2xl md:text-[2rem] tracking-tight text-ink mb-5 leading-[1.2] group-hover:text-brand-navy transition-colors max-w-[560px]">
+            {featuredResearch[0].title}
+          </h3>
+          <p class="text-base md:text-lg text-body leading-relaxed mb-6 max-w-[540px]">
+            {featuredResearch[0].description}
+          </p>
+
+          <!-- Subtle table preview from the study -->
+          <figure class="mb-7 max-w-[560px]">
+            <figcaption class="flex items-center gap-2 mb-2.5">
+              <span class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold">Index preview</span>
+              <span aria-hidden="true" class="h-px flex-1 bg-[#0A0F1E]/10"></span>
+              <span class="text-[10px] uppercase tracking-[0.14em] text-muted font-medium">Composite score</span>
+            </figcaption>
+            <div class="rounded-sm border border-[#0A0F1E]/10 bg-white overflow-hidden">
+              <table class="w-full text-[12.5px]">
+                <thead>
+                  <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+                    <th class="px-3 py-2 text-left font-semibold text-[10px] uppercase tracking-[0.12em] text-muted w-10">Rank</th>
+                    <th class="px-3 py-2 text-left font-semibold text-[10px] uppercase tracking-[0.12em] text-muted">Cohort</th>
+                    <th class="px-3 py-2 text-right font-semibold text-[10px] uppercase tracking-[0.12em] text-muted">Score</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#0A0F1E]/6">
+                  <tr class="bg-[#1E3A8A]/[0.04]">
+                    <td class="px-3 py-2 font-semibold text-ink">
+                      <span class="inline-flex items-center gap-1.5">
+                        <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-[#1E3A8A]"></span>
+                        1
+                      </span>
+                    </td>
+                    <td class="px-3 py-2 font-semibold text-ink">Ages 50–64</td>
+                    <td class="px-3 py-2 text-right font-bold text-[#1E3A8A]">84.6</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 text-body">2</td>
+                    <td class="px-3 py-2 text-body">Ages 25–34</td>
+                    <td class="px-3 py-2 text-right text-body font-medium">60.4</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 text-body">3</td>
+                    <td class="px-3 py-2 text-body">Ages 35–49</td>
+                    <td class="px-3 py-2 text-right text-body font-medium">52.4</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 text-muted">4</td>
+                    <td class="px-3 py-2 text-muted">Ages 65+</td>
+                    <td class="px-3 py-2 text-right text-muted">51.4</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 text-muted">5</td>
+                    <td class="px-3 py-2 text-muted">Ages 18–24</td>
+                    <td class="px-3 py-2 text-right text-muted">12.4</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </figure>
+
+          <div class="flex flex-wrap gap-1.5 mb-7">
+            <span class="text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-white border border-[#0A0F1E]/10 text-body font-medium">6 federal sources</span>
+            <span class="text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-white border border-[#0A0F1E]/10 text-body font-medium">50 US states</span>
+            <span class="text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-white border border-[#0A0F1E]/10 text-body font-medium">Generational cuts</span>
+            <span class="text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-white border border-[#0A0F1E]/10 text-body font-medium">2026</span>
+          </div>
+          <div class="mt-auto text-xs text-brand-navy font-semibold group-hover:underline tracking-wide">Read the study →</div>
+        </a>
+
+        <!-- Two secondaries stacked -->
+        <div class="lg:col-span-5 grid grid-cols-1 gap-5">
+          <a href={featuredResearch[1].href} class="group bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
+            <div class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold mb-3">{featuredResearch[1].eyebrow}</div>
+            <h3 class="text-base font-semibold tracking-tight text-ink mb-3 leading-snug group-hover:text-brand-navy transition-colors">
+              {featuredResearch[1].title}
+            </h3>
+            <p class="text-sm text-body leading-relaxed mb-4 flex-1">
+              {featuredResearch[1].description}
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-[#F4F0E9] border border-[#0A0F1E]/08 text-muted font-medium">2,286 individuals</span>
+              <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-[#F4F0E9] border border-[#0A0F1E]/08 text-muted font-medium">4 engines</span>
+            </div>
+            <div class="text-[11px] text-brand-navy font-semibold group-hover:underline tracking-wide">Read the study →</div>
+          </a>
+
+          <a href={featuredResearch[2].href} class="group bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
+            <div class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold mb-3">{featuredResearch[2].eyebrow}</div>
+            <h3 class="text-base font-semibold tracking-tight text-ink mb-3 leading-snug group-hover:text-brand-navy transition-colors">
+              {featuredResearch[2].title}
+            </h3>
+            <p class="text-sm text-body leading-relaxed mb-4 flex-1">
+              {featuredResearch[2].description}
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-[#F4F0E9] border border-[#0A0F1E]/08 text-muted font-medium">65 tools</span>
+              <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-[#F4F0E9] border border-[#0A0F1E]/08 text-muted font-medium">12 categories</span>
+              <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-[#F4F0E9] border border-[#0A0F1E]/08 text-muted font-medium">6 years</span>
+            </div>
+            <div class="text-[11px] text-brand-navy font-semibold group-hover:underline tracking-wide">Read the study →</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. EDITORIAL STANDARDS ── split: left text, right elevated checklist grid -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center max-w-[720px] mx-auto mb-10">
+        <div class={eyebrow}>
+          <span aria-hidden="true" class={eyebrowDot}></span>
+          <span class={eyebrowText}>Standards</span>
+        </div>
+        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6"><span class="brush-underline">Editorial Standards</span></h2>
+        <p class="text-base text-body leading-relaxed">
+          Every study is published with <span class="font-semibold text-[#1E3A8A]">full methodology, source attribution, and a verified contact</span> for follow-up. The standard is what a serious newsroom would accept.
+        </p>
+      </div>
+      <div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-5 hover:border-[#0A0F1E]/25 transition-colors flex items-start gap-3">
+              <div class="shrink-0 w-7 h-7 rounded-full bg-[#F4F0E9] flex items-center justify-center mt-0.5">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold tracking-tight text-ink mb-1">Primary-Source Datasets</h3>
+                <p class="text-sm text-body leading-relaxed">Verifiable on request, available for editorial download.</p>
+              </div>
+            </div>
+            <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-5 hover:border-[#0A0F1E]/25 transition-colors flex items-start gap-3">
+              <div class="shrink-0 w-7 h-7 rounded-full bg-[#F4F0E9] flex items-center justify-center mt-0.5">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold tracking-tight text-ink mb-1">Methodology In Full</h3>
+                <p class="text-sm text-body leading-relaxed">Published alongside every study, never withheld.</p>
+              </div>
+            </div>
+            <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-5 hover:border-[#0A0F1E]/25 transition-colors flex items-start gap-3">
+              <div class="shrink-0 w-7 h-7 rounded-full bg-[#F4F0E9] flex items-center justify-center mt-0.5">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold tracking-tight text-ink mb-1">Named Author And Contact</h3>
+                <p class="text-sm text-body leading-relaxed">Direct contact for follow-up on every campaign.</p>
+              </div>
+            </div>
+            <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-5 hover:border-[#0A0F1E]/25 transition-colors flex items-start gap-3">
+              <div class="shrink-0 w-7 h-7 rounded-full bg-[#F4F0E9] flex items-center justify-center mt-0.5">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold tracking-tight text-ink mb-1">Evidence-Backed Claims</h3>
+                <p class="text-sm text-body leading-relaxed">No findings without source, no claims without evidence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. HOW WE WORK ── 2x2 process containers with restrained iconography -->
+  <section class="bg-[#F4F0E9] py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center max-w-[720px] mx-auto mb-10">
+        <div class={eyebrow}>
+          <span aria-hidden="true" class={eyebrowDot}></span>
+          <span class={eyebrowText}>How we work</span>
+        </div>
+        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">Fixed Scope, Defined Timeline, Measurable Outcomes</span></h2>
+        <p class="text-lg text-body leading-relaxed">
+          The opposite of retainer-and-rankings. Clients know <span class="font-semibold text-[#1E3A8A]">the price, the schedule, and the deliverables</span> before a campaign begins.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex gap-5">
+          <div class="shrink-0 w-10 h-10 rounded-sm bg-[#F4F0E9] flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Fixed-Price Campaigns</h3>
+            <p class="text-sm text-body leading-relaxed">Every campaign is quoted at a single fixed price, starting at $3,500. No retainers, no minimum spend, no scope creep.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex gap-5">
+          <div class="shrink-0 w-10 h-10 rounded-sm bg-[#F4F0E9] flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-3.5 9-9 9s-9-4-9-9 3.5-9 9-9c2 0 4 .6 5.5 1.7"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Guaranteed Minimum Coverage</h3>
+            <p class="text-sm text-body leading-relaxed">Each campaign is delivered with a guaranteed minimum number of placements on agreed publications. Performance is contractual, not aspirational.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex gap-5">
+          <div class="shrink-0 w-10 h-10 rounded-sm bg-[#F4F0E9] flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Campaign-Based Engagement</h3>
+            <p class="text-sm text-body leading-relaxed">Clients engage Ranking Atlas campaign by campaign. No long-term contracts. Work continues only when a campaign is commissioned.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex gap-5">
+          <div class="shrink-0 w-10 h-10 rounded-sm bg-[#F4F0E9] flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="3" y1="20" x2="21" y2="20"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Coverage And Citation Tracking</h3>
+            <p class="text-sm text-body leading-relaxed">Every campaign closes with documented placements, citation tracking, and visibility measurement across the publications and search environments where the work landed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. FAQ ── dark, restrained (component handles its own layout) -->
   <FAQ />
 
-  <!-- ── 8. FINAL PURPLE CTA BAND ── -->
-  <section class="relative overflow-hidden py-16 lg:py-24 text-center" style="background: #5D4FE0;">
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');"></div>
-    <div class="relative max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
-        Be the Brand <span class="relative inline-block pb-2">AI Cites<svg viewBox="0 0 200 12" preserveAspectRatio="none" class="absolute -bottom-1 left-0 w-full h-3" aria-hidden="true"><path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>.
-      </h2>
-      <p class="text-lg text-white/80 mb-10">Per-campaign. Fixed price. Guaranteed placements on authority publishers.</p>
-      <a href="/contact"
-        class="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white text-[#5D4FE0] font-bold text-base hover:bg-white/95 transition-all duration-200 hover:-translate-y-0.5 shadow-[0_8px_30px_-8px_rgba(0,0,0,0.3)]">
-        Start a Campaign — $3.5K →
-      </a>
+  <!-- ── 9. FINAL CTA ── split composition: left intent + right CTA card -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="bg-[#F4F0E9] border border-[#0A0F1E]/10 rounded-md p-10 md:p-12 text-center">
+        <div class="max-w-[640px] mx-auto">
+          <div class={eyebrow}>
+            <span aria-hidden="true" class={eyebrowDot}></span>
+            <span class={eyebrowText}>Start a campaign</span>
+          </div>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6"><span class="brush-underline">Start a Campaign</span></h2>
+          <p class="text-base text-body leading-relaxed mb-7">
+            Each campaign is scoped, priced, and delivered as a discrete piece of work. Get in touch to discuss a data campaign built around your industry, market, or proprietary research.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="/contact" class={primaryCta}>Start a Campaign</a>
+            <a href="/resources" class="text-sm text-[#1E3A8A] hover:text-[#1E40AF] font-semibold">See our research →</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -251,3 +619,63 @@ import { DollarSign, CheckCircle, Receipt, Tag, ShieldCheck, Calendar, LineChart
     }
   }
 </script>
+
+<style>
+  /* Editorial brush highlight — sits behind the text like a highlighter swipe.
+     Slightly skewed, irregular edges, with a subtle gradient for brushed texture. */
+  .brush-highlight {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    white-space: nowrap;
+  }
+  .brush-highlight::before {
+    content: '';
+    position: absolute;
+    left: -0.2em;
+    right: -0.2em;
+    top: 0.04em;
+    bottom: 0.08em;
+    z-index: -1;
+    background-image: linear-gradient(
+      102deg,
+      rgba(235, 192, 74, 0.5) 0%,
+      rgba(235, 192, 74, 0.72) 22%,
+      rgba(245, 197, 24, 0.65) 48%,
+      rgba(235, 192, 74, 0.55) 74%,
+      rgba(245, 197, 24, 0.68) 100%
+    );
+    border-radius: 4px 12px 5px 9px / 10px 4px 11px 5px;
+    transform: skewX(-3deg) rotate(-0.4deg);
+    filter: blur(0.3px);
+  }
+
+  /* Editorial brush underline — same yellow as the hero, sits below
+     H2 section headings like a hand-drawn underline. */
+  .brush-underline {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    padding-bottom: 0.32em;
+  }
+  .brush-underline::after {
+    content: '';
+    position: absolute;
+    left: -0.08em;
+    right: -0.08em;
+    bottom: 0.05em;
+    height: 0.2em;
+    z-index: -1;
+    background-image: linear-gradient(
+      102deg,
+      rgba(235, 192, 74, 0.55) 0%,
+      rgba(235, 192, 74, 0.78) 22%,
+      rgba(245, 197, 24, 0.7) 48%,
+      rgba(235, 192, 74, 0.58) 74%,
+      rgba(245, 197, 24, 0.72) 100%
+    );
+    border-radius: 3px 9px 4px 7px / 7px 3px 8px 4px;
+    transform: skewX(-3deg) rotate(-0.4deg);
+    filter: blur(0.2px);
+  }
+</style>

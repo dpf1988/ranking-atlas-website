@@ -24,6 +24,11 @@ export default {
         'bg-paper': '#F8F7FA',
         'bg-lavender': '#F5F3FA',
         surface: '#F1F5F9',
+        // Homepage navy (Phase 2 visual register shift). Scoped to homepage usage for now.
+        'brand-navy': '#0F1B3D',
+        'brand-navy-dark': '#080F24',
+        // Homepage cream tinted background (Phase 3).
+        'paper-cream': '#F8F6F1',
       },
       boxShadow: {
         card: '0 4px 20px -8px rgba(10,15,30,0.08)',
@@ -33,6 +38,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+        serif: ['"Source Serif 4"', 'Georgia', 'serif'],
       },
       animation: {
         scroll: 'scroll 35s linear infinite',
