@@ -14,18 +14,17 @@ This document layers on top of `CLAUDE.md`, `docs/design-system.md`, and `docs/w
 Every data report follows this sequence:
 
 1. **Hero**: eyebrow, H1, standfirst, hero image with caption, byline block, navigation panel
-2. **Overview**: three to four paragraphs of context, methodology summary, and framing
-3. **Key Takeaways**: six to eight bullet points, each leading with a bolded claim
-4. **Finding section 1** (claim-led H2): chart, optional table, body prose
-5. **Finding section 2** (claim-led H2): same pattern
-6. **Finding section 3** ... continue as needed, typically four to six findings
-7. **Closing editorial**: claim-led H2 reframing the finding in interpretive terms; one PullQuote with attribution allowed here only
-8. **Methodology**: full disclosure of what was asked, who was asked, sample sizes, classification methods, exclusions, baselines
-9. **Limitations**: five to seven candid concessions about what the data does not prove
-10. **Download**: CSV link, citation line
-11. **Press contact sign-off**: single soft line, no styled CTA
-12. **RelatedResearch**: three sibling resources
-13. **InstitutionalBio**: closing institutional bio (Featured Research is institutional; never use AuthorBio here)
+2. **Key Takeaways**: six to eight bullet points, each leading with a bolded claim
+3. **Finding section 1** (claim-led H2): chart, optional table, body prose
+4. **Finding section 2** (claim-led H2): same pattern
+5. **Finding section 3** ... continue as needed, typically four to six findings
+6. **Closing editorial**: claim-led H2 reframing the finding in interpretive terms; one PullQuote with attribution allowed here only
+7. **Methodology**: full disclosure of what was asked, who was asked, sample sizes, classification methods, exclusions, baselines
+8. **Limitations**: five to seven candid concessions about what the data does not prove
+9. **Download**: CSV link, citation line
+10. **Press contact sign-off**: single soft line, no styled CTA
+11. **RelatedResearch**: three sibling resources
+12. **InstitutionalBio**: closing institutional bio (Featured Research is institutional; never use AuthorBio here)
 
 ---
 
@@ -73,7 +72,6 @@ In order, inside the hero section:
     <nav class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5" aria-label="Article sections">
       <p class="text-[14px] font-semibold text-ink mb-3">Navigation</p>
       <ul class="flex flex-col space-y-2 text-[14px]">
-        <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#overview" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Overview</a></li>
         <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key Takeaways</a></li>
         <!-- one <li> per finding section, anchor text matches the H2, following the same flex + hollow-bullet pattern -->
       </ul>
