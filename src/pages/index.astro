@@ -39,7 +39,7 @@ const secondaryCta = "inline-flex items-center justify-center font-semibold px-5
 >
 
   <!-- ── 1. HERO ── editorial pill + asymmetric layout with right-side study card -->
-  <section id="home" class="pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-20">
+  <section id="home" class="pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-20 relative" style="background-image: linear-gradient(to right, rgba(15,27,61,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,27,61,0.04) 1px, transparent 1px); background-size: 48px 48px;">
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div class="lg:col-span-6">
@@ -59,24 +59,44 @@ const secondaryCta = "inline-flex items-center justify-center font-semibold px-5
           </div>
         </div>
 
-        <!-- Right-side: screenshot of landed editorial coverage -->
-        <div class="lg:col-span-6 hidden lg:block lg:-mt-8 lg:-mr-6 xl:-mr-12">
+        <!-- Right-side (mobile: stacks below CTAs): screenshot of landed editorial coverage -->
+        <div class="lg:col-span-6 lg:-mt-8 lg:-mr-6 xl:-mr-12 relative">
           <img
             src="/images/formidable-ai-ict-experts.png"
             alt="Ranking Atlas research featured in Formidable: analysis of 2,500 AI queries finding women accounted for just 16.1% of expert mentions across ChatGPT, Claude, Gemini and Perplexity"
             class="w-full h-auto rounded-lg shadow-[0_30px_60px_-15px_rgba(15,27,61,0.25),0_10px_25px_-10px_rgba(15,27,61,0.15)]"
           />
+          <!-- Discreet external link overlay: opens the actual Formidable article in a new tab -->
+          <a
+            href="https://beformidable.com/p/the-backlash-to-reese-witherspoon-reveals-a-more-nuanced-ai-problem"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Read the article on Formidable"
+            title="Read on Formidable"
+            class="absolute bottom-3 right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/95 backdrop-blur-sm border border-[#0A0F1E]/10 shadow-md text-[#1E3A8A] hover:bg-white hover:border-[#0A0F1E]/25 hover:text-[#1E40AF] transition-colors"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── 2. PUBLISHER MARQUEE ── "Featured In" eyebrow + contained marquee -->
-  <div class="bg-white py-10 border-y border-[#0A0F1E]/10">
+  <!-- Mobile-only section divider: short hairline + navy dot, echoing the eyebrow visual language -->
+  <div class="lg:hidden flex items-center justify-center gap-3 py-2">
+    <span aria-hidden="true" class="h-px w-10 bg-[#0A0F1E]/15"></span>
+    <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-[#1E3A8A]/60"></span>
+    <span aria-hidden="true" class="h-px w-10 bg-[#0A0F1E]/15"></span>
+  </div>
+
+  <!-- ── 2. PUBLISHER MARQUEE (desktop only) ── "Target publications" eyebrow + contained marquee -->
+  <div class="hidden lg:block bg-white py-10 border-y border-[#0A0F1E]/10">
     <div class="max-w-5xl mx-auto px-6 mb-6">
       <div class="flex items-center justify-center gap-3">
         <span aria-hidden="true" class="h-px w-8 bg-[#0A0F1E]/20"></span>
-        <span class="text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Featured in</span>
+        <span class="text-[11px] uppercase tracking-[0.16em] font-semibold text-muted">Target publications</span>
         <span aria-hidden="true" class="h-px w-8 bg-[#0A0F1E]/20"></span>
       </div>
     </div>
@@ -113,7 +133,7 @@ const secondaryCta = "inline-flex items-center justify-center font-semibold px-5
   </div>
 
   <!-- ── 3. WHAT WE DO ── three elegant cards with restrained iconography + check details -->
-  <section class="py-16 lg:py-20">
+  <section class="bg-[#F4F0E9] py-16 lg:py-20">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center max-w-[720px] mx-auto mb-10">
         <div class={eyebrow}>
@@ -130,22 +150,35 @@ const secondaryCta = "inline-flex items-center justify-center font-semibold px-5
         <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
           <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3"/><path d="M3 8h18"/><path d="M7 12h10"/><path d="M7 16h6"/><rect x="3" y="8" width="18" height="13" rx="1"/>
+              <!-- Magnifying glass examining a small bar chart -->
+              <circle cx="10" cy="10" r="7"/>
+              <line x1="15.5" y1="15.5" x2="21" y2="21"/>
+              <line x1="7" y1="13" x2="7" y2="10"/>
+              <line x1="10" y1="13" x2="10" y2="7"/>
+              <line x1="13" y1="13" x2="13" y2="11"/>
             </svg>
           </div>
           <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Original Research</h3>
-          <p class="text-sm text-body leading-relaxed mb-5 flex-1">Studies built from proprietary datasets, commissioned research, and publicly available primary sources.</p>
+          <p class="text-sm text-body leading-relaxed mb-5 flex-1">Studies built from primary-source data, then analysed to surface the trends and editorial angles a newsroom can use.</p>
           <ul class="space-y-1.5 text-[12px] text-muted pt-4 border-t border-[#0A0F1E]/08">
             <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Proprietary datasets</li>
             <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Commissioned surveys</li>
-            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Federal records</li>
+            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Statistical analysis</li>
           </ul>
         </div>
 
         <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
           <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/>
+              <!-- Folded newspaper: two pages each with a headline and body lines -->
+              <rect x="3" y="4" width="18" height="16" rx="1"/>
+              <line x1="12" y1="4" x2="12" y2="20"/>
+              <line x1="5" y1="8" x2="10" y2="8"/>
+              <line x1="5" y1="12" x2="9" y2="12"/>
+              <line x1="5" y1="15" x2="9" y2="15"/>
+              <line x1="14" y1="8" x2="19" y2="8"/>
+              <line x1="14" y1="12" x2="18" y2="12"/>
+              <line x1="14" y1="15" x2="18" y2="15"/>
             </svg>
           </div>
           <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Editorial Production</h3>
@@ -160,7 +193,13 @@ const secondaryCta = "inline-flex items-center justify-center font-semibold px-5
         <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
           <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.5" fill="#1E3A8A"/>
+              <!-- Publication page with verified badge in the upper-right corner -->
+              <rect x="3" y="6" width="14" height="15" rx="1"/>
+              <line x1="6" y1="11" x2="14" y2="11"/>
+              <line x1="6" y1="14" x2="14" y2="14"/>
+              <line x1="6" y1="17" x2="11" y2="17"/>
+              <circle cx="19" cy="6" r="3.5" fill="#1E3A8A" stroke="none"/>
+              <polyline points="17.5 6 18.5 7 20.5 5" stroke="white" stroke-width="1.5"/>
             </svg>
           </div>
           <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Targeted Placement</h3>
@@ -176,9 +215,9 @@ const secondaryCta = "inline-flex items-center justify-center font-semibold px-5
   </section>
 
   <!-- ── 3b. WHY EDITORIAL COVERAGE MATTERS ── split-layout intro + stat callouts + pullquote -->
-  <section class="bg-[#F4F0E9] py-16 lg:py-20">
+  <section class="py-16 lg:py-20">
     <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center max-w-[760px] mx-auto mb-14">
+      <div class="text-center max-w-[760px] mx-auto mb-10">
         <div class={eyebrow}>
           <span aria-hidden="true" class={eyebrowDot}></span>
           <span class={eyebrowText}>Context</span>
@@ -192,15 +231,30 @@ const secondaryCta = "inline-flex items-center justify-center font-semibold px-5
       </div>
 
       <!-- Stat callouts: three numeric pillars, staggered vertical rhythm -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
           <div class="flex items-baseline gap-1 mb-3">
             <span class="font-serif font-semibold text-[2.25rem] text-[#1E3A8A] leading-none">61</span>
             <span class="font-serif font-semibold text-2xl text-[#1E3A8A] leading-none">%</span>
           </div>
-          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Organic Results Are Shrinking</h3>
+          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-4">Organic Results Are Shrinking</h3>
+
+          <!-- Before/after bar pair: left = CTR before AI Overview (full), right = CTR after AI Overview (39%, faint ghost shows lost portion) -->
+          <div class="flex justify-center mb-4">
+            <svg viewBox="0 0 110 110" class="w-[110px] h-[110px]" role="img" aria-label="Two bars side by side: left bar at full height represents click-through before AI Overviews, right bar at thirty-nine percent height represents click-through after AI Overviews">
+              <!-- Left bar: full CTR (before) -->
+              <rect x="22" y="15" width="28" height="85" fill="#1E3A8A"/>
+              <!-- Right bar: ghost of lost portion (the 61% drop) -->
+              <rect x="60" y="15" width="28" height="85" fill="rgba(15, 27, 61, 0.10)"/>
+              <!-- Right bar: remaining CTR (39%) -->
+              <rect x="60" y="67" width="28" height="33" fill="#1E3A8A"/>
+              <!-- Baseline -->
+              <line x1="15" y1="100" x2="95" y2="100" stroke="rgba(15, 27, 61, 0.15)" stroke-width="1"/>
+            </svg>
+          </div>
+
           <p class="text-sm text-body leading-relaxed">
-            When Google shows an AI Overview, click-through to the underlying pages drops by 61% on average <span class="text-muted">(<a href="https://www.dataslayer.ai/blog/google-ai-overviews-the-end-of-traditional-ctr-and-how-to-adapt-in-2025" target="_blank" rel="noopener noreferrer" class="text-brand-navy hover:underline">Seer Interactive, 2024</a>)</span>. The traditional path of ranking a page and earning the click is narrowing.
+            AI Overviews compress click-through to ranked pages. The traditional path of ranking and earning the click is narrowing.
           </p>
         </div>
         <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 md:mt-8 hover:border-[#0A0F1E]/25 transition-colors">
@@ -208,9 +262,24 @@ const secondaryCta = "inline-flex items-center justify-center font-semibold px-5
             <span class="font-serif font-semibold text-[2.25rem] text-[#1E3A8A] leading-none">10–14</span>
             <span class="font-serif font-semibold text-2xl text-[#1E3A8A] leading-none">%</span>
           </div>
-          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">AI Engines Move Buyer Research</h3>
+          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-4">AI Engines Move Buyer Research</h3>
+
+          <!-- Trajectory: line rises from near-zero on the left to a navy dot on the right; faint area fill underneath -->
+          <div class="flex justify-center mb-4">
+            <svg viewBox="0 0 110 110" class="w-[110px] h-[110px]" role="img" aria-label="Line trajectory rising from near zero on the left to a high point on the right, representing AI engine referral traffic growing from negligible to ten to fourteen percent over eighteen months">
+              <!-- Area fill under the curve -->
+              <path d="M 10 95 C 40 92 65 70 100 25 L 100 100 L 10 100 Z" fill="#1E3A8A" fill-opacity="0.08"/>
+              <!-- Line -->
+              <path d="M 10 95 C 40 92 65 70 100 25" fill="none" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round"/>
+              <!-- End dot -->
+              <circle cx="100" cy="25" r="3" fill="#1E3A8A"/>
+              <!-- Baseline -->
+              <line x1="10" y1="100" x2="100" y2="100" stroke="rgba(15, 27, 61, 0.15)" stroke-width="1"/>
+            </svg>
+          </div>
+
           <p class="text-sm text-body leading-relaxed">
-            Referral traffic to publishers from ChatGPT, Perplexity, Claude, and Gemini grew from negligible to 10–14% of total traffic over 18 months <span class="text-muted">(<a href="https://digitalcontentnext.org/blog/2025/05/06/googles-ai-overviews-linked-to-lower-publisher-clicks/" target="_blank" rel="noopener noreferrer" class="text-brand-navy hover:underline">Digital Content Next, 2025</a>)</span>.
+            AI engines now drive a meaningful share of buyer research traffic. Where audiences look up answers is shifting quickly.
           </p>
         </div>
         <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
@@ -218,60 +287,39 @@ const secondaryCta = "inline-flex items-center justify-center font-semibold px-5
             <span class="font-serif font-semibold text-[2.25rem] text-[#1E3A8A] leading-none">96.55</span>
             <span class="font-serif font-semibold text-2xl text-[#1E3A8A] leading-none">%</span>
           </div>
-          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Publisher References Are The Signal</h3>
+          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-4">Pages That Earn Zero Traffic</h3>
+
+          <!-- 10x10 dot grid: 96 navy dots = pages with zero traffic; 4 faint = the small share that earn meaningful traffic -->
+          <div class="flex justify-center mb-4">
+            <svg viewBox="0 0 110 110" class="w-[110px] h-[110px]" role="img" aria-label="Grid of one hundred dots representing all pages on the web; ninety-six are solid navy to represent pages with zero search traffic, four are faint to represent the small share that earn meaningful traffic">
+              {Array.from({ length: 100 }, (_, i) => {
+                const col = i % 10;
+                const row = Math.floor(i / 10);
+                const cx = 5.5 + col * 11;
+                const cy = 5.5 + row * 11;
+                const isExceptional = [0, 1, 10, 11].includes(i);
+                return (
+                  <circle
+                    cx={cx}
+                    cy={cy}
+                    r={isExceptional ? 2.5 : 3}
+                    fill={isExceptional ? "rgba(15, 27, 61, 0.15)" : "#1E3A8A"}
+                  />
+                );
+              })}
+            </svg>
+          </div>
+
           <p class="text-sm text-body leading-relaxed">
-            96.55% of pages on the web receive no organic search traffic at all <span class="text-muted">(<a href="https://ahrefs.com/blog/search-traffic-study/" target="_blank" rel="noopener noreferrer" class="text-brand-navy hover:underline">Ahrefs, 2024</a>)</span>. Pages that do receive meaningful visibility are disproportionately referenced by established publications and trusted domains.
+            Most pages on the web receive no search traffic at all. The handful that do are disproportionately cited by trusted publishers.
           </p>
         </div>
       </div>
 
-      <blockquote class="max-w-[760px] mx-auto text-center font-serif text-xl md:text-2xl italic text-ink leading-snug">
-        <span aria-hidden="true" class="block mx-auto mb-5 h-px w-12 bg-[#1E3A8A]"></span>
-        Search visibility increasingly depends on whether brands are referenced by publishers Google and AI engines already trust.
-      </blockquote>
     </div>
   </section>
 
-  <!-- ── 4. RESEARCH PROCESS ── structured horizontal process system with connector line -->
-  <section class="py-16 lg:py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center max-w-[640px] mx-auto mb-12">
-        <div class={eyebrow}>
-          <span aria-hidden="true" class={eyebrowDot}></span>
-          <span class={eyebrowText}>Research process</span>
-        </div>
-        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">From Primary Data To Placement</span></h2>
-        <p class="text-base text-body leading-relaxed">
-          Four stages, run sequentially. Each stage produces an <span class="font-semibold text-[#1E3A8A]">editorial artefact</span> a serious newsroom can use.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
-          <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5 font-mono text-[11px] font-semibold text-[#1E3A8A] tracking-wider">01</div>
-          <h4 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Data Sourcing</h4>
-          <p class="text-sm text-body leading-relaxed">Official datasets, commissioned surveys, proprietary client data, and publicly available primary records.</p>
-        </div>
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
-          <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5 font-mono text-[11px] font-semibold text-[#1E3A8A] tracking-wider">02</div>
-          <h4 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Analysis</h4>
-          <p class="text-sm text-body leading-relaxed">Statistical analysis, trend identification, and editorial angle development.</p>
-        </div>
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
-          <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5 font-mono text-[11px] font-semibold text-[#1E3A8A] tracking-wider">03</div>
-          <h4 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Editorial Production</h4>
-          <p class="text-sm text-body leading-relaxed">Methodology, downloadable datasets, source attribution, and publication-ready formatting.</p>
-        </div>
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
-          <div class="w-9 h-9 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-5 font-mono text-[11px] font-semibold text-[#1E3A8A] tracking-wider">04</div>
-          <h4 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-2">Outreach</h4>
-          <p class="text-sm text-body leading-relaxed">Distribution focused on the publications, reporters, and subject areas most relevant to the campaign.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 5. FEATURED RESEARCH ── flagship + 2 secondary, study metadata pills -->
+  <!-- ── 4. FEATURED RESEARCH ── flagship + 2 secondary, study metadata pills -->
   <section class="bg-[#F4F0E9] py-16 lg:py-20">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center max-w-[640px] mx-auto mb-10">
@@ -310,48 +358,47 @@ const secondaryCta = "inline-flex items-center justify-center font-semibold px-5
               <span aria-hidden="true" class="h-px flex-1 bg-[#0A0F1E]/10"></span>
               <span class="text-[10px] uppercase tracking-[0.14em] text-muted font-medium">Composite score</span>
             </figcaption>
-            <div class="rounded-sm border border-[#0A0F1E]/10 bg-white overflow-hidden">
-              <table class="w-full text-[12.5px]">
-                <thead>
-                  <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
-                    <th class="px-3 py-2 text-left font-semibold text-[10px] uppercase tracking-[0.12em] text-muted w-10">Rank</th>
-                    <th class="px-3 py-2 text-left font-semibold text-[10px] uppercase tracking-[0.12em] text-muted">Cohort</th>
-                    <th class="px-3 py-2 text-right font-semibold text-[10px] uppercase tracking-[0.12em] text-muted">Score</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-[#0A0F1E]/6">
-                  <tr class="bg-[#1E3A8A]/[0.04]">
-                    <td class="px-3 py-2 font-semibold text-ink">
-                      <span class="inline-flex items-center gap-1.5">
-                        <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-[#1E3A8A]"></span>
-                        1
-                      </span>
-                    </td>
-                    <td class="px-3 py-2 font-semibold text-ink">Ages 50–64</td>
-                    <td class="px-3 py-2 text-right font-bold text-[#1E3A8A]">84.6</td>
-                  </tr>
-                  <tr>
-                    <td class="px-3 py-2 text-body">2</td>
-                    <td class="px-3 py-2 text-body">Ages 25–34</td>
-                    <td class="px-3 py-2 text-right text-body font-medium">60.4</td>
-                  </tr>
-                  <tr>
-                    <td class="px-3 py-2 text-body">3</td>
-                    <td class="px-3 py-2 text-body">Ages 35–49</td>
-                    <td class="px-3 py-2 text-right text-body font-medium">52.4</td>
-                  </tr>
-                  <tr>
-                    <td class="px-3 py-2 text-muted">4</td>
-                    <td class="px-3 py-2 text-muted">Ages 65+</td>
-                    <td class="px-3 py-2 text-right text-muted">51.4</td>
-                  </tr>
-                  <tr>
-                    <td class="px-3 py-2 text-muted">5</td>
-                    <td class="px-3 py-2 text-muted">Ages 18–24</td>
-                    <td class="px-3 py-2 text-right text-muted">12.4</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="rounded-sm border border-[#0A0F1E]/10 bg-white p-5 space-y-3" role="figure" aria-label="Index preview: composite scores by age cohort">
+              <div class="flex items-center gap-3">
+                <span class="w-4 text-[11px] font-semibold text-ink text-right">1</span>
+                <span class="w-24 shrink-0 text-[12.5px] font-semibold text-ink">Ages 50–64</span>
+                <div class="flex-1 h-2 rounded-full bg-[#0A0F1E]/[0.06] overflow-hidden">
+                  <div class="h-full w-[84.6%] bg-[#1E3A8A] rounded-full"></div>
+                </div>
+                <span class="w-10 text-right text-[13px] font-bold text-[#1E3A8A]">84.6</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-4 text-[11px] font-medium text-body text-right">2</span>
+                <span class="w-24 shrink-0 text-[12.5px] font-medium text-body">Ages 25–34</span>
+                <div class="flex-1 h-2 rounded-full bg-[#0A0F1E]/[0.06] overflow-hidden">
+                  <div class="h-full w-[60.4%] bg-[#1E3A8A]/55 rounded-full"></div>
+                </div>
+                <span class="w-10 text-right text-[13px] font-medium text-body">60.4</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-4 text-[11px] font-medium text-body text-right">3</span>
+                <span class="w-24 shrink-0 text-[12.5px] font-medium text-body">Ages 35–49</span>
+                <div class="flex-1 h-2 rounded-full bg-[#0A0F1E]/[0.06] overflow-hidden">
+                  <div class="h-full w-[52.4%] bg-[#1E3A8A]/50 rounded-full"></div>
+                </div>
+                <span class="w-10 text-right text-[13px] font-medium text-body">52.4</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-4 text-[11px] font-medium text-muted text-right">4</span>
+                <span class="w-24 shrink-0 text-[12.5px] font-medium text-muted">Ages 65+</span>
+                <div class="flex-1 h-2 rounded-full bg-[#0A0F1E]/[0.06] overflow-hidden">
+                  <div class="h-full w-[51.4%] bg-[#1E3A8A]/45 rounded-full"></div>
+                </div>
+                <span class="w-10 text-right text-[13px] font-medium text-muted">51.4</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-4 text-[11px] font-medium text-muted text-right">5</span>
+                <span class="w-24 shrink-0 text-[12.5px] font-medium text-muted">Ages 18–24</span>
+                <div class="flex-1 h-2 rounded-full bg-[#0A0F1E]/[0.06] overflow-hidden">
+                  <div class="h-full w-[12.4%] bg-[#1E3A8A]/30 rounded-full"></div>
+                </div>
+                <span class="w-10 text-right text-[13px] font-medium text-muted">12.4</span>
+              </div>
             </div>
           </figure>
 
@@ -475,12 +522,12 @@ const secondaryCta = "inline-flex items-center justify-center font-semibold px-5
         <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex gap-5">
           <div class="shrink-0 w-10 h-10 rounded-sm bg-[#F4F0E9] flex items-center justify-center">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              <path d="M18 7c0-5.333-8-5.333-8 0"/><path d="M10 7v14"/><path d="M6 21h12"/><path d="M6 13h10"/>
             </svg>
           </div>
           <div>
             <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Fixed-Price Campaigns</h3>
-            <p class="text-sm text-body leading-relaxed">Every campaign is quoted at a single fixed price, starting at $3,500. No retainers, no minimum spend, no scope creep.</p>
+            <p class="text-sm text-body leading-relaxed">Every campaign is quoted at a single fixed price, starting at £3,500. No retainers, no minimum spend, no scope creep.</p>
           </div>
         </div>
         <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex gap-5">
