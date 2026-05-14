@@ -1,0 +1,115 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+}
+const { id = 'chartSaasCategoryChange', eyebrow = '' } = Astro.props;
+---
+
+<div>
+  {eyebrow && <div class="text-xs uppercase tracking-wider text-brand font-medium mb-1.5">{eyebrow}</div>}
+  <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">AI-proof software raised prices. AI-replaceable software couldn't.</div>
+  <div class="text-[12px] text-[#64748B] mb-4">Median change in lowest monthly entry-tier price by category, January 2020 to April 2026. 65 tools, 12 categories.</div>
+
+  <div class="relative w-full" style="height:560px">
+    <canvas id={id} role="img" aria-label="Horizontal bar chart of median entry-tier price change by SaaS category from January 2020 to April 2026, with a dashed reference line at 27.1 percent US CPI. Analytics 81.3 percent, HR 66.7 percent, Marketing 57.9 percent, Accounting 53.3 percent, Support 50.0 percent, Comms 33.3 percent, Ecommerce 20.4 percent, Project Mgmt 2.0 percent, CRM 0.0 percent, Productivity 0.0 percent, Dev 0.0 percent, Visual Design minus 38.9 percent.">Analytics +81.3%, HR +66.7%, Marketing +57.9%, Accounting +53.3%, Support +50.0%, Comms +33.3%, Ecommerce +20.4%, Project Mgmt +2.0%, CRM 0.0%, Productivity 0.0%, Dev 0.0%, Visual Design -38.9%. US CPI over the same period: +27.1%.</canvas>
+  </div>
+
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-[#475569]">
+    <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#B91C1C"></span>AI-resistant category</div>
+    <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#B45309"></span>Mixed exposure</div>
+    <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#047857"></span>AI-replicable category</div>
+    <div class="flex items-center gap-1.5">
+      <svg width="22" height="8" aria-hidden="true"><line x1="1" y1="4" x2="21" y2="4" stroke="#0A0F1E" stroke-width="2" stroke-dasharray="5,4"/></svg>
+      27.1% US inflation (CPI)
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ id }}>
+  (function(){
+    function init(){
+      if (typeof window.Chart === 'undefined') { setTimeout(init, 50); return; }
+      var canvas = document.getElementById(id);
+      if (!canvas) return;
+      var labels = ['Analytics','HR','Marketing','Accounting','Support','Comms','Ecommerce','Project Mgmt','CRM','Productivity','Dev','Visual Design'];
+      var data = [81.3, 66.7, 57.9, 53.3, 50.0, 33.3, 20.4, 2.0, 0.0, 0.0, 0.0, -38.9];
+      var types = ['Resistant','Resistant','Mixed','Resistant','Resistant','Resistant','Resistant','Replicable','Replicable','Replicable','Replicable','Replicable'];
+      var typeColor = { Resistant: '#B91C1C', Mixed: '#B45309', Replicable: '#047857' };
+      var colors = types.map(function(t){ return typeColor[t]; });
+
+      new window.Chart(canvas, {
+        type: 'bar',
+        data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderRadius: 3, barThickness: 22 }] },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: { padding: { right: 32, left: 16 } },
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: function(c){ var v = c.parsed.x; return (v > 0 ? '+' : '') + v.toFixed(1) + '%'; } } }
+          },
+          scales: {
+            x: {
+              min: -50,
+              max: 95,
+              grid: { color: 'rgba(10,15,30,0.06)' },
+              ticks: { font: { family: 'Inter, sans-serif', size: 11 }, color: '#64748B', callback: function(v){ return (v > 0 ? '+' : '') + v + '%'; } }
+            },
+            y: { grid: { display: false }, ticks: { font: { family: 'Inter, sans-serif', size: 12 }, color: '#0A0F1E' } }
+          },
+          animation: { duration: 600 }
+        },
+        plugins: [
+          {
+            id: 'cpiReferenceLine',
+            afterDraw: function(chart){
+              var xScale = chart.scales.x;
+              if (!xScale) return;
+              var x = xScale.getPixelForValue(27.1);
+              var area = chart.chartArea;
+              var ctx = chart.ctx;
+              ctx.save();
+              ctx.setLineDash([5,4]);
+              ctx.lineWidth = 2;
+              ctx.strokeStyle = '#0A0F1E';
+              ctx.beginPath();
+              ctx.moveTo(x, area.top);
+              ctx.lineTo(x, area.bottom);
+              ctx.stroke();
+              ctx.restore();
+            }
+          },
+          {
+            id: 'valuelabels',
+            afterDatasetsDraw: function(chart){
+              var ctx = chart.ctx;
+              var meta = chart.getDatasetMeta(0);
+              ctx.save();
+              ctx.font = '600 11px Inter, sans-serif';
+              ctx.textBaseline = 'middle';
+              meta.data.forEach(function(bar, i){
+                ctx.fillStyle = colors[i];
+                var v = data[i];
+                if (v < 0) {
+                  ctx.textAlign = 'right';
+                  ctx.fillText(v.toFixed(1) + '%', bar.x - 8, bar.y);
+                } else {
+                  ctx.textAlign = 'left';
+                  ctx.fillText('+' + v.toFixed(1) + '%', bar.x + 8, bar.y);
+                }
+              });
+              ctx.restore();
+            }
+          }
+        ]
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

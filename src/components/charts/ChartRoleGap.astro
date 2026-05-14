@@ -1,0 +1,89 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+}
+const { id = 'chartRoleGap', eyebrow = '' } = Astro.props;
+---
+
+<div>
+  {eyebrow && <div class="text-xs uppercase tracking-wider text-brand font-medium mb-1.5">{eyebrow}</div>}
+  <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">AI names one woman for every ten men among top tech founders</div>
+  <div class="text-[12px] text-[#64748B] mb-4">Female share of named ICT experts by role type, against the 28% workforce baseline. All categories, control query excluded.</div>
+  <div class="relative w-full" style="height:320px">
+    <canvas id={id} role="img" aria-label="Horizontal bar chart of female share of named ICT experts by role, with a dashed vertical line at the 28 percent workforce baseline.">Female share of named ICT experts by role: Founder/CEO 9.8 percent, Analyst 20.8 percent, Vendor executive 20.9 percent, Academic 27.3 percent, Journalist 28.5 percent, Practitioner 29.0 percent, Influencer 30.0 percent. Workforce baseline 28 percent.</canvas>
+  </div>
+  <div class="flex flex-wrap gap-4 mt-3 text-xs text-[#64748B]">
+    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#B91C1C"></span>Below 28% workforce baseline</span>
+    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#047857"></span>At or above baseline</span>
+    <span class="flex items-center gap-1.5"><span class="inline-block w-3.5 border-t-2 border-dashed border-[#0A0F1E]"></span>28% workforce baseline</span>
+  </div>
+</div>
+
+<script is:inline define:vars={{ id }}>
+  (function(){
+    function init(){
+      if (typeof window.Chart === 'undefined') { setTimeout(init, 50); return; }
+      var canvas = document.getElementById(id);
+      if (!canvas) return;
+      var labels = ['Founder / CEO','Analyst','Vendor executive','Academic','Journalist','Practitioner','Influencer'];
+      var data = [9.8,20.8,20.9,27.3,28.5,29.0,30.0];
+      var colors = data.map(function(v){ return v >= 28 ? '#047857' : '#B91C1C'; });
+      var baseline = {
+        id: 'baseline',
+        afterDraw: function(chart){
+          var x = chart.scales.x, y = chart.scales.y, ctx = chart.ctx;
+          var px = x.getPixelForValue(28);
+          ctx.save();
+          ctx.beginPath();
+          ctx.setLineDash([5,4]);
+          ctx.moveTo(px, y.top);
+          ctx.lineTo(px, y.bottom);
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = '#0A0F1E';
+          ctx.stroke();
+          ctx.restore();
+        }
+      };
+      var valuelabels = {
+        id: 'valuelabels',
+        afterDatasetsDraw: function(chart){
+          var ctx = chart.ctx, meta = chart.getDatasetMeta(0);
+          ctx.save();
+          ctx.font = '600 11px Inter, sans-serif';
+          ctx.textBaseline = 'middle';
+          meta.data.forEach(function(bar, i){
+            ctx.fillStyle = data[i] >= 28 ? '#047857' : '#B91C1C';
+            ctx.fillText(data[i] + '%', bar.x + 6, bar.y);
+          });
+          ctx.restore();
+        }
+      };
+      new window.Chart(canvas, {
+        type: 'bar',
+        data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderRadius: 3, barThickness: 22 }] },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: { padding: { right: 12 } },
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: function(c){ return c.parsed.x + '% female'; } } }
+          },
+          scales: {
+            x: { beginAtZero: true, max: 34, grid: { color: 'rgba(10,15,30,0.06)' }, ticks: { font: { family: 'Inter, sans-serif', size: 11 }, color: '#64748B', callback: function(v){ return v + '%'; } } },
+            y: { grid: { display: false }, ticks: { font: { family: 'Inter, sans-serif', size: 12 }, color: '#0A0F1E' } }
+          },
+          animation: { duration: 600 }
+        },
+        plugins: [baseline, valuelabels]
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

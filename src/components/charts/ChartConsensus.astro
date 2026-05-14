@@ -1,0 +1,93 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+}
+const { id = 'chartConsensus', eyebrow = '' } = Astro.props;
+---
+
+<div>
+  {eyebrow && <div class="text-xs uppercase tracking-wider text-brand font-medium mb-1.5">{eyebrow}</div>}
+  <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">The more AI models agreed, the more male the answer</div>
+  <div class="text-[12px] text-[#64748B] mb-4">Gender split of named individuals by how many of the four models named them. ICT top-level category, control query excluded.</div>
+  <div class="relative w-full" style="height:300px">
+    <canvas id={id} role="img" aria-label="Stacked horizontal bar chart of gender split by cross-model consensus tier, with a dashed vertical line at the 28 percent workforce baseline.">Of 56 individuals named by all four models, 17.9 percent were women. Among those named by three models, 23.4 percent. By two models, 22.1 percent. By one model only, 26.1 percent.</canvas>
+  </div>
+  <div class="flex flex-wrap gap-4 mt-3 text-xs text-[#64748B]">
+    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#1E3A8A"></span>Female share</span>
+    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#D8DCE6"></span>Male share</span>
+    <span class="flex items-center gap-1.5"><span class="inline-block w-3.5 border-t-2 border-dashed border-[#0A0F1E]"></span>28% workforce baseline</span>
+  </div>
+</div>
+
+<script is:inline define:vars={{ id }}>
+  (function(){
+    function init(){
+      if (typeof window.Chart === 'undefined') { setTimeout(init, 50); return; }
+      var canvas = document.getElementById(id);
+      if (!canvas) return;
+      var labels = ['Named by all 4 models','Named by 3 models','Named by 2 models','Named by 1 model only'];
+      var female = [17.9,23.4,22.1,26.1];
+      var male = female.map(function(v){ return Math.round((100-v)*10)/10; });
+      var baseline = {
+        id: 'baseline',
+        afterDraw: function(chart){
+          var x = chart.scales.x, y = chart.scales.y, ctx = chart.ctx;
+          var px = x.getPixelForValue(28);
+          ctx.save();
+          ctx.beginPath();
+          ctx.setLineDash([5,4]);
+          ctx.moveTo(px, y.top);
+          ctx.lineTo(px, y.bottom);
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = '#0A0F1E';
+          ctx.stroke();
+          ctx.restore();
+        }
+      };
+      new window.Chart(canvas, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [
+            { label: 'Female', data: female, backgroundColor: '#1E3A8A', borderRadius: { topLeft: 3, bottomLeft: 3 }, barThickness: 26, stack: 's' },
+            { label: 'Male', data: male, backgroundColor: '#D8DCE6', borderRadius: { topRight: 3, bottomRight: 3 }, barThickness: 26, stack: 's' }
+          ]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: function(c){ return c.dataset.label + ': ' + c.parsed.x + '%'; } } }
+          },
+          scales: {
+            x: { stacked: true, beginAtZero: true, max: 100, grid: { color: 'rgba(10,15,30,0.06)' }, ticks: { font: { family: 'Inter, sans-serif', size: 11 }, color: '#64748B', callback: function(v){ return v + '%'; } } },
+            y: { stacked: true, grid: { display: false }, ticks: { font: { family: 'Inter, sans-serif', size: 12 }, color: '#0A0F1E' } }
+          },
+          animation: { duration: 600 }
+        },
+        plugins: [baseline, {
+          id: 'femalelabels',
+          afterDatasetsDraw: function(chart){
+            var ctx = chart.ctx, meta = chart.getDatasetMeta(0);
+            ctx.save();
+            ctx.font = '600 11px Inter, sans-serif';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = '#FFFFFF';
+            meta.data.forEach(function(bar, i){
+              ctx.fillText(female[i] + '%', bar.base + 8, bar.y);
+            });
+            ctx.restore();
+          }
+        }]
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

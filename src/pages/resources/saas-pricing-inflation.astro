@@ -2,226 +2,105 @@
 import Layout from '../../layouts/Layout.astro';
 import InstitutionalBio from '../../components/InstitutionalBio.astro';
 import RelatedResearch from '../../components/RelatedResearch.astro';
+import ChartSaasCategoryChange from '../../components/charts/ChartSaasCategoryChange.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "SaaS Price Comparison 2020\u20132026",
-  "description": "Lowest monthly entry-tier pricing for 65 SaaS tools, captured from Wayback Machine snapshots (January 2020) and current vendor pricing pages (April 2026). Category medians, methodology, and archived source material.",
+  "headline": "Welcome to the SaaSpocalypse",
+  "description": "Software that can be vibe-coded by a small team has lost all pricing power, while AI-resistant SaaS categories raised entry-tier prices up to three times faster than inflation. Six years of pricing data across 65 tools and 12 categories.",
   "url": "https://ranking-atlas.com/resources/saas-pricing-inflation",
   "image": "https://ranking-atlas.com/assets/images/resources/saas-pricing-inflation/hero.jpg",
-  "author": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" },
+  "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about" },
   "datePublished": "2026-04-13T00:00:00+00:00",
-  "dateModified": "2026-04-13T00:00:00+00:00",
-  "publisher": { "@type": "Organization", "name": "Ranking Atlas" }
+  "dateModified": "2026-05-14T00:00:00+00:00",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
 };
 ---
 
 <Layout
-  title="SaaS Price Comparison 2020–2026 | Ranking Atlas"
-  description="Lowest monthly entry-tier pricing for 65 SaaS tools, captured from Wayback Machine snapshots (January 2020) and current vendor pricing pages (April 2026). Category medians, methodology, and archived source material."
+  title="Welcome to the SaaSpocalypse | Ranking Atlas"
+  description="Software that can be vibe-coded by a small team has lost all pricing power, while AI-resistant SaaS categories raised entry-tier prices up to three times faster than inflation."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 
 <div class="bg-white">
 
-  <!-- ── 1. Hero section ──────────────────────────────────────────────── -->
+  <!-- ── 1. Hero ────────────────────────────────────────────────────────── -->
   <section class="pt-20 md:pt-28 pb-16 border-b border-[#0A0F1E]/8">
     <div class="max-w-3xl mx-auto px-6">
-      <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Data Report</div>
-      <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-6">
-        SaaS Price Comparison 2020–2026
+      <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3 text-center">Data Report</div>
+      <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.15] mb-3 text-center">
+        Welcome to the SaaSpocalypse
       </h1>
-      <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-4">
-        We pulled the lowest-priced monthly subscription from 65 SaaS vendor pricing pages in January 2020, then repeated the exercise in April 2026. 2020 prices were verified against the closest available <a href="https://web.archive.org" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Wayback Machine</a> snapshot for each tool. 2026 prices were taken from live pricing pages captured in the same month. The result is a like-for-like record of entry-tier price movement across 12 software categories over six years.
+      <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mt-2 mb-8">
+        Software that can be vibe-coded by a small team has lost all pricing power, while AI-resistant SaaS categories raised entry-tier prices up to three times faster than inflation.
       </p>
-      <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-6">
-        The pattern is consistent: tools whose core function can be approximated by a vibe-coded side project have no pricing power. The categories most exposed to AI replication (CRM, project management, productivity, dev tooling) show median price changes at or below zero. Categories that require human process, compliance, or integrations that AI cannot yet replicate (HR, accounting, support, analytics) raised prices well above inflation.
-      </p>
-      <div class="mb-4">
-        <p class="text-sm font-medium text-ink">By Ranking Atlas</p>
-        <p class="text-sm text-[#64748B]">Published April 2026 &nbsp;·&nbsp; 65 tools across 12 categories</p>
+
+      <div class="mb-8">
+        <ChartSaasCategoryChange />
       </div>
-      <a href="/downloads/saas-pricing-inflation-2020-2026.csv" class="inline-flex items-center gap-1.5 text-sm text-brand hover:text-brand-dark transition-colors font-medium">
-        Download CSV
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      </a>
+
+      <div class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5 mb-6">
+        <p class="text-[13px] text-[#64748B]">Content Written By:</p>
+        <p class="text-[13px] text-[#64748B]">Daniel Grainger</p>
+        <p class="text-[13px] text-[#64748B]">Founder, Ranking Atlas</p>
+        <p class="text-[13px] text-[#64748B]">Published April 2026</p>
+      </div>
+
+      <nav class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5" aria-label="Article sections">
+        <p class="text-[14px] font-semibold text-ink mb-3">Navigation</p>
+        <ul class="flex flex-col space-y-2 text-[14px]">
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#overview" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Overview</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key Takeaways</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#category-medians" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">AI-Resistant Categories Raised Prices Above Inflation</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#largest-increases" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Kayako Raised Entry-Tier Prices by 427% in Six Years</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#largest-cuts" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">AI-Replicable Tools Cut Entry-Tier Prices by Up to 64%</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#snapshots" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Two Pricing Trajectories Verified Against the Wayback Machine</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#full-dataset" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">All 65 Tools Ranked by Price Change</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#methodology" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Methodology</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#limitations" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Limitations</a></li>
+        </ul>
+      </nav>
     </div>
   </section>
 
-  <!-- ── 2. Archived source snapshots ────────────────────────────────── -->
-  <section class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-3">Archived Source Snapshots</h2>
-      <p class="text-body text-[21px] leading-[1.7] mb-10 max-w-3xl">
-        Two examples of Wayback Machine snapshots used to verify 2020 pricing. Full set of source snapshots available on request.
-      </p>
-
-      <!-- Kayako -->
-      <div class="mb-12">
-        <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mb-2">Kayako: Entry Tier 2020 vs 2026</h3>
-        <p class="text-body text-[21px] leading-[1.7] mb-6 max-w-3xl">Kayako's lowest paid monthly subscription rose from $15 per agent per month in January 2020 to $79 per agent per month for Kayako One in April 2026, a 427% increase.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <figure>
-            <img
-              src="/assets/images/saas-pricing/kayako-2020.png"
-              alt="Kayako pricing page, January 2020, $15 per agent per month"
-              class="w-full rounded-xl border border-[#0A0F1E]/8 shadow-card"
-              onerror="this.style.opacity='0.3'"
-            />
-            <figcaption class="mt-2 text-sm text-[#64748B]">
-              Kayako pricing, January 2020. Source: <a href="https://web.archive.org/web/20200101000000*/kayako.com/pricing" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark transition-colors">Wayback Machine archive</a>.
-            </figcaption>
-          </figure>
-          <figure>
-            <img
-              src="/assets/images/saas-pricing/kayako-2026.png"
-              alt="Kayako pricing page, April 2026, $79 per agent per month"
-              class="w-full rounded-xl border border-[#0A0F1E]/8 shadow-card"
-              onerror="this.style.opacity='0.3'"
-            />
-            <figcaption class="mt-2 text-sm text-[#64748B]">
-              Kayako pricing, April 2026. Source: <a href="https://www.kayako.com/pricing" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark transition-colors">kayako.com/pricing</a>.
-            </figcaption>
-          </figure>
-        </div>
+  <!-- ── 2. Overview ───────────────────────────────────────────────────── -->
+  <section id="overview" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Overview</h2>
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>The SaaSpocalypse has a clear pattern. Software categories whose core function can now be approximated by a small team with AI coding assistants have lost all pricing power. Visual Design fell 38.9%. CRM, Productivity, and Dev tooling all returned median price changes of exactly 0.0%. Project Management came in at +2.0%. Meanwhile, AI-resistant categories raised entry-tier prices well above inflation: Analytics up 81.3%, HR up 66.7%, Marketing up 57.9%, Accounting up 53.3%, Support up 50.0%. Against a 27.1% US CPI rise over the same six years, the gap between vibe-codeable and AI-proof SaaS is the widest in the industry's history.</p>
+        <p>Ranking Atlas pulled the lowest-priced monthly subscription from 65 SaaS vendor pricing pages in January 2020, then repeated the exercise in April 2026. 2020 prices were verified against the closest available <a href="https://web.archive.org" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Wayback Machine</a> snapshot for each tool. 2026 prices were taken from live pricing pages captured in the same month. The US Consumer Price Index rose 27.1% over the same period (BLS, all urban consumers), giving a clean reference line for what counts as a real-terms price increase.</p>
+        <p>The pattern is consistent across the dataset. Tools whose core function can be replicated by a small team using current AI coding assistants and generative tools have no pricing power left. Tools that require human process, regulated reporting, or integrations AI cannot yet replicate are raising prices roughly three times faster than inflation. The most extreme cases sit at the edges: Kayako, a support tool, raised its entry tier 427% in six years. Vtiger CRM cut its entry tier by 64.3% over the same period.</p>
       </div>
-
-      <!-- Asana -->
-      <div>
-        <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mb-2">Asana: Six Years Unchanged</h3>
-        <p class="text-body text-[21px] leading-[1.7] mb-6 max-w-3xl">Asana's Premium tier (now Starter) has held at $10.99 per user per month since January 2020.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <figure>
-            <img
-              src="/assets/images/saas-pricing/asana-2020.png"
-              alt="Asana pricing page, January 2020, $10.99 per user per month"
-              class="w-full rounded-xl border border-[#0A0F1E]/8 shadow-card"
-              onerror="this.style.opacity='0.3'"
-            />
-            <figcaption class="mt-2 text-sm text-[#64748B]">
-              Asana pricing, January 2020. Source: <a href="https://web.archive.org/web/20200101000000*/asana.com/pricing" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark transition-colors">Wayback Machine archive</a>.
-            </figcaption>
-          </figure>
-          <figure>
-            <img
-              src="/assets/images/saas-pricing/asana-2026.png"
-              alt="Asana pricing page, April 2026, $10.99 per user per month"
-              class="w-full rounded-xl border border-[#0A0F1E]/8 shadow-card"
-              onerror="this.style.opacity='0.3'"
-            />
-            <figcaption class="mt-2 text-sm text-[#64748B]">
-              Asana pricing, April 2026. Source: <a href="https://asana.com/pricing" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark transition-colors">asana.com/pricing</a>.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- ── 4. Full dataset table ─────────────────────────────────────────── -->
-  <section class="py-16 border-b border-[#0A0F1E]/8">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-3">Full Dataset</h2>
-      <p class="text-body text-[21px] leading-[1.7] mb-6 max-w-3xl">
-        All 65 tools, ranked by percentage change. Prices in USD, monthly billing cycle, lowest-priced standalone paid subscription published on the vendor's default pricing page each year.
-      </p>
-      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
-        <table class="w-full text-sm text-left">
-          <thead>
-            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
-              <th class="px-4 py-3 font-semibold text-ink w-10">#</th>
-              <th class="px-4 py-3 font-semibold text-ink">Tool</th>
-              <th class="px-4 py-3 font-semibold text-ink">Category</th>
-              <th class="px-4 py-3 font-semibold text-ink text-right">Jan 2020</th>
-              <th class="px-4 py-3 font-semibold text-ink text-right">Apr 2026</th>
-              <th class="px-4 py-3 font-semibold text-ink text-right">Change</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-[#0A0F1E]/6">
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">1</td><td class="px-4 py-3 font-medium text-ink">Kayako</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B]">$15.00</td><td class="px-4 py-3 text-right text-[#64748B]">$79.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+426.7%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">2</td><td class="px-4 py-3 font-medium text-ink">Klipfolio</td><td class="px-4 py-3 text-[#64748B]">Analytics</td><td class="px-4 py-3 text-right text-[#64748B]">$49.00</td><td class="px-4 py-3 text-right text-[#64748B]">$140.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+185.7%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">3</td><td class="px-4 py-3 font-medium text-ink">JazzHR</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B]">$39.00</td><td class="px-4 py-3 text-right text-[#64748B]">$110.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+182.1%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">4</td><td class="px-4 py-3 font-medium text-ink">Later</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$9.00</td><td class="px-4 py-3 text-right text-[#64748B]">$25.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+177.8%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">5</td><td class="px-4 py-3 font-medium text-ink">Hiver</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B]">$14.00</td><td class="px-4 py-3 text-right text-[#64748B]">$35.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+150.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">6</td><td class="px-4 py-3 font-medium text-ink">Xero</td><td class="px-4 py-3 text-[#64748B]">Accounting</td><td class="px-4 py-3 text-right text-[#64748B]">$11.00</td><td class="px-4 py-3 text-right text-[#64748B]">$25.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+127.3%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">7</td><td class="px-4 py-3 font-medium text-ink">Zoho Books</td><td class="px-4 py-3 text-[#64748B]">Accounting</td><td class="px-4 py-3 text-right text-[#64748B]">$9.00</td><td class="px-4 py-3 text-right text-[#64748B]">$20.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+122.2%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">8</td><td class="px-4 py-3 font-medium text-ink">Deputy</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B]">$2.50</td><td class="px-4 py-3 text-right text-[#64748B]">$5.50</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+120.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">9</td><td class="px-4 py-3 font-medium text-ink">Wishpond</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$49.00</td><td class="px-4 py-3 text-right text-[#64748B]">$99.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+102.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">10</td><td class="px-4 py-3 font-medium text-ink">Sprout Social</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$99.00</td><td class="px-4 py-3 text-right text-[#64748B]">$199.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+101.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">11</td><td class="px-4 py-3 font-medium text-ink">Airtable</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B]">$10.00</td><td class="px-4 py-3 text-right text-[#64748B]">$20.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+100.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">12</td><td class="px-4 py-3 font-medium text-ink">MailerLite</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$10.00</td><td class="px-4 py-3 text-right text-[#64748B]">$20.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+100.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">13</td><td class="px-4 py-3 font-medium text-ink">Geckoboard</td><td class="px-4 py-3 text-[#64748B]">Analytics</td><td class="px-4 py-3 text-right text-[#64748B]">$31.00</td><td class="px-4 py-3 text-right text-[#64748B]">$60.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+93.5%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">14</td><td class="px-4 py-3 font-medium text-ink">ClickUp</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B]">$4.00</td><td class="px-4 py-3 text-right text-[#64748B]">$7.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+75.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">15</td><td class="px-4 py-3 font-medium text-ink">Todoist</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B]">$4.00</td><td class="px-4 py-3 text-right text-[#64748B]">$7.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+75.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">16</td><td class="px-4 py-3 font-medium text-ink">Hotjar</td><td class="px-4 py-3 text-[#64748B]">Analytics</td><td class="px-4 py-3 text-right text-[#64748B]">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">$49.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+69.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">17</td><td class="px-4 py-3 font-medium text-ink">When I Work</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B]">$1.50</td><td class="px-4 py-3 text-right text-[#64748B]">$2.50</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+66.7%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">18</td><td class="px-4 py-3 font-medium text-ink">Weebly</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B]">$6.00</td><td class="px-4 py-3 text-right text-[#64748B]">$10.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+66.7%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">19</td><td class="px-4 py-3 font-medium text-ink">Twist</td><td class="px-4 py-3 text-[#64748B]">Comms</td><td class="px-4 py-3 text-right text-[#64748B]">$5.00</td><td class="px-4 py-3 text-right text-[#64748B]">$8.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+60.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">20</td><td class="px-4 py-3 font-medium text-ink">Benchmark Email</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$11.89</td><td class="px-4 py-3 text-right text-[#64748B]">$19.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+59.8%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">21</td><td class="px-4 py-3 font-medium text-ink">AWeber</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$19.00</td><td class="px-4 py-3 text-right text-[#64748B]">$30.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+57.9%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">22</td><td class="px-4 py-3 font-medium text-ink">FreshBooks</td><td class="px-4 py-3 text-[#64748B]">Accounting</td><td class="px-4 py-3 text-right text-[#64748B]">$15.00</td><td class="px-4 py-3 text-right text-[#64748B]">$23.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+53.3%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">23</td><td class="px-4 py-3 font-medium text-ink">QuickBooks</td><td class="px-4 py-3 text-[#64748B]">Accounting</td><td class="px-4 py-3 text-right text-[#64748B]">$25.00</td><td class="px-4 py-3 text-right text-[#64748B]">$38.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+52.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">24</td><td class="px-4 py-3 font-medium text-ink">Pipedrive</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B]">$12.50</td><td class="px-4 py-3 text-right text-[#64748B]">$19.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+52.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">25</td><td class="px-4 py-3 font-medium text-ink">Help Scout</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B]">$20.00</td><td class="px-4 py-3 text-right text-[#64748B]">$30.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+50.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">26</td><td class="px-4 py-3 font-medium text-ink">Webflow</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B]">$12.00</td><td class="px-4 py-3 text-right text-[#64748B]">$18.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+50.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">27</td><td class="px-4 py-3 font-medium text-ink">Re:amaze</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B]">$20.00</td><td class="px-4 py-3 text-right text-[#64748B]">$29.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+45.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">28</td><td class="px-4 py-3 font-medium text-ink">Chanty</td><td class="px-4 py-3 text-[#64748B]">Comms</td><td class="px-4 py-3 text-right text-[#64748B]">$3.00</td><td class="px-4 py-3 text-right text-[#64748B]">$4.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+33.3%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">29</td><td class="px-4 py-3 font-medium text-ink">Shopify</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B]">$19.00</td><td class="px-4 py-3 text-right text-[#64748B]">$25.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+31.6%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">30</td><td class="px-4 py-3 font-medium text-ink">Ahrefs</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$99.00</td><td class="px-4 py-3 text-right text-[#64748B]">$129.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+30.3%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">31</td><td class="px-4 py-3 font-medium text-ink">Crazy Egg</td><td class="px-4 py-3 text-[#64748B]">Analytics</td><td class="px-4 py-3 text-right text-[#64748B]">$24.00</td><td class="px-4 py-3 text-right text-[#64748B]">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">+20.8%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">32</td><td class="px-4 py-3 font-medium text-ink">Volusion</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B]">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">$35.00</td><td class="px-4 py-3 text-right text-[#64748B]">+20.7%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">33</td><td class="px-4 py-3 font-medium text-ink">Kajabi</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B]">$149.00</td><td class="px-4 py-3 text-right text-[#64748B]">$179.00</td><td class="px-4 py-3 text-right text-[#64748B]">+20.1%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">34</td><td class="px-4 py-3 font-medium text-ink">SurveyMonkey</td><td class="px-4 py-3 text-[#64748B]">Productivity</td><td class="px-4 py-3 text-right text-[#64748B]">$25.00</td><td class="px-4 py-3 text-right text-[#64748B]">$30.00</td><td class="px-4 py-3 text-right text-[#64748B]">+20.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">35</td><td class="px-4 py-3 font-medium text-ink">Nimble</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B]">$25.00</td><td class="px-4 py-3 text-right text-[#64748B]">$29.90</td><td class="px-4 py-3 text-right text-[#64748B]">+19.6%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">36</td><td class="px-4 py-3 font-medium text-ink">LiveChat</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B]">$16.00</td><td class="px-4 py-3 text-right text-[#64748B]">$19.00</td><td class="px-4 py-3 text-right text-[#64748B]">+18.8%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">37</td><td class="px-4 py-3 font-medium text-ink">Sentry</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B]">$26.00</td><td class="px-4 py-3 text-right text-[#64748B]">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">+11.5%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">38</td><td class="px-4 py-3 font-medium text-ink">Breezy HR</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B]">$171.00</td><td class="px-4 py-3 text-right text-[#64748B]">$189.00</td><td class="px-4 py-3 text-right text-[#64748B]">+10.5%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">39</td><td class="px-4 py-3 font-medium text-ink">Mailjet</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$8.69</td><td class="px-4 py-3 text-right text-[#64748B]">$9.00</td><td class="px-4 py-3 text-right text-[#64748B]">+3.6%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">40</td><td class="px-4 py-3 font-medium text-ink">Wrike</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B]">$9.80</td><td class="px-4 py-3 text-right text-[#64748B]">$10.00</td><td class="px-4 py-3 text-right text-[#64748B]">+2.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">41</td><td class="px-4 py-3 font-medium text-ink">RingCentral</td><td class="px-4 py-3 text-[#64748B]">Comms</td><td class="px-4 py-3 text-right text-[#64748B]">$29.99</td><td class="px-4 py-3 text-right text-[#64748B]">$30.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">42</td><td class="px-4 py-3 font-medium text-ink">Sellfy</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B]">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">43</td><td class="px-4 py-3 font-medium text-ink">Insightly</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B]">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">44</td><td class="px-4 py-3 font-medium text-ink">Asana</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B]">$10.99</td><td class="px-4 py-3 text-right text-[#64748B]">$10.99</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">45</td><td class="px-4 py-3 font-medium text-ink">Datadog</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B]">$15.00</td><td class="px-4 py-3 text-right text-[#64748B]">$15.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">46</td><td class="px-4 py-3 font-medium text-ink">Grammarly</td><td class="px-4 py-3 text-[#64748B]">Productivity</td><td class="px-4 py-3 text-right text-[#64748B]">$12.00</td><td class="px-4 py-3 text-right text-[#64748B]">$12.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">47</td><td class="px-4 py-3 font-medium text-ink">Agile CRM</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B]">$8.99</td><td class="px-4 py-3 text-right text-[#64748B]">$8.99</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">48</td><td class="px-4 py-3 font-medium text-ink">Loggly</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B]">$79.00</td><td class="px-4 py-3 text-right text-[#64748B]">$79.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">49</td><td class="px-4 py-3 font-medium text-ink">Vercel</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B]">$20.00</td><td class="px-4 py-3 text-right text-[#64748B]">$20.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">50</td><td class="px-4 py-3 font-medium text-ink">Otter.ai</td><td class="px-4 py-3 text-[#64748B]">Productivity</td><td class="px-4 py-3 text-right text-[#64748B]">$8.33</td><td class="px-4 py-3 text-right text-[#64748B]">$8.33</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">51</td><td class="px-4 py-3 font-medium text-ink">Teachable</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B]">$39.00</td><td class="px-4 py-3 text-right text-[#64748B]">$39.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">52</td><td class="px-4 py-3 font-medium text-ink">Moz</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$99.00</td><td class="px-4 py-3 text-right text-[#64748B]">$99.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">53</td><td class="px-4 py-3 font-medium text-ink">Gusto</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B]">$51.00</td><td class="px-4 py-3 text-right text-[#64748B]">$49.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-3.9%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">54</td><td class="px-4 py-3 font-medium text-ink">Harvest</td><td class="px-4 py-3 text-[#64748B]">Accounting</td><td class="px-4 py-3 text-right text-[#64748B]">$12.00</td><td class="px-4 py-3 text-right text-[#64748B]">$11.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-8.3%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">55</td><td class="px-4 py-3 font-medium text-ink">Smartsheet</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B]">$14.00</td><td class="px-4 py-3 text-right text-[#64748B]">$12.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-14.3%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">56</td><td class="px-4 py-3 font-medium text-ink">Framer</td><td class="px-4 py-3 text-[#64748B]">Visual Design</td><td class="px-4 py-3 text-right text-[#64748B]">$12.00</td><td class="px-4 py-3 text-right text-[#64748B]">$10.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-16.7%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">57</td><td class="px-4 py-3 font-medium text-ink">Drip</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$49.00</td><td class="px-4 py-3 text-right text-[#64748B]">$39.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-20.4%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">58</td><td class="px-4 py-3 font-medium text-ink">BigCommerce</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B]">$39.00</td><td class="px-4 py-3 text-right text-[#64748B]">$29.95</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-23.2%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">59</td><td class="px-4 py-3 font-medium text-ink">Nutshell</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B]">$22.00</td><td class="px-4 py-3 text-right text-[#64748B]">$15.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-31.8%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">60</td><td class="px-4 py-3 font-medium text-ink">Paymo</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B]">$9.56</td><td class="px-4 py-3 text-right text-[#64748B]">$5.90</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-38.3%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">61</td><td class="px-4 py-3 font-medium text-ink">Constant Contact</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$20.00</td><td class="px-4 py-3 text-right text-[#64748B]">$12.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-40.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">62</td><td class="px-4 py-3 font-medium text-ink">CircleCI</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B]">$30.00</td><td class="px-4 py-3 text-right text-[#64748B]">$15.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-50.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">63</td><td class="px-4 py-3 font-medium text-ink">Copper</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B]">$24.00</td><td class="px-4 py-3 text-right text-[#64748B]">$12.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-50.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">64</td><td class="px-4 py-3 font-medium text-ink">Venngage</td><td class="px-4 py-3 text-[#64748B]">Visual Design</td><td class="px-4 py-3 text-right text-[#64748B]">$49.00</td><td class="px-4 py-3 text-right text-[#64748B]">$19.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-61.2%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">65</td><td class="px-4 py-3 font-medium text-ink">Vtiger</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B]">$42.00</td><td class="px-4 py-3 text-right text-[#64748B]">$15.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-64.3%</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="mt-4 text-sm text-[#64748B]">
-        Sample of 65 tools. Changes above +27.1% beat US CPI over the period. Negative values indicate price cuts.
-        <a href="/downloads/saas-pricing-inflation-2020-2026.csv" class="text-brand hover:text-brand-dark transition-colors">Download as CSV.</a>
-      </p>
+  <!-- ── 3. Key Takeaways ──────────────────────────────────────────────── -->
+  <section id="key-takeaways" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Key Takeaways</h2>
+      <ul class="space-y-2 list-disc pl-6 text-body text-[15px] leading-[1.7]">
+        <li><strong>Analytics raised median entry-tier prices by 81.3%, three times the rate of inflation.</strong> HR (+66.7%), Marketing (+57.9%), Accounting (+53.3%), and Support (+50.0%) all sit well above the 27.1% US CPI benchmark. These are categories whose core work depends on human process, regulated reporting, or integrations that current AI tooling cannot reliably replicate.</li>
+        <li><strong>CRM, Productivity, and Dev tooling all returned median price changes of 0.0%.</strong> Project Management came in at +2.0%, well below inflation. Visual Design fell 38.9% on a small sample of two tools. Every category at or below the inflation line is one whose entry-tier function can now be approximated by a small team with AI assistants.</li>
+        <li><strong>Kayako, a customer support tool, raised its entry tier from $15 to $79 per agent per month, a 427% increase.</strong> Klipfolio (Analytics, +185.7%), JazzHR (HR, +182.1%), Later (Marketing, +177.8%), and Hiver (Support, +150%) round out the top five. Every tool that raised prices more than 150% sits in an AI-resistant category.</li>
+        <li><strong>Vtiger CRM cut its entry tier from $42 to $15 per user per month, a 64.3% decline.</strong> Venngage (Visual Design, -61.2%), Copper (CRM, -50%), CircleCI (Dev, -50%), and Constant Contact (Marketing, -40%) make up the rest of the top five cuts. Four of the five sit in AI-replicable categories.</li>
+        <li><strong>Asana's Premium tier (now Starter) has held at $10.99 per user per month since January 2020.</strong> Holding flat against 27.1% CPI is itself a real-terms price cut of roughly 21%. The flat-list-price defence is the most common move in AI-exposed categories.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- ── 4. Category medians table ─────────────────────────────────────── -->
-  <section class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-3">Median Price Change By Category</h2>
-      <p class="text-body text-[21px] leading-[1.7] mb-6 max-w-3xl">
-        Median percentage change in lowest monthly entry tier, by category, sorted by magnitude of change. All categories include at least three tools except Visual Design (n=2), disclosed below.
-      </p>
+  <!-- ── 4. Finding 1: Category medians ──────────────────────────────── -->
+  <section id="category-medians" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">AI-Resistant Categories Raised Prices Above Inflation</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-8">
+        <p>Median percentage change in lowest monthly entry tier by category, sorted by magnitude of change. All categories include at least three tools except Visual Design (n=2), disclosed below. The 27.1% line is US CPI over the same period.</p>
+      </div>
+
       <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
         <table class="w-full text-sm text-left">
           <thead>
@@ -229,7 +108,7 @@ const jsonLd = {
               <th class="px-4 py-3 font-semibold text-ink">Category</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">Tools</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">Median Change</th>
-              <th class="px-4 py-3 font-semibold text-ink">AI-Replicable</th>
+              <th class="px-4 py-3 font-semibold text-ink">AI Replicability</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#0A0F1E]/6">
@@ -248,77 +127,244 @@ const jsonLd = {
           </tbody>
         </table>
       </div>
-      <p class="mt-4 text-sm text-[#64748B] max-w-3xl">
-        Marketing is classified as "Mixed" because individual tools within the category varied widely in their replaceability exposure (email marketing versus social media management versus SEO).
+      <p class="mt-4 text-sm text-[#64748B]">
+        Marketing is classified as "Mixed" because individual tools within the category varied widely in their replaceability exposure: email marketing software and SEO platforms behave differently from social media schedulers.
       </p>
     </div>
   </section>
 
-  <!-- ── 5. Largest price increases ───────────────────────────────────── -->
-  <section class="py-16 border-b border-[#0A0F1E]/8">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-3">Largest Price Increases</h2>
-      <p class="text-body text-[21px] leading-[1.7] mb-6 max-w-3xl">
-        The five tools with the largest percentage price increases on their lowest monthly entry tier.
-      </p>
-      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
-        <table class="w-full text-sm text-left">
-          <thead>
-            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
-              <th class="px-4 py-3 font-semibold text-ink">Tool</th>
-              <th class="px-4 py-3 font-semibold text-ink">Category</th>
-              <th class="px-4 py-3 font-semibold text-ink text-right">Jan 2020</th>
-              <th class="px-4 py-3 font-semibold text-ink text-right">Apr 2026</th>
-              <th class="px-4 py-3 font-semibold text-ink text-right">Change</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-[#0A0F1E]/6">
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Kayako</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B]">$15.00</td><td class="px-4 py-3 text-right text-[#64748B]">$79.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+426.7%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Klipfolio</td><td class="px-4 py-3 text-[#64748B]">Analytics</td><td class="px-4 py-3 text-right text-[#64748B]">$49.00</td><td class="px-4 py-3 text-right text-[#64748B]">$140.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+185.7%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">JazzHR</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B]">$39.00</td><td class="px-4 py-3 text-right text-[#64748B]">$110.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+182.1%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Later</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$9.00</td><td class="px-4 py-3 text-right text-[#64748B]">$25.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+177.8%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Hiver</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B]">$14.00</td><td class="px-4 py-3 text-right text-[#64748B]">$35.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+150.0%</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 6. Largest price cuts ─────────────────────────────────────────── -->
-  <section class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-3">Largest Price Cuts</h2>
-      <p class="text-body text-[21px] leading-[1.7] mb-6 max-w-3xl">
-        The five tools with the largest percentage price declines on their lowest monthly entry tier. When a software category loses pricing power, the differentiator shifts from product to perception, and perception is now decided by <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity</a>.
-      </p>
-      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
-        <table class="w-full text-sm text-left">
-          <thead>
-            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
-              <th class="px-4 py-3 font-semibold text-ink">Tool</th>
-              <th class="px-4 py-3 font-semibold text-ink">Category</th>
-              <th class="px-4 py-3 font-semibold text-ink text-right">Jan 2020</th>
-              <th class="px-4 py-3 font-semibold text-ink text-right">Apr 2026</th>
-              <th class="px-4 py-3 font-semibold text-ink text-right">Change</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-[#0A0F1E]/6">
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Vtiger</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B]">$42.00</td><td class="px-4 py-3 text-right text-[#64748B]">$15.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-64.3%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Venngage</td><td class="px-4 py-3 text-[#64748B]">Visual Design</td><td class="px-4 py-3 text-right text-[#64748B]">$49.00</td><td class="px-4 py-3 text-right text-[#64748B]">$19.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-61.2%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Copper</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B]">$24.00</td><td class="px-4 py-3 text-right text-[#64748B]">$12.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-50.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">CircleCI</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B]">$30.00</td><td class="px-4 py-3 text-right text-[#64748B]">$15.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-50.0%</td></tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Constant Contact</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B]">$20.00</td><td class="px-4 py-3 text-right text-[#64748B]">$12.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-40.0%</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 7. Methodology ────────────────────────────────────────────────── -->
-  <section class="py-16 border-b border-[#0A0F1E]/8">
+  <!-- ── 5. Finding 2: Largest increases ─────────────────────────────── -->
+  <section id="largest-increases" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
     <div class="max-w-3xl mx-auto px-6">
-      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-8">Methodology</h2>
-      <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Kayako Raised Entry-Tier Prices by 427% in Six Years</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-8">
+        <p>The five tools with the largest percentage price increases on their lowest monthly entry tier. Every one sits in an AI-resistant category.</p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+              <th class="px-4 py-3 font-semibold text-ink">Tool</th>
+              <th class="px-4 py-3 font-semibold text-ink">Category</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Jan 2020</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Apr 2026</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Change</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Kayako</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$15.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$79.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+426.7%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Klipfolio</td><td class="px-4 py-3 text-[#64748B]">Analytics</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$49.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$140.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+185.7%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">JazzHR</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$39.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$110.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+182.1%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Later</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$9.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$25.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+177.8%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Hiver</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$14.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$35.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+150.0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. Finding 3: Largest cuts ──────────────────────────────────── -->
+  <section id="largest-cuts" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">AI-Replicable Tools Cut Entry-Tier Prices by Up to 64%</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-8">
+        <p>The five tools with the largest percentage price declines on their lowest monthly entry tier. Four of the five sit in AI-replicable categories. When a software category loses pricing power, the differentiator shifts from product to perception, and perception in the AI search era is decided by <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity</a>.</p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+              <th class="px-4 py-3 font-semibold text-ink">Tool</th>
+              <th class="px-4 py-3 font-semibold text-ink">Category</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Jan 2020</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Apr 2026</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Change</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Vtiger</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$42.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$15.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-64.3%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Venngage</td><td class="px-4 py-3 text-[#64748B]">Visual Design</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$49.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$19.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-61.2%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Copper</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$24.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$12.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-50.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">CircleCI</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$30.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$15.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-50.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Constant Contact</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$20.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$12.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-40.0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. Finding 4: Archived source snapshots ─────────────────────── -->
+  <section id="snapshots" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Two Pricing Trajectories Verified Against the Wayback Machine</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-8">
+        <p>Two examples of Wayback Machine snapshots used to verify 2020 pricing: Kayako, which raised its entry tier 427% in six years, and Asana, which held flat across the same period. Full set of source snapshots available on request.</p>
+      </div>
+
+      <div class="mb-12">
+        <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mb-3">Kayako: entry tier 2020 vs 2026</h3>
+        <p class="text-body text-[15px] leading-[1.7] mb-6">Kayako's lowest paid monthly subscription rose from $15 per agent per month in January 2020 to $79 per agent per month for Kayako One in April 2026, a 427% increase.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <figure>
+            <img
+              src="/assets/images/saas-pricing/kayako-2020.png"
+              alt="Kayako pricing page, January 2020, $15 per agent per month"
+              class="w-full rounded-xl border border-[#0A0F1E]/8"
+              onerror="this.style.opacity='0.3'"
+            />
+            <figcaption class="mt-2 text-sm text-[#64748B]">
+              Kayako pricing, January 2020. Source: <a href="https://web.archive.org/web/20200101000000*/kayako.com/pricing" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark transition-colors">Wayback Machine archive</a>.
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/assets/images/saas-pricing/kayako-2026.png"
+              alt="Kayako pricing page, April 2026, $79 per agent per month"
+              class="w-full rounded-xl border border-[#0A0F1E]/8"
+              onerror="this.style.opacity='0.3'"
+            />
+            <figcaption class="mt-2 text-sm text-[#64748B]">
+              Kayako pricing, April 2026. Source: <a href="https://www.kayako.com/pricing" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark transition-colors">kayako.com/pricing</a>.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mb-3">Asana: six years unchanged</h3>
+        <p class="text-body text-[15px] leading-[1.7] mb-6">Asana's Premium tier, now Starter, has held at $10.99 per user per month since January 2020. Against 27.1% US CPI, that flat list price is a real-terms cut of roughly 21%.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <figure>
+            <img
+              src="/assets/images/saas-pricing/asana-2020.png"
+              alt="Asana pricing page, January 2020, $10.99 per user per month"
+              class="w-full rounded-xl border border-[#0A0F1E]/8"
+              onerror="this.style.opacity='0.3'"
+            />
+            <figcaption class="mt-2 text-sm text-[#64748B]">
+              Asana pricing, January 2020. Source: <a href="https://web.archive.org/web/20200101000000*/asana.com/pricing" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark transition-colors">Wayback Machine archive</a>.
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/assets/images/saas-pricing/asana-2026.png"
+              alt="Asana pricing page, April 2026, $10.99 per user per month"
+              class="w-full rounded-xl border border-[#0A0F1E]/8"
+              onerror="this.style.opacity='0.3'"
+            />
+            <figcaption class="mt-2 text-sm text-[#64748B]">
+              Asana pricing, April 2026. Source: <a href="https://asana.com/pricing" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark transition-colors">asana.com/pricing</a>.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. Finding 5: Full dataset ──────────────────────────────────── -->
+  <section id="full-dataset" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">All 65 Tools Ranked by Price Change</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-8">
+        <p>Every tool in the sample, ranked by percentage change. Prices in USD, monthly billing cycle, lowest-priced standalone paid subscription published on the vendor's default pricing page in each year. Changes above +27.1% beat US CPI over the period. Negative values indicate price cuts.</p>
+        <p><a href="/downloads/saas-pricing-inflation-2020-2026.csv" class="text-brand hover:text-brand-dark underline underline-offset-2">Download the full dataset as CSV.</a></p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+              <th class="px-4 py-3 font-semibold text-ink w-10">#</th>
+              <th class="px-4 py-3 font-semibold text-ink">Tool</th>
+              <th class="px-4 py-3 font-semibold text-ink">Category</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Jan 2020</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Apr 2026</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Change</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">1</td><td class="px-4 py-3 font-medium text-ink">Kayako</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$15.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$79.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+426.7%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">2</td><td class="px-4 py-3 font-medium text-ink">Klipfolio</td><td class="px-4 py-3 text-[#64748B]">Analytics</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$49.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$140.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+185.7%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">3</td><td class="px-4 py-3 font-medium text-ink">JazzHR</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$39.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$110.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+182.1%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">4</td><td class="px-4 py-3 font-medium text-ink">Later</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$9.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$25.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+177.8%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">5</td><td class="px-4 py-3 font-medium text-ink">Hiver</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$14.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$35.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+150.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">6</td><td class="px-4 py-3 font-medium text-ink">Xero</td><td class="px-4 py-3 text-[#64748B]">Accounting</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$11.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$25.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+127.3%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">7</td><td class="px-4 py-3 font-medium text-ink">Zoho Books</td><td class="px-4 py-3 text-[#64748B]">Accounting</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$9.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$20.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+122.2%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">8</td><td class="px-4 py-3 font-medium text-ink">Deputy</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$2.50</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$5.50</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+120.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">9</td><td class="px-4 py-3 font-medium text-ink">Wishpond</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$49.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$99.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+102.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">10</td><td class="px-4 py-3 font-medium text-ink">Sprout Social</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$99.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$199.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+101.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">11</td><td class="px-4 py-3 font-medium text-ink">Airtable</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$10.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$20.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+100.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">12</td><td class="px-4 py-3 font-medium text-ink">MailerLite</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$10.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$20.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+100.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">13</td><td class="px-4 py-3 font-medium text-ink">Geckoboard</td><td class="px-4 py-3 text-[#64748B]">Analytics</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$31.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$60.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+93.5%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">14</td><td class="px-4 py-3 font-medium text-ink">ClickUp</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$4.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$7.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+75.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">15</td><td class="px-4 py-3 font-medium text-ink">Todoist</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$4.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$7.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+75.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">16</td><td class="px-4 py-3 font-medium text-ink">Hotjar</td><td class="px-4 py-3 text-[#64748B]">Analytics</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$49.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+69.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">17</td><td class="px-4 py-3 font-medium text-ink">When I Work</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$1.50</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$2.50</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+66.7%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">18</td><td class="px-4 py-3 font-medium text-ink">Weebly</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$6.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$10.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+66.7%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">19</td><td class="px-4 py-3 font-medium text-ink">Twist</td><td class="px-4 py-3 text-[#64748B]">Comms</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$5.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$8.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+60.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">20</td><td class="px-4 py-3 font-medium text-ink">Benchmark Email</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$11.89</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$19.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+59.8%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">21</td><td class="px-4 py-3 font-medium text-ink">AWeber</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$19.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$30.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+57.9%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">22</td><td class="px-4 py-3 font-medium text-ink">FreshBooks</td><td class="px-4 py-3 text-[#64748B]">Accounting</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$15.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$23.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+53.3%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">23</td><td class="px-4 py-3 font-medium text-ink">QuickBooks</td><td class="px-4 py-3 text-[#64748B]">Accounting</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$25.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$38.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+52.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">24</td><td class="px-4 py-3 font-medium text-ink">Pipedrive</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$12.50</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$19.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+52.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">25</td><td class="px-4 py-3 font-medium text-ink">Help Scout</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$20.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$30.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+50.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">26</td><td class="px-4 py-3 font-medium text-ink">Webflow</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$12.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$18.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+50.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">27</td><td class="px-4 py-3 font-medium text-ink">Re:amaze</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$20.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+45.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">28</td><td class="px-4 py-3 font-medium text-ink">Chanty</td><td class="px-4 py-3 text-[#64748B]">Comms</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$3.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$4.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+33.3%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">29</td><td class="px-4 py-3 font-medium text-ink">Shopify</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$19.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$25.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+31.6%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">30</td><td class="px-4 py-3 font-medium text-ink">Ahrefs</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$99.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$129.00</td><td class="px-4 py-3 text-right text-[#B91C1C] font-semibold">+30.3%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">31</td><td class="px-4 py-3 font-medium text-ink">Crazy Egg</td><td class="px-4 py-3 text-[#64748B]">Analytics</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$24.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">+20.8%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">32</td><td class="px-4 py-3 font-medium text-ink">Volusion</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$35.00</td><td class="px-4 py-3 text-right text-[#64748B]">+20.7%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">33</td><td class="px-4 py-3 font-medium text-ink">Kajabi</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$149.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$179.00</td><td class="px-4 py-3 text-right text-[#64748B]">+20.1%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">34</td><td class="px-4 py-3 font-medium text-ink">SurveyMonkey</td><td class="px-4 py-3 text-[#64748B]">Productivity</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$25.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$30.00</td><td class="px-4 py-3 text-right text-[#64748B]">+20.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">35</td><td class="px-4 py-3 font-medium text-ink">Nimble</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$25.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.90</td><td class="px-4 py-3 text-right text-[#64748B]">+19.6%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">36</td><td class="px-4 py-3 font-medium text-ink">LiveChat</td><td class="px-4 py-3 text-[#64748B]">Support</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$16.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$19.00</td><td class="px-4 py-3 text-right text-[#64748B]">+18.8%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">37</td><td class="px-4 py-3 font-medium text-ink">Sentry</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$26.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">+11.5%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">38</td><td class="px-4 py-3 font-medium text-ink">Breezy HR</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$171.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$189.00</td><td class="px-4 py-3 text-right text-[#64748B]">+10.5%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">39</td><td class="px-4 py-3 font-medium text-ink">Mailjet</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$8.69</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$9.00</td><td class="px-4 py-3 text-right text-[#64748B]">+3.6%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">40</td><td class="px-4 py-3 font-medium text-ink">Wrike</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$9.80</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$10.00</td><td class="px-4 py-3 text-right text-[#64748B]">+2.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">41</td><td class="px-4 py-3 font-medium text-ink">RingCentral</td><td class="px-4 py-3 text-[#64748B]">Comms</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.99</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$30.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">42</td><td class="px-4 py-3 font-medium text-ink">Sellfy</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">43</td><td class="px-4 py-3 font-medium text-ink">Insightly</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">44</td><td class="px-4 py-3 font-medium text-ink">Asana</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$10.99</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$10.99</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">45</td><td class="px-4 py-3 font-medium text-ink">Datadog</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$15.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$15.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">46</td><td class="px-4 py-3 font-medium text-ink">Grammarly</td><td class="px-4 py-3 text-[#64748B]">Productivity</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$12.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$12.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">47</td><td class="px-4 py-3 font-medium text-ink">Agile CRM</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$8.99</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$8.99</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">48</td><td class="px-4 py-3 font-medium text-ink">Loggly</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$79.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$79.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">49</td><td class="px-4 py-3 font-medium text-ink">Vercel</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$20.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$20.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">50</td><td class="px-4 py-3 font-medium text-ink">Otter.ai</td><td class="px-4 py-3 text-[#64748B]">Productivity</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$8.33</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$8.33</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">51</td><td class="px-4 py-3 font-medium text-ink">Teachable</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$39.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$39.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">52</td><td class="px-4 py-3 font-medium text-ink">Moz</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$99.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$99.00</td><td class="px-4 py-3 text-right text-[#64748B]">+0.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">53</td><td class="px-4 py-3 font-medium text-ink">Gusto</td><td class="px-4 py-3 text-[#64748B]">HR</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$51.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$49.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-3.9%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">54</td><td class="px-4 py-3 font-medium text-ink">Harvest</td><td class="px-4 py-3 text-[#64748B]">Accounting</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$12.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$11.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-8.3%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">55</td><td class="px-4 py-3 font-medium text-ink">Smartsheet</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$14.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$12.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-14.3%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">56</td><td class="px-4 py-3 font-medium text-ink">Framer</td><td class="px-4 py-3 text-[#64748B]">Visual Design</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$12.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$10.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-16.7%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">57</td><td class="px-4 py-3 font-medium text-ink">Drip</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$49.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$39.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-20.4%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">58</td><td class="px-4 py-3 font-medium text-ink">BigCommerce</td><td class="px-4 py-3 text-[#64748B]">Ecommerce</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$39.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$29.95</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-23.2%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">59</td><td class="px-4 py-3 font-medium text-ink">Nutshell</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$22.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$15.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-31.8%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">60</td><td class="px-4 py-3 font-medium text-ink">Paymo</td><td class="px-4 py-3 text-[#64748B]">Project Mgmt</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$9.56</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$5.90</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-38.3%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">61</td><td class="px-4 py-3 font-medium text-ink">Constant Contact</td><td class="px-4 py-3 text-[#64748B]">Marketing</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$20.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$12.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-40.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">62</td><td class="px-4 py-3 font-medium text-ink">CircleCI</td><td class="px-4 py-3 text-[#64748B]">Dev</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$30.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$15.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-50.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">63</td><td class="px-4 py-3 font-medium text-ink">Copper</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$24.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$12.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-50.0%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">64</td><td class="px-4 py-3 font-medium text-ink">Venngage</td><td class="px-4 py-3 text-[#64748B]">Visual Design</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$49.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$19.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-61.2%</td></tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 text-[#94A3B8]">65</td><td class="px-4 py-3 font-medium text-ink">Vtiger</td><td class="px-4 py-3 text-[#64748B]">CRM</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$42.00</td><td class="px-4 py-3 text-right text-[#64748B] font-mono">$15.00</td><td class="px-4 py-3 text-right text-[#047857] font-semibold">-64.3%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. Methodology ───────────────────────────────────────────────── -->
+  <section id="methodology" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Methodology</h2>
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
         <p>The dataset tracks the lowest-priced monthly subscription published on each vendor's default pricing page in January 2020 and April 2026. 2020 prices were taken from the closest available <a href="https://web.archive.org" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">Wayback Machine</a> snapshot to January 2020. 2026 prices were taken from live vendor pricing pages captured in April 2026.</p>
         <p>Inclusion rules: a tool was included only if it published a monthly-billed entry-tier price on its default pricing page in both years, and if its pricing model remained directly comparable between the two dates. Tools that moved from seat-based to consumption-based pricing (or vice versa) were excluded as non-comparable. Tools where the 2020 Wayback snapshot was incomplete, missing, or ambiguous were excluded.</p>
         <p>Price selection: the lowest-priced paid standalone subscription, on monthly billing (not annual-billed-monthly-equivalent), exact figure as published. Free tiers, trials, usage add-ons, SMS and AI credit packs, and per-user fees beyond the base plan were excluded. Where a vendor showed both monthly and annual billing, the monthly figure was taken in both years. Annual discounts have widened at many vendors during the period, which would obscure underlying price movement.</p>
@@ -329,10 +375,24 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- Press contact sign-off. Restrained, editorial. Do not convert to a styled CTA. -->
+  <!-- ── 10. Limitations ──────────────────────────────────────────────── -->
+  <section id="limitations" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Limitations</h2>
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>List price is not always the price paid. Enterprise discounting, partner pricing, and promotional credits sit outside this dataset and can shift effective realised price in ways the published pricing page does not show. The list-price comparison is the cleanest like-for-like read available without privileged access to vendor billing data.</p>
+        <p>The AI-replicability label is a judgement, not a measurement. Where a category sits on the replicable-to-resistant spectrum will continue to shift as AI capability advances. Today's resistant category can become tomorrow's replicable one. The current classification reflects an informed view of 2026 capability, not a settled framework.</p>
+        <p>Pricing-page design itself changed across the window. Several vendors moved from clear three- or four-column pricing pages to "contact sales" gating, particularly at higher tiers. The dataset only includes tools whose entry tier remained publicly listed in both 2020 and 2026, which biases inclusion toward smaller and mid-market vendors and away from vendors that retreated into private quoting.</p>
+        <p>Sample size by category varies. Categories with three or four tools (Comms, Productivity, Analytics) carry more single-point sensitivity than categories with seven or eight (Project Mgmt, Ecommerce, Marketing). The directional finding (AI-replicable categories cluster at or below zero, AI-resistant categories cluster well above CPI) is robust to small-sample noise at the category level.</p>
+        <p>The 65-tool sample is a sample, not a census. Coverage skews toward SMB and mid-market SaaS with publicly listed pricing. Enterprise SaaS, infrastructure platforms, and vertical-specific tools are under-represented. Conclusions describe the publicly priced mid-market layer of SaaS, not the full software economy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 11. Press contact ────────────────────────────────────────────── -->
   <section class="py-12 bg-white">
     <div class="max-w-3xl mx-auto px-6">
-      <p class="text-body text-[21px] leading-[1.7]">
+      <p class="text-body text-[15px] leading-[1.7]">
         For a different cut of this dataset, additional category or vendor breakouts, or methodology questions, contact <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.
       </p>
     </div>
@@ -341,13 +401,13 @@ const jsonLd = {
   <RelatedResearch
     items={[
       {
-        title: "The Cost Of Authority",
-        description: "This essay explains why the brands AI engines cite are the ones that have paid for editorial proof, not the ones that have optimised for keywords.",
+        title: "The Hidden Economy Behind Google Rankings",
+        description: "This data report analyses 140,000 publisher listings to show how paid link markets expanded after repeated Google crackdowns.",
         href: "/resources/the-cost-of-authority",
       },
       {
-        title: "Which AI Names ICT Experts",
-        description: "This data report tests how AI answer engines name analysts and consultants in the ICT sector, and which sources each engine pulls from.",
+        title: "One Woman for Every Ten: How AI Names the Experts in Tech",
+        description: "2,286 named individuals from 2,520 AI responses across ChatGPT, Claude, Gemini, and Perplexity. Women made up 20.5% of named ICT experts against a 28% workforce baseline.",
         href: "/resources/ai-names-ict-experts",
       },
       {

@@ -1,0 +1,67 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+}
+const { id = 'chartHeadlineGap', eyebrow = '' } = Astro.props;
+---
+
+<div>
+  {eyebrow && <div class="text-xs uppercase tracking-wider text-brand font-medium mb-1.5">{eyebrow}</div>}
+  <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">A 7.5-point gap between who AI names and who works in tech</div>
+  <div class="text-[12px] text-[#64748B] mb-4">Women as a share of the ICT workforce against women as a share of named ICT experts. Control query excluded, n=10,711 mentions.</div>
+  <div class="relative w-full" style="height:200px">
+    <canvas id={id} role="img" aria-label="Horizontal bar chart comparing women as 28 percent of the ICT workforce against women as 20.5 percent of named ICT experts.">Women in the ICT workforce: 28 percent. Women named as ICT experts: 20.5 percent.</canvas>
+  </div>
+</div>
+
+<script is:inline define:vars={{ id }}>
+  (function(){
+    function init(){
+      if (typeof window.Chart === 'undefined') { setTimeout(init, 50); return; }
+      var canvas = document.getElementById(id);
+      if (!canvas) return;
+      var labels = ['Women in the ICT workforce','Women named as ICT experts'];
+      var data = [28,20.5];
+      var colors = ['#64748B','#B91C1C'];
+      new window.Chart(canvas, {
+        type: 'bar',
+        data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderRadius: 3, barThickness: 40 }] },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: { padding: { right: 16 } },
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: function(c){ return c.parsed.x + '%'; } } }
+          },
+          scales: {
+            x: { beginAtZero: true, max: 34, grid: { color: 'rgba(10,15,30,0.06)' }, ticks: { font: { family: 'Inter, sans-serif', size: 11 }, color: '#64748B', callback: function(v){ return v + '%'; } } },
+            y: { grid: { display: false }, ticks: { font: { family: 'Inter, sans-serif', size: 12 }, color: '#0A0F1E' } }
+          },
+          animation: { duration: 600 }
+        },
+        plugins: [{
+          id: 'valuelabels',
+          afterDatasetsDraw: function(chart){
+            var ctx = chart.ctx, meta = chart.getDatasetMeta(0);
+            ctx.save();
+            ctx.font = '600 13px Inter, sans-serif';
+            ctx.textBaseline = 'middle';
+            meta.data.forEach(function(bar, i){
+              ctx.fillStyle = colors[i];
+              ctx.fillText(data[i] + '%', bar.x + 8, bar.y);
+            });
+            ctx.restore();
+          }
+        }]
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

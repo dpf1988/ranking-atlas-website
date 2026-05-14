@@ -1,0 +1,87 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+}
+const { id = 'chartByModel', eyebrow = '' } = Astro.props;
+---
+
+<div>
+  {eyebrow && <div class="text-xs uppercase tracking-wider text-brand font-medium mb-1.5">{eyebrow}</div>}
+  <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">The web-searching model returned the fewest women</div>
+  <div class="text-[12px] text-[#64748B] mb-4">Female share of named ICT experts by model, against the 28% workforce baseline. Perplexity is the only retrieval-augmented model in the panel.</div>
+  <div class="relative w-full" style="height:240px">
+    <canvas id={id} role="img" aria-label="Horizontal bar chart of female share of named ICT experts by model, with a dashed vertical line at the 28 percent workforce baseline.">OpenAI GPT-4o 23.2 percent, Anthropic Claude 21.5 percent, Google Gemini 19.3 percent, Perplexity Sonar 18.5 percent. All four models below the 28 percent workforce baseline.</canvas>
+  </div>
+  <div class="flex flex-wrap gap-4 mt-3 text-xs text-[#64748B]">
+    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#B91C1C"></span>Below 28% workforce baseline</span>
+    <span class="flex items-center gap-1.5"><span class="inline-block w-3.5 border-t-2 border-dashed border-[#0A0F1E]"></span>28% workforce baseline</span>
+  </div>
+</div>
+
+<script is:inline define:vars={{ id }}>
+  (function(){
+    function init(){
+      if (typeof window.Chart === 'undefined') { setTimeout(init, 50); return; }
+      var canvas = document.getElementById(id);
+      if (!canvas) return;
+      var labels = ['OpenAI GPT-4o','Anthropic Claude','Google Gemini','Perplexity Sonar'];
+      var data = [23.2,21.5,19.3,18.5];
+      var colors = ['#B91C1C','#B91C1C','#B91C1C','#B91C1C'];
+      var baseline = {
+        id: 'baseline',
+        afterDraw: function(chart){
+          var x = chart.scales.x, y = chart.scales.y, ctx = chart.ctx;
+          var px = x.getPixelForValue(28);
+          ctx.save();
+          ctx.beginPath();
+          ctx.setLineDash([5,4]);
+          ctx.moveTo(px, y.top);
+          ctx.lineTo(px, y.bottom);
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = '#0A0F1E';
+          ctx.stroke();
+          ctx.restore();
+        }
+      };
+      new window.Chart(canvas, {
+        type: 'bar',
+        data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderRadius: 3, barThickness: 28 }] },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: { padding: { right: 12 } },
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: function(c){ return c.parsed.x + '% female'; } } }
+          },
+          scales: {
+            x: { beginAtZero: true, max: 34, grid: { color: 'rgba(10,15,30,0.06)' }, ticks: { font: { family: 'Inter, sans-serif', size: 11 }, color: '#64748B', callback: function(v){ return v + '%'; } } },
+            y: { grid: { display: false }, ticks: { font: { family: 'Inter, sans-serif', size: 12 }, color: '#0A0F1E' } }
+          },
+          animation: { duration: 600 }
+        },
+        plugins: [baseline, {
+          id: 'valuelabels',
+          afterDatasetsDraw: function(chart){
+            var ctx = chart.ctx, meta = chart.getDatasetMeta(0);
+            ctx.save();
+            ctx.font = '600 11px Inter, sans-serif';
+            ctx.textBaseline = 'middle';
+            meta.data.forEach(function(bar, i){
+              ctx.fillStyle = '#B91C1C';
+              ctx.fillText(data[i] + '%', bar.x + 6, bar.y);
+            });
+            ctx.restore();
+          }
+        }]
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
