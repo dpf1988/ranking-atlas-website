@@ -29,8 +29,8 @@ const eyebrowDot = "h-1.5 w-1.5 rounded-full bg-[#1E3A8A]";
 const eyebrowText = "text-[11px] uppercase tracking-[0.14em] font-semibold text-ink";
 
 // Restrained CTAs — administrative, not conversion-aggressive.
-const primaryCta = "inline-flex items-center justify-center bg-[#1E3A8A] hover:bg-[#1E40AF] text-white font-semibold px-5 py-2.5 rounded text-sm transition-colors duration-200";
-const secondaryCta = "inline-flex items-center justify-center bg-[#F4F0E9] hover:bg-white text-[#0A0F1E] font-semibold tracking-tight px-5 py-2.5 rounded border border-[#0A0F1E]/15 text-sm transition-colors duration-200";
+const primaryCta = "inline-flex items-center justify-center bg-[#1E3A8A] hover:bg-[#1E40AF] text-white font-semibold px-5 py-2.5 rounded text-sm shadow-[0_3px_8px_-2px_rgba(15,27,61,0.22),0_1px_2px_rgba(15,27,61,0.10)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.28),0_2px_4px_-1px_rgba(15,27,61,0.12)] hover:-translate-y-px transition-all duration-200";
+const secondaryCta = "inline-flex items-center justify-center bg-[#F4F0E9] hover:bg-white text-[#0A0F1E] font-semibold tracking-tight px-5 py-2.5 rounded border border-[#0A0F1E]/15 text-sm shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200";
 ---
 
 <Layout
@@ -43,15 +43,18 @@ const secondaryCta = "inline-flex items-center justify-center bg-[#F4F0E9] hover
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div class="lg:col-span-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#A06CF5]/15 border border-[#A06CF5]/30 mb-7">
-            <img src="/assets/images/authority-icons/07-laurel-doc-transparent.png" alt="" aria-hidden="true" class="w-4 h-4 scale-150 origin-center" />
-            <span class="text-[11px] uppercase tracking-[0.14em] font-semibold text-ink">Modern Digital PR Agency</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F1E9FE] border border-[#E2D3FC] mb-7">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-ink shrink-0">
+              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+            <span class="text-[11px] uppercase tracking-[0.14em] font-semibold text-ink">Digital PR Agency</span>
           </div>
           <h1 class="font-serif font-medium text-[2rem] sm:text-[2.5rem] lg:text-[3.25rem] tracking-tight text-ink leading-[1.05] mb-6">
             <span class="brush-highlight">Research-Led</span><br /> Editorial Campaigns
           </h1>
           <p class="text-lg text-body leading-relaxed mb-7 max-w-[580px]">
-            We help brands become <span class="font-semibold text-[#1E3A8A]">cited sources across trusted publications</span>, strengthening both search visibility and AI discoverability.
+            With <span class="font-semibold text-[#1E3A8A]">proprietary research, verified expert insights, and data-backed stories</span>, we get brands cited in leading publications, strengthening search and AI visibility.
           </p>
           <div class="flex flex-wrap items-center gap-3">
             <a href="/contact" class={primaryCta}>Start a Campaign</a>

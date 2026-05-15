@@ -6,6 +6,6 @@ interface Props {
 const { href, label } = Astro.props;
 ---
 <a href={href}
-  class="inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 border border-[#1E3A8A] text-[#1E3A8A] rounded text-sm transition-colors duration-200 hover:bg-[#1E3A8A]/5">
+  class="inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 border border-[#1E3A8A] text-[#1E3A8A] rounded text-sm shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 hover:bg-[#1E3A8A]/5">
   {label}
 </a>
