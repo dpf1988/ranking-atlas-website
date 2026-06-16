@@ -1,0 +1,402 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import InstitutionalBio from '../../components/InstitutionalBio.astro';
+import RelatedResearch from '../../components/RelatedResearch.astro';
+import PullQuote from '../../components/PullQuote.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The property data Andy Burnham doesn't want to see",
+  "description": "Homes near cancelled HS2 stations have outperformed England's average by up to 9 percentage points since Sunak axed the line. Areas near active HS2 construction have fallen sharply.",
+  "url": "https://ranking-atlas.com/resources/hs2-property-prices",
+  "image": "https://ranking-atlas.com/assets/images/resources/hs2-property-prices/hero.png",
+  "author": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" },
+  "datePublished": "2026-06-16T00:00:00+00:00",
+  "dateModified": "2026-06-16T00:00:00+00:00",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
+};
+---
+
+<Layout
+  title="The property data Andy Burnham doesn't want to see | Ranking Atlas"
+  description="Homes near cancelled HS2 stations have outperformed England's average by up to 9 percentage points since Sunak axed the line. Areas near active HS2 construction have fallen sharply."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+<div class="bg-white">
+
+  <!-- ── 1. Hero ────────────────────────────────────────────────────────── -->
+  <section class="pt-20 md:pt-28 pb-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3 text-center">Data Report</div>
+      <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.15] mb-3 text-center">
+        The property data Andy Burnham doesn't want to see
+      </h1>
+      <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mt-2 mb-8 text-center">
+        Homes near cancelled HS2 stations have outperformed England's average by up to 9 percentage points since Sunak axed the line. Areas near active HS2 construction have fallen sharply.
+      </p>
+
+      <figure class="mb-8">
+        <div class="relative w-full rounded-2xl overflow-hidden bg-[#FBFAF7] border border-[#0A0F1E]/8 aspect-[16/9] flex items-center justify-center">
+          <img
+            src="/assets/images/resources/hs2-property-prices/hero.png"
+            alt="Map of England showing cancelled and active HS2 station areas colour-coded by property price change since October 2023"
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          />
+          <div class="hidden flex-col items-center justify-center text-muted p-8 text-center w-full h-full">
+            <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero Image Slot</div>
+            <div class="text-sm text-[#64748B]">Drop hero.jpg into /public/assets/images/resources/hs2-property-prices/ when ready.</div>
+          </div>
+        </div>
+      </figure>
+
+      <div class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5 mb-6">
+        <p class="text-[13px] text-[#64748B]">Content Written By:</p>
+        <p class="text-[13px] text-[#64748B]">Ranking Atlas</p>
+        <p class="text-[13px] text-[#64748B]">Published June 2026</p>
+        <p class="text-[13px] text-[#64748B]">7 min read</p>
+      </div>
+
+      <nav class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5" aria-label="Article sections">
+        <p class="text-[14px] font-semibold text-ink mb-3">Navigation</p>
+        <ul class="flex flex-col space-y-2 text-[14px]">
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key takeaways</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#cancelled-stations" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Cancelled HS2 areas outperformed England</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#active-construction" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Active construction sites tell a different story</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#burnham-pitch" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">What this means for Burnham's pitch</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#methodology" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Methodology</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#limitations" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Limitations</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#download" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Download the data</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ── 2. Key Takeaways ──────────────────────────────────────────────── -->
+  <section id="key-takeaways" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Key takeaways</h2>
+      <ul class="space-y-2 list-disc pl-6 text-body text-[15px] leading-[1.7]">
+        <li><strong>Every cancelled HS2 area outperformed England.</strong> England's median property price fell 3.5% between Q3 2023 and Q1 2026. Homes near all four major cancelled northern stations rose or held flat in absolute terms.</li>
+        <li><strong>Crewe outperformed England by 9.1 percentage points.</strong> The town slated to become the northern HS2 hub recorded a 5.6% median price rise. England fell 3.5% over the same period.</li>
+        <li><strong>Manchester Piccadilly-adjacent properties beat England by 5.7 percentage points,</strong> rising 2.1% in a national market that declined.</li>
+        <li><strong>Old Oak Common fell nearly a fifth.</strong> Median prices near the active London HS2 super-hub dropped 19.2%, underperforming England by 15.7 percentage points. Construction blight is visible in the data.</li>
+        <li><strong>The feared reverse-announcement effect did not materialise.</strong> HS2 cancellation was widely predicted to strip value from Northern towns. Land Registry transaction data does not support that prediction.</li>
+        <li><strong>More than 600,000 transactions underpin the analysis.</strong> Data is drawn from HM Land Registry Price Paid Data, covering Q3 2023 through Q1 2026 across every postcode district adjacent to a major planned or active HS2 station.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── 3. Introduction ───────────────────────────────────────────────── -->
+  <section class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Andy Burnham said last week he would reinstate HS2's northern leg between Birmingham and Manchester if he became Prime Minister. His pitch to Northern homeowners: cancellation has cost them money, and reinstatement would give it back.
+        </p>
+        <p>
+          The property data tells a more complicated story.
+        </p>
+        <p>
+          <a href="/" class="text-brand hover:text-brand-dark underline underline-offset-2">Ranking Atlas</a> analysed more than 600,000 residential property transactions recorded by HM Land Registry between Q3 2023, the last full quarter before Rishi Sunak cancelled the northern leg on 4 October 2023, and Q1 2026. We filtered the data by postcode district for every major planned station on the cancelled route, then compared performance against the England-wide median.
+        </p>
+        <p class="font-semibold text-ink">
+          The finding is counterintuitive: every cancelled HS2 area has outperformed the England average. Areas near active HS2 construction have significantly underperformed.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. Cancelled stations ─────────────────────────────────────────── -->
+  <section id="cancelled-stations" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Cancelled HS2 areas outperformed England</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-10">
+        <p>
+          England's median property price fell 3.5% over the period, from £285,000 in Q3 2023 to £275,000 in Q1 2026. High interest rates and subdued buyer demand set the backdrop.
+        </p>
+        <p>
+          Against that national decline, homes near cancelled HS2 stations held firm or rose.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8 mb-10">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+              <th class="px-4 py-3 font-semibold text-ink">Area</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Q3 2023 median</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Q1 2026 median</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Change</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">vs England</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Crewe (CW1, CW2)</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£180,000</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£190,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+5.6%</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+9.1pp</td>
+            </tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Manchester Piccadilly (M1, M11, M12)</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£210,000</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£214,500</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+2.1%</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+5.7pp</td>
+            </tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Staffordshire corridor (ST15, ST16, WS13)</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£249,076</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£250,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+0.4%</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+3.9pp</td>
+            </tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Manchester Airport (M22, SK9)</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£315,000</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£310,000</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">-1.6%</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+1.9pp</td>
+            </tr>
+            <tr class="bg-[#F0FDF4] border-t-2 border-[#15803D]/20">
+              <td class="px-4 py-3 font-semibold text-ink">England (national baseline)</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£285,000</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£275,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">-3.5%</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">baseline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Crewe was slated to become the northern HS2 hub, the junction where trains would split for Manchester and Leeds. It has been one of the stronger property markets in England over the past two and a half years, rising 5.6% while the national median was falling.
+        </p>
+        <p>
+          Manchester Piccadilly-adjacent properties rose 2.1% against a 3.5% national decline. The Staffordshire corridor, which sits along the cancelled route between Birmingham and Crewe, held almost flat. Manchester Airport districts slipped slightly in absolute terms but still beat England by 1.9 percentage points.
+        </p>
+        <p>
+          In every case, the cancellation of HS2 did not produce the property market shock that commentators predicted in October 2023.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. Active construction ─────────────────────────────────────────── -->
+  <section id="active-construction" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Active construction sites tell a different story</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-10">
+        <p>
+          We ran the same analysis on postcode districts near HS2 Phase 1 stations still under active construction, sites where building work continues today.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8 mb-10">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+              <th class="px-4 py-3 font-semibold text-ink">Area</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Q3 2023 median</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Q1 2026 median</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Change</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">vs England</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Old Oak Common, London (NW10, W3)</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£517,500</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£418,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">-19.2%</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">-15.7pp</td>
+            </tr>
+            <tr class="bg-[#FEF2F2] border-t-2 border-[#B91C1C]/20">
+              <td class="px-4 py-3 font-semibold text-ink">England (national baseline)</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£285,000</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£275,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">-3.5%</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">baseline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Old Oak Common, the London super-hub where HS2 and Elizabeth line trains will interchange, has seen median prices fall nearly a fifth since Q3 2023. It underperforms the England average by 15.7 percentage points.
+        </p>
+        <p>
+          Construction blight is a well-documented phenomenon in property research. Noise, dust, restricted access, and years-long uncertainty consistently suppress values near major infrastructure sites during the build phase. The data here is consistent with that pattern.
+        </p>
+        <p>
+          The Old Oak Common result reflects both HS2 construction disruption and the broader softening of London prices over the same period. Both factors are likely in play. The scale of the underperformance, nearly 16 percentage points below the national median, suggests construction blight is a significant contributor.
+        </p>
+        <p>
+          This finding matters for Burnham's pitch. If reinstatement proceeds, the areas near new construction would experience the same disruption that Old Oak Common is experiencing now. The "HS2 cancelled, prices fell" narrative is not what Land Registry shows. The more accurate pattern is: "HS2 construction active, prices fell."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. Burnham's pitch ─────────────────────────────────────────────── -->
+  <section id="burnham-pitch" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">What this means for Burnham's pitch</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Burnham's argument rests on the assumption that cancellation has depressed Northern property values and that reinstatement would reverse the damage. The transaction data does not support the first part of that claim.
+        </p>
+        <p>
+          Crewe homeowners have not been punished by the markets for losing their HS2 hub. Manchester Piccadilly-adjacent properties are ahead of the national average. The feared reverse-announcement effect, where HS2 cancellation would strip value from Northern towns the way HS2 announcements had once boosted them, has not materialised in the Land Registry data.
+        </p>
+        <p>
+          That does not mean cancellation was costless. Local authorities lost planned regeneration investment. Businesses relocated from affected zones were not fully compensated. Transport connectivity improvements were real and were lost. But the residential property market has absorbed the cancellation without the collapse that many predicted.
+        </p>
+        <p>
+          The same <a href="/resources/generational-fraud" class="text-brand hover:text-brand-dark underline underline-offset-2">pattern of counterintuitive findings from open government datasets</a> appears in other areas of public policy: what the data shows often diverges sharply from political framing on both sides. The HS2 property story is another example.
+        </p>
+      </div>
+
+      <PullQuote
+        quote="The data here is drawn directly from Land Registry, the most authoritative source available for residential property prices. The counterintuitive finding is that the Northern markets most people assumed were hurt by cancellation have actually outperformed England. Whether that is Northern market momentum, a recognition that HS2 construction comes with its own disruption costs, or simply that the cancellation was partially priced in early, the numbers are clear."
+        attribution="Daniel Grainger, Ranking Atlas"
+      />
+    </div>
+  </section>
+
+  <!-- ── 7. Methodology ─────────────────────────────────────────────────── -->
+  <section id="methodology" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-8">Methodology</h2>
+
+      <div class="space-y-8 text-body text-[15px] leading-[1.7]">
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Data source</h3>
+          <p>HM Land Registry Price Paid Data, downloaded directly from gov.uk. The dataset is open data, updated monthly, and covers all residential property transactions in England and Wales registered at Land Registry. It is the most comprehensive source of residential transaction prices available for England.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Comparison period</h3>
+          <p>Q3 2023 (July to September 2023) was chosen as the pre-cancellation baseline: the last complete quarter before Rishi Sunak cancelled the northern leg on 4 October 2023. Q1 2026 (January to March 2026) is the most recent complete quarter at the time of analysis. The period captures approximately two and a half years of post-cancellation market data.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Metric</h3>
+          <p>Median residential sale price per postcode district, for each comparison quarter. Median is used rather than mean to reduce sensitivity to outlier transactions at the top of the price distribution.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Transaction volume</h3>
+          <p>229,520 national transactions in the Q3 2023 baseline quarter. 130,091 national transactions in Q1 2026. More than 600,000 transactions across the full analysis window. The lower Q1 2026 volume reflects both seasonal patterns (Q3 is typically the strongest quarter for completions) and continued subdued market activity in 2026.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Postcode selection</h3>
+          <p>Postcode districts were selected by identifying all districts containing or immediately adjacent to planned HS2 station sites, based on published HS2 route documentation and station location data. For cancelled northern stations: CW1 and CW2 (Crewe), M1, M11, and M12 (Manchester Piccadilly), ST15, ST16, and WS13 (Staffordshire corridor), M22 and SK9 (Manchester Airport). For active construction: NW10 and W3 (Old Oak Common).</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Exclusions</h3>
+          <p>Transactions below £10,000 were excluded as likely non-arm's-length sales (transfers, gifts, or administrative disposals). No other price-based exclusions were applied. Commercial, agricultural, and non-residential transactions are not included in Land Registry Price Paid Data and are therefore absent from the analysis by default.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Baselines</h3>
+          <p>England national median for each quarter, calculated from the same Price Paid dataset across all postcode districts in England. Percentage point differences ("vs England") are calculated as the area's percentage change minus England's percentage change over the same period. All figures are nominal, not inflation-adjusted. The <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">same principle of grounding analysis in primary-source, reproducible data</a> applies across all Ranking Atlas research.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. Limitations ─────────────────────────────────────────────────── -->
+  <section id="limitations" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-8">Limitations</h2>
+      <div class="space-y-5 text-body text-[15px] leading-[1.7]">
+        <p>
+          <strong>Postcode districts are imprecise proxies.</strong> A postcode district like M1 covers a defined geographic area but does not map perfectly to the catchment of a planned station. Properties at the edge of a district may be further from the station than properties in an adjacent district not included in the analysis. The approach is consistent with how similar studies are conducted and is fit for identifying broad market-level trends, but it cannot capture hyper-local variation within a district.
+        </p>
+        <p>
+          <strong>Old Oak Common conflates two effects.</strong> The NW10 and W3 districts have experienced both active HS2 construction disruption and the broader softening of inner-west London prices since 2023. The relative contribution of each cannot be disaggregated from transaction data alone. The -19.2% figure should be read as reflecting both factors.
+        </p>
+        <p>
+          <strong>Correlation is not causation.</strong> The analysis establishes that cancelled HS2 areas outperformed England after cancellation. It does not establish that cancellation caused that outperformance. Other factors, including Northern market momentum, lower starting valuations, interest-rate sensitivity by price tier, and local economic conditions, may have contributed.
+        </p>
+        <p>
+          <strong>Two and a half years may be insufficient to capture announcement effects.</strong> Some property economists argue that major infrastructure decisions take five to ten years to fully price in. The period analysed here covers the immediate post-cancellation window but may not capture longer-run adjustment.
+        </p>
+        <p>
+          <strong>Figures are nominal.</strong> Price changes are reported in nominal terms and have not been adjusted for inflation. UK CPI rose approximately 8% between Q3 2023 and Q1 2026. Real price changes are therefore lower than the nominal figures shown. The comparison against the England national median is unaffected by this, as both series are nominal.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. Download ────────────────────────────────────────────────────── -->
+  <section id="download" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-4">Download the data</h2>
+      <p class="text-body text-[15px] leading-[1.7] mb-6">
+        The underlying price data by postcode district and quarter, including transaction counts and median prices for every area in the analysis.
+      </p>
+      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 flex items-center justify-between gap-4">
+        <div>
+          <p class="font-semibold text-ink mb-1">hs2-property-prices.csv</p>
+          <p class="text-sm text-[#64748B]">Postcode district, Q3 2023 median, Q1 2026 median, % change, pp vs England, transaction counts.</p>
+        </div>
+        <a href="/downloads/hs2-property-prices.csv" class="inline-flex items-center gap-2 bg-[#F4F0E9] hover:bg-white text-[#0A0F1E] text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-[#0A0F1E]/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
+          Download CSV
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-[#64748B]">
+        Citation: Ranking Atlas, "The property data Andy Burnham doesn't want to see," June 2026. Source data: HM Land Registry Price Paid Data (open government licence).
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Press contact sign-off ────────────────────────────────────────── -->
+  <section class="py-12 bg-[#FBFAF7]">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-body text-[15px] leading-[1.7]">
+        For a different cut of this dataset, additional regional or postcode-level breakouts, or methodology questions, contact <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.
+      </p>
+    </div>
+  </section>
+
+  <RelatedResearch
+    items={[
+      {
+        title: "Who Actually Gets Scammed in America?",
+        description: "Federal fraud and survey data show sharp divides in who gets scammed, how often, and how much they lose. Another counterintuitive finding from open government data.",
+        href: "/resources/generational-fraud",
+      },
+      {
+        title: "The Hidden Economy Behind Google Rankings",
+        description: "A six-year analysis of 140,000 publisher listings reveals how paid link markets expanded after repeated Google crackdowns.",
+        href: "/resources/the-cost-of-authority",
+      },
+      {
+        title: "Welcome to the SaaSpocalypse",
+        description: "Software that can be vibe-coded by a small team has lost all pricing power, while AI-resistant SaaS categories raised entry-tier prices up to three times faster than inflation.",
+        href: "/resources/saas-pricing-inflation",
+      },
+    ]}
+  />
+
+  <InstitutionalBio />
+
+</div>
+
+</Layout>
