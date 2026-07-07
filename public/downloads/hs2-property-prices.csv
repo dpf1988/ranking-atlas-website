@@ -1,14 +1,4 @@
-area,postcodes,status,q3_2023_median,q3_2023_txns,q1_2026_median,q1_2026_txns,pct_change,pp_vs_england,notes
-England (national baseline),all,baseline,285000,227648,275000,129091,-3.5,0,
-Crewe,"CW1, CW2",cancelled,180000,360,190000,243,5.6,9.1,
-Manchester Piccadilly,"M1, M11, M12",cancelled,210000,141,214500,96,2.1,5.7,
-Staffordshire corridor,"ST15, ST16, WS13",cancelled,249076,449,250000,233,0.4,3.9,
-Manchester Airport,"M22, SK9",cancelled,315000,295,310000,199,-1.6,1.9,
-Old Oak Common,"NW10, W3",active,517500,518,418000,181,-19.2,-15.7,
-"Interchange, Solihull","B37, B40",active,190000,109,220000,48,15.8,19.3,
-Birmingham Curzon Street,"B4, B5, B7",active (excluded),290126,57,195000,19,-32.8,-29.3,Excluded from analysis: 19 Q1 2026 transactions and discontinued high-value Other category make median unreliable
-
-quarter,cancelled_areas_median,national_median
+quarter,cancelled_median,national_median
 Q1 2022,216843,265000
 Q2 2022,235000,275000
 Q3 2022,230000,292000
