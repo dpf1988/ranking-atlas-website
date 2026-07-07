@@ -84,7 +84,7 @@ const jsonLd = {
         <li><strong>Manchester Piccadilly-adjacent properties beat England by 5.7 percentage points,</strong> rising 2.1% in a national market that declined.</li>
         <li><strong>Old Oak Common fell nearly a fifth.</strong> Median prices near the active London HS2 super-hub dropped 19.2%, underperforming England by 15.7 percentage points. Construction blight is visible in the data.</li>
         <li><strong>The feared reverse-announcement effect did not materialise.</strong> HS2 cancellation was widely predicted to strip value from Northern towns. Land Registry transaction data does not support that prediction.</li>
-        <li><strong>More than 600,000 transactions underpin the analysis.</strong> Data is drawn from HM Land Registry Price Paid Data, covering Q3 2023 through Q1 2026 across every postcode district adjacent to a major planned or active HS2 station.</li>
+        <li><strong>Approximately 360,000 transactions underpin the comparison.</strong> Data is drawn from HM Land Registry Price Paid Data, covering the Q3 2023 baseline (229,520 transactions) and Q1 2026 endpoint (130,091 transactions) across every postcode district adjacent to a major planned or active HS2 station.</li>
       </ul>
     </div>
   </section>
@@ -100,7 +100,7 @@ const jsonLd = {
           The property data tells a more complicated story.
         </p>
         <p>
-          <a href="/" class="text-brand hover:text-brand-dark underline underline-offset-2">Ranking Atlas</a> analysed more than 600,000 residential property transactions recorded by HM Land Registry between Q3 2023, the last full quarter before Rishi Sunak cancelled the northern leg on 4 October 2023, and Q1 2026. We filtered the data by postcode district for every major planned station on the cancelled route, then compared performance against the England-wide median.
+          <a href="/" class="text-brand hover:text-brand-dark underline underline-offset-2">Ranking Atlas</a> analysed approximately 360,000 residential property transactions recorded by HM Land Registry across two comparison quarters: Q3 2023, the last full quarter before Rishi Sunak cancelled the northern leg on 4 October 2023, and Q1 2026. We filtered the data by postcode district for every major planned or active station on the route, then compared performance against the England-wide median.
         </p>
         <p class="font-semibold text-ink">
           The finding is counterintuitive: every cancelled HS2 area has outperformed the England average. Areas near active HS2 construction have significantly underperformed.
@@ -297,12 +297,12 @@ const jsonLd = {
 
         <div>
           <h3 class="font-serif font-semibold text-base text-ink mb-3">Transaction volume</h3>
-          <p>229,520 national transactions in the Q3 2023 baseline quarter. 130,091 national transactions in Q1 2026. More than 600,000 transactions across the full analysis window. The lower Q1 2026 volume reflects both seasonal patterns (Q3 is typically the strongest quarter for completions) and continued subdued market activity in 2026.</p>
+          <p>229,520 national transactions in the Q3 2023 baseline quarter. 130,091 national transactions in Q1 2026. Approximately 360,000 transactions across the two comparison quarters. The lower Q1 2026 volume reflects both seasonal patterns (Q3 is typically the strongest quarter for completions) and continued subdued market activity in 2026.</p>
         </div>
 
         <div>
           <h3 class="font-serif font-semibold text-base text-ink mb-3">Postcode selection</h3>
-          <p>Postcode districts were selected by identifying all districts containing or immediately adjacent to planned HS2 station sites, based on published HS2 route documentation and station location data. For cancelled northern stations: CW1 and CW2 (Crewe), M1, M11, and M12 (Manchester Piccadilly), ST15, ST16, and WS13 (Staffordshire corridor), M22 and SK9 (Manchester Airport). For active construction: NW10 and W3 (Old Oak Common).</p>
+          <p>Postcode districts were selected by identifying all districts containing or immediately adjacent to planned HS2 station sites, based on published HS2 route documentation and station location data. For cancelled northern stations: CW1 and CW2 (Crewe), M1, M11, and M12 (Manchester Piccadilly), ST15, ST16, and WS13 (Staffordshire corridor), M22 and SK9 (Manchester Airport). For active construction: NW10 and W3 (Old Oak Common). Birmingham Curzon Street (B4, B5, B7) was analysed but excluded from the active-construction comparison: only 19 transactions recorded in Q1 2026, and a high-value "Other" category present in Q3 2023 (14 transactions, £720,000 median) had no transactions in Q1 2026, making the median unreliable as a like-for-like measure.</p>
         </div>
 
         <div>
@@ -335,6 +335,9 @@ const jsonLd = {
         </p>
         <p>
           <strong>Two and a half years may be insufficient to capture announcement effects.</strong> Some property economists argue that major infrastructure decisions take five to ten years to fully price in. The period analysed here covers the immediate post-cancellation window but may not capture longer-run adjustment.
+        </p>
+        <p>
+          <strong>Active construction effects are not uniform.</strong> A second active site, Interchange in Solihull (B37, B40), rose 15.8% over the period; construction effects appear concentrated in dense urban settings. The Old Oak Common result should not be read as representative of all active HS2 construction areas.
         </p>
         <p>
           <strong>Figures are nominal.</strong> Price changes are reported in nominal terms and have not been adjusted for inflation. UK CPI rose approximately 8% between Q3 2023 and Q1 2026. Real price changes are therefore lower than the nominal figures shown. The comparison against the England national median is unaffected by this, as both series are nominal.
