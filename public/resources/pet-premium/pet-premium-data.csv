@@ -1,0 +1,42 @@
+city,country,pet_friendly_pct,pet_friendly_listings,total_listings,median_with_pets,median_without_pets,raw_gap,n_with,n_without
+Derby,England,14.8,37,250,995,695,300,37,213
+Plymouth,England,15.1,14,93,,,,14,79
+Exeter,England,17.4,12,69,,,,12,57
+Birmingham,England,18.5,133,717,1100,795,305,133,584
+Swansea,Wales,19.6,33,168,,,,33,135
+York,England,20,13,65,,,,13,52
+Bournemouth,England,20.2,54,267,1225,950,275,54,213
+Leeds,England,20.4,78,382,1116.665,942.5,174.16,78,304
+Dundee,Scotland,22.7,22,97,,,,22,75
+Leicester,England,23.2,81,349,1100,795,305,81,268
+Liverpool,England,23.6,106,450,900,788.5,111.5,106,344
+Stoke-on-Trent,England,25.1,65,259,895,600,295,65,194
+Wolverhampton,England,25.2,34,135,950,735,215,34,101
+Nottingham,England,25.4,107,422,995,795,200,107,315
+Coventry,England,26.4,88,333,991.5,680,311.5,88,245
+Bristol,England,26.7,123,460,1800,1275,525,123,337
+Ipswich,England,26.9,21,78,,,,21,57
+Edinburgh,Scotland,27.3,56,205,1533,1495,38,56,149
+Reading,England,27.4,61,223,1500,1275,225,61,162
+Peterborough,England,27.7,44,159,1075,823.33,251.67,44,115
+Cardiff,Wales,27.9,51,183,,,,51,132
+Portsmouth,England,28.4,64,225,1199.5,758.33,441.17,64,161
+Manchester,England,28.6,221,772,1395,1100,295,221,551
+Northampton,England,28.6,56,196,1525,862,663,56,140
+Norwich,England,29.5,43,146,1350,930,420,43,103
+Blackpool,England,29.8,28,94,,,,28,66
+Southampton,England,29.9,69,231,1050,935,115,69,162
+Glasgow,Scotland,30.1,116,386,1200,1395,-195,116,270
+Cambridge,England,30.2,79,262,1750,1450,300,79,183
+Huddersfield,England,31.1,33,106,750,645.67,104.33,33,73
+Oxford,England,32.1,75,234,1650,1200,450,75,159
+Sheffield,England,32.7,86,263,997,695,302,86,177
+Belfast,Northern Ireland,34,18,53,,,,18,35
+London,England,34.3,2030,5923,2250,1700,550,2030,3893
+Milton Keynes,England,35,42,120,1925,1112.5,812.5,42,78
+Newcastle upon Tyne,England,36.4,87,239,900,780,120,87,152
+Aberdeen,Scotland,40.6,80,197,711.9649999999999,700,11.96,80,117
+Brighton,England,40.7,92,226,1950,1350,600,92,134
+Sunderland,England,42.7,44,103,700,600,100,44,59
+Middlesbrough,England,43,61,142,695,541.67,153.33,61,81
+Luton,England,43.3,104,240,1050,850,200,104,136
