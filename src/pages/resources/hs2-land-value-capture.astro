@@ -8,7 +8,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Can Station-Area Land Values Pay for Burnham's HS2?",
-  "description": "Sixteen years of Land Registry data show that property prices near planned HS2 stations grew faster than England's average after route announcements. Whether that growth is large enough to fund reinstatement is a different question.",
+  "description": "15.4 million Land Registry transactions show five of seven cancelled HS2 station areas outgrew England by 7 to 40 percentage points between route announcement and cancellation.",
   "url": "https://ranking-atlas.com/resources/hs2-land-value-capture",
   "image": "https://ranking-atlas.com/assets/images/resources/hs2-land-value-capture/hero.png",
   "author": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" },
@@ -20,7 +20,7 @@ const jsonLd = {
 
 <Layout
   title="Can Station-Area Land Values Pay for Burnham's HS2? | Ranking Atlas"
-  description="Sixteen years of Land Registry data show that property prices near planned HS2 stations grew faster than England's average after route announcements. Whether that growth is large enough to fund reinstatement is a different question."
+  description="15.4 million Land Registry transactions show five of seven cancelled HS2 station areas outgrew England by 7 to 40 percentage points between route announcement and cancellation."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
@@ -34,23 +34,11 @@ const jsonLd = {
       <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.15] mb-3 text-center">
         Can station-area land values pay for Burnham's HS2?
       </h1>
-      <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mt-2 mb-8 text-center">
-        Sixteen years of Land Registry data show that property prices near planned HS2 stations grew faster than England's average after route announcements. Whether that growth is large enough to fund reinstatement is a different question.
-      </p>
-
-      <figure class="mb-8">
-        <div class="relative w-full rounded-2xl overflow-hidden bg-[#FBFAF7] border border-[#0A0F1E]/8 aspect-[16/9] flex items-center justify-center">
-          <img
-            src="/assets/images/resources/hs2-land-value-capture/hero.png"
-            alt="Indexed property price chart showing station-area growth versus England average from 2010 to 2026"
-            class="w-full h-full object-cover"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-          />
-          <div class="hidden flex-col items-center justify-center text-muted p-8 text-center w-full h-full">
-            <div class="text-sm text-[#64748B]">Station-area prices vs England, indexed to 100 at route announcement. Source: HM Land Registry.</div>
-          </div>
-        </div>
-      </figure>
+      <div class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-6 mt-6 mb-8 text-body text-[15px] md:text-[16px] leading-[1.7]">
+        <p>
+          We tracked quarterly median property prices around nine planned HS2 stations from 2010 to 2026 using 15.4 million Land Registry transactions, and compared each station area's growth against England's national median. Five of seven cancelled station areas outgrew England by 7 to 40 percentage points between their route announcement and cancellation. Andy Burnham's proposal to fund HS2 reinstatement through station-area land-value capture assumes this pattern would repeat; the data shows where it held, where it did not, and how large the historic premiums were.
+        </p>
+      </div>
 
       <div class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5 mb-6">
         <p class="text-[13px] text-[#64748B]">Content Written By:</p>
