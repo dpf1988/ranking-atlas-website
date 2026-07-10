@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+
+const posts = [
+  {
+    href: "/blog/best-digital-pr-agencies-fintech-saas",
+    category: "Comparison",
+    title: "Best Digital PR Agencies for Fintech SaaS (2026)",
+    description: "A comparison of seven agencies that earn editorial coverage and AI citations for fintech software companies, with selection criteria and honest fit notes.",
+    published: "Published July 2026",
+    publishedISO: "2026-07-10T00:00:00+00:00",
+    schemaUrl: "https://ranking-atlas.com/blog/best-digital-pr-agencies-fintech-saas",
+  },
+];
+
+const personAuthor = {
+  "@type": "Person",
+  "name": "Daniel Grainger",
+  "url": "https://ranking-atlas.com/about",
+  "jobTitle": "Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Ranking Atlas",
+    "url": "https://ranking-atlas.com"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/daniel-grainger/",
+    "https://ranking-atlas.com/about"
+  ]
+};
+
+const itemListElement = posts.map((item, i) => ({
+  "@type": "ListItem",
+  "position": i + 1,
+  "item": {
+    "@type": "Article",
+    "headline": item.title,
+    "description": item.description,
+    "url": item.schemaUrl,
+    "author": personAuthor,
+    "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
+    "datePublished": item.publishedISO,
+    "dateModified": item.publishedISO,
+  },
+}));
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Blog",
+  "url": "https://ranking-atlas.com/blog/",
+  "author": personAuthor,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ranking Atlas",
+    "url": "https://ranking-atlas.com"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": itemListElement
+  }
+};
+---
+
+<Layout
+  title="Blog | Ranking Atlas"
+  description="Practical analysis, comparisons, and working notes on search and AI visibility."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <section class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <!-- Header -->
+      <div class="mb-16">
+        <Eyebrow label="Blog" />
+        <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-5">
+          Blog
+        </h1>
+        <p class="text-lg md:text-xl text-body leading-relaxed max-w-3xl">
+          Practical analysis, comparisons, and working notes on search and AI visibility.
+        </p>
+      </div>
+
+      <!-- Posts -->
+      <section>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {posts.map((item) => (
+            <a href={item.href} class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-8 hover:shadow-lg hover:border-[#1E3A8A]/40 transition-all duration-300 block flex flex-col">
+              <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-3">{item.category}</div>
+              <h3 class="font-serif font-semibold text-lg md:text-xl tracking-tight text-ink mb-3 leading-snug group-hover:text-brand transition-colors">
+                {item.title}
+              </h3>
+              <p class="text-base text-body leading-relaxed mb-4">
+                {item.description}
+              </p>
+              <p class="text-xs text-muted mb-5">{item.published}</p>
+              <div class="mt-auto flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
+                  <span class="text-xs text-muted">Daniel Grainger</span>
+                </div>
+                <div class="text-xs text-brand font-medium group-hover:underline">Read the article →</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+</Layout>
