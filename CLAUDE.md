@@ -78,7 +78,16 @@ Ranking Atlas is a search and AI visibility agency. The homepage is the canonica
 - "Digital PR agency" or "data PR agency" without the measurement layer
 - Pricing figures on the site (e.g. "£3.5K"). Pricing is discussed on calls.
 
-The engagement model is deliberately not stated on the site. "Campaign" refers to the deliverable. "Engagement" refers to the relationship. Both terms are used; they are not interchangeable.
+The engagement model is deliberately not stated on the site. "Campaign" refers to the deliverable. "Engagement"/"programme" refers to the relationship. Both terms are used; they are not interchangeable.
+
+## Duration and compounding (canonical language)
+
+Two claims that must never be merged:
+
+- **Campaign duration:** "A single campaign runs four to six weeks from kickoff" (study design, data production, landing page, journalist outreach; placements land during and shortly after the outreach window). A campaign may carry this duration claim.
+- **Compounding:** "Visibility in search and AI answers compounds across successive campaigns over months, as each round of coverage adds to the citation base the engines retrieve from." Only the programme/engagement carries outcome and compounding claims. Compounding is NEVER phrased as the automatic tail of a single campaign (e.g. "compounds over months as coverage is indexed" with no multi-campaign framing is wrong).
+
+Compounding language inside /resources/ study arguments (e.g. the earned-vs-paid-links essay arguing that earned media compounds as a market thesis) is study content, not a service claim. Leave it untouched.
 
 ## Vocabulary
 Use:
