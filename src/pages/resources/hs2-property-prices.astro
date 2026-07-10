@@ -13,7 +13,7 @@ const jsonLd = {
   "image": "https://ranking-atlas.com/assets/images/resources/hs2-property-prices/hero.png",
   "author": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" },
   "datePublished": "2026-06-16T00:00:00+00:00",
-  "dateModified": "2026-07-08T00:00:00+00:00",
+  "dateModified": "2026-07-10T00:00:00+00:00",
   "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
 };
 ---
@@ -37,6 +37,10 @@ const jsonLd = {
         Homes near cancelled HS2 stations have outperformed England's average by up to 9 percentage points since the northern leg was cancelled, while prices near London's active super-hub fell sharply.
       </p>
 
+      <div class="bg-[#F0F9FF] border border-[#1E3A8A]/15 rounded-xl px-5 py-3 mb-8 text-[14px] text-body leading-[1.6]">
+        <strong class="text-ink">July 2026 update:</strong> Andy Burnham has pledged to revive HS2's Birmingham to Manchester leg, if he becomes Prime Minister, funded partly through land-value capture. Our <a href="/resources/hs2-land-value-capture" class="text-brand hover:text-brand-dark underline underline-offset-2">companion study</a> measures station-area anticipation premiums from the original route announcements.
+      </div>
+
       <figure class="mb-8">
         <div class="relative w-full rounded-2xl overflow-hidden bg-[#FBFAF7] border border-[#0A0F1E]/8 aspect-[16/9] flex items-center justify-center">
           <img
@@ -46,8 +50,7 @@ const jsonLd = {
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
           />
           <div class="hidden flex-col items-center justify-center text-muted p-8 text-center w-full h-full">
-            <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero Image Slot</div>
-            <div class="text-sm text-[#64748B]">Drop hero.jpg into /public/assets/images/resources/hs2-property-prices/ when ready.</div>
+            <div class="text-sm text-[#64748B]">Property price change vs England average, Q3 2023 to Q1 2026. Source: HM Land Registry.</div>
           </div>
         </div>
       </figure>
@@ -381,6 +384,11 @@ const jsonLd = {
   <RelatedResearch
     items={[
       {
+        title: "Can station-area land values pay for Burnham's HS2?",
+        description: "Sixteen years of Land Registry data show that property prices near planned HS2 stations grew faster than England's average after route announcements. The companion anticipation study.",
+        href: "/resources/hs2-land-value-capture",
+      },
+      {
         title: "Who Actually Gets Scammed in America?",
         description: "Federal fraud and survey data show sharp divides in who gets scammed, how often, and how much they lose. Another counterintuitive finding from open government data.",
         href: "/resources/generational-fraud",
@@ -389,11 +397,6 @@ const jsonLd = {
         title: "The Hidden Economy Behind Google Rankings",
         description: "A six-year analysis of 140,000 publisher listings reveals how paid link markets expanded after repeated Google crackdowns.",
         href: "/resources/the-cost-of-authority",
-      },
-      {
-        title: "Welcome to the SaaSpocalypse",
-        description: "Software that can be vibe-coded by a small team has lost all pricing power, while AI-resistant SaaS categories raised entry-tier prices up to three times faster than inflation.",
-        href: "/resources/saas-pricing-inflation",
       },
     ]}
   />

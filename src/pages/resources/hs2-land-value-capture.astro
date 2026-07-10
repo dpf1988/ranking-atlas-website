@@ -1,0 +1,648 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import InstitutionalBio from '../../components/InstitutionalBio.astro';
+import RelatedResearch from '../../components/RelatedResearch.astro';
+import PullQuote from '../../components/PullQuote.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Can Station-Area Land Values Pay for Burnham's HS2?",
+  "description": "Sixteen years of Land Registry data show that property prices near planned HS2 stations grew faster than England's average after route announcements. Whether that growth is large enough to fund reinstatement is a different question.",
+  "url": "https://ranking-atlas.com/resources/hs2-land-value-capture",
+  "image": "https://ranking-atlas.com/assets/images/resources/hs2-land-value-capture/hero.png",
+  "author": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" },
+  "datePublished": "2026-07-10T00:00:00+00:00",
+  "dateModified": "2026-07-10T00:00:00+00:00",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
+};
+---
+
+<Layout
+  title="Can Station-Area Land Values Pay for Burnham's HS2? | Ranking Atlas"
+  description="Sixteen years of Land Registry data show that property prices near planned HS2 stations grew faster than England's average after route announcements. Whether that growth is large enough to fund reinstatement is a different question."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+<div class="bg-white">
+
+  <!-- 1. Hero -->
+  <section class="pt-20 md:pt-28 pb-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3 text-center">Data Report</div>
+      <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.15] mb-3 text-center">
+        Can station-area land values pay for Burnham's HS2?
+      </h1>
+      <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mt-2 mb-8 text-center">
+        Sixteen years of Land Registry data show that property prices near planned HS2 stations grew faster than England's average after route announcements. Whether that growth is large enough to fund reinstatement is a different question.
+      </p>
+
+      <figure class="mb-8">
+        <div class="relative w-full rounded-2xl overflow-hidden bg-[#FBFAF7] border border-[#0A0F1E]/8 aspect-[16/9] flex items-center justify-center">
+          <img
+            src="/assets/images/resources/hs2-land-value-capture/hero.png"
+            alt="Indexed property price chart showing station-area growth versus England average from 2010 to 2026"
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          />
+          <div class="hidden flex-col items-center justify-center text-muted p-8 text-center w-full h-full" id="heroFallback">
+            <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero chart renders below</div>
+            <div class="text-sm text-[#64748B]">The indexed price series chart serves as the visual lead for this study.</div>
+          </div>
+        </div>
+      </figure>
+
+      <div class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5 mb-6">
+        <p class="text-[13px] text-[#64748B]">Content Written By:</p>
+        <p class="text-[13px] text-[#64748B]">Ranking Atlas</p>
+        <p class="text-[13px] text-[#64748B]">Published July 2026</p>
+        <p class="text-[13px] text-[#64748B]">10 min read</p>
+      </div>
+
+      <nav class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5" aria-label="Article sections">
+        <p class="text-[14px] font-semibold text-ink mb-3">Navigation</p>
+        <ul class="flex flex-col space-y-2 text-[14px]">
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key takeaways</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#anticipation-premium" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Station areas grew faster than England after route announcements</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#eastern-leg" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The eastern leg recorded the largest premiums</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#western-cancelled" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Western cancelled areas show a mixed picture</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#active-sites" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Active construction sites diverged sharply</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#per-home" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">What the premium is worth in current prices</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#capture-question" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The £36 billion question</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#methodology" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Methodology</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#download" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Download the data</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 2. Key takeaways -->
+  <section id="key-takeaways" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Key takeaways</h2>
+      <ul class="space-y-2 list-disc pl-6 text-body text-[15px] leading-[1.7]">
+        <li><strong>Five of seven cancelled station areas grew faster than England</strong> between their HS2 route announcement and Q3 2023 (pre-cancellation). The remaining two underperformed by 4 to 7 percentage points.</li>
+        <li><strong>Toton, the planned East Midlands hub, recorded a +40.5 percentage point anticipation premium.</strong> Its median price doubled between Q1 2013 and Q3 2023, against 59.7% growth for England over the same window.</li>
+        <li><strong>Manchester Piccadilly-area prices grew 90.9%,</strong> outpacing England by 31.2 percentage points. Sheffield Midland outpaced by 20.2 points. Manchester Airport by 10.4 points.</li>
+        <li><strong>Old Oak Common, the active London super-hub, underperformed England by 4.8 percentage points</strong> over the same announcement-to-cancellation window and has since fallen a further 18.8%.</li>
+        <li><strong>The value of station-area uplift has not previously been quantified at postcode-district level.</strong> This study is the first to index every planned HS2 station area against England from route announcement to cancellation using Land Registry transaction data.</li>
+        <li><strong>Approximately 15.4 million transactions</strong> across 17 years of HM Land Registry Price Paid Data underpin the analysis.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Overview -->
+  <section class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Andy Burnham's pledge to revive HS2's northern leg between Birmingham and Manchester, if he becomes Prime Minister, rests on a financing idea: that the increase in land values around new stations can help pay for the railway. Under Burnham's proposal, approximately £36 billion could be raised through land-value capture mechanisms applied to station-area property.
+        </p>
+        <p>
+          The estimated cost of HS2 Phase 2 is approximately £102.7 billion. Whether station-area land values have historically risen enough to make that arithmetic plausible is a question that can be tested against <a href="/" class="text-brand hover:text-brand-dark underline underline-offset-2">open government data</a>.
+        </p>
+        <p>
+          <a href="/" class="text-brand hover:text-brand-dark underline underline-offset-2">Ranking Atlas</a> analysed 16 years of HM Land Registry Price Paid Data, covering every residential property transaction in England from Q1 2010 to Q1 2026. We indexed quarterly median prices for nine station-area postcode groups against the England-wide median, measured from each area's HS2 route announcement date.
+        </p>
+        <p>
+          This is a companion study to our <a href="/resources/hs2-property-prices" class="text-brand hover:text-brand-dark underline underline-offset-2">earlier analysis of post-cancellation property prices near HS2 stations</a>, which found that cancelled areas outperformed England after the northern leg was axed.
+        </p>
+        <p class="font-semibold text-ink">
+          The question here is different: did station-area prices rise faster than England before cancellation, and if so, by how much?
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Anticipation premium -->
+  <section id="anticipation-premium" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Station areas grew faster than England after route announcements</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-10">
+        <p>
+          We define the "anticipation premium" as the difference in percentage-point growth between a station area and England over the window from route announcement to Q3 2023 (the last full quarter before cancellation). A positive premium means the station area outgrew England; a negative premium means it underperformed.
+        </p>
+        <p>
+          Phase 1 stations (Old Oak Common, Birmingham Curzon Street) use a Q1 2012 baseline, when the Phase 1 route was confirmed. Phase 2 stations use Q1 2013, when the Phase 2 route was announced on 28 January 2013.
+        </p>
+      </div>
+
+      <!-- Anticipation premium bar chart -->
+      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 mb-10">
+        <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Anticipation premium by station area</div>
+        <div class="text-[12px] text-[#64748B] mb-4">Difference in percentage-point growth between station area and England, route announcement to Q3 2023. Positive values indicate the station area outgrew England.</div>
+        <div class="relative w-full" style="height:380px">
+          <canvas id="chartPremium" role="img" aria-label="Horizontal bar chart showing anticipation premiums. Toton +40.5pp, Manchester Piccadilly +31.2pp, Sheffield +20.2pp, Manchester Airport +10.4pp, Leeds +7.6pp, Staffs corridor -4.0pp, Old Oak Common -4.8pp, Crewe -7.1pp."></canvas>
+        </div>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-[#475569]">
+          <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#1E3A8A"></span>Cancelled station</div>
+          <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#64748B"></span>Active station</div>
+        </div>
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Five of the seven cancelled station areas recorded a positive anticipation premium. Toton, the planned East Midlands hub on the eastern leg, recorded the largest at +40.5 percentage points. Manchester Piccadilly was second at +31.2 points.
+        </p>
+        <p>
+          Two cancelled areas, Crewe and the Staffordshire corridor, underperformed England. Old Oak Common, the active London super-hub, also underperformed over the announcement-to-cancellation window.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Eastern leg -->
+  <section id="eastern-leg" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">The eastern leg recorded the largest premiums</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-10">
+        <p>
+          The three eastern-leg station areas, all cancelled in 2023, collectively outperformed England by between 7.6 and 40.5 percentage points over the announcement-to-cancellation window.
+        </p>
+      </div>
+
+      <!-- Eastern leg indexed chart -->
+      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 mb-10">
+        <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Eastern leg: indexed price growth vs England</div>
+        <div class="text-[12px] text-[#64748B] mb-4">Quarterly median price indexed to 100 at Q1 2013 (Phase 2 route announcement). Half-yearly data points shown.</div>
+        <div class="relative w-full" style="height:360px">
+          <canvas id="chartEastern" role="img" aria-label="Line chart showing Toton, Sheffield, Leeds, and England indexed prices from 2010 to 2026, with Toton reaching approximately 196 by Q1 2026 against England at 154."></canvas>
+        </div>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-[#475569]">
+          <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#1E3A8A"></span>Toton / East Midlands hub</div>
+          <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#047857"></span>Sheffield Midland</div>
+          <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#B45309"></span>Leeds</div>
+          <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#94A3B8"></span>England</div>
+        </div>
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Toton's median price doubled over the decade. In Q1 2013, the median transaction around the planned East Midlands hub was £132,750. By Q3 2023 it had reached £265,500, a 100.2% increase. England grew 59.7% over the same period.
+        </p>
+        <p class="italic text-[14px] text-muted">
+          Toton Q1 2013 median: £132,750. Q3 2023 median: £265,500. Growth: 100.2%. England growth: 59.7%. Premium: +40.5pp.
+        </p>
+        <p>
+          Sheffield Midland-area properties grew 79.9% against England's 59.7%, a premium of +20.2 points. Leeds grew 67.3%, outpacing England by 7.6 points. All three eastern-leg groups maintained quarterly transaction counts above 50 throughout the period.
+        </p>
+        <p>
+          The eastern leg was cancelled alongside the western leg in October 2023. Since cancellation, all three eastern-leg areas have seen modest price declines of 1 to 9 percentage points. The anticipation premium accumulated over a decade has not reversed, but it is no longer growing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Western cancelled -->
+  <section id="western-cancelled" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Western cancelled areas show a mixed picture</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-10">
+        <p>
+          The four cancelled western-leg stations split into two pairs. Manchester Piccadilly and Manchester Airport outperformed England. Crewe and the Staffordshire corridor underperformed.
+        </p>
+      </div>
+
+      <!-- Western leg indexed chart -->
+      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 mb-10">
+        <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Western cancelled areas: indexed price growth vs England</div>
+        <div class="text-[12px] text-[#64748B] mb-4">Quarterly median price indexed to 100 at Q1 2013 (Phase 2 route announcement). Half-yearly data points shown.</div>
+        <div class="relative w-full" style="height:360px">
+          <canvas id="chartWestern" role="img" aria-label="Line chart showing Manchester Piccadilly, Manchester Airport, Crewe, Staffs corridor, and England indexed prices from 2010 to 2026."></canvas>
+        </div>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-[#475569]">
+          <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#1E3A8A"></span>Manchester Piccadilly</div>
+          <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#047857"></span>Manchester Airport</div>
+          <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#B45309"></span>Crewe</div>
+          <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#B91C1C"></span>Staffs corridor</div>
+          <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#94A3B8"></span>England</div>
+        </div>
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Manchester Piccadilly-area prices grew 90.9% between Q1 2013 and Q3 2023, compared with 59.7% for England. Much of this reflects Manchester city centre's broader regeneration, not HS2 alone. The +31.2 percentage point premium is the second largest in the study.
+        </p>
+        <p>
+          Manchester Airport districts (M22, SK9) grew 70.0%, beating England by 10.4 points. These postcodes include Wilmslow and parts of Bramhall, areas with strong independent price momentum.
+        </p>
+        <p>
+          Crewe, the planned northern hub, grew only 52.5% against England's 59.7%. The Staffordshire corridor grew 55.7%. Both underperformed by 4 to 7 percentage points. These are lower-value markets where HS2 route proximity did not translate into faster growth relative to the national median.
+        </p>
+        <p>
+          Post-cancellation, the pattern flipped. As our <a href="/resources/hs2-property-prices" class="text-brand hover:text-brand-dark underline underline-offset-2">companion cancellation study</a> showed, Crewe outperformed England by +9.1 percentage points after the northern leg was axed, the strongest post-cancellation performance of any station area.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Active sites -->
+  <section id="active-sites" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Active construction sites diverged sharply</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Old Oak Common, the London super-hub still under active construction, grew 58.0% between Q1 2012 and Q3 2023. England grew 62.9% over the same window, giving Old Oak Common a negative anticipation premium of -4.8 percentage points.
+        </p>
+        <p>
+          Since Q3 2023, Old Oak Common prices have fallen a further 18.8%. The combined effect of construction blight and broader London softening has left the area 28 index points below its Q1 2012 starting level in real relative terms.
+        </p>
+        <p class="italic text-[14px] text-muted">
+          Old Oak Common Q1 2012 median: £327,500. Q3 2023 median: £517,500. Q1 2026 median: £420,000. Announcement-to-cancellation growth: 58.0%. England: 62.9%. Premium: -4.8pp. Post-cancellation: -18.8%.
+        </p>
+        <p>
+          Birmingham Curzon Street recorded a +80.9pp premium, but with only 41 transactions in its Q1 2012 baseline quarter and 19 in Q1 2026, the figure is unreliable. The existing <a href="/resources/hs2-property-prices" class="text-brand hover:text-brand-dark underline underline-offset-2">cancellation study</a> excluded Birmingham for the same reason. We report it for completeness but exclude it from headline claims.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Per-home figures -->
+  <section id="per-home" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">What the premium is worth in current prices</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-10">
+        <p>
+          To translate the anticipation premium into a per-home figure, we multiply each station area's premium (as a ratio) by its current Q1 2026 median price. This is illustrative arithmetic, not a forecast. It shows what the historic growth differential represents if applied to a home at today's median value.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8 mb-10">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+              <th class="px-4 py-3 font-semibold text-ink">Station area</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Growth</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">England</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Premium</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Current median</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Per-home £</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#0A0F1E]/6">
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Toton / East Midlands hub</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">100.2%</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+40.5pp</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£260,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">£105,365</td>
+            </tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Manchester Piccadilly</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">90.9%</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+31.2pp</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£214,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">£66,865</td>
+            </tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Sheffield Midland</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">79.9%</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+20.2pp</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£160,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">£32,349</td>
+            </tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Manchester Airport</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">70.0%</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+10.4pp</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£301,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">£31,234</td>
+            </tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Leeds</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">67.3%</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+7.6pp</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£160,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">£12,168</td>
+            </tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Staffs corridor</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">55.7%</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
+              <td class="px-4 py-3 text-right text-[#B91C1C]">-4.0pp</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£249,500</td>
+              <td class="px-4 py-3 text-right text-[#B91C1C]">-£9,958</td>
+            </tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Old Oak Common</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">58.0%</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">62.9%</td>
+              <td class="px-4 py-3 text-right text-[#B91C1C]">-4.8pp</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£420,000</td>
+              <td class="px-4 py-3 text-right text-[#B91C1C]">-£20,336</td>
+            </tr>
+            <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Crewe</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">52.5%</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
+              <td class="px-4 py-3 text-right text-[#B91C1C]">-7.1pp</td>
+              <td class="px-4 py-3 text-right text-[#64748B]">£190,000</td>
+              <td class="px-4 py-3 text-right text-[#B91C1C]">-£13,531</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          At today's prices, the anticipation premium is worth an illustrative £105,365 per median home near Toton, £66,865 near Manchester Piccadilly, and £32,349 near Sheffield Midland. These figures describe what the historic growth differential looks like in pound terms. They do not predict future uplift from reinstatement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. The £36bn question -->
+  <section id="capture-question" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">The £36 billion question</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Under Burnham's proposal, if the pledge becomes policy, approximately £36 billion of HS2 Phase 2's estimated £102.7 billion cost would be funded through land-value capture. The mechanism assumes that station-area property values will rise after reinstatement, and that a portion of that uplift can be taxed or levied to fund construction.
+        </p>
+        <p>
+          The historic data shows that anticipation premiums were real, but unevenly distributed. Five of seven cancelled station areas outgrew England. Two did not. The premiums ranged from +7.6 to +40.5 percentage points, with the strongest performance concentrated in areas (Manchester city centre, Toton, Sheffield) that had independent growth drivers alongside HS2 proximity.
+        </p>
+        <p>
+          Converting per-home premiums into an aggregate requires dwelling counts per postcode district from the Valuation Office Agency. That calculation is beyond the scope of this study. What the data establishes is a baseline: the scale of historic station-area outperformance that a land-value capture model would need to replicate and exceed.
+        </p>
+        <p>
+          Several factors complicate a direct comparison between historic premiums and future capture revenue. Construction blight, visible in the Old Oak Common data, depresses values during the build phase. The anticipation premium accumulated over a decade, but capture mechanisms would need to operate over the construction and early-operation period. Markets that already priced in HS2 once may not do so a second time after cancellation and reinstatement.
+        </p>
+
+        <PullQuote
+          quote="The anticipation premium is real and measurable in the Land Registry data. Whether it is large enough to fund a railway is a policy question that depends on mechanism design, not just on historic price growth. The data shows what happened. It does not predict what will happen next."
+          attribution="Daniel Grainger, Ranking Atlas"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Methodology -->
+  <section id="methodology" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-8">Methodology</h2>
+
+      <div class="space-y-8 text-body text-[15px] leading-[1.7]">
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Data source</h3>
+          <p>HM Land Registry Price Paid Data, downloaded directly from gov.uk. The dataset is open data, updated monthly, and covers all residential property transactions in England and Wales registered at Land Registry. Seventeen annual files (2010 to 2026) were used, containing approximately 15.4 million transactions.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Filters</h3>
+          <p>All PPD record categories (A: standard price paid, B: additional price paid) are included. All property types (detached, semi-detached, terraced, flat, other) are included. All tenures (freehold and leasehold) are included. Transactions below £10,000 are excluded as likely non-arm's-length sales. These filters are identical to the companion <a href="/resources/hs2-property-prices" class="text-brand hover:text-brand-dark underline underline-offset-2">cancellation study</a>.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Station-area postcode groups</h3>
+          <p>Phase 1 stations: Old Oak Common (NW10, W3), Birmingham Curzon Street (B4, B5, B7). Phase 2 western: Crewe (CW1, CW2), Manchester Piccadilly (M1, M11, M12), Manchester Airport (M22, SK9), Staffordshire corridor (ST15, ST16, WS13). Phase 2 eastern: Toton / East Midlands hub (NG9), Sheffield Midland (S1, S2, S3), Leeds (LS1, LS9, LS10). Postcodes selected from published HS2 route documentation and station location data.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Announcement baselines</h3>
+          <p>Phase 1 stations use Q1 2012, when the Phase 1 route was confirmed by the Secretary of State. Phase 2 stations use Q1 2013, when the Phase 2 route was announced on 28 January 2013. These dates mark the point at which the market had a confirmed route to price.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Metric and indexing</h3>
+          <p>Quarterly median sale price per station-area postcode group. Each station area is indexed to 100 at its announcement baseline quarter. England is indexed to 100 at both Q1 2012 and Q1 2013 for the respective comparisons. The anticipation premium is the difference in percentage-point growth between the station area and England over the window from the baseline quarter to Q3 2023.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Thin-cell handling</h3>
+          <p>Most station groups maintained quarterly transaction counts above 50 throughout the 2010 to 2026 period. Birmingham Curzon Street is an exception: Q1 2012 baseline n=41, Q1 2026 n=19. Its +80.9pp premium is reported for completeness but excluded from headline claims. No rolling or annual smoothing was required for other groups.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Per-home figures</h3>
+          <p>The per-home illustrative figure is calculated as: anticipation premium (expressed as a ratio) multiplied by the station area's Q1 2026 median price. This represents the pound-sterling equivalent of the historic growth differential at current median values. It is not a forecast of future uplift. Aggregate figures (total uplift across all dwellings) require VOA council tax dwelling stock counts at postcode-district level and are not included in this release.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-semibold text-base text-ink mb-3">Nominal figures</h3>
+          <p>All price changes are reported in nominal terms and have not been adjusted for inflation. The comparison against England is unaffected by this, as both series are nominal. UK CPI rose approximately 35% between Q1 2013 and Q1 2026.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Download -->
+  <section id="download" class="py-16 border-b border-[#0A0F1E]/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-4">Download the data</h2>
+      <p class="text-body text-[15px] leading-[1.7] mb-6">
+        The full quarterly median price series for all nine station areas and England, indexed from Q1 2010 to Q1 2026, with transaction counts per quarter.
+      </p>
+      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 flex items-center justify-between gap-4">
+        <div>
+          <p class="font-semibold text-ink mb-1">hs2-land-value-capture.csv</p>
+          <p class="text-sm text-[#64748B]">Quarterly medians, transaction counts, and indexed values for 9 station groups and England, Q1 2010 to Q1 2026.</p>
+        </div>
+        <a href="/downloads/hs2-land-value-capture.csv" class="inline-flex items-center gap-2 bg-[#F4F0E9] hover:bg-white text-[#0A0F1E] text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-[#0A0F1E]/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
+          Download CSV
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-[#64748B]">
+        Citation: Ranking Atlas, "Can Station-Area Land Values Pay for Burnham's HS2?", July 2026. Source data: HM Land Registry Price Paid Data (open government licence).
+      </p>
+    </div>
+  </section>
+
+  <!-- Press contact -->
+  <section class="py-12 bg-[#FBFAF7]">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-body text-[15px] leading-[1.7]">
+        For a different cut of this dataset, additional regional or postcode-level breakouts, or methodology questions, contact <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.
+      </p>
+    </div>
+  </section>
+
+  <RelatedResearch
+    items={[
+      {
+        title: "The property data Andy Burnham doesn't want to see",
+        description: "Homes near cancelled HS2 stations have outperformed England's average by up to 9 percentage points since Sunak axed the line. The companion cancellation study.",
+        href: "/resources/hs2-property-prices",
+      },
+      {
+        title: "Who Actually Gets Scammed in America?",
+        description: "Federal fraud and survey data show sharp divides in who gets scammed, how often, and how much they lose. Another counterintuitive finding from open government data.",
+        href: "/resources/generational-fraud",
+      },
+      {
+        title: "The Hidden Economy Behind Google Rankings",
+        description: "A six-year analysis of 140,000 publisher listings reveals how paid link markets expanded after repeated Google crackdowns.",
+        href: "/resources/the-cost-of-authority",
+      },
+    ]}
+  />
+
+  <InstitutionalBio />
+
+</div>
+
+<!-- Charts -->
+<script is:inline>
+(function(){
+  function init(){
+    if (typeof window.Chart === 'undefined') { setTimeout(init, 50); return; }
+
+    var labels = ['Q1 10','Q3 10','Q1 11','Q3 11','Q1 12','Q3 12','Q1 13','Q3 13','Q1 14','Q3 14','Q1 15','Q3 15','Q1 16','Q3 16','Q1 17','Q3 17','Q1 18','Q3 18','Q1 19','Q3 19','Q1 20','Q3 20','Q1 21','Q3 21','Q1 22','Q3 22','Q1 23','Q3 23','Q1 24','Q3 24','Q1 25','Q3 25','Q1 26'];
+
+    var england2013 = [102.2,104.4,96.9,100.8,98.0,103.9,100.0,106.4,102.5,110.9,109.1,117.6,116.0,123.2,121.8,128.9,126.1,133.1,126.1,134.5,131.9,140.1,159.7,137.3,148.5,163.6,154.1,159.7,151.3,161.6,168.1,159.7,154.1];
+    var toton =       [94.3,104.9,101.9,103.4,98.1,102.3,100.0,105.7,98.1,109.4,110.2,122.6,122.6,128.3,124.5,135.8,128.3,137.4,128.3,146.0,146.4,157.7,171.1,169.8,178.1,194.0,192.5,200.2,203.4,188.3,188.7,196.2,196.2];
+    var sheffield =   [102.1,111.7,112.8,108.7,95.3,97.4,100.0,99.5,97.4,112.8,114.9,100.0,112.8,107.2,117.9,119.0,115.9,126.2,124.1,120.5,128.2,147.2,128.2,128.5,146.2,133.3,143.6,179.9,155.4,179.5,167.4,169.2,164.1];
+    var leeds =       [96.5,109.4,102.2,108.4,100.7,100.2,100.0,98.1,92.9,103.3,101.1,108.4,103.3,123.9,126.0,129.1,128.0,139.4,144.5,139.4,129.1,144.6,138.1,154.8,149.2,154.4,147.7,167.3,154.9,183.2,170.4,168.6,165.2];
+
+    var manchPicc =   [104.5,109.1,97.7,107.3,94.5,100.7,100.0,109.1,109.1,118.7,121.8,128.2,140.9,140.9,142.7,144.1,154.5,154.5,145.5,110.9,188.0,166.8,180.9,170.2,207.2,192.6,181.8,190.9,178.2,272.7,204.5,181.8,194.5];
+    var manchAirport= [106.3,104.7,100.9,105.5,88.0,99.3,100.0,108.0,105.3,108.0,110.8,128.2,110.1,128.7,124.4,140.4,117.4,149.7,126.9,166.3,123.3,166.7,185.3,156.5,145.7,176.1,162.8,170.0,176.0,188.9,188.9,176.8,162.5];
+    var crewe =       [103.8,103.4,94.5,99.2,98.7,99.2,100.0,102.5,98.5,107.6,104.2,109.7,105.9,120.8,112.5,120.3,120.3,127.1,119.5,135.6,131.4,133.1,155.9,152.5,152.5,163.1,149.2,152.5,146.4,150.4,161.0,158.5,161.0];
+    var staffs =      [93.7,93.8,93.1,100.0,93.4,106.2,100.0,100.0,98.8,109.4,95.9,115.0,101.6,115.6,124.5,125.3,128.8,133.4,135.0,131.3,134.4,134.4,156.3,141.7,143.8,154.0,150.0,155.7,150.2,162.5,167.2,156.2,155.9];
+
+    var oldOak =      [84.9,88.7,80.3,91.5,100.0,106.9,97.9,117.6,122.1,148.9,129.8,131.3,136.5,137.4,152.7,167.9,143.5,152.7,135.9,146.6,152.7,158.0,137.4,162.4,158.0,171.0,166.7,158.0,150.8,163.4,158.8,167.9,128.2];
+
+    var vertLineIdx = labels.indexOf('Q3 23');
+
+    var annotationPlugin = {
+      id: 'verticalLine',
+      afterDraw: function(chart) {
+        var idx = vertLineIdx;
+        var xScale = chart.scales.x;
+        if (!xScale) return;
+        var x = xScale.getPixelForValue(idx);
+        var area = chart.chartArea;
+        var ctx = chart.ctx;
+        ctx.save();
+        ctx.setLineDash([5,4]);
+        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = '#B91C1C';
+        ctx.beginPath();
+        ctx.moveTo(x, area.top);
+        ctx.lineTo(x, area.bottom);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.font = '600 10px Inter, sans-serif';
+        ctx.fillStyle = '#B91C1C';
+        ctx.textAlign = 'center';
+        ctx.fillText('Cancellation', x, area.top - 6);
+        ctx.restore();
+      }
+    };
+
+    var baseOpts = {
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: { padding: { top: 20 } },
+      plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { family: 'Inter, sans-serif', size: 10 }, color: '#64748B', maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
+        y: { grid: { color: 'rgba(10,15,30,0.06)' }, ticks: { font: { family: 'Inter, sans-serif', size: 11 }, color: '#64748B' }, min: 80 }
+      },
+      elements: { point: { radius: 0, hoverRadius: 4 }, line: { tension: 0.15, borderWidth: 2.5 } },
+      animation: { duration: 600 }
+    };
+
+    function makeDataset(label, data, color, dash) {
+      var ds = { label: label, data: data, borderColor: color, backgroundColor: color + '18', fill: false };
+      if (dash) ds.borderDash = [5,4];
+      return ds;
+    }
+
+    // Eastern leg chart
+    var ctxE = document.getElementById('chartEastern');
+    if (ctxE) {
+      new window.Chart(ctxE, {
+        type: 'line',
+        data: { labels: labels, datasets: [
+          makeDataset('Toton / East Midlands hub', toton, '#1E3A8A'),
+          makeDataset('Sheffield Midland', sheffield, '#047857'),
+          makeDataset('Leeds', leeds, '#B45309'),
+          makeDataset('England', england2013, '#94A3B8', true)
+        ]},
+        options: baseOpts,
+        plugins: [annotationPlugin]
+      });
+    }
+
+    // Western cancelled chart
+    var ctxW = document.getElementById('chartWestern');
+    if (ctxW) {
+      new window.Chart(ctxW, {
+        type: 'line',
+        data: { labels: labels, datasets: [
+          makeDataset('Manchester Piccadilly', manchPicc, '#1E3A8A'),
+          makeDataset('Manchester Airport', manchAirport, '#047857'),
+          makeDataset('Crewe', crewe, '#B45309'),
+          makeDataset('Staffs corridor', staffs, '#B91C1C'),
+          makeDataset('England', england2013, '#94A3B8', true)
+        ]},
+        options: Object.assign({}, baseOpts, { scales: Object.assign({}, baseOpts.scales, { y: Object.assign({}, baseOpts.scales.y, { max: 280 }) }) }),
+        plugins: [annotationPlugin]
+      });
+    }
+
+    // Premium bar chart
+    var ctxP = document.getElementById('chartPremium');
+    if (ctxP) {
+      var premLabels = ['Toton / E. Midlands','Manc. Piccadilly','Sheffield','Manc. Airport','Leeds','Staffs corridor','Old Oak Common','Crewe'];
+      var premData = [40.5, 31.2, 20.2, 10.4, 7.6, -4.0, -4.8, -7.1];
+      var premColors = premData.map(function(v, i) {
+        if (i === 6) return '#64748B';
+        return v >= 0 ? '#1E3A8A' : '#B91C1C';
+      });
+
+      new window.Chart(ctxP, {
+        type: 'bar',
+        data: { labels: premLabels, datasets: [{ data: premData, backgroundColor: premColors, borderRadius: 3, barThickness: 28 }] },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: { padding: { right: 48, left: 8 } },
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c){ var v = c.parsed.x; return (v > 0 ? '+' : '') + v.toFixed(1) + 'pp'; } } } },
+          scales: {
+            x: { min: -15, max: 50, grid: { color: 'rgba(10,15,30,0.06)' }, ticks: { font: { family: 'Inter, sans-serif', size: 11 }, color: '#64748B', callback: function(v){ return (v > 0 ? '+' : '') + v + 'pp'; } } },
+            y: { grid: { display: false }, ticks: { font: { family: 'Inter, sans-serif', size: 12 }, color: '#0A0F1E' } }
+          },
+          animation: { duration: 600 }
+        },
+        plugins: [{
+          id: 'valuelabels',
+          afterDatasetsDraw: function(chart){
+            var ctx = chart.ctx;
+            var meta = chart.getDatasetMeta(0);
+            ctx.save();
+            ctx.font = '600 11px Inter, sans-serif';
+            ctx.textBaseline = 'middle';
+            meta.data.forEach(function(bar, i){
+              ctx.fillStyle = premColors[i];
+              var v = premData[i];
+              if (v < 0) { ctx.textAlign = 'right'; ctx.fillText(v.toFixed(1) + 'pp', bar.x - 8, bar.y); }
+              else { ctx.textAlign = 'left'; ctx.fillText('+' + v.toFixed(1) + 'pp', bar.x + 8, bar.y); }
+            });
+            ctx.restore();
+          }
+        }]
+      });
+    }
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
+})();
+</script>
+
+</Layout>
