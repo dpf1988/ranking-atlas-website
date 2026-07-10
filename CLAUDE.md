@@ -59,22 +59,47 @@ Every resource page header must include, in order:
 
 Reference implementation: src/pages/resources/earned-links-vs-paid-links.astro
 
+## Positioning
+
+Ranking Atlas is a search and AI visibility agency. The homepage is the canonical source of truth for positioning language.
+
+- **Category:** "Search & AI Visibility"
+- **Core promise:** earn citations in publications Google ranks and AI engines cite, then track the movement across both
+- **Three pillars:** Original Research / Editorial Production / Visibility Measurement
+- **Engagement model:** "Baseline. Build. Measure." Documented baseline, research-led campaign, ongoing prompt-level measurement
+- **Measurement language:** prompt-level tracking, competitor benchmarking, documented baseline, branded vs non-branded visibility
+- **CTA label:** "Start a Campaign" everywhere. Do not change this label.
+
+**Deprecated positioning (do not reintroduce):**
+- "Guaranteed minimum placements" or any contractual placement floor language
+- "Fixed-price per campaign" or "per-campaign model" as identity claims
+- "No retainer" / "no retainers" as a headline differentiator
+- Specific guaranteed link/placement numbers (e.g. "8 links")
+- "Digital PR agency" or "data PR agency" without the measurement layer
+- Pricing figures on the site (e.g. "£3.5K"). Pricing is discussed on calls.
+
+The engagement model is deliberately not stated on the site. "Campaign" refers to the deliverable. "Engagement" refers to the relationship. Both terms are used; they are not interchangeable.
+
 ## Vocabulary
 Use:
 - Citation equity, editorial citations, editorial coverage
 - Authoritative publishers, authority publishers
-- AI search era, AI Overviews, ChatGPT, Perplexity, Gemini
+- AI search era, AI Overviews, ChatGPT, Perplexity, Gemini, Claude, Google
 - Omnipresence, pattern, cited, surfaced, verified
-- Campaign, placement, pickup, guaranteed minimum
+- Campaign, placement, pickup
+- Baseline, measurement, visibility, prompt-level tracking
+- Engagement (for the relationship/scope, not the deliverable)
 
 Avoid:
 - Backlinks, link building, DR, domain rating, DA
 - SEO as a primary value proposition
 - Future-proof
 - Rankings as a primary outcome
-- Retainer, monthly, ongoing
+- Guaranteed minimum, guaranteed placements, fixed-price (as identity claims)
+- Retainer, monthly (as differentiators or headline claims)
 - Hedging verbs: might, could, supports
 - Click here, read more, learn more, this, here as anchor text
+- B2B SaaS, fintech, marketing teams on Featured Research pages (see Audience rules)
 
 ## Voice
 - No em dashes anywhere
@@ -87,7 +112,9 @@ Avoid:
 
 ## Audience and ICP language
 
-Featured Research pages do not name a target audience or ICP (no "B2B SaaS", "fintech", "marketing teams", etc.) on the page itself. The studies stand as primary-source research and should read as such to any reader, including journalists. Audience and ICP framing belongs on the homepage, case studies, and contact surfaces, not inside research pieces.
+Featured Research pages do not name a target audience or ICP (no "B2B SaaS", "fintech", "marketing teams", etc.) on the page itself. The studies stand as primary-source research and should read as such to any reader, including journalists. Audience and ICP framing belongs on case studies and contact surfaces, not inside research pieces.
+
+The homepage describes the service without naming a vertical. It speaks to any brand that wants search and AI visibility. Do not add vertical-specific language to the homepage.
 
 Essays & Guides may speak to a defined reader where the topic requires it, but still avoid narrow vertical labels in body prose unless the data is specific to that vertical.
 
