@@ -1,0 +1,169 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+
+const url = "https://ranking-atlas.com/blog/digital-pr-kpis";
+const pubDate = "2026-07-11";
+const updatedDate = "2026-07-11";
+
+const article = articleSchema({
+  title: "Digital PR KPIs: What to Measure and What to Ignore",
+  description: "Most PR reporting describes activity. This guide sorts the standard metrics into results and noise, built on two facts: no two links are worth the same, and no campaign outcome can be guaranteed.",
+  url,
+  datePublished: pubDate,
+  dateModified: updatedDate,
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", url: "https://ranking-atlas.com/" },
+  { name: "Blog", url: "https://ranking-atlas.com/blog/" },
+  { name: "Digital PR KPIs", url },
+]);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the single most important digital PR KPI?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Movement in non-branded visibility, across search and AI answers, against a documented baseline. It is the closest thing to a north star because it cannot be inflated by branded noise, cannot be performed by placement counting, and connects directly to whether buyers who do not yet know you encounter you." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are backlinks still the main digital PR metric?",
+      "acceptedAnswer": { "@type": "Answer", "text": "They are the main asset, and no two are worth the same, so the metric is the portfolio's quality distribution rather than its count. Counts without publication names and authority context tell you almost nothing; named publications with relevance context are measurement." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure AI visibility from digital PR?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Prompt-level tracking: a fixed set of the questions buyers actually ask, run across engines on a schedule, logging whether the brand is named and which sources are cited, with branded and non-branded prompts reported separately and competitors benchmarked on the same set. A single blended score is not measurement." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I accept a campaign with guaranteed placements?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Treat a guarantee as a pricing structure rather than a promise about editorial reality, because no campaign outcome can be guaranteed. Ask what counts as a qualifying placement, what the remedy is, and whether hitting the number is achieved with placements you would decline individually. The honest alternative is a distribution-based expectation and programme-level evaluation." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a realistic timeline for KPI movement?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Placements land during and shortly after a campaign's outreach window. Movement metrics respond over the following months and compound across successive campaigns, which is why the honest evaluation unit is the trend line against baseline rather than any single campaign." }
+    },
+  ]
+};
+---
+
+<Layout
+  title="Digital PR KPIs: What to Measure and What to Ignore | Ranking Atlas"
+  description="Most PR reporting describes activity. This guide sorts the standard metrics into results and noise, built on two facts: no two links are worth the same, and no campaign outcome can be guaranteed."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(article)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<div class="bg-white">
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Article header -->
+    <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Analysis</div>
+    <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-6">
+      Digital PR KPIs: What to Measure and What to Ignore
+    </h1>
+    <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mb-6">
+      Most PR reporting describes activity. Very little of it demonstrates results. This guide sorts the standard metrics into the two categories, built on two facts about the discipline: no two links are worth the same, and no campaign outcome can be guaranteed.
+    </p>
+    <div class="flex items-center gap-3 mb-10">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published <time datetime="2026-07-11">July 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-07-11" class="text-ink font-medium">July 2026</time></p>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The short answer</h2>
+
+      <p>Measure assets, then movement, then business effect, in that order, against a baseline captured before any work starts. Assets: unique linking domains after syndication settles, the authority and relevance distribution of those domains (never the average), and whether the pages citing you are themselves the pages search and AI engines retrieve. Movement: non-branded search visibility, presence in AI answers for the questions buyers actually ask with branded and non-branded reported separately, and share of voice against named competitors. Business effect: branded search lift, referral behaviour, assisted conversions, treated as directional rather than precise.</p>
+
+      <p>Ignore impressions, reach, advertising value equivalency, raw link counts, coverage montages and guaranteed-link progress bars. Each describes the work happening. None demonstrates that anything moved.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The industry's own data shows the measurement problem</h2>
+
+      <p>Meltwater's 2026 State of PR report found the metrics practitioners rate most important for measuring PR success are volume of placements, reach and impressions. Those three share a property: they describe the size of the potential audience and the quantity of output, and say nothing about effect. The same reporting ecosystem shows only 32% of PR professionals say they have the tools to tie PR to business outcomes. Full dashboards, unanswered question.</p>
+
+      <p>The metrics to ignore, with reasons:</p>
+
+      <p><strong class="text-ink">Advertising value equivalency and earned media value.</strong> Still recommended by some measurement vendors in 2026, and formally rejected years ago by AMEC's Barcelona Principles, the industry's own measurement standards body. Multiplying a hypothetical ad rate by an arbitrary credibility factor produces a number no finance team should accept. If a report contains it, ask what the multiplier is and how it was derived.</p>
+
+      <p><strong class="text-ink">Impressions and reach.</strong> Potential audience is a property of the publication, not a result of the campaign. It would be identical whether your placement was read by millions or by nobody. Reporting it as an outcome claims the publisher's asset as your effect.</p>
+
+      <p><strong class="text-ink">Raw link counts.</strong> No two links are worth the same, and a count treats them as if they were. One editorial citation in a publication that engines retrieve and buyers trust can outweigh thirty syndicated repeats and directory-grade placements, and around 10% of campaign links canonicalise away through syndication anyway. A count is an inventory of unequal objects presented as a sum.</p>
+
+      <p><strong class="text-ink">Guaranteed-link progress bars.</strong> No campaign outcome can be guaranteed, because coverage is an editorial decision made by people you do not control, and campaign results are a wide distribution: the largest available analysis shows most campaigns earn a modest number of placements while a small minority earn most of the spectacular results, covered with the numbers in our <a href="/blog/how-many-links-digital-pr-campaign" class="text-brand hover:text-brand-dark underline underline-offset-2">realistic link benchmarks guide</a>. A vendor guaranteeing a number has either priced in failure elsewhere, will hit the number with placements you would not have paid for individually, or is redefining "placement" as the deadline approaches. Tracking progress toward a guarantee measures compliance with the contract, and the contract was the problem.</p>
+
+      <p><strong class="text-ink">Blended AI visibility scores.</strong> The newest entry in the ignore column, arriving exactly as the underlying metric matters most. Two-thirds of digital PR practitioners (66.2%) now report tracking AI citations per <a href="https://www.buzzstream.com/blog/state-of-digital-pr-2026/" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">BuzzStream's 2026 survey</a>, and most of what gets reported is a single blended number. The blend hides the only distinction that matters: visibility on prompts containing your brand name, which is near-automatic, against visibility on the questions buyers actually ask, which is the pipeline. Our own audits keep finding brands with strong branded visibility and near-zero non-branded presence, and one number reporting both as an average conceals exactly that gap. Any AI visibility figure without the branded and non-branded split should be sent back.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">What to measure</h2>
+
+      <p><strong class="text-ink">Tier one: asset quality.</strong> The unit of digital PR value is a citation in a source that people and engines actually consult, so measure the assets as a portfolio. Unique linking domains, counted after syndication settles. The authority distribution rather than the average, because averages in skewed distributions mislead: know how many placements landed in publications your buyers read, and name them. Topical relevance of the linking context. Follow share as a sanity check. And the property almost nobody reports: whether the citing pages are themselves retrieved, meaning they rank for real queries or appear as cited sources in AI answers, because a citation on a page nothing ever reads contributes nothing to visibility. Unlinked mentions belong in this tier too, tracked and converted as standard work rather than discarded: mention data now correlates more strongly with AI visibility than backlink counts do, on <a href="https://ahrefs.com/blog/ai-overview-brand-correlation/" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Ahrefs' analysis across 75,000 brands</a> (0.664 against 0.218).</p>
+
+      <p><strong class="text-ink">Tier two: movement.</strong> Assets are inputs; movement is the point. Non-branded search visibility across the query set your buyers use. Prompt-level presence in AI answers, tracked across engines, branded and non-branded separated, benchmarked against named competitors, because visibility is a market-share question and a number without a comparison set has no meaning. Share of voice in your category's coverage. Movement is also where the honest time horizon lives: earned media accounts for 84% of AI citations against 0.3% for paid content per <a href="https://muckrack.com/blog/what-is-ai-reading-may-2026" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Muck Rack's 2026 analysis of 25 million citations</a>, and only around 17% of AI Overview citations come from pages in the organic top ten per <a href="https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">BrightEdge</a>, which together mean the citation layer is now partially independent of rankings and has to be measured directly. Visibility in search and AI answers compounds across successive campaigns over months, as each round of coverage adds to the citation base engines retrieve from, so movement is read as a trend line against baseline, never as a single campaign's verdict.</p>
+
+      <p><strong class="text-ink">Tier three: business effect, held honestly.</strong> Branded search volume lift in the weeks after coverage. Referral traffic read for behaviour rather than volume, because news-site referrals spike and fade by design. Assisted conversions where attribution allows. These are directional signals worth tracking and worth refusing to over-claim: a vendor attributing precise revenue to individual placements is over-claiming in the other direction, and both failures come from the same discomfort with honest uncertainty.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The baseline protocol, which decides everything above</h2>
+
+      <p>None of the hierarchy works retrospectively. If success is defined after the campaign, the definition drifts toward whatever happened, which is how activity metrics survive: they are always available to declare victory with. The protocol is four steps. Document the baseline before work starts: current non-branded visibility, current AI-answer presence with the branded and non-branded split, current share of voice against named competitors, current referring-domain state. Pre-commit the movement metrics and the comparison set. Report against that baseline monthly, through and beyond the placement window. And evaluate at the programme level, because single campaigns are draws from a distribution and only the trend line is evidence.</p>
+
+      <p>This is, transparently, how we structure our own engagements, so weigh the source: baseline, build, measure is our model because we think it is the only honest structure, and the protocol above works identically whoever you hire. The mechanism connecting earned citations to engine visibility is documented in our <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity guide</a>, and how measurement rigour differs across agency engagement models is in our <a href="/blog/best-digital-pr-agencies-b2b-saas" class="text-brand hover:text-brand-dark underline underline-offset-2">B2B SaaS agency comparison</a>.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">What a monthly report should actually contain</h2>
+
+      <p>One page, five sections. New assets: unique domains, named publications, authority distribution, follow share, unlinked mentions converted. Movement: non-branded visibility trend, AI-answer presence trend with the split, share of voice against the named competitor set. Baseline delta: every movement number against its pre-committed starting point. Interpretation: what moved, what did not, and the honest why, including news-cycle luck in both directions. Next: what the coming cycle targets. Anything beyond that page rarely adds information, and anything missing from it is usually hiding something.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">FAQ</h2>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">What is the single most important digital PR KPI?</h3>
+      <p>Movement in non-branded visibility, across search and AI answers, against a documented baseline. It is the closest thing to a north star because it cannot be inflated by branded noise, cannot be performed by placement counting, and connects directly to whether buyers who do not yet know you encounter you.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Are backlinks still the main digital PR metric?</h3>
+      <p>They are the main asset, and no two are worth the same, so the metric is the portfolio's quality distribution rather than its count. Counts without publication names and authority context tell you almost nothing; named publications with relevance context are measurement.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">How do you measure AI visibility from digital PR?</h3>
+      <p>Prompt-level tracking: a fixed set of the questions buyers actually ask, run across engines on a schedule, logging whether the brand is named and which sources are cited, with branded and non-branded prompts reported separately and competitors benchmarked on the same set. A single blended score is not measurement.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Should I accept a campaign with guaranteed placements?</h3>
+      <p>Treat a guarantee as a pricing structure rather than a promise about editorial reality, because no campaign outcome can be guaranteed. Ask what counts as a qualifying placement, what the remedy is, and whether hitting the number is achieved with placements you would decline individually. The honest alternative is a distribution-based expectation and programme-level evaluation.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">What is a realistic timeline for KPI movement?</h3>
+      <p>Placements land during and shortly after a campaign's outreach window. Movement metrics respond over the following months and compound across successive campaigns, which is why the honest evaluation unit is the trend line against baseline rather than any single campaign.</p>
+
+    </div>
+
+    <!-- Update note -->
+    <div class="border-t border-[#0A0F1E]/8 mt-10 pt-6">
+      <p class="text-sm text-muted italic">Reviewed as measurement standards and survey data evolve. Corrections welcome: <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.</p>
+    </div>
+
+    <!-- CTA card -->
+    <div class="my-10 rounded-xl bg-white border border-[#0A0F1E]/8 shadow-card p-8 text-center">
+      <p class="text-lg font-semibold text-ink mb-2">Earn the citations. Track the movement.</p>
+      <p class="text-sm text-[#475569] mb-6 max-w-lg mx-auto">Original research. Editorial placement. Visibility measurement across search and AI.</p>
+      <PrimaryCTA href="/contact" label="Start a Campaign" />
+    </div>
+
+  </div>
+</article>
+
+<AuthorBio />
+
+</div>
+
+</Layout>
