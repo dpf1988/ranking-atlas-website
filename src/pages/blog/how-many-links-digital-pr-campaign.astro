@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+
+const url = "https://ranking-atlas.com/blog/how-many-links-digital-pr-campaign";
+const pubDate = "2026-07-11";
+const updatedDate = "2026-07-11";
+
+const article = articleSchema({
+  title: "How Many Links Should a Digital PR Campaign Get?",
+  description: "The benchmarks that exist, why they contradict each other, the pitch maths nobody publishes, and why link counts now measure less than half the result.",
+  url,
+  datePublished: pubDate,
+  dateModified: updatedDate,
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", url: "https://ranking-atlas.com/" },
+  { name: "Blog", url: "https://ranking-atlas.com/blog/" },
+  { name: "How Many Links Should a Digital PR Campaign Get?", url },
+]);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the average number of links from a digital PR campaign?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The most cited benchmark is 42 referring domains per campaign, from Digitaloft's analysis of 500+ campaigns and 45,000+ earned links. But the average is misleading: in practice, the majority of campaigns land at a modest handful, a small minority break 100, and many produce fewer than ten. Budget for the distribution, not the average." }
+    },
+    {
+      "@type": "Question",
+      "name": "What DR should digital PR links have?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Two major benchmarks exist and they appear to contradict each other. Digitaloft reports an average DR of 41 across their full link dataset. Reboot Online reports an average DR of 61 for placed coverage. The difference is sample composition: Digitaloft includes every link type including syndication and low-DR pickups; Reboot measures only the primary coverage placements. A realistic planning figure is DR 40+ across the full profile, with the editorial placements that matter most sitting at DR 60+." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many pitches does it take to get a placement?",
+      "acceptedAnswer": { "@type": "Answer", "text": "At a 2% pitch-to-placement conversion rate, which is a realistic operating benchmark for competent data-led pitching, an eight-placement target requires roughly 400 targeted pitches. At 1%, that doubles. Ask any agency quoting a link guarantee how many pitches they plan to send and at what assumed pickup rate; the maths will tell you whether the guarantee is engineering or hope." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do link counts still matter for AI visibility?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Less than they did, and shrinking. Ahrefs' study of 75,000 brands found that branded web mentions correlate with AI Overview visibility at 0.664, more than three times stronger than backlinks at 0.218. Muck Rack's analysis of 25 million AI-engine citations found 84% come from earned media and 0.3% from paid or advertorial content. Link counts still matter for traditional search rankings, but they now measure less than half the result a digital PR campaign produces." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long before links from digital PR affect rankings?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A single data campaign runs four to six weeks from kickoff, with placements landing during and shortly after the outreach window. Visibility in search and AI answers compounds across successive campaigns over months as each round of coverage extends the citation base, which is why measurement against a documented baseline matters more than any single campaign's link count." }
+    },
+  ]
+};
+---
+
+<Layout
+  title="How Many Links Should a Digital PR Campaign Get? | Ranking Atlas"
+  description="The benchmarks that exist, why they contradict each other, the pitch maths nobody publishes, and why link counts now measure less than half the result."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(article)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<div class="bg-white">
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Article header -->
+    <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Analysis</div>
+    <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-6">
+      How Many Links Should a Digital PR Campaign Get?
+    </h1>
+    <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mb-6">
+      The benchmarks that exist, why they contradict each other, the pitch maths nobody publishes, and why link counts now measure less than half the result.
+    </p>
+    <div class="flex items-center gap-3 mb-10">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published <time datetime="2026-07-11">July 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-07-11" class="text-ink font-medium">July 2026</time></p>
+      </div>
+    </div>
+
+    <!-- Disclosure -->
+    <div class="bg-[#FEF9C3] border border-[#F59E0B]/20 rounded-xl px-5 py-3 mb-10 text-[14px] text-body leading-[1.6]">
+      <strong class="text-ink">Disclosure:</strong> Ranking Atlas sells research-led digital PR campaigns. We have a commercial interest in the value of earned coverage. Every statistic in this article is sourced by name so you can check it without trusting us.
+    </div>
+
+    <!-- Body -->
+    <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The short answer, with the distribution that matters more</h2>
+
+      <p>The most cited benchmark is <strong class="text-ink">42 referring domains per campaign</strong>, from Digitaloft's analysis of 500+ campaigns and 45,000+ earned links. That number is real, sourced and wrong as a planning figure, because the distribution behind it is violently skewed. The top 9% of campaigns break 100 referring domains. A much larger share land under ten. The majority sit at a modest handful. Averages describe none of those outcomes; the distribution describes all of them.</p>
+
+      <p><a href="https://www.buzzstream.com/blog/state-of-digital-pr-2026/" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">BuzzStream's 2026 State of Digital PR report</a> corroborates the shape without pinning the exact percentiles: roughly a third of practitioners report generating 31+ links per month, while the rest sit well below that, which tells the same story from the operator side. Budget for the distribution, celebrate the outliers, and do not let anyone sell you the average as an expectation.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The benchmarks that exist, and why they contradict each other</h2>
+
+      <p>Two major link-quality benchmarks circulate in the industry and they appear to say opposite things.</p>
+
+      <p><strong class="text-ink">Digitaloft</strong> reports an average DR of 41, an average DA of 43, and an average Trust Flow of 30 across their full earned-link dataset. <strong class="text-ink">Reboot Online</strong>, analysing 6,200+ backlinks from their 2024 campaigns, reports an average DR of 61, with 20.62% of links falling in the DR 70 to 79 band and 7.83% at DR 90+.</p>
+
+      <p>The gap is not a contradiction; it is a sample-composition difference that nobody publishing these numbers bothers to explain. Digitaloft's figures include every link type: syndication pickups, low-DR regional sites, forum references, the full tail of what a campaign generates. Reboot's figures measure the primary editorial placements, the coverage that the outreach was aimed at, excluding the long tail. Both are accurate descriptions of different things.</p>
+
+      <p>The practical rule: budget against Digitaloft's numbers (your full profile will include plenty of DR 30 to 50 syndication), but hold your agency to Reboot's standard for the editorial placements that actually matter. If the placed coverage is not averaging DR 60+, the outreach is landing in the wrong publications.</p>
+
+      <p>One more quality metric worth tracking: Reboot's data shows 48% of digital PR links are followed, 33% are syndicated, and 19% are nofollow. Followed links from editorial coverage are the ones search treats as votes; syndication adds brand presence without link equity; nofollow links contribute brand mentions that, as the AI-visibility data below shows, now carry independent weight.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The pitch maths nobody publishes</h2>
+
+      <p>Every link guarantee is an equation, and agencies prefer you do not check the arithmetic. Here it is.</p>
+
+      <p>Links equal pitches multiplied by pickup rate. A realistic operating benchmark for competent, targeted, data-led pitching is a low single-digit percentage of pitches converting to placements. At 2%, which is a solid performance number, an eight-placement target requires roughly 400 targeted pitches. At 1%, which is where broader outreach lists land, that doubles to 800.</p>
+
+      <p>BuzzStream's data adds the time dimension: 81% of digital PR professionals secure first coverage within one week of the initial pitch, and 85.2% report measurable campaign results within six months. The implication is that outreach is front-loaded but compounding is not, a point we return to below.</p>
+
+      <p>The one-line proposal test: ask any agency quoting a link guarantee how many pitches they plan to send and at what assumed pickup rate. If they cannot answer, the guarantee is not engineering; it is a number they hope to hit. If they can answer and the maths requires 1,000+ pitches for a modest target, ask what journalist relationship survives being one of a thousand. Our own view on the structural difference between earning coverage and acquiring links is in our <a href="/blog/digital-pr-vs-link-building" class="text-brand hover:text-brand-dark underline underline-offset-2">comparison of digital PR and link building</a>.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">When the count matters less than what you earned</h2>
+
+      <p>Link counts measure activity. What compounds is the asset the links sit inside: editorial coverage in publications that search engines and AI engines treat as trusted sources. A campaign earning eight links from Dark Reading, TechCrunch and the Financial Times is worth more than a campaign earning 80 from sites nobody reads, because the eight are structural citations: followed, editorial, in publications the engines retrieve when synthesising answers, and self-reinforcing as subsequent writers cite the same coverage.</p>
+
+      <p>That is why we measure against a baseline rather than reporting link counts in isolation, and why our <a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">analysis of earned versus paid links</a> argues the distinction on durability. A single data campaign runs four to six weeks from kickoff, and visibility in search and AI answers compounds across successive campaigns over months as each round of coverage extends the citation base. The single-campaign link count is an input; the movement against baseline is the result.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The AI-visibility reframe: link counts now measure less than half the result</h2>
+
+      <p>Three studies published in the past year change what "campaign results" means, and every guide still counting links as the primary output is now measuring the smaller half of the value.</p>
+
+      <p><strong class="text-ink"><a href="https://ahrefs.com/blog/ai-overview-brand-correlation/" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Ahrefs studied 75,000 brands</a></strong> and found that branded web mentions correlate with AI Overview visibility at 0.664, more than three times stronger than backlinks at 0.218. Brands in the top quartile for web mentions averaged 169 AI Overview appearances; brands in the next quartile down averaged 14. The gap is not incremental; it is categorical. A digital PR campaign that earns ten editorial placements produces ten links and ten brand mentions, and the mentions are now the larger signal.</p>
+
+      <p><strong class="text-ink"><a href="https://muckrack.com/blog/what-is-ai-reading-may-2026" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Muck Rack analysed 25 million citations</a></strong> across ChatGPT, Claude and Gemini responses in their May 2026 Generative Pulse report. 84% of all AI citations came from earned media. 0.3% came from paid or advertorial content. That ratio has held across three editions of the study dating back to July 2025. Earned editorial coverage is not one source type among many for AI engines; it is nearly the only source type.</p>
+
+      <p><strong class="text-ink"><a href="https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">BrightEdge's 16-month tracking</a></strong> of AI Overview citations found that only 16.7% of cited sources also rank in the organic top ten. The broader overlap with the top 100 has grown to 54.5%, but the critical finding is this: Google's AI Overviews are drawing from a wider, more diverse source set than traditional organic rankings reward. A brand visible only in the top ten misses the majority of the citation pool. A brand cited across multiple trusted publications, which is what digital PR campaigns build, is positioned for both.</p>
+
+      <p>The practical consequence for campaign measurement: a link count captures the backlink output. It misses the brand mentions (3× more correlated with AI visibility than links), the citation presence across AI engines (84% from earned media), and the source-diversity advantage (83.3% of AI citations come from outside the organic top ten). If you are still evaluating digital PR on links alone, you are measuring less than half the value the campaign produced. Our <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">guide to citation equity</a> covers the full mechanism.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">What to actually measure</h2>
+
+      <p>Link count is an input metric. Report it, but do not optimise for it. The outputs that matter:</p>
+
+      <ol class="list-decimal pl-6 space-y-2">
+        <li><strong class="text-ink">Referring domains from publications your buyers read.</strong> Not a raw count; a named list, checked against your audience.</li>
+        <li><strong class="text-ink">DR distribution of placed coverage.</strong> The editorial placements should average DR 60+. If they do not, the outreach is targeting the wrong tier.</li>
+        <li><strong class="text-ink">Non-branded search visibility movement.</strong> Are you gaining positions for the terms buyers search before they know your name?</li>
+        <li><strong class="text-ink">AI-answer presence, branded and non-branded separated.</strong> When buyers ask AI engines who to shortlist in your category, are you named? Our audits repeatedly find brands strong on prompts containing their name and absent from genuine buyer questions. Demand the split; the blended number hides the gap that matters.</li>
+        <li><strong class="text-ink">All of the above tracked against a documented baseline.</strong> Movement is only visible when the starting point is recorded.</li>
+      </ol>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">FAQ</h2>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">What is the average number of links from a digital PR campaign?</h3>
+      <p>The most cited benchmark is 42 referring domains per campaign, from Digitaloft's analysis of 500+ campaigns and 45,000+ earned links. But the average is misleading: in practice, the majority of campaigns land at a modest handful, a small minority break 100, and many produce fewer than ten. Budget for the distribution, not the average.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">What DR should digital PR links have?</h3>
+      <p>Two major benchmarks exist and they appear to contradict each other. Digitaloft reports an average DR of 41 across their full link dataset. Reboot Online reports an average DR of 61 for placed coverage. The difference is sample composition: Digitaloft includes every link type including syndication and low-DR pickups; Reboot measures only the primary coverage placements. A realistic planning figure is DR 40+ across the full profile, with the editorial placements that matter most sitting at DR 60+.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">How many pitches does it take to get a placement?</h3>
+      <p>At a 2% pitch-to-placement conversion rate, which is a realistic operating benchmark for competent data-led pitching, an eight-placement target requires roughly 400 targeted pitches. At 1%, that doubles. Ask any agency quoting a link guarantee how many pitches they plan to send and at what assumed pickup rate; the maths will tell you whether the guarantee is engineering or hope.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Do link counts still matter for AI visibility?</h3>
+      <p>Less than they did, and shrinking. <a href="https://ahrefs.com/blog/ai-overview-brand-correlation/" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Ahrefs' study of 75,000 brands</a> found that branded web mentions correlate with AI Overview visibility at 0.664, more than three times stronger than backlinks at 0.218. <a href="https://muckrack.com/blog/what-is-ai-reading-may-2026" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Muck Rack's analysis of 25 million AI-engine citations</a> found 84% come from earned media and 0.3% from paid or advertorial content. Link counts still matter for traditional search rankings, but they now measure less than half the result a digital PR campaign produces.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">How long before links from digital PR affect rankings?</h3>
+      <p>A single data campaign runs four to six weeks from kickoff, with placements landing during and shortly after the outreach window. Visibility in search and AI answers compounds across successive campaigns over months as each round of coverage extends the citation base, which is why measurement against a documented baseline matters more than any single campaign's link count.</p>
+
+    </div>
+
+    <!-- Update note -->
+    <div class="border-t border-[#0A0F1E]/8 mt-10 pt-6">
+      <p class="text-sm text-muted italic">Reviewed as industry benchmarks and enforcement conditions change. Corrections welcome: <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.</p>
+    </div>
+
+    <!-- CTA card -->
+    <div class="my-10 rounded-xl bg-white border border-[#0A0F1E]/8 shadow-card p-8 text-center">
+      <p class="text-lg font-semibold text-ink mb-2">Earn the citations. Track the movement.</p>
+      <p class="text-sm text-[#475569] mb-6 max-w-lg mx-auto">Original research. Editorial placement. Visibility measurement across search and AI.</p>
+      <PrimaryCTA href="/contact" label="Start a Campaign" />
+    </div>
+
+  </div>
+</article>
+
+<AuthorBio />
+
+</div>
+
+</Layout>
