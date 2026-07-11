@@ -1,0 +1,161 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+
+const url = "https://ranking-atlas.com/blog/cybersecurity-ai-citations";
+const pubDate = "2026-07-11";
+const updatedDate = "2026-07-11";
+
+const article = articleSchema({
+  title: "How Cybersecurity Vendors Get Cited in AI Answers",
+  description: "What gets a security vendor named when a CISO asks, which sources the engines actually retrieve in this category, and the work involved.",
+  url,
+  datePublished: pubDate,
+  dateModified: updatedDate,
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", url: "https://ranking-atlas.com/" },
+  { name: "Blog", url: "https://ranking-atlas.com/blog/" },
+  { name: "How Cybersecurity Vendors Get Cited in AI Answers", url },
+]);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Our brand appears when people ask about us directly, but never in category questions. Why?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Branded prompts retrieve your own site and coverage about you; category prompts retrieve the sources trusted on the category, where you are not yet corroborated. This gap is the most consistent finding in audits across security vendors, and closing it is the entire job described above." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does product marketing content help AI visibility in security?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Rarely beyond branded prompts. The retrieved set for security buyer questions is trade press, community and research, and product pages enter it only as supporting material. The exception is genuinely technical content that practitioners reference, which stops being product marketing at that point." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is newsjacking credible in a category this sceptical?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Data-led newsjacking is among the most credible moves available, because the trade press genuinely needs numbers within hours of an incident or ruling. The line is holding relevant original data versus manufacturing an angle; the first earns citations, the second earns a reputation." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which agencies handle this work for security vendors?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The field is compared, communications firms and citation-focused work separately, including where each firm fits and where it does not, in the guide to the best digital PR agencies for cybersecurity on this site." }
+    },
+  ]
+};
+---
+
+<Layout
+  title="How Cybersecurity Vendors Get Cited in AI Answers | Ranking Atlas"
+  description="What gets a security vendor named when a CISO asks, which sources the engines actually retrieve in this category, and the work involved."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(article)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<div class="bg-white">
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Article header -->
+    <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Analysis</div>
+    <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-6">
+      How Cybersecurity Vendors Get Cited in AI Answers
+    </h1>
+    <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mb-6">
+      Security buyers distrust marketing professionally, and the AI engines answering their questions have learnt to source accordingly. What gets a security vendor named when a CISO asks, which sources the engines actually retrieve in this category, and the work involved.
+    </p>
+    <div class="flex items-center gap-3 mb-10">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published <time datetime="2026-07-11">July 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-07-11" class="text-ink font-medium">July 2026</time></p>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The short answer</h2>
+
+      <p>When a security leader asks an AI engine which vendors to shortlist, the answer is synthesised from retrieved sources, and in cybersecurity those sources are unusually concentrated: the security trade press (Dark Reading, SecurityWeek, BleepingComputer, The Record, CSO Online, SC Media), practitioner community discussion, analyst material, and research the security community takes seriously. Vendors named across several of those layers appear in answers. Vendors present only on their own domain do not, and in this category even thin third-party presence fails, because the sources engines trust here are precisely the ones that cannot be bought. The work is the same four layers as any category, with the difficulty turned up: extractable owned content, original research that survives practitioner scrutiny, earned coverage in a trade press owned by a few dozen journalists, and prompt-level measurement with branded and non-branded visibility separated.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Why this category is harder, and why that protects you once you are in</h2>
+
+      <p>Cybersecurity has the most sceptical buyers in B2B and one of the most concentrated trade presses: roughly 30 to 50 journalists own the security beat globally, and CISOs trust what appears in their publications while ignoring vendor whitepapers on principle. The AI layer inherits that structure directly, because engines retrieve and weight the sources the category already trusts: <a href="https://muckrack.com/blog/what-is-ai-reading-may-2026" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Muck Rack's analysis of 25 million AI citations</a> found earned media accounts for 84% of citations against 0.3% for paid content, and in security the earned layer runs through that narrow trade stack plus the practitioner community.</p>
+
+      <p>The same concentration that makes entry hard makes position durable. A vendor corroborated across Dark Reading coverage, practitioner discussion and analyst mentions is cited from sources competitors cannot rent, imitate or flood. In categories with diffuse source landscapes, the citation contest is noisy; in security, it is a small room, and being established in it compounds.</p>
+
+      <p>One more property peculiar to this category: hostile scrutiny is a distribution channel. Security practitioners publicly dismantle weak vendor research for sport, and the flip side is that research which survives them gets shared by the people who tried to break it. That fact should drive the entire content strategy, because material engineered to withstand the most adversarial audience in B2B is also, not coincidentally, the material engines and journalists treat as citable.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The security source map</h2>
+
+      <p><strong class="text-ink">The trade press.</strong> Dark Reading, SecurityWeek, BleepingComputer, The Record, CSO Online, SC Media, The Hacker News, plus the security desks of the business press for incidents and funding. Editorially rigorous, retrieved constantly for security questions, and staffed by journalists who receive hundreds of vendor pitches a week and cover data, incidents and research rather than product news.</p>
+
+      <p><strong class="text-ink">Practitioner community.</strong> Reddit is the most cited domain in AI answers across engines, and the security subreddits, plus practitioner blogs and mailing lists, are where tooling recommendations actually get made. This layer is unusually hostile to manufactured presence and unusually influential when presence is real, because engines are triangulating what practitioners say when no vendor is in the room.</p>
+
+      <p><strong class="text-ink">Research and advisories.</strong> CVE analyses, incident write-ups, threat research, benchmark studies. Security is the rare category where vendor-produced material is a first-class citation source, provided it is genuinely research rather than marketing wearing a lab coat: original telemetry, reproducible methodology, findings stated without spin.</p>
+
+      <p><strong class="text-ink">Analyst and reference material.</strong> Gartner, Forrester and the category reference content engines retrieve for "what is" and "compare" questions. Slower to move, heavily weighted once present.</p>
+
+      <p><strong class="text-ink">The regulatory layer.</strong> NIS2, DORA, SEC disclosure rules, CISA advisories: security's permanent news cycle. Every enforcement action and framework deadline opens a window where journalists need data and expert comment within hours, and vendors holding relevant original numbers collect structural citations while everyone else offers a CEO quote.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The playbook, calibrated for security</h2>
+
+      <p><strong class="text-ink">Extractable owned content, with the security-specific bar.</strong> The founding GEO research found that adding statistics, quotations and cited sources lifts a page's visibility in generated answers by up to 40%; in security, extractability also means precision, because an imprecise claim about a vulnerability class or a framework requirement will be noticed, screenshotted and held against you. Answer the questions practitioners and procurement actually ask, with numbers, named sources and definitions that survive an expert reader.</p>
+
+      <p><strong class="text-ink">Original research as the centre of gravity.</strong> The highest-leverage asset in the category, for a structural reason: security journalists run on data and incidents, practitioners share what withstands them, and both feed the retrieved set. One study with a defensible dataset, published methodology and downloadable data produces trade coverage, community discussion and recurring citations every time the underlying question resurfaces. Telemetry-based findings, sector benchmark data, and analyses timed to the regulatory calendar are the reliable shapes. The mechanism connecting that coverage to engine visibility is documented in our <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity guide</a>.</p>
+
+      <p><strong class="text-ink">The regulatory calendar as a standing asset.</strong> Maintain the dataset that makes you the obvious source for the next NIS2 enforcement story or SEC disclosure deadline before it lands. Reactive data converts news windows into citations; reactive opinion converts them into name-checks that neither rank nor get retrieved.</p>
+
+      <p><strong class="text-ink">Authentic practitioner presence.</strong> Engineers and founders participating genuinely where practitioners talk, publishing real technical work. Manufactured community seeding is being actively detected and deleted by the platforms, retroactively killing the citations that depended on it, and in this community the reputational cost of getting caught exceeds every other category.</p>
+
+      <p><strong class="text-ink">Measurement, or none of the above is accountable.</strong> A fixed prompt set covering what CISOs and security procurement actually ask, run across ChatGPT, Perplexity, Gemini and AI Overviews on a schedule, logging who gets named and which sources get cited, benchmarked against named competitors from a documented baseline. Branded and non-branded separated without exception: security vendors routinely dominate prompts containing their own name while remaining absent from the buyer questions that feed pipeline, and one blended number conceals precisely that. The full standard is in our <a href="/blog/digital-pr-kpis" class="text-brand hover:text-brand-dark underline underline-offset-2">measurement guide</a>, and the wider mechanics of the shift are in our <a href="/blog/geo-vs-seo" class="text-brand hover:text-brand-dark underline underline-offset-2">GEO versus SEO analysis</a>.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Timelines, honestly</h2>
+
+      <p>Long-tail technical questions with few good sources can be won with extractable owned content in weeks. Contested commercial prompts move on corroboration, which requires earned sources to exist and be retrieved: a research-led campaign runs four to six weeks from kickoff, placements land during and shortly after the outreach window, and visibility compounds across successive campaigns over months as each round of coverage extends the citation base. No campaign can guarantee being named, because naming is decided by synthesis across sources nobody controls; the honest evaluation unit is the trend line against baseline, at programme level.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">FAQ</h2>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Our brand appears when people ask about us directly, but never in category questions. Why?</h3>
+      <p>Branded prompts retrieve your own site and coverage about you; category prompts retrieve the sources trusted on the category, where you are not yet corroborated. This gap is the most consistent finding in our audits across security vendors, and closing it is the entire job described above.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Does product marketing content help AI visibility in security?</h3>
+      <p>Rarely beyond branded prompts. The retrieved set for security buyer questions is trade press, community and research, and product pages enter it only as supporting material. The exception is genuinely technical content that practitioners reference, which stops being product marketing at that point.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Is newsjacking credible in a category this sceptical?</h3>
+      <p>Data-led newsjacking is among the most credible moves available, because the trade press genuinely needs numbers within hours of an incident or ruling. The line is holding relevant original data versus manufacturing an angle; the first earns citations, the second earns a reputation.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Which agencies handle this work for security vendors?</h3>
+      <p>We compared the field, communications firms and citation-focused work separately, including where we fit and where we do not, in our <a href="/blog/best-digital-pr-agencies-cybersecurity" class="text-brand hover:text-brand-dark underline underline-offset-2">guide to the best digital PR agencies for cybersecurity</a>.</p>
+
+    </div>
+
+    <!-- Update note -->
+    <div class="border-t border-[#0A0F1E]/8 mt-10 pt-6">
+      <p class="text-sm text-muted italic">Reviewed as engine behaviour and the security press landscape change. Corrections welcome: <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.</p>
+    </div>
+
+    <!-- CTA card -->
+    <div class="my-10 rounded-xl bg-white border border-[#0A0F1E]/8 shadow-card p-8 text-center">
+      <p class="text-lg font-semibold text-ink mb-2">Earn the citations. Track the movement.</p>
+      <p class="text-sm text-[#475569] mb-6 max-w-lg mx-auto">Original research. Editorial placement. Visibility measurement across search and AI.</p>
+      <PrimaryCTA href="/contact" label="Start a Campaign" />
+    </div>
+
+  </div>
+</article>
+
+<AuthorBio />
+
+</div>
+
+</Layout>
