@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+
+const url = "https://ranking-atlas.com/blog/measure-brand-visibility-ai-search";
+const pubDate = "2026-07-11";
+const updatedDate = "2026-07-11";
+
+const article = articleSchema({
+  title: "How to Measure Brand Visibility in ChatGPT and AI Search: Method and Template",
+  description: "The complete methodology for auditing a brand's presence in AI answers: prompt design, engine coverage, logging structure, the branded and non-branded split, and source classification.",
+  url,
+  datePublished: pubDate,
+  dateModified: updatedDate,
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", url: "https://ranking-atlas.com/" },
+  { name: "Blog", url: "https://ranking-atlas.com/blog/" },
+  { name: "How to Measure Brand Visibility in ChatGPT and AI Search", url },
+]);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How often should the prompt set run?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Monthly at minimum for a programme, weekly if you are actively campaigning or in a volatile category. Less than monthly and the trend line takes too long to mean anything." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this be done manually or does it need tooling?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Fifty prompts across four engines is a disciplined afternoon by hand, monthly, and the spreadsheet structure is sufficient. Tooling buys cadence, scale and competitor depth. Method first, tooling second: a tool producing a blended score fails this methodology regardless of price." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do results differ between engines?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Different retrieval blends: each engine mixes live search, licensed feeds and its own weighting differently, so the retrieved set differs and the synthesis with it. That variance is signal, not noise; it tells you which engine's trusted sources you are missing from." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good non-branded visibility rate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There is no universal benchmark, which is precisely why the baseline and the competitor set matter: the honest question is your rate against your named competitors on your buyers' prompts, trending which direction. Categories vary too much for a global number to mean anything, and anyone quoting one is selling something." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this work for Google AI Overviews specifically?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, with one addition: log whether an Overview appears at all for each prompt, because Overview coverage of a query set expands and contracts, and being cited in an Overview that stopped appearing is a different event to losing the citation." }
+    },
+  ]
+};
+---
+
+<Layout
+  title="How to Measure Brand Visibility in ChatGPT and AI Search: Method and Template | Ranking Atlas"
+  description="The complete methodology for auditing a brand's presence in AI answers: prompt design, engine coverage, logging structure, the branded and non-branded split, and source classification."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(article)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<div class="bg-white">
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Article header -->
+    <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Analysis</div>
+    <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-6">
+      How to Measure Brand Visibility in ChatGPT and AI Search: Method and Template
+    </h1>
+    <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mb-6">
+      The complete methodology we use to audit a brand's presence in AI answers: prompt design, engine coverage, logging structure, the branded and non-branded split, and source classification. Publishable because the method is not the hard part. The discipline is.
+    </p>
+    <div class="flex items-center gap-3 mb-10">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published <time datetime="2026-07-11">July 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-07-11" class="text-ink font-medium">July 2026</time></p>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The short answer</h2>
+
+      <p>Measuring AI visibility properly requires five components: a fixed prompt set built from the questions your buyers actually ask (not the ones containing your brand name), systematic runs across the engines that matter (ChatGPT, Perplexity, Gemini, Google AI Overviews), a log that captures both brand mentions and cited sources per response, a hard separation between branded and non-branded prompts, and a classification of every cited source as earned, owned or rented. Run once, this produces a baseline. Run on a schedule against named competitors, it produces the only honest evidence of whether visibility work is working. Everything below is the full method, free to use, because the method was never the moat: the prompt research, the monthly discipline, and knowing what the movement means are.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Why a single "AI visibility score" is worthless</h2>
+
+      <p>Before the method, the failure it exists to prevent. Most AI visibility reporting produces one blended number, and the blend erases the only distinction that matters. Prompts containing your brand name ("is [brand] any good?", "[brand] review", "[brand] vs [competitor]") retrieve your own site and coverage about you, so visibility on them is near-automatic: you will look strong there whether or not anyone who has never heard of you can find you. Prompts your buyers actually ask ("best [category] software for [segment]", "how do I solve [problem]") retrieve the sources the engines trust on the category, and appearing there requires being corroborated across sources you do not control.</p>
+
+      <p>Our audits find the same pattern across categories: brands with strong visibility on branded prompts and close to none on buyer questions, sometimes a gap of two orders of magnitude. A blended score averages those into a comfortable middle number that measures nothing. The split is the methodology's load-bearing wall, which is why it appears in every step below.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Step one: build the prompt set</h2>
+
+      <p>Fifty prompts is a workable standard: large enough for a stable signal, small enough to run on a schedule. Compose it in four blocks.</p>
+
+      <p><strong class="text-ink">Non-branded commercial prompts (roughly 20).</strong> The shortlist-forming questions: "best [category] for [vertical/segment]", "top [category] tools for [use case]", "[category] with [key requirement]", "which [category] providers work with [buyer type]". Source these from sales calls, support tickets and win-loss notes rather than keyword tools, because buyers phrase prompts as questions to a knowledgeable colleague, not as keywords.</p>
+
+      <p><strong class="text-ink">Non-branded informational prompts (roughly 20).</strong> The research-phase questions upstream of the shortlist: "how do [buyer type] solve [problem]", "how to evaluate [category]", "what does [regulation/change] mean for [buyer type]". These reveal which sources own the education layer, which is where category authority is actually built.</p>
+
+      <p><strong class="text-ink">Branded and competitor prompts (roughly 10).</strong> Your name, your closest competitors' names, and direct comparisons. These are kept in the set as a control group, reported separately, never blended.</p>
+
+      <p>Two design rules. Write prompts the way a buyer types, including their vocabulary and segment qualifiers, because prompt phrasing changes retrieval. And freeze the set once it is built: a stable panel measured over time is evidence, a shifting one is anecdote. Add prompts by versioning the set, never by silent substitution.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Step two: run the engines</h2>
+
+      <p>Minimum coverage in 2026: ChatGPT (with search active), Perplexity, Gemini, and Google AI Overviews, because they answer from different retrieval blends and a brand's presence varies across them more than most teams expect. Run every prompt on every engine on a fixed cadence, monthly at minimum, from a clean context each time: no logged-in personalisation, no conversation history, location settings matched to your market, because a UK buyer's answer set differs from a US one and your measurement should match your buyers.</p>
+
+      <p>Record per response: whether your brand is named, where in the answer it appears, what is said about it, every cited source URL, and which brands are named alongside you. The competitor column matters as much as your own: visibility is a share question, and a number without a comparison set has no meaning.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Step three: log so the data can answer questions</h2>
+
+      <p>A flat log with one row per prompt-engine-run works in a spreadsheet and scales to anything: date, prompt ID, prompt type (branded, non-branded commercial, non-branded informational), engine, brand named (yes/no), position (first mention, listed, absent), sentiment of the mention, competitors named, cited source URLs, and source classification (next step). From that structure every honest metric falls out: non-branded visibility rate by engine, share of voice against each competitor, source concentration, and trend lines per prompt block.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Step four: classify every cited source</h2>
+
+      <p>This is the step that turns a visibility log into a strategy document. For each URL the engines cite across your prompt set, classify it three ways.</p>
+
+      <p><strong class="text-ink">Earned, owned or rented.</strong> Earned: editorial coverage, genuine community discussion, independent references, citations nobody could buy. Owned: your domain and properties. Rented: paid placements, self-published rankings positioned as neutral, seeded community content, anything that exists because someone paid or manufactured it.</p>
+
+      <p><strong class="text-ink">Retrieved or decorative.</strong> Whether the source itself ranks for real queries or recurs across prompts, because a citation that appears once and never again tells you less than one the engines return to constantly.</p>
+
+      <p><strong class="text-ink">Durable or exposed.</strong> Earned editorial survives enforcement waves; rented sources are being actively hunted, and community platforms now delete manufactured content retroactively, which kills the citations that depended on it the same day, since AI citation is overwhelmingly a live retrieval event. The classification tells you which parts of your current visibility, and your competitors', are load-bearing and which are scaffolding that a platform enforcement action removes overnight.</p>
+
+      <p>The output is a source map: which domains decide the answers in your category, which of them you are present in, which your competitors rent versus earn, and therefore where the next quarter's work goes. In our experience this map surprises almost every brand that runs it, usually in the same direction: the sources deciding their category are not the ones their marketing plan targets.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Step five: baseline, then trend</h2>
+
+      <p>Run the full set once before any visibility work starts and write the results down: non-branded visibility rate per engine, branded rate as the control, share of voice per competitor, source map. That document is the baseline, and it is the difference between measurement and retrospective storytelling, because success defined after the fact drifts toward whatever happened. Then re-run monthly, report movement against the baseline, and evaluate at programme level: answers vary run to run by design, engines change behaviour without notice, and single-month movements are weather. The trend across months is climate, and the only honest evidence. Visibility compounds across successive campaigns over months as each round of coverage extends the citation base engines retrieve from, so the measurement window has to match the mechanism.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The template</h2>
+
+      <p>The one-page monthly output: non-branded visibility rate this month versus baseline, per engine. Branded rate alongside it, labelled as the control. Share of voice against each named competitor on the same prompt set. New sources citing you this month, classified earned, owned or rented. Sources you lost. One paragraph of interpretation including honest luck in both directions, and one paragraph of what next month's work targets. Any report longer than that is usually padding; anything missing from it is usually a problem.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">What this method cannot do, stated plainly</h2>
+
+      <p>It cannot make single runs authoritative, because generative answers are probabilistic; only the panel and the trend are evidence. It cannot attribute revenue to individual citations with precision, and reports that claim to are overreaching. And it does not move the numbers, it only makes them honest: closing a non-branded visibility gap is done by building extractable content and earning corroborating citations in the sources the map surfaces, work covered in our <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity guide</a> and, at the mechanics level, in our <a href="/blog/geo-vs-seo" class="text-brand hover:text-brand-dark underline underline-offset-2">GEO versus SEO analysis</a>. Measurement without the building is a well-documented flatline; building without the measurement is spend without evidence. The engagements we run pair them for exactly that reason, baseline first, and everything on this page is how we do it, published in full because a buyer who measures properly, with anyone, is a buyer the whole discipline gets more honest for. What separates the metrics that belong in this report from the ones that decorate it is covered in our <a href="/blog/digital-pr-kpis" class="text-brand hover:text-brand-dark underline underline-offset-2">measurement KPI guide</a>.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">FAQ</h2>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">How often should the prompt set run?</h3>
+      <p>Monthly at minimum for a programme, weekly if you are actively campaigning or in a volatile category. Less than monthly and the trend line takes too long to mean anything.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Can this be done manually or does it need tooling?</h3>
+      <p>Fifty prompts across four engines is a disciplined afternoon by hand, monthly, and the spreadsheet structure above is sufficient. Tooling buys cadence, scale and competitor depth. Method first, tooling second: a tool producing a blended score fails this methodology regardless of price.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Why do results differ between engines?</h3>
+      <p>Different retrieval blends: each engine mixes live search, licensed feeds and its own weighting differently, so the retrieved set differs and the synthesis with it. That variance is signal, not noise; it tells you which engine's trusted sources you are missing from.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">What is a good non-branded visibility rate?</h3>
+      <p>There is no universal benchmark, which is precisely why the baseline and the competitor set matter: the honest question is your rate against your named competitors on your buyers' prompts, trending which direction. Categories vary too much for a global number to mean anything, and anyone quoting one is selling something.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Does this work for Google AI Overviews specifically?</h3>
+      <p>Yes, with one addition: log whether an Overview appears at all for each prompt, because Overview coverage of a query set expands and contracts, and being cited in an Overview that stopped appearing is a different event to losing the citation.</p>
+
+    </div>
+
+    <!-- Update note -->
+    <div class="border-t border-[#0A0F1E]/8 mt-10 pt-6">
+      <p class="text-sm text-muted italic">Method reviewed as engine behaviour changes, which is constantly. Corrections welcome: <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.</p>
+    </div>
+
+    <!-- CTA card -->
+    <div class="my-10 rounded-xl bg-white border border-[#0A0F1E]/8 shadow-card p-8 text-center">
+      <p class="text-lg font-semibold text-ink mb-2">Earn the citations. Track the movement.</p>
+      <p class="text-sm text-[#475569] mb-6 max-w-lg mx-auto">Original research. Editorial placement. Visibility measurement across search and AI.</p>
+      <PrimaryCTA href="/contact" label="Start a Campaign" />
+    </div>
+
+  </div>
+</article>
+
+<AuthorBio />
+
+</div>
+
+</Layout>
