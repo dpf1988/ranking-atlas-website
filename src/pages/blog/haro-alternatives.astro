@@ -1,0 +1,195 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+
+const url = "https://ranking-atlas.com/blog/haro-alternatives";
+const pubDate = "2026-07-11";
+const updatedDate = "2026-07-11";
+
+const article = articleSchema({
+  title: "HARO Alternatives in 2026: What Actually Replaced It",
+  description: "The platforms that filled the gap after HARO, what each is genuinely good for, and the question every other guide avoids: what a reactive quote is actually worth now.",
+  url,
+  datePublished: pubDate,
+  dateModified: updatedDate,
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", url: "https://ranking-atlas.com/" },
+  { name: "Blog", url: "https://ranking-atlas.com/blog/" },
+  { name: "HARO Alternatives in 2026", url },
+]);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is HARO still active in 2026?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but read the history. The original HARO became Connectively under Cision and was shut down on 9 December 2024. Featured.com acquired the brand and relaunched it in April 2025 as a free email digest with strict anti-spam controls. It works, and it is a smaller, stricter service than the one you remember." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best free HARO alternative?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Source of Sources for quality, the relaunched HARO for familiarity, Qwoted's free tier for volume, and #JournoRequest on X for speed. Most working practitioners run several at once because no single platform has the volume to stand alone." }
+    },
+    {
+      "@type": "Question",
+      "name": "What response rate should I expect?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Low single digits from pitch to published mention is a realistic planning number for competent, fast, genuinely expert pitching, with meaningful variance by niche and by how quickly you respond. Anyone promising a reliable high hit rate from source platforms in 2026 is selling something." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do HARO-style links still help SEO and AI visibility?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, with the asset-class caveat. Editorial mentions in real publications remain a trust signal for search and are increasingly weighted by AI engines deciding which brands to cite. A portfolio of incidental quotes is a modest, legitimate contribution to that. Coverage of your own research is a far larger one, because the citation is structural and repeats." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platform is best for UK coverage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ResponseSource for volume and national press reach, JournoLink for smaller businesses, plus #JournoRequest, where UK journalists are especially active. The US platforms skew heavily toward American outlets." }
+    },
+  ]
+};
+---
+
+<Layout
+  title="HARO Alternatives in 2026: What Actually Replaced It | Ranking Atlas"
+  description="The platforms that filled the gap after HARO, what each is genuinely good for, and the question every other guide avoids: what a reactive quote is actually worth now."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(article)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<div class="bg-white">
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Article header -->
+    <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Analysis</div>
+    <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-6">
+      HARO Alternatives in 2026: What Actually Replaced It
+    </h1>
+    <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mb-6">
+      The platforms that filled the gap, what each is genuinely good for, and the question every other guide avoids: what a reactive quote is actually worth now. Written by someone who used HARO for over a decade.
+    </p>
+    <div class="flex items-center gap-3 mb-10">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published <time datetime="2026-07-11">July 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-07-11" class="text-ink font-medium">July 2026</time></p>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The short answer</h2>
+
+      <p><strong class="text-ink"><a href="https://www.sourceofsources.com" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Source of Sources (SoS)</a></strong> is the spiritual successor, built by HARO's original founder, free, with the best signal-to-noise ratio of the current field. <strong class="text-ink"><a href="https://helpareporter.com" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">HARO</a> itself is back</strong>, relaunched by Featured.com in April 2025 as a free email digest, and it is a different, leaner animal than the original. <strong class="text-ink"><a href="https://www.qwoted.com" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Qwoted</a></strong> is the strongest general-purpose platform, particularly for finance, tech and B2B. <strong class="text-ink"><a href="https://mentionmatch.com" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">MentionMatch</a></strong> (formerly Help a B2B Writer) is the pick for B2B SaaS specifically. <strong class="text-ink"><a href="https://www.responsesource.com" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">ResponseSource</a> and <a href="https://journolink.com" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">JournoLink</a></strong> serve UK media properly, which almost no US-written guide mentions. And <strong class="text-ink">#JournoRequest on X</strong> remains the fastest free channel if you can monitor it.</p>
+
+      <p>That is the map. The rest of this guide covers what each platform is actually like to use, and then the part that matters more than platform choice: whether reactive quote-hunting deserves the hours it consumes.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Get the story straight first</h2>
+
+      <p>Most guides muddle the timeline, so here it is precisely. Peter Shankman founded Help a Reporter Out and later sold it; it ended up inside Cision. In early 2024 Cision rebranded HARO as Connectively and moved it toward a pay-to-pitch model, which the community loathed. On 9 December 2024 Cision shut Connectively down entirely as part of its pivot to CisionOne. Then, in April 2025, <a href="https://featured.com" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Featured.com</a> bought the HARO brand from Cision and relaunched it as a free email digest, with subscriber emails resuming on 22 April 2025. Meanwhile Shankman, watching the implosion, had already built Source of Sources as the community's replacement.</p>
+
+      <p>So in 2026 you have an odd landscape: the original brand is alive under new ownership, the original founder runs a competing free service, and a generation of venture-backed platforms grew up in the vacuum. Here is what each is for.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The platforms, honestly assessed</h2>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">Source of Sources (SoS)</h3>
+
+      <p>Shankman's rebuild of his own idea: an email digest of journalist requests, free for everyone, run on an honour system with a one-strike ban for off-topic pitching. The signal-to-noise ratio is the best in the field precisely because of that policy, and the journalist quality is high because the original HARO network followed its founder. The trade-off is volume: fewer queries than the aggregator platforms, so it cannot be your only channel. Treat it as the quality core of a multi-platform routine.</p>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">HARO (the Featured.com relaunch)</h3>
+
+      <p>Back from the dead as a free email-based service, closer to the original model than Connectively ever was, with a notable upgrade: aggressive spam controls including AI content detection, LinkedIn profile verification and screening for fake headshots, with lifetime bans for violators. Those controls exist because the platform's biggest threat is the flood of AI-generated pitches that made the late HARO era nearly unusable. It is leaner than the original at its peak, and that is mostly an improvement. Worth being on; not worth depending on.</p>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">Qwoted</h3>
+
+      <p>The strongest general-purpose platform, with profile-based matching so journalists can find you proactively, a workable free tier, and particular strength in finance, fintech and B2B tech. The premium tier buys priority and more categories. The honest limitation is inconsistency: it might surface three relevant queries one day and none for the rest of the week, which is a property of the whole post-HARO landscape rather than a Qwoted defect.</p>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">Featured</h3>
+
+      <p>A curated marketplace connecting vetted experts with publishers, with a transparent pipeline showing each answer's status from review to publication. The vetting is the value: less noise, higher acceptance quality. The free plan is capped at a handful of answers a month, which is not enough to matter, so this is effectively a paid channel. Best for operators who want fewer, better opportunities and will pay to skip the scrum.</p>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">MentionMatch (formerly Help a B2B Writer)</h3>
+
+      <p>B2B only, which is exactly why it works if that is your world. Queries are narrower and better matched, competition per query is lower, and the writers are producing the kind of B2B content where an expert quote genuinely fits. Volume is modest. If you sell SaaS, this plus SoS covers a surprising share of the useful opportunities.</p>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">SourceBottle</h3>
+
+      <p>The international option, Australian in origin, with a loyal journalist base outside the US and podcast opportunities most platforms lack. The interface shows its age. Useful for brands wanting coverage beyond the US-UK axis. <a href="https://www.sourcebottle.com" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">sourcebottle.com</a></p>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">ProfNet</h3>
+
+      <p>Cision's surviving source platform: paid, institutional, strongest for academics, healthcare and corporate subject-matter experts. If your experts have credentials rather than opinions, it earns its fee; for scrappy founder-led pitching it is the wrong shape. <a href="https://profnet.prnewswire.com" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">profnet.prnewswire.com</a></p>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">ResponseSource and JournoLink (UK)</h3>
+
+      <p>The gap in every American guide. ResponseSource is the established UK journalist enquiry service, long used by UK PR teams, with real volume from national and trade press. JournoLink suits smaller UK businesses with bundled PR tooling. If your buyers and press are British, these two plus #JournoRequest will outperform the entire US platform stack.</p>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">#JournoRequest and #PRRequest on X</h3>
+
+      <p>No platform, no fee, no digest delay: journalists post requests directly and the fastest relevant reply often wins. The speed advantage is real and so is the monitoring burden. Set alerts or accept that you will miss most of it. Best used as a supplement that occasionally lands the placement none of the platforms surfaced.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">What every alternatives guide leaves out</h2>
+
+      <p>Here is the section the platform vendors and the agencies selling pitch services will not write, from fifteen years of doing this work.</p>
+
+      <p><strong class="text-ink">The economics got worse, permanently.</strong> Journalist request volume across the source-platform ecosystem has fallen sharply since 2024, with credible estimates putting the decline at half or more, while the number of people pitching kept rising and generative AI cut the cost of a pitch to nearly zero. Every platform is now running an arms race between AI-written pitches and AI-powered spam filters. The practical consequence: response competition per query is brutal, speed decides outcomes (the first handful of pitches in an inbox get read, late ones rarely do), and maintaining real output means checking four or five platforms several times a day. That is a part-time job. Price it like one.</p>
+
+      <p><strong class="text-ink">A reactive quote is the weakest citation asset you can earn.</strong> This is the structural point, and it matters more than platform selection. When a journalist quotes you in their story, you get a name-check in coverage built around someone else's narrative, frequently unlinked, and interchangeable with the other expert they nearly used instead. It has value: real publications, real mentions, and in aggregate a legitimate authority signal, including to the AI engines that increasingly weight editorial brand mentions when deciding who to cite. But it is the bottom of the asset class. The coverage that compounds is the story built around you: your data, your research, your finding, where the article cannot exist without citing you, the link is structural rather than courteous, and every subsequent writer on the topic inherits the citation. We have written up the mechanics of why <a href="/resources/earned-links-vs-paid-links" class="text-brand hover:text-brand-dark underline underline-offset-2">earned citations compound while rented and incidental ones decay</a>, and how that compounding now <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">decides visibility in AI answers as well as search</a>.</p>
+
+      <p><strong class="text-ink">The honest hierarchy, then:</strong> being the source journalists come to beats answering their call-outs, and answering call-outs beats buying placements. Source platforms sit in the middle. Useful, real, and structurally limited.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">When source platforms are worth your time</h2>
+
+      <p>They fit when three things are true: someone in the company has genuine expertise a journalist would want (not a marketing manager relaying talking points), that person's time is cheap enough to spend on a low-hit-rate activity, and your expectations are calibrated to reality, which in 2026 means treating a small single-digit percentage of pitches converting to mentions as a good run, with output arriving irregularly.</p>
+
+      <p>They are the wrong tool when you need predictable link volume on a deadline, when the pitching would be outsourced to someone without the expertise (the AI-slop filters are now specifically hunting that), or when the same hours could produce an asset. A founder spending five hours a week on source platforms for a year will accumulate a scattering of mentions. The same hours pointed at one original dataset can produce the study that earns the coverage, and keeps earning it. We are biased on this point, because building those studies is our work, so do not take our word for it: track your own hours against your own placements for a quarter and let the numbers decide.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">FAQ</h2>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Is HARO still active in 2026?</h3>
+      <p>Yes, but read the history. The original HARO became Connectively under Cision and was shut down on 9 December 2024. Featured.com acquired the brand and relaunched it in April 2025 as a free email digest with strict anti-spam controls. It works, and it is a smaller, stricter service than the one you remember.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">What is the best free HARO alternative?</h3>
+      <p>Source of Sources for quality, the relaunched HARO for familiarity, Qwoted's free tier for volume, and #JournoRequest on X for speed. Most working practitioners run several at once because no single platform has the volume to stand alone.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">What response rate should I expect?</h3>
+      <p>Low single digits from pitch to published mention is a realistic planning number for competent, fast, genuinely expert pitching, with meaningful variance by niche and by how quickly you respond. Anyone promising a reliable high hit rate from source platforms in 2026 is selling something.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Do HARO-style links still help SEO and AI visibility?</h3>
+      <p>Yes, with the asset-class caveat above. Editorial mentions in real publications remain a trust signal for search and are increasingly weighted by AI engines deciding which brands to cite. A portfolio of incidental quotes is a modest, legitimate contribution to that. Coverage of your own research is a far larger one, because the citation is structural and repeats. The mechanism is covered in our <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">guide to citation equity</a>.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Which platform is best for UK coverage?</h3>
+      <p>ResponseSource for volume and national press reach, JournoLink for smaller businesses, plus #JournoRequest, where UK journalists are especially active. The US platforms skew heavily toward American outlets.</p>
+
+    </div>
+
+    <!-- Update note -->
+    <div class="border-t border-[#0A0F1E]/8 mt-10 pt-6">
+      <p class="text-sm text-muted italic">Reviewed as the platform landscape changes, which it does frequently. Corrections welcome: <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.</p>
+    </div>
+
+    <!-- CTA card -->
+    <div class="my-10 rounded-xl bg-white border border-[#0A0F1E]/8 shadow-card p-8 text-center">
+      <p class="text-lg font-semibold text-ink mb-2">Earn the citations. Track the movement.</p>
+      <p class="text-sm text-[#475569] mb-6 max-w-lg mx-auto">Original research. Editorial placement. Visibility measurement across search and AI.</p>
+      <PrimaryCTA href="/contact" label="Start a Campaign" />
+    </div>
+
+  </div>
+</article>
+
+<AuthorBio />
+
+</div>
+
+</Layout>
