@@ -1,0 +1,184 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+
+const url = "https://ranking-atlas.com/blog/how-to-get-cited-by-chatgpt";
+const pubDate = "2026-07-12";
+const updatedDate = "2026-07-12";
+
+const article = articleSchema({
+  title: "How to Get Cited by ChatGPT: The Mechanism, the Work, and the Honest Timeline",
+  description: "What actually determines whether an AI engine names your brand, the four layers of work that move it, and the parts of the popular playbooks that stopped working or never did.",
+  url,
+  datePublished: pubDate,
+  dateModified: updatedDate,
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", url: "https://ranking-atlas.com/" },
+  { name: "Blog", url: "https://ranking-atlas.com/blog/" },
+  { name: "How to Get Cited by ChatGPT", url },
+]);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I get cited by ChatGPT without backlinks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On uncontested long-tail questions, yes: extractable, well-sourced owned content can be retrieved and cited directly. On contested commercial questions, no: being named requires corroboration across independent sources, and earning presence in those sources is the same work that produces links and mentions." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ChatGPT cite differently from Perplexity and Gemini?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The retrieval blends differ, so the cited sets differ, and a brand's visibility varies across engines more than most teams expect. That variance is diagnostic: it tells you which engine's trusted sources you are missing from, which is why measurement runs per engine." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know which sources decide the answers in my category?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Run the prompt panel and log every cited URL, then classify each source as earned, owned or rented. The resulting source map is the strategy document: it tells you where the next quarter's work goes." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is being cited by ChatGPT actually worth anything commercially?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Increasingly, yes, and the value concentrates at the decision stage: answer engines now sit in the research phase of most considered purchases, buyers verify AI recommendations by clicking the cited sources, and the brands present in both the answer and its citations meet the buyer twice. Visibility here is a market-share contest scored in citations." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the single highest-leverage first step?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Capture the baseline. One afternoon of running your buyers' real questions across the engines, logged properly, tells you your non-branded visibility, your competitors', and which sources decide your category. Every subsequent decision gets easier, and without it you will never be able to prove what any of the work did." }
+    },
+  ]
+};
+---
+
+<Layout
+  title="How to Get Cited by ChatGPT: The Mechanism, the Work, and the Honest Timeline | Ranking Atlas"
+  description="What actually determines whether an AI engine names your brand, the four layers of work that move it, and the parts of the popular playbooks that stopped working or never did."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(article)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<div class="bg-white">
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Article header -->
+    <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">How-to</div>
+    <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-6">
+      How to Get Cited by ChatGPT: The Mechanism, the Work, and the Honest Timeline
+    </h1>
+    <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mb-6">
+      What actually determines whether an AI engine names your brand, the four layers of work that move it, and the parts of the popular playbooks that stopped working or never did. With the diagrams that make the mechanism obvious.
+    </p>
+    <div class="flex items-center gap-3 mb-10">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-[#64748B]">Published <time datetime="2026-07-12">July 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-07-12" class="text-ink font-medium">July 2026</time></p>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The short answer</h2>
+
+      <p>ChatGPT and the other answer engines cite brands the way a careful analyst would: they retrieve sources they trust on the question, and they name the brands that recur across several of them. So getting cited is not a trick performed on your own website. It is four layers of work: make your own pages easy to retrieve and easy to lift from, earn coverage and mentions in the independent sources engines retrieve for your category, be genuinely present where your buyers' community talks, and measure the whole thing at prompt level with branded and non-branded visibility separated. The first layer is fast and cheap. The second is the one that decides contested questions, and there is no shortcut through it that survives contact with enforcement, which is currently deleting the shortcuts retroactively.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">First, understand what a citation actually is</h2>
+
+      <p>A citation in an AI answer is a retrieval event, not a memory. When someone asks ChatGPT a buyer question, the engine runs live search and licensed feeds, pulls a set of pages, and synthesises an answer from what came back. Ahrefs found 88% of the URLs ChatGPT cites come straight from search. The engine has no private opinion of your brand; it has whatever the retrieval layer returned in the last few seconds.</p>
+
+      <figure class="my-8">
+        <img src="/assets/blog/fig-ai-answer-assembly.png" alt="Diagram of the AI answer pipeline: a buyer prompt flows into retrieval across live search and licensed feeds, which returns editorial coverage, comparison content, community threads and data research, which the synthesis step filters for recurring brands before naming them in the answer" class="w-full rounded-xl border border-[#0A0F1E]/8" />
+        <figcaption class="text-sm text-muted italic mt-3">Figure 1: your visibility is decided in the middle column, among sources you mostly do not control.</figcaption>
+      </figure>
+
+      <p>Two consequences follow, and they shape everything else on this page. Retrievability is a precondition: if your pages and your coverage do not surface in search, they do not exist to the engine, which is why the SEO foundation carried over intact into the AI era. And deletion is fatal: a source that disappears stops citing you the same day, which matters enormously for anyone renting their presence, as covered below.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Second, understand who supplies the citations</h2>
+
+      <p>The retrieved set is not a neutral sample of the web. <a href="https://muckrack.com/blog/what-is-ai-reading-may-2026" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Muck Rack's 2026 analysis of 25 million AI citations</a> found earned media accounts for 84% of them, while paid and advertorial content accounts for 0.3%. Reddit is the single most cited domain across engines, and community content generally is weighted far above anything money can touch directly.</p>
+
+      <figure class="my-8">
+        <img src="/assets/blog/fig-ai-citation-supply.png" alt="Horizontal bar chart showing the share of 25 million AI citations by source type: earned editorial media 84%, other sources 15.7%, paid and advertorial content 0.3%" class="w-full rounded-xl border border-[#0A0F1E]/8" />
+        <figcaption class="text-sm text-muted italic mt-3">Figure 2: the citation supply is earned. The paid route into it barely exists.</figcaption>
+      </figure>
+
+      <p>Read that chart as a budget instruction: the supply of AI citations is editorial and community, so that is where visibility spend has to end up, whatever channel it travels through.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Third, understand the threshold: corroboration</h2>
+
+      <p>Here is the mechanism that explains almost every visibility gap we audit. In the synthesis step, engines name the brands that appear across multiple independent retrieved sources, and drop the ones supported by a single source, including the brand's own site. From the engine's perspective, one self-interested source is an assertion; recurrence across independent sources is a fact. We have watched this operate in our own tracking: a well-built page can become a cited source for a competitive question within days of publication, while the brand behind it stays out of the named recommendations until other sources corroborate it.</p>
+
+      <figure class="my-8">
+        <img src="/assets/blog/fig-corroboration-threshold.png" alt="Diagram comparing two brands: Brand A appears in a trade press article, an independent comparison, a community thread and its own website, and is named in the answer. Brand B appears only on its own website, with no independent coverage or community presence, and is absent from the answer" class="w-full rounded-xl border border-[#0A0F1E]/8" />
+        <figcaption class="text-sm text-muted italic mt-3">Figure 3: the threshold is independence and recurrence, which is why owned content alone cannot win contested questions.</figcaption>
+      </figure>
+
+      <p>This is also why the branded and non-branded gap exists everywhere we look. Ask an engine about your brand by name and it retrieves your site and coverage about you: near-automatic visibility. Ask the question a buyer who has never heard of you asks, and it retrieves the sources trusted on the category, where you may appear nowhere. Our audits routinely find gaps of two orders of magnitude between the two numbers, which is why any visibility figure that blends them is concealing the finding.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The work, in order of leverage</h2>
+
+      <p><strong class="text-ink">Layer one: make your pages worth lifting.</strong> The founding academic research on generative engine optimisation found conventional SEO tweaks did little for visibility inside generated answers, while adding statistics, quotations and cited sources lifted it by up to 40%. In practice: answer real questions directly in the opening paragraph, use concrete numbers, name your sources, structure comparisons as comparisons, and keep a clean extractable summary near the top of every substantive page. This layer is cheap, fully in your control, and on long-tail questions where few good sources exist it can earn citations within weeks. Its ceiling is equally clear: it optimises what happens when your pages are retrieved, and does nothing to corroborate you elsewhere.</p>
+
+      <p><strong class="text-ink">Layer two: earn the corroborating citations.</strong> The decisive layer, and the slow one. Coverage in the publications engines retrieve for your category, editorial mentions, independent comparisons that include you, data journalists citing your research. The most reliable engine for all of it is original data: a study with defensible methodology gives journalists a story that cannot be written without citing you, and every subsequent article on the topic inherits the citation. This is the mechanism our entire model is built on, documented in our <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity guide</a>, and the honest arithmetic of what campaigns produce is in our <a href="/blog/how-many-links-digital-pr-campaign" class="text-brand hover:text-brand-dark underline underline-offset-2">link benchmarks guide</a>. Mentions matter here as much as links: <a href="https://ahrefs.com/blog/ai-overview-brand-correlation/" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Ahrefs' study across 75,000 brands</a> found branded mentions correlate three times more strongly with AI visibility than backlinks do.</p>
+
+      <p><strong class="text-ink">Layer three: authentic community presence.</strong> Community discussion is among the heaviest-weighted source types, and it is the one layer that punishes manufacturing. Platforms now run LLM-based detection against coordinated seeding and delete it retroactively, and since citation is retrieval, deleted posts take their citations with them the same day. The durable version is unglamorous: founders and teams participating genuinely where their buyers talk, and building the kind of brand people mention when nobody paid them, which is downstream of layer two.</p>
+
+      <p><strong class="text-ink">Layer four: measure, or the other three are faith.</strong> A fixed panel of the prompts your buyers actually ask, run across ChatGPT, Perplexity, Gemini and AI Overviews on a schedule, logging who gets named and which sources get cited, benchmarked against named competitors, from a baseline captured before the work starts, with branded and non-branded reported separately without exception. The complete method, free to use, is published in our <a href="/blog/measure-brand-visibility-ai-search" class="text-brand hover:text-brand-dark underline underline-offset-2">measurement methodology</a>.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">What stopped working, or never did</h2>
+
+      <p>Honesty about the graveyard, because the playbooks circulating still recommend most of it. Keyword-stuffed pages built for engines rather than readers: the research found classic SEO manipulation largely ineffective inside generated answers. Buying placements: 0.3% of the citation supply, and shrinking as source-quality weighting improves. Seeded community mentions: actively hunted, deleted retroactively, citations killed on deletion. Self-published rankings positioned as neutral: currently retrieved, demonstrably working as an arbitrage, and carrying the same enforcement trajectory every previous arbitrage carried, which is why they belong in a strategy only as a disclosed, honest comparison layer rather than a foundation. The pattern across all four is the same: the engines are converging on sources that cannot be bought, because that is the only property that keeps their answers worth trusting. The full analysis of what changed and what did not is in our <a href="/blog/geo-vs-seo" class="text-brand hover:text-brand-dark underline underline-offset-2">GEO versus SEO guide</a>.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The honest timeline</h2>
+
+      <p>Weeks, for extractable content winning uncontested long-tail questions. A quarter, for a first research-led campaign to produce its coverage: four to six weeks from kickoff to completed outreach, placements landing during and shortly after that window. Months, for corroboration to accumulate on contested commercial prompts, because visibility compounds across successive campaigns as each round of coverage extends the citation base engines retrieve from. No single campaign can guarantee being named, because naming is decided by synthesis across sources nobody controls; the honest unit of evaluation is the trend line against a documented baseline. Anyone selling a faster path is selling one of the four things in the graveyard above.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">FAQ</h2>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Can I get cited by ChatGPT without backlinks?</h3>
+      <p>On uncontested long-tail questions, yes: extractable, well-sourced owned content can be retrieved and cited directly. On contested commercial questions, no: being named requires corroboration across independent sources, and earning presence in those sources is the same work that produces links and mentions.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Does ChatGPT cite differently from Perplexity and Gemini?</h3>
+      <p>The retrieval blends differ, so the cited sets differ, and a brand's visibility varies across engines more than most teams expect. That variance is diagnostic: it tells you which engine's trusted sources you are missing from, which is why measurement runs per engine.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">How do I know which sources decide the answers in my category?</h3>
+      <p>Run the prompt panel and log every cited URL, then classify each source as earned, owned or rented. The resulting source map is the strategy document: it tells you where the next quarter's work goes. The full method is in our <a href="/blog/measure-brand-visibility-ai-search" class="text-brand hover:text-brand-dark underline underline-offset-2">measurement methodology</a>.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Is being cited by ChatGPT actually worth anything commercially?</h3>
+      <p>Increasingly, yes, and the value concentrates at the decision stage: answer engines now sit in the research phase of most considered purchases, buyers verify AI recommendations by clicking the cited sources, and the brands present in both the answer and its citations meet the buyer twice. Visibility here is a market-share contest scored in citations, which is the argument of our <a href="/resources/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity guide</a>.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">What is the single highest-leverage first step?</h3>
+      <p>Capture the baseline. One afternoon of running your buyers' real questions across the engines, logged properly, tells you your non-branded visibility, your competitors', and which sources decide your category. Every subsequent decision gets easier, and without it you will never be able to prove what any of the work did.</p>
+
+    </div>
+
+    <!-- Update note -->
+    <div class="border-t border-[#0A0F1E]/8 mt-10 pt-6">
+      <p class="text-sm text-muted italic">Reviewed as engine behaviour and enforcement conditions change, which is constantly. Corrections welcome: <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.</p>
+    </div>
+
+    <!-- CTA card -->
+    <div class="my-10 rounded-xl bg-white border border-[#0A0F1E]/8 shadow-card p-8 text-center">
+      <p class="text-lg font-semibold text-ink mb-2">Earn the citations. Track the movement.</p>
+      <p class="text-sm text-[#475569] mb-6 max-w-lg mx-auto">Original research. Editorial placement. Visibility measurement across search and AI.</p>
+      <PrimaryCTA href="/contact" label="Start a Campaign" />
+    </div>
+
+  </div>
+</article>
+
+<AuthorBio />
+
+</div>
+
+</Layout>
