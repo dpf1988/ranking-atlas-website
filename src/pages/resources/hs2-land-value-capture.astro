@@ -66,9 +66,9 @@ const jsonLd = {
         <li><strong>Five of seven cancelled station areas grew faster than England</strong> between their HS2 route announcement and Q3 2023 (pre-cancellation). The remaining two underperformed by 4 to 7 percentage points.</li>
         <li><strong>Toton, the planned East Midlands hub, recorded a +40.5 percentage point anticipation premium.</strong> Its median price doubled between Q1 2013 and Q3 2023, against 59.7% growth for England over the same window.</li>
         <li><strong>Manchester Piccadilly-area prices grew 90.9%,</strong> outpacing England by 31.2 percentage points. Sheffield Midland outpaced by 20.2 points. Manchester Airport by 10.4 points.</li>
-        <li><strong>Old Oak Common, the active London super-hub, underperformed England by 4.8 percentage points</strong> over the same announcement-to-cancellation window and has since fallen a further 18.8%.</li>
-        <li><strong>The value of station-area uplift has not previously been quantified at postcode-district level.</strong> This study is the first to index every planned HS2 station area against England from route announcement to cancellation using Land Registry transaction data.</li>
-        <li><strong>Approximately 15.4 million transactions</strong> across 17 years of HM Land Registry Price Paid Data underpin the analysis.</li>
+        <li><strong>Old Oak Common, the active London super-hub, underperformed England by 4.8 percentage points</strong> over the same announcement-to-cancellation window. Since Q3 2023 its own median price has fallen a further 18.8%, from £517,500 to £420,000.</li>
+        <li><strong>The value of station-area uplift has not previously been quantified at postcode-district level.</strong> This study is, to our knowledge, the first to index every planned HS2 station area against England from route announcement to cancellation using Land Registry transaction data.</li>
+        <li><strong>Approximately 15.4 million transactions</strong> across 16 years of HM Land Registry Price Paid Data underpin the analysis.</li>
       </ul>
     </div>
   </section>
@@ -84,7 +84,7 @@ const jsonLd = {
           The estimated cost of HS2 Phase 2 is approximately £102.7 billion. Whether station-area land values have historically risen enough to make that arithmetic plausible is a question that can be tested against <a href="/" class="text-brand hover:text-brand-dark underline underline-offset-2">open government data</a>.
         </p>
         <p>
-          <a href="/" class="text-brand hover:text-brand-dark underline underline-offset-2">Ranking Atlas</a> analysed 16 years of HM Land Registry Price Paid Data, covering every residential property transaction in England from Q1 2010 to Q1 2026. We indexed quarterly median prices for nine station-area postcode groups against the England-wide median, measured from each area's HS2 route announcement date.
+          <a href="/" class="text-brand hover:text-brand-dark underline underline-offset-2">Ranking Atlas</a> analysed 16 years of HM Land Registry Price Paid Data, covering every residential property transaction in England and Wales from Q1 2010 to Q1 2026. We indexed quarterly median prices for nine station-area postcode groups against the England-wide median, measured from each area's HS2 route announcement date.
         </p>
         <p>
           This is a companion study to our <a href="/resources/hs2-property-prices" class="text-brand hover:text-brand-dark underline underline-offset-2">earlier analysis of post-cancellation property prices near HS2 stations</a>, which found that cancelled areas outperformed England after the northern leg was axed.
@@ -115,7 +115,7 @@ const jsonLd = {
         <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Anticipation premium by station area</div>
         <div class="text-[12px] text-[#64748B] mb-4">Difference in percentage-point growth between station area and England, route announcement to Q3 2023. Positive values indicate the station area outgrew England.</div>
         <div class="relative w-full" style="height:380px">
-          <canvas id="chartPremium" role="img" aria-label="Horizontal bar chart showing anticipation premiums. Toton +40.5pp, Manchester Piccadilly +31.2pp, Sheffield +20.2pp, Manchester Airport +10.4pp, Leeds +7.6pp, Staffs corridor -4.0pp, Old Oak Common -4.8pp, Crewe -7.1pp."></canvas>
+          <canvas id="chartPremium" role="img" aria-label="Horizontal bar chart showing anticipation premiums. Toton +40.5pp, Manchester Piccadilly +31.2pp, Sheffield +20.2pp, Manchester Airport +10.4pp, Leeds +7.6pp, Staffs corridor -4.0pp, Old Oak Common -4.8pp, Crewe -7.2pp."></canvas>
         </div>
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-[#475569]">
           <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#1E3A8A"></span>Cancelled station</div>
@@ -162,10 +162,10 @@ const jsonLd = {
 
       <div class="space-y-6 text-body text-[15px] leading-[1.7]">
         <p>
-          Toton's median price doubled over the decade. In Q1 2013, the median transaction around the planned East Midlands hub was £132,750. By Q3 2023 it had reached £265,500, a 100.2% increase. England grew 59.7% over the same period.
+          Toton's median price doubled over the decade. In Q1 2013, the median transaction around the planned East Midlands hub was £132,500. By Q3 2023 it had reached £265,250, a 100.2% increase. England grew 59.7% over the same period.
         </p>
         <p class="italic text-[14px] text-muted">
-          Toton Q1 2013 median: £132,750. Q3 2023 median: £265,500. Growth: 100.2%. England growth: 59.7%. Premium: +40.5pp.
+          Toton Q1 2013 median: £132,500. Q3 2023 median: £265,250. Growth: 100.2%. England growth: 59.7%. Premium: +40.5pp.
         </p>
         <p>
           Sheffield Midland-area properties grew 79.9% against England's 59.7%, a premium of +20.2 points. Leeds grew 67.3%, outpacing England by 7.6 points. All three eastern-leg groups maintained quarterly transaction counts above 50 throughout the period.
@@ -231,10 +231,10 @@ const jsonLd = {
           Old Oak Common, the London super-hub still under active construction, grew 58.0% between Q1 2012 and Q3 2023. England grew 62.9% over the same window, giving Old Oak Common a negative anticipation premium of -4.8 percentage points.
         </p>
         <p>
-          Since Q3 2023, Old Oak Common prices have fallen a further 18.8%. The combined effect of construction blight and broader London softening has left the area 28 index points below its Q1 2012 starting level in real relative terms.
+          Since Q3 2023, Old Oak Common's own median price has fallen a further 18.8%, from £517,500 to £420,000. This is a nominal fall in the area's prices, not a comparison against England. The combined effect of construction blight and broader London softening means that even after a 58% rise between 2012 and 2023, prices in the area now stand roughly 28% above their Q1 2012 level, while England has grown 62.9% over the announcement-to-cancellation window alone and has continued to grow since.
         </p>
         <p class="italic text-[14px] text-muted">
-          Old Oak Common Q1 2012 median: £327,500. Q3 2023 median: £517,500. Q1 2026 median: £420,000. Announcement-to-cancellation growth: 58.0%. England: 62.9%. Premium: -4.8pp. Post-cancellation: -18.8%.
+          Old Oak Common Q1 2012 median: £327,500. Q3 2023 median: £517,500. Q1 2026 median: £420,000. Announcement-to-cancellation growth: 58.0%. England: 62.9%. Premium: -4.8pp. Since Q3 2023: -18.8%.
         </p>
         <p>
           Birmingham Curzon Street recorded a +80.9pp premium, but with only 41 transactions in its Q1 2012 baseline quarter and 19 in Q1 2026, the figure is unreliable. The existing <a href="/resources/hs2-property-prices" class="text-brand hover:text-brand-dark underline underline-offset-2">cancellation study</a> excluded Birmingham for the same reason. We report it for completeness but exclude it from headline claims.
@@ -327,9 +327,9 @@ const jsonLd = {
               <td class="px-4 py-3 font-medium text-ink">Crewe</td>
               <td class="px-4 py-3 text-right text-[#64748B]">52.5%</td>
               <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
-              <td class="px-4 py-3 text-right text-[#B91C1C]">-7.1pp</td>
+              <td class="px-4 py-3 text-right text-[#B91C1C]">-7.2pp</td>
               <td class="px-4 py-3 text-right text-[#64748B]">£190,000</td>
-              <td class="px-4 py-3 text-right text-[#B91C1C]">-£13,531</td>
+              <td class="px-4 py-3 text-right text-[#B91C1C]">-£13,680</td>
             </tr>
           </tbody>
         </table>
@@ -581,7 +581,7 @@ const jsonLd = {
     var ctxP = document.getElementById('chartPremium');
     if (ctxP) {
       var premLabels = ['Toton / E. Midlands','Manc. Piccadilly','Sheffield','Manc. Airport','Leeds','Staffs corridor','Old Oak Common','Crewe'];
-      var premData = [40.5, 31.2, 20.2, 10.4, 7.6, -4.0, -4.8, -7.1];
+      var premData = [40.5, 31.2, 20.2, 10.4, 7.6, -4.0, -4.8, -7.2];
       var premColors = premData.map(function(v, i) {
         if (i === 6) return '#64748B';
         return v >= 0 ? '#1E3A8A' : '#B91C1C';
