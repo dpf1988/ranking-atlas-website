@@ -62,26 +62,69 @@ const secondaryCta = "inline-flex items-center justify-center bg-[#F4F0E9] hover
           </div>
         </div>
 
-        <!-- Right-side (mobile: stacks below CTAs): screenshot of landed editorial coverage -->
+        <!-- Right-side: press coverage carousel with mock browser frames -->
         <div class="lg:col-span-6 lg:-mt-8 lg:-mr-6 xl:-mr-12 relative">
-          <img
-            src="/images/formidable-ai-ict-experts.png"
-            alt="Ranking Atlas research featured in Formidable: analysis of 2,500 AI queries finding women accounted for just 16.1% of expert mentions across ChatGPT, Claude, Gemini and Perplexity"
-            class="w-full h-auto rounded-lg shadow-[0_30px_60px_-15px_rgba(15,27,61,0.25),0_10px_25px_-10px_rgba(15,27,61,0.15)]"
-          />
-          <!-- Discreet external link overlay: opens the actual Formidable article in a new tab -->
-          <a
-            href="https://beformidable.com/p/the-backlash-to-reese-witherspoon-reveals-a-more-nuanced-ai-problem"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Read the article on Formidable"
-            title="Read on Formidable"
-            class="absolute bottom-3 right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/95 backdrop-blur-sm border border-[#0A0F1E]/10 shadow-md text-[#1E3A8A] hover:bg-white hover:border-[#0A0F1E]/25 hover:text-[#1E40AF] transition-colors"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/>
-            </svg>
-          </a>
+          <div id="press-carousel" class="rounded-xl border border-[#0A0F1E]/10 shadow-[0_30px_60px_-15px_rgba(15,27,61,0.25),0_10px_25px_-10px_rgba(15,27,61,0.15)] overflow-hidden bg-white">
+            <div class="relative aspect-[6/5]">
+              <!-- Slide 1: Metro (visible by default for no-JS graceful degradation / LCP) -->
+              <a href="https://metro.co.uk/2026/07/16/london-neighbourhood-house-prices-fell-97-500-despite-hs2-hopes-29136202/" target="_blank" rel="noopener" class="press-slide absolute inset-0 flex flex-col opacity-100 z-10 transition-opacity duration-700" data-slide="0" aria-label="Read on Metro">
+                <div class="flex items-center px-3 py-2 bg-[#FBFAF7] border-b border-[#0A0F1E]/[0.08]">
+                  <div class="flex gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                  </div>
+                  <div class="flex-1 flex justify-center">
+                    <span class="text-[11px] text-muted font-medium px-3 py-0.5 rounded-full bg-[#0A0F1E]/[0.04]">metro.co.uk</span>
+                  </div>
+                  <div class="w-[54px]"></div>
+                </div>
+                <div class="flex-1 overflow-hidden">
+                  <img src="/images/metro-hs2.webp" alt="Ranking Atlas analysis featured in Metro: Old Oak Common house prices fell £97,500 despite HS2 hopes" class="w-full h-full object-cover object-top" fetchpriority="high" />
+                </div>
+              </a>
+              <!-- Slide 2: This Is Money -->
+              <a href="https://www.thisismoney.co.uk/money/buytolet/article-15968671/Seven-ten-landlords-say-no-pets-despite-new-rules-heres-hardest-pet-friendly-home.html" target="_blank" rel="noopener" class="press-slide absolute inset-0 flex flex-col opacity-0 z-0 transition-opacity duration-700" data-slide="1" aria-label="Read on This Is Money">
+                <div class="flex items-center px-3 py-2 bg-[#FBFAF7] border-b border-[#0A0F1E]/[0.08]">
+                  <div class="flex gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                  </div>
+                  <div class="flex-1 flex justify-center">
+                    <span class="text-[11px] text-muted font-medium px-3 py-0.5 rounded-full bg-[#0A0F1E]/[0.04]">thisismoney.co.uk</span>
+                  </div>
+                  <div class="w-[54px]"></div>
+                </div>
+                <div class="flex-1 overflow-hidden">
+                  <img src="/images/thisismoney-pets.webp" alt="Ranking Atlas research featured in This Is Money: seven in ten landlords still say no to pets despite new rules" class="w-full h-full object-cover object-top" loading="lazy" />
+                </div>
+              </a>
+              <!-- Slide 3: The Intermediary -->
+              <a href="https://theintermediary.co.uk/2026/07/hs2-land-value-uplift-real-but-uneven-ranking-atlas-finds/" target="_blank" rel="noopener" class="press-slide absolute inset-0 flex flex-col opacity-0 z-0 transition-opacity duration-700" data-slide="2" aria-label="Read on The Intermediary">
+                <div class="flex items-center px-3 py-2 bg-[#FBFAF7] border-b border-[#0A0F1E]/[0.08]">
+                  <div class="flex gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                  </div>
+                  <div class="flex-1 flex justify-center">
+                    <span class="text-[11px] text-muted font-medium px-3 py-0.5 rounded-full bg-[#0A0F1E]/[0.04]">theintermediary.co.uk</span>
+                  </div>
+                  <div class="w-[54px]"></div>
+                </div>
+                <div class="flex-1 overflow-hidden">
+                  <img src="/images/intermediary-hs2.webp" alt="Ranking Atlas HS2 land value analysis covered in The Intermediary" class="w-full h-full object-cover object-top" loading="lazy" />
+                </div>
+              </a>
+            </div>
+            <!-- Dot indicators -->
+            <div class="flex justify-center gap-2 py-3 bg-white">
+              <button class="press-dot w-2 h-2 rounded-full bg-[#1E3A8A] transition-colors" data-dot="0" aria-label="Show Metro slide"></button>
+              <button class="press-dot w-2 h-2 rounded-full bg-[#0A0F1E]/20 hover:bg-[#0A0F1E]/40 transition-colors" data-dot="1" aria-label="Show This Is Money slide"></button>
+              <button class="press-dot w-2 h-2 rounded-full bg-[#0A0F1E]/20 hover:bg-[#0A0F1E]/40 transition-colors" data-dot="2" aria-label="Show The Intermediary slide"></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -557,5 +600,59 @@ const secondaryCta = "inline-flex items-center justify-center bg-[#F4F0E9] hover
       setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
     }
   }
+</script>
+
+<script>
+  (function () {
+    const carousel = document.getElementById('press-carousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.press-slide');
+    const dots = carousel.querySelectorAll('.press-dot');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let current = 0;
+    let timer = null;
+
+    function goTo(index) {
+      slides.forEach((s, i) => {
+        const active = i === index;
+        s.style.opacity = active ? '1' : '0';
+        s.style.zIndex = active ? '10' : '0';
+        if (reducedMotion) s.style.transitionDuration = '0s';
+      });
+      dots.forEach((d, i) => {
+        if (i === index) {
+          d.className = 'press-dot w-2 h-2 rounded-full bg-[#1E3A8A] transition-colors';
+        } else {
+          d.className = 'press-dot w-2 h-2 rounded-full bg-[#0A0F1E]/20 hover:bg-[#0A0F1E]/40 transition-colors';
+        }
+      });
+      current = index;
+    }
+
+    function startTimer() {
+      if (reducedMotion) return;
+      timer = setInterval(function () {
+        goTo((current + 1) % slides.length);
+      }, 6000);
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+    }
+
+    dots.forEach(function (d) {
+      d.addEventListener('click', function () {
+        stopTimer();
+        goTo(Number(d.dataset.dot));
+        startTimer();
+      });
+    });
+
+    carousel.addEventListener('mouseenter', stopTimer);
+    carousel.addEventListener('mouseleave', startTimer);
+
+    startTimer();
+  })();
 </script>
 
