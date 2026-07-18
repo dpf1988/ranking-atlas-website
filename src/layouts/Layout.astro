@@ -19,7 +19,7 @@ const {
 // non-root paths and any query string discarded. Page-level overrides are
 // possible via the head slot.
 const rawPath = Astro.url.pathname;
-const canonicalPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
+const canonicalPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '').replace(/\.html$/, '');
 const canonicalHref = `https://ranking-atlas.com${canonicalPath}`;
 ---
 
