@@ -83,25 +83,8 @@ const secondaryCta = "inline-flex items-center justify-center bg-[#F4F0E9] hover
                   <img src="/images/metro-hs2.webp" alt="Ranking Atlas analysis featured in Metro: Old Oak Common house prices fell £97,500 despite HS2 hopes" class="w-full h-full object-cover object-top" fetchpriority="high" />
                 </div>
               </a>
-              <!-- Slide 2: This Is Money -->
-              <a href="https://www.thisismoney.co.uk/money/buytolet/article-15968671/Seven-ten-landlords-say-no-pets-despite-new-rules-heres-hardest-pet-friendly-home.html" target="_blank" rel="noopener" class="press-slide absolute inset-0 flex flex-col opacity-0 z-0 transition-opacity duration-700" data-slide="1" aria-label="Read on This Is Money">
-                <div class="flex items-center px-3 py-2 bg-[#FBFAF7] border-b border-[#0A0F1E]/[0.08]">
-                  <div class="flex gap-1.5">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
-                  </div>
-                  <div class="flex-1 flex justify-center">
-                    <span class="text-[11px] text-muted font-medium px-3 py-0.5 rounded-full bg-[#0A0F1E]/[0.04]">thisismoney.co.uk</span>
-                  </div>
-                  <div class="w-[54px]"></div>
-                </div>
-                <div class="flex-1 overflow-hidden">
-                  <img src="/images/thisismoney-pets.webp" alt="Ranking Atlas research featured in This Is Money: seven in ten landlords still say no to pets despite new rules" class="w-full h-full object-cover object-top" loading="lazy" />
-                </div>
-              </a>
-              <!-- Slide 3: The Intermediary -->
-              <a href="https://theintermediary.co.uk/2026/07/hs2-land-value-uplift-real-but-uneven-ranking-atlas-finds/" target="_blank" rel="noopener" class="press-slide absolute inset-0 flex flex-col opacity-0 z-0 transition-opacity duration-700" data-slide="2" aria-label="Read on The Intermediary">
+              <!-- Slide 2: The Intermediary -->
+              <a href="https://theintermediary.co.uk/2026/07/hs2-land-value-uplift-real-but-uneven-ranking-atlas-finds/" target="_blank" rel="noopener" class="press-slide absolute inset-0 flex flex-col opacity-0 z-0 transition-opacity duration-700" data-slide="1" aria-label="Read on The Intermediary">
                 <div class="flex items-center px-3 py-2 bg-[#FBFAF7] border-b border-[#0A0F1E]/[0.08]">
                   <div class="flex gap-1.5">
                     <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
@@ -117,12 +100,29 @@ const secondaryCta = "inline-flex items-center justify-center bg-[#F4F0E9] hover
                   <img src="/images/intermediary-hs2.webp" alt="Ranking Atlas HS2 land value analysis covered in The Intermediary" class="w-full h-full object-cover object-left-top" loading="lazy" />
                 </div>
               </a>
+              <!-- Slide 3: This Is Money -->
+              <a href="https://www.thisismoney.co.uk/money/buytolet/article-15968671/Seven-ten-landlords-say-no-pets-despite-new-rules-heres-hardest-pet-friendly-home.html" target="_blank" rel="noopener" class="press-slide absolute inset-0 flex flex-col opacity-0 z-0 transition-opacity duration-700" data-slide="2" aria-label="Read on This Is Money">
+                <div class="flex items-center px-3 py-2 bg-[#FBFAF7] border-b border-[#0A0F1E]/[0.08]">
+                  <div class="flex gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#0A0F1E]/10"></span>
+                  </div>
+                  <div class="flex-1 flex justify-center">
+                    <span class="text-[11px] text-muted font-medium px-3 py-0.5 rounded-full bg-[#0A0F1E]/[0.04]">thisismoney.co.uk</span>
+                  </div>
+                  <div class="w-[54px]"></div>
+                </div>
+                <div class="flex-1 overflow-hidden">
+                  <img src="/images/thisismoney-pets.webp" alt="Ranking Atlas research featured in This Is Money: seven in ten landlords still say no to pets despite new rules" class="w-full h-full object-cover object-top" loading="lazy" />
+                </div>
+              </a>
             </div>
             <!-- Dot indicators -->
             <div class="flex justify-center gap-2 py-3 bg-white">
               <button class="press-dot w-2 h-2 rounded-full bg-[#1E3A8A] transition-colors" data-dot="0" aria-label="Show Metro slide"></button>
-              <button class="press-dot w-2 h-2 rounded-full bg-[#0A0F1E]/20 hover:bg-[#0A0F1E]/40 transition-colors" data-dot="1" aria-label="Show This Is Money slide"></button>
-              <button class="press-dot w-2 h-2 rounded-full bg-[#0A0F1E]/20 hover:bg-[#0A0F1E]/40 transition-colors" data-dot="2" aria-label="Show The Intermediary slide"></button>
+              <button class="press-dot w-2 h-2 rounded-full bg-[#0A0F1E]/20 hover:bg-[#0A0F1E]/40 transition-colors" data-dot="1" aria-label="Show The Intermediary slide"></button>
+              <button class="press-dot w-2 h-2 rounded-full bg-[#0A0F1E]/20 hover:bg-[#0A0F1E]/40 transition-colors" data-dot="2" aria-label="Show This Is Money slide"></button>
             </div>
           </div>
         </div>
@@ -634,7 +634,7 @@ const secondaryCta = "inline-flex items-center justify-center bg-[#F4F0E9] hover
       if (reducedMotion) return;
       timer = setInterval(function () {
         goTo((current + 1) % slides.length);
-      }, 6000);
+      }, 4000);
     }
 
     function stopTimer() {
