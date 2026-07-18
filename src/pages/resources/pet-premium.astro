@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import InstitutionalBio from '../../components/InstitutionalBio.astro';
+import RelatedResearch from '../../components/RelatedResearch.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -353,6 +354,7 @@ const jsonLd = {
       <h3>Platform note</h3>
       <ul>
         <li>OpenRent is a direct landlord-to-tenant platform. Its 30.0% pet-friendly rate is substantially higher than the 5.9% reported by Inventory Base across all English rentals (which includes agent-listed stock on Rightmove, Zoopla, etc.). Direct-to-tenant landlords may be more willing to accept pets. These findings should not be extrapolated to the entire rental market without this caveat.</li>
+        <li>For a parallel open-data analysis of UK housing policy, our <a href="/resources/hs2-land-value-capture">study of land values around HS2 stations</a> applies the same methodology of measuring outcomes against a national baseline using HM Land Registry transaction data.</li>
       </ul>
       <h3>Analysis methods</h3>
       <ul>
@@ -375,6 +377,26 @@ const jsonLd = {
     </div>
   </div>
 </section>
+
+<RelatedResearch
+  items={[
+    {
+      title: "Can Station-Area Land Values Pay for Burnham's HS2?",
+      description: "15.4 million Land Registry transactions show five of seven cancelled HS2 station areas outgrew England by 7 to 40 percentage points between route announcement and cancellation.",
+      href: "/resources/hs2-land-value-capture",
+    },
+    {
+      title: "Who Actually Gets Scammed in America?",
+      description: "Federal fraud and survey data show sharp divides in who gets scammed, how often, and how much they lose.",
+      href: "/resources/generational-fraud",
+    },
+    {
+      title: "Welcome to the SaaSpocalypse",
+      description: "Software that can be vibe-coded by a small team has lost all pricing power, while AI-resistant SaaS categories raised entry-tier prices up to three times faster than inflation.",
+      href: "/resources/saas-pricing-inflation",
+    },
+  ]}
+/>
 
 <InstitutionalBio />
 

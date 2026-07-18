@@ -4,5 +4,7 @@ export default defineConfig({
   site: 'https://ranking-atlas.com',
   trailingSlash: 'never',
   build: { format: 'file' },
-  integrations: [sitemap()],
+  integrations: [sitemap({
+    filter: (page) => !page.includes('/case-studies'),
+  })],
 });
