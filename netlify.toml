@@ -77,3 +77,6 @@
   to = "/:first/:second/:third"
   status = 301
   force = false
+
+[[plugins]]
+  package = "./plugins/netlify-plugin-indexnow"
