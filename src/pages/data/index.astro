@@ -1,0 +1,237 @@
+---
+// Data Library hub. Three layers:
+//   1. Browse by category — one card per populated category, computed count.
+//   2. Latest — the 3 most recently updated datasets (or all, if fewer than 4).
+//   3. How this library works — editorial standards, unchanged.
+
+import fs from 'node:fs';
+import path from 'node:path';
+import Layout from '../../layouts/Layout.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+import DatasetCard from '../../components/datalibrary/DatasetCard.astro';
+
+const DATASET_ROOT = path.resolve(process.cwd(), 'datalibrary', 'datasets');
+
+const CATEGORY_ORDER = ['economy', 'health', 'society', 'environment', 'technology', 'property'] as const;
+type Category = typeof CATEGORY_ORDER[number];
+const CATEGORY_META: Record<Category, { label: string; description: string }> = {
+  economy:     { label: 'Economy',     description: 'Incomes, growth, prices, trade, labour, and fiscal indicators.' },
+  health:      { label: 'Health',      description: 'Life expectancy, mortality, disease burden, and healthcare capacity.' },
+  society:     { label: 'Society',     description: 'Demographics, education, inequality, culture, and migration.' },
+  environment: { label: 'Environment', description: 'Emissions, energy, land use, climate, and natural resources.' },
+  technology:  { label: 'Technology',  description: 'AI adoption, digital infrastructure, R&D, and innovation output.' },
+  property:    { label: 'Property',    description: 'House prices, transaction volumes, rents, and land value.' },
+};
+
+interface CardData {
+  slug: string;
+  category: Category | null;
+  title: string;
+  summary: string;
+  metaLine: string;
+  publishedISO: string;
+}
+
+function firstSentence(s: string): string {
+  const m = s.match(/^[^.!?]+[.!?]/);
+  return m ? m[0].trim() : s.trim();
+}
+
+const cards: CardData[] = [];
+
+if (fs.existsSync(DATASET_ROOT)) {
+  for (const name of fs.readdirSync(DATASET_ROOT)) {
+    const cfgPath = path.join(DATASET_ROOT, name, 'config.json');
+    const dataPath = path.join(DATASET_ROOT, name, 'data.json');
+    if (!fs.existsSync(cfgPath) || !fs.existsSync(dataPath)) continue;
+    const cfg = JSON.parse(fs.readFileSync(cfgPath, 'utf-8'));
+    const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+    const m = data.metrics;
+    const firstYear = data.temporalCoverage?.startYear ?? m.firstYear ?? 0;
+    const latestYear = m.latestYear ?? 0;
+    const rawCat = cfg.category;
+    const category: Category | null = CATEGORY_ORDER.includes(rawCat) ? rawCat as Category : null;
+
+    // Title token expansion (firstYear / latestYear from data)
+    const tokens: Record<string, string> = {
+      firstYear: String(firstYear),
+      latestYear: String(latestYear),
+    };
+    const sub = (s: string) => s.replace(/\{\{(\w+)\}\}/g, (_, k) => tokens[k] ?? '');
+    const shortTitle = sub(cfg.shortTitle || cfg.title || name);
+
+    // Summary: card_summary if set, else first sentence of definition.
+    const summary = (cfg.card_summary && String(cfg.card_summary)) ||
+                    (cfg.definition ? firstSentence(String(cfg.definition)) : '');
+
+    const sourceName = cfg.sourceName || data.source?.name || '';
+    const reportingEconomies = m.reportingEconomiesLatest ?? 0;
+    const metaLine = `${sourceName} · ${reportingEconomies} countries · ${firstYear}\u2013${latestYear}`;
+
+    cards.push({
+      slug: name,
+      category,
+      title: `${shortTitle}, ${firstYear}\u2013${latestYear}`,
+      summary,
+      metaLine,
+      publishedISO: cfg.byline?.publishedISO ?? data.retrievedAt ?? '',
+    });
+  }
+}
+
+cards.sort((a, b) => (b.publishedISO || '').localeCompare(a.publishedISO || ''));
+
+const countsByCategory = new Map<Category, number>();
+for (const c of cards) {
+  if (c.category) countsByCategory.set(c.category, (countsByCategory.get(c.category) || 0) + 1);
+}
+const populatedCategories = CATEGORY_ORDER.filter(cat => countsByCategory.has(cat));
+
+const latest = cards.length < 4 ? cards : cards.slice(0, 3);
+
+const orgAuthor = {
+  '@type': 'Organization',
+  'name': 'Ranking Atlas',
+  'url': 'https://ranking-atlas.com',
+};
+
+const itemListElement = cards.map((c, i) => ({
+  '@type': 'ListItem',
+  'position': i + 1,
+  'item': {
+    '@type': 'Dataset',
+    'name': c.title,
+    'description': c.summary,
+    'url': `https://ranking-atlas.com/data/${c.slug}`,
+    'creator': orgAuthor,
+    'publisher': orgAuthor,
+    'datePublished': c.publishedISO,
+  },
+}));
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  'name': 'Data Library',
+  'url': 'https://ranking-atlas.com/data',
+  'publisher': orgAuthor,
+  'mainEntity': {
+    '@type': 'ItemList',
+    'itemListElement': itemListElement,
+  },
+};
+---
+
+<Layout
+  title="Data Library | Ranking Atlas"
+  description="Country and market rankings drawn from primary sources. Sortable tables, full historical series, downloadable CSVs."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <section class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="mb-16">
+        <Eyebrow label="Data Library" />
+        <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-5">
+          Data Library
+        </h1>
+        <p class="text-lg md:text-xl text-body leading-relaxed max-w-3xl">
+          Country and market rankings drawn from primary sources.
+        </p>
+      </div>
+
+      {cards.length === 0 ? (
+        <div class="bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-10 text-body">
+          No datasets yet. Add a folder under <code class="text-brand">datalibrary/datasets/</code> with <code class="text-brand">config.json</code> and <code class="text-brand">data.json</code>.
+        </div>
+      ) : (
+        <>
+          <section aria-labelledby="browse-by-category" class="mb-16">
+            <h2 id="browse-by-category" class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6">
+              Browse by category
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {populatedCategories.map((cat) => {
+                const meta = CATEGORY_META[cat];
+                const n = countsByCategory.get(cat) || 0;
+                return (
+                  <a href={`/data/${cat}`} class="group bg-white rounded-xl shadow-card border border-[#0A0F1E]/8 p-6 hover:shadow-lg hover:border-[#1E3A8A]/40 transition-all duration-300 block">
+                    <div class="flex items-baseline justify-between gap-3 mb-2">
+                      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink group-hover:text-brand transition-colors">
+                        {meta.label}
+                      </h3>
+                      <span class="text-[12px] text-muted tabular-nums shrink-0">{n} dataset{n === 1 ? '' : 's'}</span>
+                    </div>
+                    <p class="text-[14px] text-body leading-[1.6]">{meta.description}</p>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+
+          <section aria-labelledby="latest" class="mb-20">
+            <h2 id="latest" class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6">
+              Latest
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {latest.map((c) => (
+                <DatasetCard
+                  href={`/data/${c.slug}`}
+                  title={c.title}
+                  summary={c.summary}
+                  metaLine={c.metaLine}
+                />
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+
+      <section aria-labelledby="how-this-works" class="mt-20 pt-14 border-t border-[#0A0F1E]/8">
+        <h2 id="how-this-works" class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-10 max-w-3xl">
+          How this library works
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-x-12 gap-y-10 max-w-5xl">
+          <div>
+            <h3 class="text-[11px] font-semibold tracking-[0.14em] uppercase text-brand mb-3">What this is</h3>
+            <p class="text-body text-[15px] leading-[1.7]">
+              Each page presents a single indicator as a complete ranking across every country or area with published data, alongside how that ranking has moved over time. Figures are drawn directly from the primary publisher and are not re-weighted, re-ordered, or adjusted. Every page carries the source, the retrieval date, a downloadable CSV, a methodology note, and a citation line.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-[11px] font-semibold tracking-[0.14em] uppercase text-brand mb-3">How datasets are selected</h3>
+            <p class="text-body text-[15px] leading-[1.7]">
+              A dataset is published when it meets four conditions. The figures originate with an international organisation, a national statistical agency, a government register, or a peer-reviewed source with redistribution rights. The reuse terms of the source are public and recorded on the page. The indicator definition, coverage, and revision history are verifiable from the publisher's own documentation. The series is maintained on a known cadence; when the source revises, the page and its CSV are rebuilt from the new release.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-[11px] font-semibold tracking-[0.14em] uppercase text-brand mb-3">Verification</h3>
+            <p class="text-body text-[15px] leading-[1.7]">
+              Before publication each dataset passes a fixed checklist: the source table is retrieved directly from the publisher, aggregate rows and non-comparable areas are removed, units are checked against the publisher's definitions, and adjacent releases are compared to catch silent changes in classification. Corrections are made with a visible note on the page, not silently.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-[11px] font-semibold tracking-[0.14em] uppercase text-brand mb-3">Reuse and citation</h3>
+            <p class="text-body text-[15px] leading-[1.7]">
+              Every dataset page may be cited, quoted, or reproduced with attribution and a link. The citation format is stated at the foot of each page, and the full data travels with every page as CSV. Journalists and researchers may request working files through the <a href="/contact" class="text-brand hover:text-brand-dark underline underline-offset-2">contact page</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-[#0A0F1E]/8 max-w-5xl flex flex-wrap items-baseline gap-x-6 gap-y-2">
+          <p class="text-[14px] leading-[1.6] text-muted max-w-3xl">
+            Where Ranking Atlas publishes data it has compiled itself, such as property transaction records or structured listing samples, the compilation method is documented to the same standard.
+          </p>
+          <a href="/contact" class="text-[13px] font-semibold text-brand hover:text-brand-dark underline underline-offset-2 ml-auto">Contact →</a>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+</Layout>

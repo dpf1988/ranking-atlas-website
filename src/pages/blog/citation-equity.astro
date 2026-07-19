@@ -6,7 +6,7 @@ import RelatedResearch from '../../components/RelatedResearch.astro';
 import Definition from '../../components/Definition.astro';
 import { articleSchema, definedTermSchema, breadcrumbSchema } from '../../lib/schema';
 
-const url = "https://ranking-atlas.com/resources/citation-equity/";
+const url = "https://ranking-atlas.com/blog/citation-equity/";
 const pubDate = "2026-04-21";
 const updatedDate = "2026-05-05";
 
@@ -16,7 +16,7 @@ const article = articleSchema({
   url,
   datePublished: pubDate,
   dateModified: updatedDate,
-  image: "/assets/images/resources/citation-equity/hero.jpg",
+  image: "/assets/images/blog/citation-equity/hero.jpg",
 });
 
 // DEFINITION: existing 130-word draft retained over source article's opening paragraph.
@@ -33,7 +33,7 @@ const defined = definedTermSchema({
 
 const breadcrumbs = breadcrumbSchema([
   { name: "Home", url: "https://ranking-atlas.com/" },
-  { name: "Resources", url: "https://ranking-atlas.com/resources/" },
+  { name: "Blog", url: "https://ranking-atlas.com/blog" },
   { name: "Citation Equity", url },
 ]);
 ---
@@ -68,14 +68,14 @@ const breadcrumbs = breadcrumbSchema([
     <!-- Hero image slot -->
     <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
       <img
-        src="/assets/images/resources/citation-equity/hero.jpg"
+        src="/assets/images/blog/citation-equity/hero.jpg"
         alt="Citation equity: the pattern AI systems read to decide which brands to cite"
         class="w-full h-full object-cover"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
       />
       <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
         <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero Image Slot</div>
-        <div class="text-sm">Drop hero.jpg into /public/assets/images/resources/citation-equity/ when ready.</div>
+        <div class="text-sm">Drop hero.jpg into /public/assets/images/blog/citation-equity/ when ready.</div>
       </div>
     </div>
 
@@ -125,14 +125,14 @@ const breadcrumbs = breadcrumbSchema([
 
       <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
         <img
-          src="/assets/images/resources/citation-equity/selection-funnel.jpg"
+          src="/assets/images/blog/citation-equity/selection-funnel.jpg"
           alt="An AI chatbot examines a towering pile of retrieved pages and selects only a small stack for citation"
           class="w-full h-full object-cover"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
         />
         <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
           <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
-          <div class="text-sm">Drop selection-funnel.jpg into /public/assets/images/resources/citation-equity/ when ready.</div>
+          <div class="text-sm">Drop selection-funnel.jpg into /public/assets/images/blog/citation-equity/ when ready.</div>
         </div>
       </div>
 
@@ -297,14 +297,14 @@ const breadcrumbs = breadcrumbSchema([
 
       <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
         <img
-          src="/assets/images/resources/citation-equity/editorial-verification.jpg"
+          src="/assets/images/blog/citation-equity/editorial-verification.jpg"
           alt="Multiple independent publishers writing about the same brand, the AI reads their consensus"
           class="w-full h-full object-cover"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
         />
         <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
           <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
-          <div class="text-sm">Drop editorial-verification.jpg into /public/assets/images/resources/citation-equity/ when ready.</div>
+          <div class="text-sm">Drop editorial-verification.jpg into /public/assets/images/blog/citation-equity/ when ready.</div>
         </div>
       </div>
 
@@ -336,14 +336,14 @@ const breadcrumbs = breadcrumbSchema([
 
       <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
         <img
-          src="/assets/images/resources/citation-equity/platform-plurality.jpg"
+          src="/assets/images/blog/citation-equity/platform-plurality.jpg"
           alt="Five distinct AI chatbot characters each reading from a different mix of source materials"
           class="w-full h-full object-cover"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
         />
         <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
           <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
-          <div class="text-sm">Drop platform-plurality.jpg into /public/assets/images/resources/citation-equity/ when ready.</div>
+          <div class="text-sm">Drop platform-plurality.jpg into /public/assets/images/blog/citation-equity/ when ready.</div>
         </div>
       </div>
 
@@ -430,14 +430,14 @@ const breadcrumbs = breadcrumbSchema([
 
       <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
         <img
-          src="/assets/images/resources/citation-equity/compounding-timeline.jpg"
+          src="/assets/images/blog/citation-equity/compounding-timeline.jpg"
           alt="A brand character walks a path past four increasingly bright milestones, each with more accumulated editorial coverage"
           class="w-full h-full object-cover"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
         />
         <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
           <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
-          <div class="text-sm">Drop compounding-timeline.jpg into /public/assets/images/resources/citation-equity/ when ready.</div>
+          <div class="text-sm">Drop compounding-timeline.jpg into /public/assets/images/blog/citation-equity/ when ready.</div>
         </div>
       </div>
 
@@ -597,17 +597,17 @@ const breadcrumbs = breadcrumbSchema([
     {
       title: "What Is ChatGPT Search Visibility? (And How to Track It)",
       description: "This guide defines ChatGPT search visibility, names the three credible tools that track it, and lays out the editorial moves that improve it.",
-      href: "/resources/chatgpt-search-visibility",
+      href: "/blog/chatgpt-search-visibility",
     },
     {
       title: "Why Earned Links Beat Paid Links",
       description: "This essay shows why earned editorial coverage compounds across organic search and AI answers, while paid links decay in citation value.",
-      href: "/resources/earned-links-vs-paid-links",
+      href: "/blog/earned-links-vs-paid-links",
     },
     {
       title: "What Makes a Press Release Get Cited by ChatGPT in 2026?",
       description: "This guide breaks down which press release patterns AI engines cite in 2026, and how to write a release that earns coverage on authoritative publishers.",
-      href: "/resources/press-release-ai-citation-2026",
+      href: "/blog/press-release-ai-citation-2026",
     },
   ]}
 />

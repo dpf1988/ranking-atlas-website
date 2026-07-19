@@ -1,0 +1,56 @@
+---
+// Static SVG sparkline for a country's annual series.
+// Indexed to the country's own min/max range, so lines are comparable in shape
+// (not level) across rows. The end-dot colour reflects the 10-year rank delta:
+// green up, red down, grey flat.
+
+interface Props {
+  values: (number | null)[];
+  delta10y: number | null;
+  width?: number;
+  height?: number;
+  label?: string;
+}
+
+const { values, delta10y, width = 120, height = 30, label = '' } = Astro.props;
+
+const pad = 2.5;
+const w = width - pad * 2;
+const h = height - pad * 2;
+
+// Filter to positions with real values, keeping indexes for x mapping
+const points: { x: number; y: number }[] = [];
+const clean: number[] = values.filter((v): v is number => v !== null && Number.isFinite(v));
+if (clean.length >= 2) {
+  const min = Math.min(...clean);
+  const max = Math.max(...clean);
+  const range = max - min || 1;
+  const n = values.length;
+  for (let i = 0; i < n; i++) {
+    const v = values[i];
+    if (v === null || !Number.isFinite(v)) continue;
+    const x = pad + (i / (n - 1)) * w;
+    const y = pad + (1 - (v - min) / range) * h;
+    points.push({ x, y });
+  }
+}
+
+const endDotColour = delta10y === null || delta10y === 0 ? '#94A3B8'
+  : delta10y > 0 ? '#047857' : '#B91C1C';
+
+const polyline = points.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+const areaPath = points.length
+  ? `M ${points[0].x.toFixed(1)},${(height - pad).toFixed(1)} L ${polyline.split(' ').join(' L ')} L ${points[points.length - 1].x.toFixed(1)},${(height - pad).toFixed(1)} Z`
+  : '';
+const endPoint = points[points.length - 1];
+---
+
+{points.length >= 2 ? (
+  <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} role="img" aria-label={label || 'Trajectory sparkline'}>
+    <path d={areaPath} fill="#1E3A8A" opacity="0.07" />
+    <polyline points={polyline} fill="none" stroke="#1E3A8A" stroke-width="1.6" stroke-linejoin="round" opacity="0.85" />
+    <circle cx={endPoint.x.toFixed(1)} cy={endPoint.y.toFixed(1)} r="2.8" fill={endDotColour} />
+  </svg>
+) : (
+  <svg width={width} height={height} aria-hidden="true"></svg>
+)}

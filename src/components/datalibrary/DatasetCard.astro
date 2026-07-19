@@ -1,0 +1,29 @@
+---
+// Shared dataset card. Served identically by the hub Latest row, category
+// listing pages, and any future surface. Title / summary / meta line.
+// Whole card is the anchor; hover lift only.
+
+interface Props {
+  href: string;
+  title: string;
+  summary: string;
+  metaLine: string;      // e.g. "World Bank WDI · 186 countries · 1960–2025"
+}
+
+const { href, title, summary, metaLine } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 hover:shadow-lg hover:border-[#1E3A8A]/40 hover:-translate-y-0.5 transition-all duration-300 p-6 flex flex-col"
+>
+  <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mb-2 leading-snug group-hover:text-brand transition-colors">
+    {title}
+  </h3>
+  <p class="text-[15px] text-body leading-relaxed mb-3">
+    {summary}
+  </p>
+  <p class="text-[12.5px] text-muted mt-auto">
+    {metaLine}
+  </p>
+</a>

@@ -1,0 +1,165 @@
+---
+// Static SVG slope chart: firstYear rank → latestYear rank for the top N of
+// the latest year. Uses an honest broken axis on the firstYear side to show
+// large climbers (e.g. rank 35) without clamping or distorting positions.
+//
+// Highlight tiers (computed from data, hold for any dataset):
+//   1. persistent: first-year rank ≤ 10 AND latest-year rank ≤ 10.
+//      Primary highlight, heaviest weight. These are the story.
+//   2. climber: first-year rank − latest-year rank ≥ 10.
+//      Secondary highlight in emerald, thinner than persistent.
+//   3. other: neutral blue-grey, muted.
+//
+// A dashed "Top 10" rule spans the chart at the rank-10 boundary on both
+// axes, so the persistence claim is visible against the axis, not just
+// through colour.
+
+interface Point {
+  iso3: string;
+  name: string;
+  firstRank: number | null;
+  latestRank: number;
+}
+
+interface Props {
+  points: Point[];
+  firstYear: number;
+  latestYear: number;
+  maxRank?: number; // rank line spacing target (usually the length of points)
+  breakBelow?: number; // ranks below this on the firstYear side compress into a break band
+  persistentIso3s?: string[]; // countries in the top ten in BOTH first year and latest year
+  climberIso3s?: string[]; // countries whose first-year rank − latest-year rank ≥ 10
+}
+
+const { points, firstYear, latestYear, maxRank, breakBelow = 16, persistentIso3s, climberIso3s } = Astro.props;
+const persistentSet = new Set(persistentIso3s || []);
+const climberSet = new Set(climberIso3s || []);
+const n = points.length;
+const rankSlotCount = maxRank || n;
+
+const width = 920;
+const height = 470;
+const marginTop = 34;
+const marginBottom = 40;
+const chartHeight = height - marginTop - marginBottom;
+const leftX = 272;
+const rightX = 648;
+
+// Latest side: rank i (1..n) → y position
+const latestY = (rank: number) => marginTop + ((rank - 0.5) / rankSlotCount) * chartHeight * 0.86;
+
+// First side: ranks 1..breakBelow use the same scale; anything > breakBelow
+// drops into a break band below the axis, so climbers still occupy a real
+// visual position without stretching the axis.
+const firstY = (rank: number | null) => {
+  if (rank === null) return null;
+  if (rank <= breakBelow) return marginTop + ((rank - 0.5) / rankSlotCount) * chartHeight * 0.86;
+  const bandTop = marginTop + (breakBelow / rankSlotCount) * chartHeight * 0.86 + 45;
+  const bandHeight = 40;
+  const bandRange = Math.max(1, rankSlotCount - breakBelow);
+  return bandTop + ((rank - breakBelow) / bandRange) * bandHeight;
+};
+
+// Palette
+const COLOUR_PERSISTENT = '#FCD34D'; // warm amber, primary highlight
+const COLOUR_CLIMBER = '#34D399';    // emerald, secondary highlight
+const COLOUR_OTHER = '#7B92C4';      // blue-grey, muted
+
+type Tier = 'persistent' | 'climber' | 'other';
+// Tier for a given point. When the caller supplies persistent/climber iso3
+// sets (computed with the dataset's own top-10 definition, which handles
+// tied ranks the same way the metrics block does), those sets win.
+// Otherwise fall back to a clean rank-based rule.
+const tierForPoint = (p: Point): Tier => {
+  if (persistentSet.has(p.iso3)) return 'persistent';
+  if (climberSet.has(p.iso3)) return 'climber';
+  if (persistentSet.size === 0 && climberSet.size === 0) {
+    if (p.firstRank !== null && p.firstRank <= 10 && p.latestRank <= 10) return 'persistent';
+    if (p.firstRank !== null && p.firstRank - p.latestRank >= 10) return 'climber';
+  }
+  return 'other';
+};
+const styleFor = (tier: Tier) => {
+  if (tier === 'persistent') return { colour: COLOUR_PERSISTENT, stroke: 3.4, opacity: 1,    weight: 700, dot: 4.0 };
+  if (tier === 'climber')    return { colour: COLOUR_CLIMBER,    stroke: 2.0, opacity: 1,    weight: 600, dot: 3.4 };
+  return                            { colour: COLOUR_OTHER,      stroke: 1.4, opacity: 0.55, weight: 400, dot: 2.8 };
+};
+
+// Top-10 boundary y (identical on both axes since both use the same scale for
+// ranks ≤ breakBelow).
+const top10Y = marginTop + (10 / rankSlotCount) * chartHeight * 0.86;
+
+const persistentCount = points.filter(p => tierForPoint(p) === 'persistent').length;
+const climberCount = points.filter(p => tierForPoint(p) === 'climber').length;
+
+const ariaLabel = `Slope chart showing rank change between ${firstYear} and ${latestYear} for the top ${n} countries of ${latestYear}. ${persistentCount} countries appear in the top ten in both years and are highlighted in amber; ${climberCount} climbers of ten or more places are highlighted in green. The ${firstYear} axis compresses ranks below ${breakBelow} into a break band so climbers can be shown without distortion.`;
+---
+
+<div class="relative rounded-2xl shadow-card p-8 md:p-10 overflow-x-auto"
+     style="background:linear-gradient(160deg,#13224B 0%,#0F1B3D 55%,#080F24 100%)">
+  <div class="absolute inset-0 rounded-2xl pointer-events-none" style="border:1px solid rgba(255,255,255,0.07)"></div>
+  <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={ariaLabel} style="display:block;min-width:680px;width:100%;height:auto">
+    <text x={leftX} y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#8FA3C8">{firstYear}</text>
+    <text x={rightX} y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#8FA3C8">{latestYear}</text>
+    <line x1={leftX} y1={marginTop} x2={leftX} y2={marginTop + chartHeight * 0.86} stroke="rgba(255,255,255,0.14)" />
+    <line x1={rightX} y1={marginTop} x2={rightX} y2={marginTop + chartHeight * 0.86} stroke="rgba(255,255,255,0.14)" />
+
+    {/* Top-10 boundary rule spanning both axes */}
+    <line x1={leftX} y1={top10Y} x2={rightX} y2={top10Y} stroke="rgba(255,255,255,0.32)" stroke-width="1" stroke-dasharray="5 4" />
+    <text x={leftX - 14} y={top10Y + 4} text-anchor="end" font-family="Inter,sans-serif" font-size="10.5" fill="#8FA3C8" font-style="italic">Top 10</text>
+
+    {/* Break-band indicator on the first-year axis */}
+    <path d={`M ${leftX - 7} ${marginTop + chartHeight * 0.86 + 12} l 5 -5 l 4 8 l 5 -5`} fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.6" stroke-linecap="round" />
+    <line x1={leftX} y1={marginTop + chartHeight * 0.86 + 22} x2={leftX} y2={height - marginBottom + 20} stroke="rgba(255,255,255,0.14)" stroke-dasharray="3 4" />
+    <text x={leftX - 14} y={marginTop + chartHeight * 0.86 + 16} text-anchor="end" font-family="Inter,sans-serif" font-size="10.5" fill="#8FA3C8" font-style="italic">ranks below {breakBelow}</text>
+
+    {/* Slope lines — draw others first, climbers next, persistent on top */}
+    {(['other', 'climber', 'persistent'] as Tier[]).flatMap((layer) =>
+      points
+        .filter((p) => tierForPoint(p) === layer)
+        .map((p) => {
+          const y1 = firstY(p.firstRank);
+          const y2 = latestY(p.latestRank);
+          if (y1 === null) return null;
+          const s = styleFor(layer);
+          return (
+            <>
+              <line x1={leftX} y1={y1} x2={rightX} y2={y2} stroke={s.colour} stroke-width={s.stroke} opacity={s.opacity} stroke-linecap="round" />
+              <circle cx={leftX} cy={y1} r={s.dot} fill={s.colour} opacity={s.opacity} />
+              <circle cx={rightX} cy={y2} r={s.dot} fill={s.colour} opacity={s.opacity} />
+            </>
+          );
+        })
+    )}
+
+    {/* Left labels */}
+    {points.map((p) => {
+      const y = firstY(p.firstRank);
+      if (y === null) return null;
+      const tier = tierForPoint(p);
+      const s = styleFor(tier);
+      const nameFill = tier === 'persistent' ? '#FDE68A' : '#EDF2FB';
+      return (
+        <text x={leftX - 14} y={y + 4} text-anchor="end" font-family="'Source Serif 4',serif" font-size="14" font-weight={s.weight} fill={nameFill} opacity={tier === 'other' ? 0.75 : 1}>{p.name}{' '}<tspan font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#8FA3C8">{p.firstRank}</tspan></text>
+      );
+    })}
+
+    {/* Right labels: one per latest rank */}
+    {[...points].sort((a, b) => a.latestRank - b.latestRank).map((p) => {
+      const y = latestY(p.latestRank);
+      const tier = tierForPoint(p);
+      const s = styleFor(tier);
+      const nameFill = tier === 'persistent' ? '#FDE68A' : '#EDF2FB';
+      const rankFill = tier === 'other' ? '#8FA3C8' : s.colour;
+      return (
+        <text x={rightX + 14} y={y + 4} text-anchor="start" font-family="'Source Serif 4',serif" font-size="14" font-weight={s.weight} fill={nameFill} opacity={tier === 'other' ? 0.75 : 1}><tspan font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill={rankFill}>{p.latestRank}</tspan>{' '}{p.name}</text>
+      );
+    })}
+  </svg>
+  <div class="flex flex-wrap gap-x-6 gap-y-2 text-[12.5px] mt-4 pt-4 border-t border-white/10" style="color:#8FA3C8">
+    <span class="inline-flex items-center gap-2"><span class="inline-block w-4 h-[3px] rounded" style="background:#FCD34D"></span>In the top ten both years</span>
+    <span class="inline-flex items-center gap-2"><span class="inline-block w-4 h-[3px] rounded" style="background:#34D399"></span>Climbed 10+ places</span>
+    <span class="inline-flex items-center gap-2"><span class="inline-block w-4 h-[3px] rounded" style="background:#7B92C4"></span>All other countries</span>
+    <span class="ml-auto">Rankings computed among all countries with data for each year</span>
+  </div>
+</div>

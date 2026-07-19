@@ -1,0 +1,417 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import Layout from '../../layouts/Layout.astro';
+import InstitutionalBio from '../../components/InstitutionalBio.astro';
+import RelatedResearch from '../../components/RelatedResearch.astro';
+import YearScrubber from '../../components/datalibrary/YearScrubber.astro';
+import SlopeChart from '../../components/datalibrary/SlopeChart.astro';
+import RankTable from '../../components/datalibrary/RankTable.astro';
+
+const DATASET_ROOT = path.resolve(process.cwd(), 'datalibrary', 'datasets');
+
+export async function getStaticPaths() {
+  const root = path.resolve(process.cwd(), 'datalibrary', 'datasets');
+  if (!fs.existsSync(root)) return [];
+  return fs.readdirSync(root)
+    .filter(name => {
+      const cfg = path.join(root, name, 'config.json');
+      const data = path.join(root, name, 'data.json');
+      return fs.existsSync(cfg) && fs.existsSync(data);
+    })
+    .map(name => ({ params: { slug: name } }));
+}
+
+const { slug } = Astro.params;
+const cfgRaw = fs.readFileSync(path.join(DATASET_ROOT, slug!, 'config.json'), 'utf-8');
+const dataRaw = fs.readFileSync(path.join(DATASET_ROOT, slug!, 'data.json'), 'utf-8');
+const config = JSON.parse(cfgRaw);
+const dataset = JSON.parse(dataRaw);
+
+const m = dataset.metrics;
+const fmtNum = (n: number) => Math.round(n).toLocaleString('en-US');
+const ord = (n: number) => {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+};
+
+const yearSpan = m.latestYear - dataset.temporalCoverage.startYear;
+const overlapList = (m.top10Overlap1960toLatestNames as string[]).join(', ');
+
+const retrievedAt = new Date(dataset.retrievedAt);
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const retrievedAtHuman = `${monthNames[retrievedAt.getUTCMonth()]} ${retrievedAt.getUTCFullYear()}`;
+
+const tokens: Record<string, string> = {
+  firstYear: String(dataset.temporalCoverage.startYear),
+  latestYear: String(m.latestYear),
+  prevDecadeYear: String(m.prevDecadeYear),
+  yearSpan: String(yearSpan),
+  reportingEconomiesLatest: String(m.reportingEconomiesLatest),
+  reportingEconomies1960: String(m.reportingEconomies1960),
+  leaderName: m.leader.name,
+  leaderValueFmt: fmtNum(m.leader.value),
+  rank2Name: m.top3[1]?.name || '',
+  rank2ValueFmt: m.top3[1] ? fmtNum(m.top3[1].value) : '',
+  rank3Name: m.top3[2]?.name || '',
+  rank3ValueFmt: m.top3[2] ? fmtNum(m.top3[2].value) : '',
+  overlapCount: String(m.top10Overlap1960toLatest),
+  overlapList,
+  climberName: m.largestClimberInTop10VsFirstYear?.name || '',
+  climberRank1960: String(m.largestClimberInTop10VsFirstYear?.rank1960 || ''),
+  climberRank1960Ord: m.largestClimberInTop10VsFirstYear ? ord(m.largestClimberInTop10VsFirstYear.rank1960) : '',
+  climberLatestRank: String(m.largestClimberInTop10VsFirstYear?.latestRank || ''),
+  climberLatestRankOrd: m.largestClimberInTop10VsFirstYear ? ord(m.largestClimberInTop10VsFirstYear.latestRank) : '',
+  gainerName: m.largestGainSince2000InTop20?.name || '',
+  gainerRank2000Ord: m.largestGainSince2000InTop20 ? ord(m.largestGainSince2000InTop20.rank2000) : '',
+  gainerLatestRankOrd: m.largestGainSince2000InTop20 ? ord(m.largestGainSince2000InTop20.latestRank) : '',
+  gainerValueFmt: m.largestGainSince2000InTop20 ? fmtNum(m.largestGainSince2000InTop20.latestValue) : '',
+  gainerGain: String(m.largestGainSince2000InTop20?.gain || ''),
+  medianLatestFmt: fmtNum(m.median.latest),
+  medianFirstYearFmt: fmtNum(m.median.firstYear),
+  retrievedAtHuman,
+};
+
+// Deep substitute {{token}} in every string inside the config
+function sub(str: string) {
+  return str.replace(/\{\{(\w+)\}\}/g, (_, k) => tokens[k] ?? `{{${k}}}`);
+}
+function deepSub<T>(node: T): T {
+  if (typeof node === 'string') return sub(node) as unknown as T;
+  if (Array.isArray(node)) return node.map(deepSub) as unknown as T;
+  if (node && typeof node === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(node)) out[k] = deepSub(v);
+    return out as unknown as T;
+  }
+  return node;
+}
+const c = deepSub(config) as typeof config;
+
+const canonicalUrl = `https://ranking-atlas.com/data/${slug}`;
+const csvUrl = `/data/${slug}.csv`;
+const csvAbsUrl = `https://ranking-atlas.com${csvUrl}`;
+const publishedISO = c.byline.publishedISO;
+
+// Category crumb. Config carries the machine slug; the label is the same
+// word title-cased. Kept alongside the taxonomy in datalibrary/README.md.
+const CATEGORY_LABELS: Record<string, string> = {
+  economy: 'Economy', health: 'Health', society: 'Society',
+  environment: 'Environment', technology: 'Technology', property: 'Property',
+};
+const categorySlug: string | undefined = c.category;
+const categoryLabel = categorySlug ? CATEGORY_LABELS[categorySlug] : undefined;
+const categoryUrl = categorySlug ? `https://ranking-atlas.com/data/${categorySlug}` : undefined;
+
+// Build the top-14 slice for the scrubber
+const top14Iso3 = m.top14.map((t: any) => t.iso3);
+const scrubberSeries = top14Iso3.map((iso3: string) => {
+  const country = dataset.countries.find((cn: any) => cn.iso3 === iso3);
+  return {
+    iso3: country.iso3,
+    iso2: country.iso2,
+    name: country.name,
+    values: country.values,
+  };
+});
+
+// Build slope-chart points: top 12 of latest, with their firstYear rank
+const slopePoints = dataset.countries.slice(0, 12).map((cn: any) => ({
+  iso3: cn.iso3,
+  name: cn.name,
+  firstRank: cn.rank1960,
+  latestRank: cn.latestRank,
+}));
+
+// Persistent set = countries in top 10 by latest AND top 10 by first year,
+// using the same rank-slice definition as the metrics block (ties handled
+// by natural sort order). Look up iso3s from the names the metrics stored.
+const persistentIso3s: string[] = (m.top10Overlap1960toLatestNames as string[]).map(
+  (name) => dataset.countries.find((cn: any) => cn.name === name)?.iso3
+).filter(Boolean);
+
+// Climbers among the visible top 12: firstRank − latestRank ≥ 10.
+const climberIso3s: string[] = slopePoints
+  .filter((p: any) => p.firstRank !== null && (p.firstRank - p.latestRank) >= 10 && !persistentIso3s.includes(p.iso3))
+  .map((p: any) => p.iso3);
+
+// ── JSON-LD graph ───────────────────────────────────────────────────────────
+const jsonLdGraph: any[] = [
+  {
+    "@type": "Organization",
+    "@id": "https://ranking-atlas.com/#organization",
+    "name": "Ranking Atlas",
+    "url": "https://ranking-atlas.com/",
+    "founder": { "@type": "Person", "name": "Daniel Grainger" },
+    "sameAs": ["https://www.linkedin.com/company/ranking-atlas/"],
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://ranking-atlas.com/#website",
+    "name": "Ranking Atlas",
+    "url": "https://ranking-atlas.com/",
+    "publisher": { "@id": "https://ranking-atlas.com/#organization" },
+    "inLanguage": "en",
+  },
+  {
+    "@type": "Dataset",
+    "name": `${c.shortTitle}, ${dataset.temporalCoverage.startYear}–${m.latestYear}`,
+    "description": `Annual GDP per capita (${dataset.indicator.unit}) for ${m.reportingEconomiesLatest} economies, ${dataset.temporalCoverage.startYear}–${m.latestYear}, compiled from ${dataset.source.name}, with computed annual rankings.`,
+    "url": canonicalUrl,
+    "creator": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" },
+    "isBasedOn": dataset.source.url,
+    "temporalCoverage": `${dataset.temporalCoverage.startYear}/${m.latestYear}`,
+    "spatialCoverage": `Global, ${m.reportingEconomiesLatest} economies`,
+    "variableMeasured": [
+      { "@type": "PropertyValue", "name": dataset.indicator.name, "unitText": dataset.indicator.unit },
+      { "@type": "PropertyValue", "name": "Annual world rank" },
+    ],
+    "keywords": c.keywords,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "dateModified": publishedISO,
+    "distribution": [
+      { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": csvAbsUrl },
+    ],
+  },
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ranking-atlas.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Data", "item": "https://ranking-atlas.com/data" },
+      ...(categoryLabel && categoryUrl
+        ? [{ "@type": "ListItem", "position": 3, "name": categoryLabel, "item": categoryUrl },
+           { "@type": "ListItem", "position": 4, "name": c.shortTitle, "item": canonicalUrl }]
+        : [{ "@type": "ListItem", "position": 3, "name": c.shortTitle, "item": canonicalUrl }]),
+    ],
+  },
+  {
+    "@type": "ItemList",
+    "itemListOrder": "https://schema.org/ItemListOrderDescending",
+    "numberOfItems": dataset.countries.length,
+    "itemListElement": dataset.countries.map((cn: any) => ({
+      "@type": "ListItem",
+      "position": cn.latestRank,
+      "name": cn.name,
+      "item": {
+        "@type": "Thing",
+        "name": cn.name,
+        "description": `GDP per capita ${m.latestYear}: $${fmtNum(cn.latestValue)} (${dataset.indicator.unit}), world rank ${cn.latestRank}`,
+      },
+    })),
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": c.faq.map((q: any) => ({
+      "@type": "Question",
+      "name": q.q,
+      "acceptedAnswer": { "@type": "Answer", "text": q.a },
+    })),
+  },
+];
+
+const jsonLd = { "@context": "https://schema.org", "@graph": jsonLdGraph };
+
+const relatedItems = c.related.map((r: any) => ({
+  title: r.title,
+  description: r.eyebrow,
+  href: r.href,
+}));
+
+// Plain-language currency line, computed from data.json. Displayed in the
+// meta row and prepended to methodology, so every dataset inherits it.
+const currencyLine = `Data runs to ${m.latestYear}, the most recent year published by ${dataset.source.name}.`;
+
+// Cite text held in one place so the click-to-copy handler and the visible
+// citation can never drift.
+const citeText = `Ranking Atlas (${retrievedAt.getUTCFullYear()}). ${c.shortTitle}, ${dataset.temporalCoverage.startYear}\u2013${m.latestYear}. ${canonicalUrl}`;
+---
+
+<Layout title={c.metaTitle + ' | Ranking Atlas'} description={c.metaDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+  <meta property="og:type" content="article" slot="head" />
+  <meta property="og:title" content={c.metaTitle} slot="head" />
+  <meta property="og:description" content={c.metaDescription} slot="head" />
+  <meta property="og:url" content={canonicalUrl} slot="head" />
+  <meta property="og:site_name" content="Ranking Atlas" slot="head" />
+  <meta name="twitter:card" content="summary_large_image" slot="head" />
+  <meta name="twitter:title" content={c.metaTitle} slot="head" />
+  <meta name="twitter:description" content={c.metaDescription} slot="head" />
+
+  <div class="bg-[#FBFAF7]">
+
+    {/* Hero: breadcrumbs, eyebrow, chips, H1, standfirst, byline, meta + CSV, scrubber */}
+    <section class="pt-20 md:pt-28 pb-8">
+      <div class="max-w-5xl mx-auto px-6">
+        <nav class="text-[13px] text-muted mb-5" aria-label="Breadcrumb">
+          <a href="/" class="text-muted hover:text-brand transition-colors">Home</a>
+          <span class="mx-2 text-[#B6C0D2]">/</span>
+          <a href="/data" class="text-muted hover:text-brand transition-colors">Data</a>
+          {categoryLabel && categorySlug && (
+            <>
+              <span class="mx-2 text-[#B6C0D2]">/</span>
+              <a href={`/data/${categorySlug}`} class="text-muted hover:text-brand transition-colors">{categoryLabel}</a>
+            </>
+          )}
+          <span class="mx-2 text-[#B6C0D2]">/</span>
+          <span>{c.shortTitle}</span>
+        </nav>
+
+        <h1 class="font-serif font-bold text-brand-navy leading-[1.08] tracking-tight max-w-[21ch]" style="font-size:clamp(34px,4.8vw,52px);letter-spacing:-.015em">{c.title}</h1>
+        <p class="font-serif italic text-[19px] leading-[1.6] text-[#334155] mt-5 mb-5 max-w-[64ch]">{c.definition}</p>
+
+        {/* One quiet meta line: source · coverage · unit · currency of data · updated · byline · CSV right-aligned.
+             Each fragment leads with a capital; unit acronyms render verbatim from config (US$, TWh, CO2). */}
+        <div class="flex flex-wrap gap-x-3 gap-y-2 items-center text-[13px] text-muted mb-6">
+          <span>{c.sourceName}</span>
+          <span class="text-[#B6C0D2]">·</span>
+          <span>{m.reportingEconomiesLatest} countries</span>
+          <span class="text-[#B6C0D2]">·</span>
+          <span>{dataset.indicator.unit.charAt(0).toUpperCase() + dataset.indicator.unit.slice(1)}</span>
+          <span class="text-[#B6C0D2]">·</span>
+          <span>Data to {m.latestYear}</span>
+          <span class="text-[#B6C0D2]">·</span>
+          <span>Updated <time datetime={publishedISO}>{c.byline.publishedHuman}</time></span>
+          <span class="text-[#B6C0D2]">·</span>
+          <span>By <a href={c.byline.authorHref} class="hover:text-brand transition-colors">{c.byline.authorName}</a></span>
+          <a href={csvUrl} class="ml-auto inline-flex items-center gap-1.5 font-semibold text-[13px] text-brand hover:text-brand-dark transition-colors" aria-label="Download the full dataset as CSV">
+            CSV
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+          </a>
+        </div>
+
+        {/* Hero chart: no section heading, no announcement. Caption lives inside the chart card. */}
+        <YearScrubber years={dataset.years} series={scrubberSeries} unit={dataset.indicator.unit} indicatorName={dataset.indicator.name} />
+      </div>
+    </section>
+
+    <main>
+      {/* Key Takeaways */}
+      <section id="takeaways" class="py-14">
+        <div class="max-w-5xl mx-auto px-6">
+          <div class="mb-4">
+            <h2 class="font-serif font-bold text-brand-navy text-[27px] leading-[1.25] tracking-tight">Key takeaways</h2>
+          </div>
+          <div class="bg-white border border-[#0A0F1E]/8 border-l-[4px] border-l-brand rounded-2xl shadow-card p-7 md:p-8 max-w-[820px]">
+            <ul class="space-y-3">
+              {c.keyTakeaways.map((t: string) => (
+                <li class="relative pl-6 text-[16px] leading-[1.6] text-body">
+                  <span class="absolute left-0 top-[0.55em] w-[9px] h-[9px] rounded-[2px] bg-brand"></span>
+                  <span set:html={t} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {c.sections.map((section: any) => (
+        <section id={section.id} class="py-14">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="mb-5 max-w-[800px]">
+              <h2 class="font-serif font-bold text-brand-navy text-[27px] leading-[1.25] tracking-tight">{section.heading}</h2>
+              {section.note && <span class="text-[13.5px] text-muted mt-1.5 inline-block">{section.note}</span>}
+            </div>
+
+            {section.prose && (
+              <div class="max-w-[70ch] space-y-4 mb-6">
+                {section.prose.map((p: string) => (
+                  <p class="text-[16.5px] leading-[1.7] text-[#1E293B]">{p}</p>
+                ))}
+              </div>
+            )}
+
+            {section.kind === 'slope' && (
+              <SlopeChart points={slopePoints} firstYear={dataset.temporalCoverage.startYear} latestYear={m.latestYear} breakBelow={16} persistentIso3s={persistentIso3s} climberIso3s={climberIso3s} />
+            )}
+
+            {section.kind === 'table' && (
+              <RankTable countries={dataset.countries} latestYear={m.latestYear} prevDecadeYear={m.prevDecadeYear} unit={dataset.indicator.unit} />
+            )}
+          </div>
+        </section>
+      ))}
+
+      {/* FAQ */}
+      <section id="faq" class="py-14 bg-white border-t border-[#0A0F1E]/8">
+        <div class="max-w-5xl mx-auto px-6">
+          <div class="mb-5">
+            <h2 class="font-serif font-bold text-brand-navy text-[27px] leading-[1.25] tracking-tight">Frequently asked questions</h2>
+          </div>
+          <div class="max-w-[820px]">
+            {c.faq.map((q: any) => (
+              <details class="bg-white border border-[#0A0F1E]/8 rounded-2xl shadow-card mb-3 overflow-hidden group">
+                <summary class="cursor-pointer list-none flex justify-between items-center gap-4 p-5 md:p-6 font-semibold text-[15.5px] text-brand-navy select-none">
+                  {q.q}
+                  <span class="text-brand text-[20px] leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p class="px-5 md:px-6 pb-5 md:pb-6 text-[15.5px] leading-[1.7] text-[#334155]">{q.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Methodology */}
+      <section id="methodology" class="py-14 bg-[#FBFAF7] border-t border-[#0A0F1E]/8">
+        <div class="max-w-5xl mx-auto px-6">
+          <div class="bg-white border border-[#0A0F1E]/8 rounded-2xl shadow-card p-7 md:p-8 max-w-[820px] mb-6">
+            <h3 class="text-[12px] font-semibold tracking-[0.14em] uppercase text-brand mb-3">Methodology &amp; Fair Use</h3>
+            <p class="font-serif italic text-[15.5px] leading-[1.7] text-[#334155] mb-3">{currencyLine}</p>
+            {c.methodology.map((p: string) => (
+              <p class="font-serif italic text-[15.5px] leading-[1.7] text-[#334155] mb-3 last:mb-0" set:html={p.replace(/World Bank World Development Indicators \(indicator NY.GDP.PCAP.CD\)/, `<a href="${dataset.source.url}" class="text-brand hover:text-brand-dark underline underline-offset-2">World Bank World Development Indicators</a> (indicator NY.GDP.PCAP.CD)`)} />
+            ))}
+          </div>
+          <div class="bg-[#EEF2FA] border border-[#DCE4F5] rounded-2xl p-6 md:p-8 max-w-[820px]">
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h3 class="text-[12px] font-semibold tracking-[0.14em] uppercase text-brand">Cite this page</h3>
+              <span id="cite-copied" class="text-[12px] font-semibold text-brand opacity-0 transition-opacity duration-200" aria-live="polite">Copied</span>
+            </div>
+            <button
+              type="button"
+              id="cite-block"
+              class="block w-full text-left font-sans text-[14.5px] leading-[1.6] text-brand-navy bg-white border border-[#0A0F1E]/8 rounded-xl p-4 md:p-5 hover:border-brand/40 hover:shadow-card transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand/40"
+              aria-label="Copy citation to clipboard"
+              data-cite={citeText}
+            >
+              <span id="cite-text">{citeText}</span>
+            </button>
+            <p class="text-[12px] text-muted mt-2">Click to copy.</p>
+          </div>
+
+          <script>
+            (function(){
+              const btn = document.getElementById('cite-block') as HTMLButtonElement | null;
+              const copied = document.getElementById('cite-copied');
+              if (!btn || !copied) return;
+              let hideTimer: number | null = null;
+              btn.addEventListener('click', async () => {
+                const text = btn.dataset.cite || btn.textContent || '';
+                try {
+                  await navigator.clipboard.writeText(text);
+                } catch {
+                  const range = document.createRange();
+                  range.selectNodeContents(btn);
+                  const sel = window.getSelection();
+                  if (sel) { sel.removeAllRanges(); sel.addRange(range); }
+                  try { document.execCommand('copy'); } catch {}
+                  if (sel) sel.removeAllRanges();
+                }
+                copied.classList.remove('opacity-0');
+                copied.classList.add('opacity-100');
+                if (hideTimer !== null) window.clearTimeout(hideTimer);
+                hideTimer = window.setTimeout(() => {
+                  copied.classList.add('opacity-0');
+                  copied.classList.remove('opacity-100');
+                }, 1500);
+              });
+            })();
+          </script>
+        </div>
+      </section>
+    </main>
+
+    <RelatedResearch items={relatedItems} />
+    <InstitutionalBio />
+  </div>
+</Layout>

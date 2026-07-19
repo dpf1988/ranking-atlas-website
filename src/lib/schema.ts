@@ -59,7 +59,7 @@ export function definedTermSchema(args: {
     name: args.term,
     description: args.definition,
     url: args.url,
-    inDefinedTermSet: "https://ranking-atlas.com/resources/citation-equity/",
+    inDefinedTermSet: "https://ranking-atlas.com/blog/citation-equity/",
   };
 }
 

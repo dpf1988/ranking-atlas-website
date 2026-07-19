@@ -1,0 +1,184 @@
+---
+// Full sortable / filterable ranking table for a dataset.
+// All rows render at build time. JS is progressive enhancement only.
+
+import Sparkline from './Sparkline.astro';
+
+interface Country {
+  iso3: string;
+  iso2: string;
+  name: string;
+  latestValue: number;
+  latestRank: number;
+  delta10y: number | null;
+  values: (number | null)[];
+}
+
+interface Props {
+  countries: Country[];
+  latestYear: number;
+  prevDecadeYear: number;
+  unit: string;
+}
+
+const { countries, latestYear, prevDecadeYear } = Astro.props;
+const leaderValue = countries[0]?.latestValue || 1;
+const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+// Compact arrow annotation for the rank cell. Neutral middot when unchanged
+// or unknown; up-triangle for climbers, down-triangle for fallers.
+const deltaSymbol = (d: number | null) => d === null || d === 0 ? '' : d > 0 ? `▲${d}` : `▼${Math.abs(d)}`;
+const deltaClass = (d: number | null) => d === null || d === 0 ? 'text-subtle' : d > 0 ? 'text-[#047857]' : 'text-[#B91C1C]';
+---
+
+<div class="mb-4 flex items-center gap-4 flex-wrap">
+  <label class="relative flex-1 min-w-[220px] max-w-[340px]">
+    <span class="sr-only">Filter by country name</span>
+    <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="rt-filter" type="search" placeholder="Filter by country…" class="w-full text-[14.5px] pl-10 pr-3.5 py-2.5 border border-[#0A0F1E]/8 rounded-lg bg-white shadow-card focus:outline-none focus:ring-2 focus:ring-brand/40" />
+  </label>
+  <span id="rt-count" class="text-[13.5px] text-muted">{countries.length} economies</span>
+  <span class="text-[12.5px] text-muted basis-full">Arrows show rank change since {prevDecadeYear}.</span>
+</div>
+
+<div class="bg-white rounded-2xl border border-[#0A0F1E]/8 shadow-card overflow-hidden">
+  <div class="overflow-x-auto">
+    <table id="rt-table" class="w-full text-left">
+      <colgroup>
+        <col class="rt-col-rank" />
+        <col />
+        <col class="rt-col-traj" />
+        <col class="rt-col-val" />
+      </colgroup>
+      <thead>
+        <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+          <th data-k="rank" scope="col" tabindex="0" class="rt-th rt-th-active px-4 py-4 first:pl-7 text-right">Rank<span class="rt-sort ml-1.5 text-[9px]">▲</span></th>
+          <th data-k="name" scope="col" tabindex="0" class="rt-th px-4 py-4">Country<span class="rt-sort ml-1.5 text-[9px]">⇅</span></th>
+          <th scope="col" class="rt-th rt-col-traj px-4 py-4">Trajectory 1960–{latestYear}</th>
+          <th data-k="val" scope="col" tabindex="0" class="rt-th px-4 py-4 last:pr-7 text-right">GDP per capita, {latestYear}<span class="rt-sort ml-1.5 text-[9px]">⇅</span></th>
+        </tr>
+      </thead>
+      <tbody id="rt-tbody" class="divide-y divide-[#EEF1F6]">
+        {countries.map((c) => {
+          const isTop3 = c.latestRank < 4;
+          const pct = ((c.latestValue / leaderValue) * 100).toFixed(1);
+          const dSym = deltaSymbol(c.delta10y);
+          return (
+            <tr
+              class={`transition-colors hover:bg-[#FBFAF7] ${isTop3 ? 'bg-[#EEF2FA] hover:bg-[#E4EAF7]' : ''}`}
+              data-rank={c.latestRank}
+              data-name={c.name.toLowerCase()}
+              data-val={c.latestValue}
+            >
+              <td class="px-4 py-3 first:pl-7 text-right whitespace-nowrap">
+                <span class="font-semibold text-[14px] tabular-nums text-muted">{c.latestRank}</span>
+                {dSym && <span class={`ml-1 text-[11px] tabular-nums ${deltaClass(c.delta10y)}`}>{dSym}</span>}
+              </td>
+              <td class="px-4 py-3 font-semibold text-brand-navy">
+                <div class="flex items-center gap-2.5 min-w-0">
+                  {c.iso2 && (
+                    <img
+                      src={`https://flagcdn.com/w20/${c.iso2}.png`}
+                      srcset={`https://flagcdn.com/w40/${c.iso2}.png 2x`}
+                      width="20"
+                      alt=""
+                      loading="lazy"
+                      class="shrink-0 rounded-[2px] shadow-[0_0_0_1px_rgba(15,27,61,0.08)]"
+                    />
+                  )}
+                  <span class="truncate">{c.name}</span>
+                  <span class="text-[11px] font-medium text-subtle tracking-wider shrink-0">{c.iso3}</span>
+                </div>
+              </td>
+              <td class="px-4 py-3 rt-col-traj">
+                <Sparkline values={c.values} delta10y={c.delta10y} label={`${c.name} 1960 to ${latestYear} trajectory`} />
+              </td>
+              <td class="px-4 py-3 last:pr-7">
+                <div class="flex items-center gap-3.5 justify-end">
+                  <div class="flex-1 h-2 rounded-full bg-[#EDF1F7] min-w-[50px] relative overflow-hidden">
+                    <div class="absolute inset-y-0 left-0 rounded-full" style={`width:${pct}%;background:linear-gradient(90deg,#1E3A8A 0%,#3B5BB8 100%)`}></div>
+                  </div>
+                  <span class="font-semibold text-[14.5px] tabular-nums text-brand-navy min-w-[82px] text-right shrink-0">{fmt(c.latestValue)}</span>
+                </div>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+  .rt-th { font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #64748B; white-space: nowrap; user-select: none; }
+  .rt-th[data-k] { cursor: pointer; transition: color 0.12s; }
+  .rt-th[data-k]:hover, .rt-th[data-k]:focus-visible { color: #1E3A8A; outline: none; }
+  .rt-th[data-k]:focus-visible { box-shadow: inset 0 -2px 0 #1E3A8A; }
+  .rt-sort { color: #B6C0D2; }
+  .rt-th-active .rt-sort { color: #1E3A8A; }
+  #rt-filter:focus-visible { outline: none; box-shadow: 0 0 0 2px rgba(30,58,138,0.35); }
+  /* Column widths. table-layout auto respects col widths as hints; fixed
+     columns hold their size, country column absorbs the remainder and
+     truncates via the inner span. */
+  .rt-col-rank { width: 72px; }
+  .rt-col-traj { width: 110px; }
+  .rt-col-val  { width: 260px; }
+  /* Below 768px the sparkline column drops entirely so rank, country, and
+     value fit on phones without a horizontal scrollbar. */
+  @media (max-width: 767px) {
+    .rt-col-traj, th.rt-col-traj, td.rt-col-traj { display: none !important; }
+    .rt-col-rank { width: 56px; }
+    .rt-col-val  { width: 168px; }
+    #rt-table th, #rt-table td { padding-left: 10px; padding-right: 10px; }
+    #rt-table th:first-child, #rt-table td:first-child { padding-left: 14px; }
+    #rt-table th:last-child, #rt-table td:last-child { padding-right: 14px; }
+  }
+</style>
+
+<script>
+(function(){
+  const tbody = document.getElementById('rt-tbody');
+  if (!tbody) return;
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  const count = document.getElementById('rt-count');
+  const total = rows.length;
+  function updateCount(){
+    if (!count) return;
+    const v = rows.filter(r => (r as HTMLElement).style.display !== 'none').length;
+    count.textContent = v === total ? `${total} economies` : `${v} of ${total} economies`;
+  }
+  const filter = document.getElementById('rt-filter') as HTMLInputElement | null;
+  filter?.addEventListener('input', e => {
+    const q = (e.target as HTMLInputElement).value.trim().toLowerCase();
+    rows.forEach(r => { (r as HTMLElement).style.display = !q || (r as HTMLElement).dataset.name?.includes(q) ? '' : 'none'; });
+    updateCount();
+  });
+
+  let sortKey = 'rank';
+  let asc = true;
+  document.querySelectorAll<HTMLElement>('#rt-table thead th[data-k]').forEach(th => {
+    const go = () => {
+      const k = th.dataset.k!;
+      asc = (k === sortKey) ? !asc : (k === 'name' || k === 'rank');
+      sortKey = k;
+      const sorted = [...rows].sort((a, b) => {
+        const av = k === 'name' ? a.dataset.name! : Number(a.dataset[k]);
+        const bv = k === 'name' ? b.dataset.name! : Number(b.dataset[k]);
+        return (typeof av === 'string' ? av.localeCompare(bv as string) : (av as number) - (bv as number)) * (asc ? 1 : -1);
+      });
+      sorted.forEach(r => tbody!.appendChild(r));
+      document.querySelectorAll<HTMLElement>('#rt-table thead th').forEach(h => {
+        h.classList.remove('rt-th-active');
+        const s = h.querySelector('.rt-sort');
+        if (s) s.textContent = '⇅';
+      });
+      th.classList.add('rt-th-active');
+      const s = th.querySelector('.rt-sort');
+      if (s) s.textContent = asc ? '▲' : '▼';
+    };
+    th.addEventListener('click', go);
+    th.addEventListener('keydown', e => {
+      if ((e as KeyboardEvent).key === 'Enter' || (e as KeyboardEvent).key === ' ') { e.preventDefault(); go(); }
+    });
+  });
+})();
+</script>

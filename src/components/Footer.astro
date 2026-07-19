@@ -1,9 +1,15 @@
 ---
 const navLinks = [
   { label: 'Home',    href: '/'        },
-  { label: 'Blog',    href: '/blog'    },
   { label: 'About',   href: '/about'   },
   { label: 'Contact', href: '/contact' },
+];
+
+// Mirrors the Resources dropdown in the header. Same three destinations, same order.
+const resourcesLinks = [
+  { label: 'Studies',      href: '/resources' },
+  { label: 'Data Library', href: '/data'      },
+  { label: 'Blog',         href: '/blog'      },
 ];
 ---
 
@@ -56,26 +62,12 @@ const navLinks = [
       <div>
         <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-5">Resources</h4>
         <nav class="space-y-3">
-          <a href="/resources/generational-fraud"
-            class="block text-sm text-[#64748B] hover:text-white transition-colors duration-200">
-            Generational Fraud Index
-          </a>
-          <a href="/resources/ai-names-ict-experts"
-            class="block text-sm text-[#64748B] hover:text-white transition-colors duration-200">
-            AI Names ICT Experts
-          </a>
-          <a href="/resources/citation-equity"
-            class="block text-sm text-[#64748B] hover:text-white transition-colors duration-200">
-            Citation Equity Guide
-          </a>
-          <a href="/resources/earned-links-vs-paid-links"
-            class="block text-sm text-[#64748B] hover:text-white transition-colors duration-200">
-            Earned vs Paid Links
-          </a>
-          <a href="/resources"
-            class="block text-sm text-[#8FA4D9] hover:text-white transition-colors duration-200 font-medium">
-            All resources →
-          </a>
+          {resourcesLinks.map((l) => (
+            <a href={l.href}
+              class="block text-sm text-[#64748B] hover:text-white transition-colors duration-200">
+              {l.label}
+            </a>
+          ))}
         </nav>
       </div>
 

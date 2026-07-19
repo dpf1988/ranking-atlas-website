@@ -14,22 +14,22 @@
 
 [[redirects]]
   from = "/ai-search-visibility"
-  to = "/resources/citation-equity"
+  to = "/blog/citation-equity"
   status = 301
 
 [[redirects]]
   from = "/ai-search-visibility/"
-  to = "/resources/citation-equity"
+  to = "/blog/citation-equity"
   status = 301
 
 [[redirects]]
   from = "/resources/ai-search-visibility"
-  to = "/resources/citation-equity"
+  to = "/blog/citation-equity"
   status = 301
 
 [[redirects]]
   from = "/resources/ai-search-visibility/"
-  to = "/resources/citation-equity"
+  to = "/blog/citation-equity"
   status = 301
 
 [[redirects]]
@@ -49,12 +49,33 @@
 
 [[redirects]]
   from = "/resources/citation-equity-vs-link-building"
-  to = "/resources/earned-links-vs-paid-links"
+  to = "/blog/earned-links-vs-paid-links"
   status = 301
 
 [[redirects]]
   from = "/resources/citation-equity-vs-link-building/"
-  to = "/resources/earned-links-vs-paid-links"
+  to = "/blog/earned-links-vs-paid-links"
+  status = 301
+
+# Essays & Guides moved from /resources/ to /blog/ (2026-07-19)
+[[redirects]]
+  from = "/resources/citation-equity"
+  to = "/blog/citation-equity"
+  status = 301
+
+[[redirects]]
+  from = "/resources/chatgpt-search-visibility"
+  to = "/blog/chatgpt-search-visibility"
+  status = 301
+
+[[redirects]]
+  from = "/resources/press-release-ai-citation-2026"
+  to = "/blog/press-release-ai-citation-2026"
+  status = 301
+
+[[redirects]]
+  from = "/resources/earned-links-vs-paid-links"
+  to = "/blog/earned-links-vs-paid-links"
   status = 301
 
 # Trailing-slash policy: strip trailing slash from any non-root URL.

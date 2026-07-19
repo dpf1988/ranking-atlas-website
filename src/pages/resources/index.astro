@@ -68,76 +68,13 @@ const featuredResearch = [
   },
 ];
 
-const essaysAndGuides = [
-  {
-    href: "/resources/citation-equity",
-    eyebrow: "Guide",
-    title: "How Brands Get Cited By AI: The 2026 Guide To Citation Equity",
-    description: "The definitional framework for citation equity, and what builds the pattern that puts brands in AI answers.",
-    published: "Published April 2026",
-    publishedISO: "2026-04-21T00:00:00+00:00",
-    schemaUrl: "https://ranking-atlas.com/resources/citation-equity",
-    cta: "Read the guide",
-  },
-  {
-    href: "/resources/chatgpt-search-visibility",
-    eyebrow: "Guide",
-    title: "What Is ChatGPT Search Visibility? (And How to Track It)",
-    description: "ChatGPT search visibility is how often your brand appears in ChatGPT's answers. It's measured differently from SEO.",
-    published: "Published May 2026",
-    publishedISO: "2026-05-05T00:00:00+00:00",
-    schemaUrl: "https://ranking-atlas.com/resources/chatgpt-search-visibility",
-    cta: "Read the guide",
-  },
-  {
-    href: "/resources/press-release-ai-citation-2026",
-    eyebrow: "Guide",
-    title: "What Makes a Press Release Get Cited by ChatGPT in 2026?",
-    description: "Press release citations in AI tools grew 5x in late 2025. What separates a cited release from one that's ignored.",
-    published: "Published May 2026",
-    publishedISO: "2026-05-05T00:00:00+00:00",
-    schemaUrl: "https://ranking-atlas.com/resources/press-release-ai-citation-2026",
-    cta: "Read the guide",
-  },
-  {
-    href: "/resources/earned-links-vs-paid-links",
-    eyebrow: "Essay",
-    title: "Why Earned Links Beat Paid Links",
-    description: "Earned editorial coverage compounds across organic search and AI answers. Paid links decay in citation value.",
-    published: "Published March 2026",
-    publishedISO: "2026-03-01T00:00:00+00:00",
-    schemaUrl: "https://ranking-atlas.com/resources/earned-links-vs-paid-links",
-    cta: "Read the essay",
-  },
-];
-
-const personAuthor = {
-  "@type": "Person",
-  "name": "Daniel Grainger",
-  "url": "https://ranking-atlas.com/about",
-  "jobTitle": "Founder",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Ranking Atlas",
-    "url": "https://ranking-atlas.com"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/daniel-grainger/",
-    "https://ranking-atlas.com/about"
-  ]
-};
-
 const orgAuthor = {
   "@type": "Organization",
   "name": "Ranking Atlas",
   "url": "https://ranking-atlas.com"
 };
 
-const featuredItems = featuredResearch.map((item) => ({ item, author: orgAuthor }));
-const essayItems = essaysAndGuides.map((item) => ({ item, author: personAuthor }));
-const allItems = [...featuredItems, ...essayItems];
-
-const itemListElement = allItems.map(({ item, author }, i) => ({
+const itemListElement = featuredResearch.map((item, i) => ({
   "@type": "ListItem",
   "position": i + 1,
   "item": {
@@ -145,8 +82,8 @@ const itemListElement = allItems.map(({ item, author }, i) => ({
     "headline": item.title,
     "description": item.description,
     "url": item.schemaUrl,
-    "author": author,
-    "publisher": { "@type": "Organization", "name": "Ranking Atlas" },
+    "author": orgAuthor,
+    "publisher": orgAuthor,
     "datePublished": item.publishedISO,
     "dateModified": item.publishedISO,
   },
@@ -155,14 +92,9 @@ const itemListElement = allItems.map(({ item, author }, i) => ({
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Research and Analysis for B2B SaaS Marketing Teams",
-  "url": "https://ranking-atlas.com/resources/",
-  "author": personAuthor,
-  "publisher": {
-    "@type": "Organization",
-    "name": "Ranking Atlas",
-    "url": "https://ranking-atlas.com"
-  },
+  "name": "Studies",
+  "url": "https://ranking-atlas.com/resources",
+  "publisher": orgAuthor,
   "mainEntity": {
     "@type": "ItemList",
     "itemListElement": itemListElement
@@ -171,83 +103,48 @@ const jsonLd = {
 ---
 
 <Layout
-  title="Resources | Ranking Atlas"
-  description="Original research, analysis, and editorial thinking on citation equity and the AI search era."
+  title="Studies | Ranking Atlas"
+  description="Original primary-source studies from Ranking Atlas. Data reports on property, technology, fraud, publishing, and AI citation patterns."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
   <section class="py-20 md:py-28">
     <div class="max-w-6xl mx-auto px-6">
 
-      <!-- Header -->
+      <nav class="text-[13px] text-muted mb-5" aria-label="Breadcrumb">
+        <a href="/" class="text-muted hover:text-brand transition-colors">Home</a>
+        <span class="mx-2 text-[#B6C0D2]">/</span>
+        <span>Studies</span>
+      </nav>
+
       <div class="mb-16">
-        <Eyebrow label="Resources" />
+        <Eyebrow label="Studies" />
         <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-5">
-          Resources
+          Studies
         </h1>
         <p class="text-lg md:text-xl text-body leading-relaxed max-w-3xl">
-          Original research, analysis, and editorial thinking on citation equity and the AI search era.
+          Original primary-source studies from Ranking Atlas.
         </p>
       </div>
 
-      <!-- Featured Research -->
-      <section class="mb-20">
-        <div class="mb-8">
-          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-3">
-            <span class="brush-underline">Featured Research</span>
-          </h2>
-          <p class="text-base text-body max-w-2xl">Primary-source data, original studies, and interactive visualisations.</p>
-        </div>
-        <div class="grid sm:grid-cols-2 gap-6">
-          {featuredResearch.map((item) => (
-            <a href={item.href} class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-8 hover:shadow-lg hover:border-[#1E3A8A]/40 transition-all duration-300 block flex flex-col">
-              <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-3">{item.eyebrow}</div>
-              <h3 class="font-serif font-semibold text-lg md:text-xl tracking-tight text-ink mb-3 leading-snug group-hover:text-brand transition-colors">
-                {item.title}
-              </h3>
-              <p class="text-base text-body leading-relaxed mb-4">
-                {item.description}
-              </p>
-              <p class="text-xs text-muted mb-5">{item.published}</p>
-              <div class="mt-auto flex items-center justify-between">
-                <span class="text-xs text-muted">Ranking Atlas</span>
-                <div class="text-xs text-brand font-medium group-hover:underline">Read the report →</div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <!-- Essays & Guides -->
-      <section>
-        <div class="mb-8">
-          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-3">
-            <span class="brush-underline">Essays & Guides</span>
-          </h2>
-          <p class="text-base text-body max-w-2xl">Strategic analysis and editorial thinking.</p>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-5">
-          {essaysAndGuides.map((item) => (
-            <a href={item.href} class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-6 hover:shadow-lg hover:border-[#1E3A8A]/40 transition-all duration-300 block flex flex-col">
-              <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-2">{item.eyebrow}</div>
-              <h3 class="font-serif font-semibold text-base md:text-lg tracking-tight text-ink mb-2 leading-snug group-hover:text-brand transition-colors">
-                {item.title}
-              </h3>
-              <p class="text-sm text-body leading-relaxed mb-3">
-                {item.description}
-              </p>
-              <p class="text-xs text-muted mb-4">{item.published}</p>
-              <div class="mt-auto flex items-center justify-between">
-                <div class="flex items-center gap-2.5">
-                  <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-6 h-6 rounded-full object-cover" width="24" height="24" />
-                  <span class="text-xs text-muted">Daniel Grainger</span>
-                </div>
-                <div class="text-xs text-brand font-medium group-hover:underline">{item.cta} →</div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {featuredResearch.map((item) => (
+          <a href={item.href} class="group bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-8 hover:shadow-lg hover:border-[#1E3A8A]/40 transition-all duration-300 block flex flex-col">
+            <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-3">{item.eyebrow}</div>
+            <h3 class="font-serif font-semibold text-lg md:text-xl tracking-tight text-ink mb-3 leading-snug group-hover:text-brand transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-base text-body leading-relaxed mb-4">
+              {item.description}
+            </p>
+            <p class="text-xs text-muted mb-5">{item.published}</p>
+            <div class="mt-auto flex items-center justify-between">
+              <span class="text-xs text-muted">Ranking Atlas</span>
+              <div class="text-xs text-brand font-medium group-hover:underline">Read the report →</div>
+            </div>
+          </a>
+        ))}
+      </div>
 
     </div>
   </section>

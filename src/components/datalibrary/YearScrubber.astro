@@ -1,0 +1,217 @@
+---
+// Animated ranking hero. Continuously interpolates between annual keyframes
+// via requestAnimationFrame. The latest-year frame renders at build time so
+// the page is fully readable with JS disabled.
+
+interface SeriesEntry {
+  iso3: string;
+  iso2: string;
+  name: string;
+  values: (number | null)[];
+}
+
+interface Props {
+  years: number[];
+  series: SeriesEntry[]; // one entry per row, ordered by latest-year rank descending value
+  unit?: string;
+  indicatorName?: string; // used verbatim in the caption; do not lowercase
+  categoricalPalette?: string[];
+}
+
+const {
+  years,
+  series,
+  unit = 'current US$',
+  indicatorName,
+  // Palette extends the site brand navy through complementary neighbours.
+  // One hue per country slot, held constant across all frames so the eye
+  // tracks a country as it rises or falls.
+  categoricalPalette = [
+    '#1E3A8A', '#2563EB', '#0891B2', '#0D9488', '#047857',
+    '#65A30D', '#CA8A04', '#D97706', '#C2410C', '#B91C1C',
+    '#9333EA', '#DB2777', '#475569', '#7C3AED',
+  ],
+} = Astro.props;
+
+const latestYear = years[years.length - 1];
+const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+
+// Latest-year frame: sort series by latest value descending, compute widths
+// as a percentage of the leader value.
+const latestSorted = [...series]
+  .map((s, originalIndex) => ({ ...s, originalIndex, latest: s.values[s.values.length - 1] ?? 0 }))
+  .sort((a, b) => b.latest - a.latest);
+const leader = latestSorted[0]?.latest || 1;
+const rowH = 40;
+
+// Colour is assigned by each row's LATEST-year position so top-3 stays in
+// the strongest brand hues. Colour is passed to the client via data-color.
+const colourByIso: Record<string, string> = {};
+latestSorted.forEach((s, idx) => {
+  colourByIso[s.iso3] = categoricalPalette[idx % categoricalPalette.length];
+});
+
+const scrubberData = { years, series: series.map(s => ({ name: s.name, values: s.values })) };
+---
+
+<div class="bg-white rounded-2xl border border-[#0A0F1E]/8 shadow-card p-5 md:p-7">
+  <noscript>
+    <style>.scrub-controls { display: none !important; }</style>
+  </noscript>
+  <div class="relative rounded-xl overflow-hidden" style="background:#F1F5F9;background-image:linear-gradient(90deg,rgba(148,163,184,0.10) 1px,transparent 1px),linear-gradient(180deg,rgba(148,163,184,0.07) 1px,transparent 1px);background-size:48px 48px;padding:22px 20px">
+    <div id="scrubBigYear" class="absolute right-6 bottom-3 font-serif font-bold text-[64px] leading-none tabular-nums text-brand-navy opacity-[0.16] pointer-events-none select-none" aria-hidden="true">{latestYear}</div>
+    <div id="scrubBars" class="relative" style={`height:${latestSorted.length * rowH}px`}>
+      {latestSorted.map((s, idx) => {
+        const width = (s.latest / leader * 100).toFixed(1);
+        const colour = colourByIso[s.iso3];
+        return (
+          <div
+            class="sb-row absolute left-0 right-0"
+            data-name={s.name}
+            data-color={colour}
+            style={`transform:translateY(${idx * rowH}px);display:grid;grid-template-columns:185px 1fr 96px;gap:14px;height:${rowH}px;align-items:center;transition:transform .45s cubic-bezier(.4,0,.2,1)`}
+          >
+            <span class="text-[14.5px] font-semibold text-brand-navy whitespace-nowrap overflow-hidden text-ellipsis text-right pr-1">
+              {s.iso2 && (
+                <img
+                  src={`https://flagcdn.com/w20/${s.iso2}.png`}
+                  srcset={`https://flagcdn.com/w40/${s.iso2}.png 2x`}
+                  width="20"
+                  alt=""
+                  loading="lazy"
+                  class="inline-block rounded-[2px] align-[-3px] mr-1.5 shadow-[0_0_0_1px_rgba(15,27,61,0.08)]"
+                />
+              )}
+              {s.name}
+            </span>
+            <div class="sb-track h-[22px] rounded-md overflow-hidden bg-white/75 shadow-[inset_0_0_0_1px_rgba(148,163,184,0.18)]">
+              <div class="sb-fill h-full rounded-md" style={`width:${width}%;background:${colour};transition:width .08s linear`}></div>
+            </div>
+            <span class="sb-val text-[14px] font-semibold tabular-nums text-brand-navy">{fmt(s.latest)}</span>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+  <div class="scrub-controls flex items-center gap-4 mt-5 pt-4 border-t border-[#0A0F1E]/8 flex-wrap">
+    <button type="button" id="scrubPlay" class="text-[14px] font-semibold text-white bg-brand hover:bg-brand-navy rounded-lg px-4 py-2 transition-colors shadow-[0_1px_2px_rgba(15,27,61,0.25)]" aria-label="Play animation">▶ Play</button>
+    <input type="range" id="scrubYear" min="0" max={years.length - 1} value={years.length - 1} step="any" aria-label="Year" class="flex-1 min-w-[180px] accent-brand" />
+    <output id="scrubOut" aria-live="polite" class="font-serif font-bold text-[22px] text-brand-navy tabular-nums min-w-[3ch]">{latestYear}</output>
+  </div>
+  <p class="text-[12.5px] text-muted mt-3">{indicatorName || unit} <span class="text-[#B6C0D2]">·</span> drag the year or press play</p>
+  <p class="text-[12px] text-muted mt-2 max-w-[70ch]">Bar lengths are scaled to the leading economy in the selected year. Chart shows the countries in {latestYear}'s top {latestSorted.length}; historical frames rank those same countries by their value in the selected year. The full ranking for any year is in the CSV.</p>
+</div>
+
+<script type="application/json" id="scrubData" set:html={JSON.stringify(scrubberData)}></script>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    .sb-row, .sb-fill { transition: none !important; }
+  }
+  @media (max-width: 640px) {
+    .sb-row { grid-template-columns: 118px 1fr 78px !important; }
+    #scrubBigYear { font-size: 40px !important; }
+  }
+  #scrubPlay:focus-visible, #scrubYear:focus-visible { outline: 2px solid #1E3A8A; outline-offset: 2px; }
+</style>
+
+<script>
+(function(){
+  const el = document.getElementById('scrubData');
+  if (!el || !el.textContent) return;
+  const TS = JSON.parse(el.textContent) as { years: number[]; series: { name: string; values: (number | null)[] }[] };
+  const bars = document.getElementById('scrubBars');
+  const yr = document.getElementById('scrubYear') as HTMLInputElement | null;
+  const out = document.getElementById('scrubOut');
+  const play = document.getElementById('scrubPlay') as HTMLButtonElement | null;
+  const bigYear = document.getElementById('scrubBigYear');
+  if (!bars || !yr || !out || !play || !bigYear) return;
+
+  const fmt2 = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+  const ROWH = 40;
+  const MAXT = TS.years.length - 1;
+  const DURATION = 24000; // ms for full firstYear→latestYear run
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const rowEls: Record<string, HTMLElement> = {};
+  Array.from(bars.children).forEach(r => {
+    const el = r as HTMLElement;
+    rowEls[el.dataset.name!] = el;
+  });
+
+  const valueAt = (values: (number | null)[], t: number): number => {
+    const i = Math.min(Math.floor(t), MAXT - 1);
+    const f = Math.min(t, MAXT) - i;
+    const a = values[i] ?? 0;
+    const b = values[i + 1] ?? a;
+    return a + (b - a) * f;
+  };
+  const yearAt = (t: number): number => {
+    const i = Math.min(Math.floor(t), MAXT - 1);
+    const f = Math.min(t, MAXT) - i;
+    return Math.round(TS.years[i] + (TS.years[i + 1] - TS.years[i]) * f);
+  };
+
+  let lastYear: number | null = null;
+  function frame(t: number){
+    const vals = TS.series.map(s => ({ s, v: valueAt(s.values, t) }));
+    const mx = Math.max(...vals.map(x => x.v)) || 1;
+    vals.sort((a, b) => b.v - a.v);
+    vals.forEach(({ s, v }, j) => {
+      const row = rowEls[s.name];
+      if (!row) return;
+      row.style.transform = `translateY(${j * ROWH}px)`;
+      const fill = row.querySelector('.sb-fill') as HTMLElement | null;
+      const val = row.querySelector('.sb-val') as HTMLElement | null;
+      if (fill) fill.style.width = ((v / mx) * 100).toFixed(2) + '%';
+      if (val) val.textContent = fmt2(v);
+    });
+    const y = yearAt(t);
+    if (y !== lastYear) { out.textContent = String(y); bigYear.textContent = String(y); lastYear = y; }
+  }
+
+  let raf: number | null = null;
+  let playing = false;
+  let lastTs: number | null = null;
+  function stop(){
+    playing = false;
+    if (raf !== null) { cancelAnimationFrame(raf); raf = null; }
+    lastTs = null;
+    play!.textContent = '▶ Play';
+  }
+  function tick(ts: number){
+    if (!playing) return;
+    if (lastTs === null) lastTs = ts;
+    const dt = ts - lastTs;
+    lastTs = ts;
+    let t = Number(yr!.value) + (dt / DURATION) * MAXT;
+    if (t >= MAXT) { t = MAXT; yr!.value = String(t); frame(t); stop(); return; }
+    yr!.value = String(t);
+    frame(t);
+    raf = requestAnimationFrame(tick);
+  }
+  play.addEventListener('click', () => {
+    if (playing) { stop(); return; }
+    if (Number(yr.value) >= MAXT - 0.001) yr.value = '0';
+    if (reduceMotion) {
+      playing = true;
+      play.textContent = '⏸ Pause';
+      const step = () => {
+        if (!playing) return;
+        const v = Math.floor(Number(yr.value)) + 1;
+        if (v > MAXT) { stop(); return; }
+        yr.value = String(v);
+        frame(v);
+        setTimeout(step, 900);
+      };
+      step();
+      return;
+    }
+    playing = true;
+    play.textContent = '⏸ Pause';
+    raf = requestAnimationFrame(tick);
+  });
+  yr.addEventListener('input', () => { stop(); frame(Number(yr.value)); });
+  frame(MAXT);
+})();
+</script>
