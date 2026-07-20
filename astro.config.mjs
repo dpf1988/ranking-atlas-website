@@ -5,6 +5,6 @@ export default defineConfig({
   trailingSlash: 'never',
   build: { format: 'file' },
   integrations: [sitemap({
-    filter: (page) => !page.includes('/case-studies'),
+    filter: (page) => !page.includes('/case-studies') && !page.includes('/about'),
   })],
 });

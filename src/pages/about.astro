@@ -1,130 +1,71 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Eyebrow from '../components/Eyebrow.astro';
-import PrimaryCTA from '../components/PrimaryCTA.astro';
-import SecondaryCTA from '../components/SecondaryCTA.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Ranking Atlas",
   "url": "https://ranking-atlas.com",
-  "description": "Ranking Atlas produces editorial studies built from commissioned surveys, Freedom of Information requests, public records, and proprietary datasets.",
-  "sameAs": [
-    "https://www.linkedin.com/in/daniel-grainger/"
-  ]
+  "description": "Ranking Atlas is a digital PR studio built for the AI search era. We earn editorial coverage for brands that want to be cited when buyers ask LLMs which product to trust."
 };
+
+const primaryCta = "inline-flex items-center justify-center bg-[#1E3A8A] hover:bg-[#1E40AF] text-white font-semibold px-5 py-2.5 rounded text-sm shadow-[0_3px_8px_-2px_rgba(15,27,61,0.22),0_1px_2px_rgba(15,27,61,0.10)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.28),0_2px_4px_-1px_rgba(15,27,61,0.12)] hover:-translate-y-px transition-all duration-200";
 ---
 
 <Layout
   title="About — Ranking Atlas"
-  description="Ranking Atlas produces editorial studies built from commissioned surveys, Freedom of Information requests, public records, and proprietary datasets. Each campaign begins with a research question and is structured for journalists, editors, and researchers who need source material they can verify independently."
+  description="Ranking Atlas is a digital PR studio built for the AI search era. We earn editorial coverage for brands that want to be cited when buyers ask LLMs which product to trust."
 >
+  <Fragment slot="head">
+    <meta name="robots" content="noindex,nofollow" />
+  </Fragment>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-  <!-- 1. HERO -->
-  <section class="pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-20">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <div class="flex justify-center">
-        <Eyebrow label="About · Ranking Atlas" />
-      </div>
-      <h1 class="font-serif font-medium text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] tracking-tight text-ink leading-[1.05] mb-6">
-        Original Research Built for Editorial Coverage.
+  <!-- Hero -->
+  <section class="pt-28 md:pt-36 pb-16 md:pb-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-[11px] uppercase tracking-[0.22em] text-brand font-semibold mb-5">About</p>
+      <h1 class="font-serif font-light text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] tracking-tight text-ink leading-[1.1] mb-6">
+        A digital PR studio built for the<br />AI search era.
       </h1>
-      <div class="space-y-5 max-w-[640px] mx-auto mb-8">
-        <p class="text-lg md:text-xl text-body leading-relaxed">
-          Ranking Atlas produces editorial studies built from <span class="font-semibold text-[#1E3A8A]">commissioned surveys, Freedom of Information requests, public records, and proprietary datasets</span>.
-        </p>
-        <p class="text-lg md:text-xl text-body leading-relaxed">
-          Each campaign begins with a research question and is structured for journalists, editors, and researchers who need source material they can verify independently.
-        </p>
-      </div>
-      <div class="flex flex-wrap items-center justify-center gap-3">
-        <PrimaryCTA href="/contact" label="Start a campaign" />
-        <SecondaryCTA href="/resources" label="See our research" />
-      </div>
+      <p class="text-lg md:text-xl text-body leading-relaxed max-w-2xl mx-auto">
+        Ranking Atlas earns editorial coverage for brands that want to be cited when buyers ask LLMs which product to trust.
+      </p>
     </div>
   </section>
 
-  <!-- 2. WHAT WE DO -->
-  <section class="py-16 md:py-20 bg-white border-y border-[#0A0F1E]/8">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="max-w-3xl mx-auto mb-12">
-        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6 text-center">
-          What We Do
-        </h2>
-        <div class="space-y-5 text-lg text-body leading-relaxed">
-          <p>
-            Ranking Atlas builds editorial citation footprints. The publications Google trusts and AI engines cite are the verification layer every other discovery system inherits from. Our campaigns get clients into that layer.
-          </p>
-          <p>
-            We produce data campaigns that journalists can cite. Each campaign starts with a research question and draws on primary-source datasets or commissioned analysis. Each study is structured for editorial use, with source attribution, supporting documentation, and a named contact for follow-up. Every engagement is measured against a documented baseline of where the brand appears in AI answers and search.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-[#FBFAF7] border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
-          <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mb-3">Original Research</h3>
-          <p class="text-base text-body leading-relaxed">
-            Every campaign begins with a question worth answering. We work from federal datasets, commissioned surveys, proprietary client data, and publicly available primary sources. Never repackaged secondary research.
-          </p>
-        </div>
-        <div class="bg-[#FBFAF7] border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
-          <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mb-3">Editorial Production</h3>
-          <p class="text-base text-body leading-relaxed">
-            Findings are written for editorial use. Each study includes a press release, a structured landing page, interactive data visualisations, downloadable datasets, and a verified author contact. Designed to be cited, not just read.
-          </p>
-        </div>
-        <div class="bg-[#FBFAF7] border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
-          <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mb-3">Targeted Outreach</h3>
-          <p class="text-base text-body leading-relaxed">
-            Studies are distributed to journalists who cover the topic, in publications where the audience already reads. Outreach is targeted, verified, and documented. Placements are tracked through to visibility: which prompts, which engines, which answers.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. EDITORIAL PRINCIPLES -->
-  <section class="py-16 md:py-20">
+  <!-- Our story -->
+  <section class="py-16 md:py-20 bg-[#FBFAF7] border-y border-[#0A0F1E]/[0.06]">
     <div class="max-w-3xl mx-auto px-6">
-      <div class="text-center mb-8">
-        <Eyebrow label="Standards" />
-        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight">
-          How We Work
-        </h2>
-      </div>
-      <div class="space-y-6 text-lg text-body leading-relaxed">
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6">Our story</h2>
+      <div class="space-y-5 text-[17px] md:text-lg text-body leading-relaxed">
         <p>
-          Every study Ranking Atlas publishes is built to a single standard: could the underlying work withstand editorial scrutiny if a journalist requested the raw source material? As public trust in online information continues to fragment and AI systems increasingly inherit from publisher references, that standard shapes the work before, during, and after publication.
+          Ranking Atlas answers a shift in how modern buyers find brands.
         </p>
         <p>
-          Research draws from commissioned surveys, federal and regulatory datasets, procurement records, proprietary client data, public filings, and Freedom of Information requests where relevant. Studies include source attribution, methodological notes, and supporting documentation where appropriate. Every claim in the copy maps to a line in the source. <span class="font-semibold text-[#1E3A8A]">Anything that cannot be sourced does not appear.</span>
+          Search behaviour has completely changed, moving from clicking links in Google SERPs to reading answers written by AI.
         </p>
         <p>
-          The standard is straightforward: a journalist should be able to trace any claim back to the underlying evidence without relying on interpretation or unpublished context. Where possible, datasets and source documentation are published alongside the study itself so findings can be reproduced independently.
+          To get your brand cited in those AI answers, you need authoritative third-party coverage.
+        </p>
+        <p>
+          We design original data studies, place them in those third-party publications, and measure the movement in AI visibility that follows. Every engagement runs against a documented baseline and competitor benchmark, so the impact is visible, not asserted.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- 5. CONTACT CTA -->
-  <section class="py-16 md:py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-10 md:p-14 text-center">
-        <div class="max-w-[640px] mx-auto">
-          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6">
-            Discuss a Campaign
-          </h2>
-          <p class="text-lg text-body leading-relaxed mb-8">
-            Get in touch to review where your brand currently appears across search and AI answers, which sources the engines cite in your market, and what it takes to change that.
-          </p>
-          <div class="flex flex-wrap items-center justify-center gap-3">
-            <PrimaryCTA href="/contact" label="Start a campaign" />
-            <SecondaryCTA href="/resources" label="See our research" />
-          </div>
-        </div>
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-[#FBFAF7]">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5">
+        Ready to be the answer?
+      </h2>
+      <p class="text-lg text-body leading-relaxed mb-8 max-w-xl mx-auto">
+        Tell us about your business and who your customers are. We'll have an audit and plan ready for you on the call.
+      </p>
+      <div class="flex justify-center">
+        <a href="/contact" class={primaryCta}>Book a Call</a>
       </div>
     </div>
   </section>
