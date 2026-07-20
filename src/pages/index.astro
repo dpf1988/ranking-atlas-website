@@ -388,17 +388,24 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
       </div>
 
       <ol class="relative grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-10">
-        <!-- horizontal connecting hairline crosses circle centers only (top-6 = 24px = circle vertical center)
-             Gradient runs navy at Step 1 to amber at Step 4, signalling compounding visibility across successive campaigns. -->
-        <div class="hidden md:block absolute left-6 right-6 top-6 h-px z-0" style="background: linear-gradient(90deg, rgba(30,58,138,0.35) 0%, rgba(30,58,138,0.5) 45%, rgba(192,138,31,0.75) 82%, rgba(192,138,31,0.95) 100%);" aria-hidden="true"></div>
+        <!-- Connecting hairline: runs from Step 1 circle centre (left-6 = 24px) to Step 4 circle centre.
+             Step 4 circle centre sits at 75% of ol width + 42px, so the line's right offset is calc(25% - 42px).
+             Gradient shifts amber onset earlier, blooming through Steps 3 and 4 to signal compounding. -->
+        <div class="hidden md:block absolute left-6 top-6 h-px z-0" style="right: calc(25% - 42px); background: linear-gradient(90deg, rgba(30,58,138,0.5) 0%, rgba(30,58,138,0.5) 28%, rgba(192,138,31,0.55) 55%, rgba(192,138,31,0.85) 80%, rgba(192,138,31,1) 100%);" aria-hidden="true"></div>
 
-        <!-- Pulsing blip between Steps 3 and 4: growth signal at the point measurement takes over -->
-        <span class="hidden md:block absolute top-6 z-[5] pointer-events-none" style="left: 75%; transform: translate(-50%, -50%);" aria-hidden="true">
+        <!-- Pulsing blip at the visual midpoint between Step 3 and Step 4 circle centres -->
+        <span class="hidden md:block absolute top-6 z-[5] pointer-events-none" style="left: calc(62.5% + 39px); transform: translate(-50%, -50%);" aria-hidden="true">
           <span class="relative flex w-2.5 h-2.5">
             <span class="absolute inline-flex h-full w-full rounded-full bg-accent opacity-60 animate-ping"></span>
             <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
           </span>
         </span>
+
+        <!-- Trending-up tail: starts exactly at Step 4 circle centre, rises up-and-right past the ol edge -->
+        <svg class="hidden md:block absolute top-6 z-[5] pointer-events-none" style="left: calc(75% + 42px); transform: translateY(-50%);" width="170" height="72" viewBox="0 0 170 72" fill="none" aria-hidden="true">
+          <path d="M0 62 L38 54 L82 32 L150 6" stroke="#C08A1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95" />
+          <circle cx="150" cy="6" r="2.75" fill="#C08A1F" />
+        </svg>
 
         <li class="relative">
           <div class="w-12 h-12 rounded-full bg-white border-2 border-brand flex items-center justify-center relative z-10 mb-4">
@@ -431,11 +438,6 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
           <div class="w-12 h-12 rounded-full bg-brand border-2 border-brand flex items-center justify-center relative z-10 mb-4">
             <span class="font-serif text-lg font-semibold text-white">4</span>
           </div>
-          <!-- Trending-up line past Step 4: the compounding tail after measurement kicks in -->
-          <svg class="hidden md:block absolute pointer-events-none" style="left: 56px; top: 24px; transform: translateY(-50%);" width="88" height="44" viewBox="0 0 88 44" fill="none" aria-hidden="true">
-            <path d="M0 34 L22 30 L46 18 L82 4" stroke="#C08A1F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9" />
-            <circle cx="82" cy="4" r="2.25" fill="#C08A1F" />
-          </svg>
           <div class="text-[10px] uppercase tracking-[0.16em] text-brand font-semibold mb-2">Ongoing</div>
           <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Measure</h3>
           <p class="text-[15px] text-body leading-relaxed mb-4">We track prompt-level movement across ChatGPT, Perplexity, Gemini, and Google. You see which coverage moved the needle.</p>
