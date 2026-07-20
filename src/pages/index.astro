@@ -534,19 +534,23 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
     </div>
   </section>
 
-  <!-- ── 6. FINAL CTA ── full-bleed dark closer that flows into the footer -->
-  <section class="bg-brand-slate">
-    <div class="max-w-4xl mx-auto px-6 py-24 lg:py-32 text-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/15 mb-6">
-        <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-accent-bright"></span>
-        <span class="text-[11px] uppercase tracking-[0.14em] font-semibold text-white">Book a call</span>
-      </div>
-      <h2 class="font-serif font-semibold text-3xl md:text-4xl lg:text-5xl tracking-tight text-white leading-[1.1] mb-6"><span class="brush-underline">Get in the answer</span></h2>
-      <p class="text-lg text-white/70 leading-relaxed mb-9 max-w-[540px] mx-auto">
-        One-sentence brief. One-working-day turnaround. One conversation to see if we're a fit.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="/contact" class="inline-flex items-center justify-center bg-white hover:bg-white/95 text-brand font-semibold px-6 py-3 rounded text-sm shadow-[0_6px_20px_-4px_rgba(0,0,0,0.35)] hover:shadow-[0_10px_30px_-4px_rgba(0,0,0,0.45)] hover:-translate-y-px transition-all duration-200">Book a Call</a>
+  <!-- ── 6. FINAL CTA ── sharp closer with cream card -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="bg-bg-warm border border-ink/10 rounded-md p-10 md:p-12 text-center">
+        <div class="max-w-[640px] mx-auto">
+          <div class={eyebrow}>
+            <span aria-hidden="true" class={eyebrowDot}></span>
+            <span class={eyebrowText}>Book a call</span>
+          </div>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6"><span class="brush-underline">Get in the answer</span></h2>
+          <p class="text-base text-body leading-relaxed mb-7">
+            One-sentence brief. One-working-day turnaround. One conversation to see if we're a fit.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="/contact" class={primaryCta}>Book a Call</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
