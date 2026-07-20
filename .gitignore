@@ -19,3 +19,9 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local tool artefacts (mitmproxy MCP, etc.) — never commit
+*.db
+*.sqlite
+*.sqlite3
+mitm_mcp_traffic.db
