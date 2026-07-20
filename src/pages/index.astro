@@ -343,7 +343,7 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
 
         <!-- Two secondaries stacked -->
         <div class="lg:col-span-5 grid grid-cols-1 gap-5">
-          <a href={featuredResearch[1].href} class="group bg-white border border-ink/10 rounded-md p-7 hover:border-ink/25 transition-colors flex flex-col">
+          <a href={featuredResearch[1].href} class="group bg-white border border-ink/10 border-l-2 border-l-brand rounded-md p-7 hover:border-ink/25 hover:border-l-brand transition-colors flex flex-col">
             <div class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold mb-3">{featuredResearch[1].eyebrow}</div>
             <h3 class="text-base font-semibold tracking-tight text-ink mb-3 leading-snug group-hover:text-brand-navy transition-colors">
               {featuredResearch[1].title}
@@ -351,14 +351,21 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
             <p class="text-sm text-body leading-relaxed mb-4 flex-1">
               {featuredResearch[1].description}
             </p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
+            <div class="flex flex-wrap gap-1.5 mb-3">
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">2,286 individuals</span>
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">4 engines</span>
+            </div>
+            <div class="flex items-center gap-2 text-[10px] text-muted mb-4">
+              <span>By Daniel Grainger</span>
+              <span aria-hidden="true" class="w-1 h-1 rounded-full bg-muted/60"></span>
+              <span>April 2026</span>
+              <span aria-hidden="true" class="w-1 h-1 rounded-full bg-muted/60"></span>
+              <span>7-min read</span>
             </div>
             <div class="text-[11px] text-brand-navy font-semibold group-hover:underline tracking-wide">Read the study →</div>
           </a>
 
-          <a href={featuredResearch[2].href} class="group bg-white border border-ink/10 rounded-md p-7 hover:border-ink/25 transition-colors flex flex-col">
+          <a href={featuredResearch[2].href} class="group bg-white border border-ink/10 border-l-2 border-l-accent rounded-md p-7 hover:border-ink/25 hover:border-l-accent transition-colors flex flex-col">
             <div class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold mb-3">{featuredResearch[2].eyebrow}</div>
             <h3 class="text-base font-semibold tracking-tight text-ink mb-3 leading-snug group-hover:text-brand-navy transition-colors">
               {featuredResearch[2].title}
@@ -366,10 +373,17 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
             <p class="text-sm text-body leading-relaxed mb-4 flex-1">
               {featuredResearch[2].description}
             </p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
+            <div class="flex flex-wrap gap-1.5 mb-3">
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">65 tools</span>
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">12 categories</span>
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">6 years</span>
+            </div>
+            <div class="flex items-center gap-2 text-[10px] text-muted mb-4">
+              <span>By Daniel Grainger</span>
+              <span aria-hidden="true" class="w-1 h-1 rounded-full bg-muted/60"></span>
+              <span>April 2026</span>
+              <span aria-hidden="true" class="w-1 h-1 rounded-full bg-muted/60"></span>
+              <span>8-min read</span>
             </div>
             <div class="text-[11px] text-brand-navy font-semibold group-hover:underline tracking-wide">Read the study →</div>
           </a>
