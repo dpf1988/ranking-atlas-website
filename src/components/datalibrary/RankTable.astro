@@ -27,20 +27,20 @@ const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
 // Compact arrow annotation for the rank cell. Neutral middot when unchanged
 // or unknown; up-triangle for climbers, down-triangle for fallers.
 const deltaSymbol = (d: number | null) => d === null || d === 0 ? '' : d > 0 ? `▲${d}` : `▼${Math.abs(d)}`;
-const deltaClass = (d: number | null) => d === null || d === 0 ? 'text-subtle' : d > 0 ? 'text-[#047857]' : 'text-[#B91C1C]';
+const deltaClass = (d: number | null) => d === null || d === 0 ? 'text-subtle' : d > 0 ? 'text-viz-green' : 'text-viz-red';
 ---
 
 <div class="mb-4 flex items-center gap-4 flex-wrap">
   <label class="relative flex-1 min-w-[220px] max-w-[340px]">
     <span class="sr-only">Filter by country name</span>
     <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    <input id="rt-filter" type="search" placeholder="Filter by country…" class="w-full text-[14.5px] pl-10 pr-3.5 py-2.5 border border-[#0A0F1E]/8 rounded-lg bg-white shadow-card focus:outline-none focus:ring-2 focus:ring-brand/40" />
+    <input id="rt-filter" type="search" placeholder="Filter by country…" class="w-full text-[14.5px] pl-10 pr-3.5 py-2.5 border border-ink/8 rounded-lg bg-white shadow-card focus:outline-none focus:ring-2 focus:ring-brand/40" />
   </label>
   <span id="rt-count" class="text-[13.5px] text-muted">{countries.length} economies</span>
   <span class="text-[12.5px] text-muted basis-full">Arrows show rank change since {prevDecadeYear}.</span>
 </div>
 
-<div class="bg-white rounded-2xl border border-[#0A0F1E]/8 shadow-card overflow-hidden">
+<div class="bg-white rounded-2xl border border-ink/8 shadow-card overflow-hidden">
   <div class="overflow-x-auto">
     <table id="rt-table" class="w-full text-left">
       <colgroup>
@@ -50,7 +50,7 @@ const deltaClass = (d: number | null) => d === null || d === 0 ? 'text-subtle' :
         <col class="rt-col-val" />
       </colgroup>
       <thead>
-        <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+        <tr class="border-b border-ink/8 bg-bg-paper">
           <th data-k="rank" scope="col" tabindex="0" class="rt-th rt-th-active px-4 py-4 first:pl-7 text-right">Rank<span class="rt-sort ml-1.5 text-[9px]">▲</span></th>
           <th data-k="name" scope="col" tabindex="0" class="rt-th px-4 py-4">Country<span class="rt-sort ml-1.5 text-[9px]">⇅</span></th>
           <th scope="col" class="rt-th rt-col-traj px-4 py-4">Trajectory 1960–{latestYear}</th>
@@ -64,7 +64,7 @@ const deltaClass = (d: number | null) => d === null || d === 0 ? 'text-subtle' :
           const dSym = deltaSymbol(c.delta10y);
           return (
             <tr
-              class={`transition-colors hover:bg-[#FBFAF7] ${isTop3 ? 'bg-[#EEF2FA] hover:bg-[#E4EAF7]' : ''}`}
+              class={`transition-colors hover:bg-bg-paper ${isTop3 ? 'bg-[#EEF2FA] hover:bg-[#E4EAF7]' : ''}`}
               data-rank={c.latestRank}
               data-name={c.name.toLowerCase()}
               data-val={c.latestValue}

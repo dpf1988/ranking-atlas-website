@@ -9,7 +9,7 @@ const { id = 'chartHeadlineGap', eyebrow = '' } = Astro.props;
 <div>
   {eyebrow && <div class="text-xs uppercase tracking-wider text-brand font-medium mb-1.5">{eyebrow}</div>}
   <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">A 7.5-point gap between who AI names and who works in tech</div>
-  <div class="text-[12px] text-[#64748B] mb-4">Women as a share of the ICT workforce against women as a share of named ICT experts. Control query excluded, n=10,711 mentions.</div>
+  <div class="text-[12px] text-muted mb-4">Women as a share of the ICT workforce against women as a share of named ICT experts. Control query excluded, n=10,711 mentions.</div>
   <div class="relative w-full" style="height:200px">
     <canvas id={id} role="img" aria-label="Horizontal bar chart comparing women as 28 percent of the ICT workforce against women as 20.5 percent of named ICT experts.">Women in the ICT workforce: 28 percent. Women named as ICT experts: 20.5 percent.</canvas>
   </div>

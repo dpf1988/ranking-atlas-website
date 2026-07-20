@@ -27,7 +27,6 @@ const jsonLd = {
   },
   "datePublished": "2026-03-01T00:00:00+00:00",
   "dateModified": "2026-05-05T00:00:00+00:00",
-  "image": "https://ranking-atlas.com/assets/images/blog/earned-links-vs-paid-links/hero.jpg",
   "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
 };
 ---
@@ -52,22 +51,11 @@ const jsonLd = {
       </a>
       <div>
         <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
-        <p class="text-sm text-[#64748B]">Published <time datetime="2026-03-01">March 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-05-05" class="text-ink font-medium">May 2026</time></p>
+        <p class="text-sm text-muted">Published <time datetime="2026-03-01">March 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-05-05" class="text-ink font-medium">May 2026</time></p>
       </div>
     </div>
 
     <!-- VISUAL 1: Hero image slot -->
-    <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
-      <img
-        src="/assets/images/blog/earned-links-vs-paid-links/hero.jpg"
-        alt="Earned links vs paid links: hero illustration"
-        class="w-full h-full object-cover"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-      />
-      <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
-        <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero Image Slot</div>
-        <div class="text-sm">Drop hero.jpg into /public/assets/images/blog/earned-links-vs-paid-links/ when ready.</div>
-      </div>
     </div>
 
     <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-4">
@@ -80,9 +68,9 @@ const jsonLd = {
       Getting covered on those sources is one of the best ways to be the brand AI surfaces, and an earned link is one of the best ways to get that coverage in the first place.
     </p>
 
-    <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 mb-10 shadow-card">
+    <div class="bg-white border border-ink/8 rounded-xl p-6 mb-10 shadow-card">
       <p class="text-sm font-semibold text-ink mb-3">In this essay, you'll learn:</p>
-      <ul class="space-y-2 text-sm text-[#475569] mb-4 list-disc pl-5">
+      <ul class="space-y-2 text-sm text-body mb-4 list-disc pl-5">
         <li>Why paid links on marketplace sites are a dead end</li>
         <li>What AI systems read when choosing which brands to surface</li>
         <li>Why earned mentions compound while paid links decay</li>
@@ -124,26 +112,15 @@ const jsonLd = {
     </div>
 
     <!-- VISUAL 4: AI Answer Screenshot -->
-    <div class="relative w-full rounded-2xl overflow-hidden bg-white border border-[#0A0F1E]/8 shadow-card my-10 aspect-[4/3] flex items-center justify-center">
-      <img
-        src="/assets/images/blog/earned-links-vs-paid-links/ai-answer-example.png"
-        alt="ChatGPT answer for a cloud security category query, annotated to show brand mentions and cited sources"
-        class="w-full h-full object-contain p-4"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-      />
-      <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
-        <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">AI Answer Screenshot Slot</div>
-        <div class="text-sm max-w-md">Capture a real ChatGPT, Perplexity, or Gemini answer for a B2B SaaS category query. Save as ai-answer-example.png in /public/assets/images/blog/earned-links-vs-paid-links/</div>
-      </div>
     </div>
-    <p class="text-sm text-[#64748B] italic mt-3 text-center max-w-2xl mx-auto mb-8">
+    <p class="text-sm text-muted italic mt-3 text-center max-w-2xl mx-auto mb-8">
       A real ChatGPT answer for a cloud security category query. The brands named in the answer are covered across the same authoritative sites cited as sources.
     </p>
 
     <!-- Definition callout -->
     <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card">
       <p class="text-sm font-semibold text-ink mb-1">Citation equity (n.)</p>
-      <p class="text-sm text-[#475569] leading-relaxed">The accumulated pattern of a brand's name appearing across authoritative sites. Same underlying logic as PageRank. Different mechanism.</p>
+      <p class="text-sm text-body leading-relaxed">The accumulated pattern of a brand's name appearing across authoritative sites. Same underlying logic as PageRank. Different mechanism.</p>
     </div>
 
     <!-- PROSE BLOCK 2: Citation equity continuation -->
@@ -268,7 +245,7 @@ const jsonLd = {
         <text x="515" y="333" text-anchor="middle" font-family="ui-sans-serif,system-ui,-apple-system" font-size="11" fill="#1E3A8A">Surfaced to buyer</text>
 
       </svg>
-      <p class="text-sm text-[#64748B] italic mt-3 text-center">Paid links sit on sites that get deindexed. Earned mentions on authoritative sites are what AI systems cite.</p>
+      <p class="text-sm text-muted italic mt-3 text-center">Paid links sit on sites that get deindexed. Earned mentions on authoritative sites are what AI systems cite.</p>
     </div>
 
     <!-- PROSE BLOCK 3: Why One Compounds + Economics -->
@@ -301,22 +278,22 @@ const jsonLd = {
       <div class="rounded-xl border-2 border-[#EF4444]/60 bg-white p-6">
         <div class="text-xs uppercase tracking-wider font-semibold text-[#EF4444] mb-2">Paid link</div>
         <div class="text-4xl font-bold text-[#EF4444] mb-4">$437</div>
-        <p class="text-sm text-[#475569] leading-relaxed mb-3">Sits on a marketplace site built to sell placements, not produce editorial coverage.</p>
+        <p class="text-sm text-body leading-relaxed mb-3">Sits on a marketplace site built to sell placements, not produce editorial coverage.</p>
         <p class="text-sm font-semibold text-[#EF4444]">When the site is deindexed, the value drops to zero.</p>
       </div>
-      <div class="rounded-xl border-2 border-[#1E3A8A]/60 bg-white p-6">
-        <div class="text-xs uppercase tracking-wider font-semibold text-[#1E3A8A] mb-2">Earned mention</div>
-        <div class="text-4xl font-bold text-[#1E3A8A] mb-4">$437</div>
-        <p class="text-sm text-[#475569] leading-relaxed mb-3">On an established publication that won't be deindexed.</p>
-        <p class="text-sm font-semibold text-[#1E3A8A]">Compounds: each mention strengthens the pattern AI systems cite.</p>
+      <div class="rounded-xl border-2 border-brand/60 bg-white p-6">
+        <div class="text-xs uppercase tracking-wider font-semibold text-brand mb-2">Earned mention</div>
+        <div class="text-4xl font-bold text-brand mb-4">$437</div>
+        <p class="text-sm text-body leading-relaxed mb-3">On an established publication that won't be deindexed.</p>
+        <p class="text-sm font-semibold text-brand">Compounds: each mention strengthens the pattern AI systems cite.</p>
       </div>
     </div>
-    <p class="text-sm text-[#64748B] italic text-center max-w-xl mx-auto -mt-4 mb-10">Same upfront cost. Opposite trajectories.</p>
+    <p class="text-sm text-muted italic text-center max-w-xl mx-auto -mt-4 mb-10">Same upfront cost. Opposite trajectories.</p>
 
     <!-- Pro Tip callout -->
     <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card">
       <p class="text-sm font-semibold text-ink mb-1">Pro tip</p>
-      <p class="text-sm text-[#475569] leading-relaxed">When auditing your backlink profile, check which linking domains are still indexed. Any that aren't should come out of your attribution. A link on a deindexed site contributes nothing to the citation pattern AI systems read.</p>
+      <p class="text-sm text-body leading-relaxed">When auditing your backlink profile, check which linking domains are still indexed. Any that aren't should come out of your attribution. A link on a deindexed site contributes nothing to the citation pattern AI systems read.</p>
     </div>
 
     <!-- PROSE BLOCK 4: Evidence -->
@@ -358,9 +335,9 @@ const jsonLd = {
     </div>
 
     <!-- CTA card -->
-    <div class="my-10 rounded-xl bg-white border border-[#0A0F1E]/8 shadow-card p-8 text-center">
+    <div class="my-10 rounded-xl bg-white border border-ink/8 shadow-card p-8 text-center">
       <p class="text-lg font-semibold text-ink mb-2">Earn your editorial placements. Get cited in AI answers.</p>
-      <p class="text-sm text-[#475569] mb-6 max-w-lg mx-auto">Editorial campaigns that earn citations on authoritative publications. Your brand in the sources AI systems read.</p>
+      <p class="text-sm text-body mb-6 max-w-lg mx-auto">Editorial campaigns that earn citations on authoritative publications. Your brand in the sources AI systems read.</p>
       <PrimaryCTA href="/contact" />
     </div>
 

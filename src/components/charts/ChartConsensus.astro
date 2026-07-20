@@ -9,14 +9,14 @@ const { id = 'chartConsensus', eyebrow = '' } = Astro.props;
 <div>
   {eyebrow && <div class="text-xs uppercase tracking-wider text-brand font-medium mb-1.5">{eyebrow}</div>}
   <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">The more AI models agreed, the more male the answer</div>
-  <div class="text-[12px] text-[#64748B] mb-4">Gender split of named individuals by how many of the four models named them. ICT top-level category, control query excluded.</div>
+  <div class="text-[12px] text-muted mb-4">Gender split of named individuals by how many of the four models named them. ICT top-level category, control query excluded.</div>
   <div class="relative w-full" style="height:300px">
     <canvas id={id} role="img" aria-label="Stacked horizontal bar chart of gender split by cross-model consensus tier, with a dashed vertical line at the 28 percent workforce baseline.">Of 56 individuals named by all four models, 17.9 percent were women. Among those named by three models, 23.4 percent. By two models, 22.1 percent. By one model only, 26.1 percent.</canvas>
   </div>
-  <div class="flex flex-wrap gap-4 mt-3 text-xs text-[#64748B]">
+  <div class="flex flex-wrap gap-4 mt-3 text-xs text-muted">
     <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#1E3A8A"></span>Female share</span>
     <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#D8DCE6"></span>Male share</span>
-    <span class="flex items-center gap-1.5"><span class="inline-block w-3.5 border-t-2 border-dashed border-[#0A0F1E]"></span>28% workforce baseline</span>
+    <span class="flex items-center gap-1.5"><span class="inline-block w-3.5 border-t-2 border-dashed border-ink"></span>28% workforce baseline</span>
   </div>
 </div>
 

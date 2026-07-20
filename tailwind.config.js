@@ -15,6 +15,18 @@ export default {
         },
         // Brand tokens (navy register, applied site-wide)
         brand: '#1E3A8A',
+        // Editorial amber accent. 'accent' = working amber for light backgrounds
+        // (chart highlights, brush marks, callouts). 'accent-bright' = display
+        // amber for the logo mark and dark surfaces only.
+        accent: '#C08A1F',
+        'accent-bright': '#E9B21E',
+        // Data-viz semantic palette (charts, verdicts, deltas)
+        'viz-red': '#B91C1C',
+        'viz-green': '#047857',
+        'viz-green-deep': '#15803D',
+        'viz-amber': '#F59E0B',
+        // Dark chrome (navbar / footer surface)
+        'brand-slate': '#1B2438',
         'brand-light': '#3B5BB8',
         'brand-dark': '#1E40AF',
         ink: '#0A0F1E',

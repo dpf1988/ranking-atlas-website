@@ -16,7 +16,6 @@ const article = articleSchema({
   url,
   datePublished: pubDate,
   dateModified: updatedDate,
-  image: "/assets/images/blog/citation-equity/hero.jpg",
 });
 
 // DEFINITION: existing 130-word draft retained over source article's opening paragraph.
@@ -61,22 +60,11 @@ const breadcrumbs = breadcrumbSchema([
       </a>
       <div>
         <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
-        <p class="text-sm text-[#64748B]">Published <time datetime="2026-04-21">April 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-05-05" class="text-ink font-medium">May 2026</time></p>
+        <p class="text-sm text-muted">Published <time datetime="2026-04-21">April 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-05-05" class="text-ink font-medium">May 2026</time></p>
       </div>
     </div>
 
     <!-- Hero image slot -->
-    <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
-      <img
-        src="/assets/images/blog/citation-equity/hero.jpg"
-        alt="Citation equity: the pattern AI systems read to decide which brands to cite"
-        class="w-full h-full object-cover"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-      />
-      <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
-        <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero Image Slot</div>
-        <div class="text-sm">Drop hero.jpg into /public/assets/images/blog/citation-equity/ when ready.</div>
-      </div>
     </div>
 
     <!-- Opening hook -->
@@ -88,16 +76,16 @@ const breadcrumbs = breadcrumbSchema([
     </p>
 
     <!-- ToC box -->
-    <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 mb-10 shadow-card">
+    <div class="bg-white border border-ink/8 rounded-xl p-6 mb-10 shadow-card">
       <p class="text-sm font-semibold text-ink mb-3">In this guide, you'll learn:</p>
-      <ul class="space-y-2 text-sm text-[#475569] mb-4 list-disc pl-5">
+      <ul class="space-y-2 text-sm text-body mb-4 list-disc pl-5">
         <li>Why LLMs retrieve roughly six pages for every one they cite, and why the selection problem matters more than retrieval.</li>
         <li>What citation equity is and why it operates like PageRank for AI: an earned signal that compounds and survives algorithm changes.</li>
         <li>The five structural causes of the retrieval-citation gap and how to fix all of them on a single content pass.</li>
         <li>What every major 2025-2026 study says about which signals actually predict AI citation, reconciled in one place.</li>
         <li>A practical six-step playbook for B2B SaaS teams starting from zero.</li>
       </ul>
-      <p class="text-sm text-[#64748B] italic">Let's start with what citation equity actually is.</p>
+      <p class="text-sm text-muted italic">Let's start with what citation equity actually is.</p>
     </div>
 
     <!-- Body prose -->
@@ -123,17 +111,6 @@ const breadcrumbs = breadcrumbSchema([
 
       <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">How Do LLMs Actually Decide What To Cite?</h2>
 
-      <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
-        <img
-          src="/assets/images/blog/citation-equity/selection-funnel.jpg"
-          alt="An AI chatbot examines a towering pile of retrieved pages and selects only a small stack for citation"
-          class="w-full h-full object-cover"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-        />
-        <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
-          <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
-          <div class="text-sm">Drop selection-funnel.jpg into /public/assets/images/blog/citation-equity/ when ready.</div>
-        </div>
       </div>
 
       <p>
@@ -245,7 +222,7 @@ const breadcrumbs = breadcrumbSchema([
       <div class="overflow-x-auto my-8">
         <table class="w-full text-sm text-left border-collapse">
           <thead>
-            <tr class="border-b-2 border-[#0A0F1E]/10">
+            <tr class="border-b-2 border-ink/10">
               <th class="py-3 pr-6 font-semibold text-ink">Signal Type</th>
               <th class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">Domain Authority</th>
               <th class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">Third-Party Origin</th>
@@ -253,7 +230,7 @@ const breadcrumbs = breadcrumbSchema([
               <th class="py-3 font-semibold text-ink">Compounding</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#0A0F1E]/8">
+          <tbody class="divide-y divide-ink/8">
             <tr>
               <td class="py-3 pr-6 text-body font-medium">Editorial coverage (Forbes, TechCrunch, vertical publishers)</td>
               <td class="py-3 pr-4 text-body text-center">&#10003;</td>
@@ -295,17 +272,6 @@ const breadcrumbs = breadcrumbSchema([
 
       <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">Why Editorial Coverage Is The Verification Layer</h2>
 
-      <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
-        <img
-          src="/assets/images/blog/citation-equity/editorial-verification.jpg"
-          alt="Multiple independent publishers writing about the same brand, the AI reads their consensus"
-          class="w-full h-full object-cover"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-        />
-        <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
-          <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
-          <div class="text-sm">Drop editorial-verification.jpg into /public/assets/images/blog/citation-equity/ when ready.</div>
-        </div>
       </div>
 
       <p>
@@ -334,17 +300,6 @@ const breadcrumbs = breadcrumbSchema([
 
       <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">How Do Different AI Platforms Cite Different Sources?</h2>
 
-      <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
-        <img
-          src="/assets/images/blog/citation-equity/platform-plurality.jpg"
-          alt="Five distinct AI chatbot characters each reading from a different mix of source materials"
-          class="w-full h-full object-cover"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-        />
-        <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
-          <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
-          <div class="text-sm">Drop platform-plurality.jpg into /public/assets/images/blog/citation-equity/ when ready.</div>
-        </div>
       </div>
 
       <p>
@@ -356,14 +311,14 @@ const breadcrumbs = breadcrumbSchema([
       <div class="overflow-x-auto my-8">
         <table class="w-full text-sm text-left border-collapse">
           <thead>
-            <tr class="border-b-2 border-[#0A0F1E]/10">
+            <tr class="border-b-2 border-ink/10">
               <th class="py-3 pr-6 font-semibold text-ink">Platform</th>
               <th class="py-3 pr-4 font-semibold text-ink">Primary Source Bias</th>
               <th class="py-3 pr-4 font-semibold text-ink">Top-Cited Category</th>
               <th class="py-3 font-semibold text-ink">Key Characteristic</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#0A0F1E]/8">
+          <tbody class="divide-y divide-ink/8">
             <tr>
               <td class="py-3 pr-6 text-body font-medium">ChatGPT</td>
               <td class="py-3 pr-4 text-body">Bing index overlap (~73-87%)</td>
@@ -428,17 +383,6 @@ const breadcrumbs = breadcrumbSchema([
 
       <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mt-10 mb-4">How Long Does It Take To Build Citation Equity?</h2>
 
-      <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
-        <img
-          src="/assets/images/blog/citation-equity/compounding-timeline.jpg"
-          alt="A brand character walks a path past four increasingly bright milestones, each with more accumulated editorial coverage"
-          class="w-full h-full object-cover"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-        />
-        <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
-          <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Image Slot</div>
-          <div class="text-sm">Drop compounding-timeline.jpg into /public/assets/images/blog/citation-equity/ when ready.</div>
-        </div>
       </div>
 
       <p>
@@ -544,7 +488,7 @@ const breadcrumbs = breadcrumbSchema([
       </p>
 
       <!-- Primary research sources callout -->
-      <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 my-10 shadow-card">
+      <div class="bg-white border border-ink/8 rounded-xl p-6 my-10 shadow-card">
         <p class="text-sm font-semibold text-ink mb-3">Primary Research Sources</p>
         <ul class="space-y-2 text-sm text-body list-none pl-0">
           <li><a href="https://www.growth-memo.com/p/the-science-of-how-ai-picks-its-sources" class="inline-link" target="_blank" rel="noopener">Kevin Indig</a>:retrieval position and citation attention across 1.2M ChatGPT responses</li>
@@ -580,7 +524,7 @@ const breadcrumbs = breadcrumbSchema([
 </div>
 
 <!-- Final CTA band per design-system.md -->
-<section class="bg-[#0A0F1E] py-16 lg:py-24">
+<section class="bg-ink py-16 lg:py-24">
   <div class="max-w-3xl mx-auto px-6 text-center">
     <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
       Be The Brand AI Cites.

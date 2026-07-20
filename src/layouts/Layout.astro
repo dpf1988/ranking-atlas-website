@@ -7,12 +7,14 @@ interface Props {
   title?: string;
   description?: string;
   noindex?: boolean;
+  ogImage?: string;
 }
 
 const {
   title = 'Ranking Atlas — Research-Led Editorial Campaigns',
   description = 'Ranking Atlas is a specialist data campaigns firm. We turn proprietary data, commissioned research, and original analysis into editorial studies that earn authoritative coverage.',
   noindex = false,
+  ogImage = '/og-default.png',
 } = Astro.props;
 
 // Canonical: site origin + pathname, with any trailing slash stripped from
@@ -32,6 +34,18 @@ const canonicalHref = `https://ranking-atlas.com${canonicalPath}`;
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalHref} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ranking Atlas" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalHref} />
+    <meta property="og:image" content={`https://ranking-atlas.com${ogImage}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`https://ranking-atlas.com${ogImage}`} />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -60,7 +74,7 @@ const canonicalHref = `https://ranking-atlas.com${canonicalPath}`;
     <title>{title}</title>
     <slot name="head" />
   </head>
-  <body class="bg-[#FBFAF7] font-sans antialiased min-h-screen">
+  <body class="bg-bg-paper font-sans antialiased min-h-screen">
     <Navbar />
     <slot />
     <Footer />

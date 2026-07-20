@@ -23,43 +23,43 @@ const jsonLd = {
   description="15.4 million Land Registry transactions show five of seven cancelled HS2 station areas outgrew England by 7 to 40 percentage points between route announcement and cancellation."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+  <script is:inline src="/vendor/chart.umd.js"></script>
 
 <div class="bg-white">
 
   <!-- 1. Hero -->
-  <section class="pt-20 md:pt-28 pb-16 border-b border-[#0A0F1E]/8">
+  <section class="pt-20 md:pt-28 pb-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3 text-center">Data Report</div>
       <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.15] mb-3 text-center">
         Can station-area land values pay for Burnham's HS2?
       </h1>
-      <div class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-6 mt-6 mb-8">
+      <div class="bg-bg-paper border border-ink/8 rounded-2xl p-6 mt-6 mb-8">
         <p class="text-body text-[15px] md:text-[16px] leading-[1.7] mb-4">
           Andy Burnham wants rising land values around HS2 stations to generate £36 billion of the line's £102.7 billion cost. We measured those land values across 15.4 million transactions: the premiums were real in some locations but absent in others, concentrated in areas with independent growth drivers, and reversed entirely at the one station where construction is already under way.
         </p>
-        <p class="text-[13px] text-[#64748B]">Ranking Atlas · July 2026 · 10 min read</p>
+        <p class="text-[13px] text-muted">Ranking Atlas · July 2026 · 10 min read</p>
       </div>
 
-      <nav class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5" aria-label="Article sections">
+      <nav class="bg-bg-paper border border-ink/8 rounded-2xl p-5" aria-label="Article sections">
         <p class="text-[14px] font-semibold text-ink mb-3">Navigation</p>
         <ul class="flex flex-col space-y-2 text-[14px]">
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key takeaways</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#anticipation-premium" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Station areas grew faster than England after route announcements</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#eastern-leg" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The eastern leg recorded the largest premiums</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#western-cancelled" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Western cancelled areas show a mixed picture</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#active-sites" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Active construction sites diverged sharply</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#per-home" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">What the premium is worth in current prices</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#capture-question" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The £36 billion question</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#methodology" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Methodology</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#download" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Download the data</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key takeaways</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#anticipation-premium" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Station areas grew faster than England after route announcements</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#eastern-leg" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The eastern leg recorded the largest premiums</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#western-cancelled" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Western cancelled areas show a mixed picture</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#active-sites" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Active construction sites diverged sharply</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#per-home" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">What the premium is worth in current prices</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#capture-question" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The £36 billion question</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#methodology" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Methodology</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#download" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Download the data</a></li>
         </ul>
       </nav>
     </div>
   </section>
 
   <!-- 2. Key takeaways -->
-  <section id="key-takeaways" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section id="key-takeaways" class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Key takeaways</h2>
       <ul class="space-y-2 list-disc pl-6 text-body text-[15px] leading-[1.7]">
@@ -74,7 +74,7 @@ const jsonLd = {
   </section>
 
   <!-- 3. Overview -->
-  <section class="py-16 border-b border-[#0A0F1E]/8">
+  <section class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <div class="space-y-6 text-body text-[15px] leading-[1.7]">
         <p>
@@ -97,7 +97,7 @@ const jsonLd = {
   </section>
 
   <!-- 4. Anticipation premium -->
-  <section id="anticipation-premium" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section id="anticipation-premium" class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Station areas grew faster than England after route announcements</h2>
 
@@ -111,13 +111,13 @@ const jsonLd = {
       </div>
 
       <!-- Anticipation premium bar chart -->
-      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 mb-10">
+      <div class="bg-white rounded-2xl border border-ink/8 p-6 mb-10">
         <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Anticipation premium by station area</div>
-        <div class="text-[12px] text-[#64748B] mb-4">Difference in percentage-point growth between station area and England, route announcement to Q3 2023. Positive values indicate the station area outgrew England.</div>
+        <div class="text-[12px] text-muted mb-4">Difference in percentage-point growth between station area and England, route announcement to Q3 2023. Positive values indicate the station area outgrew England.</div>
         <div class="relative w-full" style="height:380px">
           <canvas id="chartPremium" role="img" aria-label="Horizontal bar chart showing anticipation premiums. Toton +40.5pp, Manchester Piccadilly +31.2pp, Sheffield +20.2pp, Manchester Airport +10.4pp, Leeds +7.6pp, Staffs corridor -4.0pp, Old Oak Common -4.8pp, Crewe -7.2pp."></canvas>
         </div>
-        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-[#475569]">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-body">
           <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#1E3A8A"></span>Cancelled station</div>
           <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#64748B"></span>Active station</div>
         </div>
@@ -135,7 +135,7 @@ const jsonLd = {
   </section>
 
   <!-- 5. Eastern leg -->
-  <section id="eastern-leg" class="py-16 border-b border-[#0A0F1E]/8">
+  <section id="eastern-leg" class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">The eastern leg recorded the largest premiums</h2>
 
@@ -146,13 +146,13 @@ const jsonLd = {
       </div>
 
       <!-- Eastern leg indexed chart -->
-      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 mb-10">
+      <div class="bg-white rounded-2xl border border-ink/8 p-6 mb-10">
         <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Eastern leg: indexed price growth vs England</div>
-        <div class="text-[12px] text-[#64748B] mb-4">Quarterly median price indexed to 100 at Q1 2013 (Phase 2 route announcement). Half-yearly data points shown.</div>
+        <div class="text-[12px] text-muted mb-4">Quarterly median price indexed to 100 at Q1 2013 (Phase 2 route announcement). Half-yearly data points shown.</div>
         <div class="relative w-full" style="height:360px">
           <canvas id="chartEastern" role="img" aria-label="Line chart showing Toton, Sheffield, Leeds, and England indexed prices from 2010 to 2026, with Toton reaching approximately 196 by Q1 2026 against England at 154."></canvas>
         </div>
-        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-[#475569]">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-body">
           <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#1E3A8A"></span>Toton / East Midlands hub</div>
           <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#047857"></span>Sheffield Midland</div>
           <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#B45309"></span>Leeds</div>
@@ -178,7 +178,7 @@ const jsonLd = {
   </section>
 
   <!-- 6. Western cancelled -->
-  <section id="western-cancelled" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section id="western-cancelled" class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Western cancelled areas show a mixed picture</h2>
 
@@ -189,13 +189,13 @@ const jsonLd = {
       </div>
 
       <!-- Western leg indexed chart -->
-      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 mb-10">
+      <div class="bg-white rounded-2xl border border-ink/8 p-6 mb-10">
         <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Western cancelled areas: indexed price growth vs England</div>
-        <div class="text-[12px] text-[#64748B] mb-4">Quarterly median price indexed to 100 at Q1 2013 (Phase 2 route announcement). Half-yearly data points shown.</div>
+        <div class="text-[12px] text-muted mb-4">Quarterly median price indexed to 100 at Q1 2013 (Phase 2 route announcement). Half-yearly data points shown.</div>
         <div class="relative w-full" style="height:360px">
           <canvas id="chartWestern" role="img" aria-label="Line chart showing Manchester Piccadilly, Manchester Airport, Crewe, Staffs corridor, and England indexed prices from 2010 to 2026."></canvas>
         </div>
-        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-[#475569]">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-body">
           <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#1E3A8A"></span>Manchester Piccadilly</div>
           <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#047857"></span>Manchester Airport</div>
           <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#B45309"></span>Crewe</div>
@@ -222,7 +222,7 @@ const jsonLd = {
   </section>
 
   <!-- 7. Active sites -->
-  <section id="active-sites" class="py-16 border-b border-[#0A0F1E]/8">
+  <section id="active-sites" class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Active construction sites diverged sharply</h2>
 
@@ -244,7 +244,7 @@ const jsonLd = {
   </section>
 
   <!-- 8. Per-home figures -->
-  <section id="per-home" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section id="per-home" class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">What the premium is worth in current prices</h2>
 
@@ -254,10 +254,10 @@ const jsonLd = {
         </p>
       </div>
 
-      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8 mb-10">
+      <div class="overflow-x-auto bg-white rounded-2xl border border-ink/8 mb-10">
         <table class="w-full text-sm text-left">
           <thead>
-            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+            <tr class="border-b border-ink/8 bg-bg-paper">
               <th class="px-4 py-3 font-semibold text-ink">Station area</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">Growth</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">England</th>
@@ -266,70 +266,70 @@ const jsonLd = {
               <th class="px-4 py-3 font-semibold text-ink text-right">Per-home £</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#0A0F1E]/6">
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Toton / East Midlands hub</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">100.2%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+40.5pp</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">£260,000</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">£105,365</td>
+              <td class="px-4 py-3 text-right text-muted">100.2%</td>
+              <td class="px-4 py-3 text-right text-muted">59.7%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green-deep">+40.5pp</td>
+              <td class="px-4 py-3 text-right text-muted">£260,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green-deep">£105,365</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Manchester Piccadilly</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">90.9%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+31.2pp</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">£214,000</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">£66,865</td>
+              <td class="px-4 py-3 text-right text-muted">90.9%</td>
+              <td class="px-4 py-3 text-right text-muted">59.7%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green-deep">+31.2pp</td>
+              <td class="px-4 py-3 text-right text-muted">£214,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green-deep">£66,865</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Sheffield Midland</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">79.9%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+20.2pp</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">£160,000</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">£32,349</td>
+              <td class="px-4 py-3 text-right text-muted">79.9%</td>
+              <td class="px-4 py-3 text-right text-muted">59.7%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green-deep">+20.2pp</td>
+              <td class="px-4 py-3 text-right text-muted">£160,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green-deep">£32,349</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Manchester Airport</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">70.0%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+10.4pp</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">£301,000</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">£31,234</td>
+              <td class="px-4 py-3 text-right text-muted">70.0%</td>
+              <td class="px-4 py-3 text-right text-muted">59.7%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green-deep">+10.4pp</td>
+              <td class="px-4 py-3 text-right text-muted">£301,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green-deep">£31,234</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Leeds</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">67.3%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">+7.6pp</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">£160,000</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#15803D]">£12,168</td>
+              <td class="px-4 py-3 text-right text-muted">67.3%</td>
+              <td class="px-4 py-3 text-right text-muted">59.7%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green-deep">+7.6pp</td>
+              <td class="px-4 py-3 text-right text-muted">£160,000</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green-deep">£12,168</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Staffs corridor</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">55.7%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
-              <td class="px-4 py-3 text-right text-[#B91C1C]">-4.0pp</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">£249,500</td>
-              <td class="px-4 py-3 text-right text-[#B91C1C]">-£9,958</td>
+              <td class="px-4 py-3 text-right text-muted">55.7%</td>
+              <td class="px-4 py-3 text-right text-muted">59.7%</td>
+              <td class="px-4 py-3 text-right text-viz-red">-4.0pp</td>
+              <td class="px-4 py-3 text-right text-muted">£249,500</td>
+              <td class="px-4 py-3 text-right text-viz-red">-£9,958</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Old Oak Common</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">58.0%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">62.9%</td>
-              <td class="px-4 py-3 text-right text-[#B91C1C]">-4.8pp</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">£420,000</td>
-              <td class="px-4 py-3 text-right text-[#B91C1C]">-£20,336</td>
+              <td class="px-4 py-3 text-right text-muted">58.0%</td>
+              <td class="px-4 py-3 text-right text-muted">62.9%</td>
+              <td class="px-4 py-3 text-right text-viz-red">-4.8pp</td>
+              <td class="px-4 py-3 text-right text-muted">£420,000</td>
+              <td class="px-4 py-3 text-right text-viz-red">-£20,336</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Crewe</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">52.5%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">59.7%</td>
-              <td class="px-4 py-3 text-right text-[#B91C1C]">-7.2pp</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">£190,000</td>
-              <td class="px-4 py-3 text-right text-[#B91C1C]">-£13,680</td>
+              <td class="px-4 py-3 text-right text-muted">52.5%</td>
+              <td class="px-4 py-3 text-right text-muted">59.7%</td>
+              <td class="px-4 py-3 text-right text-viz-red">-7.2pp</td>
+              <td class="px-4 py-3 text-right text-muted">£190,000</td>
+              <td class="px-4 py-3 text-right text-viz-red">-£13,680</td>
             </tr>
           </tbody>
         </table>
@@ -344,7 +344,7 @@ const jsonLd = {
   </section>
 
   <!-- 9. The £36bn question -->
-  <section id="capture-question" class="py-16 border-b border-[#0A0F1E]/8">
+  <section id="capture-question" class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">The £36 billion question</h2>
 
@@ -371,7 +371,7 @@ const jsonLd = {
   </section>
 
   <!-- 10. Methodology -->
-  <section id="methodology" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section id="methodology" class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-8">Methodology</h2>
 
@@ -422,30 +422,30 @@ const jsonLd = {
   </section>
 
   <!-- 11. Download -->
-  <section id="download" class="py-16 border-b border-[#0A0F1E]/8">
+  <section id="download" class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-4">Download the data</h2>
       <p class="text-body text-[15px] leading-[1.7] mb-6">
         The full quarterly median price series for all nine station areas and England, indexed from Q1 2010 to Q1 2026, with transaction counts per quarter.
       </p>
-      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 flex items-center justify-between gap-4">
+      <div class="bg-white rounded-2xl border border-ink/8 p-6 flex items-center justify-between gap-4">
         <div>
           <p class="font-semibold text-ink mb-1">hs2-land-value-capture.csv</p>
-          <p class="text-sm text-[#64748B]">Quarterly medians, transaction counts, and indexed values for 9 station groups and England, Q1 2010 to Q1 2026.</p>
+          <p class="text-sm text-muted">Quarterly medians, transaction counts, and indexed values for 9 station groups and England, Q1 2010 to Q1 2026.</p>
         </div>
-        <a href="/downloads/hs2-land-value-capture.csv" class="inline-flex items-center gap-2 bg-[#F4F0E9] hover:bg-white text-[#0A0F1E] text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-[#0A0F1E]/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
+        <a href="/downloads/hs2-land-value-capture.csv" class="inline-flex items-center gap-2 bg-bg-warm hover:bg-white text-ink text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-ink/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
           Download CSV
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         </a>
       </div>
-      <p class="mt-6 text-sm text-[#64748B]">
+      <p class="mt-6 text-sm text-muted">
         Citation: Ranking Atlas, "Can Station-Area Land Values Pay for Burnham's HS2?", July 2026. Source data: HM Land Registry Price Paid Data (open government licence).
       </p>
     </div>
   </section>
 
   <!-- Press contact -->
-  <section class="py-12 bg-[#FBFAF7]">
+  <section class="py-12 bg-bg-paper">
     <div class="max-w-3xl mx-auto px-6">
       <p class="text-body text-[15px] leading-[1.7]">
         For a different cut of this dataset, additional regional or postcode-level breakouts, or methodology questions, contact <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.

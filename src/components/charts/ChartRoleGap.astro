@@ -9,14 +9,14 @@ const { id = 'chartRoleGap', eyebrow = '' } = Astro.props;
 <div>
   {eyebrow && <div class="text-xs uppercase tracking-wider text-brand font-medium mb-1.5">{eyebrow}</div>}
   <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">AI names one woman for every ten men among top tech founders</div>
-  <div class="text-[12px] text-[#64748B] mb-4">Female share of named ICT experts by role type, against the 28% workforce baseline. All categories, control query excluded.</div>
+  <div class="text-[12px] text-muted mb-4">Female share of named ICT experts by role type, against the 28% workforce baseline. All categories, control query excluded.</div>
   <div class="relative w-full" style="height:320px">
     <canvas id={id} role="img" aria-label="Horizontal bar chart of female share of named ICT experts by role, with a dashed vertical line at the 28 percent workforce baseline.">Female share of named ICT experts by role: Founder/CEO 9.8 percent, Analyst 20.8 percent, Vendor executive 20.9 percent, Academic 27.3 percent, Journalist 28.5 percent, Practitioner 29.0 percent, Influencer 30.0 percent. Workforce baseline 28 percent.</canvas>
   </div>
-  <div class="flex flex-wrap gap-4 mt-3 text-xs text-[#64748B]">
+  <div class="flex flex-wrap gap-4 mt-3 text-xs text-muted">
     <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#B91C1C"></span>Below 28% workforce baseline</span>
     <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#047857"></span>At or above baseline</span>
-    <span class="flex items-center gap-1.5"><span class="inline-block w-3.5 border-t-2 border-dashed border-[#0A0F1E]"></span>28% workforce baseline</span>
+    <span class="flex items-center gap-1.5"><span class="inline-block w-3.5 border-t-2 border-dashed border-ink"></span>28% workforce baseline</span>
   </div>
 </div>
 

@@ -9,13 +9,13 @@ const { id = 'chartSaasCategoryChange', eyebrow = '' } = Astro.props;
 <div>
   {eyebrow && <div class="text-xs uppercase tracking-wider text-brand font-medium mb-1.5">{eyebrow}</div>}
   <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">AI-proof software raised prices. AI-replaceable software couldn't.</div>
-  <div class="text-[12px] text-[#64748B] mb-4">Median change in lowest monthly entry-tier price by category, January 2020 to April 2026. 65 tools, 12 categories.</div>
+  <div class="text-[12px] text-muted mb-4">Median change in lowest monthly entry-tier price by category, January 2020 to April 2026. 65 tools, 12 categories.</div>
 
   <div class="relative w-full" style="height:560px">
     <canvas id={id} role="img" aria-label="Horizontal bar chart of median entry-tier price change by SaaS category from January 2020 to April 2026, with a dashed reference line at 27.1 percent US CPI. Analytics 81.3 percent, HR 66.7 percent, Marketing 57.9 percent, Accounting 53.3 percent, Support 50.0 percent, Comms 33.3 percent, Ecommerce 20.4 percent, Project Mgmt 2.0 percent, CRM 0.0 percent, Productivity 0.0 percent, Dev 0.0 percent, Visual Design minus 38.9 percent.">Analytics +81.3%, HR +66.7%, Marketing +57.9%, Accounting +53.3%, Support +50.0%, Comms +33.3%, Ecommerce +20.4%, Project Mgmt +2.0%, CRM 0.0%, Productivity 0.0%, Dev 0.0%, Visual Design -38.9%. US CPI over the same period: +27.1%.</canvas>
   </div>
 
-  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-[#475569]">
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12px] text-body">
     <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#B91C1C"></span>AI-resistant category</div>
     <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#B45309"></span>Mixed exposure</div>
     <div class="flex items-center gap-1.5"><span aria-hidden="true" class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#047857"></span>AI-replicable category</div>

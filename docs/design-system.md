@@ -1,5 +1,7 @@
 # Ranking Atlas — Design System Reference
 
+> **2026-07-20 migration note.** This document was mechanically migrated from the retired purple palette to the navy + amber system (brand `#1E3A8A`, accent `#C08A1F`, accent-bright `#D9A83E`). Colour values are now correct; some component patterns below may describe retired homepage sections. Verify against the live components before copying markup. Amber usage rule: data highlights, brush marks, callouts, and the logo mark only. Amber is never a CTA colour.
+
 This document is the authoritative reference for layout, typography, colour, spacing, and component patterns used across the Ranking Atlas website. Use it when building new pages or components.
 
 ---
@@ -20,22 +22,26 @@ Defined in `tailwind.config.js`. Always use token names, not raw hex values.
 
 | Token | Hex | Usage |
 |---|---|---|
-| `brand` | `#5D4FE0` | Primary purple — CTAs, icons, accents, links |
-| `brand-dark` | `#4338CA` | Hover state for brand elements |
-| `brand-light` | `#7C3AED` | Gradient mid-stop |
+| `brand` | `#1E3A8A` | Primary navy. CTAs, links, interactive elements |
+| `brand-dark` | `#1E40AF` | Hover state for brand elements |
+| `accent` | `#C08A1F` | Working amber. Data highlights, brush marks, callouts on light backgrounds only. Never a CTA colour |
+| `accent-bright` | `#D9A83E` | Display amber. Logo mark and dark surfaces only |
+| `brand-navy` | `#0F1B3D` | Deep navy. Logo globe, dark hero surfaces |
+| `brand-slate` | `#1B2438` | Navbar and footer surface |
+| `viz-red` / `viz-green` / `viz-green-deep` / `viz-amber` | `#B91C1C` / `#047857` / `#15803D` / `#F59E0B` | Data-viz semantics: negative, positive, deep positive, warning |
 | `ink` | `#0A0F1E` | Headings, primary text on light backgrounds |
 | `body` | `#475569` | Body copy on light backgrounds |
 | `muted` | `#64748B` | Secondary/supporting text, captions |
 | `subtle` | `#94A3B8` | Placeholder text, disabled states |
-| `bg-paper` | `#F8F7FA` | Alternate section background (off-white warm) |
-| `bg-lavender` | `#F5F3FA` | Light purple tint background |
+| `bg-paper` | `#FBFAF7` | Page and section background (warm cream) |
+| `bg-warm` | `#F4F0E9` | Warm tint background, secondary CTA surface |
 | `surface` | `#F1F5F9` | Card backgrounds, skeleton loaders |
 | `midnight` | `#0A0F1E` | Dark section backgrounds, footer |
 
 **Additional raw values used directly (not tokenised):**
 - Body background: `#F5F4EF` (warm off-white, applied to `<body>`)
 - `bg-bg-cream` — Tailwind custom class used in resource card grids (maps to `#F5F4EF` area)
-- Dark section backgrounds: `bg-[#0A0F1E]` or `style="background: #5D4FE0;"`
+- Dark section backgrounds: `bg-[#0A0F1E]` or `style="background: #1E3A8A;"`
 
 ---
 
@@ -64,15 +70,15 @@ All headings use `tracking-tight` and start-case capitalisation (every word's fi
 | H2 — Final CTA (all pages) | `text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]` | Bottom CTA band |
 | H3 — Cards on light bg | `text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3` | Content/feature cards |
 | H3 — Cards on purple bg | `text-base md:text-lg font-semibold tracking-tight text-white leading-snug mb-3` | Purple section cards |
-| H3 — Brand accent | `text-lg md:text-xl font-semibold tracking-tight text-[#5D4FE0] leading-snug mb-3` | "What you get" cards |
+| H3 — Brand accent | `text-lg md:text-xl font-semibold tracking-tight text-[#1E3A8A] leading-snug mb-3` | "What you get" cards |
 
-### Gradient Headings (Homepage)
+### Gradient Headings (DEPRECATED 2026-07: purple retired; use text-ink or font-serif headings)
 
 Several homepage H2s use a purple gradient instead of `text-ink`:
 
 ```html
 <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4 pb-1"
-    style="background: linear-gradient(135deg, #5D4FE0 0%, #7C3AED 50%, #4338CA 100%);
+    style="background: RETIRED - do not use;
            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
   Heading Text
 </h2>
@@ -86,12 +92,12 @@ Animated SVG underline on a key phrase:
 
 ```html
 <span class="relative inline-block pb-2 pr-1">
-  <span style="background: linear-gradient(135deg, #5D4FE0 0%, #7C3AED 50%, #4338CA 100%);
+  <span style="background: RETIRED - do not use;
                -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
     AI Cites
   </span>
   <svg viewBox="0 0 200 12" preserveAspectRatio="none"
-       class="absolute -bottom-1 left-0 w-full h-3 text-[#5D4FE0]" aria-hidden="true">
+       class="absolute -bottom-1 left-0 w-full h-3 text-accent" aria-hidden="true">
     <path d="M2 8 Q 50 2, 100 6 T 198 5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
   </svg>
 </span>
@@ -115,7 +121,7 @@ On dark backgrounds, use `stroke="white"` instead of `currentColor`.
 ### Inline Links
 
 ```html
-<a class="text-[#5D4FE0] hover:text-[#4338CA] underline underline-offset-2 decoration-[#5D4FE0]/30 hover:decoration-[#5D4FE0] transition-colors">
+<a class="text-brand hover:text-brand-dark underline underline-offset-2 decoration-brand/30 hover:decoration-brand transition-colors">
 ```
 
 Or use the global utility class `.inline-link` (same styles).
@@ -169,7 +175,7 @@ Or use the global utility class `.inline-link` (same styles).
 
 ### Dark Sections
 - Deep navy: `bg-[#0A0F1E]` — used for footer and About CTA
-- Brand purple: `style="background: #5D4FE0;"` — used for homepage "How It Works" and final CTA band
+- Brand navy: `style="background: #1E3A8A;"` — used for homepage "How It Works" and final CTA band
 
 ### Background Texture (Dark/Hero Sections)
 Subtle noise grain overlay — add to dark sections for depth:
@@ -182,14 +188,14 @@ Subtle noise grain overlay — add to dark sections for depth:
 Purple radial glow — add to hero sections for atmosphere:
 ```html
 <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full opacity-[0.10] blur-[140px]"
-     style="background: radial-gradient(circle, #5D4FE0 0%, transparent 70%);"></div>
+     style="background: radial-gradient(circle, #1E3A8A 0%, transparent 70%);"></div>
 ```
 
 ### Global Grid Overlay
 Applied to the entire page via a fixed `z-index: -1` div in `Layout.astro`. Do not add again per-page — it's already there:
 ```css
-background-image: linear-gradient(rgba(93,79,224,0.04) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(93,79,224,0.04) 1px, transparent 1px);
+background-image: linear-gradient(rgba(30,58,138,0.04) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(30,58,138,0.04) 1px, transparent 1px);
 background-size: 40px 40px;
 ```
 
@@ -202,13 +208,13 @@ Defined in `tailwind.config.js`:
 | Token | Value | Usage |
 |---|---|---|
 | `shadow-card` | `0 4px 20px -8px rgba(10,15,30,0.08)` | Default card shadow |
-| `shadow-card-hover` | `0 8px 30px -8px rgba(93,79,224,0.2)` | Card hover state |
+| `shadow-card-hover` | `0 8px 30px -8px rgba(30,58,138,0.2)` | Card hover state |
 | `shadow-float` | `0 20px 60px -15px rgba(10,15,30,0.2)` | Floating elements |
 | `shadow-cta` | Complex 3-layer | PrimaryCTA button |
 
 Card hover pattern (inline in most places):
 ```
-hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)]
+hover:shadow-[0_8px_30px_-8px_rgba(30,58,138,0.2)]
 ```
 
 ---
@@ -225,33 +231,33 @@ Props: `title`, `description`
 - White background, `border-b border-[#0A0F1E]/10`, `shadow-sm`
 - Logo: SVG globe icon + "Ranking Atlas" gradient text
 - Desktop nav links: `text-[#0A0F1E]/65 hover:text-[#0A0F1E] text-[0.9375rem] font-medium`
-- Desktop CTA button: `bg-[#5D4FE0] hover:bg-[#4338CA] text-white text-sm font-semibold px-5 py-2.5 rounded-lg`
+- Desktop CTA button: `bg-[#1E3A8A] hover:bg-[#1E40AF] text-white text-sm font-semibold px-5 py-2.5 rounded-lg`
 - Mobile: hamburger toggle, slide-down menu
 
 ### `Footer.astro`
 - `bg-[#0A0F1E]`, `border-t border-white/10`
 - 4-column grid: Brand, Navigation, Resources, Contact
 - Column headers: `text-white font-semibold text-sm uppercase tracking-widest mb-5`
-- Links: `text-sm text-[#64748B] hover:text-[#5D4FE0]`
+- Links: `text-sm text-[#64748B] hover:text-[#1E3A8A]`
 
 ### `PrimaryCTA.astro`
 Default label: "Book a Call"
 
 ```html
-<a class="inline-flex items-center justify-center gap-2 text-white font-bold px-8 py-4 rounded-lg text-base transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-4px_rgba(93,79,224,0.6)]"
-   style="background: linear-gradient(180deg, #6B5CE8 0%, #5D4FE0 50%, #4F41D0 100%);
-          box-shadow: 0 4px 20px -4px rgba(93,79,224,0.5), 0 1px 2px rgba(93,79,224,0.2), inset 0 1px 0 rgba(255,255,255,0.15);">
+<a class="inline-flex items-center justify-center gap-2 text-white font-bold px-8 py-4 rounded-lg text-base transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-4px_rgba(30,58,138,0.6)]"
+   style="background: linear-gradient(180deg, #3B5BB8 0%, #1E3A8A 50%, #1E40AF 100%);
+          box-shadow: 0 4px 20px -4px rgba(30,58,138,0.5), 0 1px 2px rgba(30,58,138,0.2), inset 0 1px 0 rgba(255,255,255,0.15);">
 ```
 
 ### `SecondaryCTA.astro`
 ```html
-<a class="inline-flex items-center justify-center gap-2 font-bold px-6 py-3 border-2 border-[#5D4FE0] text-[#5D4FE0] rounded-lg text-base transition-all duration-200 hover:bg-[#5D4FE0]/5">
+<a class="inline-flex items-center justify-center gap-2 font-bold px-6 py-3 border-2 border-[#1E3A8A] text-[#1E3A8A] rounded-lg text-base transition-all duration-200 hover:bg-[#1E3A8A]/5">
 ```
 
 ### `Eyebrow.astro`
 A pill-style label component. **Only used on homepage** (light and dark variants). Do not use on resource pages — use flat inline `<div>` instead (see below).
 
-- Light variant: `inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#5D4FE0]/10 border border-[#5D4FE0]/15 mb-6`
+- Light variant: `inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1E3A8A]/10 border border-[#1E3A8A]/15 mb-6`
 - Dark variant (`variant="dark"`): `bg-white/10 border-white/20` with white text
 
 ### Flat Eyebrow (Resource Pages)
@@ -268,11 +274,11 @@ Used on all resource pages instead of `Eyebrow.astro`:
 ```html
 <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-[0_4px_20px_-8px_rgba(10,15,30,0.08)]
             flex flex-col transition-all duration-300
-            hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20">
-  <div class="w-12 h-12 rounded-xl bg-[#5D4FE0]/10 flex items-center justify-center mb-6">
-    <Icon size={22} class="text-[#5D4FE0]" />
+            hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(30,58,138,0.2)] hover:border-[#1E3A8A]/20">
+  <div class="w-12 h-12 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-6">
+    <Icon size={22} class="text-[#1E3A8A]" />
   </div>
-  <h3 class="text-lg md:text-xl font-semibold tracking-tight text-[#5D4FE0] leading-snug mb-3">Card Title</h3>
+  <h3 class="text-lg md:text-xl font-semibold tracking-tight text-[#1E3A8A] leading-snug mb-3">Card Title</h3>
   <p class="text-base text-[#475569] leading-relaxed">Card body copy.</p>
 </div>
 ```
@@ -293,7 +299,7 @@ Used on all resource pages instead of `Eyebrow.astro`:
 ```html
 <a href="/resources/slug" class="group bg-white rounded-2xl shadow-card p-8 hover:shadow-lg transition-shadow block">
   <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3">Guide</div>
-  <h2 class="text-xl md:text-2xl font-bold tracking-tight text-ink mb-4 leading-snug group-hover:text-[#5D4FE0] transition-colors">
+  <h2 class="text-xl md:text-2xl font-bold tracking-tight text-ink mb-4 leading-snug group-hover:text-[#1E3A8A] transition-colors">
     Resource Title
   </h2>
   <p class="text-body leading-relaxed mb-4">Description copy.</p>
@@ -310,11 +316,11 @@ Sections in order:
 1. **Hero** — 2-col grid, left: text + pills + CTAs, right: browser mockup card. `py-20 md:py-28` (first section).
 2. **Publisher Strip** — White bar, `py-8`, animated marquee of publisher name pills.
 3. **What AI Systems Trust** — White bg, `py-16 lg:py-24`, 3-col card grid.
-4. **How It Works** — Purple bg (`#5D4FE0`), `py-16 lg:py-24`, 4-col card grid.
+4. **How It Works** — Navy bg (`#1E3A8A`), `py-16 lg:py-24`, 4-col card grid.
 5. **Placements** — `#F8F7FA` bg, `py-16 lg:py-24`, 3-col placement preview cards.
 6. **Compound** — White bg, `py-16 lg:py-24`, 3-col stat+copy cards.
 7. **FAQ** — `<FAQ />` component.
-8. **Final CTA** — Purple bg, `py-16 lg:py-24`, centred H2 + CTA button.
+8. **Final CTA** — Navy bg, `py-16 lg:py-24`, centred H2 + CTA button.
 
 ### Article / Resource Page Template
 
@@ -434,12 +440,12 @@ Requires duplicating the list items for a seamless loop. Fade edges with:
 
 ### Card Hover
 ```
-transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(93,79,224,0.2)] hover:border-[#5D4FE0]/20
+transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_rgba(30,58,138,0.2)] hover:border-[#1E3A8A]/20
 ```
 
 ### CTA Button Hover
 ```
-transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-4px_rgba(93,79,224,0.6)]
+transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-4px_rgba(30,58,138,0.6)]
 ```
 
 ---
@@ -475,7 +481,7 @@ text-4xl md:text-5xl font-black tracking-tight text-ink
 | Navbar bottom | `border-b border-[#0A0F1E]/10` |
 | Footer top | `border-t border-white/10` |
 | Publisher pills | `border border-[#0A0F1E]/10` |
-| Secondary CTA button | `border-2 border-[#5D4FE0]` |
+| Secondary CTA button | `border-2 border-[#1E3A8A]` |
 
 ---
 
@@ -485,8 +491,8 @@ From `lucide-astro`. Standard sizes in cards: `size={22}`. In inline text/pills:
 
 Icon container in light cards:
 ```html
-<div class="w-12 h-12 rounded-xl bg-[#5D4FE0]/10 flex items-center justify-center mb-6">
-  <Icon size={22} class="text-[#5D4FE0]" />
+<div class="w-12 h-12 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-6">
+  <Icon size={22} class="text-[#1E3A8A]" />
 </div>
 ```
 

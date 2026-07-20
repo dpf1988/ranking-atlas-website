@@ -1,6 +1,7 @@
 ---
 const navLinks = [
   { label: 'Home',    href: '/'        },
+  { label: 'About',   href: '/about'   },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -12,7 +13,7 @@ const resourcesLinks = [
 ];
 ---
 
-<footer class="bg-[#1B2438] border-t border-white/10">
+<footer class="bg-brand-slate border-t border-white/10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 
@@ -23,8 +24,8 @@ const resourcesLinks = [
             <defs>
               <linearGradient id="ra-rings-dark" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45" />
-                <stop offset="55%" stop-color="#A06CF5" stop-opacity="0.95" />
-                <stop offset="100%" stop-color="#8A7DF7" stop-opacity="0.95" />
+                <stop offset="55%" stop-color="#D9A83E" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#C08A1F" stop-opacity="0.95" />
               </linearGradient>
             </defs>
             <circle cx="15" cy="15" r="13" fill="#1B2438" />
@@ -32,14 +33,14 @@ const resourcesLinks = [
             <ellipse cx="15" cy="15" rx="5.5" ry="13" stroke="url(#ra-rings-dark)" stroke-width="1.1" fill="none" />
             <line x1="2" y1="15" x2="28" y2="15" stroke="url(#ra-rings-dark)" stroke-width="1.1" />
             <rect x="17" y="17" width="13" height="13" rx="2.5" fill="#1B2438" stroke="white" stroke-opacity="0.15" stroke-width="0.5" />
-            <rect x="19" y="19.5" width="9" height="2" rx="1" fill="#F5C518" />
-            <rect x="19" y="23" width="7" height="1.2" rx="0.6" fill="#F5C518" opacity="0.85" />
-            <rect x="19" y="25.2" width="8" height="1.2" rx="0.6" fill="#F5C518" opacity="0.85" />
-            <rect x="19" y="27.4" width="5" height="1.2" rx="0.6" fill="#F5C518" opacity="0.85" />
+            <rect x="19" y="19.5" width="9" height="2" rx="1" fill="#D9A83E" />
+            <rect x="19" y="23" width="7" height="1.2" rx="0.6" fill="#D9A83E" opacity="0.85" />
+            <rect x="19" y="25.2" width="8" height="1.2" rx="0.6" fill="#D9A83E" opacity="0.85" />
+            <rect x="19" y="27.4" width="5" height="1.2" rx="0.6" fill="#D9A83E" opacity="0.85" />
           </svg>
-          <span class="font-serif font-semibold text-xl tracking-tight bg-gradient-to-r from-white via-[#A06CF5] to-[#8A7DF7] bg-clip-text text-transparent">Ranking Atlas</span>
+          <span class="font-serif font-semibold text-xl tracking-tight text-white">Ranking Atlas</span>
         </a>
-        <p class="text-sm leading-relaxed text-[#64748B]">
+        <p class="text-sm leading-relaxed text-muted">
           Original research and editorial campaigns that earn citations and grow visibility across search and AI.
         </p>
       </div>
@@ -50,7 +51,7 @@ const resourcesLinks = [
         <nav class="space-y-3">
           {navLinks.map((l) => (
             <a href={l.href}
-              class="block text-sm text-[#64748B] hover:text-white transition-colors duration-200">
+              class="block text-sm text-muted hover:text-white transition-colors duration-200">
               {l.label}
             </a>
           ))}
@@ -63,7 +64,7 @@ const resourcesLinks = [
         <nav class="space-y-3">
           {resourcesLinks.map((l) => (
             <a href={l.href}
-              class="block text-sm text-[#64748B] hover:text-white transition-colors duration-200">
+              class="block text-sm text-muted hover:text-white transition-colors duration-200">
               {l.label}
             </a>
           ))}
@@ -75,7 +76,7 @@ const resourcesLinks = [
         <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-5">Contact</h4>
         <div class="space-y-4">
           <a href="mailto:contact@ranking-atlas.com"
-            class="flex items-center gap-2.5 text-sm text-[#64748B] hover:text-white transition-colors duration-200">
+            class="flex items-center gap-2.5 text-sm text-muted hover:text-white transition-colors duration-200">
             <!-- Mail icon -->
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -84,7 +85,7 @@ const resourcesLinks = [
             contact@ranking-atlas.com
           </a>
           <a href="https://www.linkedin.com/in/daniel-grainger/" target="_blank" rel="noopener noreferrer"
-            class="flex items-center gap-2.5 text-sm text-[#64748B] hover:text-white transition-colors duration-200">
+            class="flex items-center gap-2.5 text-sm text-muted hover:text-white transition-colors duration-200">
             <!-- LinkedIn icon -->
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -99,7 +100,7 @@ const resourcesLinks = [
     </div>
 
     <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-[#64748B]">&copy; 2026 Ranking Atlas. All rights reserved.</p>
+      <p class="text-sm text-muted">&copy; 2026 Ranking Atlas. All rights reserved.</p>
       <p class="text-xs" style="color: rgba(100,116,139,0.53);">ranking-atlas.com</p>
     </div>
   </div>

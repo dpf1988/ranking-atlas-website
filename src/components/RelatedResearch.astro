@@ -13,7 +13,7 @@ const { items } = Astro.props;
 const cards = items.slice(0, 3);
 ---
 
-<section class="py-16 md:py-24 bg-white border-t border-[#0A0F1E]/8">
+<section class="py-16 md:py-24 bg-white border-t border-ink/8">
   <div class="max-w-5xl mx-auto px-6">
     <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight mb-12">
       Related Research
@@ -22,7 +22,7 @@ const cards = items.slice(0, 3);
       {cards.map((item) => (
         <a
           href={item.href}
-          class="group bg-white rounded-2xl border border-[#0A0F1E]/8 p-8 shadow-card flex flex-col transition-all duration-300 hover:border-[#0A0F1E]/25 hover:shadow-[0_8px_30px_-8px_rgba(30,58,138,0.2)]"
+          class="group bg-white rounded-2xl border border-ink/8 p-8 shadow-card flex flex-col transition-all duration-300 hover:border-ink/25 hover:shadow-[0_8px_30px_-8px_rgba(30,58,138,0.2)]"
         >
           <h3 class="text-lg md:text-xl font-semibold tracking-tight text-ink leading-snug mb-3 group-hover:text-brand transition-colors">
             {item.title}

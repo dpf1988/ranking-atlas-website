@@ -2,44 +2,47 @@
 ---
 
 <div id="contact-form-wrap">
-  <form id="contact-form" class="bg-white rounded-3xl border border-[#0A0F1E]/8 shadow-md p-6 lg:p-7 space-y-4">
+  <form id="contact-form" class="bg-white rounded-3xl border border-ink/8 shadow-md p-6 lg:p-7 space-y-4">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <label for="name" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
-          Name <span class="text-[#1E3A8A]">*</span>
+        <label for="name" class="block text-sm font-semibold mb-1.5 text-ink">
+          Name <span class="text-brand">*</span>
         </label>
-        <input id="name" name="name" type="text" required placeholder="Jane Smith"
-          class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E]"
+        <input id="name" name="name" type="text" required placeholder="Jane Smith" autocomplete="name"
+          class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-ink"
           style="border-color: rgba(10,15,30,0.13);" />
       </div>
       <div>
-        <label for="email" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
-          Email <span class="text-[#1E3A8A]">*</span>
+        <label for="email" class="block text-sm font-semibold mb-1.5 text-ink">
+          Email <span class="text-brand">*</span>
         </label>
-        <input id="email" name="email" type="text" required placeholder="you@example.com"
-          class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E]"
+        <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email"
+          class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-ink"
           style="border-color: rgba(10,15,30,0.13);" />
       </div>
     </div>
 
     <div>
-      <label for="website" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
-        Website <span class="text-[#1E3A8A]">*</span>
+      <label for="website" class="block text-sm font-semibold mb-1.5 text-ink">
+        Website <span class="text-brand">*</span>
       </label>
-      <input id="website" name="website" type="text" required placeholder="https://yourwebsite.com"
-        class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E]"
+      <input id="website" name="website" type="url" required placeholder="https://yourwebsite.com" autocomplete="url"
+        class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-ink"
         style="border-color: rgba(10,15,30,0.13);" />
     </div>
 
     <div>
-      <label for="message" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
-        About your business <span class="text-[#1E3A8A]">*</span>
+      <label for="message" class="block text-sm font-semibold mb-1.5 text-ink">
+        About your business <span class="text-brand">*</span>
       </label>
       <textarea id="message" name="message" required rows="5"
         placeholder="What you do, who your customers are, and what visibility looks like today."
-        class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E] resize-none"
+        class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-ink resize-none"
         style="border-color: rgba(10,15,30,0.13);"></textarea>
     </div>
+
+    <!-- Honeypot: hidden from humans, bots fill it, Formspree drops the submission -->
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;height:0;width:0;opacity:0;" aria-hidden="true" />
 
     <!-- Error state (success handled by swap-to-booking below) -->
     <div id="form-error" class="hidden bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3">
@@ -48,7 +51,7 @@
 
     <div class="flex justify-center">
       <button id="form-submit" type="submit"
-        class="bg-[#1E3A8A] hover:bg-[#1E40AF] text-white font-semibold py-3 px-8 rounded text-sm shadow-[0_3px_8px_-2px_rgba(15,27,61,0.22),0_1px_2px_rgba(15,27,61,0.10)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.28),0_2px_4px_-1px_rgba(15,27,61,0.12)] hover:-translate-y-px transition-all duration-200 flex items-center justify-center gap-2">
+        class="bg-brand hover:bg-brand-dark text-white font-semibold py-3 px-8 rounded text-sm shadow-[0_3px_8px_-2px_rgba(15,27,61,0.22),0_1px_2px_rgba(15,27,61,0.10)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.28),0_2px_4px_-1px_rgba(15,27,61,0.12)] hover:-translate-y-px transition-all duration-200 flex items-center justify-center gap-2">
         <span id="submit-text">Book a Call</span>
         <svg id="submit-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"/>
@@ -58,19 +61,19 @@
       </button>
     </div>
 
-    <p class="text-center text-sm text-[#64748B] mt-3">
+    <p class="text-center text-sm text-muted mt-3">
       Prefer to reach out directly?
       <a href="mailto:contact@ranking-atlas.com"
-        class="font-medium text-[#1E3A8A] hover:text-[#1E40AF] transition-colors">
+        class="font-medium text-brand hover:text-brand-dark transition-colors">
         contact@ranking-atlas.com
       </a>
     </p>
   </form>
 
   <!-- Booking state (revealed after successful form submit) -->
-  <div id="booking-state" class="hidden bg-white rounded-3xl border border-[#0A0F1E]/8 shadow-md p-6 lg:p-7">
+  <div id="booking-state" class="hidden bg-white rounded-3xl border border-ink/8 shadow-md p-6 lg:p-7">
     <div class="mb-4">
-      <p class="text-sm font-semibold text-[#1E3A8A] uppercase tracking-[0.14em] mb-2">Thanks. Now pick a time.</p>
+      <p class="text-sm font-semibold text-brand uppercase tracking-[0.14em] mb-2">Thanks. Now pick a time.</p>
       <p class="text-base text-body leading-relaxed">
         Your context is in. Book a 30-minute call below and we'll come prepared with a citation baseline and a plan.
       </p>
@@ -113,11 +116,12 @@
       var email = form.querySelector('#email').value;
       var website = form.querySelector('#website').value;
       var message = form.querySelector('#message').value;
+      var gotcha = form.querySelector('[name=_gotcha]') ? form.querySelector('[name=_gotcha]').value : '';
 
       fetch('https://formspree.io/f/xojkolng', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ name: name, email: email, website: website, message: message, _replyto: 'contact@ranking-atlas.com' }),
+        body: JSON.stringify({ name: name, email: email, website: website, message: message, _replyto: email, _gotcha: gotcha }),
       })
         .then(function(res) {
           if (res.ok) {

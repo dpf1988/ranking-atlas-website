@@ -37,12 +37,12 @@ const jsonLd = {
   description="[META_DESCRIPTION]"
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+  <script is:inline src="/vendor/chart.umd.js"></script>
 
 <div class="bg-white">
 
   <!-- ── 1. Hero ────────────────────────────────────────────────────────── -->
-  <section class="pt-20 md:pt-28 pb-16 border-b border-[#0A0F1E]/8">
+  <section class="pt-20 md:pt-28 pb-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3 text-center">Data Report</div>
       <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.15] mb-3 text-center">
@@ -56,34 +56,34 @@ const jsonLd = {
         <img
           src="/assets/images/resources/[SLUG]/hero.jpg"
           alt="[ONE_SENTENCE_ALT_DESCRIBING_THE_ILLUSTRATION]"
-          class="w-full h-auto rounded-2xl border border-[#0A0F1E]/8"
+          class="w-full h-auto rounded-2xl border border-ink/8"
           loading="eager"
         />
         <!-- Omit the figcaption block entirely if no caption is needed. -->
-        <figcaption class="mt-3 text-sm text-[#64748B] italic">[OPTIONAL_CAPTION]</figcaption>
+        <figcaption class="mt-3 text-sm text-muted italic">[OPTIONAL_CAPTION]</figcaption>
       </figure>
 
-      <div class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5 mb-6">
-        <p class="text-[13px] text-[#64748B]">Content Written By:</p>
-        <p class="text-[13px] text-[#64748B]">Daniel Grainger</p>
-        <p class="text-[13px] text-[#64748B]">Founder, Ranking Atlas</p>
-        <p class="text-[13px] text-[#64748B]">Published [MONTH_YEAR]</p>
+      <div class="bg-bg-paper border border-ink/8 rounded-2xl p-5 mb-6">
+        <p class="text-[13px] text-muted">Content Written By:</p>
+        <p class="text-[13px] text-muted">Daniel Grainger</p>
+        <p class="text-[13px] text-muted">Founder, Ranking Atlas</p>
+        <p class="text-[13px] text-muted">Published [MONTH_YEAR]</p>
       </div>
 
-      <nav class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5" aria-label="Article sections">
+      <nav class="bg-bg-paper border border-ink/8 rounded-2xl p-5" aria-label="Article sections">
         <p class="text-[14px] font-semibold text-ink mb-3">Navigation</p>
         <ul class="flex flex-col space-y-2 text-[14px]">
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key Takeaways</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#finding-one" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">[FINDING_ONE_H2]</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key Takeaways</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#finding-one" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">[FINDING_ONE_H2]</a></li>
           <!-- one <li> per finding section, following the same flex + hollow-bullet pattern -->
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#closing" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">[CLOSING_H2]</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#closing" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">[CLOSING_H2]</a></li>
         </ul>
       </nav>
     </div>
   </section>
 
   <!-- ── 2. Key Takeaways ──────────────────────────────────────────────── -->
-  <section id="key-takeaways" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section id="key-takeaways" class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Key Takeaways</h2>
       <ul class="space-y-2 list-disc pl-6 text-body text-[15px] leading-[1.7]">
@@ -98,7 +98,7 @@ const jsonLd = {
   </section>
 
   <!-- ── 4. Finding section (claim-led H2) ─────────────────────────────── -->
-  <section id="finding-one" class="py-16 border-b border-[#0A0F1E]/8">
+  <section id="finding-one" class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6 max-w-3xl">[FINDING_ONE_AS_A_SENTENCE]</h2>
 
@@ -111,20 +111,20 @@ const jsonLd = {
 
       <!-- Table (only if it carries figures the chart cannot show, e.g. sample sizes). -->
       <!--
-      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8 mb-8">
+      <div class="overflow-x-auto bg-white rounded-2xl border border-ink/8 mb-8">
         <table class="w-full text-sm text-left">
           <thead>
-            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+            <tr class="border-b border-ink/8 bg-bg-paper">
               <th class="px-4 py-3 font-semibold text-ink">[Column 1]</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">[Column 2]</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">[Column 3]</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#0A0F1E]/6">
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">[Row label]</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">[Below-baseline value]</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">[Neutral value]</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">[Below-baseline value]</td>
+              <td class="px-4 py-3 text-right text-muted">[Neutral value]</td>
             </tr>
           </tbody>
         </table>
@@ -139,10 +139,10 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- Repeat the finding section pattern for each finding. Alternate bg-white / bg-[#FBFAF7] every section. -->
+  <!-- Repeat the finding section pattern for each finding. Alternate bg-white / bg-bg-paper every section. -->
 
   <!-- ── n. Closing editorial ──────────────────────────────────────────── -->
-  <section id="closing" class="py-16 border-b border-[#0A0F1E]/8">
+  <section id="closing" class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">[CLOSING_H2_REFRAMES_THE_FINDING]</h2>
 
@@ -164,7 +164,7 @@ const jsonLd = {
   </section>
 
   <!-- ── Methodology ───────────────────────────────────────────────────── -->
-  <section class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-8">Methodology</h2>
 
@@ -205,7 +205,7 @@ const jsonLd = {
   </section>
 
   <!-- ── Limitations ───────────────────────────────────────────────────── -->
-  <section class="py-16 border-b border-[#0A0F1E]/8">
+  <section class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-8">Limitations</h2>
       <div class="space-y-5 text-body text-[15px] leading-[1.7]">
@@ -219,23 +219,23 @@ const jsonLd = {
   </section>
 
   <!-- ── Download ──────────────────────────────────────────────────────── -->
-  <section class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-4">Download the Data</h2>
       <p class="text-body text-[15px] leading-[1.7] mb-6 max-w-3xl">
         [One sentence describing what is in the dataset.]
       </p>
-      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 flex items-center justify-between gap-4">
+      <div class="bg-white rounded-2xl border border-ink/8 p-6 flex items-center justify-between gap-4">
         <div>
           <p class="font-semibold text-ink mb-1">[FILENAME].csv</p>
-          <p class="text-sm text-[#64748B]">[Short description of columns.]</p>
+          <p class="text-sm text-muted">[Short description of columns.]</p>
         </div>
-        <a href="/downloads/[FILENAME].csv" class="inline-flex items-center gap-2 bg-[#F4F0E9] hover:bg-white text-[#0A0F1E] text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-[#0A0F1E]/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
+        <a href="/downloads/[FILENAME].csv" class="inline-flex items-center gap-2 bg-bg-warm hover:bg-white text-ink text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-ink/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
           Download CSV
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         </a>
       </div>
-      <p class="mt-6 text-sm text-[#64748B]">
+      <p class="mt-6 text-sm text-muted">
         Citation: Ranking Atlas, "[REPORT_TITLE]," [MONTH_YEAR]. Research by Daniel Grainger.
       </p>
     </div>

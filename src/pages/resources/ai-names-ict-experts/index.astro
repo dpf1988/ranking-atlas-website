@@ -28,12 +28,12 @@ const jsonLd = {
   description="Across 2,520 responses from ChatGPT, Claude, Gemini, and Perplexity, women were 20.5% of named ICT experts against a 28% workforce baseline. Rewording the question alone moved the figure from 11.8% to 27.8%."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+  <script is:inline src="/vendor/chart.umd.js"></script>
 
 <div class="bg-white">
 
   <!-- ── 1. Hero ────────────────────────────────────────────────────────── -->
-  <section class="pt-20 md:pt-28 pb-16 border-b border-[#0A0F1E]/8">
+  <section class="pt-20 md:pt-28 pb-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <div class="text-xs uppercase tracking-wider text-brand font-medium mb-3 text-center">Data Report</div>
       <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.15] mb-3 text-center">
@@ -47,36 +47,36 @@ const jsonLd = {
         <img
           src="/assets/images/resources/ai-names-ict-experts/hero.jpg"
           alt="Illustration of a room of ICT professionals, mostly men lit by directional light, with a small number of women outside the light, one with her hand quietly raised. An abstract AI form observes the lit group."
-          class="w-full h-auto rounded-2xl border border-[#0A0F1E]/8"
+          class="w-full h-auto rounded-2xl border border-ink/8"
           loading="eager"
         />
       </figure>
 
-      <div class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5 mb-6">
-        <p class="text-[13px] text-[#64748B]">Content Written By:</p>
-        <p class="text-[13px] text-[#64748B]">Daniel Grainger</p>
-        <p class="text-[13px] text-[#64748B]">Founder, Ranking Atlas</p>
-        <p class="text-[13px] text-[#64748B]">Published April 2026</p>
+      <div class="bg-bg-paper border border-ink/8 rounded-2xl p-5 mb-6">
+        <p class="text-[13px] text-muted">Content Written By:</p>
+        <p class="text-[13px] text-muted">Daniel Grainger</p>
+        <p class="text-[13px] text-muted">Founder, Ranking Atlas</p>
+        <p class="text-[13px] text-muted">Published April 2026</p>
       </div>
 
-      <nav class="bg-[#FBFAF7] border border-[#0A0F1E]/8 rounded-2xl p-5" aria-label="Article sections">
+      <nav class="bg-bg-paper border border-ink/8 rounded-2xl p-5" aria-label="Article sections">
         <p class="text-[14px] font-semibold text-ink mb-3">Navigation</p>
         <ul class="flex flex-col space-y-2 text-[14px]">
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key Takeaways</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#role-gap" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Ask AI for Top Tech Founders and It Names One Woman for Every Ten Men</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#sub-category" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">In Five of Six Tech Fields, AI Underrepresents the Women Who Are There</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#language-effect" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">One Wording Change Nearly Doubled How Many Women AI Named</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#consensus-effect" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The More AI Models Agree, the More Male the Answer Gets</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#by-model" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The AI That Searches the Live Web Was the Worst of the Four</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#headline-gap" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">AI Names Far Fewer Women as ICT Experts Than Actually Work in ICT</a></li>
-          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-[#0A0F1E]/30 shrink-0"></span><a href="#the-names-exist" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Why The Default Question Returns So Few Women</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key Takeaways</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#role-gap" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Ask AI for Top Tech Founders and It Names One Woman for Every Ten Men</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#sub-category" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">In Five of Six Tech Fields, AI Underrepresents the Women Who Are There</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#language-effect" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">One Wording Change Nearly Doubled How Many Women AI Named</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#consensus-effect" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The More AI Models Agree, the More Male the Answer Gets</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#by-model" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The AI That Searches the Live Web Was the Worst of the Four</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#headline-gap" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">AI Names Far Fewer Women as ICT Experts Than Actually Work in ICT</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#the-names-exist" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Why The Default Question Returns So Few Women</a></li>
         </ul>
       </nav>
     </div>
   </section>
 
   <!-- ── 2. Key Takeaways ──────────────────────────────────────────────── -->
-  <section id="key-takeaways" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section id="key-takeaways" class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Key Takeaways</h2>
       <ul class="space-y-2 list-disc pl-6 text-body text-[15px] leading-[1.7]">
@@ -93,7 +93,7 @@ const jsonLd = {
   </section>
 
   <!-- ── 4. Role Gap ───────────────────────────────────────────────────── -->
-  <section id="role-gap" class="py-16 border-b border-[#0A0F1E]/8">
+  <section id="role-gap" class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6 max-w-3xl">Ask AI for Top Tech Founders and It Names One Woman for Every Ten Men</h2>
 
@@ -101,10 +101,10 @@ const jsonLd = {
         <ChartRoleGap id="chartRoleGap" />
       </div>
 
-      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8 mb-8">
+      <div class="overflow-x-auto bg-white rounded-2xl border border-ink/8 mb-8">
         <table class="w-full text-sm text-left">
           <thead>
-            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+            <tr class="border-b border-ink/8 bg-bg-paper">
               <th class="px-4 py-3 font-semibold text-ink">Role</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">Female %</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">Mentions</th>
@@ -112,55 +112,55 @@ const jsonLd = {
               <th class="px-4 py-3 font-semibold text-ink text-right">Male</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#0A0F1E]/6">
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Founder / CEO</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">9.8%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">2,802</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">275</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">2,527</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">9.8%</td>
+              <td class="px-4 py-3 text-right text-muted">2,802</td>
+              <td class="px-4 py-3 text-right text-muted">275</td>
+              <td class="px-4 py-3 text-right text-muted">2,527</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Analyst</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">20.8%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">2,130</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">442</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,688</td>
+              <td class="px-4 py-3 text-right text-muted">20.8%</td>
+              <td class="px-4 py-3 text-right text-muted">2,130</td>
+              <td class="px-4 py-3 text-right text-muted">442</td>
+              <td class="px-4 py-3 text-right text-muted">1,688</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Vendor executive</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">20.9%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">2,296</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">480</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,816</td>
+              <td class="px-4 py-3 text-right text-muted">20.9%</td>
+              <td class="px-4 py-3 text-right text-muted">2,296</td>
+              <td class="px-4 py-3 text-right text-muted">480</td>
+              <td class="px-4 py-3 text-right text-muted">1,816</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Academic</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">27.3%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,228</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">335</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">893</td>
+              <td class="px-4 py-3 text-right text-muted">27.3%</td>
+              <td class="px-4 py-3 text-right text-muted">1,228</td>
+              <td class="px-4 py-3 text-right text-muted">335</td>
+              <td class="px-4 py-3 text-right text-muted">893</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Journalist</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#047857]">28.5%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">421</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">120</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">301</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green">28.5%</td>
+              <td class="px-4 py-3 text-right text-muted">421</td>
+              <td class="px-4 py-3 text-right text-muted">120</td>
+              <td class="px-4 py-3 text-right text-muted">301</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Practitioner</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#047857]">29.0%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,048</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">304</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">744</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green">29.0%</td>
+              <td class="px-4 py-3 text-right text-muted">1,048</td>
+              <td class="px-4 py-3 text-right text-muted">304</td>
+              <td class="px-4 py-3 text-right text-muted">744</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Influencer</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#047857]">30.0%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">751</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">225</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">526</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green">30.0%</td>
+              <td class="px-4 py-3 text-right text-muted">751</td>
+              <td class="px-4 py-3 text-right text-muted">225</td>
+              <td class="px-4 py-3 text-right text-muted">526</td>
             </tr>
           </tbody>
         </table>
@@ -183,14 +183,14 @@ const jsonLd = {
   </section>
 
   <!-- ── 5. Sub-Category Breakdown ─────────────────────────────────────── -->
-  <section id="sub-category" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section id="sub-category" class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6 max-w-3xl">In Five of Six Tech Fields, AI Underrepresents the Women Who Are There</h2>
 
-      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8 mb-8">
+      <div class="overflow-x-auto bg-white rounded-2xl border border-ink/8 mb-8">
         <table class="w-full text-sm text-left">
           <thead>
-            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+            <tr class="border-b border-ink/8 bg-bg-paper">
               <th class="px-4 py-3 font-semibold text-ink">Sub-category</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">LLM female %</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">Workforce %</th>
@@ -198,48 +198,48 @@ const jsonLd = {
               <th class="px-4 py-3 font-semibold text-ink">Source</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#0A0F1E]/6">
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Networking &amp; telecommunications</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">13.6%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">19%</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">+5.4 pp</td>
-              <td class="px-4 py-3 text-[#64748B]">Eurostat / ITU composite</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">13.6%</td>
+              <td class="px-4 py-3 text-right text-muted">19%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">+5.4 pp</td>
+              <td class="px-4 py-3 text-muted">Eurostat / ITU composite</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Software engineering</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">15.3%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">22%</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">+6.7 pp</td>
-              <td class="px-4 py-3 text-[#64748B]">BLS 2025 / WomenHack</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">15.3%</td>
+              <td class="px-4 py-3 text-right text-muted">22%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">+6.7 pp</td>
+              <td class="px-4 py-3 text-muted">BLS 2025 / WomenHack</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">AI and machine learning</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">18.1%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">22%</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">+3.9 pp</td>
-              <td class="px-4 py-3 text-[#64748B]">Stanford AI Index 2024 / Interface EU</td>
+              <td class="px-4 py-3 text-right text-muted">18.1%</td>
+              <td class="px-4 py-3 text-right text-muted">22%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">+3.9 pp</td>
+              <td class="px-4 py-3 text-muted">Stanford AI Index 2024 / Interface EU</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Cybersecurity</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">18.6%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">22%</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">+3.4 pp</td>
-              <td class="px-4 py-3 text-[#64748B]">ISC2 Cybersecurity Workforce Study 2024</td>
+              <td class="px-4 py-3 text-right text-muted">18.6%</td>
+              <td class="px-4 py-3 text-right text-muted">22%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">+3.4 pp</td>
+              <td class="px-4 py-3 text-muted">ISC2 Cybersecurity Workforce Study 2024</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Cloud and infrastructure</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#047857]">20.0%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">14%</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#047857]">−6.0 pp</td>
-              <td class="px-4 py-3 text-[#64748B]">Statista 2025 / WomenHack</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green">20.0%</td>
+              <td class="px-4 py-3 text-right text-muted">14%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green">−6.0 pp</td>
+              <td class="px-4 py-3 text-muted">Statista 2025 / WomenHack</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Data and analytics</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">25.0%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">30%</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">+5.0 pp</td>
-              <td class="px-4 py-3 text-[#64748B]">World Economic Forum 2025</td>
+              <td class="px-4 py-3 text-right text-muted">25.0%</td>
+              <td class="px-4 py-3 text-right text-muted">30%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">+5.0 pp</td>
+              <td class="px-4 py-3 text-muted">World Economic Forum 2025</td>
             </tr>
           </tbody>
         </table>
@@ -260,7 +260,7 @@ const jsonLd = {
   </section>
 
   <!-- ── 6. Language Effect ────────────────────────────────────────────── -->
-  <section id="language-effect" class="py-16 border-b border-[#0A0F1E]/8">
+  <section id="language-effect" class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6 max-w-3xl">One Wording Change Nearly Doubled How Many Women AI Named</h2>
 
@@ -268,65 +268,65 @@ const jsonLd = {
         <ChartQueryVariants id="chartQueryVariantsBody" />
       </div>
 
-      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8 mb-8">
+      <div class="overflow-x-auto bg-white rounded-2xl border border-ink/8 mb-8">
         <table class="w-full text-sm text-left">
           <thead>
-            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+            <tr class="border-b border-ink/8 bg-bg-paper">
               <th class="px-4 py-3 font-semibold text-ink">Query</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">Female %</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">n (mentions)</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#0A0F1E]/6">
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 text-ink">Who is shaping the future of ICT?</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">11.8%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">119</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">11.8%</td>
+              <td class="px-4 py-3 text-right text-muted">119</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 text-ink">Which people have the most influence in ICT?</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">13.4%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,772</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">13.4%</td>
+              <td class="px-4 py-3 text-right text-muted">1,772</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 text-ink">Who writes the most influential content on ICT?</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">19.6%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">861</td>
+              <td class="px-4 py-3 text-right text-muted">19.6%</td>
+              <td class="px-4 py-3 text-right text-muted">861</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 text-ink">Name the most-cited commentators on ICT.</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">19.8%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,214</td>
+              <td class="px-4 py-3 text-right text-muted">19.8%</td>
+              <td class="px-4 py-3 text-right text-muted">1,214</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 text-ink">Who are the top experts in ICT?</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">20.2%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,438</td>
+              <td class="px-4 py-3 text-right text-muted">20.2%</td>
+              <td class="px-4 py-3 text-right text-muted">1,438</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 text-ink">Who should I follow for ICT analysis?</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">21.1%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,010</td>
+              <td class="px-4 py-3 text-right text-muted">21.1%</td>
+              <td class="px-4 py-3 text-right text-muted">1,010</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 text-ink">Who are the go-to analysts in ICT?</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">21.8%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,327</td>
+              <td class="px-4 py-3 text-right text-muted">21.8%</td>
+              <td class="px-4 py-3 text-right text-muted">1,327</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 text-ink">Name some thought leaders in ICT.</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">22.1%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,418</td>
+              <td class="px-4 py-3 text-right text-muted">22.1%</td>
+              <td class="px-4 py-3 text-right text-muted">1,418</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 text-ink">Who are the leading voices on ICT?</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#047857]">27.8%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,552</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green">27.8%</td>
+              <td class="px-4 py-3 text-right text-muted">1,552</td>
             </tr>
-            <tr class="border-t-2 border-[#1E3A8A]/20 hover:bg-[#FBFAF7] transition-colors">
-              <td class="px-4 py-3 text-[#1E3A8A] font-medium">Who are the most important women in ICT? <span class="text-xs font-normal text-[#64748B] ml-1">(control, excluded from headline figures)</span></td>
-              <td class="px-4 py-3 text-right font-semibold text-[#1E3A8A]">96.5%</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">1,478</td>
+            <tr class="border-t-2 border-brand/20 hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 text-brand font-medium">Who are the most important women in ICT? <span class="text-xs font-normal text-muted ml-1">(control, excluded from headline figures)</span></td>
+              <td class="px-4 py-3 text-right font-semibold text-brand">96.5%</td>
+              <td class="px-4 py-3 text-right text-muted">1,478</td>
             </tr>
           </tbody>
         </table>
@@ -348,7 +348,7 @@ const jsonLd = {
   </section>
 
   <!-- ── 7. Consensus Effect ───────────────────────────────────────────── -->
-  <section id="consensus-effect" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section id="consensus-effect" class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6 max-w-3xl">The More AI Models Agree, the More Male the Answer Gets</h2>
 
@@ -356,10 +356,10 @@ const jsonLd = {
         <ChartConsensus id="chartConsensus" />
       </div>
 
-      <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8 mb-8">
+      <div class="overflow-x-auto bg-white rounded-2xl border border-ink/8 mb-8">
         <table class="w-full text-sm text-left">
           <thead>
-            <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+            <tr class="border-b border-ink/8 bg-bg-paper">
               <th class="px-4 py-3 font-semibold text-ink">Named by</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">Unique people</th>
               <th class="px-4 py-3 font-semibold text-ink text-right">Female</th>
@@ -367,34 +367,34 @@ const jsonLd = {
               <th class="px-4 py-3 font-semibold text-ink text-right">Female %</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#0A0F1E]/6">
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">All 4 models</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">56</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">10</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">46</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#B91C1C]">17.9%</td>
+              <td class="px-4 py-3 text-right text-muted">56</td>
+              <td class="px-4 py-3 text-right text-muted">10</td>
+              <td class="px-4 py-3 text-right text-muted">46</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">17.9%</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">3 models</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">64</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">15</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">49</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">23.4%</td>
+              <td class="px-4 py-3 text-right text-muted">64</td>
+              <td class="px-4 py-3 text-right text-muted">15</td>
+              <td class="px-4 py-3 text-right text-muted">49</td>
+              <td class="px-4 py-3 text-right text-muted">23.4%</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">2 models</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">95</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">21</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">74</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">22.1%</td>
+              <td class="px-4 py-3 text-right text-muted">95</td>
+              <td class="px-4 py-3 text-right text-muted">21</td>
+              <td class="px-4 py-3 text-right text-muted">74</td>
+              <td class="px-4 py-3 text-right text-muted">22.1%</td>
             </tr>
-            <tr class="hover:bg-[#FBFAF7] transition-colors">
+            <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">1 model only</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">326</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">85</td>
-              <td class="px-4 py-3 text-right text-[#64748B]">241</td>
-              <td class="px-4 py-3 text-right font-semibold text-[#047857]">26.1%</td>
+              <td class="px-4 py-3 text-right text-muted">326</td>
+              <td class="px-4 py-3 text-right text-muted">85</td>
+              <td class="px-4 py-3 text-right text-muted">241</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-green">26.1%</td>
             </tr>
           </tbody>
         </table>
@@ -417,7 +417,7 @@ const jsonLd = {
   </section>
 
   <!-- ── 8. By Model ───────────────────────────────────────────────────── -->
-  <section id="by-model" class="py-16 border-b border-[#0A0F1E]/8">
+  <section id="by-model" class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6 max-w-3xl">The AI That Searches the Live Web Was the Worst of the Four</h2>
 
@@ -437,7 +437,7 @@ const jsonLd = {
   </section>
 
   <!-- ── 9. Headline Gap ───────────────────────────────────────────────── -->
-  <section id="headline-gap" class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section id="headline-gap" class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6 max-w-3xl">AI Names Far Fewer Women as ICT Experts Than Actually Work in ICT</h2>
 
@@ -460,7 +460,7 @@ const jsonLd = {
   </section>
 
   <!-- ── 10. The Names Exist ───────────────────────────────────────────── -->
-  <section id="the-names-exist" class="py-16 border-b border-[#0A0F1E]/8">
+  <section id="the-names-exist" class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Why The Default Question Returns So Few Women</h2>
 
@@ -488,7 +488,7 @@ const jsonLd = {
   </section>
 
   <!-- ── 11. Methodology ───────────────────────────────────────────────── -->
-  <section class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-8">Methodology</h2>
 
@@ -504,7 +504,7 @@ const jsonLd = {
             <li>Name the most-cited commentators on {`{category}`}.</li>
             <li>Who are the go-to analysts in {`{category}`}?</li>
             <li>Who writes the most influential content on {`{category}`}?</li>
-            <li class="text-[#1E3A8A]">Who are the most important women in {`{category}`}? <span class="text-[#64748B] font-normal">(control, excluded from headline figures)</span></li>
+            <li class="text-brand">Who are the most important women in {`{category}`}? <span class="text-muted font-normal">(control, excluded from headline figures)</span></li>
             <li>Name some thought leaders in {`{category}`}.</li>
             <li>Who is shaping the future of {`{category}`}?</li>
             <li>Which people have the most influence in {`{category}`}?</li>
@@ -529,39 +529,39 @@ const jsonLd = {
         <div>
           <h3 class="font-serif font-semibold text-base text-ink mb-3">Gender classification</h3>
           <p class="mb-4">Classification used a three-tier cascade applied to 2,286 unique individuals:</p>
-          <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
+          <div class="overflow-x-auto bg-white rounded-2xl border border-ink/8">
             <table class="w-full text-sm text-left">
               <thead>
-                <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+                <tr class="border-b border-ink/8 bg-bg-paper">
                   <th class="px-4 py-3 font-semibold text-ink">Tier</th>
                   <th class="px-4 py-3 font-semibold text-ink">Method</th>
                   <th class="px-4 py-3 font-semibold text-ink text-right">Names classified</th>
                   <th class="px-4 py-3 font-semibold text-ink text-right">Share</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-[#0A0F1E]/6">
-                <tr class="hover:bg-[#FBFAF7] transition-colors">
+              <tbody class="divide-y divide-ink/6">
+                <tr class="hover:bg-bg-paper transition-colors">
                   <td class="px-4 py-3 font-medium text-ink">1</td>
-                  <td class="px-4 py-3 text-[#64748B]">Name-based inference (gender_guesser library)</td>
-                  <td class="px-4 py-3 text-right text-[#64748B]">1,842</td>
-                  <td class="px-4 py-3 text-right text-[#64748B]">80.6%</td>
+                  <td class="px-4 py-3 text-muted">Name-based inference (gender_guesser library)</td>
+                  <td class="px-4 py-3 text-right text-muted">1,842</td>
+                  <td class="px-4 py-3 text-right text-muted">80.6%</td>
                 </tr>
-                <tr class="hover:bg-[#FBFAF7] transition-colors">
+                <tr class="hover:bg-bg-paper transition-colors">
                   <td class="px-4 py-3 font-medium text-ink">2</td>
-                  <td class="px-4 py-3 text-[#64748B]">LLM-assisted classification (Claude Opus, high-confidence only)</td>
-                  <td class="px-4 py-3 text-right text-[#64748B]">284</td>
-                  <td class="px-4 py-3 text-right text-[#64748B]">12.4%</td>
+                  <td class="px-4 py-3 text-muted">LLM-assisted classification (Claude Opus, high-confidence only)</td>
+                  <td class="px-4 py-3 text-right text-muted">284</td>
+                  <td class="px-4 py-3 text-right text-muted">12.4%</td>
                 </tr>
-                <tr class="hover:bg-[#FBFAF7] transition-colors">
+                <tr class="hover:bg-bg-paper transition-colors">
                   <td class="px-4 py-3 font-medium text-ink">3</td>
-                  <td class="px-4 py-3 text-[#64748B]">Manual human review with public sources</td>
-                  <td class="px-4 py-3 text-right text-[#64748B]">164</td>
-                  <td class="px-4 py-3 text-right text-[#64748B]">7.2%</td>
+                  <td class="px-4 py-3 text-muted">Manual human review with public sources</td>
+                  <td class="px-4 py-3 text-right text-muted">164</td>
+                  <td class="px-4 py-3 text-right text-muted">7.2%</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="mt-3 text-sm text-[#64748B]">Gender was classified from names and professional bios, not self-identification. Classification reflects binary gender assignment (M/F) based on publicly available information. Non-binary identities are not captured. A further 7.0% of individuals (160) could not be classified and are excluded from percentage calculations.</p>
+          <p class="mt-3 text-sm text-muted">Gender was classified from names and professional bios, not self-identification. Classification reflects binary gender assignment (M/F) based on publicly available information. Non-binary identities are not captured. A further 7.0% of individuals (160) could not be classified and are excluded from percentage calculations.</p>
         </div>
 
         <div>
@@ -576,23 +576,23 @@ const jsonLd = {
 
         <div>
           <h3 class="font-serif font-semibold text-base text-ink mb-3">Workforce baselines</h3>
-          <div class="overflow-x-auto bg-white rounded-2xl border border-[#0A0F1E]/8">
+          <div class="overflow-x-auto bg-white rounded-2xl border border-ink/8">
             <table class="w-full text-sm text-left">
               <thead>
-                <tr class="border-b border-[#0A0F1E]/8 bg-[#FBFAF7]">
+                <tr class="border-b border-ink/8 bg-bg-paper">
                   <th class="px-4 py-3 font-semibold text-ink">Sub-category</th>
                   <th class="px-4 py-3 font-semibold text-ink text-right">Female %</th>
                   <th class="px-4 py-3 font-semibold text-ink">Source</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-[#0A0F1E]/6">
-                <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">ICT (overall)</td><td class="px-4 py-3 text-right text-[#64748B]">28%</td><td class="px-4 py-3 text-[#64748B]">Women in Tech Network / CompTIA State of the Tech Workforce 2024</td></tr>
-                <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">AI and machine learning</td><td class="px-4 py-3 text-right text-[#64748B]">22%</td><td class="px-4 py-3 text-[#64748B]">Stanford AI Index 2024 / Interface EU</td></tr>
-                <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Cybersecurity</td><td class="px-4 py-3 text-right text-[#64748B]">22%</td><td class="px-4 py-3 text-[#64748B]">ISC2 Cybersecurity Workforce Study 2024</td></tr>
-                <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Software engineering</td><td class="px-4 py-3 text-right text-[#64748B]">22%</td><td class="px-4 py-3 text-[#64748B]">BLS 2025 / WomenHack</td></tr>
-                <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Data and analytics</td><td class="px-4 py-3 text-right text-[#64748B]">30%</td><td class="px-4 py-3 text-[#64748B]">World Economic Forum 2025</td></tr>
-                <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Cloud and infrastructure</td><td class="px-4 py-3 text-right text-[#64748B]">14%</td><td class="px-4 py-3 text-[#64748B]">Statista 2025 / WomenHack</td></tr>
-                <tr class="hover:bg-[#FBFAF7] transition-colors"><td class="px-4 py-3 font-medium text-ink">Networking and telecommunications</td><td class="px-4 py-3 text-right text-[#64748B]">19%</td><td class="px-4 py-3 text-[#64748B]">Eurostat / ITU composite</td></tr>
+              <tbody class="divide-y divide-ink/6">
+                <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">ICT (overall)</td><td class="px-4 py-3 text-right text-muted">28%</td><td class="px-4 py-3 text-muted">Women in Tech Network / CompTIA State of the Tech Workforce 2024</td></tr>
+                <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">AI and machine learning</td><td class="px-4 py-3 text-right text-muted">22%</td><td class="px-4 py-3 text-muted">Stanford AI Index 2024 / Interface EU</td></tr>
+                <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Cybersecurity</td><td class="px-4 py-3 text-right text-muted">22%</td><td class="px-4 py-3 text-muted">ISC2 Cybersecurity Workforce Study 2024</td></tr>
+                <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Software engineering</td><td class="px-4 py-3 text-right text-muted">22%</td><td class="px-4 py-3 text-muted">BLS 2025 / WomenHack</td></tr>
+                <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Data and analytics</td><td class="px-4 py-3 text-right text-muted">30%</td><td class="px-4 py-3 text-muted">World Economic Forum 2025</td></tr>
+                <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Cloud and infrastructure</td><td class="px-4 py-3 text-right text-muted">14%</td><td class="px-4 py-3 text-muted">Statista 2025 / WomenHack</td></tr>
+                <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Networking and telecommunications</td><td class="px-4 py-3 text-right text-muted">19%</td><td class="px-4 py-3 text-muted">Eurostat / ITU composite</td></tr>
               </tbody>
             </table>
           </div>
@@ -604,7 +604,7 @@ const jsonLd = {
   </section>
 
   <!-- ── 12. Limitations ───────────────────────────────────────────────── -->
-  <section class="py-16 border-b border-[#0A0F1E]/8">
+  <section class="py-16 border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-8">Limitations</h2>
       <div class="space-y-5 text-body text-[15px] leading-[1.7]">
@@ -619,23 +619,23 @@ const jsonLd = {
   </section>
 
   <!-- ── 13. Download ──────────────────────────────────────────────────── -->
-  <section class="py-16 bg-[#FBFAF7] border-b border-[#0A0F1E]/8">
+  <section class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-4">Download the Data</h2>
       <p class="text-body text-[15px] leading-[1.7] mb-6 max-w-3xl">
         The full dataset: 2,286 individuals with mention counts, gender classification, role type, sub-category breakdown, and cross-model consensus tier.
       </p>
-      <div class="bg-white rounded-2xl border border-[#0A0F1E]/8 p-6 flex items-center justify-between gap-4">
+      <div class="bg-white rounded-2xl border border-ink/8 p-6 flex items-center justify-between gap-4">
         <div>
           <p class="font-semibold text-ink mb-1">ai-ict-experts-dataset.csv</p>
-          <p class="text-sm text-[#64748B]">2,286 individuals · gender, role, category, mention counts, consensus tier</p>
+          <p class="text-sm text-muted">2,286 individuals · gender, role, category, mention counts, consensus tier</p>
         </div>
-        <a href="/downloads/ai-ict-experts-dataset.csv" class="inline-flex items-center gap-2 bg-[#F4F0E9] hover:bg-white text-[#0A0F1E] text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-[#0A0F1E]/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
+        <a href="/downloads/ai-ict-experts-dataset.csv" class="inline-flex items-center gap-2 bg-bg-warm hover:bg-white text-ink text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-ink/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
           Download CSV
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         </a>
       </div>
-      <p class="mt-6 text-sm text-[#64748B]">
+      <p class="mt-6 text-sm text-muted">
         Citation: Ranking Atlas, "One Woman for Every Ten: How AI Names the Experts in Tech," April 2026. Research by Daniel Grainger.
       </p>
     </div>

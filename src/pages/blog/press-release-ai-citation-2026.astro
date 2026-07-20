@@ -27,7 +27,6 @@ const jsonLd = {
   },
   "datePublished": "2026-05-05T00:00:00+00:00",
   "dateModified": "2026-05-05T00:00:00+00:00",
-  "image": "https://ranking-atlas.com/assets/images/blog/press-release-ai-citation-2026/hero.jpg",
   "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
 };
 
@@ -100,22 +99,11 @@ const faqJsonLd = {
       </a>
       <div>
         <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
-        <p class="text-sm text-[#64748B]">Published <time datetime="2026-05-05">May 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-05-05" class="text-ink font-medium">May 2026</time></p>
+        <p class="text-sm text-muted">Published <time datetime="2026-05-05">May 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-05-05" class="text-ink font-medium">May 2026</time></p>
       </div>
     </div>
 
     <!-- Hero image slot -->
-    <div class="relative w-full rounded-2xl overflow-hidden bg-surface border border-[#0A0F1E]/8 shadow-card mb-10 aspect-[16/9] flex items-center justify-center">
-      <img
-        src="/assets/images/blog/press-release-ai-citation-2026/hero.jpg"
-        alt="What makes a press release get cited by ChatGPT in 2026: hero illustration"
-        class="w-full h-full object-cover"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-      />
-      <div class="hidden flex-col items-center justify-center text-muted p-8 text-center">
-        <div class="text-sm uppercase tracking-wider text-brand font-medium mb-3">Hero Image Slot</div>
-        <div class="text-sm">Drop hero.jpg into /public/assets/images/blog/press-release-ai-citation-2026/ when ready.</div>
-      </div>
     </div>
 
     <p class="text-body text-[21px] leading-[1.7] max-w-3xl mb-4">
@@ -127,9 +115,9 @@ const faqJsonLd = {
       This piece walks through what changed, where press releases actually sit in the wider citation hierarchy, and what separates a cited release from one that quietly gets ignored.
     </p>
 
-    <div class="bg-white border border-[#0A0F1E]/8 rounded-xl p-6 mb-10 shadow-card">
+    <div class="bg-white border border-ink/8 rounded-xl p-6 mb-10 shadow-card">
       <p class="text-sm font-semibold text-ink mb-3">Key takeaways:</p>
-      <ul class="space-y-2 text-sm text-[#475569] list-disc pl-5">
+      <ul class="space-y-2 text-sm text-body list-disc pl-5">
         <li>Press release citations in AI tools grew 5x in the second half of 2025 (Muck Rack)</li>
         <li>Earned media drives 82% of all AI citations. Press releases are a sub-component, not a substitute.</li>
         <li>Cited releases contain 2x more statistics and 2.5x more bullet points than non-cited ones (Muck Rack)</li>
@@ -180,28 +168,28 @@ const faqJsonLd = {
     </div>
 
     <!-- Citation hierarchy table -->
-    <div class="my-10 overflow-x-auto rounded-xl border border-[#0A0F1E]/8 shadow-card">
+    <div class="my-10 overflow-x-auto rounded-xl border border-ink/8 shadow-card">
       <table class="w-full text-sm">
         <thead class="bg-[#F8FAFC] text-ink">
           <tr>
-            <th class="text-left font-semibold px-4 py-3 border-b border-[#0A0F1E]/8">Citation Layer</th>
-            <th class="text-left font-semibold px-4 py-3 border-b border-[#0A0F1E]/8">Strength</th>
-            <th class="text-left font-semibold px-4 py-3 border-b border-[#0A0F1E]/8">Durability</th>
-            <th class="text-left font-semibold px-4 py-3 border-b border-[#0A0F1E]/8">What Drives It</th>
+            <th class="text-left font-semibold px-4 py-3 border-b border-ink/8">Citation Layer</th>
+            <th class="text-left font-semibold px-4 py-3 border-b border-ink/8">Strength</th>
+            <th class="text-left font-semibold px-4 py-3 border-b border-ink/8">Durability</th>
+            <th class="text-left font-semibold px-4 py-3 border-b border-ink/8">What Drives It</th>
           </tr>
         </thead>
-        <tbody class="text-[#475569]">
+        <tbody class="text-body">
           <tr>
-            <td class="px-4 py-3 border-b border-[#0A0F1E]/8 font-medium text-ink">Syndication</td>
-            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">Moderate</td>
-            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">Weeks to months</td>
-            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">Wire distribution, structure, recency</td>
+            <td class="px-4 py-3 border-b border-ink/8 font-medium text-ink">Syndication</td>
+            <td class="px-4 py-3 border-b border-ink/8">Moderate</td>
+            <td class="px-4 py-3 border-b border-ink/8">Weeks to months</td>
+            <td class="px-4 py-3 border-b border-ink/8">Wire distribution, structure, recency</td>
           </tr>
           <tr>
-            <td class="px-4 py-3 border-b border-[#0A0F1E]/8 font-medium text-ink">Editorial</td>
-            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">High</td>
-            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">Years</td>
-            <td class="px-4 py-3 border-b border-[#0A0F1E]/8">Journalist pickup, story angle, source authority</td>
+            <td class="px-4 py-3 border-b border-ink/8 font-medium text-ink">Editorial</td>
+            <td class="px-4 py-3 border-b border-ink/8">High</td>
+            <td class="px-4 py-3 border-b border-ink/8">Years</td>
+            <td class="px-4 py-3 border-b border-ink/8">Journalist pickup, story angle, source authority</td>
           </tr>
           <tr>
             <td class="px-4 py-3 font-medium text-ink">Entity</td>
@@ -218,7 +206,7 @@ const faqJsonLd = {
       <blockquote class="text-xl md:text-2xl font-semibold text-ink leading-snug">
         A press release on its own is a Layer 1 asset with a six-month decay curve. A release converted into editorial coverage is a Layer 2 asset with a multi-year compound. The brands winning AI citation in 2026 are using press releases as the trigger for editorial work, not the substitute for it.
       </blockquote>
-      <figcaption class="mt-3 text-sm text-[#64748B]">Ranking Atlas analysis</figcaption>
+      <figcaption class="mt-3 text-sm text-muted">Ranking Atlas analysis</figcaption>
     </figure>
 
     <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
@@ -258,20 +246,20 @@ const faqJsonLd = {
     <div class="my-10 grid md:grid-cols-2 gap-4">
       <div class="rounded-xl border-2 border-[#EF4444]/40 bg-white p-6">
         <div class="text-xs uppercase tracking-wider font-semibold text-[#EF4444] mb-3">Before: typical release opener</div>
-        <p class="text-sm text-[#475569] leading-relaxed italic">
+        <p class="text-sm text-body leading-relaxed italic">
           "Acme Inc., a leading provider of innovative cloud security solutions, is excited to announce the launch of its transformative new platform that empowers enterprise teams to defend against next-generation threats."
         </p>
         <p class="text-sm font-semibold text-[#EF4444] mt-4">Six adjectives. Zero numbers. No extractable claim. Retrieved, not cited.</p>
       </div>
-      <div class="rounded-xl border-2 border-[#1E3A8A]/50 bg-white p-6">
-        <div class="text-xs uppercase tracking-wider font-semibold text-[#1E3A8A] mb-3">After: same news, citation-shaped</div>
-        <p class="text-sm text-[#475569] leading-relaxed italic">
+      <div class="rounded-xl border-2 border-brand/50 bg-white p-6">
+        <div class="text-xs uppercase tracking-wider font-semibold text-brand mb-3">After: same news, citation-shaped</div>
+        <p class="text-sm text-body leading-relaxed italic">
           "Acme Inc. today released a cloud security platform that reduced average incident response time from 47 minutes to 9 minutes across 12 enterprise pilot deployments between June and November 2025."
         </p>
-        <p class="text-sm font-semibold text-[#1E3A8A] mt-4">Specific number. Comparison. Time window. Sample size. Extractable as a standalone fact.</p>
+        <p class="text-sm font-semibold text-brand mt-4">Specific number. Comparison. Time window. Sample size. Extractable as a standalone fact.</p>
       </div>
     </div>
-    <p class="text-sm text-[#64748B] italic text-center max-w-2xl mx-auto -mt-4 mb-10">Illustrative example. The "after" line answers the prompt "how do enterprises reduce incident response time" without any further context.</p>
+    <p class="text-sm text-muted italic text-center max-w-2xl mx-auto -mt-4 mb-10">Illustrative example. The "after" line answers the prompt "how do enterprises reduce incident response time" without any further context.</p>
 
     <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
 
@@ -342,7 +330,7 @@ const faqJsonLd = {
     <!-- Pro tip callout -->
     <div class="border-l-4 border-brand bg-white rounded-r-xl pl-5 pr-4 py-4 my-6 shadow-card">
       <p class="text-sm font-semibold text-ink mb-1">Pro tip</p>
-      <p class="text-sm text-[#475569] leading-relaxed">Run a draft release through a "delete every adjective" pass before distribution. If the news still stands without "leading," "innovative," "transformative," or "best-in-class," you have a release with a chance of citation. If the news collapses without them, you don't have news.</p>
+      <p class="text-sm text-body leading-relaxed">Run a draft release through a "delete every adjective" pass before distribution. If the news still stands without "leading," "innovative," "transformative," or "best-in-class," you have a release with a chance of citation. If the news collapses without them, you don't have news.</p>
     </div>
 
     <div class="prose prose-lg text-body max-w-none space-y-6 text-[21px] leading-[1.7]">
@@ -404,9 +392,9 @@ const faqJsonLd = {
     </div>
 
     <!-- CTA card -->
-    <div class="my-10 rounded-xl bg-white border border-[#0A0F1E]/8 shadow-card p-8 text-center">
+    <div class="my-10 rounded-xl bg-white border border-ink/8 shadow-card p-8 text-center">
       <p class="text-lg font-semibold text-ink mb-2">Turn announcements into editorial coverage AI cites.</p>
-      <p class="text-sm text-[#475569] mb-6 max-w-lg mx-auto">Editorial campaigns built on original research. Press releases are the trigger. Editorial coverage is the asset. Visibility is measured.</p>
+      <p class="text-sm text-body mb-6 max-w-lg mx-auto">Editorial campaigns built on original research. Press releases are the trigger. Editorial coverage is the asset. Visibility is measured.</p>
       <PrimaryCTA href="/contact" />
     </div>
 

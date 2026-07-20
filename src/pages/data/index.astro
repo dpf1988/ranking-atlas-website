@@ -142,10 +142,10 @@ const jsonLd = {
         </p>
       </div>
 
-      <hr class="border-t border-[#0A0F1E]/8 my-14" />
+      <hr class="border-t border-ink/8 my-14" />
 
       {cards.length === 0 ? (
-        <div class="bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-10 text-body">
+        <div class="bg-white rounded-2xl shadow-card border border-ink/8 p-10 text-body">
           No datasets yet. Add a folder under <code class="text-brand">datalibrary/datasets/</code> with <code class="text-brand">config.json</code> and <code class="text-brand">data.json</code>.
         </div>
       ) : (
@@ -159,7 +159,7 @@ const jsonLd = {
                 const meta = CATEGORY_META[cat];
                 const n = countsByCategory.get(cat) || 0;
                 return (
-                  <a href={`/data/${cat}`} class="group bg-white rounded-xl shadow-card border border-[#0A0F1E]/8 p-6 hover:shadow-lg hover:border-[#1E3A8A]/40 transition-all duration-300 block">
+                  <a href={`/data/${cat}`} class="group bg-white rounded-xl shadow-card border border-ink/8 p-6 hover:shadow-lg hover:border-brand/40 transition-all duration-300 block">
                     <div class="flex items-baseline justify-between gap-3 mb-2">
                       <h3 class="font-serif font-semibold text-lg tracking-tight text-ink group-hover:text-brand transition-colors">
                         {meta.label}
@@ -191,7 +191,7 @@ const jsonLd = {
         </>
       )}
 
-      <section aria-labelledby="how-this-works" class="mt-20 pt-14 border-t border-[#0A0F1E]/8">
+      <section aria-labelledby="how-this-works" class="mt-20 pt-14 border-t border-ink/8">
         <h2 id="how-this-works" class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-10 max-w-3xl">
           How this library works
         </h2>
@@ -226,7 +226,7 @@ const jsonLd = {
           </div>
         </div>
 
-        <div class="mt-12 pt-8 border-t border-[#0A0F1E]/8 max-w-5xl flex flex-wrap items-baseline gap-x-6 gap-y-2">
+        <div class="mt-12 pt-8 border-t border-ink/8 max-w-5xl flex flex-wrap items-baseline gap-x-6 gap-y-2">
           <p class="text-[14px] leading-[1.6] text-muted max-w-3xl">
             Where Ranking Atlas publishes data it has compiled itself, such as property transaction records or structured listing samples, the compilation method is documented to the same standard.
           </p>

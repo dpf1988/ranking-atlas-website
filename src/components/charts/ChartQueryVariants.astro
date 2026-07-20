@@ -12,16 +12,16 @@ const { id = 'chartQueryVariants', eyebrow = '', showHeadline = true } = Astro.p
   {showHeadline && (
     <>
       <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Six of nine ways of asking returned fewer women than the workforce contains</div>
-      <div class="text-[12px] text-[#64748B] mb-4">Female share of named ICT experts by query phrasing, against the 28% workforce baseline (ITU/CompTIA 2024). Control query excluded.</div>
+      <div class="text-[12px] text-muted mb-4">Female share of named ICT experts by query phrasing, against the 28% workforce baseline (ITU/CompTIA 2024). Control query excluded.</div>
     </>
   )}
   <div class="relative w-full" style="height:360px">
     <canvas id={id} role="img" aria-label="Horizontal bar chart of female share of named ICT experts across nine query variants, with a dashed vertical line at the 28 percent workforce baseline.">Female share of named ICT experts across nine query variants, ranging from 11.8 percent for the shaping-the-future variant to 27.8 percent for the leading-voices variant, against a 28 percent workforce baseline.</canvas>
   </div>
-  <div class="flex flex-wrap gap-4 mt-3 text-xs text-[#64748B]">
+  <div class="flex flex-wrap gap-4 mt-3 text-xs text-muted">
     <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#B91C1C"></span>Below 28% workforce baseline</span>
     <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#047857"></span>At or above baseline</span>
-    <span class="flex items-center gap-1.5"><span class="inline-block w-3.5 border-t-2 border-dashed border-[#0A0F1E]"></span>28% workforce baseline</span>
+    <span class="flex items-center gap-1.5"><span class="inline-block w-3.5 border-t-2 border-dashed border-ink"></span>28% workforce baseline</span>
   </div>
 </div>
 
