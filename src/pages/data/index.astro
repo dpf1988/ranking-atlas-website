@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Layout from '../../layouts/Layout.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
+import HandUnderline from '../../components/HandUnderline.astro';
 import DatasetCard from '../../components/datalibrary/DatasetCard.astro';
 
 const DATASET_ROOT = path.resolve(process.cwd(), 'datalibrary', 'datasets');
@@ -131,15 +132,17 @@ const jsonLd = {
   <section class="py-20 md:py-28">
     <div class="max-w-6xl mx-auto px-6">
 
-      <div class="mb-16">
+      <div>
         <Eyebrow label="Data Library" />
-        <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-5">
-          Data Library
+        <h1 class="font-serif font-medium text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] tracking-tight text-ink leading-[1.05] mb-5">
+          <HandUnderline>Rankings</HandUnderline> and datasets <em class="font-normal italic text-ink/70">by Ranking Atlas</em>
         </h1>
         <p class="text-lg md:text-xl text-body leading-relaxed max-w-3xl">
-          Country and market rankings drawn from primary sources.
+          Market indicators aggregated from disparate sources, with full historical series, for your convenience.
         </p>
       </div>
+
+      <hr class="border-t border-[#0A0F1E]/8 my-14" />
 
       {cards.length === 0 ? (
         <div class="bg-white rounded-2xl shadow-card border border-[#0A0F1E]/8 p-10 text-body">

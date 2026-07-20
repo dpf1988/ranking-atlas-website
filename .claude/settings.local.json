@@ -52,7 +52,22 @@
       "Bash(echo \"exit: $?\")",
       "Bash(grep:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "WebFetch(domain:unpkg.com)"
+      "WebFetch(domain:unpkg.com)",
+      "Bash(grep -oE '<tr[^>]{0,3}' dist/data/gdp-per-capita-by-country.html)",
+      "Bash(node -e \":*)",
+      "Bash(cat dist/sitemap*.xml)",
+      "Bash(xargs -0 sed -i -e 's|/resources/citation-equity|/blog/citation-equity|g' -e 's|/resources/chatgpt-search-visibility|/blog/chatgpt-search-visibility|g' -e 's|/resources/press-release-ai-citation-2026|/blog/press-release-ai-citation-2026|g' -e 's|/resources/earned-links-vs-paid-links|/blog/earned-links-vs-paid-links|g' echo \"---\" echo \"remaining refs \\(should only be in docs/audit, not src\\):\" grep -r --include=\"*.astro\" --include=\"*.ts\" -l \"/resources/\\\\\\(citation-equity\\\\|chatgpt-search-visibility\\\\|press-release-ai-citation-2026\\\\|earned-links-vs-paid-links\\\\\\)\" src/)",
+      "Bash(tail -20 echo \"---\" echo \"Em dashes in the pages I touched \\(Studies, blog moves, category, hub, DatasetCard\\):\" grep -c \"—\" dist/resources.html dist/blog/citation-equity.html dist/blog/chatgpt-search-visibility.html dist/blog/press-release-ai-citation-2026.html dist/blog/earned-links-vs-paid-links.html dist/data.html dist/data/economy.html dist/data/gdp-per-capita-by-country.html)",
+      "Bash(powershell -NoProfile -Command \"Get-ChildItem -Filter *.astro | ForEach-Object { \\(Get-Content -Raw $_.FullName\\) -replace ''label=\"\"Start a Campaign\"\"'', ''label=\"\"Book a Call\"\"'' | Set-Content -NoNewline $_.FullName }\")",
+      "Bash(mkdir -p /tmp/logo-scrape)",
+      "Read(//tmp/**)",
+      "Bash(grep -oE '<symbol[^>]*id[^>]{0,50}metro[^>]*>' metro.html)",
+      "Bash(UA='Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36')",
+      "Bash(grep -oE '<a[^>]{0,80}logo[^>]{0,600}</a>' intermediary2.html)",
+      "Bash(cp /tmp/logo-scrape/metro-logo.svg /c/Users/inhal/ranking-atlas-company/website/public/assets/images/press-logos/metro.svg)",
+      "Bash(cp /tmp/logo-scrape/coventry-logo-clean.svg /c/Users/inhal/ranking-atlas-company/website/public/assets/images/press-logos/coventry-live.svg)",
+      "Bash(cp /tmp/logo-scrape/birmingham-logo-clean.svg /c/Users/inhal/ranking-atlas-company/website/public/assets/images/press-logos/birmingham-live.svg)",
+      "Bash(cp /tmp/logo-scrape/intermediary-logo.png /c/Users/inhal/ranking-atlas-company/website/public/assets/images/press-logos/intermediary.png)"
     ]
   },
   "model": "claude-opus-4-7"

@@ -61,24 +61,26 @@ Reference implementation: src/pages/resources/earned-links-vs-paid-links.astro
 
 ## Positioning
 
-Ranking Atlas is a search and AI visibility agency. The homepage is the canonical source of truth for positioning language.
+Ranking Atlas is a digital PR agency built for the AI search era. The homepage is the canonical source of truth for positioning language.
 
-- **Category:** "Search & AI Visibility"
+- **Category:** "Digital PR" (primary — the term buyers actually search for). This is the eyebrow on the homepage hero and the top-of-funnel label across the site. Always paired with the measurement and AI visibility layer in body prose, which is what separates Ranking Atlas from commodity digital PR firms. Never stated alone as an identity claim (e.g. "we are a digital PR agency, full stop") without that pairing appearing in the same block.
 - **Core promise:** earn citations in publications Google ranks and AI engines cite, then track the movement across both
 - **Three pillars:** Original Research / Editorial Production / Visibility Measurement
 - **Engagement model:** "Baseline. Build. Measure." Documented baseline, research-led campaign, ongoing prompt-level measurement
 - **Measurement language:** prompt-level tracking, competitor benchmarking, documented baseline, branded vs non-branded visibility
-- **CTA label:** "Start a Campaign" everywhere. Do not change this label.
+- **CTA label:** "Book a Call" everywhere. Do not change this label. It matches the actual next step in the buyer journey (a scoping call, not a self-serve purchase) and survives the pricing question. Previous label "Start a Campaign" was retired 2026-07.
 
 **Deprecated positioning (do not reintroduce):**
 - "Guaranteed minimum placements" or any contractual placement floor language
 - "Fixed-price per campaign" or "per-campaign model" as identity claims
 - "No retainer" / "no retainers" as a headline differentiator
 - Specific guaranteed link/placement numbers (e.g. "8 links")
-- "Digital PR agency" or "data PR agency" without the measurement layer
-- Pricing figures on the site (e.g. "£3.5K"). Pricing is discussed on calls.
+- "Search & AI Visibility" as the primary category label (retired 2026-07; still used inside body prose to describe the outcome, but no longer the eyebrow or headline framing)
+- "Digital PR" stated as identity without the measurement / AI visibility pairing in the same block
 
 The engagement model is deliberately not stated on the site. "Campaign" refers to the deliverable. "Engagement"/"programme" refers to the relationship. Both terms are used; they are not interchangeable.
+
+**Price anchoring (contact page only):** A single italic line under the contact-page intro paragraph carries a per-campaign floor. Current canonical anchor, lifted from the deprecated no-pricing rule on 2026-07-20: "A single campaign starts at £4.5k. Programmes run in successive campaigns over months." Do not add pricing figures to the homepage, resources, case studies, or blog. Do not restate the figure inline in body prose. If the floor changes, update `src/pages/contact.astro` and reflect the new number here.
 
 ## Duration and compounding (canonical language)
 

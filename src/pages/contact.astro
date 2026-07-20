@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Contact from '../components/Contact.astro';
+import ContactForm from '../components/ContactForm.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 
 const jsonLd = {
@@ -29,21 +29,31 @@ const jsonLd = {
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-  <!-- Hero -->
-  <section class="pt-20 pb-12 md:pt-28 md:pb-16">
-    <div class="max-w-3xl mx-auto px-6">
-      <Eyebrow label="Start a Campaign" />
-      <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-3">
-        Show Up in AI Answers.
-      </h1>
-      <p class="font-serif font-medium text-[1.5rem] md:text-[1.875rem] lg:text-[2.125rem] tracking-tight text-ink leading-[1.1] mb-6">
-        Climb in Organic Search.
-      </p>
-      <p class="text-lg md:text-xl text-body leading-relaxed">
-        Tell us, in one sentence, what your business is and who your customers are. We'll get back within one working day with an action plan.
-      </p>
+  <!-- Hero + form (side by side on desktop) -->
+  <section class="pt-32 pb-16 md:pt-44 md:pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+
+        <!-- LEFT: hero copy -->
+        <div class="lg:pt-4">
+          <Eyebrow label="Book a Call" />
+          <h1 class="font-serif font-light text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] tracking-tight text-ink leading-[1.05] mb-6">
+            <span class="brush-underline"><em class="italic font-normal text-ink" style="font-family: 'Instrument Serif', 'Source Serif 4', Georgia, serif;">Show Up</em> in AI Answers.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-body leading-relaxed">
+            Tell us about your business and who your customers are. We'll have an audit and plan ready for you on the sales call.
+          </p>
+          <p class="mt-5 italic text-base text-muted leading-relaxed">
+            A single campaign starts at £4.5k. Programmes run in successive campaigns over months.
+          </p>
+        </div>
+
+        <!-- RIGHT: form -->
+        <div>
+          <ContactForm />
+        </div>
+
+      </div>
     </div>
   </section>
-
-  <Contact />
 </Layout>

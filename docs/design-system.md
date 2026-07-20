@@ -235,7 +235,7 @@ Props: `title`, `description`
 - Links: `text-sm text-[#64748B] hover:text-[#5D4FE0]`
 
 ### `PrimaryCTA.astro`
-Default label: "Start a Campaign — $3.5K →"
+Default label: "Book a Call"
 
 ```html
 <a class="inline-flex items-center justify-center gap-2 text-white font-bold px-8 py-4 rounded-lg text-base transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-4px_rgba(93,79,224,0.6)]"

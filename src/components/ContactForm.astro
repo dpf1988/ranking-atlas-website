@@ -1,0 +1,156 @@
+---
+---
+
+<div id="contact-form-wrap">
+  <form id="contact-form" class="bg-white rounded-3xl border border-[#0A0F1E]/8 shadow-md p-6 lg:p-7 space-y-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label for="name" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
+          Name <span class="text-[#1E3A8A]">*</span>
+        </label>
+        <input id="name" name="name" type="text" required placeholder="Jane Smith"
+          class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E]"
+          style="border-color: rgba(10,15,30,0.13);" />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
+          Email <span class="text-[#1E3A8A]">*</span>
+        </label>
+        <input id="email" name="email" type="text" required placeholder="you@example.com"
+          class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E]"
+          style="border-color: rgba(10,15,30,0.13);" />
+      </div>
+    </div>
+
+    <div>
+      <label for="website" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
+        Website <span class="text-[#1E3A8A]">*</span>
+      </label>
+      <input id="website" name="website" type="text" required placeholder="https://yourwebsite.com"
+        class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E]"
+        style="border-color: rgba(10,15,30,0.13);" />
+    </div>
+
+    <div>
+      <label for="message" class="block text-sm font-semibold mb-1.5 text-[#0A0F1E]">
+        About your business <span class="text-[#1E3A8A]">*</span>
+      </label>
+      <textarea id="message" name="message" required rows="5"
+        placeholder="What you do, who your customers are, and what visibility looks like today."
+        class="contact-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-[#0A0F1E] resize-none"
+        style="border-color: rgba(10,15,30,0.13);"></textarea>
+    </div>
+
+    <!-- Error state (success handled by swap-to-booking below) -->
+    <div id="form-error" class="hidden bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3">
+      Something went wrong. Please email <a href="mailto:contact@ranking-atlas.com" class="underline font-medium">contact@ranking-atlas.com</a>
+    </div>
+
+    <div class="flex justify-center">
+      <button id="form-submit" type="submit"
+        class="bg-[#1E3A8A] hover:bg-[#1E40AF] text-white font-semibold py-3 px-8 rounded text-sm shadow-[0_3px_8px_-2px_rgba(15,27,61,0.22),0_1px_2px_rgba(15,27,61,0.10)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.28),0_2px_4px_-1px_rgba(15,27,61,0.12)] hover:-translate-y-px transition-all duration-200 flex items-center justify-center gap-2">
+        <span id="submit-text">Book a Call</span>
+        <svg id="submit-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+        <div id="submit-spinner" class="hidden w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+      </button>
+    </div>
+
+    <p class="text-center text-sm text-[#64748B] mt-3">
+      Prefer to reach out directly?
+      <a href="mailto:contact@ranking-atlas.com"
+        class="font-medium text-[#1E3A8A] hover:text-[#1E40AF] transition-colors">
+        contact@ranking-atlas.com
+      </a>
+    </p>
+  </form>
+
+  <!-- Booking state (revealed after successful form submit) -->
+  <div id="booking-state" class="hidden bg-white rounded-3xl border border-[#0A0F1E]/8 shadow-md p-6 lg:p-7">
+    <div class="mb-4">
+      <p class="text-sm font-semibold text-[#1E3A8A] uppercase tracking-[0.14em] mb-2">Thanks. Now pick a time.</p>
+      <p class="text-base text-body leading-relaxed">
+        Your context is in. Book a 30-minute call below and we'll come prepared with a citation baseline and a plan.
+      </p>
+    </div>
+    <div id="cal-booking" style="min-height: 640px;"></div>
+  </div>
+</div>
+
+<style>
+  .contact-input:focus {
+    border-color: #1E3A8A !important;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.13);
+  }
+</style>
+
+<script is:inline>
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "30min", {origin:"https://cal.com"});
+</script>
+
+<script>
+  document.querySelectorAll('#contact-form').forEach(function(form) {
+    var submitBtn = form.querySelector('#form-submit');
+    var submitText = form.querySelector('#submit-text');
+    var submitSpinner = form.querySelector('#submit-spinner');
+    var submitArrow = form.querySelector('#submit-arrow');
+    var errorMsg = form.querySelector('#form-error');
+    var bookingState = document.getElementById('booking-state');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitText) submitText.textContent = 'Sending...';
+      if (submitArrow) submitArrow.classList.add('hidden');
+      if (submitSpinner) submitSpinner.classList.remove('hidden');
+      if (errorMsg) errorMsg.classList.add('hidden');
+
+      var name = form.querySelector('#name').value;
+      var email = form.querySelector('#email').value;
+      var website = form.querySelector('#website').value;
+      var message = form.querySelector('#message').value;
+
+      fetch('https://formspree.io/f/xojkolng', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name: name, email: email, website: website, message: message, _replyto: 'contact@ranking-atlas.com' }),
+      })
+        .then(function(res) {
+          if (res.ok) {
+            form.classList.add('hidden');
+            if (bookingState) {
+              bookingState.classList.remove('hidden');
+              if (window.Cal && window.Cal.ns && window.Cal.ns['30min']) {
+                window.Cal.ns['30min']('inline', {
+                  elementOrSelector: '#cal-booking',
+                  calLink: 'ranking-atlas/30min',
+                  config: { layout: 'month_view', name: name, email: email }
+                });
+                window.Cal.ns['30min']('ui', {
+                  styles: { branding: { brandColor: '#1E3A8A' } },
+                  hideEventTypeDetails: false,
+                  layout: 'month_view'
+                });
+              }
+              bookingState.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          } else {
+            if (errorMsg) errorMsg.classList.remove('hidden');
+          }
+        })
+        .catch(function() {
+          if (errorMsg) errorMsg.classList.remove('hidden');
+        })
+        .finally(function() {
+          if (submitBtn) submitBtn.disabled = false;
+          if (submitText) submitText.textContent = 'Book a Call';
+          if (submitArrow) submitArrow.classList.remove('hidden');
+          if (submitSpinner) submitSpinner.classList.add('hidden');
+        });
+    });
+  });
+</script>

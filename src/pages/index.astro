@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import FAQ from '../components/FAQ.astro';
 
 const featuredResearch = [
   {
@@ -48,17 +47,16 @@ const secondaryCta = "inline-flex items-center justify-center bg-[#F4F0E9] hover
               <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
               <path d="m9 12 2 2 4-4" />
             </svg>
-            <span class="text-[11px] uppercase tracking-[0.14em] font-semibold text-ink">Search & AI Visibility</span>
+            <span class="text-[11px] uppercase tracking-[0.14em] font-semibold text-ink">Digital PR</span>
           </div>
-          <h1 class="font-serif font-medium text-[2rem] sm:text-[2.5rem] lg:text-[3.25rem] tracking-tight text-ink leading-[1.05] mb-6">
-            <span class="brush-highlight">Get Cited.</span><br /> Get Found.
+          <h1 class="font-serif font-light text-[2rem] sm:text-[2.5rem] lg:text-[3.25rem] tracking-tight text-ink leading-[1.05] mb-6">
+            <em class="italic font-normal text-ink" style="font-family: 'Instrument Serif', 'Source Serif 4', Georgia, serif;">Show up</em> when buyers ask AI which brand to <span class="brush-highlight">trust</span>.
           </h1>
           <p class="text-lg text-body leading-relaxed mb-7 max-w-[580px]">
-            We earn your brand citations in the publications Google ranks and AI engines cite, then track the movement across both.
+            Ranking Atlas creates data stories that place your company in the publications LLMs cite, and buyers trust.
           </p>
           <div class="flex flex-wrap items-center gap-3">
-            <a href="/contact" class={primaryCta}>Start a Campaign</a>
-            <a href="/resources" class={secondaryCta}>See our Research</a>
+            <a href="/contact" class={primaryCta}>Book a Call</a>
           </div>
         </div>
 
@@ -130,169 +128,124 @@ const secondaryCta = "inline-flex items-center justify-center bg-[#F4F0E9] hover
     </div>
   </section>
 
-  <!-- ── 3. WHAT WE DO ── three elegant cards with restrained iconography + check details -->
-  <section class="bg-[#F4F0E9] py-16 lg:py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center max-w-[720px] mx-auto mb-10">
-        <div class={eyebrow}>
-          <span aria-hidden="true" class={eyebrowDot}></span>
-          <span class={eyebrowText}>What we do</span>
-        </div>
-        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">How Brands Earn Search & AI Visibility</span></h2>
-        <p class="text-lg text-body leading-relaxed">
-          Original research gives journalists something worth covering. That coverage earns you visibility. <span class="font-semibold text-[#1E3A8A]">Measurement shows the impact.</span>
-        </p>
+  <!-- ── 1b. FEATURED IN ── press logo strip: real branded logos + styled text fallbacks -->
+  <section class="bg-white border-y border-[#0A0F1E]/10 py-8 md:py-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-[10px] uppercase tracking-[0.22em] text-muted font-semibold text-center mb-6">Featured in</p>
+      <div class="flex flex-nowrap items-center justify-between gap-x-5 md:gap-x-7 text-[#0A0F1E] overflow-x-auto md:overflow-visible">
+        <img src="/assets/images/press-logos/metro.svg" alt="Metro" class="h-4 md:h-5 shrink-0 opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="/assets/images/press-logos/intermediary.png" alt="The Intermediary" class="h-7 md:h-9 shrink-0 opacity-70 hover:opacity-100 transition-opacity object-contain" />
+        <img src="/assets/images/press-logos/birmingham-live.svg" alt="Birmingham Live" class="h-5 md:h-6 shrink-0 opacity-70 hover:opacity-100 transition-opacity" />
+        <img src="/assets/images/press-logos/coventry-live.svg" alt="Coventry Live" class="h-5 md:h-6 shrink-0 opacity-70 hover:opacity-100 transition-opacity" />
+        <span class="font-serif italic text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-[#0A0F1E]/70 hover:text-[#0A0F1E] transition-colors tracking-tight">This is Money</span>
+        <span class="font-serif font-semibold text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-[#0A0F1E]/70 hover:text-[#0A0F1E] transition-colors tracking-tight">Yorkshire Post</span>
+        <span class="font-serif font-semibold text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-[#0A0F1E]/70 hover:text-[#0A0F1E] transition-colors tracking-tight">Blackpool Gazette</span>
+        <span class="font-sans font-bold text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-[#0A0F1E]/70 hover:text-[#0A0F1E] transition-colors tracking-tight">MSN</span>
       </div>
+    </div>
+  </section>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
-          <div class="w-[58px] h-[58px] rounded-md bg-[#F4F0E9] flex items-center justify-center mb-5">
-            <img src="/assets/images/authority-icons/04-stamped-doc-transparent.png" alt="" aria-hidden="true" class="w-12 h-12" />
+  <!-- ── 2. THE PROBLEM ── left/right split: framing on left, vertical list on right -->
+  <section class="bg-[#F4F0E9] py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-10">
+        <!-- LEFT: eyebrow + H2 + descriptive framing -->
+        <div class="lg:col-span-5">
+          <div class={eyebrow}>
+            <span aria-hidden="true" class={eyebrowDot}></span>
+            <span class={eyebrowText}>The problem</span>
           </div>
-          <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Original Research</h3>
-          <p class="text-sm text-body leading-relaxed mb-5 flex-1">Studies built from primary-source data, then analysed to surface the trends and editorial angles a newsroom can use.</p>
-          <ul class="space-y-1.5 text-[12px] text-muted pt-4 border-t border-[#0A0F1E]/08">
-            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Proprietary datasets</li>
-            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Commissioned surveys</li>
-            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Statistical analysis</li>
-          </ul>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">Three issues Ranking Atlas solves</span></h2>
+          <p class="text-[17px] text-body leading-relaxed max-w-[440px]">
+            Traditional PR, SEO, and syndication were built for a search era that is ending. None of them tell you where you appear in AI answers, and none earn the editorial citations those engines rely on.
+          </p>
         </div>
 
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
-          <div class="w-[58px] h-[58px] rounded-md bg-[#F4F0E9] flex items-center justify-center mb-5">
-            <img src="/assets/images/authority-icons/02-column-transparent.png" alt="" aria-hidden="true" class="w-12 h-12" />
-          </div>
-          <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Editorial Production</h3>
-          <p class="text-sm text-body leading-relaxed mb-5 flex-1">Research structured for editorial use, with interactive data visualisations, downloadable datasets, and verified contact attribution.</p>
-          <ul class="space-y-1.5 text-[12px] text-muted pt-4 border-t border-[#0A0F1E]/08">
-            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Interactive visualisations</li>
-            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Downloadable datasets</li>
-            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Verified author attribution</li>
-          </ul>
-        </div>
-
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
-          <div class="w-[58px] h-[58px] rounded-md bg-[#F4F0E9] flex items-center justify-center mb-5">
-            <img src="/assets/images/authority-icons/08-compass-transparent.png" alt="" aria-hidden="true" class="w-12 h-12" />
-          </div>
-          <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Visibility Measurement</h3>
-          <p class="text-sm text-body leading-relaxed mb-5 flex-1">Prompt-level tracking of where a brand appears across AI engines and search, benchmarked against competitors, reported against a documented baseline.</p>
-          <ul class="space-y-1.5 text-[12px] text-muted pt-4 border-t border-[#0A0F1E]/08">
-            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Baseline visibility analysis</li>
-            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Prompt and citation tracking</li>
-            <li class="flex items-center gap-2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Competitor benchmarking</li>
-          </ul>
+        <!-- RIGHT: vertical list of 3 problem beats, hairline-separated -->
+        <div class="lg:col-span-7">
+          <ol class="divide-y divide-[#0A0F1E]/12 border-y border-[#0A0F1E]/12">
+            <li class="flex gap-6 py-7">
+              <div class="font-serif text-[2rem] md:text-[2.25rem] font-semibold text-[#1E3A8A]/35 leading-none shrink-0 w-14">01</div>
+              <div>
+                <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Traditional PR doesn't measure AI answers.</h3>
+                <p class="text-[15px] text-body leading-relaxed">You get no visibility data on ChatGPT, Perplexity, or Gemini.</p>
+              </div>
+            </li>
+            <li class="flex gap-6 py-7">
+              <div class="font-serif text-[2rem] md:text-[2.25rem] font-semibold text-[#1E3A8A]/35 leading-none shrink-0 w-14">02</div>
+              <div>
+                <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">SEO agencies chase rankings AI is eating.</h3>
+                <p class="text-[15px] text-body leading-relaxed">Their KPI is a Google ranking fewer buyers ever look at.</p>
+              </div>
+            </li>
+            <li class="flex gap-6 py-7">
+              <div class="font-serif text-[2rem] md:text-[2.25rem] font-semibold text-[#1E3A8A]/35 leading-none shrink-0 w-14">03</div>
+              <div>
+                <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Syndication tools inflate arbitrary link counts.</h3>
+                <p class="text-[15px] text-body leading-relaxed">Expensive volume metrics that don't influence editorial authority.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── 3b. WHY EDITORIAL COVERAGE MATTERS ── split-layout intro + stat callouts + pullquote -->
-  <section class="py-16 lg:py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center max-w-[760px] mx-auto mb-10">
+  <!-- ── 3. WHAT WE DO ── manifesto: 3 pillars with role-specific icons, hairline dividers -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-14">
         <div class={eyebrow}>
           <span aria-hidden="true" class={eyebrowDot}></span>
-          <span class={eyebrowText}>Context</span>
+          <span class={eyebrowText}>What we do</span>
         </div>
-        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6">
-          <span class="brush-underline">Why Editorial Citations Matter More Than Ever</span>
-        </h2>
-        <p class="text-lg text-body leading-relaxed">
-          Google and AI search engines <span class="font-semibold text-[#1E3A8A]">increasingly rely on publisher references</span> when determining which brands surface in results and generated answers. The mechanism is the same across both: <span class="font-semibold text-[#1E3A8A]">brands cited by trusted publications appear more often</span>, in more places, to more buyers. That is what we build, and what we measure.
+        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">Research, editorial placements, visibility measurement</span></h2>
+        <p class="text-[17px] text-body leading-relaxed max-w-[600px]">
+          Original research gives journalists something worth covering. That coverage earns you visibility. <span class="font-semibold text-[#1E3A8A]">Measurement shows the impact.</span>
         </p>
       </div>
 
-      <!-- Stat callouts: three numeric pillars, staggered vertical rhythm -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
-          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-4">Discovery Is Consolidating</h3>
-
-          <!-- Before/after bar pair: left = CTR before AI Overview (full), right = CTR after AI Overview (39%, faint ghost shows lost portion) -->
-          <div class="flex justify-center mb-4">
-            <svg viewBox="0 0 110 110" class="w-[110px] h-[110px]" role="img" aria-label="Two bars side by side: left bar at full height represents click-through before AI Overviews, right bar at thirty-nine percent height represents click-through after AI Overviews">
-              <!-- Left bar: full CTR (before) -->
-              <rect x="22" y="15" width="28" height="85" fill="#1E3A8A"/>
-              <!-- Right bar: ghost of lost portion (the 61% drop) -->
-              <rect x="60" y="15" width="28" height="85" fill="rgba(15, 27, 61, 0.10)"/>
-              <!-- Right bar: remaining CTR (39%) -->
-              <rect x="60" y="67" width="28" height="33" fill="#1E3A8A"/>
-              <!-- Baseline -->
-              <line x1="15" y1="100" x2="95" y2="100" stroke="rgba(15, 27, 61, 0.15)" stroke-width="1"/>
-            </svg>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-12">
+        <div class="md:pr-8">
+          <div class="w-16 h-16 rounded-md bg-[#F4F0E9] flex items-center justify-center mb-5">
+            <img src="/assets/images/authority-icons/04-stamped-doc-transparent.png" alt="" aria-hidden="true" class="w-14 h-14" />
           </div>
-
-          <p class="text-sm text-body leading-relaxed">
-            AI search and Google Overviews increasingly compress visibility into a narrow set of cited sources.
-          </p>
+          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-3">Original Research</h3>
+          <p class="text-[15px] text-body leading-relaxed">We design data studies your market wants to read: pricing surveys, market indexes, primary-source analysis journalists will cite.</p>
         </div>
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
-          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-4">Citations Shape Visibility</h3>
-
-          <!-- Trajectory: line rises from near-zero on the left to a navy dot on the right; faint area fill underneath -->
-          <div class="flex justify-center mb-4">
-            <svg viewBox="0 0 110 110" class="w-[110px] h-[110px]" role="img" aria-label="Line trajectory rising from near zero on the left to a high point on the right, representing AI engine referral traffic growing from negligible to ten to fourteen percent over eighteen months">
-              <!-- Area fill under the curve -->
-              <path d="M 10 95 C 40 92 65 70 100 25 L 100 100 L 10 100 Z" fill="#1E3A8A" fill-opacity="0.08"/>
-              <!-- Line -->
-              <path d="M 10 95 C 40 92 65 70 100 25" fill="none" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round"/>
-              <!-- End dot -->
-              <circle cx="100" cy="25" r="3" fill="#1E3A8A"/>
-              <!-- Baseline -->
-              <line x1="10" y1="100" x2="100" y2="100" stroke="rgba(15, 27, 61, 0.15)" stroke-width="1"/>
-            </svg>
+        <div class="md:px-8 md:border-l md:border-[#0A0F1E]/12">
+          <div class="w-16 h-16 rounded-md bg-[#F4F0E9] flex items-center justify-center mb-5">
+            <img src="/assets/images/authority-icons/02-column-transparent.png" alt="" aria-hidden="true" class="w-14 h-14" />
           </div>
-
-          <p class="text-sm text-body leading-relaxed">
-            Publishers, researchers, and authoritative domains increasingly influence which brands appear in search and AI-generated answers.
-          </p>
+          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-3">Editorial Production</h3>
+          <p class="text-[15px] text-body leading-relaxed">We turn each study into a landing page, a press release, and journalist outreach programme that lands in the publications AI cites.</p>
         </div>
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors">
-          <h3 class="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink mb-4">Most Content Is Never Seen</h3>
-
-          <!-- 10x10 dot grid: 96 navy dots = pages with zero traffic; 4 faint = the small share that earn meaningful traffic -->
-          <div class="flex justify-center mb-4">
-            <svg viewBox="0 0 110 110" class="w-[110px] h-[110px]" role="img" aria-label="Grid of one hundred dots representing all pages on the web; ninety-six are solid navy to represent pages with zero search traffic, four are faint to represent the small share that earn meaningful traffic">
-              {Array.from({ length: 100 }, (_, i) => {
-                const col = i % 10;
-                const row = Math.floor(i / 10);
-                const cx = 5.5 + col * 11;
-                const cy = 5.5 + row * 11;
-                const isExceptional = [0, 1, 10, 11].includes(i);
-                return (
-                  <circle
-                    cx={cx}
-                    cy={cy}
-                    r={isExceptional ? 2.5 : 3}
-                    fill={isExceptional ? "rgba(15, 27, 61, 0.15)" : "#1E3A8A"}
-                  />
-                );
-              })}
-            </svg>
+        <div class="md:pl-8 md:border-l md:border-[#0A0F1E]/12">
+          <div class="w-16 h-16 rounded-md bg-[#F4F0E9] flex items-center justify-center mb-5">
+            <img src="/assets/images/authority-icons/08-compass-transparent.png" alt="" aria-hidden="true" class="w-14 h-14" />
           </div>
-
-          <p class="text-sm text-body leading-relaxed">
-            Most pages on the web receive little or no traffic, while a small minority accumulates citations, links, and references across the internet.
-          </p>
+          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-3">Visibility Measurement</h3>
+          <p class="text-[15px] text-body leading-relaxed">We track prompt-level movement across AI answer engines so you see which coverage moves your brand into the answer.</p>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ── 4. FEATURED RESEARCH ── flagship + 2 secondary, study metadata pills -->
   <section class="bg-[#F4F0E9] py-16 lg:py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center max-w-[640px] mx-auto mb-10">
-        <div class={eyebrow}>
-          <span aria-hidden="true" class={eyebrowDot}></span>
-          <span class={eyebrowText}>Research</span>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+        <div class="max-w-[640px]">
+          <div class={eyebrow}>
+            <span aria-hidden="true" class={eyebrowDot}></span>
+            <span class={eyebrowText}>Research</span>
+          </div>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-4"><span class="brush-underline">Featured Research</span></h2>
+          <p class="text-[17px] text-body leading-relaxed">
+            Original studies built on primary-source data, with interactive breakdowns.
+          </p>
         </div>
-        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">Featured Research</span></h2>
-        <p class="text-lg text-body leading-relaxed mb-5">
-          Original studies built on primary-source data, with interactive breakdowns.
-        </p>
-        <a href="/resources" class="text-sm text-[#1E3A8A] hover:text-[#1E40AF] font-semibold">
+        <a href="/resources" class="text-sm text-[#1E3A8A] hover:text-[#1E40AF] font-semibold shrink-0">
           View all research →
         </a>
       </div>
@@ -409,127 +362,81 @@ const secondaryCta = "inline-flex items-center justify-center bg-[#F4F0E9] hover
     </div>
   </section>
 
-  <!-- ── 6. EDITORIAL STANDARDS ── split: left text, right elevated checklist grid -->
-  <section class="py-16 lg:py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center max-w-[720px] mx-auto mb-10">
-        <div class={eyebrow}>
-          <span aria-hidden="true" class={eyebrowDot}></span>
-          <span class={eyebrowText}>Standards</span>
-        </div>
-        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6"><span class="brush-underline">Editorial Standards</span></h2>
-        <p class="text-base text-body leading-relaxed">
-          In an online environment increasingly saturated with low-quality, unverifiable content, editorial standards matter more than ever. Every study is published with <span class="font-semibold text-[#1E3A8A]">source attribution, interactive data, and a verified contact</span> for follow-up. The standard is what a serious newsroom would accept.
-        </p>
-      </div>
-      <div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-5 hover:border-[#0A0F1E]/25 transition-colors flex items-start gap-3">
-              <div class="shrink-0 w-12 h-12 rounded-full bg-[#F4F0E9] flex items-center justify-center mt-0.5">
-                <img src="/assets/images/authority-icons/06-archive-transparent.png" alt="" aria-hidden="true" class="w-[42px] h-[42px]" />
-              </div>
-              <div>
-                <h3 class="text-sm font-semibold tracking-tight text-ink mb-1">Primary-Source Datasets</h3>
-                <p class="text-sm text-body leading-relaxed">Verifiable on request, available for editorial download.</p>
-              </div>
-            </div>
-            <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-5 hover:border-[#0A0F1E]/25 transition-colors flex items-start gap-3">
-              <div class="shrink-0 w-12 h-12 rounded-full bg-[#F4F0E9] flex items-center justify-center mt-0.5">
-                <img src="/assets/images/authority-icons/03-magnifier-doc-transparent.png" alt="" aria-hidden="true" class="w-[42px] h-[42px]" />
-              </div>
-              <div>
-                <h3 class="text-sm font-semibold tracking-tight text-ink mb-1">Interactive Data</h3>
-                <p class="text-sm text-body leading-relaxed">Visual breakdowns and downloadable datasets with every study.</p>
-              </div>
-            </div>
-            <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-5 hover:border-[#0A0F1E]/25 transition-colors flex items-start gap-3">
-              <div class="shrink-0 w-12 h-12 rounded-full bg-[#F4F0E9] flex items-center justify-center mt-0.5">
-                <img src="/assets/images/authority-icons/09-fingerprint-transparent.png" alt="" aria-hidden="true" class="w-[42px] h-[42px]" />
-              </div>
-              <div>
-                <h3 class="text-sm font-semibold tracking-tight text-ink mb-1">Verified Author And Contact</h3>
-                <p class="text-sm text-body leading-relaxed">Direct contact for follow-up on every campaign.</p>
-              </div>
-            </div>
-            <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-5 hover:border-[#0A0F1E]/25 transition-colors flex items-start gap-3">
-              <div class="shrink-0 w-12 h-12 rounded-full bg-[#F4F0E9] flex items-center justify-center mt-0.5">
-                <img src="/assets/images/authority-icons/05-scales-transparent.png" alt="" aria-hidden="true" class="w-[42px] h-[42px]" />
-              </div>
-              <div>
-                <h3 class="text-sm font-semibold tracking-tight text-ink mb-1">Evidence-Backed Claims</h3>
-                <p class="text-sm text-body leading-relaxed">No findings without source, no claims without evidence.</p>
-              </div>
-            </div>
+  <!-- ── 5. HOW WE WORK ── horizontal 4-step process with connecting hairline + deliverable chips -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
+        <div class="max-w-[640px]">
+          <div class={eyebrow}>
+            <span aria-hidden="true" class={eyebrowDot}></span>
+            <span class={eyebrowText}>How we work</span>
           </div>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-4"><span class="brush-underline">Four steps, repeated each campaign</span></h2>
+          <p class="text-[17px] text-body leading-relaxed">
+            A single campaign runs four to six weeks. Successive campaigns compound visibility across search and AI answers.
+          </p>
         </div>
       </div>
+
+      <ol class="relative grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-10">
+        <!-- horizontal connecting hairline crosses circle centers only (top-6 = 24px = circle vertical center) -->
+        <div class="hidden md:block absolute left-6 right-6 top-6 h-px z-0" style="background: linear-gradient(90deg, rgba(245,197,24,0.7) 0%, rgba(245,197,24,0.4) 40%, rgba(30,58,138,0.4) 100%);" aria-hidden="true"></div>
+
+        <li class="relative">
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-[#1E3A8A] flex items-center justify-center relative z-10 mb-4">
+            <span class="font-serif text-lg font-semibold text-[#1E3A8A]">1</span>
+          </div>
+          <div class="text-[10px] uppercase tracking-[0.16em] text-[#1E3A8A] font-semibold mb-2">Week 0</div>
+          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Baseline</h3>
+          <p class="text-[15px] text-body leading-relaxed mb-4">We audit your current visibility across search results and AI answer engines. This is your starting line.</p>
+          <span class="inline-block text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-[#F4F0E9] border border-[#0A0F1E]/10 text-body font-medium">Deliverable: baseline report</span>
+        </li>
+        <li class="relative">
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-[#1E3A8A] flex items-center justify-center relative z-10 mb-4">
+            <span class="font-serif text-lg font-semibold text-[#1E3A8A]">2</span>
+          </div>
+          <div class="text-[10px] uppercase tracking-[0.16em] text-[#1E3A8A] font-semibold mb-2">Week 1</div>
+          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Design</h3>
+          <p class="text-[15px] text-body leading-relaxed mb-4">We shape a rolling research programme around the questions your market asks and the publications your buyers trust.</p>
+          <span class="inline-block text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-[#F4F0E9] border border-[#0A0F1E]/10 text-body font-medium">Deliverable: study brief</span>
+        </li>
+        <li class="relative">
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-[#1E3A8A] flex items-center justify-center relative z-10 mb-4">
+            <span class="font-serif text-lg font-semibold text-[#1E3A8A]">3</span>
+          </div>
+          <div class="text-[10px] uppercase tracking-[0.16em] text-[#1E3A8A] font-semibold mb-2">Weeks 2–5</div>
+          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Produce and place</h3>
+          <p class="text-[15px] text-body leading-relaxed mb-4">We produce each study and place it with named journalists at the publications AI answer engines cite.</p>
+          <span class="inline-block text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-[#F4F0E9] border border-[#0A0F1E]/10 text-body font-medium">Deliverable: landing page + placements</span>
+        </li>
+        <li class="relative">
+          <div class="w-12 h-12 rounded-full bg-[#1E3A8A] border-2 border-[#1E3A8A] flex items-center justify-center relative z-10 mb-4">
+            <span class="font-serif text-lg font-semibold text-white">4</span>
+          </div>
+          <div class="text-[10px] uppercase tracking-[0.16em] text-[#1E3A8A] font-semibold mb-2">Ongoing</div>
+          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Measure</h3>
+          <p class="text-[15px] text-body leading-relaxed mb-4">We track prompt-level movement across ChatGPT, Perplexity, Gemini, and Google. You see which coverage moved the needle.</p>
+          <span class="inline-block text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-[#F4F0E9] border border-[#0A0F1E]/10 text-body font-medium">Deliverable: monthly dashboard</span>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- ── 7. HOW WE WORK ── 2x2 process containers with restrained iconography -->
-  <section class="bg-[#F4F0E9] py-16 lg:py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center max-w-[720px] mx-auto mb-10">
-        <div class={eyebrow}>
-          <span aria-hidden="true" class={eyebrowDot}></span>
-          <span class={eyebrowText}>How we work</span>
-        </div>
-        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">Baseline. Build. Measure.</span></h2>
-        <p class="text-lg text-body leading-relaxed">
-          Every engagement opens with a documented baseline of where a brand appears in AI answers and search today. <span class="font-semibold text-[#1E3A8A]">The work that follows is built, placed, and measured against it.</span>
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
-          <div class="shrink-0 w-10 h-10 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-4">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="3" y1="20" x2="21" y2="20"/>
-            </svg>
-          </div>
-          <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Baseline Analysis</h3>
-          <p class="text-sm text-body leading-relaxed">A documented starting point: which prompts a brand appears in, which competitors dominate, and which sources the engines are citing.</p>
-        </div>
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
-          <div class="shrink-0 w-10 h-10 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-4">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M18 7c0-5.333-8-5.333-8 0"/><path d="M10 7v14"/><path d="M6 21h12"/><path d="M6 13h10"/>
-            </svg>
-          </div>
-          <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Research-Led Campaigns</h3>
-          <p class="text-sm text-body leading-relaxed">Original studies built for editorial coverage in the publications AI engines and Google treat as trusted sources.</p>
-        </div>
-        <div class="bg-white border border-[#0A0F1E]/10 rounded-md p-7 hover:border-[#0A0F1E]/25 transition-colors flex flex-col">
-          <div class="shrink-0 w-10 h-10 rounded-sm bg-[#F4F0E9] flex items-center justify-center mb-4">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-3.5 9-9 9s-9-4-9-9 3.5-9 9-9c2 0 4 .6 5.5 1.7"/>
-            </svg>
-          </div>
-          <h3 class="text-base font-semibold tracking-tight text-ink mb-2">Ongoing Measurement</h3>
-          <p class="text-sm text-body leading-relaxed">Prompt-level tracking and reporting across AI engines and search, so movement against the baseline is documented, not assumed.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 8. FAQ ── dark, restrained (component handles its own layout) -->
-  <FAQ />
-
-  <!-- ── 9. FINAL CTA ── split composition: left intent + right CTA card -->
+  <!-- ── 6. FINAL CTA ── sharp closer with cream card -->
   <section class="py-16 lg:py-20">
     <div class="max-w-5xl mx-auto px-6">
       <div class="bg-[#F4F0E9] border border-[#0A0F1E]/10 rounded-md p-10 md:p-12 text-center">
         <div class="max-w-[640px] mx-auto">
           <div class={eyebrow}>
             <span aria-hidden="true" class={eyebrowDot}></span>
-            <span class={eyebrowText}>Start a campaign</span>
+            <span class={eyebrowText}>Book a call</span>
           </div>
-          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6"><span class="brush-underline">Start a Campaign</span></h2>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6"><span class="brush-underline">Get in the answer</span></h2>
           <p class="text-base text-body leading-relaxed mb-7">
-            Get in touch to walk through your current visibility across search and AI answers, where your competitors are being cited, and what a campaign built for your market looks like.
+            One-sentence brief. One-working-day turnaround. One conversation to see if we're a fit.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="/contact" class={primaryCta}>Start a Campaign</a>
-            <a href="/resources" class={secondaryCta}>See our Research</a>
+            <a href="/contact" class={primaryCta}>Book a Call</a>
           </div>
         </div>
       </div>

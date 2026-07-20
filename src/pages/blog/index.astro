@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
+import HandUnderline from '../../components/HandUnderline.astro';
 
 const posts = [
   {
@@ -244,15 +245,17 @@ const jsonLd = {
     <div class="max-w-6xl mx-auto px-6">
 
       <!-- Header -->
-      <div class="mb-16">
+      <div>
         <Eyebrow label="Blog" />
-        <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-5">
-          Blog
+        <h1 class="font-serif font-medium text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] tracking-tight text-ink leading-[1.05] mb-5">
+          <HandUnderline>Notes</HandUnderline> and analysis <em class="font-normal italic text-ink/70">by Ranking Atlas</em>
         </h1>
         <p class="text-lg md:text-xl text-body leading-relaxed max-w-3xl">
-          Practical analysis, comparisons, and working notes on search and AI visibility.
+          Working commentary on how brands earn citations in search results and AI answers.
         </p>
       </div>
+
+      <hr class="border-t border-[#0A0F1E]/8 my-14" />
 
       <!-- Posts -->
       <section>

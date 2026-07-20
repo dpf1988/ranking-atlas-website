@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
+import HandUnderline from '../../components/HandUnderline.astro';
 
 const featuredResearch = [
   {
@@ -111,21 +112,17 @@ const jsonLd = {
   <section class="py-20 md:py-28">
     <div class="max-w-6xl mx-auto px-6">
 
-      <nav class="text-[13px] text-muted mb-5" aria-label="Breadcrumb">
-        <a href="/" class="text-muted hover:text-brand transition-colors">Home</a>
-        <span class="mx-2 text-[#B6C0D2]">/</span>
-        <span>Studies</span>
-      </nav>
-
-      <div class="mb-16">
+      <div>
         <Eyebrow label="Studies" />
-        <h1 class="font-serif font-medium text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-5">
-          Studies
+        <h1 class="font-serif font-medium text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] tracking-tight text-ink leading-[1.05] mb-5">
+          <HandUnderline>Studies</HandUnderline> and reports <em class="font-normal italic text-ink/70">by Ranking Atlas</em>
         </h1>
         <p class="text-lg md:text-xl text-body leading-relaxed max-w-3xl">
-          Original primary-source studies from Ranking Atlas.
+          Original research on the markets, publishers, and answer engines that shape brand visibility.
         </p>
       </div>
+
+      <hr class="border-t border-[#0A0F1E]/8 my-14" />
 
       <div class="grid sm:grid-cols-2 gap-6">
         {featuredResearch.map((item) => (
