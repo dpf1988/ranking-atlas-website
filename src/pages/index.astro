@@ -49,14 +49,18 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
             </svg>
             <span class="text-[11px] uppercase tracking-[0.14em] font-semibold text-ink">Digital PR for the AI era</span>
           </div>
-          <h1 class="font-serif font-light text-[2rem] sm:text-[2.5rem] lg:text-[3.25rem] tracking-tight text-ink leading-[1.05] mb-6">
+          <h1 class="font-serif font-light text-[2.5rem] sm:text-[3.5rem] lg:text-[4.75rem] tracking-[-0.02em] text-ink leading-[1.02] mb-7">
             <span class="brush-underline"><em class="italic font-normal text-ink" style="font-family: 'Instrument Serif', 'Source Serif 4', Georgia, serif;">Show Up</em> in AI Answers.</span>
           </h1>
-          <p class="text-lg text-ink leading-relaxed mb-7 max-w-[580px]">
+          <p class="font-serif text-[19px] md:text-[22px] text-ink leading-snug mb-8 max-w-[560px]">
             Ranking Atlas places your company in the publications LLMs cite, so you get more leads from AI and Google.
           </p>
-          <div class="flex flex-wrap items-center gap-3">
+          <div class="flex flex-wrap items-center gap-5">
             <a href="/contact" class={primaryCta}>Book a Call</a>
+            <a href="/resources" class="group text-sm font-semibold text-brand hover:text-brand-dark tracking-tight inline-flex items-center gap-1.5">
+              See the research
+              <span class="transition-transform group-hover:translate-x-0.5">→</span>
+            </a>
           </div>
         </div>
 
@@ -128,34 +132,96 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
     </div>
   </section>
 
-  <!-- ── 1b. FEATURED IN ── press logo strip: real branded logos + styled text fallbacks -->
+  <!-- ── 1b. FEATURED IN ── conveyor-belt press strip.
+       Normalised optical height (h-5 md:h-6), unified type register for text
+       fallbacks (font-serif semibold), grayscale + opacity treatment
+       consistent across all items. Marquee scrolls left on the safe-motion
+       track; duplicate copy (aria-hidden) provides seamless loop. Reduced
+       motion hides the duplicate and leaves the strip static.
+       Confirmed coverage URLs link through; unlinked outlets pending real URLs. -->
   <section class="bg-white border-y border-ink/10 py-8 md:py-10">
     <div class="max-w-6xl mx-auto px-6">
       <p class="text-[10px] uppercase tracking-[0.22em] text-muted font-semibold text-center mb-6">Featured in</p>
-      <div class="flex flex-nowrap items-center justify-between gap-x-5 md:gap-x-7 text-ink overflow-x-auto md:overflow-visible">
-        <img src="/assets/images/press-logos/metro.svg" alt="Metro" class="h-4 md:h-5 shrink-0 opacity-70 hover:opacity-100 transition-opacity" />
-        <img src="/assets/images/press-logos/intermediary.png" alt="The Intermediary" class="h-7 md:h-9 shrink-0 opacity-70 hover:opacity-100 transition-opacity object-contain" />
-        <img src="/assets/images/press-logos/birmingham-live.svg" alt="Birmingham Live" class="h-5 md:h-6 shrink-0 opacity-70 hover:opacity-100 transition-opacity" />
-        <img src="/assets/images/press-logos/coventry-live.svg" alt="Coventry Live" class="h-5 md:h-6 shrink-0 opacity-70 hover:opacity-100 transition-opacity" />
-        <span class="font-serif italic text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-ink/70 hover:text-ink transition-colors tracking-tight">This is Money</span>
-        <span class="font-serif font-semibold text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-ink/70 hover:text-ink transition-colors tracking-tight">Yorkshire Post</span>
-        <span class="font-serif font-semibold text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-ink/70 hover:text-ink transition-colors tracking-tight">Blackpool Gazette</span>
-        <span class="font-sans font-bold text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-ink/70 hover:text-ink transition-colors tracking-tight">MSN</span>
+      <div class="overflow-hidden" style="mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);">
+        <div class="motion-safe:animate-marquee-slow flex items-center gap-x-10 md:gap-x-14 w-max py-1">
+          <!-- Copy 1 -->
+          <a href="https://metro.co.uk/2026/07/16/london-neighbourhood-house-prices-fell-97-500-despite-hs2-hopes-29136202/" target="_blank" rel="noopener" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in Metro">
+            <img src="/assets/images/press-logos/metro.svg" alt="Metro" class="h-5 md:h-6 object-contain" />
+          </a>
+          <a href="https://theintermediary.co.uk/2026/07/hs2-land-value-uplift-real-but-uneven-ranking-atlas-finds/" target="_blank" rel="noopener" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in The Intermediary">
+            <img src="/assets/images/press-logos/intermediary.png" alt="The Intermediary" class="h-5 md:h-6 object-contain" />
+          </a>
+          <a href="https://www.birminghammail.co.uk/whats-on/whats-on-news/andy-burnham-expected-pledge-1027bn-34281766" target="_blank" rel="noopener" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in Birmingham Live">
+            <img src="/assets/images/press-logos/birmingham-live.svg" alt="Birmingham Live" class="h-5 md:h-6 object-contain" />
+          </a>
+          <a href="https://www.coventrytelegraph.net/news/local-news/hs2-revival-andy-burnhams-1027bn-34285597" target="_blank" rel="noopener" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in Coventry Live">
+            <img src="/assets/images/press-logos/coventry-live.svg" alt="Coventry Live" class="h-5 md:h-6 object-contain" />
+          </a>
+          <a href="https://www.thisismoney.co.uk/money/buytolet/article-15968671/Seven-ten-landlords-say-no-pets-despite-new-rules-heres-hardest-pet-friendly-home.html" target="_blank" rel="noopener" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in This is Money">
+            <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">This is Money</span>
+          </a>
+          <a href="https://www.yorkshirepost.co.uk/news/transport/hs2-land-value-around-norths-train-stations-could-fund-rail-projects-8799288" target="_blank" rel="noopener" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in Yorkshire Post">
+            <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Yorkshire Post</span>
+          </a>
+          <a href="https://www.blackpoolgazette.co.uk/news/just-28-of-blackpool-rentals-allow-pets-despite-new-law-8791797" target="_blank" rel="noopener" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in Blackpool Gazette">
+            <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Blackpool Gazette</span>
+          </a>
+          <a href="https://www.msn.com/en-za/news/other/seven-in-ten-landlords-say-no-to-pets-despite-new-renters-rights-act-rules/ar-AA27EtF3" target="_blank" rel="noopener" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage on MSN">
+            <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">MSN</span>
+          </a>
+
+          <!-- Copy 2: duplicated for seamless marquee loop. aria-hidden + tabindex=-1
+               keep it out of screen-reader flow and tab order, but mouse users
+               still get hover + click when the duplicate is on screen.
+               Hidden entirely under reduced motion (no loop, no need for it). -->
+          <div aria-hidden="true" class="motion-reduce:hidden flex items-center gap-x-10 md:gap-x-14 shrink-0">
+            <a href="https://metro.co.uk/2026/07/16/london-neighbourhood-house-prices-fell-97-500-despite-hs2-hopes-29136202/" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              <img src="/assets/images/press-logos/metro.svg" alt="" class="h-5 md:h-6 object-contain" />
+            </a>
+            <a href="https://theintermediary.co.uk/2026/07/hs2-land-value-uplift-real-but-uneven-ranking-atlas-finds/" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              <img src="/assets/images/press-logos/intermediary.png" alt="" class="h-5 md:h-6 object-contain" />
+            </a>
+            <a href="https://www.birminghammail.co.uk/whats-on/whats-on-news/andy-burnham-expected-pledge-1027bn-34281766" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              <img src="/assets/images/press-logos/birmingham-live.svg" alt="" class="h-5 md:h-6 object-contain" />
+            </a>
+            <a href="https://www.coventrytelegraph.net/news/local-news/hs2-revival-andy-burnhams-1027bn-34285597" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              <img src="/assets/images/press-logos/coventry-live.svg" alt="" class="h-5 md:h-6 object-contain" />
+            </a>
+            <a href="https://www.thisismoney.co.uk/money/buytolet/article-15968671/Seven-ten-landlords-say-no-pets-despite-new-rules-heres-hardest-pet-friendly-home.html" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+              <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">This is Money</span>
+            </a>
+            <a href="https://www.yorkshirepost.co.uk/news/transport/hs2-land-value-around-norths-train-stations-could-fund-rail-projects-8799288" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+              <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Yorkshire Post</span>
+            </a>
+            <a href="https://www.blackpoolgazette.co.uk/news/just-28-of-blackpool-rentals-allow-pets-despite-new-law-8791797" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+              <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Blackpool Gazette</span>
+            </a>
+            <a href="https://www.msn.com/en-za/news/other/seven-in-ten-landlords-say-no-to-pets-despite-new-renters-rights-act-rules/ar-AA27EtF3" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+              <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">MSN</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── 2. THE PROBLEM ── left/right split: framing on left, vertical list on right -->
-  <section class="bg-bg-warm py-16 lg:py-24">
+  <section class="bg-bg-warm py-20 lg:py-28">
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-10">
-        <!-- LEFT: eyebrow + H2 + descriptive framing -->
+        <!-- LEFT: eyebrow + H2 + standfirst + method note tail -->
         <div class="lg:col-span-5">
           <div class={eyebrow}>
             <span aria-hidden="true" class={eyebrowDot}></span>
             <span class={eyebrowText}>The problem</span>
           </div>
-          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">Three issues<br />Ranking Atlas solves</span></h2>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">The issue<br />Ranking Atlas solves:</span></h2>
+          <p class="font-serif italic text-[19px] leading-snug text-body max-w-[440px] mt-6">
+            Digital PR has a measurement problem. They sell you links and mentions, but don't show you the impact. That's why you need us.
+          </p>
+          <p class="mt-8 pt-6 border-t border-ink/10 max-w-[440px] text-[13px] text-muted italic leading-relaxed">
+            Method note: the full case for citation equity as the primary metric of AI-era visibility lives in <a href="/blog/citation-equity" class="not-italic font-medium text-brand hover:text-brand-dark underline underline-offset-2 decoration-brand/30 hover:decoration-brand transition-colors">the citation equity essay</a>.
+          </p>
         </div>
 
         <!-- RIGHT: vertical list of 3 problem beats, hairline-separated -->
@@ -189,8 +255,8 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
   </section>
 
   <!-- ── 3. WHAT WE DO ── manifesto: 3 pillars with role-specific icons, hairline dividers -->
-  <section class="py-16 lg:py-24">
-    <div class="max-w-6xl mx-auto px-6">
+  <section class="py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6">
       <div class="mb-14">
         <div class={eyebrow}>
           <span aria-hidden="true" class={eyebrowDot}></span>
@@ -204,22 +270,36 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
           <div class="w-16 h-16 rounded-md bg-bg-warm flex items-center justify-center mb-5">
             <img src="/assets/images/authority-icons/04-stamped-doc-transparent.png" alt="" aria-hidden="true" class="w-14 h-14" />
           </div>
-          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-3">Original Research</h3>
-          <p class="text-[15px] text-body leading-relaxed">We design data studies your market wants to read: pricing surveys, market indexes, primary-source analysis journalists will cite.</p>
+          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-4">Original Research</h3>
+          <ul class="space-y-2 text-[15px] text-body leading-relaxed">
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>FOI campaigns</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Proprietary data analysis</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Data scraping stories</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Primary-source analysis</span></li>
+          </ul>
         </div>
         <div class="md:px-8 md:border-l md:border-ink/12">
           <div class="w-16 h-16 rounded-md bg-bg-warm flex items-center justify-center mb-5">
             <img src="/assets/images/authority-icons/02-column-transparent.png" alt="" aria-hidden="true" class="w-14 h-14" />
           </div>
-          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-3">Editorial Production</h3>
-          <p class="text-[15px] text-body leading-relaxed">We turn each study into a landing page, a press release, and journalist outreach programme that lands in the publications AI cites.</p>
+          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-4">Editorial Production</h3>
+          <ul class="space-y-2 text-[15px] text-body leading-relaxed">
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Report published</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Targeted journalist outreach</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Placement and pickup tracking</span></li>
+          </ul>
         </div>
         <div class="md:pl-8 md:border-l md:border-ink/12">
           <div class="w-16 h-16 rounded-md bg-bg-warm flex items-center justify-center mb-5">
             <img src="/assets/images/authority-icons/08-compass-transparent.png" alt="" aria-hidden="true" class="w-14 h-14" />
           </div>
-          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-3">Visibility Measurement</h3>
-          <p class="text-[15px] text-body leading-relaxed">We track prompt-level movement across AI answer engines so you see which coverage moves your brand into the answer.</p>
+          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-4">Visibility Measurement</h3>
+          <ul class="space-y-2 text-[15px] text-body leading-relaxed">
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Documented baseline</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Prompt-level tracking</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Branded vs non-branded splits</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Competitor benchmarking</span></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -268,9 +348,9 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
                 <span class="w-4 text-[11px] font-semibold text-ink text-right">1</span>
                 <span class="w-24 shrink-0 text-[12.5px] font-semibold text-ink">Ages 50–64</span>
                 <div class="flex-1 h-2 rounded-full bg-ink/[0.06] overflow-hidden">
-                  <div class="h-full w-[84.6%] bg-brand rounded-full"></div>
+                  <div class="h-full w-[84.6%] bg-accent rounded-full"></div>
                 </div>
-                <span class="w-10 text-right text-[13px] font-bold text-brand">84.6</span>
+                <span class="w-10 text-right text-[13px] font-bold text-accent">84.6</span>
               </div>
               <div class="flex items-center gap-3">
                 <span class="w-4 text-[11px] font-medium text-body text-right">2</span>
@@ -307,18 +387,25 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
             </div>
           </figure>
 
-          <div class="flex flex-wrap gap-1.5 mb-7">
+          <div class="flex flex-wrap gap-1.5 mb-5">
             <span class="text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-white border border-ink/10 text-body font-medium">6 federal sources</span>
             <span class="text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-white border border-ink/10 text-body font-medium">50 US states</span>
             <span class="text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-white border border-ink/10 text-body font-medium">Generational cuts</span>
             <span class="text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-white border border-ink/10 text-body font-medium">2026</span>
+          </div>
+          <div class="flex items-center gap-2 text-[11px] text-muted mb-6">
+            <span>By Daniel Grainger</span>
+            <span aria-hidden="true" class="w-1 h-1 rounded-full bg-muted/60"></span>
+            <span>March 2026</span>
+            <span aria-hidden="true" class="w-1 h-1 rounded-full bg-muted/60"></span>
+            <span>9-min read</span>
           </div>
           <div class="mt-auto text-xs text-brand-navy font-semibold group-hover:underline tracking-wide">Read the study →</div>
         </a>
 
         <!-- Two secondaries stacked -->
         <div class="lg:col-span-5 grid grid-cols-1 gap-5">
-          <a href={featuredResearch[1].href} class="group bg-white border border-ink/10 rounded-md p-7 hover:border-ink/25 transition-colors flex flex-col">
+          <a href={featuredResearch[1].href} class="group bg-white border border-ink/10 border-l-2 border-l-brand rounded-md p-7 hover:border-ink/25 hover:border-l-brand transition-colors flex flex-col">
             <div class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold mb-3">{featuredResearch[1].eyebrow}</div>
             <h3 class="text-base font-semibold tracking-tight text-ink mb-3 leading-snug group-hover:text-brand-navy transition-colors">
               {featuredResearch[1].title}
@@ -326,14 +413,21 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
             <p class="text-sm text-body leading-relaxed mb-4 flex-1">
               {featuredResearch[1].description}
             </p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
+            <div class="flex flex-wrap gap-1.5 mb-3">
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">2,286 individuals</span>
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">4 engines</span>
+            </div>
+            <div class="flex items-center gap-2 text-[10px] text-muted mb-4">
+              <span>By Daniel Grainger</span>
+              <span aria-hidden="true" class="w-1 h-1 rounded-full bg-muted/60"></span>
+              <span>April 2026</span>
+              <span aria-hidden="true" class="w-1 h-1 rounded-full bg-muted/60"></span>
+              <span>7-min read</span>
             </div>
             <div class="text-[11px] text-brand-navy font-semibold group-hover:underline tracking-wide">Read the study →</div>
           </a>
 
-          <a href={featuredResearch[2].href} class="group bg-white border border-ink/10 rounded-md p-7 hover:border-ink/25 transition-colors flex flex-col">
+          <a href={featuredResearch[2].href} class="group bg-white border border-ink/10 border-l-2 border-l-accent rounded-md p-7 hover:border-ink/25 hover:border-l-accent transition-colors flex flex-col">
             <div class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold mb-3">{featuredResearch[2].eyebrow}</div>
             <h3 class="text-base font-semibold tracking-tight text-ink mb-3 leading-snug group-hover:text-brand-navy transition-colors">
               {featuredResearch[2].title}
@@ -341,10 +435,17 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
             <p class="text-sm text-body leading-relaxed mb-4 flex-1">
               {featuredResearch[2].description}
             </p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
+            <div class="flex flex-wrap gap-1.5 mb-3">
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">65 tools</span>
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">12 categories</span>
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">6 years</span>
+            </div>
+            <div class="flex items-center gap-2 text-[10px] text-muted mb-4">
+              <span>By Daniel Grainger</span>
+              <span aria-hidden="true" class="w-1 h-1 rounded-full bg-muted/60"></span>
+              <span>April 2026</span>
+              <span aria-hidden="true" class="w-1 h-1 rounded-full bg-muted/60"></span>
+              <span>8-min read</span>
             </div>
             <div class="text-[11px] text-brand-navy font-semibold group-hover:underline tracking-wide">Read the study →</div>
           </a>
@@ -354,7 +455,7 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
   </section>
 
   <!-- ── 5. HOW WE WORK ── horizontal 4-step process with connecting hairline + deliverable chips -->
-  <section class="py-16 lg:py-24">
+  <section class="py-20 lg:py-28">
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
         <div class="max-w-[640px]">
@@ -370,64 +471,84 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
       </div>
 
       <ol class="relative grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-10">
-        <!-- horizontal connecting hairline crosses circle centers only (top-6 = 24px = circle vertical center) -->
-        <div class="hidden md:block absolute left-6 right-6 top-6 h-px z-0" style="background: linear-gradient(90deg, rgba(245,197,24,0.7) 0%, rgba(245,197,24,0.4) 40%, rgba(30,58,138,0.4) 100%);" aria-hidden="true"></div>
+        <!-- Connecting hairline: runs from Step 1 circle centre to Step 4 circle centre.
+             All-amber gradient with a subtle intensity buildup left to right. -->
+        <div class="hidden md:block absolute left-6 top-6 h-px z-0" style="right: calc(25% - 42px); background: linear-gradient(90deg, rgba(192,138,31,0.5) 0%, rgba(192,138,31,0.75) 50%, rgba(192,138,31,1) 100%);" aria-hidden="true"></div>
 
         <li class="relative">
+          <!-- Mobile vertical connector: Step 1 to Step 2. Starts below this circle, ends at next circle's centre (extends 64px past li bottom: 40px gap + 24px into next li). Amber, lowest intensity. -->
+          <span class="md:hidden absolute left-6 top-14 -bottom-16 w-px z-0" style="background: linear-gradient(180deg, rgba(192,138,31,0.5) 0%, rgba(192,138,31,0.65) 100%);" aria-hidden="true"></span>
+          <!-- Circle progression: Step 1 navy → Step 2 lighter navy → Step 3 amber outline → Step 4 filled amber. Cool-to-warm to mirror the hairline. -->
           <div class="w-12 h-12 rounded-full bg-white border-2 border-brand flex items-center justify-center relative z-10 mb-4">
             <span class="font-serif text-lg font-semibold text-brand">1</span>
           </div>
           <div class="text-[10px] uppercase tracking-[0.16em] text-brand font-semibold mb-2">Week 0</div>
-          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Baseline</h3>
-          <p class="text-[15px] text-body leading-relaxed mb-4">We audit your current visibility across search results and AI answer engines. This is your starting line.</p>
-          <span class="inline-block text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-bg-warm border border-ink/10 text-body font-medium">Deliverable: baseline report</span>
+          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-3">Baseline</h3>
+          <ul class="space-y-2 text-[15px] text-body leading-relaxed">
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Search visibility audit</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Four-engine benchmark</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Competitor snapshot</span></li>
+          </ul>
         </li>
         <li class="relative">
-          <div class="w-12 h-12 rounded-full bg-white border-2 border-brand flex items-center justify-center relative z-10 mb-4">
-            <span class="font-serif text-lg font-semibold text-brand">2</span>
+          <!-- Mobile vertical connector: Step 2 to Step 3. Amber deepening through the middle. -->
+          <span class="md:hidden absolute left-6 top-14 -bottom-16 w-px z-0" style="background: linear-gradient(180deg, rgba(192,138,31,0.65) 0%, rgba(192,138,31,0.85) 100%);" aria-hidden="true"></span>
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-brand-light flex items-center justify-center relative z-10 mb-4">
+            <span class="font-serif text-lg font-semibold text-brand-light">2</span>
           </div>
           <div class="text-[10px] uppercase tracking-[0.16em] text-brand font-semibold mb-2">Week 1</div>
-          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Design</h3>
-          <p class="text-[15px] text-body leading-relaxed mb-4">We shape a rolling research programme around the questions your market asks and the publications your buyers trust.</p>
-          <span class="inline-block text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-bg-warm border border-ink/10 text-body font-medium">Deliverable: study brief</span>
+          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-3">Design</h3>
+          <ul class="space-y-2 text-[15px] text-body leading-relaxed">
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Buyer-question mapping</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Target publication list</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Study brief</span></li>
+          </ul>
         </li>
         <li class="relative">
-          <div class="w-12 h-12 rounded-full bg-white border-2 border-brand flex items-center justify-center relative z-10 mb-4">
-            <span class="font-serif text-lg font-semibold text-brand">3</span>
+          <!-- Mobile vertical connector: Step 3 to Step 4. Amber at full intensity into Step 4. -->
+          <span class="md:hidden absolute left-6 top-14 -bottom-16 w-px z-0" style="background: linear-gradient(180deg, rgba(192,138,31,0.85) 0%, rgba(192,138,31,1) 100%);" aria-hidden="true"></span>
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-accent flex items-center justify-center relative z-10 mb-4">
+            <span class="font-serif text-lg font-semibold text-accent">3</span>
           </div>
           <div class="text-[10px] uppercase tracking-[0.16em] text-brand font-semibold mb-2">Weeks 2–5</div>
-          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Produce and place</h3>
-          <p class="text-[15px] text-body leading-relaxed mb-4">We produce each study and place it with named journalists at the publications AI answer engines cite.</p>
-          <span class="inline-block text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-bg-warm border border-ink/10 text-body font-medium">Deliverable: landing page + placements</span>
+          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-3">Produce and place</h3>
+          <ul class="space-y-2 text-[15px] text-body leading-relaxed">
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Original study production</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Landing page and press release</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Named journalist outreach</span></li>
+          </ul>
         </li>
         <li class="relative">
-          <div class="w-12 h-12 rounded-full bg-brand border-2 border-brand flex items-center justify-center relative z-10 mb-4">
+          <div class="w-12 h-12 rounded-full bg-accent border-2 border-accent flex items-center justify-center relative z-10 mb-4">
             <span class="font-serif text-lg font-semibold text-white">4</span>
           </div>
           <div class="text-[10px] uppercase tracking-[0.16em] text-brand font-semibold mb-2">Ongoing</div>
-          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Measure</h3>
-          <p class="text-[15px] text-body leading-relaxed mb-4">We track prompt-level movement across ChatGPT, Perplexity, Gemini, and Google. You see which coverage moved the needle.</p>
-          <span class="inline-block text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-bg-warm border border-ink/10 text-body font-medium">Deliverable: monthly dashboard</span>
+          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-3">Measure</h3>
+          <ul class="space-y-2 text-[15px] text-body leading-relaxed">
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Prompt-level tracking</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Coverage attribution</span></li>
+            <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Monthly dashboard</span></li>
+          </ul>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- ── 6. FINAL CTA ── sharp closer with cream card -->
+  <!-- ── 6. FINAL CTA ── dark card on paper surface -->
   <section class="py-16 lg:py-20">
     <div class="max-w-5xl mx-auto px-6">
-      <div class="bg-bg-warm border border-ink/10 rounded-md p-10 md:p-12 text-center">
+      <div class="bg-brand-slate rounded-md p-10 md:p-14 text-center shadow-[0_20px_60px_-20px_rgba(15,27,61,0.35)]">
         <div class="max-w-[640px] mx-auto">
-          <div class={eyebrow}>
-            <span aria-hidden="true" class={eyebrowDot}></span>
-            <span class={eyebrowText}>Book a call</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/15 mb-6">
+            <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-accent-bright"></span>
+            <span class="text-[11px] uppercase tracking-[0.14em] font-semibold text-white">Book a call</span>
           </div>
-          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6"><span class="brush-underline">Get in the answer</span></h2>
-          <p class="text-base text-body leading-relaxed mb-7">
+          <h2 class="font-serif font-semibold text-3xl md:text-4xl tracking-tight text-white leading-[1.1] mb-6"><span class="brush-underline">Get in the answer</span></h2>
+          <p class="text-lg text-white/70 leading-relaxed mb-9 max-w-[540px] mx-auto">
             One-sentence brief. One-working-day turnaround. One conversation to see if we're a fit.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="/contact" class={primaryCta}>Book a Call</a>
+            <a href="/contact" class="inline-flex items-center justify-center bg-white hover:bg-white/95 text-brand font-semibold px-6 py-3 rounded text-sm shadow-[0_6px_20px_-4px_rgba(0,0,0,0.35)] hover:shadow-[0_10px_30px_-4px_rgba(0,0,0,0.45)] hover:-translate-y-px transition-all duration-200">Book a Call</a>
           </div>
         </div>
       </div>
