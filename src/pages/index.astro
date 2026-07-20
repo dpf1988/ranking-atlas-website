@@ -170,16 +170,35 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
             <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">MSN</span>
           </a>
 
-          <!-- Copy 2: duplicated for seamless marquee loop. Hidden under reduced motion. -->
+          <!-- Copy 2: duplicated for seamless marquee loop. aria-hidden + tabindex=-1
+               keep it out of screen-reader flow and tab order, but mouse users
+               still get hover + click when the duplicate is on screen.
+               Hidden entirely under reduced motion (no loop, no need for it). -->
           <div aria-hidden="true" class="motion-reduce:hidden flex items-center gap-x-10 md:gap-x-14 shrink-0">
-            <span class="shrink-0 grayscale opacity-60"><img src="/assets/images/press-logos/metro.svg" alt="" class="h-5 md:h-6 object-contain" /></span>
-            <span class="shrink-0 grayscale opacity-60"><img src="/assets/images/press-logos/intermediary.png" alt="" class="h-5 md:h-6 object-contain" /></span>
-            <span class="shrink-0 grayscale opacity-60"><img src="/assets/images/press-logos/birmingham-live.svg" alt="" class="h-5 md:h-6 object-contain" /></span>
-            <span class="shrink-0 grayscale opacity-60"><img src="/assets/images/press-logos/coventry-live.svg" alt="" class="h-5 md:h-6 object-contain" /></span>
-            <span class="shrink-0 opacity-60"><span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">This is Money</span></span>
-            <span class="shrink-0 opacity-60"><span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Yorkshire Post</span></span>
-            <span class="shrink-0 opacity-60"><span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Blackpool Gazette</span></span>
-            <span class="shrink-0 opacity-60"><span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">MSN</span></span>
+            <a href="https://metro.co.uk/2026/07/16/london-neighbourhood-house-prices-fell-97-500-despite-hs2-hopes-29136202/" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              <img src="/assets/images/press-logos/metro.svg" alt="" class="h-5 md:h-6 object-contain" />
+            </a>
+            <a href="https://theintermediary.co.uk/2026/07/hs2-land-value-uplift-real-but-uneven-ranking-atlas-finds/" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              <img src="/assets/images/press-logos/intermediary.png" alt="" class="h-5 md:h-6 object-contain" />
+            </a>
+            <a href="https://www.birminghammail.co.uk/whats-on/whats-on-news/andy-burnham-expected-pledge-1027bn-34281766" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              <img src="/assets/images/press-logos/birmingham-live.svg" alt="" class="h-5 md:h-6 object-contain" />
+            </a>
+            <a href="https://www.coventrytelegraph.net/news/local-news/hs2-revival-andy-burnhams-1027bn-34285597" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              <img src="/assets/images/press-logos/coventry-live.svg" alt="" class="h-5 md:h-6 object-contain" />
+            </a>
+            <a href="https://www.thisismoney.co.uk/money/buytolet/article-15968671/Seven-ten-landlords-say-no-pets-despite-new-rules-heres-hardest-pet-friendly-home.html" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+              <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">This is Money</span>
+            </a>
+            <a href="https://www.yorkshirepost.co.uk/news/transport/hs2-land-value-around-norths-train-stations-could-fund-rail-projects-8799288" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+              <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Yorkshire Post</span>
+            </a>
+            <a href="https://www.blackpoolgazette.co.uk/news/just-28-of-blackpool-rentals-allow-pets-despite-new-law-8791797" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+              <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Blackpool Gazette</span>
+            </a>
+            <a href="https://www.msn.com/en-za/news/other/seven-in-ten-landlords-say-no-to-pets-despite-new-renters-rights-act-rules/ar-AA27EtF3" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+              <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">MSN</span>
+            </a>
           </div>
         </div>
       </div>
