@@ -401,10 +401,11 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
           </span>
         </span>
 
-        <!-- Trending-up tail: starts exactly at Step 4 circle centre, rises up-and-right past the ol edge -->
+        <!-- Trending-up tail: starts exactly at Step 4 circle centre (viewBox y=36 = hairline height with translateY(-50%)),
+             holds flat briefly, then curves up and to the right past the ol edge -->
         <svg class="hidden md:block absolute top-6 z-[5] pointer-events-none" style="left: calc(75% + 42px); transform: translateY(-50%);" width="170" height="72" viewBox="0 0 170 72" fill="none" aria-hidden="true">
-          <path d="M0 62 L38 54 L82 32 L150 6" stroke="#C08A1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95" />
-          <circle cx="150" cy="6" r="2.75" fill="#C08A1F" />
+          <path d="M0 36 C40 36 70 24 165 4" stroke="#C08A1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95" />
+          <circle cx="165" cy="4" r="3" fill="#C08A1F" />
         </svg>
 
         <li class="relative">
