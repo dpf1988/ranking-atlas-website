@@ -132,19 +132,56 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
     </div>
   </section>
 
-  <!-- ── 1b. FEATURED IN ── press logo strip: real branded logos + styled text fallbacks -->
+  <!-- ── 1b. FEATURED IN ── conveyor-belt press strip.
+       Normalised optical height (h-5 md:h-6), unified type register for text
+       fallbacks (font-serif semibold), grayscale + opacity treatment
+       consistent across all items. Marquee scrolls left on the safe-motion
+       track; duplicate copy (aria-hidden) provides seamless loop. Reduced
+       motion hides the duplicate and leaves the strip static.
+       Confirmed coverage URLs link through; unlinked outlets pending real URLs. -->
   <section class="bg-white border-y border-ink/10 py-8 md:py-10">
     <div class="max-w-6xl mx-auto px-6">
       <p class="text-[10px] uppercase tracking-[0.22em] text-muted font-semibold text-center mb-6">Featured in</p>
-      <div class="flex flex-nowrap items-center justify-between gap-x-5 md:gap-x-7 text-ink overflow-x-auto md:overflow-visible">
-        <img src="/assets/images/press-logos/metro.svg" alt="Metro" class="h-4 md:h-5 shrink-0 opacity-70 hover:opacity-100 transition-opacity" />
-        <img src="/assets/images/press-logos/intermediary.png" alt="The Intermediary" class="h-7 md:h-9 shrink-0 opacity-70 hover:opacity-100 transition-opacity object-contain" />
-        <img src="/assets/images/press-logos/birmingham-live.svg" alt="Birmingham Live" class="h-5 md:h-6 shrink-0 opacity-70 hover:opacity-100 transition-opacity" />
-        <img src="/assets/images/press-logos/coventry-live.svg" alt="Coventry Live" class="h-5 md:h-6 shrink-0 opacity-70 hover:opacity-100 transition-opacity" />
-        <span class="font-serif italic text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-ink/70 hover:text-ink transition-colors tracking-tight">This is Money</span>
-        <span class="font-serif font-semibold text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-ink/70 hover:text-ink transition-colors tracking-tight">Yorkshire Post</span>
-        <span class="font-serif font-semibold text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-ink/70 hover:text-ink transition-colors tracking-tight">Blackpool Gazette</span>
-        <span class="font-sans font-bold text-[0.9rem] md:text-[1rem] shrink-0 whitespace-nowrap text-ink/70 hover:text-ink transition-colors tracking-tight">MSN</span>
+      <div class="overflow-hidden" style="mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);">
+        <div class="motion-safe:animate-marquee-slow flex items-center gap-x-10 md:gap-x-14 w-max py-1">
+          <!-- Copy 1 -->
+          <a href="https://metro.co.uk/2026/07/16/london-neighbourhood-house-prices-fell-97-500-despite-hs2-hopes-29136202/" target="_blank" rel="noopener" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in Metro">
+            <img src="/assets/images/press-logos/metro.svg" alt="Metro" class="h-5 md:h-6 object-contain" />
+          </a>
+          <a href="https://theintermediary.co.uk/2026/07/hs2-land-value-uplift-real-but-uneven-ranking-atlas-finds/" target="_blank" rel="noopener" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in The Intermediary">
+            <img src="/assets/images/press-logos/intermediary.png" alt="The Intermediary" class="h-5 md:h-6 object-contain" />
+          </a>
+          <span class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="/assets/images/press-logos/birmingham-live.svg" alt="Birmingham Live" class="h-5 md:h-6 object-contain" />
+          </span>
+          <span class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+            <img src="/assets/images/press-logos/coventry-live.svg" alt="Coventry Live" class="h-5 md:h-6 object-contain" />
+          </span>
+          <a href="https://www.thisismoney.co.uk/money/buytolet/article-15968671/Seven-ten-landlords-say-no-pets-despite-new-rules-heres-hardest-pet-friendly-home.html" target="_blank" rel="noopener" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in This is Money">
+            <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">This is Money</span>
+          </a>
+          <span class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+            <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Yorkshire Post</span>
+          </span>
+          <span class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+            <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Blackpool Gazette</span>
+          </span>
+          <span class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+            <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">MSN</span>
+          </span>
+
+          <!-- Copy 2: duplicated for seamless marquee loop. Hidden under reduced motion. -->
+          <div aria-hidden="true" class="motion-reduce:hidden flex items-center gap-x-10 md:gap-x-14 shrink-0">
+            <span class="shrink-0 grayscale opacity-60"><img src="/assets/images/press-logos/metro.svg" alt="" class="h-5 md:h-6 object-contain" /></span>
+            <span class="shrink-0 grayscale opacity-60"><img src="/assets/images/press-logos/intermediary.png" alt="" class="h-5 md:h-6 object-contain" /></span>
+            <span class="shrink-0 grayscale opacity-60"><img src="/assets/images/press-logos/birmingham-live.svg" alt="" class="h-5 md:h-6 object-contain" /></span>
+            <span class="shrink-0 grayscale opacity-60"><img src="/assets/images/press-logos/coventry-live.svg" alt="" class="h-5 md:h-6 object-contain" /></span>
+            <span class="shrink-0 opacity-60"><span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">This is Money</span></span>
+            <span class="shrink-0 opacity-60"><span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Yorkshire Post</span></span>
+            <span class="shrink-0 opacity-60"><span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">Blackpool Gazette</span></span>
+            <span class="shrink-0 opacity-60"><span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">MSN</span></span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
