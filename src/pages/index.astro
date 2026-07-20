@@ -209,13 +209,19 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
   <section class="bg-bg-warm py-20 lg:py-28">
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-10">
-        <!-- LEFT: eyebrow + H2 + descriptive framing -->
+        <!-- LEFT: eyebrow + H2 + standfirst + method note tail -->
         <div class="lg:col-span-5">
           <div class={eyebrow}>
             <span aria-hidden="true" class={eyebrowDot}></span>
             <span class={eyebrowText}>The problem</span>
           </div>
-          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">Three issues<br />Ranking Atlas solves</span></h2>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">The issue<br />Ranking Atlas solves:</span></h2>
+          <p class="font-serif italic text-[19px] leading-snug text-body max-w-[440px] mt-6">
+            Digital PR has a measurement problem. They sell you links and mentions, but don't show you the impact. That's why you need us.
+          </p>
+          <p class="mt-8 pt-6 border-t border-ink/10 max-w-[440px] text-[13px] text-muted italic leading-relaxed">
+            Method note: the full case for citation equity as the primary metric of AI-era visibility lives in <a href="/blog/citation-equity" class="not-italic font-medium text-brand hover:text-brand-dark underline underline-offset-2 decoration-brand/30 hover:decoration-brand transition-colors">the citation equity essay</a>.
+          </p>
         </div>
 
         <!-- RIGHT: vertical list of 3 problem beats, hairline-separated -->
