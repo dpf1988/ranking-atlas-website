@@ -404,11 +404,13 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
         <!-- Trending-up tail: starts exactly at Step 4 circle centre (viewBox y=36 = hairline height with translateY(-50%)),
              holds flat briefly, then curves up and to the right past the ol edge -->
         <svg class="hidden md:block absolute top-6 z-[5] pointer-events-none" style="left: calc(75% + 42px); transform: translateY(-50%);" width="170" height="72" viewBox="0 0 170 72" fill="none" aria-hidden="true">
-          <path d="M0 36 C40 36 70 24 165 4" stroke="#C08A1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95" />
+          <path d="M0 36 L120 36 C142 36 152 14 165 4" stroke="#C08A1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95" />
           <circle cx="165" cy="4" r="3" fill="#C08A1F" />
         </svg>
 
         <li class="relative">
+          <!-- Mobile vertical connector: Step 1 to Step 2. Starts below this circle, ends at next circle's centre (extends 64px past li bottom: 40px gap + 24px into next li). Navy throughout this segment. -->
+          <span class="md:hidden absolute left-6 top-14 -bottom-16 w-px z-0" style="background: linear-gradient(180deg, rgba(30,58,138,0.5) 0%, rgba(30,58,138,0.5) 100%);" aria-hidden="true"></span>
           <div class="w-12 h-12 rounded-full bg-white border-2 border-brand flex items-center justify-center relative z-10 mb-4">
             <span class="font-serif text-lg font-semibold text-brand">1</span>
           </div>
@@ -421,6 +423,8 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
           </ul>
         </li>
         <li class="relative">
+          <!-- Mobile vertical connector: Step 2 to Step 3. Transitions navy to warming amber. -->
+          <span class="md:hidden absolute left-6 top-14 -bottom-16 w-px z-0" style="background: linear-gradient(180deg, rgba(30,58,138,0.5) 0%, rgba(192,138,31,0.7) 100%);" aria-hidden="true"></span>
           <div class="w-12 h-12 rounded-full bg-white border-2 border-brand flex items-center justify-center relative z-10 mb-4">
             <span class="font-serif text-lg font-semibold text-brand">2</span>
           </div>
@@ -433,6 +437,8 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
           </ul>
         </li>
         <li class="relative">
+          <!-- Mobile vertical connector: Step 3 to Step 4. Full amber, deepening to signal arrival at measurement. -->
+          <span class="md:hidden absolute left-6 top-14 -bottom-16 w-px z-0" style="background: linear-gradient(180deg, rgba(192,138,31,0.7) 0%, rgba(192,138,31,1) 100%);" aria-hidden="true"></span>
           <div class="w-12 h-12 rounded-full bg-white border-2 border-brand flex items-center justify-center relative z-10 mb-4">
             <span class="font-serif text-lg font-semibold text-brand">3</span>
           </div>
