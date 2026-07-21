@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Eyebrow from '../components/Eyebrow.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -8,8 +9,6 @@ const jsonLd = {
   "url": "https://ranking-atlas.com",
   "description": "Ranking Atlas is a digital PR studio built for the AI search era. We earn editorial coverage for brands that want to be cited when buyers ask LLMs which product to trust."
 };
-
-const primaryCta = "inline-flex items-center justify-center bg-brand hover:bg-brand-dark text-white font-semibold px-5 py-2.5 rounded text-sm shadow-[0_3px_8px_-2px_rgba(15,27,61,0.22),0_1px_2px_rgba(15,27,61,0.10)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.28),0_2px_4px_-1px_rgba(15,27,61,0.12)] hover:-translate-y-px transition-all duration-200";
 ---
 
 <Layout
@@ -22,50 +21,167 @@ const primaryCta = "inline-flex items-center justify-center bg-brand hover:bg-br
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
   <!-- Hero -->
-  <section class="pt-28 md:pt-36 pb-16 md:pb-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <p class="text-[11px] uppercase tracking-[0.22em] text-brand font-semibold mb-5">About</p>
-      <h1 class="font-serif font-light text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] tracking-tight text-ink leading-[1.1] mb-6">
-        A digital PR studio built for the<br />AI search era.
+  <section class="pt-28 md:pt-36 pb-20 md:pb-28 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <Eyebrow label="About" />
+      <h1 class="font-serif font-medium text-[2rem] md:text-[2.75rem] lg:text-[3.5rem] tracking-tight text-ink leading-[1.05] mb-6 max-w-4xl">
+        A digital PR studio built for<br />the <em class="italic font-normal text-ink" style="font-family: 'Instrument Serif', 'Source Serif 4', Georgia, serif;">AI search era</em>.
       </h1>
-      <p class="text-lg md:text-xl text-body leading-relaxed max-w-2xl mx-auto">
+      <p class="font-sans font-normal text-[18px] md:text-[20px] text-ink leading-snug max-w-2xl">
         Ranking Atlas earns editorial coverage for brands that want to be cited when buyers ask LLMs which product to trust.
       </p>
     </div>
   </section>
 
-  <!-- Our story -->
-  <section class="py-16 md:py-20 bg-bg-paper border-y border-ink/[0.06]">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6">Our story</h2>
-      <div class="space-y-5 text-[17px] md:text-lg text-body leading-relaxed">
-        <p>
-          Ranking Atlas answers a shift in how modern buyers find brands.
-        </p>
-        <p>
-          Search behaviour has completely changed, moving from clicking links in Google SERPs to reading answers written by AI.
-        </p>
-        <p>
-          To get your brand cited in those AI answers, you need authoritative third-party coverage.
-        </p>
-        <p>
-          We design original data studies, place them in those third-party publications, and measure the movement in AI visibility that follows. Every engagement runs against a documented baseline and competitor benchmark, so the impact is visible, not asserted.
-        </p>
+  <!-- Our story: two-column, H2 left / body right -->
+  <section class="py-20 md:py-28 bg-bg-paper border-y border-ink/[0.06]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-10 md:gap-14">
+        <div class="md:col-span-1">
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight">Our story</h2>
+        </div>
+        <div class="md:col-span-2 space-y-5 text-[17px] md:text-lg text-body leading-relaxed">
+          <p>Ranking Atlas answers a shift in how modern buyers find brands.</p>
+          <p>Search behaviour has changed, moving from clicking links in Google SERPs to reading answers written by AI. To get your brand cited in those answers, you need authoritative third-party coverage.</p>
+          <p>We design original data studies, place them in those publications, and measure the movement in AI visibility that follows. Every engagement runs against a documented baseline and competitor benchmark, so the impact is visible, not asserted.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-20 md:py-24 bg-bg-paper">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5">
-        Ready to be the answer?
+  <!-- Education: copy left, treemap right -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+
+        <!-- Copy -->
+        <div>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-6">
+            Why <span class="brush-underline-light"><em class="italic font-normal text-ink" style="font-family: 'Instrument Serif', 'Source Serif 4', Georgia, serif;">editorial coverage</em></span> decides AI visibility
+          </h2>
+          <div class="space-y-5 text-[17px] md:text-lg text-body leading-relaxed">
+            <p>AI engines don't take brands at their word.</p>
+            <p>They cite what independent sources say, and editorial is the single largest input at nearly a third of every answer.</p>
+            <p>Your own website is the smallest block on the chart. To be recommended by AI, you have to be covered by the press.</p>
+          </div>
+        </div>
+
+        <!-- Treemap. 600x480 aspect for tighter composition beside the copy.
+             Palette: navy dominant, amber accent on Community, cream for Reference, dashed hollow for Brand-owned.
+             Hairline white gutters (1.5px) between blocks. -->
+        <figure class="md:pl-4">
+          <svg viewBox="0 0 600 480" role="img" aria-label="Source categories cited in AI answers. Independent editorial and press 32 percent. Community and forums 26 percent. Review and comparison sites 18 percent. Reference sources 16 percent. Brand-owned pages 8 percent." class="w-full h-auto block">
+            <!-- Editorial 32% -->
+            <g>
+              <rect x="0" y="0" width="348" height="265" fill="#1E3A8A" stroke="#FFFFFF" stroke-width="1.5"/>
+              <text x="24" y="42" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Independent editorial &amp; press</text>
+              <text x="24" y="102" font-family="'Source Serif 4', Georgia, serif" font-size="52" font-weight="600" fill="#FFFFFF">32%</text>
+            </g>
+            <!-- Community 26% -->
+            <g>
+              <rect x="0" y="265" width="348" height="215" fill="#C08A1F" stroke="#FFFFFF" stroke-width="1.5"/>
+              <text x="24" y="307" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Community &amp; forums</text>
+              <text x="24" y="363" font-family="'Source Serif 4', Georgia, serif" font-size="46" font-weight="600" fill="#FFFFFF">26%</text>
+            </g>
+            <!-- Reviews 18% -->
+            <g>
+              <rect x="348" y="0" width="252" height="206" fill="#1B2438" stroke="#FFFFFF" stroke-width="1.5"/>
+              <text x="372" y="38" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Review &amp; comparison</text>
+              <text x="372" y="86" font-family="'Source Serif 4', Georgia, serif" font-size="36" font-weight="600" fill="#FFFFFF">18%</text>
+            </g>
+            <!-- Reference 16% -->
+            <g>
+              <rect x="348" y="206" width="252" height="183" fill="#F4F0E9" stroke="#FFFFFF" stroke-width="1.5"/>
+              <text x="372" y="244" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" fill="#0A0F1E">Reference sources</text>
+              <text x="372" y="292" font-family="'Source Serif 4', Georgia, serif" font-size="36" font-weight="600" fill="#0A0F1E">16%</text>
+            </g>
+            <!-- Brand-owned 8% (hollow: the absence is the point) -->
+            <g>
+              <rect x="348" y="389" width="252" height="91" fill="none" stroke="#475569" stroke-width="1.25" stroke-dasharray="5 4"/>
+              <text x="372" y="422" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" fill="#475569">Brand-owned pages</text>
+              <text x="372" y="464" font-family="'Source Serif 4', Georgia, serif" font-size="26" font-weight="600" fill="#475569">8%</text>
+            </g>
+          </svg>
+          <figcaption class="mt-4 text-sm italic text-muted leading-snug">
+            Illustrative distribution based on published analyses across LLMs.
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How we work: three-step process with connecting amber hairline. Mirrors the homepage pattern. -->
+  <section class="py-20 md:py-28 bg-bg-paper border-y border-ink/[0.06]">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-12 md:mb-16">
+        How we work
       </h2>
-      <p class="text-lg text-body leading-relaxed mb-8 max-w-xl mx-auto">
-        Tell us about your business and who your customers are. We'll have an audit and plan ready for you on the call.
+
+      <ol class="relative grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-10">
+        <!-- Connecting hairline: Step 1 circle centre to Step 3 circle centre. Cool-to-warm amber gradient. -->
+        <div class="hidden md:block absolute left-6 top-6 h-px z-0" style="right: calc(33.333% - 42px); background: linear-gradient(90deg, rgba(192,138,31,0.5) 0%, rgba(192,138,31,0.75) 50%, rgba(192,138,31,1) 100%);" aria-hidden="true"></div>
+
+        <li class="relative">
+          <!-- Mobile vertical connector: Step 1 to Step 2. Amber, lower intensity. -->
+          <span class="md:hidden absolute left-6 top-14 -bottom-16 w-px z-0" style="background: linear-gradient(180deg, rgba(192,138,31,0.5) 0%, rgba(192,138,31,0.75) 100%);" aria-hidden="true"></span>
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-brand flex items-center justify-center relative z-10 mb-4">
+            <span class="font-serif text-lg font-semibold text-brand">1</span>
+          </div>
+          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-3">Baseline</h3>
+          <p class="text-[15px] text-body leading-relaxed">
+            We measure your current AI visibility against competitors across the prompts your buyers actually ask.
+          </p>
+        </li>
+
+        <li class="relative">
+          <!-- Mobile vertical connector: Step 2 to Step 3. Amber intensifying. -->
+          <span class="md:hidden absolute left-6 top-14 -bottom-16 w-px z-0" style="background: linear-gradient(180deg, rgba(192,138,31,0.75) 0%, rgba(192,138,31,1) 100%);" aria-hidden="true"></span>
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-accent flex items-center justify-center relative z-10 mb-4">
+            <span class="font-serif text-lg font-semibold text-accent">2</span>
+          </div>
+          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-3">Build</h3>
+          <p class="text-[15px] text-body leading-relaxed">
+            We design an original data study and place it in the publications LLMs cite.
+          </p>
+        </li>
+
+        <li class="relative">
+          <div class="w-12 h-12 rounded-full bg-accent border-2 border-accent flex items-center justify-center relative z-10 mb-4">
+            <span class="font-serif text-lg font-semibold text-white">3</span>
+          </div>
+          <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-3">Measure</h3>
+          <p class="text-[15px] text-body leading-relaxed">
+            We re-run the baseline and report the citation movement with numbers, not screenshots.
+          </p>
+        </li>
+      </ol>
+
+      <p class="mt-14 md:mt-16 text-center italic text-muted text-[17px]">
+        Visibility compounds across successive campaigns.
       </p>
-      <div class="flex justify-center">
-        <a href="/contact" class={primaryCta}>Book a Call</a>
+    </div>
+  </section>
+
+  <!-- Final CTA: dark card rhythm-breaker on paper surface. Mirrors the homepage. -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="bg-brand-slate rounded-md p-10 md:p-14 text-center shadow-[0_20px_60px_-20px_rgba(15,27,61,0.35)]">
+        <div class="max-w-[640px] mx-auto">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 mb-6">
+            <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-accent-bright"></span>
+            <span class="text-[11px] uppercase tracking-[0.14em] font-semibold text-white">Book a call</span>
+          </div>
+          <h2 class="font-serif font-semibold text-3xl md:text-4xl tracking-tight text-white leading-[1.1] mb-6">
+            <span class="brush-underline">Ready to be the answer?</span>
+          </h2>
+          <p class="text-lg text-white/70 leading-relaxed mb-9 max-w-[540px] mx-auto">
+            Tell us about your business and who your customers are. We'll have an audit and plan ready for you on the call.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="/contact" class="inline-flex items-center justify-center bg-white hover:bg-white/95 text-brand font-semibold px-6 py-3 rounded text-sm shadow-[0_6px_20px_-4px_rgba(0,0,0,0.35)] hover:shadow-[0_10px_30px_-4px_rgba(0,0,0,0.45)] hover:-translate-y-px transition-all duration-200">Book a Call</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
