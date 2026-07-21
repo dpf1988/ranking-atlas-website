@@ -67,7 +67,26 @@
       "Bash(cp /tmp/logo-scrape/metro-logo.svg /c/Users/inhal/ranking-atlas-company/website/public/assets/images/press-logos/metro.svg)",
       "Bash(cp /tmp/logo-scrape/coventry-logo-clean.svg /c/Users/inhal/ranking-atlas-company/website/public/assets/images/press-logos/coventry-live.svg)",
       "Bash(cp /tmp/logo-scrape/birmingham-logo-clean.svg /c/Users/inhal/ranking-atlas-company/website/public/assets/images/press-logos/birmingham-live.svg)",
-      "Bash(cp /tmp/logo-scrape/intermediary-logo.png /c/Users/inhal/ranking-atlas-company/website/public/assets/images/press-logos/intermediary.png)"
+      "Bash(cp /tmp/logo-scrape/intermediary-logo.png /c/Users/inhal/ranking-atlas-company/website/public/assets/images/press-logos/intermediary.png)",
+      "Bash(mkdir -p \"/c/Users/inhal/mitm-data\")",
+      "Bash(mv \"/c/Users/inhal/ranking-atlas-company/website/mitm_mcp_traffic.db\" \"/c/Users/inhal/mitm-data/mitm_mcp_traffic.db\")",
+      "Read(//c/Users/inhal/**)",
+      "Bash(/c/Users/inhal/.local/bin/mitmproxy-mcp.exe --help)",
+      "Bash(/dev/null -name *.py -path *mitmproxy_mcp*)",
+      "Bash(find /c/Users/inhal -maxdepth 5 -name mitmproxy_mcp* -o -name *mitmproxy_mcp*.py)",
+      "Bash(where pipx:*)",
+      "Bash(pipx list:*)",
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(netstat -ano)",
+      "Bash(cmd //c \"taskkill /F /PID 21032 /PID 24428 /PID 4124 /PID 5700\")",
+      "Bash(command -v zip)",
+      "Bash(zip --version)",
+      "Bash(explorer.exe \"C:\\\\Users\\\\inhal\\\\ranking-atlas-company\")",
+      "Bash(tr -d '<>')",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(git branch:*)",
+      "Bash(cmd //c \"taskkill /F /PID 26552\")"
     ]
   },
   "model": "claude-opus-4-7"

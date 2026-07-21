@@ -95,9 +95,9 @@ const climberCount = points.filter(p => tierForPoint(p) === 'climber').length;
 const ariaLabel = `Slope chart showing rank change between ${firstYear} and ${latestYear} for the top ${n} countries of ${latestYear}. ${persistentCount} countries appear in the top ten in both years and are highlighted in amber; ${climberCount} climbers of ten or more places are highlighted in green. The ${firstYear} axis compresses ranks below ${breakBelow} into a break band so climbers can be shown without distortion.`;
 ---
 
-<div class="relative rounded-2xl shadow-card p-8 md:p-10 overflow-x-auto"
+<div class="relative rounded-md shadow-card p-8 md:p-10 overflow-x-auto"
      style="background:linear-gradient(160deg,#13224B 0%,#0F1B3D 55%,#080F24 100%)">
-  <div class="absolute inset-0 rounded-2xl pointer-events-none" style="border:1px solid rgba(255,255,255,0.07)"></div>
+  <div class="absolute inset-0 rounded-md pointer-events-none" style="border:1px solid rgba(255,255,255,0.07)"></div>
   <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={ariaLabel} style="display:block;min-width:680px;width:100%;height:auto">
     <text x={leftX} y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#8FA3C8">{firstYear}</text>
     <text x={rightX} y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#8FA3C8">{latestYear}</text>

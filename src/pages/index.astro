@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PrimaryCTA from '../components/PrimaryCTA.astro';
 
 const featuredResearch = [
   {
@@ -23,13 +24,9 @@ const featuredResearch = [
 ];
 
 // Editorial eyebrow — pill with navy dot.
-const eyebrow = "inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-bright/15 border border-accent-bright/40 mb-5";
-const eyebrowDot = "h-1.5 w-1.5 rounded-full bg-brand";
+const eyebrow = "inline-flex items-center px-3 py-1.5 rounded-full bg-accent-bright/15 border border-accent-bright/40 mb-5";
 const eyebrowText = "text-[11px] uppercase tracking-[0.14em] font-semibold text-ink";
 
-// Restrained CTAs — administrative, not conversion-aggressive.
-const primaryCta = "inline-flex items-center justify-center bg-brand hover:bg-brand-dark text-white font-semibold px-5 py-2.5 rounded text-sm shadow-[0_3px_8px_-2px_rgba(15,27,61,0.22),0_1px_2px_rgba(15,27,61,0.10)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.28),0_2px_4px_-1px_rgba(15,27,61,0.12)] hover:-translate-y-px transition-all duration-200";
-const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:bg-white text-ink font-semibold tracking-tight px-5 py-2.5 rounded border border-ink/15 text-sm shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200";
 ---
 
 <Layout
@@ -38,25 +35,21 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
 >
 
   <!-- ── 1. HERO ── editorial pill + asymmetric layout with right-side study card -->
-  <section id="home" class="pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-20 relative" style="background-image: linear-gradient(to right, rgba(15,27,61,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,27,61,0.04) 1px, transparent 1px); background-size: 48px 48px;">
+  <section id="home" class="pt-28 md:pt-32 lg:pt-36 pb-8 md:pb-10 relative" style="background-image: linear-gradient(to right, rgba(15,27,61,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,27,61,0.04) 1px, transparent 1px); background-size: 48px 48px;">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
         <div class="lg:col-span-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-bright/15 border border-accent-bright/40 mb-7">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-ink shrink-0">
-              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
-              <path d="m9 12 2 2 4-4" />
-            </svg>
+          <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-accent-bright/15 border border-accent-bright/40 mb-7">
             <span class="text-[11px] uppercase tracking-[0.14em] font-semibold text-ink">Digital PR for the AI era</span>
           </div>
-          <h1 class="font-serif font-light text-[2.5rem] sm:text-[3.5rem] lg:text-[4.75rem] tracking-[-0.02em] text-ink leading-[1.02] mb-7">
-            <span class="brush-underline"><em class="italic font-normal text-ink" style="font-family: 'Instrument Serif', 'Source Serif 4', Georgia, serif;">Show Up</em> in AI Answers.</span>
+          <h1 class="font-serif font-medium text-[2.5rem] sm:text-[3.5rem] lg:text-[4.75rem] tracking-[-0.02em] text-ink leading-[1.02] mb-7">
+            <span class="brush-underline"><em class="italic font-normal text-ink" style="font-family: 'Instrument Serif', 'Source Serif 4', Georgia, serif;">Make AI</em> Recommend Your Brand.</span>
           </h1>
-          <p class="font-serif text-[19px] md:text-[22px] text-ink leading-snug mb-8 max-w-[560px]">
-            Ranking Atlas places your company in the publications LLMs cite, so you get more leads from AI and Google.
+          <p class="font-sans font-normal text-[18px] md:text-[20px] text-ink leading-snug mb-8 max-w-[560px]">
+            We place your company in <strong class="font-semibold">the publications LLMs cite</strong>, so you get more leads from AI and Google.
           </p>
           <div class="flex flex-wrap items-center gap-5">
-            <a href="/contact" class={primaryCta}>Book a Call</a>
+            <PrimaryCTA href="/contact" />
             <a href="/resources" class="group text-sm font-semibold text-brand hover:text-brand-dark tracking-tight inline-flex items-center gap-1.5">
               See the research
               <span class="transition-transform group-hover:translate-x-0.5">→</span>
@@ -64,81 +57,56 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
           </div>
         </div>
 
-        <!-- Right-side: press coverage carousel with mock browser frames -->
-        <div class="lg:col-span-6 lg:-mt-8 lg:-mr-6 xl:-mr-12 relative">
-          <div id="press-carousel" class="rounded-xl border border-ink/10 shadow-[0_30px_60px_-15px_rgba(15,27,61,0.25),0_10px_25px_-10px_rgba(15,27,61,0.15)] overflow-hidden bg-white">
-            <div class="relative aspect-[6/5]">
-              <!-- Slide 1: Metro (visible by default for no-JS graceful degradation / LCP) -->
-              <a href="https://metro.co.uk/2026/07/16/london-neighbourhood-house-prices-fell-97-500-despite-hs2-hopes-29136202/" target="_blank" rel="noopener" class="press-slide absolute inset-0 flex flex-col opacity-100 z-10 transition-opacity duration-700" data-slide="0" aria-label="Read on Metro">
-                <div class="flex items-center px-3 py-2 bg-bg-paper border-b border-ink/[0.08]">
-                  <div class="flex gap-1.5">
-                    <span class="w-2.5 h-2.5 rounded-full bg-ink/10"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-ink/10"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-ink/10"></span>
-                  </div>
-                  <div class="flex-1 flex justify-center">
-                    <span class="text-[11px] text-muted font-medium px-3 py-0.5 rounded-full bg-ink/[0.04]">metro.co.uk</span>
-                  </div>
-                  <div class="w-[54px]"></div>
-                </div>
-                <div class="flex-1 overflow-hidden">
-                  <img src="/images/metro-hs2.webp" alt="Ranking Atlas analysis featured in Metro: Old Oak Common house prices fell £97,500 despite HS2 hopes" class="w-full h-full object-cover object-top" fetchpriority="high" />
-                </div>
-              </a>
-              <!-- Slide 2: The Intermediary -->
-              <a href="https://theintermediary.co.uk/2026/07/hs2-land-value-uplift-real-but-uneven-ranking-atlas-finds/" target="_blank" rel="noopener" class="press-slide absolute inset-0 flex flex-col opacity-0 z-0 transition-opacity duration-700" data-slide="1" aria-label="Read on The Intermediary">
-                <div class="flex items-center px-3 py-2 bg-bg-paper border-b border-ink/[0.08]">
-                  <div class="flex gap-1.5">
-                    <span class="w-2.5 h-2.5 rounded-full bg-ink/10"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-ink/10"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-ink/10"></span>
-                  </div>
-                  <div class="flex-1 flex justify-center">
-                    <span class="text-[11px] text-muted font-medium px-3 py-0.5 rounded-full bg-ink/[0.04]">theintermediary.co.uk</span>
-                  </div>
-                  <div class="w-[54px]"></div>
-                </div>
+        <!-- Right-side: fanned stack of three real placements. Auto-shuffles
+             every 4.5s on desktop; static on mobile (only Metro visible).
+             Pauses on hover. Respects prefers-reduced-motion. -->
+        <div class="lg:col-span-6 lg:-mr-6 xl:-mr-12 relative">
+          <div class="fan-container relative aspect-[6/5]">
+            <!-- Card 0: The Intermediary (initial back-left) -->
+            <a href="https://theintermediary.co.uk/2026/07/hs2-land-value-uplift-real-but-uneven-ranking-atlas-finds/" target="_blank" rel="noopener" aria-label="Read on The Intermediary" data-fan-card class="fan-card fan-back-left group hidden md:block absolute top-0 left-1/2 w-[76%] aspect-[6/5]">
+              <article class="h-full rounded-md border border-ink/10 shadow-[0_20px_40px_-15px_rgba(15,27,61,0.28)] overflow-hidden bg-white flex flex-col">
+                <header class="flex items-center px-4 py-2 bg-bg-paper border-b border-ink/[0.08]">
+                  <span class="font-serif font-semibold text-[13px] text-ink tracking-tight">The Intermediary</span>
+                </header>
                 <div class="flex-1 overflow-hidden">
                   <img src="/images/intermediary-hs2.webp" alt="Ranking Atlas HS2 land value analysis covered in The Intermediary" class="w-full h-full object-cover object-left-top" loading="lazy" />
                 </div>
-              </a>
-              <!-- Slide 3: This Is Money -->
-              <a href="https://www.thisismoney.co.uk/money/buytolet/article-15968671/Seven-ten-landlords-say-no-pets-despite-new-rules-heres-hardest-pet-friendly-home.html" target="_blank" rel="noopener" class="press-slide absolute inset-0 flex flex-col opacity-0 z-0 transition-opacity duration-700" data-slide="2" aria-label="Read on This Is Money">
-                <div class="flex items-center px-3 py-2 bg-bg-paper border-b border-ink/[0.08]">
-                  <div class="flex gap-1.5">
-                    <span class="w-2.5 h-2.5 rounded-full bg-ink/10"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-ink/10"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-ink/10"></span>
-                  </div>
-                  <div class="flex-1 flex justify-center">
-                    <span class="text-[11px] text-muted font-medium px-3 py-0.5 rounded-full bg-ink/[0.04]">thisismoney.co.uk</span>
-                  </div>
-                  <div class="w-[54px]"></div>
-                </div>
+              </article>
+            </a>
+
+            <!-- Card 1: This Is Money (initial back-right) -->
+            <a href="https://www.thisismoney.co.uk/money/buytolet/article-15968671/Seven-ten-landlords-say-no-pets-despite-new-rules-heres-hardest-pet-friendly-home.html" target="_blank" rel="noopener" aria-label="Read on This Is Money" data-fan-card class="fan-card fan-back-right group hidden md:block absolute top-0 left-1/2 w-[76%] aspect-[6/5]">
+              <article class="h-full rounded-md border border-ink/10 shadow-[0_20px_40px_-15px_rgba(15,27,61,0.28)] overflow-hidden bg-white flex flex-col">
+                <header class="flex items-center px-4 py-2 bg-bg-paper border-b border-ink/[0.08]">
+                  <span class="font-serif font-semibold text-[13px] text-ink tracking-tight">This Is Money</span>
+                </header>
                 <div class="flex-1 overflow-hidden">
-                  <img src="/images/thisismoney-pets.webp" alt="Ranking Atlas research featured in This Is Money: seven in ten landlords still say no to pets despite new rules" class="w-full h-full object-cover object-top" loading="lazy" />
+                  <img src="/images/thisismoney-pets.webp" alt="Ranking Atlas research featured in This Is Money: seven in ten landlords still say no to pets" class="w-full h-full object-cover object-top" loading="lazy" />
                 </div>
-              </a>
-            </div>
-            <!-- Dot indicators -->
-            <div class="flex justify-center gap-2 py-3 bg-white">
-              <button class="press-dot w-2 h-2 rounded-full bg-brand transition-colors" data-dot="0" aria-label="Show Metro slide"></button>
-              <button class="press-dot w-2 h-2 rounded-full bg-ink/20 hover:bg-ink/40 transition-colors" data-dot="1" aria-label="Show The Intermediary slide"></button>
-              <button class="press-dot w-2 h-2 rounded-full bg-ink/20 hover:bg-ink/40 transition-colors" data-dot="2" aria-label="Show This Is Money slide"></button>
-            </div>
+              </article>
+            </a>
+
+            <!-- Card 2: Metro (initial front, LCP-critical, always visible on mobile) -->
+            <a href="https://metro.co.uk/2026/07/16/london-neighbourhood-house-prices-fell-97-500-despite-hs2-hopes-29136202/" target="_blank" rel="noopener" aria-label="Read on Metro" data-fan-card class="fan-card fan-front group absolute top-0 left-1/2 w-full md:w-[76%] aspect-[6/5]">
+              <article class="h-full rounded-md border border-ink/10 shadow-[0_30px_60px_-15px_rgba(15,27,61,0.28),0_10px_25px_-10px_rgba(15,27,61,0.18)] overflow-hidden bg-white flex flex-col">
+                <header class="flex items-center px-4 py-2 bg-bg-paper border-b border-ink/[0.08]">
+                  <span class="font-serif font-semibold text-[13px] text-ink tracking-tight">Metro</span>
+                </header>
+                <div class="flex-1 overflow-hidden">
+                  <img src="/images/metro-hs2.webp" alt="Ranking Atlas analysis featured in Metro: Old Oak Common house prices fell £97,500 despite HS2 hopes" class="w-full h-full object-cover object-top" fetchpriority="high" />
+                </div>
+              </article>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── 1b. FEATURED IN ── conveyor-belt press strip.
-       Normalised optical height (h-5 md:h-6), unified type register for text
-       fallbacks (font-serif semibold), grayscale + opacity treatment
-       consistent across all items. Marquee scrolls left on the safe-motion
-       track; duplicate copy (aria-hidden) provides seamless loop. Reduced
-       motion hides the duplicate and leaves the strip static.
-       Confirmed coverage URLs link through; unlinked outlets pending real URLs. -->
+  <!-- ── 1b. READ IN ── static grid of press placements, unified typographic
+       treatment. Each cell is a real coverage link. Instrument Serif italic
+       across the whole strip for consistency (no mixed SVG/text). Hairline
+       grid, 4-across desktop / 2-across mobile. -->
   <section class="bg-white border-y border-ink/10 py-8 md:py-10">
     <div class="max-w-6xl mx-auto px-6">
       <p class="text-[10px] uppercase tracking-[0.22em] text-muted font-semibold text-center mb-6">Featured in</p>
@@ -212,37 +180,36 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
         <!-- LEFT: eyebrow + H2 + standfirst + method note tail -->
         <div class="lg:col-span-5">
           <div class={eyebrow}>
-            <span aria-hidden="true" class={eyebrowDot}></span>
             <span class={eyebrowText}>The problem</span>
           </div>
-          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">The issue<br />Ranking Atlas solves:</span></h2>
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">The issues<br />Ranking Atlas solves:</span></h2>
           <p class="font-serif italic text-[19px] leading-snug text-body max-w-[440px] mt-6">
-            Digital PR has a measurement problem. They sell you links and mentions, but don't show you the impact. That's why you need us.
+            Most digital PR sells volume. Ranking Atlas measures the outcome.
           </p>
           <p class="mt-8 pt-6 border-t border-ink/10 max-w-[440px] text-[13px] text-muted italic leading-relaxed">
-            Method note: the full case for citation equity as the primary metric of AI-era visibility lives in <a href="/blog/citation-equity" class="not-italic font-medium text-brand hover:text-brand-dark underline underline-offset-2 decoration-brand/30 hover:decoration-brand transition-colors">the citation equity essay</a>.
+            Method note: the full case for citation equity as the primary metric of AI-era visibility lives in our <a href="/blog/citation-equity" class="not-italic font-medium text-brand hover:text-brand-dark underline underline-offset-2 decoration-brand/30 hover:decoration-brand transition-colors">citation essay study</a>.
           </p>
         </div>
 
         <!-- RIGHT: vertical list of 3 problem beats, hairline-separated -->
         <div class="lg:col-span-7">
           <ol class="divide-y divide-ink/12 border-y border-ink/12">
-            <li class="flex gap-6 py-7">
-              <div class="font-serif text-[2rem] md:text-[2.25rem] font-semibold text-brand/35 leading-none shrink-0 w-14">01</div>
+            <li class="flex items-start gap-6 py-7">
+              <img src="/assets/images/authority-icons/05-scales-transparent.png" alt="" aria-hidden="true" class="w-14 h-14 shrink-0 object-contain" loading="lazy" />
               <div>
                 <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Traditional PR doesn't measure AI answers.</h3>
                 <p class="text-[15px] text-body leading-relaxed">You get no visibility data on ChatGPT, Perplexity, or Gemini.</p>
               </div>
             </li>
-            <li class="flex gap-6 py-7">
-              <div class="font-serif text-[2rem] md:text-[2.25rem] font-semibold text-brand/35 leading-none shrink-0 w-14">02</div>
+            <li class="flex items-start gap-6 py-7">
+              <img src="/assets/images/authority-icons/08-compass-transparent.png" alt="" aria-hidden="true" class="w-14 h-14 shrink-0 object-contain" loading="lazy" />
               <div>
                 <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">SEO agencies chase rankings AI is eating.</h3>
                 <p class="text-[15px] text-body leading-relaxed">Their KPI is a Google ranking fewer buyers ever look at.</p>
               </div>
             </li>
-            <li class="flex gap-6 py-7">
-              <div class="font-serif text-[2rem] md:text-[2.25rem] font-semibold text-brand/35 leading-none shrink-0 w-14">03</div>
+            <li class="flex items-start gap-6 py-7">
+              <img src="/assets/images/authority-icons/06-archive-transparent.png" alt="" aria-hidden="true" class="w-14 h-14 shrink-0 object-contain" loading="lazy" />
               <div>
                 <h3 class="font-serif text-lg md:text-xl font-medium tracking-tight text-ink leading-snug mb-2">Syndication tools inflate arbitrary link counts.</h3>
                 <p class="text-[15px] text-body leading-relaxed">Expensive volume metrics that don't influence editorial authority.</p>
@@ -257,68 +224,76 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
   <!-- ── 3. WHAT WE DO ── manifesto: 3 pillars with role-specific icons, hairline dividers -->
   <section class="py-16 lg:py-20">
     <div class="max-w-5xl mx-auto px-6">
-      <div class="mb-14">
+      <div class="mb-14 max-w-[720px]">
         <div class={eyebrow}>
-          <span aria-hidden="true" class={eyebrowDot}></span>
           <span class={eyebrowText}>What we do</span>
         </div>
         <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-5"><span class="brush-underline">Research, editorial placements, visibility measurement</span></h2>
+        <p class="font-serif italic text-[19px] leading-snug text-body max-w-[560px]">
+          The studio runs on three functions. Each is measured. Each compounds.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-12">
-        <div class="md:pr-8">
+        <div class="md:pr-8 flex flex-col">
           <div class="w-16 h-16 rounded-md bg-bg-warm flex items-center justify-center mb-5">
             <img src="/assets/images/authority-icons/04-stamped-doc-transparent.png" alt="" aria-hidden="true" class="w-14 h-14" />
           </div>
-          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-4">Original Research</h3>
-          <ul class="space-y-2 text-[15px] text-body leading-relaxed">
+          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-4">We publish primary data.</h3>
+          <ul class="space-y-2 text-[15px] text-body leading-relaxed mb-6">
             <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>FOI campaigns</span></li>
             <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Proprietary data analysis</span></li>
             <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Data scraping stories</span></li>
             <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Primary-source analysis</span></li>
           </ul>
+          <div class="mt-auto pt-4 border-t border-ink/10">
+            <div class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold mb-1.5">Latest study</div>
+            <p class="text-[13px] text-body leading-snug">Who Actually Gets Scammed in America, generational fraud analysis.</p>
+          </div>
         </div>
-        <div class="md:px-8 md:border-l md:border-ink/12">
+        <div class="md:px-8 md:border-l md:border-ink/12 flex flex-col">
           <div class="w-16 h-16 rounded-md bg-bg-warm flex items-center justify-center mb-5">
             <img src="/assets/images/authority-icons/02-column-transparent.png" alt="" aria-hidden="true" class="w-14 h-14" />
           </div>
-          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-4">Editorial Production</h3>
-          <ul class="space-y-2 text-[15px] text-body leading-relaxed">
+          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-4">We place it in the press.</h3>
+          <ul class="space-y-2 text-[15px] text-body leading-relaxed mb-6">
             <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Report published</span></li>
             <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Targeted journalist outreach</span></li>
             <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Placement and pickup tracking</span></li>
           </ul>
+          <div class="mt-auto pt-4 border-t border-ink/10">
+            <div class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold mb-1.5">Recent pickup</div>
+            <p class="text-[13px] text-body leading-snug">HS2 land-value analysis: Metro, Yorkshire Post, The Intermediary.</p>
+          </div>
         </div>
-        <div class="md:pl-8 md:border-l md:border-ink/12">
+        <div class="md:pl-8 md:border-l md:border-ink/12 flex flex-col">
           <div class="w-16 h-16 rounded-md bg-bg-warm flex items-center justify-center mb-5">
             <img src="/assets/images/authority-icons/08-compass-transparent.png" alt="" aria-hidden="true" class="w-14 h-14" />
           </div>
-          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-4">Visibility Measurement</h3>
-          <ul class="space-y-2 text-[15px] text-body leading-relaxed">
+          <h3 class="font-serif text-xl md:text-[1.375rem] font-medium tracking-tight text-ink leading-snug mb-4">We track where you appear.</h3>
+          <ul class="space-y-2 text-[15px] text-body leading-relaxed mb-6">
             <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Documented baseline</span></li>
             <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Prompt-level tracking</span></li>
             <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Branded vs non-branded splits</span></li>
             <li class="flex items-start gap-3"><span class="inline-block w-3 h-px bg-accent mt-[0.7em] shrink-0" aria-hidden="true"></span><span>Competitor benchmarking</span></li>
           </ul>
+          <div class="mt-auto pt-4 border-t border-ink/10">
+            <div class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold mb-1.5">Engines tracked</div>
+            <p class="text-[13px] text-body leading-snug">ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ── 4. FEATURED RESEARCH ── flagship + 2 secondary, study metadata pills -->
-  <section class="bg-bg-warm py-16 lg:py-20">
+  <section class="bg-bg-warm pt-16 lg:pt-20 pb-10 lg:pb-12">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
-        <div class="max-w-[640px]">
-          <div class={eyebrow}>
-            <span aria-hidden="true" class={eyebrowDot}></span>
-            <span class={eyebrowText}>Research</span>
-          </div>
-          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-4"><span class="brush-underline">Featured Research</span></h2>
+      <div class="max-w-[640px] mb-10">
+        <div class={eyebrow}>
+          <span class={eyebrowText}>Research</span>
         </div>
-        <a href="/resources" class="text-sm text-brand hover:text-brand-dark font-semibold shrink-0">
-          View all research →
-        </a>
+        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-4"><span class="brush-underline">Featured Research</span></h2>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
@@ -393,7 +368,8 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
             <span class="text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-white border border-ink/10 text-body font-medium">Generational cuts</span>
             <span class="text-[10px] uppercase tracking-[0.1em] px-2 py-1 rounded-sm bg-white border border-ink/10 text-body font-medium">2026</span>
           </div>
-          <div class="flex items-center gap-2 text-[11px] text-muted mb-6">
+          <div class="flex items-center gap-2.5 text-[11px] text-muted mb-6">
+            <img src="/assets/images/author/daniel-headshot.jpg" alt="" width="24" height="24" loading="lazy" class="w-6 h-6 rounded-full object-cover ring-1 ring-ink/10" />
             <span>By Daniel Grainger</span>
             <span aria-hidden="true" class="w-1 h-1 rounded-full bg-muted/60"></span>
             <span>March 2026</span>
@@ -405,7 +381,7 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
 
         <!-- Two secondaries stacked -->
         <div class="lg:col-span-5 grid grid-cols-1 gap-5">
-          <a href={featuredResearch[1].href} class="group bg-white border border-ink/10 border-l-2 border-l-brand rounded-md p-7 hover:border-ink/25 hover:border-l-brand transition-colors flex flex-col">
+          <a href={featuredResearch[1].href} class="group bg-white border border-ink/10 border-l-2 border-l-accent rounded-md p-7 hover:border-ink/25 hover:border-l-accent transition-colors flex flex-col">
             <div class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold mb-3">{featuredResearch[1].eyebrow}</div>
             <h3 class="text-base font-semibold tracking-tight text-ink mb-3 leading-snug group-hover:text-brand-navy transition-colors">
               {featuredResearch[1].title}
@@ -413,6 +389,17 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
             <p class="text-sm text-body leading-relaxed mb-4 flex-1">
               {featuredResearch[1].description}
             </p>
+            <figure class="mb-4" aria-label="Women mentioned as ICT experts: 20.5% of 10,711 mentions, against a 28% workforce baseline">
+              <figcaption class="flex items-baseline justify-between mb-1.5">
+                <span class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold">Share of mentions: women</span>
+                <span class="text-[11px] font-bold text-accent tabular-nums">20.5%</span>
+              </figcaption>
+              <div class="relative h-2 rounded-full bg-ink/[0.06] overflow-hidden mb-1.5">
+                <div class="absolute inset-y-0 left-0 bg-accent rounded-full" style="width:20.5%"></div>
+                <div class="absolute inset-y-0 border-l border-dashed border-ink/50" style="left:28%; width:1px;"></div>
+              </div>
+              <div class="text-[10px] text-muted italic">Dashed line: 28% workforce baseline</div>
+            </figure>
             <div class="flex flex-wrap gap-1.5 mb-3">
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">2,286 individuals</span>
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">4 engines</span>
@@ -435,6 +422,30 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
             <p class="text-sm text-body leading-relaxed mb-4 flex-1">
               {featuredResearch[2].description}
             </p>
+            <figure class="mb-4" aria-label="Six-year list-price change: Analytics category +81.3%, CRM category 0%, against a 27.1% US CPI baseline">
+              <figcaption class="flex items-baseline justify-between mb-2">
+                <span class="text-[10px] uppercase tracking-[0.14em] text-muted font-semibold">Six-year list-price change</span>
+                <span class="text-[10px] text-muted italic tabular-nums">vs 27.1% CPI</span>
+              </figcaption>
+              <div class="space-y-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="w-16 shrink-0 text-[11px] font-semibold text-ink">Analytics</span>
+                  <div class="relative flex-1 h-2 rounded-full bg-ink/[0.06] overflow-hidden">
+                    <div class="absolute inset-y-0 left-0 bg-accent rounded-full" style="width:81.3%"></div>
+                    <div class="absolute inset-y-0 border-l border-dashed border-ink/50" style="left:27.1%; width:1px;"></div>
+                  </div>
+                  <span class="w-11 text-right text-[11px] font-bold text-accent tabular-nums">+81.3%</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-16 shrink-0 text-[11px] font-medium text-body">CRM</span>
+                  <div class="relative flex-1 h-2 rounded-full bg-ink/[0.06] overflow-hidden">
+                    <div class="absolute inset-y-0 left-0 bg-brand/30 rounded-full" style="width:0.6%"></div>
+                    <div class="absolute inset-y-0 border-l border-dashed border-ink/50" style="left:27.1%; width:1px;"></div>
+                  </div>
+                  <span class="w-11 text-right text-[11px] font-medium text-body tabular-nums">0.0%</span>
+                </div>
+              </div>
+            </figure>
             <div class="flex flex-wrap gap-1.5 mb-3">
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">65 tools</span>
               <span class="text-[10px] uppercase tracking-[0.1em] px-1.5 py-0.5 rounded-sm bg-bg-warm border border-ink/08 text-muted font-medium">12 categories</span>
@@ -451,23 +462,21 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
           </a>
         </div>
       </div>
+
+      <div class="mt-6 pt-4 border-t border-ink/12 flex items-baseline justify-end">
+        <a href="/resources" class="text-[11px] uppercase tracking-[0.18em] text-brand hover:text-brand-dark font-semibold">View all research →</a>
+      </div>
     </div>
   </section>
 
   <!-- ── 5. HOW WE WORK ── horizontal 4-step process with connecting hairline + deliverable chips -->
-  <section class="py-20 lg:py-28">
+  <section class="py-14 lg:py-18">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
-        <div class="max-w-[640px]">
-          <div class={eyebrow}>
-            <span aria-hidden="true" class={eyebrowDot}></span>
-            <span class={eyebrowText}>How we work</span>
-          </div>
-          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-4"><span class="brush-underline">Four steps, repeated each campaign</span></h2>
-          <p class="text-[17px] text-body leading-relaxed">
-            A single campaign runs four to six weeks. Successive campaigns compound visibility across search and AI answers.
-          </p>
+      <div class="max-w-[640px] mb-12">
+        <div class={eyebrow}>
+          <span class={eyebrowText}>The process</span>
         </div>
+        <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight"><span class="brush-underline">Four steps, repeated each campaign</span></h2>
       </div>
 
       <ol class="relative grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-10">
@@ -539,13 +548,13 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
     <div class="max-w-5xl mx-auto px-6">
       <div class="bg-brand-slate rounded-md p-10 md:p-14 text-center shadow-[0_20px_60px_-20px_rgba(15,27,61,0.35)]">
         <div class="max-w-[640px] mx-auto">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/15 mb-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 mb-6">
             <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-accent-bright"></span>
             <span class="text-[11px] uppercase tracking-[0.14em] font-semibold text-white">Book a call</span>
           </div>
           <h2 class="font-serif font-semibold text-3xl md:text-4xl tracking-tight text-white leading-[1.1] mb-6"><span class="brush-underline">Get in the answer</span></h2>
           <p class="text-lg text-white/70 leading-relaxed mb-9 max-w-[540px] mx-auto">
-            One-sentence brief. One-working-day turnaround. One conversation to see if we're a fit.
+            Tell us about your business and who your customers are. We'll have an audit and plan ready for you on the call.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a href="/contact" class="inline-flex items-center justify-center bg-white hover:bg-white/95 text-brand font-semibold px-6 py-3 rounded text-sm shadow-[0_6px_20px_-4px_rgba(0,0,0,0.35)] hover:shadow-[0_10px_30px_-4px_rgba(0,0,0,0.45)] hover:-translate-y-px transition-all duration-200">Book a Call</a>
@@ -568,56 +577,74 @@ const secondaryCta = "inline-flex items-center justify-center bg-bg-warm hover:b
 </script>
 
 <script>
-  (function () {
-    const carousel = document.getElementById('press-carousel');
-    if (!carousel) return;
+  // Hero fan-card auto-shuffle: rotates which of the three placement cards
+  // occupies front / back-left / back-right every 4.5s. Desktop only.
+  // Pauses on hover of the fan container. Disabled under reduced-motion.
+  (() => {
+    const container = document.querySelector('.fan-container');
+    if (!container) return;
+    const cards = container.querySelectorAll('[data-fan-card]');
+    if (cards.length !== 3) return;
 
-    const slides = carousel.querySelectorAll('.press-slide');
-    const dots = carousel.querySelectorAll('.press-dot');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let current = 0;
-    let timer = null;
+    const desktopMq = window.matchMedia('(min-width: 768px)');
+    const motionMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const positions = ['fan-front', 'fan-back-right', 'fan-back-left'];
+    let step = 0;
+    let interval: number | null = null;
 
-    function goTo(index) {
-      slides.forEach((s, i) => {
-        const active = i === index;
-        s.style.opacity = active ? '1' : '0';
-        s.style.zIndex = active ? '10' : '0';
-        if (reducedMotion) s.style.transitionDuration = '0s';
+    function apply() {
+      cards.forEach((card, i) => {
+        const pos = positions[(i + step) % 3];
+        card.classList.remove('fan-front', 'fan-back-left', 'fan-back-right');
+        card.classList.add(pos);
       });
-      dots.forEach((d, i) => {
-        if (i === index) {
-          d.className = 'press-dot w-2 h-2 rounded-full bg-brand transition-colors';
-        } else {
-          d.className = 'press-dot w-2 h-2 rounded-full bg-ink/20 hover:bg-ink/40 transition-colors';
-        }
-      });
-      current = index;
     }
 
-    function startTimer() {
-      if (reducedMotion) return;
-      timer = setInterval(function () {
-        goTo((current + 1) % slides.length);
-      }, 4000);
+    function start() {
+      if (interval !== null) return;
+      if (!desktopMq.matches || motionMq.matches) return;
+      interval = window.setInterval(() => { step = (step + 1) % 3; apply(); }, 4500);
+    }
+    function stop() {
+      if (interval !== null) { clearInterval(interval); interval = null; }
     }
 
-    function stopTimer() {
-      clearInterval(timer);
-    }
+    container.addEventListener('mouseenter', stop);
+    container.addEventListener('mouseleave', start);
+    desktopMq.addEventListener('change', () => { stop(); start(); });
+    motionMq.addEventListener('change', () => { stop(); start(); });
 
-    dots.forEach(function (d) {
-      d.addEventListener('click', function () {
-        stopTimer();
-        goTo(Number(d.dataset.dot));
-        startTimer();
-      });
-    });
-
-    carousel.addEventListener('mouseenter', stopTimer);
-    carousel.addEventListener('mouseleave', startTimer);
-
-    startTimer();
+    start();
   })();
 </script>
+
+<style>
+  /* Hero fanned-card stack. Shared positioning; per-position transform layer. */
+  .fan-card {
+    transform-origin: center bottom;
+    transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 900ms ease,
+                box-shadow 900ms ease;
+    will-change: transform, opacity;
+  }
+  .fan-card.fan-front {
+    transform: translate(-50%, 0) rotate(0deg) scale(1);
+    z-index: 30;
+    opacity: 1;
+  }
+  .fan-card.fan-back-left {
+    transform: translate(calc(-50% - 20%), 4%) rotate(-5deg) scale(0.95);
+    z-index: 10;
+    opacity: 0.82;
+  }
+  .fan-card.fan-back-right {
+    transform: translate(calc(-50% + 20%), 4%) rotate(5deg) scale(0.95);
+    z-index: 20;
+    opacity: 0.9;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fan-card { transition: none; }
+  }
+</style>
+
 

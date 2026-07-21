@@ -8,7 +8,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Layout from '../../layouts/Layout.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
-import HandUnderline from '../../components/HandUnderline.astro';
 import DatasetCard from '../../components/datalibrary/DatasetCard.astro';
 
 const DATASET_ROOT = path.resolve(process.cwd(), 'datalibrary', 'datasets');
@@ -135,9 +134,9 @@ const jsonLd = {
       <div>
         <Eyebrow label="Data Library" />
         <h1 class="font-serif font-medium text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] tracking-tight text-ink leading-[1.05] mb-5">
-          <HandUnderline>Rankings</HandUnderline> and datasets <em class="font-normal italic text-ink/70">by Ranking Atlas</em>
+          <span class="brush-underline-light"><em class="italic font-normal text-ink" style="font-family: 'Instrument Serif', 'Source Serif 4', Georgia, serif;">Rankings</em></span> and datasets.
         </h1>
-        <p class="text-lg md:text-xl text-body leading-relaxed max-w-3xl">
+        <p class="font-sans font-normal text-[18px] md:text-[20px] text-ink leading-snug max-w-3xl">
           Market indicators aggregated from disparate sources, with full historical series, for your convenience.
         </p>
       </div>
@@ -145,7 +144,7 @@ const jsonLd = {
       <hr class="border-t border-ink/8 my-14" />
 
       {cards.length === 0 ? (
-        <div class="bg-white rounded-2xl shadow-card border border-ink/8 p-10 text-body">
+        <div class="bg-white rounded-md shadow-card border border-ink/8 p-10 text-body">
           No datasets yet. Add a folder under <code class="text-brand">datalibrary/datasets/</code> with <code class="text-brand">config.json</code> and <code class="text-brand">data.json</code>.
         </div>
       ) : (

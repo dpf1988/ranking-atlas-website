@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
-import HandUnderline from '../../components/HandUnderline.astro';
 
 const posts = [
   {
@@ -248,9 +247,9 @@ const jsonLd = {
       <div>
         <Eyebrow label="Blog" />
         <h1 class="font-serif font-medium text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] tracking-tight text-ink leading-[1.05] mb-5">
-          <HandUnderline>Notes</HandUnderline> and analysis <em class="font-normal italic text-ink/70">by Ranking Atlas</em>
+          <span class="brush-underline-light"><em class="italic font-normal text-ink" style="font-family: 'Instrument Serif', 'Source Serif 4', Georgia, serif;">Notes</em></span> and analysis.
         </h1>
-        <p class="text-lg md:text-xl text-body leading-relaxed max-w-3xl">
+        <p class="font-sans font-normal text-[18px] md:text-[20px] text-ink leading-snug max-w-3xl">
           Working commentary on how brands earn citations in search results and AI answers.
         </p>
       </div>
@@ -261,8 +260,8 @@ const jsonLd = {
       <section>
         <div class="grid sm:grid-cols-2 gap-6">
           {posts.map((item) => (
-            <a href={item.href} class="group bg-white rounded-2xl shadow-card border border-ink/8 p-8 hover:shadow-lg hover:border-brand/40 transition-all duration-300 block flex flex-col">
-              <div class="text-[10px] uppercase tracking-wider text-brand font-medium mb-3">{item.category}</div>
+            <a href={item.href} class="group bg-white rounded-md shadow-card border border-ink/8 p-8 hover:shadow-lg hover:border-brand/40 transition-all duration-300 block flex flex-col">
+              <div class="text-[10px] uppercase tracking-[0.14em] text-brand font-semibold mb-3">{item.category}</div>
               <h3 class="font-serif font-semibold text-lg md:text-xl tracking-tight text-ink mb-3 leading-snug group-hover:text-brand transition-colors">
                 {item.title}
               </h3>
