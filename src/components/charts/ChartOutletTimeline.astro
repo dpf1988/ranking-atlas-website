@@ -1,0 +1,73 @@
+---
+interface Props {
+  id?: string;
+}
+const { id = 'chartOutletTimeline' } = Astro.props;
+
+const outlets = [
+  { label: 'Times of India', y: 10, color: 'grey', url: 'https://timesofindia.indiatimes.com/sports/football/fifa-world-cup/over-10-million-sign-petition-to-kick-argentina-out-of-fifa-world-cup-amid-referee-bias-claims/articleshow/132416736.cms' },
+  { label: 'Richmond & Twickenham T.', y: 18.4, color: 'grey', url: 'https://www.richmondandtwickenhamtimes.co.uk/news/national/uk-today/26290164.18-million-sign-petition-remove-argentina-world-cup/' },
+  { label: 'Euronews', y: 23.3, color: 'grey', url: 'https://www.euronews.com/culture/2026/07/21/kick-argentina-out-of-the-world-cup-petition-nearly-breaks-guinness-world-record' },
+  { label: 'Marca', y: 23, color: 'grey', url: 'https://www.marca.com/en/world-cup/2026/07/21/petition-calling-for-argentina-s-exclusion-from-future-world-cups-surpasses-23-million-signatures-nearly-breaks-guinness-world-record.html' },
+  { label: 'Indulge Express', y: 23, color: 'grey', url: 'https://www.indulgexpress.com/life-style/sports/2026/Jul/22/world-cup-2026-controversy-argentina-faces-investigation-after-nearly-record-breaking-signs-in-online-petition' },
+  { label: 'Goal.com', y: 23, color: 'grey', url: 'https://www.goal.com/en/lists/a-surprise-23-million-signatures-to-expel-argentina-from-the-world-cup-for-life/bltd0292564d9259af3' },
+  { label: 'NDTV Sports', y: 23, color: 'grey', url: 'https://sports.ndtv.com/fifa-world-cup-2026/petition-to-ban-argentina-from-fifa-world-cups-nearly-breaks-guinness-world-record-11810067' },
+  { label: 'News18', y: 23, color: 'grey', url: 'https://www.news18.com/sports/football/petition-to-ban-argentina-from-future-fifa-world-cups-crosses-23-million-signatures-ws-bl-10229299.html' },
+  { label: 'Hungarian Conservative', y: 23, color: 'amber', url: 'https://www.hungarianconservative.com/articles/current/millions-back-petitions-to-ban-argentina-over-rigged-world-cup-run/' },
+  { label: 'talkSPORT', y: 23, color: 'grey', url: 'https://talksport.com/football/world-cup/4455775/argentina-ban-petition-lifetime-final-rematch-spain-messi/' },
+  { label: 'Diario AS', y: 23, color: 'grey', url: 'https://en.as.com/soccer/23-million-soccer-fans-want-argentina-expelled-from-the-next-world-cup-could-fifa-be-forced-to-respond-f202607-n/' },
+  { label: 'EWN South Africa', y: 23, color: 'grey', url: 'https://www.ewn.co.za/2026/07/24/argentina-expulsion-petition-surpasses-23m-as-fifa-investigation-looms' },
+  { label: 'The Sun', y: 23.3, color: 'grey', url: 'https://www.the-sun.com/sport/16741001/argentina-world-cup-ban-petition-23million-fans/' },
+  { label: 'Times of India (Milei)', y: 23, color: 'grey', url: 'https://timesofindia.indiatimes.com/sports/football/fifa-world-cup/argentina-president-javier-milei-breaks-silence-after-23-million-sign-petition-demanding-world-cup-ban/articleshow/132616233.cms' },
+  { label: 'Chosun Ilbo', y: 23, color: 'grey', url: 'https://www.chosun.com/english/sports-en/2026/07/25/AIUKR6RPP5BGHGEO7VPI7ZGQCQ/' },
+  { label: 'TBS Bangladesh', y: 23, color: 'grey', url: 'https://www.tbsnews.net/sports/petition-calling-argentina-world-cup-ban-draws-23-million-signatures-after-tournament' },
+  { label: 'Leadership Nigeria', y: 23.3, color: 'grey', url: 'https://leadership.ng/petition-seeking-argentinas-world-cup-ban-draws-23-3-million-signatures/' },
+  { label: 'NST Malaysia', y: 23, color: 'grey', url: 'https://www.nst.com.my/sports/football/2026/07/1496875/over-23-million-football-fans-sign-petition-ban-argentina' },
+  { label: 'FourFourTwo', y: 28, color: 'amber', url: 'https://sports.yahoo.com/articles/bizarre-petition-argentina-banned-world-180000396.html' },
+  { label: "Men's Journal", y: 28, color: 'grey', url: 'https://www.mensjournal.com/news/28-million-fans-signed-a-world-cup-petition-now-theres-a-world-cup-replay-campaign' },
+  { label: 'SAYS', y: 23.3, color: 'grey', url: 'https://says.com/my/news/argentina-world-cup-ban-petition-23-million' },
+  { label: 'Inside World Football', y: 23.3, color: 'grey', url: 'https://www.insideworldfootball.com/2026/07/27/petition-calling-for-argentinas-expulsion-hit-23m-signatures-infantino-sends-afa-a-letter-of-congratulation/' },
+];
+
+const maxVal = 32;
+---
+
+<div>
+  <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">How the number escalated across outlets in 13 days</div>
+  <div class="text-[12px] text-muted mb-4">Reported petition count by date. Grey bars: stated as fact. <span class="font-semibold text-viz-amber">Amber bars: questioned verification.</span> n=22 unique outlets.</div>
+
+  <div class="space-y-1.5">
+    {outlets.map((o) => (
+      <div class="flex items-center gap-2 group">
+        <a
+          href={o.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class:list={[
+            'w-[160px] sm:w-[190px] shrink-0 text-[11px] sm:text-[12px] leading-tight text-right truncate hover:underline underline-offset-2 transition-colors',
+            o.color === 'amber' ? 'font-semibold text-viz-amber hover:text-viz-amber' : 'text-ink hover:text-brand'
+          ]}
+        >
+          {o.label}
+        </a>
+        <div class="flex-1 h-5 rounded bg-ink/[0.03] relative overflow-hidden">
+          <div
+            class:list={[
+              'h-full rounded transition-all duration-500',
+              o.color === 'amber' ? 'bg-viz-amber' : 'bg-slate-400'
+            ]}
+            style={`width:${(o.y / maxVal) * 100}%`}
+          />
+        </div>
+        <span
+          class:list={[
+            'w-[42px] shrink-0 text-[11px] font-semibold tabular-nums text-right',
+            o.color === 'amber' ? 'text-viz-amber' : 'text-muted'
+          ]}
+        >
+          {o.y}M
+        </span>
+      </div>
+    ))}
+  </div>
+</div>

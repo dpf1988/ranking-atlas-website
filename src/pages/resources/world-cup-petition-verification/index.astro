@@ -1,0 +1,476 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import RelatedResearch from '../../../components/RelatedResearch.astro';
+import PullQuote from '../../../components/PullQuote.astro';
+import ChartOutletTimeline from '../../../components/charts/ChartOutletTimeline.astro';
+import ChartCounterRatio from '../../../components/charts/ChartCounterRatio.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "28 Million Signatures, No Questions Asked",
+  "description": "22 outlets across 13 countries reported an unverified petition counter as fact. The site's own disclaimer said the number was not a verified-signature total. Its interactive fan poll received 113,082 votes.",
+  "url": "https://ranking-atlas.com/resources/world-cup-petition-verification",
+  "image": "https://ranking-atlas.com/assets/images/resources/world-cup-petition-verification/hero.jpg",
+  "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about" },
+  "datePublished": "2026-07-28T00:00:00+00:00",
+  "dateModified": "2026-07-28T00:00:00+00:00",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas" }
+};
+---
+
+<Layout
+  title="28 Million Signatures, No Questions Asked | Ranking Atlas"
+  description="22 outlets across 13 countries reported an unverified petition counter as fact. The site's own disclaimer said it was not a verified total. Its interactive fan poll received 113,082 votes."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script is:inline src="/vendor/chart.umd.js"></script>
+
+<div class="bg-white">
+
+  <!-- 1. Hero -->
+  <section class="pt-20 md:pt-28 pb-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-[11px] uppercase tracking-[0.14em] text-brand font-semibold mb-3 text-center">Data Report</div>
+      <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.15] mb-3 text-center">
+        28 Million Signatures, No Questions Asked
+      </h1>
+      <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mt-2 mb-8 text-center max-w-2xl mx-auto">
+        How an unverified number on a standalone website became an accepted fact across 22 newsrooms in 13 countries without a single outlet checking the source.
+      </p>
+
+      <figure class="mb-8">
+        <img
+          src="/assets/images/resources/world-cup-petition-verification/hero.jpg"
+          alt="Editorial caricature of journalists at desks copying a number from screen to screen, each further from the source, each more confident in the figure they are reporting."
+          class="w-full h-auto rounded-md border border-ink/8"
+          loading="eager"
+        />
+      </figure>
+
+      <div class="bg-bg-paper border border-ink/8 rounded-md p-5 mb-6">
+        <p class="text-[13px] text-muted">Content Written By:</p>
+        <p class="text-[13px] text-muted">Daniel Grainger</p>
+        <p class="text-[13px] text-muted">Founder, Ranking Atlas</p>
+        <p class="text-[13px] text-muted">Published July 2026</p>
+      </div>
+
+      <nav class="bg-bg-paper border border-ink/8 rounded-md p-5" aria-label="Article sections">
+        <p class="text-[14px] font-semibold text-ink mb-3">Navigation</p>
+        <ul class="flex flex-col space-y-2 text-[14px]">
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key takeaways</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#the-number" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The number heard round the world</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#the-counter" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">What the counter actually measures</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#verified-petitions" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">What a verified petition looks like</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#who-asked" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Two outlets asked</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#methodology" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Methodology</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#limitations" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Limitations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 2. Key takeaways -->
+  <section id="key-takeaways" class="py-16 bg-bg-paper border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Key takeaways</h2>
+      <ul class="space-y-2 list-disc pl-6 text-body text-[15px] leading-[1.7]">
+        <li><a href="#the-counter" class="text-brand hover:text-brand-dark underline underline-offset-2"><strong>ArgentinaOut.org displayed a counter showing 28,997,266.</strong></a> The site's own disclaimer, visible beneath the number, read: "This display counter is not a verified-signature total." The site is a standalone React application monetised through CPM advertising, not a recognised petition platform.</li>
+        <li><a href="#the-counter" class="text-brand hover:text-brand-dark underline underline-offset-2"><strong>The same site ran an interactive fan poll that received just 113,082 votes.</strong></a> That poll's API exposes a real accumulation mechanism. Suspectly, the ratio between the petition counter and the poll votes is 256:1.</li>
+        <li><a href="#the-number" class="text-brand hover:text-brand-dark underline underline-offset-2"><strong>22 outlets across 13 countries reported the number as fact.</strong></a> None linked to the petition. Only three named the platform. Only two questioned whether the count was verified.</li>
+        <li><a href="#the-counter" class="text-brand hover:text-brand-dark underline underline-offset-2"><strong>The counter calls an API that labels itself &ldquo;campaign-display.&rdquo;</strong></a> The JavaScript bundle calls <code>/api/petition</code>, which returns a field named campaign-display and the same hardcoded number. The poll on the same site calls a separate API that exposes a real checkpoint-and-accumulation mechanism. The petition API exposes no equivalent breakdown.</li>
+        <li><a href="#the-counter" class="text-brand hover:text-brand-dark underline underline-offset-2"><strong>No signing mechanism is visible in the archived site.</strong></a> There is no form, no email field, no CAPTCHA, and no "sign" button. The method by which "signatures" were collected is not described anywhere on the page.</li>
+        <li><a href="#the-counter" class="text-brand hover:text-brand-dark underline underline-offset-2"><strong>SimilarWeb has no traffic data for the domain.</strong></a> The site did not register enough visits to clear SimilarWeb's minimum reporting threshold, yet displayed a counter claiming nearly 29 million interactions.</li>
+        <li><a href="#the-number" class="text-brand hover:text-brand-dark underline underline-offset-2"><strong>The number escalated from 10 million to 28 million in 11 days</strong></a> across outlets, with no publication documenting how the count grew or checking the baseline.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. The number heard round the world -->
+  <section id="the-number" class="py-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">The number heard round the world</h2>
+
+      <div class="mb-10">
+        <ChartOutletTimeline id="chartOutletTimeline" />
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          After Spain beat Argentina 1-0 in the 2026 World Cup final on 19 July, a website called ArgentinaOut.org began displaying a counter that climbed past 10 million, then 18 million, then 23 million. The <a href="https://ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">number spread</a> across newsrooms on five continents within days. By the time coverage peaked, the reported figure had been escalated to 28 million and compared to the Guinness World Record for the largest petition (according to one outlet, the 1997 Jubilee 2000 debt cancellation campaign at 24,319,181 signatures).
+        </p>
+        <p>
+          This study documents how the number travelled, not to single out individual newsrooms. Sports desks covering a live World Cup cycle operate under extraordinary time pressure, and a large round number from a petition site is exactly the kind of figure that moves fast because it looks self-evident. The point is structural: once a number enters the chain without a source check, every subsequent pickup inherits the gap.
+        </p>
+        <p>
+          Of the 22 outlets that published the figure, only three named the platform it came from. Only two questioned whether the count was verified. Not one linked to the petition. The full outlet-by-outlet breakdown, with exact language used, is in the table below.
+        </p>
+      </div>
+
+      <!-- Outlet catalogue: stated as fact -->
+      <h3 class="mt-10 font-serif font-semibold text-lg tracking-tight text-ink leading-tight mb-4">Stated as fact</h3>
+      <p class="text-body text-[15px] leading-[1.7] mb-6">These outlets used declarative language: &ldquo;signed,&rdquo; &ldquo;attracted,&rdquo; &ldquo;closed with.&rdquo; The number was presented as a verified count, not an unverified claim.</p>
+
+      <div class="overflow-x-auto bg-white rounded-md border border-ink/8 mb-8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-ink/8 bg-bg-paper">
+              <th class="px-4 py-3 font-semibold text-ink">Outlet</th>
+              <th class="px-4 py-3 font-semibold text-ink">Country</th>
+              <th class="px-4 py-3 font-semibold text-ink">Exact language used</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Euronews</td><td class="px-4 py-3 text-muted">EU</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;Now closed, the appeal has more than 23 million signatures &mdash; 23,316,108 to be precise.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">EWN</td><td class="px-4 py-3 text-muted">South Africa</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;The petition titled &lsquo;Argentina Out&rsquo; closed with 23,316,108 signatures from over 170 countries.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Inside World Football</td><td class="px-4 py-3 text-muted">International</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;More than 23 million people&hellip; signed a petition before the final calling for the country to be kicked out of the World Cup.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">The Business Standard</td><td class="px-4 py-3 text-muted">Bangladesh</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;A petition&hellip; has attracted more than 23 million signatures from supporters in 170 countries.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">SAYS</td><td class="px-4 py-3 text-muted">Malaysia</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;Attracted 23.3 million signatures from supporters across roughly 170 countries within a single week.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">NST Online</td><td class="px-4 py-3 text-muted">Malaysia</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;More than 23 million football fans across the globe have signed a massive online petition.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">The Sun</td><td class="px-4 py-3 text-muted">UK</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;MORE than 23MILLION World Cup fans have signed a petition.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">talkSPORT</td><td class="px-4 py-3 text-muted">UK</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;23 million sign petition demanding Argentina&rsquo;s lifetime ban from World Cup.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Times of India</td><td class="px-4 py-3 text-muted">India</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;Over 10 million sign petition to kick Argentina out of FIFA World Cup.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Goal.com</td><td class="px-4 py-3 text-muted">International</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;23 million signatures to expel Argentina from the World Cup &lsquo;for life&rsquo;!&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Diario AS</td><td class="px-4 py-3 text-muted">Spain</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;23 million soccer fans want Argentina expelled from the next World Cup.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Chosun Ilbo</td><td class="px-4 py-3 text-muted">South Korea</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;23 Million Demand Argentina&rsquo;s Permanent World Cup Ban.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Men&rsquo;s Journal</td><td class="px-4 py-3 text-muted">US</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;28 Million Fans Signed A World Cup Petition.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Marca</td><td class="px-4 py-3 text-muted">Spain</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;Petition&hellip; surpasses 23 million signatures: nearly breaks Guinness World Record.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">NDTV Sports</td><td class="px-4 py-3 text-muted">India</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;Petition To Ban Argentina From FIFA World Cup Nearly Breaks Guinness World Record.&rdquo;</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">News18</td><td class="px-4 py-3 text-muted">India</td>
+              <td class="px-4 py-3 text-body italic">&ldquo;Petition&hellip; Crosses 23 Million Signatures.&rdquo;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Partial hedge -->
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink leading-tight mb-4">Hedged, then stated as fact</h3>
+      <p class="text-body text-[15px] leading-[1.7] mb-6">These outlets opened with qualifying language but then cited the exact figure as though it were confirmed.</p>
+
+      <div class="overflow-x-auto bg-white rounded-md border border-ink/8 mb-8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-ink/8 bg-bg-paper">
+              <th class="px-4 py-3 font-semibold text-ink">Outlet</th>
+              <th class="px-4 py-3 font-semibold text-ink">Country</th>
+              <th class="px-4 py-3 font-semibold text-ink">Exact language used</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">AOL.com</td><td class="px-4 py-3 text-muted">US</td>
+              <td class="px-4 py-3 text-body"><span class="italic">&ldquo;<strong>Reportedly</strong> gained over 23 million signatures&rdquo;</span> then later: <span class="italic">&ldquo;amassed an astonishing 23,316,108 signatures.&rdquo;</span></td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Leadership Newspapers</td><td class="px-4 py-3 text-muted">Nigeria</td>
+              <td class="px-4 py-3 text-body"><span class="italic">&ldquo;Has attracted more than 23.3 million signatures&rdquo;</span> then later: <span class="italic">&ldquo;closing with 23,316,108 signatures, <strong>according to its organisers</strong>.&rdquo;</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Questioned -->
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink leading-tight mb-4">Questioned verification</h3>
+      <p class="text-body text-[15px] leading-[1.7] mb-6">Two outlets used language that cast doubt on the count. One investigated. One was sarcastic.</p>
+
+      <div class="overflow-x-auto bg-white rounded-md border border-ink/8 mb-8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-ink/8 bg-bg-paper">
+              <th class="px-4 py-3 font-semibold text-ink">Outlet</th>
+              <th class="px-4 py-3 font-semibold text-ink">Country</th>
+              <th class="px-4 py-3 font-semibold text-ink">Exact language used</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/6">
+            <tr class="bg-viz-amber/5">
+              <td class="px-4 py-3 font-medium text-ink">Hungarian Conservative</td><td class="px-4 py-3 text-muted">Hungary</td>
+              <td class="px-4 py-3 text-body"><span class="italic">&ldquo;The largest petition <strong>claimed</strong> 23 million signatures.&rdquo;</span> Also: <span class="italic">&ldquo;No independent audit has been published, no organizers have been identified or provided contact details, and several basic transparency standards expected of a legitimate petition are absent.&rdquo;</span></td>
+            </tr>
+            <tr class="bg-viz-amber/5">
+              <td class="px-4 py-3 font-medium text-ink">FourFourTwo</td><td class="px-4 py-3 text-muted">UK</td>
+              <td class="px-4 py-3 text-body"><span class="italic">&ldquo;They <strong>claim</strong> to have received over 28 million signatories&rdquo;</span> and <span class="italic">&ldquo;you&rsquo;ll be unsurprised to learn we&rsquo;re sceptical.&rdquo;</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-xs text-muted mb-8">Quotes from Euronews, EWN, Inside World Football, The Business Standard, SAYS, NST Online, AOL.com, Leadership Newspapers, Hungarian Conservative, and FourFourTwo were extracted from article body text. Quotes from The Sun, talkSPORT, Times of India, Goal.com, Diario AS, Chosun Ilbo, Men&rsquo;s Journal, Marca, NDTV, and News18 are from headlines or search snippets (articles were inaccessible due to paywalls or bot detection). Syndication platforms (AOL.ca, AOL.co.uk, MSN, Yahoo) that republished existing articles without editorial changes are excluded from the unique count.</p>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Sixteen outlets stated the count as fact. Two hedged before reverting to the exact figure. Two questioned it. Not one of the 22 linked to the petition. A reader who wanted to check the number would have had to find the website independently, and once there, would have found the disclaimer the newsrooms did not report.
+        </p>
+        <p>
+          Several articles were syndicated across multiple properties or regional editions without editorial changes. Others cited a second outlet as their source rather than the petition itself. Each step in the chain amplified the number without adding verification.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. What the counter actually measures -->
+  <section id="the-counter" class="py-16 bg-bg-paper border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">What the counter actually measures</h2>
+
+      <!-- Screenshots side by side -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+        <figure>
+          <img
+            src="/assets/images/resources/world-cup-petition-verification/counter-disclaimer.png"
+            alt="Screenshot of ArgentinaOut.org showing the counter displaying 28,997,266 with the disclaimer 'This display counter is not a verified-signature total' visible beneath it."
+            class="w-full h-auto rounded-md border border-ink/8"
+            loading="lazy"
+          />
+          <figcaption class="text-xs text-muted mt-2">The petition counter and its disclaimer, as displayed on ArgentinaOut.org on 27 July 2026.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/assets/images/resources/world-cup-petition-verification/fan-poll.png"
+            alt="Screenshot of ArgentinaOut.org showing the interactive fan poll with 113,082 total votes: Spain 71,472 (63%), Argentina 41,610 (37%)."
+            class="w-full h-auto rounded-md border border-ink/8"
+            loading="lazy"
+          />
+          <figcaption class="text-xs text-muted mt-2">The interactive fan poll on the same site: 113,082 total votes.</figcaption>
+        </figure>
+      </div>
+
+      <div class="mb-10">
+        <ChartCounterRatio id="chartCounterRatio" />
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          ArgentinaOut.org is a React application deployed on Cloudflare, built with TanStack Router and Base UI components. It tracks visitors with Google Analytics (ID: G-QFRL1LYP95) and monetises traffic through EffectiveCPMNetwork, a CPM advertising service.
+        </p>
+        <p>
+          The counter that displays "28,997,266" is rendered as a CSS animation. Each digit is a vertical stack of the numbers 0 through 9, positioned by a <code>translateY</code> offset. The screen-reader fallback reads <code>&lt;span class="sr-only"&gt;28,997,266&lt;/span&gt;</code>. The same number is also hardcoded in the JavaScript bundle as a fallback: <code>count:28997266</code>.
+        </p>
+        <p>
+          Inspection of the JavaScript bundle reveals that the counter does call an API endpoint (<code>/api/petition</code>), and that endpoint is still live. It returns:
+        </p>
+        <div class="bg-zinc-950 rounded-md p-4 overflow-x-auto mb-4">
+          <pre class="text-sm text-green-400 font-mono leading-relaxed"><code set:html={'&#123;"count":28997266,"status":"closed","counterType":"campaign-display"&#125;'} /></pre>
+        </div>
+        <p>
+          The API field is named <code>counterType</code> with a value of <code>campaign-display</code>, not verified-signatures or unique-signers. The count returned is identical to the hardcoded fallback. Whether the number was ever dynamic during the active campaign or was always a static value cannot be determined from the current state of the code.
+        </p>
+
+        <PullQuote quote="This display counter is not a verified-signature total." attribution="ArgentinaOut.org, visible beneath the counter" />
+
+        <p>
+          The site also ran a fan poll asking visitors to predict the World Cup final winner. That poll used an interactive component (<code>versus-poll-card</code>) and recorded <strong>113,082 votes</strong>: 71,472 for Spain (63%), 41,610 for Argentina (37%). The poll's own API (<code>/api/team-support-poll</code>) is still live and reveals the internal mechanics: it distinguishes between a frozen <code>checkpoint</code> (96,790 votes at close) and <code>real</code> additional votes accumulated since (16,292). The poll is genuinely counting individual interactions. The petition API exposes no equivalent breakdown.
+        </p>
+        <p>
+          The ratio between the unverified petition counter and the verified poll votes on the same site is <strong>256 to 1</strong>.
+        </p>
+        <p>
+          SimilarWeb, which tracks web traffic for sites above a minimum reporting threshold, returns no data for argentinaout.org. The domain does not appear in its panel at all. A site that did not register enough traffic to appear in a standard web analytics tool displayed a counter claiming nearly 29 million interactions.
+        </p>
+        <p>
+          The site offers 19 language translations (English, Chinese, French, Spanish, German, Russian, Portuguese, Japanese, Italian, Dutch, Korean, Turkish, Polish, Arabic, Thai, Vietnamese, Indonesian, Bengali, and Hindi), suggesting a deliberate strategy to maximise global reach and, by extension, ad impressions.
+        </p>
+        <p>
+          No signing mechanism is visible in the archived HTML. There is no form, no email field, no CAPTCHA, and no "sign the petition" button. The campaign closed on 19 July 2026 and the site now describes itself as "an archive." The method by which visitors were counted as "signatories" is not described anywhere on the page. <a href="https://ranking-atlas.com/blog/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">Verifiable citation sources</a> are the foundation of credible data reporting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. What a verified petition looks like -->
+  <section id="verified-petitions" class="py-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">What a verified petition looks like</h2>
+
+      <div class="overflow-x-auto bg-white rounded-md border border-ink/8 mb-8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-ink/8 bg-bg-paper">
+              <th class="px-4 py-3 font-semibold text-ink">Platform</th>
+              <th class="px-4 py-3 font-semibold text-ink text-center">Email required</th>
+              <th class="px-4 py-3 font-semibold text-ink text-center">Deduplication</th>
+              <th class="px-4 py-3 font-semibold text-ink text-center">Public count</th>
+              <th class="px-4 py-3 font-semibold text-ink text-center">Auditable</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Change.org</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-muted">Partial</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">UK Parliament petitions</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Full (open data)</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">Avaaz</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-muted">Partial</td>
+            </tr>
+            <tr class="hover:bg-bg-paper transition-colors">
+              <td class="px-4 py-3 font-medium text-ink">European Citizens' Initiative</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Yes</td>
+              <td class="px-4 py-3 text-center text-viz-green font-semibold">Full (EU-verified)</td>
+            </tr>
+            <tr class="bg-viz-red/5">
+              <td class="px-4 py-3 font-medium text-ink">ArgentinaOut.org</td>
+              <td class="px-4 py-3 text-center text-viz-red font-semibold">Unknown</td>
+              <td class="px-4 py-3 text-center text-viz-red font-semibold">Unknown</td>
+              <td class="px-4 py-3 text-center text-viz-amber font-semibold">Display only</td>
+              <td class="px-4 py-3 text-center text-viz-red font-semibold">No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Established petition platforms collect an email address at sign-up, apply deduplication, and expose a public count. The UK Parliament petitions system collects name, email, postcode, and country, checks eligibility, enforces that "people only sign a petition once," and publishes full open data in JSON and CSV formats. The European Citizens' Initiative requires ID verification and is audited by EU member states. Change.org and Avaaz require email-based account creation to sign, though their specific deduplication and audit mechanisms are not publicly documented in their terms of service.
+        </p>
+        <p>
+          ArgentinaOut.org meets none of these standards. Its counter carries a disclaimer. Its signing mechanism is undocumented. Its data is not exportable. According to Euronews, the Guinness World Record for the largest petition is held by the Jubilee 2000 debt cancellation campaign (24,319,181 signatures in 1997). Comparing ArgentinaOut's unverified display number to that record, as several outlets did, treats the two as equivalent without addressing whether they were counted in the same way.
+        </p>
+        <p>
+          This study does not claim the count is fabricated. It documents that the count is <strong>unverifiable</strong>: the site says so itself, the mechanism is not described, and no independent audit exists. The distinction matters because 22 newsrooms treated an unverifiable number as a verified fact, and their readers had no way to know the difference. <a href="https://ranking-atlas.com/resources/ai-names-ict-experts" class="text-brand hover:text-brand-dark underline underline-offset-2">Our AI expert-naming study</a> tested a similar pattern: a widely repeated claim that collapsed when measured against actual data.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Two outlets asked -->
+  <section id="who-asked" class="py-16 bg-bg-paper border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Two outlets asked</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Of the 22 outlets that published articles about the petition, two questioned whether the signature count was real. Their exact language is documented in the table above.
+        </p>
+        <p>
+          One outlet wrote the most substantive examination, noting that "no independent audit has been published, no organizers have been identified or provided contact details, and several basic transparency standards expected of a legitimate petition are absent." It also identified the existence of multiple versions of the site and referenced the Guinness benchmark for context.
+        </p>
+        <p>
+          A second outlet named ArgentinaOut.org directly, warned readers against visiting the site due to "aggressive advert redirects," and described the petition as a stunt designed to generate ad revenue. The scepticism was clear but delivered as editorial voice rather than reported verification.
+        </p>
+        <p>
+          The remaining 20 outlets published the number without naming the platform, without noting the disclaimer, and without questioning how "signatures" were counted. Several cited other outlets as their source rather than the petition itself. Each link in the syndication chain inherited the original's assumptions and added none of its own checks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Methodology -->
+  <section id="methodology" class="py-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Methodology</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          <strong>Outlet catalogue.</strong> We searched Google News for articles reporting the ArgentinaOut petition count using four query variations between 27 July 2026 and the study's publication date. Each article was assessed for seven fields: outlet name, country, number reported, date, whether the platform was named, whether verification was questioned, and whether a direct link to the petition was provided. Syndication pickups (AOL, MSN, Yahoo) were tracked separately from original reporting.
+        </p>
+        <p>
+          <strong>Technical analysis.</strong> We fetched the full HTML source of ArgentinaOut.org on 27 July 2026. The counter mechanism was identified by inspecting the CSS <code>translateY</code> transforms applied to each digit span. The screen-reader <code>sr-only</code> span confirmed the displayed value. We then decompiled the minified JavaScript bundle (<code>routes-DoKQ0a_j.js</code>) and identified two API endpoints: <code>/api/petition</code> (returns the petition count with a <code>counterType</code> of <code>campaign-display</code>) and <code>/api/team-support-poll</code> (returns poll votes with a checkpoint/real breakdown). Both endpoints were called directly and their responses recorded. The Google Analytics ID, ad network integration, and language hreflang tags were documented from the page metadata.
+        </p>
+        <p>
+          <strong>Traffic analysis.</strong> We queried SimilarWeb for argentinaout.org on 27 July 2026. The domain returned no traffic data, indicating it did not meet SimilarWeb's minimum reporting threshold.
+        </p>
+        <p>
+          <strong>Comparison data.</strong> Petition platform verification requirements (Change.org, UK Parliament, Avaaz, European Citizens' Initiative) were documented from each platform's public terms of service and FAQ pages. The Guinness World Record for largest petition was cited from Euronews's 21 July 2026 article, which referenced the Jubilee 2000 campaign (24,319,181 signatures).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Limitations -->
+  <section id="limitations" class="py-16 bg-bg-paper border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Limitations</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          <strong>We analysed the archived site, not the live campaign.</strong> ArgentinaOut.org closed on 19 July 2026 and now describes itself as an archive. The signing mechanism that existed during the active campaign may have included verification steps that are no longer visible. We document what the archived site shows and what the source code reveals, not what may have existed before.
+        </p>
+        <p>
+          <strong>The Wayback Machine has no snapshots of this domain.</strong> We could not reconstruct the counter's progression over time or confirm whether the counter was live-updating during the campaign or static throughout.
+        </p>
+        <p>
+          <strong>The outlet catalogue may be incomplete.</strong> Our search was limited to English-language and major international outlets. The petition was reported in at least 19 languages (matching the site's translation set). Coverage in non-English outlets may be broader than documented here.
+        </p>
+        <p>
+          <strong>We do not claim the count is fabricated.</strong> We claim it is unverifiable. The site's own disclaimer supports this. The absence of a visible verification mechanism is documented fact. The actual number of people who interacted with the site is unknown and may be higher or lower than the displayed count.
+        </p>
+        <p>
+          <strong>The fan poll is a rough comparison, not a precise benchmark.</strong> The poll and the petition counter served different purposes and may have had different participation barriers. The 256-to-1 ratio illustrates the scale discrepancy; it does not prove the petition count is inflated by exactly that factor.
+        </p>
+      </div>
+
+      <p class="mt-10 text-sm text-muted">
+        For a different cut of this data, additional outlet coverage, or methodology questions, contact <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.
+      </p>
+    </div>
+  </section>
+
+  <RelatedResearch items={[
+    { title: "One Woman for Every Ten: How AI Names the Experts in Tech", description: "2,286 individuals extracted from 2,520 AI responses. Women made up 20.5% of named ICT experts against a 28% workforce baseline.", href: "/resources/ai-names-ict-experts" },
+    { title: "Who Actually Gets Scammed in America?", description: "Federal fraud and survey data show sharp divides in who gets scammed, how often, and how much they lose.", href: "/resources/generational-fraud" },
+    { title: "The Hidden Economy Behind Google Rankings", description: "A six-year analysis of 140,000 publisher listings reveals how paid link markets expanded after repeated Google crackdowns.", href: "/resources/the-cost-of-authority" }
+  ]} />
+
+</div>
+</Layout>

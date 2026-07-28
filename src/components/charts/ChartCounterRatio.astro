@@ -1,0 +1,35 @@
+---
+interface Props {
+  id?: string;
+}
+const { id = 'chartCounterRatio' } = Astro.props;
+---
+
+<div>
+  <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Two counts on the same site, one ratio</div>
+  <div class="text-[12px] text-muted mb-4">The unverified petition counter against the interactive fan poll on the same website.</div>
+
+  <!-- Static visual since log-scale bars are hard to read -->
+  <div class="space-y-4 mb-2">
+    <div>
+      <div class="flex items-baseline justify-between mb-1.5">
+        <span class="text-sm font-semibold text-ink">Petition counter (unverified)</span>
+        <span class="text-sm font-black text-viz-red tabular-nums">28,997,266</span>
+      </div>
+      <div class="w-full h-8 rounded bg-viz-red/15 relative overflow-hidden">
+        <div class="h-full rounded bg-viz-red" style="width:100%"></div>
+      </div>
+    </div>
+    <div>
+      <div class="flex items-baseline justify-between mb-1.5">
+        <span class="text-sm font-semibold text-ink">Fan poll (interactive)</span>
+        <span class="text-sm font-black text-viz-green tabular-nums">113,082</span>
+      </div>
+      <div class="w-full h-8 rounded bg-viz-green/15 relative overflow-hidden">
+        <div class="h-full rounded bg-viz-green" style="width:0.39%"></div>
+      </div>
+    </div>
+  </div>
+  <p class="text-center text-lg font-black text-ink mt-4">256 : 1</p>
+  <p class="text-center text-xs text-muted">Ratio of unverified petition counter to interactive poll votes on the same site</p>
+</div>
