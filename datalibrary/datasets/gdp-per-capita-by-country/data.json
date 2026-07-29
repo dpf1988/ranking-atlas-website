@@ -87,7 +87,6 @@
     "firstYear": 1960,
     "prevDecadeYear": 2015,
     "reportingEconomiesLatest": 186,
-    "reportingEconomies1960": 108,
     "leader": {
       "iso3": "LUX",
       "name": "Luxembourg",
@@ -214,19 +213,11 @@
       "latest": 7882,
       "firstYear": 255
     },
-    "top10Overlap1960toLatest": 5,
-    "top10Overlap1960toLatestNames": [
-      "Luxembourg",
-      "Switzerland",
-      "Iceland",
-      "Norway",
-      "United States"
-    ],
     "largestClimberInTop10VsFirstYear": {
       "iso3": "SGP",
       "name": "Singapore",
-      "rank1960": 33,
-      "latestRank": 4
+      "latestRank": 4,
+      "rankFirstYear": 33
     },
     "largestGainSince2000InTop20": {
       "iso3": "MAC",
@@ -241,7 +232,16 @@
       "name": "Brunei Darussalam",
       "latestRank": 40,
       "delta10y": -12
-    }
+    },
+    "reportingEntitiesFirstYear": 108,
+    "top10OverlapFirstYearToLatest": 5,
+    "top10OverlapFirstYearToLatestNames": [
+      "Luxembourg",
+      "Switzerland",
+      "Iceland",
+      "Norway",
+      "United States"
+    ]
   },
   "countries": [
     {
@@ -252,11 +252,9 @@
       "incomeLevel": "High income",
       "latestValue": 147252.179121515,
       "latestRank": 1,
-      "rank1960": 4,
       "rank2000": 1,
       "rankPrev10": 1,
       "delta10y": 0,
-      "delta1960": 3,
       "delta2000": 0,
       "values": [
         2261.17741836594,
@@ -393,7 +391,9 @@
         1,
         1,
         1
-      ]
+      ],
+      "rankFirstYear": 4,
+      "deltaFirstYear": 3
     },
     {
       "iso3": "IRL",
@@ -403,11 +403,9 @@
       "incomeLevel": "High income",
       "latestValue": 131592.462547877,
       "latestRank": 2,
-      "rank1960": 24,
       "rank2000": 11,
       "rankPrev10": 6,
       "delta10y": 4,
-      "delta1960": 22,
       "delta2000": 9,
       "values": [
         706.551022345168,
@@ -544,7 +542,9 @@
         2,
         2,
         2
-      ]
+      ],
+      "rankFirstYear": 24,
+      "deltaFirstYear": 22
     },
     {
       "iso3": "CHE",
@@ -554,11 +554,9 @@
       "incomeLevel": "High income",
       "latestValue": 114769.012314293,
       "latestRank": 3,
-      "rank1960": 6,
       "rank2000": 3,
       "rankPrev10": 2,
       "delta10y": -1,
-      "delta1960": 3,
       "delta2000": 0,
       "values": [
         1983.75994678387,
@@ -695,7 +693,9 @@
         3,
         3,
         3
-      ]
+      ],
+      "rankFirstYear": 6,
+      "deltaFirstYear": 3
     },
     {
       "iso3": "SGP",
@@ -705,11 +705,9 @@
       "incomeLevel": "High income",
       "latestValue": 98813.9788172877,
       "latestRank": 4,
-      "rank1960": 33,
       "rank2000": 18,
       "rankPrev10": 9,
       "delta10y": 5,
-      "delta1960": 29,
       "delta2000": 14,
       "values": [
         428.056183371291,
@@ -846,7 +844,9 @@
         5,
         4,
         4
-      ]
+      ],
+      "rankFirstYear": 33,
+      "deltaFirstYear": 29
     },
     {
       "iso3": "ISL",
@@ -856,11 +856,9 @@
       "incomeLevel": "High income",
       "latestValue": 98323.4849517418,
       "latestRank": 5,
-      "rank1960": 8,
       "rank2000": 6,
       "rankPrev10": 10,
       "delta10y": 5,
-      "delta1960": 3,
       "delta2000": 1,
       "values": [
         1486.46439009414,
@@ -997,7 +995,9 @@
         7,
         7,
         5
-      ]
+      ],
+      "rankFirstYear": 8,
+      "deltaFirstYear": 3
     },
     {
       "iso3": "NOR",
@@ -1007,11 +1007,9 @@
       "incomeLevel": "High income",
       "latestValue": 94594.1929573987,
       "latestRank": 6,
-      "rank1960": 10,
       "rank2000": 4,
       "rankPrev10": 3,
       "delta10y": -3,
-      "delta1960": 4,
       "delta2000": -2,
       "values": [
         1444.41949906697,
@@ -1148,7 +1146,9 @@
         4,
         5,
         6
-      ]
+      ],
+      "rankFirstYear": 10,
+      "deltaFirstYear": 4
     },
     {
       "iso3": "USA",
@@ -1158,11 +1158,9 @@
       "incomeLevel": "High income",
       "latestValue": 90026.5163005744,
       "latestRank": 7,
-      "rank1960": 1,
       "rank2000": 5,
       "rankPrev10": 8,
       "delta10y": 1,
-      "delta1960": -6,
       "delta2000": -2,
       "values": [
         2999.86487154495,
@@ -1299,7 +1297,9 @@
         6,
         6,
         7
-      ]
+      ],
+      "rankFirstYear": 1,
+      "deltaFirstYear": -6
     },
     {
       "iso3": "DNK",
@@ -1309,11 +1309,9 @@
       "incomeLevel": "High income",
       "latestValue": 76970.1535217919,
       "latestRank": 8,
-      "rank1960": 12,
       "rank2000": 7,
       "rankPrev10": 11,
       "delta10y": 3,
-      "delta1960": 4,
       "delta2000": -1,
       "values": [
         1389.0213943225,
@@ -1450,7 +1448,9 @@
         9,
         10,
         8
-      ]
+      ],
+      "rankFirstYear": 12,
+      "deltaFirstYear": 4
     },
     {
       "iso3": "MAC",
@@ -1460,11 +1460,9 @@
       "incomeLevel": "High income",
       "latestValue": 75901.7461294198,
       "latestRank": 9,
-      "rank1960": null,
       "rank2000": 28,
       "rankPrev10": 4,
       "delta10y": -5,
-      "delta1960": null,
       "delta2000": 19,
       "values": [
         null,
@@ -1601,7 +1599,9 @@
         10,
         9,
         9
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "NLD",
@@ -1611,11 +1611,9 @@
       "incomeLevel": "High income",
       "latestValue": 73683.917132794,
       "latestRank": 10,
-      "rank1960": 17,
       "rank2000": 12,
       "rankPrev10": 13,
       "delta10y": 3,
-      "delta1960": 7,
       "delta2000": 2,
       "values": [
         1156.38597727767,
@@ -1752,7 +1750,9 @@
         12,
         11,
         10
-      ]
+      ],
+      "rankFirstYear": 17,
+      "deltaFirstYear": 7
     },
     {
       "iso3": "QAT",
@@ -1762,11 +1762,9 @@
       "incomeLevel": "High income",
       "latestValue": 72524.9066385222,
       "latestRank": 11,
-      "rank1960": null,
       "rank2000": 10,
       "rankPrev10": 5,
       "delta10y": -6,
-      "delta1960": null,
       "delta2000": -1,
       "values": [
         null,
@@ -1903,7 +1901,9 @@
         8,
         8,
         11
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "AUS",
@@ -1913,11 +1913,9 @@
       "incomeLevel": "High income",
       "latestValue": 65129.7227990563,
       "latestRank": 12,
-      "rank1960": 7,
       "rank2000": 21,
       "rankPrev10": 7,
       "delta10y": -5,
-      "delta1960": -5,
       "delta2000": 9,
       "values": [
         1813.43109917039,
@@ -2054,7 +2052,9 @@
         11,
         12,
         12
-      ]
+      ],
+      "rankFirstYear": 7,
+      "deltaFirstYear": -5
     },
     {
       "iso3": "SWE",
@@ -2064,11 +2064,9 @@
       "incomeLevel": "High income",
       "latestValue": 63133.2126736715,
       "latestRank": 13,
-      "rank1960": 5,
       "rank2000": 8,
       "rankPrev10": 12,
       "delta10y": -1,
-      "delta1960": -8,
       "delta2000": -5,
       "values": [
         2128.36441205712,
@@ -2205,7 +2203,9 @@
         15,
         14,
         13
-      ]
+      ],
+      "rankFirstYear": 5,
+      "deltaFirstYear": -8
     },
     {
       "iso3": "AUT",
@@ -2215,11 +2215,9 @@
       "incomeLevel": "High income",
       "latestValue": 62930.0351324599,
       "latestRank": 14,
-      "rank1960": 18,
       "rank2000": 14,
       "rankPrev10": 15,
       "delta10y": 1,
-      "delta1960": 4,
       "delta2000": 0,
       "values": [
         939.914814681174,
@@ -2356,7 +2354,9 @@
         13,
         13,
         14
-      ]
+      ],
+      "rankFirstYear": 18,
+      "deltaFirstYear": 4
     },
     {
       "iso3": "BEL",
@@ -2366,11 +2366,9 @@
       "incomeLevel": "High income",
       "latestValue": 60750.2735864647,
       "latestRank": 15,
-      "rank1960": 14,
       "rank2000": 19,
       "rankPrev10": 20,
       "delta10y": 5,
-      "delta1960": -1,
       "delta2000": 4,
       "values": [
         1290.28607216192,
@@ -2507,7 +2505,9 @@
         14,
         15,
         15
-      ]
+      ],
+      "rankFirstYear": 14,
+      "deltaFirstYear": -1
     },
     {
       "iso3": "DEU",
@@ -2517,11 +2517,9 @@
       "incomeLevel": "High income",
       "latestValue": 60496.4350820414,
       "latestRank": 16,
-      "rank1960": 16,
       "rank2000": 17,
       "rankPrev10": 19,
       "delta10y": 3,
-      "delta1960": 0,
       "delta2000": 1,
       "values": [
         1162.12266831735,
@@ -2658,7 +2656,9 @@
         17,
         16,
         16
-      ]
+      ],
+      "rankFirstYear": 16,
+      "deltaFirstYear": 0
     },
     {
       "iso3": "ISR",
@@ -2668,11 +2668,9 @@
       "incomeLevel": "High income",
       "latestValue": 60336.8477964194,
       "latestRank": 17,
-      "rank1960": 9,
       "rank2000": 23,
       "rankPrev10": 25,
       "delta10y": 8,
-      "delta1960": -8,
       "delta2000": 6,
       "values": [
         1451.5903109258,
@@ -2809,7 +2807,9 @@
         19,
         19,
         17
-      ]
+      ],
+      "rankFirstYear": 9,
+      "deltaFirstYear": -8
     },
     {
       "iso3": "GBR",
@@ -2819,11 +2819,9 @@
       "incomeLevel": "High income",
       "latestValue": 57601.9621201954,
       "latestRank": 18,
-      "rank1960": 11,
       "rank2000": 9,
       "rankPrev10": 14,
       "delta10y": -4,
-      "delta1960": -7,
       "delta2000": -9,
       "values": [
         1397.5948032844,
@@ -2960,7 +2958,9 @@
         21,
         20,
         18
-      ]
+      ],
+      "rankFirstYear": 11,
+      "deltaFirstYear": -7
     },
     {
       "iso3": "HKG",
@@ -2970,11 +2970,9 @@
       "incomeLevel": "High income",
       "latestValue": 56983.0663059906,
       "latestRank": 19,
-      "rank1960": 34,
       "rank2000": 13,
       "rankPrev10": 18,
       "delta10y": -1,
-      "delta1960": 15,
       "delta2000": -6,
       "values": [
         426.773807917233,
@@ -3111,7 +3109,9 @@
         20,
         18,
         19
-      ]
+      ],
+      "rankFirstYear": 34,
+      "deltaFirstYear": 15
     },
     {
       "iso3": "FIN",
@@ -3121,11 +3121,9 @@
       "incomeLevel": "High income",
       "latestValue": 56148.580949046,
       "latestRank": 20,
-      "rank1960": 15,
       "rank2000": 15,
       "rankPrev10": 17,
       "delta10y": -3,
-      "delta1960": -5,
       "delta2000": -5,
       "values": [
         1191.85508873415,
@@ -3262,7 +3260,9 @@
         18,
         21,
         20
-      ]
+      ],
+      "rankFirstYear": 15,
+      "deltaFirstYear": -5
     },
     {
       "iso3": "CAN",
@@ -3272,11 +3272,9 @@
       "incomeLevel": "High income",
       "latestValue": 55697.6639660837,
       "latestRank": 21,
-      "rank1960": 3,
       "rank2000": 16,
       "rankPrev10": 16,
       "delta10y": -5,
-      "delta1960": -18,
       "delta2000": -5,
       "values": [
         2264.94849658191,
@@ -3413,7 +3411,9 @@
         16,
         17,
         21
-      ]
+      ],
+      "rankFirstYear": 3,
+      "deltaFirstYear": -18
     },
     {
       "iso3": "AND",
@@ -3423,11 +3423,9 @@
       "incomeLevel": "High income",
       "latestValue": 54291.5026031052,
       "latestRank": 22,
-      "rank1960": null,
       "rank2000": 22,
       "rankPrev10": 21,
       "delta10y": -1,
-      "delta1960": null,
       "delta2000": 0,
       "values": [
         null,
@@ -3564,7 +3562,9 @@
         23,
         23,
         22
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "NZL",
@@ -3574,11 +3574,9 @@
       "incomeLevel": "High income",
       "latestValue": 49591.0405731713,
       "latestRank": 23,
-      "rank1960": 2,
       "rank2000": 32,
       "rankPrev10": 22,
       "delta10y": -1,
-      "delta1960": -21,
       "delta2000": 9,
       "values": [
         2334.1337214332,
@@ -3715,7 +3713,9 @@
         22,
         22,
         23
-      ]
+      ],
+      "rankFirstYear": 2,
+      "deltaFirstYear": -21
     },
     {
       "iso3": "FRA",
@@ -3725,11 +3725,9 @@
       "incomeLevel": "High income",
       "latestValue": 48985.7307807924,
       "latestRank": 24,
-      "rank1960": 13,
       "rank2000": 20,
       "rankPrev10": 24,
       "delta10y": 0,
-      "delta1960": -11,
       "delta2000": -4,
       "values": [
         1306.79629911648,
@@ -3866,7 +3864,9 @@
         24,
         24,
         24
-      ]
+      ],
+      "rankFirstYear": 13,
+      "deltaFirstYear": -11
     },
     {
       "iso3": "MLT",
@@ -3876,11 +3876,9 @@
       "incomeLevel": "High income",
       "latestValue": 47906.9000057635,
       "latestRank": 25,
-      "rank1960": null,
       "rank2000": 39,
       "rankPrev10": 33,
       "delta10y": 8,
-      "delta1960": null,
       "delta2000": 14,
       "values": [
         null,
@@ -4017,7 +4015,9 @@
         25,
         25,
         25
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "ITA",
@@ -4027,11 +4027,9 @@
       "incomeLevel": "High income",
       "latestValue": 43308.6403060733,
       "latestRank": 26,
-      "rank1960": 20,
       "rank2000": 24,
       "rankPrev10": 27,
       "delta10y": 1,
-      "delta1960": -6,
       "delta2000": -2,
       "values": [
         836.905850281885,
@@ -4168,7 +4166,9 @@
         27,
         27,
         26
-      ]
+      ],
+      "rankFirstYear": 20,
+      "deltaFirstYear": -6
     },
     {
       "iso3": "SXM",
@@ -4178,11 +4178,9 @@
       "incomeLevel": "High income",
       "latestValue": 42978.1317407037,
       "latestRank": 27,
-      "rank1960": null,
       "rank2000": null,
       "rankPrev10": 23,
       "delta10y": -4,
-      "delta1960": null,
       "delta2000": null,
       "values": [
         null,
@@ -4319,7 +4317,9 @@
         26,
         26,
         27
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "CYP",
@@ -4329,11 +4329,9 @@
       "incomeLevel": "High income",
       "latestValue": 41783.08984375,
       "latestRank": 28,
-      "rank1960": null,
       "rank2000": 30,
       "rankPrev10": 36,
       "delta10y": 8,
-      "delta1960": null,
       "delta2000": 2,
       "values": [
         null,
@@ -4470,7 +4468,9 @@
         29,
         29,
         28
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "PRI",
@@ -4480,11 +4480,9 @@
       "incomeLevel": "High income",
       "latestValue": 40620.1526923687,
       "latestRank": 29,
-      "rank1960": 23,
       "rank2000": 27,
       "rankPrev10": 31,
       "delta10y": 2,
-      "delta1960": -6,
       "delta2000": -2,
       "values": [
         717.514843087362,
@@ -4621,7 +4619,9 @@
         28,
         28,
         29
-      ]
+      ],
+      "rankFirstYear": 23,
+      "deltaFirstYear": -6
     },
     {
       "iso3": "ESP",
@@ -4631,11 +4631,9 @@
       "incomeLevel": "High income",
       "latestValue": 38627.2472148623,
       "latestRank": 30,
-      "rank1960": 36,
       "rank2000": 29,
       "rankPrev10": 32,
       "delta10y": 2,
-      "delta1960": 6,
       "delta2000": -1,
       "values": [
         407.96302786933,
@@ -4772,7 +4770,9 @@
         34,
         32,
         30
-      ]
+      ],
+      "rankFirstYear": 36,
+      "deltaFirstYear": 6
     },
     {
       "iso3": "SVN",
@@ -4782,11 +4782,9 @@
       "incomeLevel": "High income",
       "latestValue": 37376.2216079138,
       "latestRank": 31,
-      "rank1960": null,
       "rank2000": 40,
       "rankPrev10": 37,
       "delta10y": 6,
-      "delta1960": null,
       "delta2000": 9,
       "values": [
         null,
@@ -4923,7 +4921,9 @@
         36,
         33,
         31
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "KOR",
@@ -4933,11 +4933,9 @@
       "incomeLevel": "High income",
       "latestValue": 36226.9663637512,
       "latestRank": 32,
-      "rank1960": 70,
       "rank2000": 33,
       "rankPrev10": 29,
       "delta10y": -3,
-      "delta1960": 38,
       "delta2000": 1,
       "values": [
         158.844150776359,
@@ -5074,7 +5072,9 @@
         31,
         30,
         32
-      ]
+      ],
+      "rankFirstYear": 70,
+      "deltaFirstYear": 38
     },
     {
       "iso3": "JPN",
@@ -5084,11 +5084,9 @@
       "incomeLevel": "High income",
       "latestValue": 35951.0449549304,
       "latestRank": 33,
-      "rank1960": 27,
       "rank2000": 2,
       "rankPrev10": 26,
       "delta10y": -7,
-      "delta1960": -6,
       "delta2000": -31,
       "values": [
         519.415170624485,
@@ -5225,7 +5223,9 @@
         32,
         34,
         33
-      ]
+      ],
+      "rankFirstYear": 27,
+      "deltaFirstYear": -6
     },
     {
       "iso3": "CZE",
@@ -5235,11 +5235,9 @@
       "incomeLevel": "High income",
       "latestValue": 35917.2724081665,
       "latestRank": 34,
-      "rank1960": null,
       "rank2000": 50,
       "rankPrev10": 44,
       "delta10y": 10,
-      "delta1960": null,
       "delta2000": 16,
       "values": [
         null,
@@ -5376,7 +5374,9 @@
         37,
         37,
         34
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "SAU",
@@ -5386,11 +5386,9 @@
       "incomeLevel": "High income",
       "latestValue": 34536.6555456551,
       "latestRank": 35,
-      "rank1960": 22,
       "rank2000": 35,
       "rankPrev10": 35,
       "delta10y": 0,
-      "delta1960": -13,
       "delta2000": 0,
       "values": [
         717.796628958557,
@@ -5527,7 +5525,9 @@
         30,
         31,
         35
-      ]
+      ],
+      "rankFirstYear": 22,
+      "deltaFirstYear": -13
     },
     {
       "iso3": "EST",
@@ -5537,11 +5537,9 @@
       "incomeLevel": "High income",
       "latestValue": 34417.6320815138,
       "latestRank": 36,
-      "rank1960": null,
       "rank2000": 62,
       "rankPrev10": 45,
       "delta10y": 9,
-      "delta1960": null,
       "delta2000": 26,
       "values": [
         null,
@@ -5678,7 +5676,9 @@
         38,
         38,
         36
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "LTU",
@@ -5688,11 +5688,9 @@
       "incomeLevel": "High income",
       "latestValue": 32958.6706396386,
       "latestRank": 37,
-      "rank1960": null,
       "rank2000": 72,
       "rankPrev10": 51,
       "delta10y": 14,
-      "delta1960": null,
       "delta2000": 35,
       "values": [
         null,
@@ -5829,7 +5827,9 @@
         40,
         41,
         37
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "GUY",
@@ -5839,11 +5839,9 @@
       "incomeLevel": "High income",
       "latestValue": 32413.7930757518,
       "latestRank": 38,
-      "rank1960": 44,
       "rank2000": 123,
       "rankPrev10": 93,
       "delta10y": 55,
-      "delta1960": 6,
       "delta2000": 85,
       "values": [
         299.074645785091,
@@ -5980,7 +5978,9 @@
         53,
         40,
         38
-      ]
+      ],
+      "rankFirstYear": 44,
+      "deltaFirstYear": 6
     },
     {
       "iso3": "KWT",
@@ -5990,11 +5990,9 @@
       "incomeLevel": "High income",
       "latestValue": 32312.3119953634,
       "latestRank": 39,
-      "rank1960": null,
       "rank2000": 26,
       "rankPrev10": 30,
       "delta10y": -9,
-      "delta1960": null,
       "delta2000": -13,
       "values": [
         null,
@@ -6131,7 +6129,9 @@
         33,
         36,
         39
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "BRN",
@@ -6141,11 +6141,9 @@
       "incomeLevel": "High income",
       "latestValue": 32234.6428368582,
       "latestRank": 40,
-      "rank1960": null,
       "rank2000": 25,
       "rankPrev10": 28,
       "delta10y": -12,
-      "delta1960": null,
       "delta2000": -15,
       "values": [
         null,
@@ -6282,7 +6280,9 @@
         35,
         35,
         40
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "PRT",
@@ -6292,11 +6292,9 @@
       "incomeLevel": "High income",
       "latestValue": 32081.8106150292,
       "latestRank": 41,
-      "rank1960": 39,
       "rank2000": 38,
       "rankPrev10": 41,
       "delta10y": 0,
-      "delta1960": -2,
       "delta2000": -3,
       "values": [
         376.976430250874,
@@ -6433,7 +6431,9 @@
         41,
         42,
         41
-      ]
+      ],
+      "rankFirstYear": 39,
+      "deltaFirstYear": -2
     },
     {
       "iso3": "BHR",
@@ -6443,11 +6443,9 @@
       "incomeLevel": "High income",
       "latestValue": 30596.5794898885,
       "latestRank": 42,
-      "rank1960": null,
       "rank2000": 31,
       "rankPrev10": 34,
       "delta10y": -8,
-      "delta1960": null,
       "delta2000": -11,
       "values": [
         null,
@@ -6584,7 +6582,9 @@
         39,
         39,
         42
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "SVK",
@@ -6594,11 +6594,9 @@
       "incomeLevel": "High income",
       "latestValue": 28543.6653439813,
       "latestRank": 43,
-      "rank1960": null,
       "rank2000": 66,
       "rankPrev10": 47,
       "delta10y": 4,
-      "delta1960": null,
       "delta2000": 23,
       "values": [
         null,
@@ -6735,7 +6733,9 @@
         43,
         44,
         43
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "POL",
@@ -6745,11 +6745,9 @@
       "incomeLevel": "High income",
       "latestValue": 28419.5777395638,
       "latestRank": 44,
-      "rank1960": null,
       "rank2000": 59,
       "rankPrev10": 57,
       "delta10y": 13,
-      "delta1960": null,
       "delta2000": 15,
       "values": [
         null,
@@ -6886,7 +6884,9 @@
         50,
         45,
         44
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "BRB",
@@ -6896,11 +6896,9 @@
       "incomeLevel": "High income",
       "latestValue": 28364.8181499736,
       "latestRank": 45,
-      "rank1960": 41,
       "rank2000": 36,
       "rankPrev10": 38,
       "delta10y": -7,
-      "delta1960": -4,
       "delta2000": -9,
       "values": [
         346.575456793331,
@@ -7037,7 +7035,9 @@
         42,
         43,
         45
-      ]
+      ],
+      "rankFirstYear": 41,
+      "deltaFirstYear": -4
     },
     {
       "iso3": "HRV",
@@ -7047,11 +7047,9 @@
       "incomeLevel": "High income",
       "latestValue": 27103.9116109268,
       "latestRank": 46,
-      "rank1960": null,
       "rank2000": 53,
       "rankPrev10": 58,
       "delta10y": 12,
-      "delta1960": null,
       "delta2000": 7,
       "values": [
         null,
@@ -7188,7 +7186,9 @@
         49,
         48,
         46
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "GRC",
@@ -7198,11 +7198,9 @@
       "incomeLevel": "High income",
       "latestValue": 26948.0070432791,
       "latestRank": 47,
-      "rank1960": 29,
       "rank2000": 37,
       "rankPrev10": 43,
       "delta10y": -4,
-      "delta1960": -18,
       "delta2000": -10,
       "values": [
         513.085862390915,
@@ -7339,7 +7337,9 @@
         45,
         46,
         47
-      ]
+      ],
+      "rankFirstYear": 29,
+      "deltaFirstYear": -18
     },
     {
       "iso3": "LVA",
@@ -7349,11 +7349,9 @@
       "incomeLevel": "High income",
       "latestValue": 26311.9730706362,
       "latestRank": 48,
-      "rank1960": null,
       "rank2000": 73,
       "rankPrev10": 55,
       "delta10y": 7,
-      "delta1960": null,
       "delta2000": 25,
       "values": [
         null,
@@ -7490,7 +7488,9 @@
         46,
         50,
         48
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "HUN",
@@ -7500,11 +7500,9 @@
       "incomeLevel": "High income",
       "latestValue": 25907.4743259406,
       "latestRank": 49,
-      "rank1960": null,
       "rank2000": 58,
       "rankPrev10": 56,
       "delta10y": 7,
-      "delta1960": null,
       "delta2000": 9,
       "values": [
         null,
@@ -7641,7 +7639,9 @@
         48,
         51,
         49
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "KNA",
@@ -7651,11 +7651,9 @@
       "incomeLevel": "High income",
       "latestValue": 25223.0257622185,
       "latestRank": 50,
-      "rank1960": 61,
       "rank2000": 42,
       "rankPrev10": 39,
       "delta10y": -11,
-      "delta1960": 11,
       "delta2000": -8,
       "values": [
         221.584586097067,
@@ -7792,7 +7790,9 @@
         47,
         49,
         50
-      ]
+      ],
+      "rankFirstYear": 61,
+      "deltaFirstYear": 11
     },
     {
       "iso3": "URY",
@@ -7802,11 +7802,9 @@
       "incomeLevel": "High income",
       "latestValue": 25215.8238152781,
       "latestRank": 51,
-      "rank1960": 30,
       "rank2000": 48,
       "rankPrev10": 46,
       "delta10y": -5,
-      "delta1960": -21,
       "delta2000": -3,
       "values": [
         491.031760304596,
@@ -7943,7 +7941,9 @@
         44,
         47,
         51
-      ]
+      ],
+      "rankFirstYear": 30,
+      "deltaFirstYear": -21
     },
     {
       "iso3": "ATG",
@@ -7953,11 +7953,9 @@
       "incomeLevel": "High income",
       "latestValue": 24819.2454680158,
       "latestRank": 52,
-      "rank1960": null,
       "rank2000": 34,
       "rankPrev10": 48,
       "delta10y": -4,
-      "delta1960": null,
       "delta2000": -18,
       "values": [
         null,
@@ -8094,7 +8092,9 @@
         51,
         52,
         52
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "ROU",
@@ -8104,11 +8104,9 @@
       "incomeLevel": "High income",
       "latestValue": 22537.9532108047,
       "latestRank": 53,
-      "rank1960": null,
       "rank2000": 94,
       "rankPrev10": 69,
       "delta10y": 16,
-      "delta1960": null,
       "delta2000": 41,
       "values": [
         null,
@@ -8245,7 +8243,9 @@
         56,
         54,
         53
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "BGR",
@@ -8255,11 +8255,9 @@
       "incomeLevel": "High income",
       "latestValue": 20328.1667065538,
       "latestRank": 54,
-      "rank1960": null,
       "rank2000": 99,
       "rankPrev10": 78,
       "delta10y": 24,
-      "delta1960": null,
       "delta2000": 45,
       "values": [
         null,
@@ -8396,7 +8394,9 @@
         60,
         60,
         54
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "CRI",
@@ -8406,11 +8406,9 @@
       "incomeLevel": "High income",
       "latestValue": 19970.0989059622,
       "latestRank": 55,
-      "rank1960": 37,
       "rank2000": 67,
       "rankPrev10": 59,
       "delta10y": 4,
-      "delta1960": -18,
       "delta2000": 12,
       "values": [
         382.309121831519,
@@ -8547,7 +8545,9 @@
         58,
         56,
         55
-      ]
+      ],
+      "rankFirstYear": 37,
+      "deltaFirstYear": -18
     },
     {
       "iso3": "OMN",
@@ -8557,11 +8557,9 @@
       "incomeLevel": "High income",
       "latestValue": 19947.3966227092,
       "latestRank": 56,
-      "rank1960": 94,
       "rank2000": 41,
       "rankPrev10": 42,
       "delta10y": -14,
-      "delta1960": 38,
       "delta2000": -15,
       "values": [
         83.3853105243323,
@@ -8698,7 +8696,9 @@
         52,
         53,
         56
-      ]
+      ],
+      "rankFirstYear": 94,
+      "deltaFirstYear": 38
     },
     {
       "iso3": "PAN",
@@ -8708,11 +8708,9 @@
       "incomeLevel": "High income",
       "latestValue": 19789.7308555826,
       "latestRank": 57,
-      "rank1960": 31,
       "rank2000": 65,
       "rankPrev10": 52,
       "delta10y": -5,
-      "delta1960": -26,
       "delta2000": 8,
       "values": [
         477.037935000289,
@@ -8849,7 +8847,9 @@
         54,
         55,
         57
-      ]
+      ],
+      "rankFirstYear": 31,
+      "deltaFirstYear": -26
     },
     {
       "iso3": "PLW",
@@ -8859,11 +8859,9 @@
       "incomeLevel": "High income",
       "latestValue": 19532.3557719527,
       "latestRank": 58,
-      "rank1960": null,
       "rank2000": 44,
       "rankPrev10": 49,
       "delta10y": -9,
-      "delta1960": null,
       "delta2000": -14,
       "values": [
         null,
@@ -9000,7 +8998,9 @@
         61,
         59,
         58
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "SYC",
@@ -9010,11 +9010,9 @@
       "incomeLevel": "High income",
       "latestValue": 19449.3836346926,
       "latestRank": 59,
-      "rank1960": 45,
       "rank2000": 43,
       "rankPrev10": 50,
       "delta10y": -9,
-      "delta1960": -14,
       "delta2000": -16,
       "values": [
         288.058144476031,
@@ -9151,7 +9149,9 @@
         57,
         58,
         59
-      ]
+      ],
+      "rankFirstYear": 45,
+      "deltaFirstYear": -14
     },
     {
       "iso3": "TTO",
@@ -9161,11 +9161,9 @@
       "incomeLevel": "High income",
       "latestValue": 18967.2704636681,
       "latestRank": 60,
-      "rank1960": 25,
       "rank2000": 49,
       "rankPrev10": 40,
       "delta10y": -20,
-      "delta1960": -35,
       "delta2000": -11,
       "values": [
         633.975608394336,
@@ -9302,7 +9300,9 @@
         55,
         57,
         60
-      ]
+      ],
+      "rankFirstYear": 25,
+      "deltaFirstYear": -35
     },
     {
       "iso3": "TUR",
@@ -9312,11 +9312,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 18599.4420922378,
       "latestRank": 61,
-      "rank1960": 52,
       "rank2000": 60,
       "rankPrev10": 60,
       "delta10y": -1,
-      "delta1960": -9,
       "delta2000": -1,
       "values": [
         267.091207552765,
@@ -9453,7 +9451,9 @@
         67,
         62,
         61
-      ]
+      ],
+      "rankFirstYear": 52,
+      "deltaFirstYear": -9
     },
     {
       "iso3": "CHL",
@@ -9463,11 +9463,9 @@
       "incomeLevel": "High income",
       "latestValue": 17994.5911957485,
       "latestRank": 62,
-      "rank1960": 28,
       "rank2000": 52,
       "rankPrev10": 54,
       "delta10y": -8,
-      "delta1960": -34,
       "delta2000": -10,
       "values": [
         516.487539077836,
@@ -9604,7 +9602,9 @@
         59,
         61,
         62
-      ]
+      ],
+      "rankFirstYear": 28,
+      "deltaFirstYear": -34
     },
     {
       "iso3": "RUS",
@@ -9614,11 +9614,9 @@
       "incomeLevel": "High income",
       "latestValue": 17546.609375,
       "latestRank": 63,
-      "rank1960": null,
       "rank2000": 92,
       "rankPrev10": 67,
       "delta10y": 4,
-      "delta1960": null,
       "delta2000": 29,
       "values": [
         null,
@@ -9755,7 +9753,9 @@
         63,
         63,
         63
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "SRB",
@@ -9765,11 +9765,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 15262.0464193413,
       "latestRank": 64,
-      "rank1960": null,
       "rank2000": 119,
       "rankPrev10": 90,
       "delta10y": 26,
-      "delta1960": null,
       "delta2000": 55,
       "values": [
         null,
@@ -9906,7 +9904,9 @@
         71,
         69,
         64
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "ARG",
@@ -9916,11 +9916,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 14898.0885943842,
       "latestRank": 65,
-      "rank1960": 21,
       "rank2000": 45,
       "rankPrev10": 53,
       "delta10y": -12,
-      "delta1960": -44,
       "delta2000": -20,
       "values": [
         778.251706763404,
@@ -10057,7 +10055,9 @@
         62,
         68,
         65
-      ]
+      ],
+      "rankFirstYear": 21,
+      "deltaFirstYear": -44
     },
     {
       "iso3": "MNE",
@@ -10067,11 +10067,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 14816.8380299947,
       "latestRank": 66,
-      "rank1960": null,
       "rank2000": 98,
       "rankPrev10": 81,
       "delta10y": 15,
-      "delta1960": null,
       "delta2000": 32,
       "values": [
         null,
@@ -10208,7 +10206,9 @@
         72,
         72,
         66
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "LCA",
@@ -10218,11 +10218,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 14745.8184305461,
       "latestRank": 67,
-      "rank1960": null,
       "rank2000": 51,
       "rankPrev10": 61,
       "delta10y": -6,
-      "delta1960": null,
       "delta2000": -16,
       "values": [
         null,
@@ -10359,7 +10357,9 @@
         65,
         64,
         67
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "KAZ",
@@ -10369,11 +10369,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 14692.1331757237,
       "latestRank": 68,
-      "rank1960": null,
       "rank2000": 112,
       "rankPrev10": 62,
       "delta10y": -6,
-      "delta1960": null,
       "delta2000": 44,
       "values": [
         null,
@@ -10510,7 +10508,9 @@
         69,
         65,
         68
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "NRU",
@@ -10520,11 +10520,9 @@
       "incomeLevel": "High income",
       "latestValue": 14639.5046929186,
       "latestRank": 69,
-      "rank1960": null,
       "rank2000": 76,
       "rankPrev10": 75,
       "delta10y": 6,
-      "delta1960": null,
       "delta2000": 7,
       "values": [
         null,
@@ -10661,7 +10659,9 @@
         66,
         66,
         69
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "MDV",
@@ -10671,11 +10671,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 14614.7208116541,
       "latestRank": 70,
-      "rank1960": null,
       "rank2000": 79,
       "rankPrev10": 65,
       "delta10y": -5,
-      "delta1960": null,
       "delta2000": 9,
       "values": [
         null,
@@ -10812,7 +10810,9 @@
         70,
         70,
         70
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "MEX",
@@ -10822,11 +10822,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 13889.2339628708,
       "latestRank": 71,
-      "rank1960": 40,
       "rank2000": 46,
       "rankPrev10": 63,
       "delta10y": -8,
-      "delta1960": -31,
       "delta2000": -25,
       "values": [
         355.075199563018,
@@ -10963,7 +10961,9 @@
         64,
         67,
         71
-      ]
+      ],
+      "rankFirstYear": 40,
+      "deltaFirstYear": -31
     },
     {
       "iso3": "CHN",
@@ -10973,11 +10973,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 13861.970224368,
       "latestRank": 72,
-      "rank1960": 92,
       "rank2000": 120,
       "rankPrev10": 74,
       "delta10y": 2,
-      "delta1960": 20,
       "delta2000": 48,
       "values": [
         89.7150749167731,
@@ -11114,7 +11112,9 @@
         68,
         71,
         72
-      ]
+      ],
+      "rankFirstYear": 92,
+      "deltaFirstYear": 20
     },
     {
       "iso3": "MYS",
@@ -11124,11 +11124,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 13124.5554178269,
       "latestRank": 73,
-      "rank1960": 56,
       "rank2000": 61,
       "rankPrev10": 64,
       "delta10y": -9,
-      "delta1960": -17,
       "delta2000": -12,
       "values": [
         240.847414554537,
@@ -11265,7 +11263,9 @@
         74,
         74,
         73
-      ]
+      ],
+      "rankFirstYear": 56,
+      "deltaFirstYear": -17
     },
     {
       "iso3": "ALB",
@@ -11275,11 +11275,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 12998.147869552,
       "latestRank": 74,
-      "rank1960": null,
       "rank2000": 113,
       "rankPrev10": 104,
       "delta10y": 30,
-      "delta1960": null,
       "delta2000": 39,
       "values": [
         null,
@@ -11416,7 +11414,9 @@
         80,
         77,
         74
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "MUS",
@@ -11426,11 +11426,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 12991.2935987166,
       "latestRank": 75,
-      "rank1960": 58,
       "rank2000": 64,
       "rankPrev10": 66,
       "delta10y": -9,
-      "delta1960": -17,
       "delta2000": -11,
       "values": [
         238.251033437494,
@@ -11567,7 +11565,9 @@
         75,
         73,
         75
-      ]
+      ],
+      "rankFirstYear": 58,
+      "deltaFirstYear": -17
     },
     {
       "iso3": "VCT",
@@ -11577,11 +11577,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 12561.769166789,
       "latestRank": 76,
-      "rank1960": 72,
       "rank2000": 68,
       "rankPrev10": 77,
       "delta10y": 1,
-      "delta1960": -4,
       "delta2000": -8,
       "values": [
         154.839953548866,
@@ -11718,7 +11716,9 @@
         77,
         76,
         76
-      ]
+      ],
+      "rankFirstYear": 72,
+      "deltaFirstYear": -4
     },
     {
       "iso3": "GRD",
@@ -11728,11 +11728,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 12106.8790105068,
       "latestRank": 77,
-      "rank1960": null,
       "rank2000": 55,
       "rankPrev10": 72,
       "delta10y": -5,
-      "delta1960": null,
       "delta2000": -22,
       "values": [
         null,
@@ -11869,7 +11867,9 @@
         73,
         75,
         77
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "DOM",
@@ -11879,11 +11879,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 11059.2081531834,
       "latestRank": 78,
-      "rank1960": 65,
       "rank2000": 75,
       "rankPrev10": 80,
       "delta10y": 2,
-      "delta1960": -13,
       "delta2000": -3,
       "values": [
         205.731509857004,
@@ -12020,7 +12018,9 @@
         76,
         78,
         78
-      ]
+      ],
+      "rankFirstYear": 65,
+      "deltaFirstYear": -13
     },
     {
       "iso3": "DMA",
@@ -12030,11 +12030,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 10989.0431185083,
       "latestRank": 79,
-      "rank1960": null,
       "rank2000": 54,
       "rankPrev10": 73,
       "delta10y": -6,
-      "delta1960": null,
       "delta2000": -25,
       "values": [
         null,
@@ -12171,7 +12169,9 @@
         79,
         79,
         79
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "BRA",
@@ -12181,11 +12181,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 10713.2856869511,
       "latestRank": 80,
-      "rank1960": 59,
       "rank2000": 69,
       "rankPrev10": 70,
       "delta10y": -10,
-      "delta1960": -21,
       "delta2000": -11,
       "values": [
         235.266009502589,
@@ -12322,7 +12320,9 @@
         78,
         80,
         80
-      ]
+      ],
+      "rankFirstYear": 59,
+      "deltaFirstYear": -21
     },
     {
       "iso3": "MKD",
@@ -12332,11 +12332,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 10489.9255355525,
       "latestRank": 81,
-      "rank1960": null,
       "rank2000": 90,
       "rankPrev10": 96,
       "delta10y": 15,
-      "delta1960": null,
       "delta2000": 9,
       "values": [
         null,
@@ -12473,7 +12471,9 @@
         81,
         82,
         81
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "BIH",
@@ -12483,11 +12483,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 10381.8460703874,
       "latestRank": 82,
-      "rank1960": null,
       "rank2000": 109,
       "rankPrev10": 101,
       "delta10y": 19,
-      "delta1960": null,
       "delta2000": 27,
       "values": [
         null,
@@ -12624,7 +12622,9 @@
         82,
         81,
         82
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "BLR",
@@ -12634,11 +12634,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 10279.2547190723,
       "latestRank": 83,
-      "rank1960": null,
       "rank2000": 110,
       "rankPrev10": 88,
       "delta10y": 5,
-      "delta1960": null,
       "delta2000": 27,
       "values": [
         null,
@@ -12775,7 +12773,9 @@
         86,
         84,
         83
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "GEO",
@@ -12785,11 +12785,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 9691.53472415196,
       "latestRank": 84,
-      "rank1960": null,
       "rank2000": 129,
       "rankPrev10": 107,
       "delta10y": 23,
-      "delta1960": null,
       "delta2000": 45,
       "values": [
         null,
@@ -12926,7 +12924,9 @@
         83,
         83,
         84
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "PER",
@@ -12936,11 +12936,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 9684.41170314988,
       "latestRank": 85,
-      "rank1960": 55,
       "rank2000": 89,
       "rankPrev10": 83,
       "delta10y": -2,
-      "delta1960": -30,
       "delta2000": 4,
       "values": [
         252.796782675034,
@@ -13077,7 +13075,9 @@
         85,
         86,
         85
-      ]
+      ],
+      "rankFirstYear": 55,
+      "deltaFirstYear": -30
     },
     {
       "iso3": "ARM",
@@ -13087,11 +13087,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 9474.01849300368,
       "latestRank": 86,
-      "rank1960": null,
       "rank2000": 140,
       "rankPrev10": 117,
       "delta10y": 31,
-      "delta1960": null,
       "delta2000": 54,
       "values": [
         null,
@@ -13228,7 +13226,9 @@
         84,
         85,
         86
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "MDA",
@@ -13238,11 +13238,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 8621.71721623786,
       "latestRank": 87,
-      "rank1960": null,
       "rank2000": 153,
       "rankPrev10": 131,
       "delta10y": 44,
-      "delta1960": null,
       "delta2000": 66,
       "values": [
         null,
@@ -13379,7 +13377,9 @@
         94,
         93,
         87
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "COL",
@@ -13389,11 +13389,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 8561.62091854449,
       "latestRank": 88,
-      "rank1960": 53,
       "rank2000": 77,
       "rankPrev10": 82,
       "delta10y": -6,
-      "delta1960": -35,
       "delta2000": -11,
       "values": [
         258.304433616071,
@@ -13530,7 +13528,9 @@
         93,
         88,
         88
-      ]
+      ],
+      "rankFirstYear": 53,
+      "deltaFirstYear": -35
     },
     {
       "iso3": "MHL",
@@ -13540,11 +13540,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 8489.05793506422,
       "latestRank": 89,
-      "rank1960": null,
       "rank2000": 78,
       "rankPrev10": 114,
       "delta10y": 25,
-      "delta1960": null,
       "delta2000": -11,
       "values": [
         null,
@@ -13681,7 +13679,9 @@
         95,
         92,
         89
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "GAB",
@@ -13691,11 +13691,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 8263.03321595,
       "latestRank": 90,
-      "rank1960": 48,
       "rank2000": 63,
       "rankPrev10": 79,
       "delta10y": -11,
-      "delta1960": -42,
       "delta2000": -27,
       "values": [
         276.136169473227,
@@ -13832,7 +13830,9 @@
         88,
         87,
         90
-      ]
+      ],
+      "rankFirstYear": 48,
+      "deltaFirstYear": -42
     },
     {
       "iso3": "THA",
@@ -13842,11 +13842,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 8056.56359761558,
       "latestRank": 91,
-      "rank1960": 85,
       "rank2000": 83,
       "rankPrev10": 92,
       "delta10y": 1,
-      "delta1960": -6,
       "delta2000": -8,
       "values": [
         102.814571454958,
@@ -13983,7 +13981,9 @@
         91,
         94,
         91
-      ]
+      ],
+      "rankFirstYear": 85,
+      "deltaFirstYear": -6
     },
     {
       "iso3": "JAM",
@@ -13993,11 +13993,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 8002.92104076242,
       "latestRank": 92,
-      "rank1960": 35,
       "rank2000": 70,
       "rankPrev10": 95,
       "delta10y": 3,
-      "delta1960": -57,
       "delta2000": -22,
       "values": [
         423.674098184095,
@@ -14134,7 +14132,9 @@
         89,
         89,
         92
-      ]
+      ],
+      "rankFirstYear": 35,
+      "deltaFirstYear": -57
     },
     {
       "iso3": "XKX",
@@ -14144,11 +14144,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 7899.41841135202,
       "latestRank": 93,
-      "rank1960": null,
       "rank2000": null,
       "rankPrev10": 116,
       "delta10y": 23,
-      "delta1960": null,
       "delta2000": null,
       "values": [
         null,
@@ -14285,7 +14283,9 @@
         99,
         96,
         93
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "BLZ",
@@ -14295,11 +14295,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 7865.47937690933,
       "latestRank": 94,
-      "rank1960": 42,
       "rank2000": 57,
       "rankPrev10": 84,
       "delta10y": -10,
-      "delta1960": -52,
       "delta2000": -37,
       "values": [
         307.414508338751,
@@ -14436,7 +14434,9 @@
         90,
         90,
         94
-      ]
+      ],
+      "rankFirstYear": 42,
+      "deltaFirstYear": -52
     },
     {
       "iso3": "BWA",
@@ -14446,11 +14446,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 7778.1151090571,
       "latestRank": 95,
-      "rank1960": 103,
       "rank2000": 71,
       "rankPrev10": 85,
       "delta10y": -10,
-      "delta1960": 8,
       "delta2000": -24,
       "values": [
         58.9180081084204,
@@ -14587,7 +14585,9 @@
         87,
         91,
         95
-      ]
+      ],
+      "rankFirstYear": 103,
+      "deltaFirstYear": 8
     },
     {
       "iso3": "AZE",
@@ -14597,11 +14597,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 7410.72281660142,
       "latestRank": 96,
-      "rank1960": null,
       "rank2000": 133,
       "rankPrev10": 94,
       "delta10y": -2,
-      "delta1960": null,
       "delta2000": 37,
       "values": [
         null,
@@ -14738,7 +14736,9 @@
         92,
         95,
         96
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "ECU",
@@ -14748,11 +14748,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 7125.27618527738,
       "latestRank": 97,
-      "rank1960": 32,
       "rank2000": 107,
       "rankPrev10": 87,
       "delta10y": -10,
-      "delta1960": -65,
       "delta2000": 10,
       "values": [
         450.776317102259,
@@ -14889,7 +14887,9 @@
         97,
         99,
         97
-      ]
+      ],
+      "rankFirstYear": 32,
+      "deltaFirstYear": -65
     },
     {
       "iso3": "MNG",
@@ -14899,11 +14899,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 7108.22743246244,
       "latestRank": 98,
-      "rank1960": null,
       "rank2000": 150,
       "rankPrev10": 112,
       "delta10y": 14,
-      "delta1960": null,
       "delta2000": 52,
       "values": [
         null,
@@ -15040,7 +15038,9 @@
         104,
         100,
         98
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "SUR",
@@ -15050,11 +15050,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 7069.87230892274,
       "latestRank": 99,
-      "rank1960": 38,
       "rank2000": 86,
       "rankPrev10": 71,
       "delta10y": -28,
-      "delta1960": -61,
       "delta2000": -13,
       "values": [
         377.579399662016,
@@ -15191,7 +15189,9 @@
         107,
         98,
         99
-      ]
+      ],
+      "rankFirstYear": 38,
+      "deltaFirstYear": -61
     },
     {
       "iso3": "PRY",
@@ -15201,11 +15201,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 7026.61906146401,
       "latestRank": 100,
-      "rank1960": 73,
       "rank2000": 93,
       "rankPrev10": 89,
       "delta10y": -11,
-      "delta1960": -27,
       "delta2000": -7,
       "values": [
         153.375216758109,
@@ -15342,7 +15340,9 @@
         98,
         102,
         100
-      ]
+      ],
+      "rankFirstYear": 73,
+      "deltaFirstYear": -27
     },
     {
       "iso3": "FJI",
@@ -15352,11 +15352,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 6642.00449450523,
       "latestRank": 101,
-      "rank1960": 46,
       "rank2000": 84,
       "rankPrev10": 97,
       "delta10y": -4,
-      "delta1960": -55,
       "delta2000": -17,
       "values": [
         277.431535497766,
@@ -15493,7 +15491,9 @@
         103,
         103,
         101
-      ]
+      ],
+      "rankFirstYear": 46,
+      "deltaFirstYear": -55
     },
     {
       "iso3": "GNQ",
@@ -15503,11 +15503,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 6615.25245207167,
       "latestRank": 102,
-      "rank1960": null,
       "rank2000": 103,
       "rankPrev10": 68,
       "delta10y": -34,
-      "delta1960": null,
       "delta2000": 1,
       "values": [
         null,
@@ -15644,7 +15642,9 @@
         96,
         97,
         102
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "GTM",
@@ -15654,11 +15654,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 6598.18032988711,
       "latestRank": 103,
-      "rank1960": 54,
       "rank2000": 96,
       "rankPrev10": 111,
       "delta10y": 8,
-      "delta1960": -49,
       "delta2000": -7,
       "values": [
         256.813115286608,
@@ -15795,7 +15793,9 @@
         105,
         106,
         103
-      ]
+      ],
+      "rankFirstYear": 54,
+      "deltaFirstYear": -49
     },
     {
       "iso3": "ZAF",
@@ -15805,11 +15805,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 6597.71450918774,
       "latestRank": 104,
-      "rank1960": 26,
       "rank2000": 74,
       "rankPrev10": 86,
       "delta10y": -18,
-      "delta1960": -78,
       "delta2000": -30,
       "values": [
         532.147504330332,
@@ -15946,7 +15944,9 @@
         100,
         104,
         104
-      ]
+      ],
+      "rankFirstYear": 26,
+      "deltaFirstYear": -78
     },
     {
       "iso3": "TON",
@@ -15956,11 +15956,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 6547.18646814228,
       "latestRank": 105,
-      "rank1960": null,
       "rank2000": 85,
       "rankPrev10": 105,
       "delta10y": 0,
-      "delta1960": null,
       "delta2000": -20,
       "values": [
         null,
@@ -16097,7 +16095,9 @@
         106,
         105,
         105
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "TKM",
@@ -16107,11 +16107,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 6540.17876401136,
       "latestRank": 106,
-      "rank1960": null,
       "rank2000": 137,
       "rankPrev10": 91,
       "delta10y": -15,
-      "delta1960": null,
       "delta2000": 31,
       "values": [
         null,
@@ -16248,7 +16246,9 @@
         110,
         108,
         106
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "LBY",
@@ -16258,11 +16258,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 6448.82415074121,
       "latestRank": 107,
-      "rank1960": 51,
       "rank2000": 47,
       "rankPrev10": 76,
       "delta10y": -31,
-      "delta1960": -56,
       "delta2000": -60,
       "values": [
         269.038073094669,
@@ -16399,7 +16397,9 @@
         101,
         101,
         107
-      ]
+      ],
+      "rankFirstYear": 51,
+      "deltaFirstYear": -56
     },
     {
       "iso3": "DZA",
@@ -16409,11 +16409,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 6051.00322704182,
       "latestRank": 108,
-      "rank1960": 57,
       "rank2000": 91,
       "rankPrev10": 100,
       "delta10y": -8,
-      "delta1960": -51,
       "delta2000": -17,
       "values": [
         238.392476666447,
@@ -16550,7 +16548,9 @@
         108,
         110,
         108
-      ]
+      ],
+      "rankFirstYear": 57,
+      "deltaFirstYear": -51
     },
     {
       "iso3": "TUV",
@@ -16560,11 +16560,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 6041.44908591428,
       "latestRank": 109,
-      "rank1960": null,
       "rank2000": 101,
       "rankPrev10": 120,
       "delta10y": 11,
-      "delta1960": null,
       "delta2000": -8,
       "values": [
         null,
@@ -16701,7 +16699,9 @@
         111,
         109,
         109
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "WSM",
@@ -16711,11 +16711,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 5872.78333308796,
       "latestRank": 110,
-      "rank1960": null,
       "rank2000": 106,
       "rankPrev10": 108,
       "delta10y": -2,
-      "delta1960": null,
       "delta2000": -4,
       "values": [
         null,
@@ -16852,7 +16850,9 @@
         116,
         112,
         110
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "UKR",
@@ -16862,11 +16862,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 5865.884765625,
       "latestRank": 111,
-      "rank1960": null,
       "rank2000": 134,
       "rankPrev10": 139,
       "delta10y": 28,
-      "delta1960": null,
       "delta2000": 23,
       "values": [
         null,
@@ -17003,7 +17001,9 @@
         112,
         113,
         111
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "CPV",
@@ -17013,11 +17013,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 5796.47207860911,
       "latestRank": 112,
-      "rank1960": null,
       "rank2000": 111,
       "rankPrev10": 119,
       "delta10y": 7,
-      "delta1960": null,
       "delta2000": -1,
       "values": [
         null,
@@ -17154,7 +17152,9 @@
         117,
         115,
         112
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "SLV",
@@ -17164,11 +17164,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 5766.72574029107,
       "latestRank": 113,
-      "rank1960": null,
       "rank2000": 87,
       "rankPrev10": 113,
       "delta10y": 0,
-      "delta1960": null,
       "delta2000": -26,
       "values": [
         null,
@@ -17305,7 +17303,9 @@
         109,
         111,
         113
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "IRQ",
@@ -17315,11 +17315,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 5409.67899716967,
       "latestRank": 114,
-      "rank1960": 64,
       "rank2000": 88,
       "rankPrev10": 103,
       "delta10y": -11,
-      "delta1960": -50,
       "delta2000": -26,
       "values": [
         218.917802531101,
@@ -17456,7 +17454,9 @@
         102,
         107,
         114
-      ]
+      ],
+      "rankFirstYear": 64,
+      "deltaFirstYear": -50
     },
     {
       "iso3": "JOR",
@@ -17466,11 +17466,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 5347.77731384797,
       "latestRank": 115,
-      "rank1960": null,
       "rank2000": 100,
       "rankPrev10": 102,
       "delta10y": -13,
-      "delta1960": null,
       "delta2000": -15,
       "values": [
         null,
@@ -17607,7 +17605,9 @@
         114,
         116,
         115
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "BOL",
@@ -17617,11 +17617,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 5147.81081955367,
       "latestRank": 116,
-      "rank1960": 87,
       "rank2000": 118,
       "rankPrev10": 127,
       "delta10y": 11,
-      "delta1960": -29,
       "delta2000": 2,
       "values": [
         101.833417024987,
@@ -17758,7 +17756,9 @@
         119,
         121,
         116
-      ]
+      ],
+      "rankFirstYear": 87,
+      "deltaFirstYear": -29
     },
     {
       "iso3": "VNM",
@@ -17768,11 +17768,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 5065.99091899299,
       "latestRank": 117,
-      "rank1960": null,
       "rank2000": 156,
       "rankPrev10": 133,
       "delta10y": 16,
-      "delta1960": null,
       "delta2000": 39,
       "values": [
         null,
@@ -17909,7 +17907,9 @@
         118,
         118,
         117
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "IDN",
@@ -17919,11 +17919,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 5059.62596411213,
       "latestRank": 118,
-      "rank1960": null,
       "rank2000": 128,
       "rankPrev10": 122,
       "delta10y": 4,
-      "delta1960": null,
       "delta2000": 10,
       "values": [
         null,
@@ -18060,7 +18058,9 @@
         115,
         117,
         118
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "LKA",
@@ -18070,11 +18070,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 5002.07904353724,
       "latestRank": 119,
-      "rank1960": 75,
       "rank2000": 124,
       "rankPrev10": 109,
       "delta10y": -10,
-      "delta1960": -44,
       "delta2000": 5,
       "values": [
         145.928701305768,
@@ -18211,7 +18209,9 @@
         124,
         119,
         119
-      ]
+      ],
+      "rankFirstYear": 75,
+      "deltaFirstYear": -44
     },
     {
       "iso3": "NAM",
@@ -18221,11 +18221,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 4875.92558158247,
       "latestRank": 120,
-      "rank1960": null,
       "rank2000": 81,
       "rankPrev10": 99,
       "delta10y": -21,
-      "delta1960": null,
       "delta2000": -39,
       "values": [
         null,
@@ -18362,7 +18360,9 @@
         120,
         120,
         120
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "MAR",
@@ -18372,11 +18372,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 4672.46826171875,
       "latestRank": 121,
-      "rank1960": 68,
       "rank2000": 102,
       "rankPrev10": 126,
       "delta10y": 5,
-      "delta1960": -53,
       "delta2000": -19,
       "values": [
         174.784133911133,
@@ -18513,7 +18511,9 @@
         125,
         126,
         121
-      ]
+      ],
+      "rankFirstYear": 68,
+      "deltaFirstYear": -53
     },
     {
       "iso3": "TUN",
@@ -18523,11 +18523,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 4656.63818386852,
       "latestRank": 122,
-      "rank1960": null,
       "rank2000": 80,
       "rankPrev10": 110,
       "delta10y": -12,
-      "delta1960": null,
       "delta2000": -42,
       "values": [
         null,
@@ -18664,7 +18662,9 @@
         121,
         125,
         122
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "BTN",
@@ -18674,11 +18674,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 4492.78400306618,
       "latestRank": 123,
-      "rank1960": null,
       "rank2000": 127,
       "rankPrev10": 128,
       "delta10y": 5,
-      "delta1960": null,
       "delta2000": 4,
       "values": [
         null,
@@ -18815,7 +18813,9 @@
         123,
         124,
         123
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "FSM",
@@ -18825,11 +18825,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 4414.00737137479,
       "latestRank": 124,
-      "rank1960": null,
       "rank2000": 82,
       "rankPrev10": 130,
       "delta10y": 6,
-      "delta1960": null,
       "delta2000": -42,
       "values": [
         null,
@@ -18966,7 +18964,9 @@
         122,
         122,
         124
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "PHL",
@@ -18976,11 +18976,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 4170.72347271451,
       "latestRank": 125,
-      "rank1960": 50,
       "rank2000": 115,
       "rankPrev10": 129,
       "delta10y": 4,
-      "delta1960": -75,
       "delta2000": -10,
       "values": [
         269.465146474794,
@@ -19117,7 +19115,9 @@
         126,
         127,
         125
-      ]
+      ],
+      "rankFirstYear": 50,
+      "deltaFirstYear": -75
     },
     {
       "iso3": "SWZ",
@@ -19127,11 +19127,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 4108.25221093363,
       "latestRank": 126,
-      "rank1960": 88,
       "rank2000": 97,
       "rankPrev10": 118,
       "delta10y": -8,
-      "delta1960": -38,
       "delta2000": -29,
       "values": [
         101.572799813694,
@@ -19268,7 +19266,9 @@
         127,
         129,
         126
-      ]
+      ],
+      "rankFirstYear": 88,
+      "deltaFirstYear": -38
     },
     {
       "iso3": "STP",
@@ -19278,11 +19278,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 4084.40062145233,
       "latestRank": 127,
-      "rank1960": null,
       "rank2000": 146,
       "rankPrev10": 155,
       "delta10y": 28,
-      "delta1960": null,
       "delta2000": 19,
       "values": [
         null,
@@ -19419,7 +19417,9 @@
         135,
         131,
         127
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "VUT",
@@ -19429,11 +19429,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 4038.73520713411,
       "latestRank": 128,
-      "rank1960": null,
       "rank2000": 105,
       "rankPrev10": 124,
       "delta10y": -4,
-      "delta1960": null,
       "delta2000": -23,
       "values": [
         null,
@@ -19570,7 +19568,9 @@
         128,
         128,
         128
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "UZB",
@@ -19580,11 +19580,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3968.2720079072,
       "latestRank": 129,
-      "rank1960": null,
       "rank2000": 143,
       "rankPrev10": 125,
       "delta10y": -4,
-      "delta1960": null,
       "delta2000": 14,
       "values": [
         null,
@@ -19721,7 +19719,9 @@
         134,
         134,
         129
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "IRN",
@@ -19731,11 +19731,9 @@
       "incomeLevel": "Upper middle income",
       "latestValue": 3924.38017821898,
       "latestRank": 130,
-      "rank1960": 66,
       "rank2000": 95,
       "rankPrev10": 98,
       "delta10y": -32,
-      "delta1960": -64,
       "delta2000": -35,
       "values": [
         195.57752721271,
@@ -19872,7 +19870,9 @@
         113,
         114,
         130
-      ]
+      ],
+      "rankFirstYear": 66,
+      "deltaFirstYear": -64
     },
     {
       "iso3": "DJI",
@@ -19882,11 +19882,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3905.604954681,
       "latestRank": 131,
-      "rank1960": null,
       "rank2000": 130,
       "rankPrev10": 136,
       "delta10y": 5,
-      "delta1960": null,
       "delta2000": -1,
       "values": [
         null,
@@ -20023,7 +20021,9 @@
         132,
         130,
         131
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "HND",
@@ -20033,11 +20033,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3598.21450440452,
       "latestRank": 132,
-      "rank1960": 60,
       "rank2000": 114,
       "rankPrev10": 137,
       "delta10y": 5,
-      "delta1960": -72,
       "delta2000": -18,
       "values": [
         230.667390861566,
@@ -20174,7 +20172,9 @@
         133,
         132,
         132
-      ]
+      ],
+      "rankFirstYear": 60,
+      "deltaFirstYear": -72
     },
     {
       "iso3": "VEN",
@@ -20184,11 +20184,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3494.8138870244,
       "latestRank": 133,
-      "rank1960": 19,
       "rank2000": 56,
       "rankPrev10": 106,
       "delta10y": -27,
-      "delta1960": -114,
       "delta2000": -77,
       "values": [
         939.197766577539,
@@ -20325,7 +20323,9 @@
         129,
         123,
         133
-      ]
+      ],
+      "rankFirstYear": 19,
+      "deltaFirstYear": -114
     },
     {
       "iso3": "GHA",
@@ -20335,11 +20335,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3257.1588903576,
       "latestRank": 134,
-      "rank1960": 67,
       "rank2000": 172,
       "rankPrev10": 143,
       "delta10y": 9,
-      "delta1960": -67,
       "delta2000": 38,
       "values": [
         174.858856531804,
@@ -20476,7 +20474,9 @@
         144,
         147,
         134
-      ]
+      ],
+      "rankFirstYear": 67,
+      "deltaFirstYear": -67
     },
     {
       "iso3": "NIC",
@@ -20486,11 +20486,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3173.33724815085,
       "latestRank": 135,
-      "rank1960": 79,
       "rank2000": 117,
       "rankPrev10": 140,
       "delta10y": 5,
-      "delta1960": -56,
       "delta2000": -18,
       "values": [
         127.483812082529,
@@ -20627,7 +20625,9 @@
         138,
         137,
         135
-      ]
+      ],
+      "rankFirstYear": 79,
+      "deltaFirstYear": -56
     },
     {
       "iso3": "PSE",
@@ -20637,11 +20637,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3171.10844621579,
       "latestRank": 136,
-      "rank1960": null,
       "rank2000": 104,
       "rankPrev10": 123,
       "delta10y": -13,
-      "delta1960": null,
       "delta2000": -32,
       "values": [
         null,
@@ -20778,7 +20776,9 @@
         130,
         135,
         136
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "AGO",
@@ -20788,11 +20788,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3129.47662331063,
       "latestRank": 137,
-      "rank1960": null,
       "rank2000": 141,
       "rankPrev10": 115,
       "delta10y": -22,
-      "delta1960": null,
       "delta2000": 4,
       "values": [
         null,
@@ -20929,7 +20927,9 @@
         137,
         139,
         137
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "EGY",
@@ -20939,11 +20939,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3085.80712036204,
       "latestRank": 138,
-      "rank1960": 71,
       "rank2000": 108,
       "rankPrev10": 121,
       "delta10y": -17,
-      "delta1960": -67,
       "delta2000": -30,
       "values": [
         156.387397481519,
@@ -21080,7 +21078,9 @@
         131,
         133,
         138
-      ]
+      ],
+      "rankFirstYear": 71,
+      "deltaFirstYear": -67
     },
     {
       "iso3": "KGZ",
@@ -21090,11 +21090,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3080.96893823359,
       "latestRank": 139,
-      "rank1960": null,
       "rank2000": 170,
       "rankPrev10": 162,
       "delta10y": 23,
-      "delta1960": null,
       "delta2000": 31,
       "values": [
         null,
@@ -21231,7 +21229,9 @@
         148,
         144,
         139
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "CIV",
@@ -21241,11 +21241,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3050.10202257321,
       "latestRank": 140,
-      "rank1960": 74,
       "rank2000": 122,
       "rankPrev10": 142,
       "delta10y": 2,
-      "delta1960": -66,
       "delta2000": -18,
       "values": [
         148.680788984181,
@@ -21382,7 +21380,9 @@
         139,
         138,
         140
-      ]
+      ],
+      "rankFirstYear": 74,
+      "deltaFirstYear": -66
     },
     {
       "iso3": "ZWE",
@@ -21392,11 +21392,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3021.43019873632,
       "latestRank": 141,
-      "rank1960": 47,
       "rank2000": 142,
       "rankPrev10": 151,
       "delta10y": 10,
-      "delta1960": -94,
       "delta2000": 1,
       "values": [
         276.560896360952,
@@ -21533,7 +21531,9 @@
         146,
         145,
         141
-      ]
+      ],
+      "rankFirstYear": 47,
+      "deltaFirstYear": -94
     },
     {
       "iso3": "PNG",
@@ -21543,11 +21543,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 3019.5309140573,
       "latestRank": 142,
-      "rank1960": 82,
       "rank2000": 136,
       "rankPrev10": 134,
       "delta10y": -8,
-      "delta1960": -60,
       "delta2000": -6,
       "values": [
         115.530490488928,
@@ -21684,7 +21682,9 @@
         136,
         136,
         142
-      ]
+      ],
+      "rankFirstYear": 82,
+      "deltaFirstYear": -60
     },
     {
       "iso3": "KHM",
@@ -21694,11 +21694,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 2872.42926639909,
       "latestRank": 143,
-      "rank1960": null,
       "rank2000": 168,
       "rankPrev10": 147,
       "delta10y": 4,
-      "delta1960": null,
       "delta2000": 25,
       "values": [
         null,
@@ -21835,7 +21833,9 @@
         143,
         140,
         143
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "IND",
@@ -21845,11 +21845,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 2702.47987141553,
       "latestRank": 144,
-      "rank1960": 93,
       "rank2000": 152,
       "rankPrev10": 145,
       "delta10y": 1,
-      "delta1960": -51,
       "delta2000": 8,
       "values": [
         84.9328084793106,
@@ -21986,7 +21984,9 @@
         142,
         142,
         144
-      ]
+      ],
+      "rankFirstYear": 93,
+      "deltaFirstYear": -51
     },
     {
       "iso3": "HTI",
@@ -21996,11 +21996,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 2694.18969101404,
       "latestRank": 145,
-      "rank1960": 99,
       "rank2000": 126,
       "rankPrev10": 150,
       "delta10y": 5,
-      "delta1960": -46,
       "delta2000": -19,
       "values": [
         70.8024454423715,
@@ -22137,7 +22135,9 @@
         156,
         151,
         145
-      ]
+      ],
+      "rankFirstYear": 99,
+      "deltaFirstYear": -46
     },
     {
       "iso3": "BGD",
@@ -22147,11 +22147,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 2597.34352335275,
       "latestRank": 146,
-      "rank1960": 95,
       "rank2000": 158,
       "rankPrev10": 158,
       "delta10y": 12,
-      "delta1960": -51,
       "delta2000": 12,
       "values": [
         82.4812774116354,
@@ -22288,7 +22286,9 @@
         140,
         141,
         146
-      ]
+      ],
+      "rankFirstYear": 95,
+      "deltaFirstYear": -51
     },
     {
       "iso3": "KIR",
@@ -22298,11 +22298,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 2558.66636011102,
       "latestRank": 147,
-      "rank1960": null,
       "rank2000": 125,
       "rankPrev10": 144,
       "delta10y": -3,
-      "delta1960": null,
       "delta2000": -22,
       "values": [
         null,
@@ -22439,7 +22437,9 @@
         145,
         143,
         147
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "COG",
@@ -22449,11 +22449,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 2514.73393584747,
       "latestRank": 148,
-      "rank1960": 80,
       "rank2000": 116,
       "rankPrev10": 135,
       "delta10y": -13,
-      "delta1960": -68,
       "delta2000": -32,
       "values": [
         124.659670363931,
@@ -22590,7 +22588,9 @@
         141,
         146,
         148
-      ]
+      ],
+      "rankFirstYear": 80,
+      "deltaFirstYear": -68
     },
     {
       "iso3": "KEN",
@@ -22600,11 +22600,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 2362.86091198611,
       "latestRank": 149,
-      "rank1960": 83,
       "rank2000": 155,
       "rankPrev10": 148,
       "delta10y": -1,
-      "delta1960": -66,
       "delta2000": 6,
       "values": [
         102.824417465582,
@@ -22741,7 +22739,9 @@
         151,
         148,
         149
-      ]
+      ],
+      "rankFirstYear": 83,
+      "deltaFirstYear": -66
     },
     {
       "iso3": "LAO",
@@ -22751,11 +22751,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 2324.76353098791,
       "latestRank": 150,
-      "rank1960": null,
       "rank2000": 164,
       "rankPrev10": 138,
       "delta10y": -12,
-      "delta1960": null,
       "delta2000": 14,
       "values": [
         null,
@@ -22892,7 +22890,9 @@
         150,
         149,
         150
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "MRT",
@@ -22902,11 +22902,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 2197.51046251309,
       "latestRank": 151,
-      "rank1960": null,
       "rank2000": 132,
       "rankPrev10": 146,
       "delta10y": -5,
-      "delta1960": null,
       "delta2000": -19,
       "values": [
         null,
@@ -23043,7 +23041,9 @@
         149,
         150,
         151
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "SLB",
@@ -23053,11 +23053,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 2086.18955928928,
       "latestRank": 152,
-      "rank1960": null,
       "rank2000": 121,
       "rankPrev10": 141,
       "delta10y": -11,
-      "delta1960": null,
       "delta2000": -31,
       "values": [
         null,
@@ -23194,7 +23192,9 @@
         152,
         152,
         152
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "COM",
@@ -23204,11 +23204,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 2055.75921566281,
       "latestRank": 153,
-      "rank1960": null,
       "rank2000": 138,
       "rankPrev10": 153,
       "delta10y": 0,
-      "delta1960": null,
       "delta2000": -15,
       "values": [
         null,
@@ -23345,7 +23343,9 @@
         153,
         153,
         153
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "CMR",
@@ -23355,11 +23355,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1972.3815800786,
       "latestRank": 154,
-      "rank1960": 81,
       "rank2000": 131,
       "rankPrev10": 149,
       "delta10y": -5,
-      "delta1960": -73,
       "delta2000": -23,
       "values": [
         119.05394115577,
@@ -23496,7 +23494,9 @@
         154,
         154,
         154
-      ]
+      ],
+      "rankFirstYear": 81,
+      "deltaFirstYear": -73
     },
     {
       "iso3": "SEN",
@@ -23506,11 +23506,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1954.71174194867,
       "latestRank": 155,
-      "rank1960": 43,
       "rank2000": 139,
       "rankPrev10": 159,
       "delta10y": 4,
-      "delta1960": -112,
       "delta2000": -16,
       "values": [
         300.425115236279,
@@ -23647,7 +23645,9 @@
         155,
         155,
         155
-      ]
+      ],
+      "rankFirstYear": 43,
+      "deltaFirstYear": -112
     },
     {
       "iso3": "GIN",
@@ -23657,11 +23657,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1877.2541220972,
       "latestRank": 156,
-      "rank1960": null,
       "rank2000": 147,
       "rankPrev10": 172,
       "delta10y": 16,
-      "delta1960": null,
       "delta2000": -9,
       "values": [
         null,
@@ -23798,7 +23796,9 @@
         157,
         156,
         156
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "BEN",
@@ -23808,11 +23808,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1658.27312662991,
       "latestRank": 157,
-      "rank1960": 91,
       "rank2000": 149,
       "rankPrev10": 163,
       "delta10y": 6,
-      "delta1960": -66,
       "delta2000": -8,
       "values": [
         89.8569246539715,
@@ -23949,7 +23947,9 @@
         159,
         157,
         157
-      ]
+      ],
+      "rankFirstYear": 91,
+      "deltaFirstYear": -66
     },
     {
       "iso3": "TJK",
@@ -23959,11 +23959,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1637.2542942547,
       "latestRank": 158,
-      "rank1960": null,
       "rank2000": 182,
       "rankPrev10": 166,
       "delta10y": 8,
-      "delta1960": null,
       "delta2000": 24,
       "values": [
         null,
@@ -24100,7 +24098,9 @@
         166,
         160,
         158
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "PAK",
@@ -24110,11 +24110,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1595.90912252837,
       "latestRank": 159,
-      "rank1960": 96,
       "rank2000": 135,
       "rankPrev10": 152,
       "delta10y": -7,
-      "delta1960": -63,
       "delta2000": -24,
       "values": [
         82.0241000071912,
@@ -24251,7 +24249,9 @@
         161,
         158,
         159
-      ]
+      ],
+      "rankFirstYear": 96,
+      "deltaFirstYear": -63
     },
     {
       "iso3": "NPL",
@@ -24261,11 +24261,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1535.87781246307,
       "latestRank": 160,
-      "rank1960": 105,
       "rank2000": 177,
       "rankPrev10": 168,
       "delta10y": 8,
-      "delta1960": -55,
       "delta2000": 17,
       "values": [
         50.2125233749587,
@@ -24402,7 +24400,9 @@
         160,
         159,
         160
-      ]
+      ],
+      "rankFirstYear": 105,
+      "deltaFirstYear": -55
     },
     {
       "iso3": "MMR",
@@ -24412,11 +24412,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1488.87527836542,
       "latestRank": 161,
-      "rank1960": 108,
       "rank2000": 178,
       "rankPrev10": 160,
       "delta10y": -1,
-      "delta1960": -53,
       "delta2000": 17,
       "values": [
         25.0847757223623,
@@ -24553,7 +24551,9 @@
         163,
         161,
         161
-      ]
+      ],
+      "rankFirstYear": 108,
+      "deltaFirstYear": -53
     },
     {
       "iso3": "TGO",
@@ -24563,11 +24563,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1383.89974929887,
       "latestRank": 162,
-      "rank1960": 86,
       "rank2000": 154,
       "rankPrev10": 171,
       "delta10y": 9,
-      "delta1960": -76,
       "delta2000": -8,
       "values": [
         102.238985564471,
@@ -24704,7 +24702,9 @@
         165,
         163,
         162
-      ]
+      ],
+      "rankFirstYear": 86,
+      "deltaFirstYear": -76
     },
     {
       "iso3": "TLS",
@@ -24714,11 +24714,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1340.9640193437,
       "latestRank": 163,
-      "rank1960": null,
       "rank2000": 148,
       "rankPrev10": 154,
       "delta10y": -9,
-      "delta1960": null,
       "delta2000": -15,
       "values": [
         null,
@@ -24855,7 +24853,9 @@
         158,
         162,
         163
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "TZA",
@@ -24865,11 +24865,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1318.81921386719,
       "latestRank": 164,
-      "rank1960": 49,
       "rank2000": 157,
       "rankPrev10": 167,
       "delta10y": 3,
-      "delta1960": -115,
       "delta2000": -7,
       "values": [
         275.296020507813,
@@ -25006,7 +25004,9 @@
         164,
         164,
         164
-      ]
+      ],
+      "rankFirstYear": 49,
+      "deltaFirstYear": -115
     },
     {
       "iso3": "ZMB",
@@ -25016,11 +25016,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1317.87771619597,
       "latestRank": 165,
-      "rank1960": 62,
       "rank2000": 162,
       "rankPrev10": 156,
       "delta10y": -9,
-      "delta1960": -103,
       "delta2000": -3,
       "values": [
         221.559848922849,
@@ -25157,7 +25155,9 @@
         162,
         165,
         165
-      ]
+      ],
+      "rankFirstYear": 62,
+      "deltaFirstYear": -103
     },
     {
       "iso3": "NGA",
@@ -25167,11 +25167,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1224.25410237743,
       "latestRank": 166,
-      "rank1960": 90,
       "rank2000": 144,
       "rankPrev10": 132,
       "delta10y": -34,
-      "delta1960": -76,
       "delta2000": -22,
       "values": [
         93.1370090424417,
@@ -25308,7 +25306,9 @@
         147,
         168,
         166
-      ]
+      ],
+      "rankFirstYear": 90,
+      "deltaFirstYear": -76
     },
     {
       "iso3": "UGA",
@@ -25318,11 +25318,9 @@
       "incomeLevel": "Low income",
       "latestValue": 1206.30450825002,
       "latestRank": 167,
-      "rank1960": 104,
       "rank2000": 171,
       "rankPrev10": 169,
       "delta10y": 2,
-      "delta1960": -63,
       "delta2000": 4,
       "values": [
         55.3784976132181,
@@ -25459,7 +25457,9 @@
         170,
         169,
         167
-      ]
+      ],
+      "rankFirstYear": 104,
+      "deltaFirstYear": -63
     },
     {
       "iso3": "MLI",
@@ -25469,11 +25469,9 @@
       "incomeLevel": "Low income",
       "latestValue": 1193.27601004701,
       "latestRank": 168,
-      "rank1960": null,
       "rank2000": 166,
       "rankPrev10": 170,
       "delta10y": 2,
-      "delta1960": null,
       "delta2000": -2,
       "values": [
         null,
@@ -25610,7 +25608,9 @@
         169,
         167,
         168
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "SDN",
@@ -25620,11 +25620,9 @@
       "incomeLevel": "Low income",
       "latestValue": 1164.53991699219,
       "latestRank": 169,
-      "rank1960": 89,
       "rank2000": 161,
       "rankPrev10": 157,
       "delta10y": -12,
-      "delta1960": -80,
       "delta2000": -8,
       "values": [
         99.7131195068359,
@@ -25761,7 +25759,9 @@
         177,
         173,
         169
-      ]
+      ],
+      "rankFirstYear": 89,
+      "deltaFirstYear": -80
     },
     {
       "iso3": "BFA",
@@ -25771,11 +25771,9 @@
       "incomeLevel": "Low income",
       "latestValue": 1147.57131635601,
       "latestRank": 170,
-      "rank1960": 100,
       "rank2000": 174,
       "rankPrev10": 176,
       "delta10y": 6,
-      "delta1960": -70,
       "delta2000": 4,
       "values": [
         69.1502456087615,
@@ -25912,7 +25910,9 @@
         175,
         174,
         170
-      ]
+      ],
+      "rankFirstYear": 100,
+      "deltaFirstYear": -70
     },
     {
       "iso3": "GNB",
@@ -25922,11 +25922,9 @@
       "incomeLevel": "Low income",
       "latestValue": 1123.76679992349,
       "latestRank": 171,
-      "rank1960": null,
       "rank2000": 165,
       "rankPrev10": 175,
       "delta10y": 4,
-      "delta1960": null,
       "delta2000": -6,
       "values": [
         null,
@@ -26063,7 +26061,9 @@
         171,
         172,
         171
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "RWA",
@@ -26073,11 +26073,9 @@
       "incomeLevel": "Low income",
       "latestValue": 1123.73874633225,
       "latestRank": 172,
-      "rank1960": 107,
       "rank2000": 173,
       "rankPrev10": 173,
       "delta10y": 1,
-      "delta1960": -65,
       "delta2000": 1,
       "values": [
         39.3740728074578,
@@ -26214,7 +26212,9 @@
         167,
         170,
         172
-      ]
+      ],
+      "rankFirstYear": 107,
+      "deltaFirstYear": -65
     },
     {
       "iso3": "LSO",
@@ -26224,11 +26224,9 @@
       "incomeLevel": "Lower middle income",
       "latestValue": 1088.96276223185,
       "latestRank": 173,
-      "rank1960": 106,
       "rank2000": 151,
       "rankPrev10": 161,
       "delta10y": -12,
-      "delta1960": -67,
       "delta2000": -22,
       "values": [
         46.9517802688466,
@@ -26365,7 +26363,9 @@
         173,
         171,
         173
-      ]
+      ],
+      "rankFirstYear": 106,
+      "deltaFirstYear": -67
     },
     {
       "iso3": "TCD",
@@ -26375,11 +26375,9 @@
       "incomeLevel": "Low income",
       "latestValue": 1022.33559390754,
       "latestRank": 174,
-      "rank1960": 84,
       "rank2000": 180,
       "rankPrev10": 164,
       "delta10y": -10,
-      "delta1960": -90,
       "delta2000": 6,
       "values": [
         102.819470459603,
@@ -26516,7 +26514,9 @@
         172,
         175,
         174
-      ]
+      ],
+      "rankFirstYear": 84,
+      "deltaFirstYear": -90
     },
     {
       "iso3": "ETH",
@@ -26526,11 +26526,9 @@
       "incomeLevel": "Low income",
       "latestValue": 932.729352775179,
       "latestRank": 175,
-      "rank1960": 97,
       "rank2000": 184,
       "rankPrev10": 179,
       "delta10y": 4,
-      "delta1960": -78,
       "delta2000": 9,
       "values": [
         75.3396090705961,
@@ -26667,7 +26665,9 @@
         168,
         166,
         175
-      ]
+      ],
+      "rankFirstYear": 97,
+      "deltaFirstYear": -78
     },
     {
       "iso3": "GMB",
@@ -26677,11 +26677,9 @@
       "incomeLevel": "Low income",
       "latestValue": 919.060423427951,
       "latestRank": 176,
-      "rank1960": null,
       "rank2000": 145,
       "rankPrev10": 177,
       "delta10y": 1,
-      "delta1960": null,
       "delta2000": -31,
       "values": [
         null,
@@ -26818,7 +26816,9 @@
         174,
         176,
         176
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "LBR",
@@ -26828,11 +26828,9 @@
       "incomeLevel": "Low income",
       "latestValue": 915.328972645548,
       "latestRank": 177,
-      "rank1960": 69,
       "rank2000": 167,
       "rankPrev10": 174,
       "delta10y": -3,
-      "delta1960": -108,
       "delta2000": -10,
       "values": [
         167.171498224694,
@@ -26969,7 +26967,9 @@
         176,
         177,
         177
-      ]
+      ],
+      "rankFirstYear": 69,
+      "deltaFirstYear": -108
     },
     {
       "iso3": "SLE",
@@ -26979,11 +26979,9 @@
       "incomeLevel": "Low income",
       "latestValue": 846.296172499617,
       "latestRank": 178,
-      "rank1960": 76,
       "rank2000": 181,
       "rankPrev10": 165,
       "delta10y": -13,
-      "delta1960": -102,
       "delta2000": 3,
       "values": [
         141.957418300764,
@@ -27120,7 +27118,9 @@
         178,
         178,
         178
-      ]
+      ],
+      "rankFirstYear": 76,
+      "deltaFirstYear": -102
     },
     {
       "iso3": "COD",
@@ -27130,11 +27130,9 @@
       "incomeLevel": "Low income",
       "latestValue": 806.776000708534,
       "latestRank": 179,
-      "rank1960": 63,
       "rank2000": 160,
       "rankPrev10": 181,
       "delta10y": 2,
-      "delta1960": -116,
       "delta2000": -19,
       "values": [
         220.074550221277,
@@ -27271,7 +27269,9 @@
         179,
         180,
         179
-      ]
+      ],
+      "rankFirstYear": 63,
+      "deltaFirstYear": -116
     },
     {
       "iso3": "NER",
@@ -27281,11 +27281,9 @@
       "incomeLevel": "Low income",
       "latestValue": 775.353622143879,
       "latestRank": 180,
-      "rank1960": 78,
       "rank2000": 179,
       "rankPrev10": 182,
       "delta10y": 2,
-      "delta1960": -102,
       "delta2000": -1,
       "values": [
         128.251201351162,
@@ -27422,7 +27420,9 @@
         180,
         179,
         180
-      ]
+      ],
+      "rankFirstYear": 78,
+      "deltaFirstYear": -102
     },
     {
       "iso3": "MWI",
@@ -27432,11 +27432,9 @@
       "incomeLevel": "Low income",
       "latestValue": 671.506847203876,
       "latestRank": 181,
-      "rank1960": null,
       "rank2000": 176,
       "rankPrev10": 180,
       "delta10y": -1,
-      "delta1960": null,
       "delta2000": -5,
       "values": [
         null,
@@ -27573,7 +27571,9 @@
         181,
         184,
         181
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "SOM",
@@ -27583,11 +27583,9 @@
       "incomeLevel": "Low income",
       "latestValue": 661.173877723116,
       "latestRank": 182,
-      "rank1960": 102,
       "rank2000": 159,
       "rankPrev10": 183,
       "delta10y": 1,
-      "delta1960": -80,
       "delta2000": -23,
       "values": [
         62.7396279412993,
@@ -27724,7 +27722,9 @@
         183,
         182,
         182
-      ]
+      ],
+      "rankFirstYear": 102,
+      "deltaFirstYear": -80
     },
     {
       "iso3": "MOZ",
@@ -27734,11 +27734,9 @@
       "incomeLevel": "Low income",
       "latestValue": 626.914419215727,
       "latestRank": 183,
-      "rank1960": null,
       "rank2000": 163,
       "rankPrev10": 178,
       "delta10y": -5,
-      "delta1960": null,
       "delta2000": -20,
       "values": [
         null,
@@ -27875,7 +27873,9 @@
         182,
         181,
         183
-      ]
+      ],
+      "rankFirstYear": null,
+      "deltaFirstYear": null
     },
     {
       "iso3": "MDG",
@@ -27885,11 +27885,9 @@
       "incomeLevel": "Low income",
       "latestValue": 599.265294255357,
       "latestRank": 184,
-      "rank1960": 77,
       "rank2000": 169,
       "rankPrev10": 184,
       "delta10y": 0,
-      "delta1960": -107,
       "delta2000": -15,
       "values": [
         131.69201832961,
@@ -28026,7 +28024,9 @@
         184,
         183,
         184
-      ]
+      ],
+      "rankFirstYear": 77,
+      "deltaFirstYear": -107
     },
     {
       "iso3": "CAF",
@@ -28036,11 +28036,9 @@
       "incomeLevel": "Low income",
       "latestValue": 556.131398031455,
       "latestRank": 185,
-      "rank1960": 101,
       "rank2000": 175,
       "rankPrev10": 185,
       "delta10y": 0,
-      "delta1960": -84,
       "delta2000": -10,
       "values": [
         65.8829629770666,
@@ -28177,7 +28175,9 @@
         185,
         185,
         185
-      ]
+      ],
+      "rankFirstYear": 101,
+      "deltaFirstYear": -84
     },
     {
       "iso3": "BDI",
@@ -28187,11 +28187,9 @@
       "incomeLevel": "Low income",
       "latestValue": 233.823013385395,
       "latestRank": 186,
-      "rank1960": 98,
       "rank2000": 183,
       "rankPrev10": 186,
       "delta10y": 0,
-      "delta1960": -88,
       "delta2000": -3,
       "values": [
         70.9051000304602,
@@ -28328,7 +28326,9 @@
         186,
         186,
         186
-      ]
+      ],
+      "rankFirstYear": 98,
+      "deltaFirstYear": -88
     }
   ]
 }

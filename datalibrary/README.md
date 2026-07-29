@@ -7,31 +7,35 @@ Structured, source-attributed rankings that render as static Astro pages under `
 ```
 datalibrary/
   README.md
-  design-audit.md               ← how /data/ pages align with the wider site
+  design-audit.md               <- how /data/ pages align with the wider site
   scripts/
-    fetch-worldbank.mjs         ← pulls a World Bank indicator into a dataset
-    validate.mjs                ← sanity-checks a dataset before build
+    lib/
+      transform.mjs             <- shared rank/delta/metric computation
+    fetch-worldbank.mjs         <- pulls a World Bank indicator into a dataset
+    fetch-owid.mjs              <- pulls an Our World in Data indicator
+    validate.mjs                <- sanity-checks a dataset before build
   datasets/
+    _template.config.json       <- commented skeleton for new datasets
     <slug>/
-      config.json               ← editorial layout + token placeholders
-      data.json                 ← computed panel: countries, years, ranks, metrics
-      data.csv                  ← long-format CSV mirror of the panel
+      config.json               <- editorial layout + token placeholders
+      data.json                 <- computed panel: countries, years, ranks, metrics
+      data.csv                  <- long-format CSV mirror of the panel
 
 src/
   pages/
     data/
-      index.astro               ← auto-lists every dataset folder
-      [slug].astro              ← the dynamic dataset template
+      index.astro               <- auto-lists every dataset folder
+      [slug].astro              <- the dynamic dataset template
   components/
     datalibrary/
-      Sparkline.astro           ← per-country static SVG sparkline
-      SlopeChart.astro          ← 1960 → latest slope chart, broken axis
-      RankTable.astro           ← sortable / filterable ranking table
-      YearScrubber.astro        ← animated ranking hero, RAF-driven
+      Sparkline.astro           <- per-country static SVG sparkline
+      SlopeChart.astro          <- firstYear -> latest slope chart, broken axis
+      RankTable.astro           <- sortable / filterable ranking table
+      YearScrubber.astro        <- animated ranking hero, RAF-driven
 
 public/
   data/
-    <slug>.csv                  ← stable public URL for the CSV
+    <slug>.csv                  <- stable public URL for the CSV
 ```
 
 ## Add a dataset from a World Bank indicator
@@ -44,22 +48,12 @@ public/
    ```
    The script writes `datalibrary/datasets/<slug>/data.json`, `data.csv`, and copies the CSV to `public/data/<slug>.csv`. It strips aggregate rows (regions, income groups), computes per-year ranks across reporting economies, and computes the headline metrics block used by the template.
 
-2. **Write `config.json`.** Copy an existing one as a starting point. `config.json` must include a required top-level `category` field. Use `{{tokens}}` for any figure that should come from the data:
-   - `firstYear`, `latestYear`, `prevDecadeYear`, `yearSpan`
-   - `reportingEconomiesLatest`, `reportingEconomies1960`
-   - `leaderName`, `leaderValueFmt`, `rank2Name`, `rank2ValueFmt`, `rank3Name`, `rank3ValueFmt`
-   - `overlapCount`, `overlapList` (1960 top 10 ∩ latest top 10)
-   - `climberName`, `climberRank1960Ord`, `climberLatestRankOrd`
-   - `gainerName`, `gainerRank2000Ord`, `gainerLatestRankOrd`, `gainerValueFmt`, `gainerGain`
-   - `medianLatestFmt`, `medianFirstYearFmt`, `retrievedAtHuman`
-
-   Never hard-code a figure that could come from the data. If a claim can't be derived from the metrics block, add it to the fetcher first, then reference it via a token.
+2. **Write `config.json`.** Copy `_template.config.json` as a starting point. See the "Config fields" section below.
 
 3. **Validate.**
    ```bash
    node datalibrary/scripts/validate.mjs <slug>
    ```
-   Checks the panel shape, aggregate leakage, latest-year top-50 completeness, metric consistency, token coverage, absence of em dashes, and CSV parity.
 
 4. **Build.**
    ```bash
@@ -67,9 +61,51 @@ public/
    ```
    The page is emitted at `dist/data/<slug>/index.html`. `src/pages/data/index.astro` auto-picks it up.
 
-## Add a dataset from another source
+## Add a dataset from Our World in Data
 
-Skip step 1. Produce `data.json` in the same shape by hand or with a bespoke fetcher:
+1. **Find the grapher slug.** Go to `ourworldindata.org/grapher/<slug>` and note the URL slug.
+
+2. **Fetch the indicator.**
+   ```bash
+   node datalibrary/scripts/fetch-owid.mjs <grapher-slug> <dataset-slug> [options]
+   # e.g.
+   node datalibrary/scripts/fetch-owid.mjs life-expectancy life-expectancy-by-country --unit "years" --indicator-name "Life expectancy at birth"
+   ```
+   Options:
+   - `--unit <unit>` : unit label (default: inferred from column name)
+   - `--indicator-name <name>` : override the indicator display name
+   - `--indicator-code <code>` : override the indicator code (default: grapher slug)
+   - `--license <license>` : license string (default: CC-BY-4.0)
+
+   The output contract is identical to `fetch-worldbank.mjs`: `data.json`, `data.csv`, and `public/data/<slug>.csv`.
+
+3. **Write `config.json`.** Same as the World Bank flow.
+
+4. **Validate and build.** Same as above.
+
+## Add a dataset from a manual or proprietary CSV
+
+Skip step 1. Produce `data.json` in the same shape by hand or with a bespoke script. You can import the shared transform to do the heavy lifting:
+
+```javascript
+import { buildDataset } from './datalibrary/scripts/lib/transform.mjs';
+
+const { dataset, csv } = buildDataset({
+  observations: [
+    // One object per country-year row:
+    { iso3: 'GBR', iso2: 'gb', name: 'United Kingdom', region: 'Europe & Central Asia',
+      incomeLevel: 'High income', year: 2020, value: 42330.1 },
+    // ...
+  ],
+  indicator: { code: 'CUSTOM-001', name: 'Your Indicator', unit: 'units' },
+  source: { name: 'Your Source', url: 'https://example.com' },
+  license: 'CC-BY-4.0',
+});
+```
+
+The `buildDataset` function computes per-year dense ranks, deltas (vs first year, vs 2000, vs 10 years ago), the full headline metrics block (leader, top 3, top 14, overlap, climbers, gainers, median), and the long-format CSV. It returns `{ dataset, csv }` ready to write to disk.
+
+Required `data.json` shape (whether produced by a fetcher or by hand):
 
 ```jsonc
 {
@@ -88,26 +124,56 @@ Skip step 1. Produce `data.json` in the same shape by hand or with a bespoke fet
       "incomeLevel": "High income",
       "values": [ null, ..., 147252.18 ],
       "ranks":  [ null, ..., 1 ],
+      "rankFirstYear": 1,
+      "rank2000": 1,
+      "rankPrev10": 1,
       "delta10y": 0,
-      "delta1960": 0,
+      "deltaFirstYear": 0,
       "delta2000": 0
     }
   ],
   "metrics": {
     "firstYear": 1960, "latestYear": 2025, "prevDecadeYear": 2015,
-    "reportingEconomiesLatest": 186, "reportingEconomies1960": 108,
+    "reportingEconomiesLatest": 186, "reportingEntitiesFirstYear": 108,
     "leader": { "iso3": "LUX", "name": "Luxembourg", "value": 147252.18 },
     "top3":  [ ..., ..., ... ],
     "top14": [ ... ],
-    "top10Overlap1960toLatestNames": ["Luxembourg", "Switzerland", ...],
-    "largestClimberInTop10VsFirstYear": { "name": "Singapore", "firstRank": 35, "latestRank": 4 },
-    "largestGainSince2000InTop20":     { "name": "Macao SAR, China", "rank2000": 40, "latestRank": 9, "value": ..., "gain": 31 },
-    "medianLatest": 7882, "medianFirstYear": 255
+    "top10OverlapFirstYearToLatestNames": ["Luxembourg", "Switzerland", ...],
+    "top10OverlapFirstYearToLatest": 5,
+    "largestClimberInTop10VsFirstYear": { "name": "Singapore", "rankFirstYear": 35, "latestRank": 4 },
+    "largestGainSince2000InTop20":     { "name": "Macao SAR, China", "rank2000": 40, "latestRank": 9, "latestValue": ..., "gain": 31 },
+    "median": { "latest": 7882, "firstYear": 255 }
   }
 }
 ```
 
 Then write `config.json`, run `validate.mjs`, and build.
+
+## Config fields
+
+Copy `datalibrary/datasets/_template.config.json` to get started. Key fields:
+
+- **`slug`**: must match the folder name
+- **`category`** (required): one of `economy`, `health`, `society`, `environment`, `technology`, `property`
+- **`entityType`** (required): e.g. "economies", "countries", "territories". Used in JSON-LD spatialCoverage and `{{entityType}}` token.
+- **`schemaDescription`** (required): tokenized string for the JSON-LD Dataset description
+- **`itemListTemplate`** (required): per-country description template for JSON-LD ItemList. Supports `{{latestYear}}`, `{{value}}`, `{{unit}}`, `{{rank}}` which are substituted per country at render time.
+- **`definition`**: one or two sentences defining the indicator (renders as standfirst)
+- **`card_summary`**: scope statement for the hub card (hard cap 160 chars)
+- **`methodology`**: array of paragraphs. Use `{{sourceLink}}` to auto-link the source name.
+- **`sourceUrl`** / **`sourceName`**: short source label for the meta line
+
+Use `{{tokens}}` for any figure that should come from the data:
+- `firstYear`, `latestYear`, `prevDecadeYear`, `yearSpan`
+- `reportingEconomiesLatest`, `reportingEntitiesFirstYear`
+- `entityType`, `unit`, `sourceNameFull`, `sourceLink`
+- `leaderName`, `leaderValueFmt`, `rank2Name`, `rank2ValueFmt`, `rank3Name`, `rank3ValueFmt`
+- `overlapCount`, `overlapList` (first-year top 10 intersection latest top 10)
+- `climberName`, `climberRankFirstYear`, `climberRankFirstYearOrd`, `climberLatestRank`, `climberLatestRankOrd`
+- `gainerName`, `gainerRank2000Ord`, `gainerLatestRankOrd`, `gainerValueFmt`, `gainerGain`
+- `medianLatestFmt`, `medianFirstYearFmt`, `retrievedAtHuman`
+
+Never hard-code a figure that could come from the data. If a claim can't be derived from the metrics block, add it to the fetcher first, then reference it via a token.
 
 ## Categories
 
@@ -135,9 +201,9 @@ Each category renders as a static listing page at `/data/<category>/` with a one
 
 - No em dashes anywhere. Use colons or "by". The pre-commit hook and `validate.mjs` both check.
 - **No dataset jargon in visible copy.** Never `panel`, `the panel`, `reporting panel`, `cohort`, `entities`, `observations`. Rewrite in plain language:
-  - "Singapore entered the panel in 1960" → "In 1960, Singapore ranked 35th"
-  - "Positions computed within the full reporting panel for each year" → "Rankings computed among all countries with data for each year"
-  - "reporting economies" → "countries with reported data" (or just "countries")
+  - "Singapore entered the panel in 1960" -> "In 1960, Singapore ranked 35th"
+  - "Positions computed within the full reporting panel for each year" -> "Rankings computed among all countries with data for each year"
+  - "reporting economies" -> "countries with reported data" (or just "countries")
   This applies to config prose (standfirst, takeaways, sections, methodology, FAQ) and to any chart captions or legend text added to the components.
 - Findings-led H2s. State the data claim, not the topic.
 - Institutional voice. No editorialising, no hedging verbs.
@@ -158,8 +224,7 @@ Each category renders as a static listing page at `/data/<category>/` with a one
 
 ## Deviations from the reference prototype
 
-- Numbers in copy are computed from live World Bank data, not the prototype's placeholders (Luxembourg $147,252 in 2025 vs $135K in the prototype; 186 reporting economies vs 46; latest year 2025 vs 2024).
-- The "largest 10y faller" claim is omitted because the real panel produces only a marginal −1 rank movement inside the top 40 — a weak claim.
+- Numbers in copy are computed from live source data, not placeholders.
 - Colour tokens are drawn from the site's tailwind config (`brand` navy `#1E3A8A`), not the prototype's standalone palette.
 - Body text on the report page uses the site's 15px data-report scale, not the prototype's larger body scale, to match the wider Data Report register.
 - Anchor navigation is a sticky rail matching the site's existing resource pages, not the prototype's inline tab bar.

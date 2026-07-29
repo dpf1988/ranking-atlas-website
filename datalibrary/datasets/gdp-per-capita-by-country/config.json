@@ -1,6 +1,7 @@
 {
   "slug": "gdp-per-capita-by-country",
   "category": "economy",
+  "entityType": "economies",
   "title": "GDP Per Capita by Country, {{firstYear}}–{{latestYear}}",
   "shortTitle": "GDP Per Capita by Country",
   "eyebrow": "Data Report",
@@ -11,6 +12,8 @@
   ],
   "metaTitle": "GDP Per Capita by Country {{latestYear}}: Full Rankings & {{yearSpan}}-Year Trends",
   "metaDescription": "{{leaderName}} leads {{latestYear}} GDP per capita at ${{leaderValueFmt}}. Full country rankings from World Bank data, {{firstYear}}–{{latestYear}} rank movement, sortable table, and downloadable CSV.",
+  "schemaDescription": "Annual GDP per capita ({{unit}}) for {{reportingEconomiesLatest}} {{entityType}}, {{firstYear}}–{{latestYear}}, compiled from {{sourceNameFull}}, with computed annual rankings.",
+  "itemListTemplate": "GDP per capita {{latestYear}}: ${{value}} ({{unit}}), world rank {{rank}}",
   "standfirst": "All {{reportingEconomiesLatest}} countries with World Bank data, ranked {{firstYear}}–{{latestYear}}. {{leaderName}} leads {{latestYear}} at ${{leaderValueFmt}} in current US dollars.",
   "card_summary": "Annual economic output per person for every country, in the US-dollar values of each year. Rankings recalculated for each year since 1960.",
   "definition": "GDP per capita is a country's total economic output in a year divided by its population. It is the standard measure for comparing average income levels between countries.",
@@ -23,46 +26,46 @@
   },
   "keyTakeaways": [
     "<b>{{leaderName}}</b> leads {{latestYear}} at <b>${{leaderValueFmt}}</b>, the highest GDP per capita of any country, followed by <b>{{rank2Name}}</b> at <b>${{rank2ValueFmt}}</b> and <b>{{rank3Name}}</b> at <b>${{rank3ValueFmt}}</b>.",
-    "<b>{{overlapCount}} of 1960's top ten</b> countries remain in the top ten in {{latestYear}}: {{overlapList}}.",
-    "Among {{latestYear}}'s top ten, <b>{{climberName}}</b> recorded the largest climb, rising from <b>{{climberRank1960Ord}}</b> in 1960 to <b>{{climberLatestRankOrd}}</b> in {{latestYear}}.",
+    "<b>{{overlapCount}} of {{firstYear}}'s top ten</b> countries remain in the top ten in {{latestYear}}: {{overlapList}}.",
+    "Among {{latestYear}}'s top ten, <b>{{climberName}}</b> recorded the largest climb, rising from <b>{{climberRankFirstYearOrd}}</b> in {{firstYear}} to <b>{{climberLatestRankOrd}}</b> in {{latestYear}}.",
     "Inside the current top 20, <b>{{gainerName}}</b> gained the most since 2000, rising from <b>{{gainerRank2000Ord}}</b> to <b>{{gainerLatestRankOrd}}</b> at <b>${{gainerValueFmt}}</b>.",
-    "The global median GDP per capita rose from <b>${{medianFirstYearFmt}}</b> in 1960 to <b>${{medianLatestFmt}}</b> in {{latestYear}} in current US dollars; part of that increase reflects US-dollar inflation rather than real growth.",
-    "<b>{{reportingEconomies1960}}</b> countries reported values in 1960, against <b>{{reportingEconomiesLatest}}</b> in {{latestYear}}."
+    "The global median GDP per capita rose from <b>${{medianFirstYearFmt}}</b> in {{firstYear}} to <b>${{medianLatestFmt}}</b> in {{latestYear}} in current US dollars; part of that increase reflects US-dollar inflation rather than real growth.",
+    "<b>{{reportingEntitiesFirstYear}}</b> countries reported values in {{firstYear}}, against <b>{{reportingEconomiesLatest}}</b> in {{latestYear}}."
   ],
   "sections": [
     {
       "id": "movement",
-      "heading": "{{overlapCount}} of 1960's top ten countries still rank in the top ten",
-      "note": "Rank position, 1960 → {{latestYear}} · top 12 countries of {{latestYear}} · 1960 axis breaks below rank 20",
+      "heading": "{{overlapCount}} of {{firstYear}}'s top ten countries still rank in the top ten",
+      "note": "Rank position, {{firstYear}} → {{latestYear}} · top 12 countries of {{latestYear}} · {{firstYear}} axis breaks below rank 20",
       "kind": "slope",
       "prose": [
-        "The top of the GDP per capita table is unusually stable. Five of 1960's top ten countries still rank in {{latestYear}}'s top ten: {{overlapList}}. Where movement occurs, it concentrates in a small number of countries. Late industrialisers that started low have climbed, and a handful of countries that began reporting after 1960 have entered near the top."
+        "The top of the GDP per capita table is unusually stable. Five of {{firstYear}}'s top ten countries still rank in {{latestYear}}'s top ten: {{overlapList}}. Where movement occurs, it concentrates in a small number of countries. Late industrialisers that started low have climbed, and a handful of countries that began reporting after {{firstYear}} have entered near the top."
       ]
     },
     {
       "id": "singapore",
-      "heading": "{{climberName}}'s rise from {{climberRank1960Ord}} to {{climberLatestRankOrd}} is the largest climb into the top ten",
+      "heading": "{{climberName}}'s rise from {{climberRankFirstYearOrd}} to {{climberLatestRankOrd}} is the largest climb into the top ten",
       "kind": "prose",
       "prose": [
-        "In 1960, {{climberName}} ranked {{climberRank1960Ord}}. By {{latestYear}} it ranks {{climberLatestRankOrd}} in current US dollars, the largest climb by any country from 1960 into {{latestYear}}'s top ten.",
+        "In {{firstYear}}, {{climberName}} ranked {{climberRankFirstYearOrd}}. By {{latestYear}} it ranks {{climberLatestRankOrd}} in current US dollars, the largest climb by any country from {{firstYear}} into {{latestYear}}'s top ten.",
         "Inside the current top 20, the largest gain since 2000 belongs to {{gainerName}}, which moved from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at ${{gainerValueFmt}}."
       ]
     },
     {
       "id": "rankings",
       "heading": "Full rankings: GDP per capita by country, {{latestYear}}",
-      "note": "Trajectory shows each country's annual series indexed to its own 1960–{{latestYear}} range",
+      "note": "Trajectory shows each country's annual series indexed to its own {{firstYear}}–{{latestYear}} range",
       "kind": "table"
     }
   ],
   "faq": [
     {
-      "q": "Which country has climbed the rankings most since 1960?",
-      "a": "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRank1960Ord}} in 1960 to {{climberLatestRankOrd}} in {{latestYear}}. Across every country with reported data, several outside the top ten show larger absolute movements; the downloadable CSV includes the complete rank history."
+      "q": "Which country has climbed the rankings most since {{firstYear}}?",
+      "a": "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}. Across every country with reported data, several outside the top ten show larger absolute movements; the downloadable CSV includes the complete rank history."
     }
   ],
   "methodology": [
-    "Figures are GDP per capita in current US dollars as published in the World Bank World Development Indicators (indicator NY.GDP.PCAP.CD), retrieved {{retrievedAtHuman}}. Rankings are computed among all countries with reported data for each year; countries with no reported value in a given year are excluded from that year's ranking. Because values are nominal, changes over time reflect both real growth and US-dollar inflation; within-year rankings are unaffected. Trajectory sparklines index each country's series to its own 1960–{{latestYear}} range and are not comparable in level across rows.",
+    "Figures are GDP per capita in current US dollars as published in the {{sourceLink}} (indicator NY.GDP.PCAP.CD), retrieved {{retrievedAtHuman}}. Rankings are computed among all countries with reported data for each year; countries with no reported value in a given year are excluded from that year's ranking. Because values are nominal, changes over time reflect both real growth and US-dollar inflation; within-year rankings are unaffected. Trajectory sparklines index each country's series to its own {{firstYear}}–{{latestYear}} range and are not comparable in level across rows.",
     "This dataset is published by Ranking Atlas and may be cited or reproduced with attribution and a link to this page."
   ],
   "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
@@ -71,7 +74,7 @@
   "related": [
     {
       "eyebrow": "Health · World Bank",
-      "title": "Life Expectancy by Country, 1960–{{latestYear}}",
+      "title": "Life Expectancy by Country, {{firstYear}}–{{latestYear}}",
       "href": "/data"
     },
     {

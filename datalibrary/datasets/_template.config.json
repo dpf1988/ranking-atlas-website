@@ -1,0 +1,93 @@
+{
+  "_comment": "Template config.json for a new Data Library dataset. Copy this file into your dataset folder, rename to config.json, and fill in every field. Delete this _comment field before publishing.",
+
+  "slug": "your-dataset-slug",
+  "category": "economy | health | society | environment | technology | property",
+  "entityType": "countries | economies | territories",
+
+  "title": "Indicator Name by Country, {{firstYear}}–{{latestYear}}",
+  "shortTitle": "Indicator Name by Country",
+  "eyebrow": "Data Report",
+
+  "chips": [
+    { "label": "Category", "href": "/data" },
+    { "label": "Time series", "href": "/data" },
+    { "label": "Source Name", "href": "/data" }
+  ],
+
+  "metaTitle": "Indicator Name by Country {{latestYear}}: Full Rankings & {{yearSpan}}-Year Trends",
+  "metaDescription": "{{leaderName}} leads {{latestYear}} indicator at {{leaderValueFmt}}. Full country rankings, {{firstYear}}–{{latestYear}}, sortable table, and downloadable CSV.",
+
+  "schemaDescription": "Indicator description ({{unit}}) for {{reportingEconomiesLatest}} {{entityType}}, {{firstYear}}–{{latestYear}}, compiled from {{sourceNameFull}}, with computed annual rankings.",
+  "itemListTemplate": "Indicator Name {{latestYear}}: {{value}} ({{unit}}), world rank {{rank}}",
+
+  "standfirst": "All {{reportingEconomiesLatest}} countries with data, ranked {{firstYear}}–{{latestYear}}. {{leaderName}} leads {{latestYear}} at {{leaderValueFmt}}.",
+  "card_summary": "One or two sentences describing what is measured and counted, plus one scope note or caveat. Hard cap 160 characters.",
+  "definition": "One or two plain-language sentences stating precisely what the indicator measures. No jargon, no findings, no leader claims.",
+
+  "byline": {
+    "authorName": "Daniel Grainger",
+    "authorRole": "Founder",
+    "authorHref": "/about",
+    "publishedISO": "2026-01-01",
+    "publishedHuman": "1 January 2026"
+  },
+
+  "keyTakeaways": [
+    "<b>{{leaderName}}</b> leads {{latestYear}} at <b>{{leaderValueFmt}}</b>, followed by <b>{{rank2Name}}</b> at <b>{{rank2ValueFmt}}</b> and <b>{{rank3Name}}</b> at <b>{{rank3ValueFmt}}</b>.",
+    "<b>{{overlapCount}} of {{firstYear}}'s top ten</b> remain in the top ten in {{latestYear}}: {{overlapList}}.",
+    "Among {{latestYear}}'s top ten, <b>{{climberName}}</b> recorded the largest climb, from <b>{{climberRankFirstYearOrd}}</b> in {{firstYear}} to <b>{{climberLatestRankOrd}}</b>.",
+    "<b>{{reportingEntitiesFirstYear}}</b> countries reported values in {{firstYear}}, against <b>{{reportingEconomiesLatest}}</b> in {{latestYear}}."
+  ],
+
+  "sections": [
+    {
+      "id": "movement",
+      "heading": "Findings-led H2 stating the data claim",
+      "note": "Chart annotation or subtitle",
+      "kind": "slope",
+      "prose": [
+        "One or two paragraphs interpreting the slope chart. Use {{tokens}} for any data figure."
+      ]
+    },
+    {
+      "id": "detail",
+      "heading": "Another findings-led H2",
+      "kind": "prose",
+      "prose": [
+        "Body prose for this section."
+      ]
+    },
+    {
+      "id": "rankings",
+      "heading": "Full rankings: indicator by country, {{latestYear}}",
+      "note": "Trajectory shows each country's annual series indexed to its own {{firstYear}}–{{latestYear}} range",
+      "kind": "table"
+    }
+  ],
+
+  "faq": [
+    {
+      "q": "A question visitors would ask about this ranking?",
+      "a": "A factual answer using {{tokens}} for data figures."
+    }
+  ],
+
+  "methodology": [
+    "Figures are [description] as published in the {{sourceLink}}, retrieved {{retrievedAtHuman}}. Rankings are computed among all countries with reported data for each year; countries with no reported value in a given year are excluded from that year's ranking.",
+    "This dataset is published by Ranking Atlas and may be cited or reproduced with attribution and a link to this page."
+  ],
+
+  "sourceUrl": "https://example.com/source",
+  "sourceName": "Source Short Name",
+
+  "keywords": ["keyword1", "keyword2", "keyword3"],
+
+  "related": [
+    {
+      "eyebrow": "Category · Source",
+      "title": "Related Dataset Title",
+      "href": "/data/related-slug"
+    }
+  ]
+}

@@ -105,9 +105,48 @@ if (Array.isArray(m?.top3) && m.top3.length === 3) {
   else fail(`top3 values not descending: ${a.value}, ${b.value}, ${c.value}`);
 }
 
-// 4b. Category taxonomy. config.category is required, must be from the fixed
-//     list, and no dataset slug may collide with a category name (reserved
-//     for the listing pages at /data/<category>/).
+// 4a. Generic metric keys must exist (not the old 1960-anchored names)
+const requiredMetrics = [
+  'reportingEntitiesFirstYear',
+  'top10OverlapFirstYearToLatest',
+  'top10OverlapFirstYearToLatestNames',
+];
+for (const key of requiredMetrics) {
+  if (key in m) pass(`metrics.${key} present`);
+  else fail(`metrics.${key} missing (old key name?)`);
+}
+
+// 4b. Climber must use generic key
+if (m.largestClimberInTop10VsFirstYear) {
+  if ('rankFirstYear' in m.largestClimberInTop10VsFirstYear) pass('climber uses rankFirstYear');
+  else fail('climber missing rankFirstYear (has rank1960?)');
+}
+
+// 4c. Country objects must use generic keys
+if (countries.length > 0) {
+  const sample = countries[0];
+  if ('rankFirstYear' in sample) pass('countries use rankFirstYear');
+  else fail('countries missing rankFirstYear (has rank1960?)');
+  if ('deltaFirstYear' in sample) pass('countries use deltaFirstYear');
+  else fail('countries missing deltaFirstYear (has delta1960?)');
+}
+
+// 4d. Reject old 1960-anchored metric keys in data.json
+const deprecatedMetricKeys = ['reportingEconomies1960', 'top10Overlap1960toLatest', 'top10Overlap1960toLatestNames'];
+for (const key of deprecatedMetricKeys) {
+  if (key in m) fail(`metrics.${key} is deprecated; use the generic form`);
+}
+if (m.largestClimberInTop10VsFirstYear && 'rank1960' in m.largestClimberInTop10VsFirstYear) {
+  fail('climber.rank1960 is deprecated; use rankFirstYear');
+}
+if (countries.length > 0 && 'rank1960' in countries[0]) {
+  fail('countries[].rank1960 is deprecated; use rankFirstYear');
+}
+if (countries.length > 0 && 'delta1960' in countries[0]) {
+  fail('countries[].delta1960 is deprecated; use deltaFirstYear');
+}
+
+// 4e. Category taxonomy
 const CATEGORIES = ['economy', 'health', 'society', 'environment', 'technology', 'property'];
 if (!cfg.category) fail('config.category missing (required)');
 else if (!CATEGORIES.includes(cfg.category)) fail(`config.category "${cfg.category}" is not in taxonomy: ${CATEGORIES.join(', ')}`);
@@ -115,25 +154,43 @@ else pass(`category is: ${cfg.category}`);
 if (CATEGORIES.includes(slug)) fail(`dataset slug "${slug}" collides with a category name (reserved)`);
 else pass(`slug does not collide with a category name`);
 
-// 5. Config tokens must all resolve against data.metrics/date fields
+// 4f. Required config fields for generic template
+const requiredConfigFields = ['schemaDescription', 'itemListTemplate', 'entityType'];
+for (const field of requiredConfigFields) {
+  if (cfg[field]) pass(`config.${field} present`);
+  else fail(`config.${field} missing (required for generic template)`);
+}
+
+// 5. Config tokens must all resolve against the generic token set
 const cfgStr = JSON.stringify(cfg);
 const usedTokens = [...cfgStr.matchAll(/\{\{(\w+)\}\}/g)].map(x => x[1]);
 const uniqueTokens = [...new Set(usedTokens)];
 const knownTokens = new Set([
   'firstYear', 'latestYear', 'prevDecadeYear', 'yearSpan',
-  'reportingEconomiesLatest', 'reportingEconomies1960',
+  'reportingEconomiesLatest', 'reportingEntitiesFirstYear',
+  'entityType', 'unit', 'sourceNameFull', 'sourceLink',
   'leaderName', 'leaderValueFmt',
   'rank2Name', 'rank2ValueFmt', 'rank3Name', 'rank3ValueFmt',
   'overlapCount', 'overlapList',
-  'climberName', 'climberRank1960Ord', 'climberLatestRankOrd',
+  'climberName', 'climberRankFirstYear', 'climberRankFirstYearOrd', 'climberLatestRank', 'climberLatestRankOrd',
   'gainerName', 'gainerRank2000Ord', 'gainerLatestRankOrd', 'gainerValueFmt', 'gainerGain',
   'medianLatestFmt', 'medianFirstYearFmt',
   'retrievedAtHuman',
+  // Per-country tokens used in itemListTemplate (substituted at render time)
+  'value', 'rank',
 ]);
 const unknown = uniqueTokens.filter(t => !knownTokens.has(t));
 unknown.length === 0
   ? pass(`all ${uniqueTokens.length} config tokens are known`)
   : fail(`unknown tokens in config: ${unknown.join(', ')}`);
+
+// 5b. Reject deprecated token names in config
+const deprecatedTokens = [
+  'reportingEconomies1960', 'climberRank1960', 'climberRank1960Ord',
+];
+const usedDeprecated = deprecatedTokens.filter(t => cfgStr.includes(`{{${t}}}`));
+if (usedDeprecated.length > 0) fail(`config uses deprecated tokens: ${usedDeprecated.join(', ')}`);
+else pass('no deprecated tokens in config');
 
 // 6. No em dashes anywhere in config visible copy
 const emDashes = (cfgStr.match(/—/g) || []).length;
@@ -152,10 +209,7 @@ proseJargonHits.length === 0
   ? pass('no dataset jargon in config')
   : fail(`config contains dataset jargon: ${proseJargonHits.join(', ')}`);
 
-// 6c. card_summary is a scope statement: required, ≤ 160 chars, no ellipses.
-//     Enforces "fits the card without truncation" — the card component has
-//     no clamp / truncate styling, so the cap keeps summaries to ~4 lines
-//     at the 15px card body size across both 1280px and 390px viewports.
+// 6c. card_summary cap
 const cs = cfg.card_summary;
 if (!cs) fail('config.card_summary missing (required scope statement)');
 else if (typeof cs !== 'string') fail('config.card_summary must be a string');

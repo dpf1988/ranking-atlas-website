@@ -37,7 +37,7 @@ const ord = (n: number) => {
 };
 
 const yearSpan = m.latestYear - dataset.temporalCoverage.startYear;
-const overlapList = (m.top10Overlap1960toLatestNames as string[]).join(', ');
+const overlapList = (m.top10OverlapFirstYearToLatestNames as string[]).join(', ');
 
 const retrievedAt = new Date(dataset.retrievedAt);
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -49,18 +49,22 @@ const tokens: Record<string, string> = {
   prevDecadeYear: String(m.prevDecadeYear),
   yearSpan: String(yearSpan),
   reportingEconomiesLatest: String(m.reportingEconomiesLatest),
-  reportingEconomies1960: String(m.reportingEconomies1960),
+  reportingEntitiesFirstYear: String(m.reportingEntitiesFirstYear),
+  entityType: config.entityType || 'countries',
+  unit: dataset.indicator.unit,
+  sourceNameFull: dataset.source.name,
+  sourceLink: `<a href="${dataset.source.url}" class="text-brand hover:text-brand-dark underline underline-offset-2">${dataset.source.name}</a>`,
   leaderName: m.leader.name,
   leaderValueFmt: fmtNum(m.leader.value),
   rank2Name: m.top3[1]?.name || '',
   rank2ValueFmt: m.top3[1] ? fmtNum(m.top3[1].value) : '',
   rank3Name: m.top3[2]?.name || '',
   rank3ValueFmt: m.top3[2] ? fmtNum(m.top3[2].value) : '',
-  overlapCount: String(m.top10Overlap1960toLatest),
+  overlapCount: String(m.top10OverlapFirstYearToLatest),
   overlapList,
   climberName: m.largestClimberInTop10VsFirstYear?.name || '',
-  climberRank1960: String(m.largestClimberInTop10VsFirstYear?.rank1960 || ''),
-  climberRank1960Ord: m.largestClimberInTop10VsFirstYear ? ord(m.largestClimberInTop10VsFirstYear.rank1960) : '',
+  climberRankFirstYear: String(m.largestClimberInTop10VsFirstYear?.rankFirstYear || ''),
+  climberRankFirstYearOrd: m.largestClimberInTop10VsFirstYear ? ord(m.largestClimberInTop10VsFirstYear.rankFirstYear) : '',
   climberLatestRank: String(m.largestClimberInTop10VsFirstYear?.latestRank || ''),
   climberLatestRankOrd: m.largestClimberInTop10VsFirstYear ? ord(m.largestClimberInTop10VsFirstYear.latestRank) : '',
   gainerName: m.largestGainSince2000InTop20?.name || '',
@@ -120,14 +124,14 @@ const scrubberSeries = top14Iso3.map((iso3: string) => {
 const slopePoints = dataset.countries.slice(0, 12).map((cn: any) => ({
   iso3: cn.iso3,
   name: cn.name,
-  firstRank: cn.rank1960,
+  firstRank: cn.rankFirstYear,
   latestRank: cn.latestRank,
 }));
 
 // Persistent set = countries in top 10 by latest AND top 10 by first year,
 // using the same rank-slice definition as the metrics block (ties handled
 // by natural sort order). Look up iso3s from the names the metrics stored.
-const persistentIso3s: string[] = (m.top10Overlap1960toLatestNames as string[]).map(
+const persistentIso3s: string[] = (m.top10OverlapFirstYearToLatestNames as string[]).map(
   (name) => dataset.countries.find((cn: any) => cn.name === name)?.iso3
 ).filter(Boolean);
 
@@ -157,12 +161,12 @@ const jsonLdGraph: any[] = [
   {
     "@type": "Dataset",
     "name": `${c.shortTitle}, ${dataset.temporalCoverage.startYear}–${m.latestYear}`,
-    "description": `Annual GDP per capita (${dataset.indicator.unit}) for ${m.reportingEconomiesLatest} economies, ${dataset.temporalCoverage.startYear}–${m.latestYear}, compiled from ${dataset.source.name}, with computed annual rankings.`,
+    "description": c.schemaDescription,
     "url": canonicalUrl,
     "creator": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" },
     "isBasedOn": dataset.source.url,
     "temporalCoverage": `${dataset.temporalCoverage.startYear}/${m.latestYear}`,
-    "spatialCoverage": `Global, ${m.reportingEconomiesLatest} economies`,
+    "spatialCoverage": `Global, ${m.reportingEconomiesLatest} ${c.entityType || 'countries'}`,
     "variableMeasured": [
       { "@type": "PropertyValue", "name": dataset.indicator.name, "unitText": dataset.indicator.unit },
       { "@type": "PropertyValue", "name": "Annual world rank" },
@@ -196,7 +200,11 @@ const jsonLdGraph: any[] = [
       "item": {
         "@type": "Thing",
         "name": cn.name,
-        "description": `GDP per capita ${m.latestYear}: $${fmtNum(cn.latestValue)} (${dataset.indicator.unit}), world rank ${cn.latestRank}`,
+        "description": (c.itemListTemplate || `${c.shortTitle} {{latestYear}}: {{value}} ({{unit}}), world rank {{rank}}`)
+          .replace(/\{\{latestYear\}\}/g, String(m.latestYear))
+          .replace(/\{\{value\}\}/g, fmtNum(cn.latestValue))
+          .replace(/\{\{unit\}\}/g, dataset.indicator.unit)
+          .replace(/\{\{rank\}\}/g, String(cn.latestRank)),
       },
     })),
   },
@@ -359,7 +367,7 @@ const citeText = `Ranking Atlas (${retrievedAt.getUTCFullYear()}). ${c.shortTitl
             <h3 class="text-[12px] font-semibold tracking-[0.14em] uppercase text-brand mb-3">Methodology &amp; Fair Use</h3>
             <p class="font-serif italic text-[15.5px] leading-[1.7] text-[#334155] mb-3">{currencyLine}</p>
             {c.methodology.map((p: string) => (
-              <p class="font-serif italic text-[15.5px] leading-[1.7] text-[#334155] mb-3 last:mb-0" set:html={p.replace(/World Bank World Development Indicators \(indicator NY.GDP.PCAP.CD\)/, `<a href="${dataset.source.url}" class="text-brand hover:text-brand-dark underline underline-offset-2">World Bank World Development Indicators</a> (indicator NY.GDP.PCAP.CD)`)} />
+              <p class="font-serif italic text-[15.5px] leading-[1.7] text-[#334155] mb-3 last:mb-0" set:html={p} />
             ))}
           </div>
           <div class="bg-[#EEF2FA] border border-[#DCE4F5] rounded-md p-6 md:p-8 max-w-[820px]">
