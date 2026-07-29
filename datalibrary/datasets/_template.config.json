@@ -4,6 +4,8 @@
   "slug": "your-dataset-slug",
   "category": "economy | health | society | environment | technology | property",
   "entityType": "countries | economies | territories",
+  "valuePrefix": "$ for currency, empty string for unitless",
+  "valueDecimals": 0,
 
   "title": "Indicator Name by Country, {{firstYear}}–{{latestYear}}",
   "shortTitle": "Indicator Name by Country",

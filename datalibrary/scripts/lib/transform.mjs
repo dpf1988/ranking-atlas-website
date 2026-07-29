@@ -19,7 +19,7 @@ export function buildDataset({ observations, indicator, source, license }) {
   const byCountry = new Map();  // iso3 -> Map<year, value>
   for (const o of observations) {
     if (!o.iso3) continue;
-    years.add(o.year);
+    if (o.value !== null && o.value !== undefined && Number.isFinite(o.value)) years.add(o.year);
     if (!countryMeta.has(o.iso3)) {
       countryMeta.set(o.iso3, {
         iso2: o.iso2 || '',

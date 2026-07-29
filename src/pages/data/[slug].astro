@@ -29,7 +29,12 @@ const config = JSON.parse(cfgRaw);
 const dataset = JSON.parse(dataRaw);
 
 const m = dataset.metrics;
-const fmtNum = (n: number) => Math.round(n).toLocaleString('en-US');
+const valuePrefix = config.valuePrefix ?? '$';
+const valueDecimals = config.valueDecimals ?? 0;
+const fmtNum = (n: number) => {
+  const rounded = valueDecimals > 0 ? Number(n.toFixed(valueDecimals)) : Math.round(n);
+  return rounded.toLocaleString('en-US', { minimumFractionDigits: valueDecimals, maximumFractionDigits: valueDecimals });
+};
 const ord = (n: number) => {
   const s = ['th', 'st', 'nd', 'rd'];
   const v = n % 100;
@@ -310,7 +315,7 @@ const citeText = `Ranking Atlas (${retrievedAt.getUTCFullYear()}). ${c.shortTitl
         </div>
 
         {/* Hero chart: no section heading, no announcement. Caption lives inside the chart card. */}
-        <YearScrubber years={dataset.years} series={scrubberSeries} unit={dataset.indicator.unit} indicatorName={dataset.indicator.name} />
+        <YearScrubber years={dataset.years} series={scrubberSeries} unit={dataset.indicator.unit} indicatorName={dataset.indicator.name} valuePrefix={valuePrefix} valueDecimals={valueDecimals} />
       </div>
     </section>
 
@@ -355,7 +360,7 @@ const citeText = `Ranking Atlas (${retrievedAt.getUTCFullYear()}). ${c.shortTitl
             )}
 
             {section.kind === 'table' && (
-              <RankTable countries={dataset.countries} latestYear={m.latestYear} prevDecadeYear={m.prevDecadeYear} unit={dataset.indicator.unit} />
+              <RankTable countries={dataset.countries} firstYear={dataset.temporalCoverage.startYear} latestYear={m.latestYear} prevDecadeYear={m.prevDecadeYear} unit={dataset.indicator.unit} valuePrefix={valuePrefix} valueDecimals={valueDecimals} indicatorLabel={c.shortTitle} />
             )}
           </div>
         </section>

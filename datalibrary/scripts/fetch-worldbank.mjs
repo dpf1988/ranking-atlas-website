@@ -91,10 +91,16 @@ for (const o of rawObs) {
   });
 }
 
+// Extract unit from indicator name, e.g. "GDP per capita (current US$)" -> "current US$"
+function extractUnit(name) {
+  const m = name.match(/\(([^)]+)\)\s*$/);
+  return m ? m[1] : name;
+}
+
 // ── 4. Build dataset using shared transform ─────────────────────────────────
 const { dataset, csv } = buildDataset({
   observations,
-  indicator: { code: indicatorCode, name: indicatorName, unit: 'current US$' },
+  indicator: { code: indicatorCode, name: indicatorName, unit: extractUnit(indicatorName) },
   source: {
     name: 'World Bank World Development Indicators',
     url: `https://data.worldbank.org/indicator/${indicatorCode}`,

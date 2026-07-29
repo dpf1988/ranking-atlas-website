@@ -15,6 +15,8 @@ interface Props {
   series: SeriesEntry[]; // one entry per row, ordered by latest-year rank descending value
   unit?: string;
   indicatorName?: string; // used verbatim in the caption; do not lowercase
+  valuePrefix?: string;
+  valueDecimals?: number;
   categoricalPalette?: string[];
 }
 
@@ -23,6 +25,8 @@ const {
   series,
   unit = 'current US$',
   indicatorName,
+  valuePrefix = '$',
+  valueDecimals = 0,
   // Palette extends the site brand navy through complementary neighbours.
   // One hue per country slot, held constant across all frames so the eye
   // tracks a country as it rises or falls.
@@ -34,7 +38,10 @@ const {
 } = Astro.props;
 
 const latestYear = years[years.length - 1];
-const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+const fmt = (n: number) => {
+  const rounded = valueDecimals > 0 ? Number(n.toFixed(valueDecimals)) : Math.round(n);
+  return valuePrefix + rounded.toLocaleString('en-US', { minimumFractionDigits: valueDecimals, maximumFractionDigits: valueDecimals });
+};
 
 // Latest-year frame: sort series by latest value descending, compute widths
 // as a percentage of the leader value.
@@ -51,7 +58,7 @@ latestSorted.forEach((s, idx) => {
   colourByIso[s.iso3] = categoricalPalette[idx % categoricalPalette.length];
 });
 
-const scrubberData = { years, series: series.map(s => ({ name: s.name, values: s.values })) };
+const scrubberData = { years, series: series.map(s => ({ name: s.name, values: s.values })), valuePrefix, valueDecimals };
 ---
 
 <div class="bg-white rounded-md border border-ink/8 shadow-card p-5 md:p-7">
@@ -119,7 +126,7 @@ const scrubberData = { years, series: series.map(s => ({ name: s.name, values: s
 (function(){
   const el = document.getElementById('scrubData');
   if (!el || !el.textContent) return;
-  const TS = JSON.parse(el.textContent) as { years: number[]; series: { name: string; values: (number | null)[] }[] };
+  const TS = JSON.parse(el.textContent) as { years: number[]; series: { name: string; values: (number | null)[] }[]; valuePrefix?: string; valueDecimals?: number };
   const bars = document.getElementById('scrubBars');
   const yr = document.getElementById('scrubYear') as HTMLInputElement | null;
   const out = document.getElementById('scrubOut');
@@ -127,7 +134,12 @@ const scrubberData = { years, series: series.map(s => ({ name: s.name, values: s
   const bigYear = document.getElementById('scrubBigYear');
   if (!bars || !yr || !out || !play || !bigYear) return;
 
-  const fmt2 = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+  const vp = TS.valuePrefix ?? '$';
+  const vd = TS.valueDecimals ?? 0;
+  const fmt2 = (n: number) => {
+    const r = vd > 0 ? Number(n.toFixed(vd)) : Math.round(n);
+    return vp + r.toLocaleString('en-US', { minimumFractionDigits: vd, maximumFractionDigits: vd });
+  };
   const ROWH = 40;
   const MAXT = TS.years.length - 1;
   const DURATION = 24000; // ms for full firstYear→latestYear run

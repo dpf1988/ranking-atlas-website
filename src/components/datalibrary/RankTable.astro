@@ -16,14 +16,21 @@ interface Country {
 
 interface Props {
   countries: Country[];
+  firstYear?: number;
   latestYear: number;
   prevDecadeYear: number;
   unit: string;
+  valuePrefix?: string;
+  valueDecimals?: number;
+  indicatorLabel?: string;
 }
 
-const { countries, latestYear, prevDecadeYear } = Astro.props;
+const { countries, firstYear = 1960, latestYear, prevDecadeYear, valuePrefix = '$', valueDecimals = 0, indicatorLabel = 'GDP per capita' } = Astro.props;
 const leaderValue = countries[0]?.latestValue || 1;
-const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+const fmt = (n: number) => {
+  const rounded = valueDecimals > 0 ? Number(n.toFixed(valueDecimals)) : Math.round(n);
+  return valuePrefix + rounded.toLocaleString('en-US', { minimumFractionDigits: valueDecimals, maximumFractionDigits: valueDecimals });
+};
 // Compact arrow annotation for the rank cell. Neutral middot when unchanged
 // or unknown; up-triangle for climbers, down-triangle for fallers.
 const deltaSymbol = (d: number | null) => d === null || d === 0 ? '' : d > 0 ? `▲${d}` : `▼${Math.abs(d)}`;
@@ -53,8 +60,8 @@ const deltaClass = (d: number | null) => d === null || d === 0 ? 'text-subtle' :
         <tr class="border-b border-ink/8 bg-bg-paper">
           <th data-k="rank" scope="col" tabindex="0" class="rt-th rt-th-active px-4 py-4 first:pl-7 text-right">Rank<span class="rt-sort ml-1.5 text-[9px]">▲</span></th>
           <th data-k="name" scope="col" tabindex="0" class="rt-th px-4 py-4">Country<span class="rt-sort ml-1.5 text-[9px]">⇅</span></th>
-          <th scope="col" class="rt-th rt-col-traj px-4 py-4">Trajectory 1960–{latestYear}</th>
-          <th data-k="val" scope="col" tabindex="0" class="rt-th px-4 py-4 last:pr-7 text-right">GDP per capita, {latestYear}<span class="rt-sort ml-1.5 text-[9px]">⇅</span></th>
+          <th scope="col" class="rt-th rt-col-traj px-4 py-4">Trajectory {firstYear}–{latestYear}</th>
+          <th data-k="val" scope="col" tabindex="0" class="rt-th px-4 py-4 last:pr-7 text-right">{indicatorLabel}, {latestYear}<span class="rt-sort ml-1.5 text-[9px]">⇅</span></th>
         </tr>
       </thead>
       <tbody id="rt-tbody" class="divide-y divide-[#EEF1F6]">

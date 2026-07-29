@@ -1,0 +1,92 @@
+{
+  "slug": "life-expectancy-by-country",
+  "category": "health",
+  "entityType": "countries",
+  "valuePrefix": "",
+  "valueDecimals": 1,
+  "title": "Life Expectancy by Country, {{firstYear}}–{{latestYear}}",
+  "shortTitle": "Life Expectancy by Country",
+  "eyebrow": "Data Report",
+  "chips": [
+    { "label": "Health", "href": "/data" },
+    { "label": "Time series", "href": "/data" },
+    { "label": "World Bank", "href": "/data" }
+  ],
+  "metaTitle": "Life Expectancy by Country {{latestYear}}: Full Rankings & {{yearSpan}}-Year Trends",
+  "metaDescription": "{{leaderName}} leads {{latestYear}} life expectancy at {{leaderValueFmt}} years. Full country rankings from World Bank data, {{firstYear}}–{{latestYear}} rank movement, sortable table, and downloadable CSV.",
+  "schemaDescription": "Life expectancy at birth ({{unit}}) for {{reportingEconomiesLatest}} {{entityType}}, {{firstYear}}–{{latestYear}}, compiled from {{sourceNameFull}}, with computed annual rankings.",
+  "itemListTemplate": "Life expectancy {{latestYear}}: {{value}} {{unit}}, world rank {{rank}}",
+  "standfirst": "All {{reportingEconomiesLatest}} countries with World Bank data, ranked {{firstYear}}–{{latestYear}}. {{leaderName}} leads {{latestYear}} at {{leaderValueFmt}} years.",
+  "card_summary": "Life expectancy at birth for every country, measured in years. Rankings recalculated for each year since 1960.",
+  "definition": "Life expectancy at birth is the average number of years a newborn would live if age-specific mortality rates at the time of birth remained constant throughout life. It is the standard summary measure of population health.",
+  "byline": {
+    "authorName": "Daniel Grainger",
+    "authorRole": "Founder",
+    "authorHref": "/about",
+    "publishedISO": "2026-07-29",
+    "publishedHuman": "29 July 2026"
+  },
+  "keyTakeaways": [
+    "<b>{{leaderName}}</b> leads {{latestYear}} at <b>{{leaderValueFmt}} years</b>, followed by <b>{{rank2Name}}</b> at <b>{{rank2ValueFmt}}</b> and <b>{{rank3Name}}</b> at <b>{{rank3ValueFmt}}</b>.",
+    "<b>{{overlapCount}} of {{firstYear}}'s top ten</b> countries remain in the top ten in {{latestYear}}: {{overlapList}}.",
+    "Among {{latestYear}}'s top ten, <b>{{climberName}}</b> recorded the largest climb, rising from <b>{{climberRankFirstYearOrd}}</b> in {{firstYear}} to <b>{{climberLatestRankOrd}}</b> in {{latestYear}}.",
+    "The global median life expectancy rose from <b>{{medianFirstYearFmt}} years</b> in {{firstYear}} to <b>{{medianLatestFmt}} years</b> in {{latestYear}}.",
+    "<b>{{reportingEntitiesFirstYear}}</b> countries reported values in {{firstYear}}, against <b>{{reportingEconomiesLatest}}</b> in {{latestYear}}."
+  ],
+  "sections": [
+    {
+      "id": "movement",
+      "heading": "{{overlapCount}} of {{firstYear}}'s top ten countries still rank in the top ten",
+      "note": "Rank position, {{firstYear}} → {{latestYear}} · top 12 countries of {{latestYear}} · {{firstYear}} axis breaks below rank 20",
+      "kind": "slope",
+      "prose": [
+        "The top of the life expectancy table has shifted substantially since {{firstYear}}. {{overlapCount}} of that year's top ten countries remain in {{latestYear}}'s top ten: {{overlapList}}. Several small states and territories that recorded high life expectancy in {{firstYear}} have been overtaken by countries that invested in healthcare infrastructure, sanitation, and nutrition over the intervening decades."
+      ]
+    },
+    {
+      "id": "climber",
+      "heading": "{{climberName}} rose from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}",
+      "kind": "prose",
+      "prose": [
+        "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}.",
+        "Inside the current top 20, the largest gain since 2000 belongs to {{gainerName}}, which moved from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at {{gainerValueFmt}} years."
+      ]
+    },
+    {
+      "id": "rankings",
+      "heading": "Full rankings: life expectancy by country, {{latestYear}}",
+      "note": "Trajectory shows each country's annual series indexed to its own {{firstYear}}–{{latestYear}} range",
+      "kind": "table"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which country has the highest life expectancy in {{latestYear}}?",
+      "a": "{{leaderName}} leads at {{leaderValueFmt}} years, followed by {{rank2Name}} at {{rank2ValueFmt}} and {{rank3Name}} at {{rank3ValueFmt}}."
+    },
+    {
+      "q": "Which country climbed the life expectancy rankings most since {{firstYear}}?",
+      "a": "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}. The downloadable CSV includes the complete rank history for every country."
+    },
+    {
+      "q": "What is the global median life expectancy?",
+      "a": "The median across all {{reportingEconomiesLatest}} countries with reported data rose from {{medianFirstYearFmt}} years in {{firstYear}} to {{medianLatestFmt}} years in {{latestYear}}."
+    },
+    {
+      "q": "How are the rankings calculated?",
+      "a": "Rankings are computed among all countries with reported data for each year. Countries with no reported value in a given year are excluded from that year's ranking. The ranking uses the World Bank's single estimate for life expectancy at birth, combining both sexes."
+    },
+    {
+      "q": "How often is this data updated?",
+      "a": "The World Bank publishes updated life expectancy estimates annually. This page is rebuilt from the latest release, retrieved {{retrievedAtHuman}}."
+    }
+  ],
+  "methodology": [
+    "Figures are life expectancy at birth in years as published in the {{sourceLink}} (indicator SP.DYN.LE00.IN), retrieved {{retrievedAtHuman}}. The measure combines both sexes. Rankings are computed among all countries with reported data for each year; countries with no reported value in a given year are excluded from that year's ranking. Trajectory sparklines index each country's series to its own {{firstYear}}–{{latestYear}} range and are not comparable in level across rows.",
+    "This dataset is published by Ranking Atlas and may be cited or reproduced with attribution and a link to this page."
+  ],
+  "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN",
+  "sourceName": "World Bank WDI",
+  "keywords": ["life expectancy", "country rankings", "World Bank", "health data", "1960-2024"],
+  "related_slugs": ["gdp-per-capita-by-country"]
+}

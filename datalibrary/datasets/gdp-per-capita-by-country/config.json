@@ -2,6 +2,8 @@
   "slug": "gdp-per-capita-by-country",
   "category": "economy",
   "entityType": "economies",
+  "valuePrefix": "$",
+  "valueDecimals": 0,
   "title": "GDP Per Capita by Country, {{firstYear}}–{{latestYear}}",
   "shortTitle": "GDP Per Capita by Country",
   "eyebrow": "Data Report",
@@ -71,5 +73,5 @@
   "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
   "sourceName": "World Bank WDI",
   "keywords": ["GDP per capita", "country rankings", "World Bank", "economic data", "1960-2025"],
-  "related_slugs": []
+  "related_slugs": ["life-expectancy-by-country"]
 }
