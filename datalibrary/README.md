@@ -50,12 +50,14 @@ public/
 
 2. **Write `config.json`.** Copy `_template.config.json` as a starting point. See the "Config fields" section below.
 
-3. **Validate.**
+3. **Populate `related_slugs`.** Add 2-4 sibling dataset slugs. This is reciprocal: also add the new dataset's slug to each sibling's `config.json`. `validate.mjs` warns if empty and fails if any slug points to a missing dataset.
+
+4. **Validate.**
    ```bash
    node datalibrary/scripts/validate.mjs <slug>
    ```
 
-4. **Build.**
+5. **Build.**
    ```bash
    npm run build
    ```
@@ -81,7 +83,9 @@ public/
 
 3. **Write `config.json`.** Same as the World Bank flow.
 
-4. **Validate and build.** Same as above.
+4. **Populate `related_slugs`.** Same as the World Bank flow: 2-4 sibling slugs, reciprocal.
+
+5. **Validate and build.** Same as above.
 
 ## Add a dataset from a manual or proprietary CSV
 
@@ -147,7 +151,7 @@ Required `data.json` shape (whether produced by a fetcher or by hand):
 }
 ```
 
-Then write `config.json`, run `validate.mjs`, and build.
+Then write `config.json`, populate `related_slugs` (2-4, reciprocal), run `validate.mjs`, and build.
 
 ## Config fields
 
@@ -162,6 +166,7 @@ Copy `datalibrary/datasets/_template.config.json` to get started. Key fields:
 - **`card_summary`**: scope statement for the hub card (hard cap 160 chars)
 - **`methodology`**: array of paragraphs. Use `{{sourceLink}}` to auto-link the source name.
 - **`sourceUrl`** / **`sourceName`**: short source label for the meta line
+- **`related_slugs`** (required): array of 2-4 dataset slugs for the "Related datasets" section. Must be reciprocal: when adding dataset B related to A, also add B to A's `related_slugs`. `validate.mjs` warns if empty and fails if any slug points to a dataset folder that doesn't exist.
 
 Use `{{tokens}}` for any figure that should come from the data:
 - `firstYear`, `latestYear`, `prevDecadeYear`, `yearSpan`

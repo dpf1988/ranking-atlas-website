@@ -217,6 +217,23 @@ else if (cs.length > 160) fail(`card_summary is ${cs.length} chars; hard cap is 
 else if (/\.\.\.|…/.test(cs)) fail('card_summary contains an ellipsis; use complete sentences');
 else pass(`card_summary is ${cs.length}/160 chars`);
 
+// 6d. related_slugs: warn if empty, fail if any slug points to a missing dataset
+const relatedSlugs = cfg.related_slugs;
+if (!Array.isArray(relatedSlugs)) {
+  fail('config.related_slugs missing (should be an array of dataset slugs)');
+} else if (relatedSlugs.length === 0) {
+  console.log(`  WARN  related_slugs is empty; populate with 2-4 sibling dataset slugs once available`);
+} else {
+  const datasetsRoot = resolve(ROOT, 'datalibrary', 'datasets');
+  const missing = relatedSlugs.filter(s => {
+    const cfgFile = resolve(datasetsRoot, s, 'config.json');
+    const dataFile = resolve(datasetsRoot, s, 'data.json');
+    return !existsSync(cfgFile) || !existsSync(dataFile);
+  });
+  if (missing.length > 0) fail(`related_slugs point to missing datasets: ${missing.join(', ')}`);
+  else pass(`related_slugs: ${relatedSlugs.length} valid (${relatedSlugs.join(', ')})`);
+}
+
 // 7. CSV shape
 const csvHead = readFileSync(csvPath, 'utf-8').split('\n').slice(0, 3);
 if (csvHead[0]?.includes('iso3') && csvHead[0]?.includes('year') && csvHead[0]?.includes('value') && csvHead[0]?.includes('rank'))

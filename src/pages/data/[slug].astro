@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Layout from '../../layouts/Layout.astro';
 import InstitutionalBio from '../../components/InstitutionalBio.astro';
-import RelatedResearch from '../../components/RelatedResearch.astro';
+import DatasetCard from '../../components/datalibrary/DatasetCard.astro';
 import YearScrubber from '../../components/datalibrary/YearScrubber.astro';
 import SlopeChart from '../../components/datalibrary/SlopeChart.astro';
 import RankTable from '../../components/datalibrary/RankTable.astro';
@@ -220,11 +220,32 @@ const jsonLdGraph: any[] = [
 
 const jsonLd = { "@context": "https://schema.org", "@graph": jsonLdGraph };
 
-const relatedItems = c.related.map((r: any) => ({
-  title: r.title,
-  description: r.eyebrow,
-  href: r.href,
-}));
+// Resolve related_slugs into card data from sibling dataset configs
+interface RelatedCard { href: string; title: string; summary: string; metaLine: string; }
+const relatedCards: RelatedCard[] = [];
+const relatedSlugs: string[] = config.related_slugs || [];
+for (const rs of relatedSlugs) {
+  const rCfgPath = path.join(DATASET_ROOT, rs, 'config.json');
+  const rDataPath = path.join(DATASET_ROOT, rs, 'data.json');
+  if (!fs.existsSync(rCfgPath) || !fs.existsSync(rDataPath)) continue;
+  const rCfg = JSON.parse(fs.readFileSync(rCfgPath, 'utf-8'));
+  const rData = JSON.parse(fs.readFileSync(rDataPath, 'utf-8'));
+  const rm = rData.metrics;
+  const rFirstYear = rData.temporalCoverage?.startYear ?? rm.firstYear ?? 0;
+  const rLatestYear = rm.latestYear ?? 0;
+  const rTokens: Record<string, string> = { firstYear: String(rFirstYear), latestYear: String(rLatestYear) };
+  const rSub = (s: string) => s.replace(/\{\{(\w+)\}\}/g, (_, k) => rTokens[k] ?? '');
+  const rShortTitle = rSub(rCfg.shortTitle || rCfg.title || rs);
+  const rSummary = rCfg.card_summary || '';
+  const rSourceName = rCfg.sourceName || rData.source?.name || '';
+  const rCount = rm.reportingEconomiesLatest ?? 0;
+  relatedCards.push({
+    href: `/data/${rs}`,
+    title: `${rShortTitle}, ${rFirstYear}\u2013${rLatestYear}`,
+    summary: rSummary,
+    metaLine: `${rSourceName} \u00B7 ${rCount} countries \u00B7 ${rFirstYear}\u2013${rLatestYear}`,
+  });
+}
 
 // Plain-language currency line, computed from data.json. Displayed in the
 // meta row and prepended to methodology, so every dataset inherits it.
@@ -419,7 +440,20 @@ const citeText = `Ranking Atlas (${retrievedAt.getUTCFullYear()}). ${c.shortTitl
       </section>
     </main>
 
-    <RelatedResearch items={relatedItems} />
+    {relatedCards.length > 0 && (
+      <section class="py-16 md:py-24 bg-white border-t border-ink/8">
+        <div class="max-w-5xl mx-auto px-6">
+          <h2 class="font-serif font-semibold text-2xl md:text-3xl tracking-tight text-ink leading-tight mb-8">
+            Related datasets
+          </h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {relatedCards.map((rc) => (
+              <DatasetCard href={rc.href} title={rc.title} summary={rc.summary} metaLine={rc.metaLine} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
     <InstitutionalBio />
   </div>
 </Layout>

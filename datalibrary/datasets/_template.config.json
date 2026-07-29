@@ -83,11 +83,5 @@
 
   "keywords": ["keyword1", "keyword2", "keyword3"],
 
-  "related": [
-    {
-      "eyebrow": "Category · Source",
-      "title": "Related Dataset Title",
-      "href": "/data/related-slug"
-    }
-  ]
+  "related_slugs": ["other-dataset-slug"]
 }
