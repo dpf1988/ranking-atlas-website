@@ -42,7 +42,8 @@
       "note": "Rank position, {{firstYear}} → {{latestYear}} · top 12 economies of {{latestYear}} · {{firstYear}} axis breaks below rank 20",
       "kind": "slope",
       "prose": [
-        "The GDP ranking is among the most stable of any economic indicator. {{overlapCount}} of {{firstYear}}'s top ten economies remain in {{latestYear}}'s top ten: {{overlapList}}. The concentration of output in a small number of large economies has persisted across six decades of growth, industrialisation, and trade liberalisation."
+        "Total GDP measures economic size, not prosperity. The ranking correlates with <a href=\"/data/population-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">population</a>: four of the ten largest economies by output are also among the ten most populous countries (the United States, China, India, and Russia). The <a href=\"/data/gdp-per-capita-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">GDP per capita ranking</a> divides output by population and produces a different top ten entirely, led by Luxembourg at 74th in total GDP.",
+        "{{overlapCount}} of {{firstYear}}'s top ten economies remain in {{latestYear}}'s top ten: {{overlapList}}. That stability reflects a structural concentration of output: the top three economies alone account for a disproportionate share of global GDP."
       ]
     },
     {
@@ -50,7 +51,7 @@
       "heading": "{{climberName}} rose from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}",
       "kind": "prose",
       "prose": [
-        "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}.",
+        "{{climberName}} ranked {{climberRankFirstYearOrd}} in total GDP in {{firstYear}} and {{climberLatestRankOrd}} in {{latestYear}}. It also ranks 2nd in <a href=\"/data/military-spending-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">military spending</a>, consistent with the pattern that the largest economies maintain the largest defence budgets in absolute terms.",
         "Inside the current top 20, the largest gain since 2000 belongs to {{gainerName}}, which moved from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at {{gainerValueFmt}}."
       ]
     },

@@ -41,7 +41,8 @@
       "note": "Rank position, {{firstYear}} → {{latestYear}} · top 12 countries of {{latestYear}} · {{firstYear}} axis breaks below rank 20",
       "kind": "slope",
       "prose": [
-        "The upper ranks of military spending have been dominated by the same group of countries for decades. {{overlapCount}} of {{firstYear}}'s top ten remain in {{latestYear}}'s top ten: {{overlapList}}. Changes in the top ten reflect shifts in regional security conditions, arms modernisation programmes, and the expansion of defence budgets in countries that were not major military spenders at the start of the series."
+        "The military spending ranking broadly tracks <a href=\"/data/gdp-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">total GDP</a>: the United States leads both, and the top five on defence spending overlap substantially with the five largest economies. The United States spends approximately 3.2% of its GDP on defence. {{overlapCount}} of {{firstYear}}'s top ten remain in {{latestYear}}'s top ten: {{overlapList}}.",
+        "The most notable disruption in the ranking since 2000 is {{gainerName}}, which rose from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} in {{latestYear}}. Ukraine's defence expenditure increased from $6.8 billion in 2020 to $64.7 billion in 2024, a tenfold increase in four years."
       ]
     },
     {
@@ -49,8 +50,8 @@
       "heading": "{{climberName}} rose from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}",
       "kind": "prose",
       "prose": [
-        "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}.",
-        "Inside the current top 20, the largest gain since 2000 belongs to {{gainerName}}, which moved from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at {{gainerValueFmt}}."
+        "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb over the full series, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}. Oil-exporting states account for a disproportionate share of the top-ten climbers, reflecting the link between <a href=\"/data/gdp-per-capita-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">per-capita income</a> and absolute defence budgets in smaller, high-income economies.",
+        "China, which ranks 2nd in both <a href=\"/data/gdp-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">total GDP</a> and military spending, moved from 6th in defence expenditure in 2000 to 2nd by {{latestYear}}."
       ]
     },
     {

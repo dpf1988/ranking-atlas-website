@@ -40,7 +40,8 @@
       "note": "Rank position, {{firstYear}} → {{latestYear}} · top 12 countries of {{latestYear}} · {{firstYear}} axis breaks below rank 20",
       "kind": "slope",
       "prose": [
-        "The top of the per-capita emissions table is dominated by fossil-fuel-exporting states and small island territories with high energy intensity relative to population. {{overlapCount}} of {{firstYear}}'s top ten countries remain in {{latestYear}}'s top ten: {{overlapList}}. Movement in and out of the top ten reflects shifts in extraction volumes, refinery capacity, and population growth rather than broad decarbonisation trends."
+        "Per-capita emissions produce a different ranking from total output or total population. Palau leads here but ranks 58th in <a href=\"/data/gdp-per-capita-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">GDP per capita</a>; Qatar ranks 2nd in emissions but 11th in income. The top ten is dominated by fossil-fuel-exporting states and small territories where energy-intensive industry operates at a scale disproportionate to the resident <a href=\"/data/population-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">population</a>.",
+        "{{overlapCount}} of {{firstYear}}'s top ten remain in {{latestYear}}'s top ten: {{overlapList}}. The global median rose from {{medianFirstYearFmt}} t CO2e in {{firstYear}} to {{medianLatestFmt}} t CO2e in {{latestYear}}, reflecting increased fossil-fuel consumption across middle-income countries even as some high-income economies reduced per-capita output."
       ]
     },
     {
@@ -48,7 +49,7 @@
       "heading": "{{climberName}} rose from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}",
       "kind": "prose",
       "prose": [
-        "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}.",
+        "{{climberName}} ranked {{climberRankFirstYearOrd}} in per-capita emissions in {{firstYear}} and {{climberLatestRankOrd}} in {{latestYear}}. Several of the top-ten emitters per person also appear high in both <a href=\"/data/life-expectancy-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">life expectancy</a> and <a href=\"/data/gdp-per-capita-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">GDP per capita</a>: Kuwait, for instance, ranks 4th on all three measures.",
         "Inside the current top 20, the largest gain since 2000 belongs to {{gainerName}}, which moved from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at {{gainerValueFmt}} t CO2e per capita."
       ]
     },

@@ -41,7 +41,8 @@
       "note": "Rank position, {{firstYear}} → {{latestYear}} · top 12 countries of {{latestYear}} · {{firstYear}} axis breaks below rank 20",
       "kind": "slope",
       "prose": [
-        "The population ranking is among the most stable of any country-level indicator. {{overlapCount}} of {{firstYear}}'s top ten countries remain in {{latestYear}}'s top ten: {{overlapList}}. Rank changes in the top ten reflect differential fertility rates, migration flows, and in some cases territorial changes rather than short-term shifts."
+        "Population is the denominator behind <a href=\"/data/gdp-per-capita-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">GDP per capita</a>, <a href=\"/data/co2-emissions-per-capita-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">CO2 emissions per capita</a>, and <a href=\"/data/life-expectancy-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">life expectancy</a>. Countries that grow rapidly in population often fall in per-capita rankings even as their total output rises. {{overlapCount}} of {{firstYear}}'s top ten remain in {{latestYear}}'s top ten: {{overlapList}}.",
+        "The single largest change at the top of the table occurred in 2021, when India overtook China to become the world's most populous country. China had held the top position since the start of the series in {{firstYear}}."
       ]
     },
     {
@@ -49,7 +50,7 @@
       "heading": "{{climberName}} rose from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}",
       "kind": "prose",
       "prose": [
-        "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}.",
+        "{{climberName}} ranked {{climberRankFirstYearOrd}} in population in {{firstYear}} and {{climberLatestRankOrd}} in {{latestYear}}. Four of the ten most populous countries are also among the ten largest economies by <a href=\"/data/gdp-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">total GDP</a>: the United States, China, India, and Russia. The remaining six populous countries rank lower in total output, illustrating the gap between demographic and economic size.",
         "Inside the current top 20, the largest gain since 2000 belongs to {{gainerName}}, which moved from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at {{gainerValueFmt}}."
       ]
     },

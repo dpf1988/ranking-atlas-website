@@ -40,7 +40,8 @@
       "note": "Rank position, {{firstYear}} → {{latestYear}} · top 12 countries of {{latestYear}} · {{firstYear}} axis breaks below rank 20",
       "kind": "slope",
       "prose": [
-        "The top of the life expectancy table has shifted substantially since {{firstYear}}. {{overlapCount}} of that year's top ten countries remain in {{latestYear}}'s top ten: {{overlapList}}. Several small states and territories that recorded high life expectancy in {{firstYear}} have been overtaken by countries that invested in healthcare infrastructure, sanitation, and nutrition over the intervening decades."
+        "Life expectancy shows less top-ten stability than <a href=\"/data/gdp-per-capita-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">GDP per capita</a>, where five of the same year's top ten persist. Only {{overlapCount}} of {{firstYear}}'s life expectancy top ten remain: {{overlapList}}. The countries that now lead are a mix of small high-income states and Gulf economies that also rank high in <a href=\"/data/internet-users-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">internet penetration</a> and <a href=\"/data/gdp-per-capita-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">income per person</a>.",
+        "The global median rose from {{medianFirstYearFmt}} years in {{firstYear}} to {{medianLatestFmt}} years in {{latestYear}}, a gain that is larger in absolute terms than the movement at the top of the table, where the leaders were already above 70 years in {{firstYear}}."
       ]
     },
     {
@@ -48,7 +49,7 @@
       "heading": "{{climberName}} rose from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}",
       "kind": "prose",
       "prose": [
-        "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}.",
+        "{{climberName}} ranked {{climberRankFirstYearOrd}} in life expectancy in {{firstYear}} and {{climberLatestRankOrd}} in {{latestYear}}. It also ranks 4th in <a href=\"/data/gdp-per-capita-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">GDP per capita</a> and 4th in <a href=\"/data/co2-emissions-per-capita-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">CO2 emissions per capita</a>: a high-income, high-emission, high-longevity profile shared by several Gulf states in the current top ten.",
         "Inside the current top 20, the largest gain since 2000 belongs to {{gainerName}}, which moved from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at {{gainerValueFmt}} years."
       ]
     },

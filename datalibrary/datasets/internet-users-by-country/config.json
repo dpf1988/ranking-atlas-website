@@ -42,7 +42,8 @@
       "note": "Rank position, {{firstYear}} → {{latestYear}} · top 12 countries of {{latestYear}} · {{firstYear}} axis breaks below rank 20",
       "kind": "slope",
       "prose": [
-        "The internet penetration ranking has changed almost completely since {{firstYear}}. Only {{overlapCount}} of that year's top ten countries remain in {{latestYear}}'s top ten: {{overlapList}}. Early adoption leaders in the 1990s have been overtaken by countries that reached near-universal coverage through mobile broadband expansion in the 2010s."
+        "Internet penetration is the least stable ranking in this library. Only {{overlapCount}} of {{firstYear}}'s top ten remain in {{latestYear}}'s top ten: {{overlapList}}. By contrast, the <a href=\"/data/population-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">population ranking</a> retains seven, and <a href=\"/data/gdp-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">total GDP</a> retains nine. The near-complete turnover reflects the speed at which mobile broadband closed the gap between early-adopting and late-adopting countries in under two decades.",
+        "The global median rose from {{medianFirstYearFmt}}% in {{firstYear}} to {{medianLatestFmt}}% in {{latestYear}}. Several countries that now report 100% penetration ranked below the median as recently as 2000, illustrating how rapidly the floor has risen."
       ]
     },
     {
@@ -50,7 +51,7 @@
       "heading": "{{climberName}} rose from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}",
       "kind": "prose",
       "prose": [
-        "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}.",
+        "{{climberName}} ranked {{climberRankFirstYearOrd}} in {{firstYear}} and {{climberLatestRankOrd}} in {{latestYear}}. The countries at the top of the internet ranking overlap substantially with the leaders in <a href=\"/data/gdp-per-capita-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">GDP per capita</a> and <a href=\"/data/life-expectancy-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">life expectancy</a>: Luxembourg, for example, ranks 3rd here, 1st in GDP per capita, and 18th in life expectancy.",
         "Inside the current top 20, the largest gain since 2000 belongs to {{gainerName}}, which moved from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at {{gainerValueFmt}}% of population."
       ]
     },

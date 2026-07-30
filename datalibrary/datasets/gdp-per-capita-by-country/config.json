@@ -41,7 +41,8 @@
       "note": "Rank position, {{firstYear}} → {{latestYear}} · top 12 countries of {{latestYear}} · {{firstYear}} axis breaks below rank 20",
       "kind": "slope",
       "prose": [
-        "The top of the GDP per capita table is unusually stable. Five of {{firstYear}}'s top ten countries still rank in {{latestYear}}'s top ten: {{overlapList}}. Where movement occurs, it concentrates in a small number of countries. Late industrialisers that started low have climbed, and a handful of countries that began reporting after {{firstYear}} have entered near the top."
+        "The per-capita ranking separates economic size from average income. Luxembourg ranks 1st here but 74th in <a href=\"/data/gdp-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">total GDP</a>; the United States leads total output but sits lower on income per person. Of the ten largest economies by total GDP, only four also appear in the <a href=\"/data/population-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">population</a> top ten: the United States, China, India, and Russia. Population is the denominator, and it reshuffles the ranking entirely.",
+        "{{overlapCount}} of {{firstYear}}'s top ten countries still rank in {{latestYear}}'s top ten: {{overlapList}}. The persistent leaders are small, high-income states where population growth is low and per-person output compounds over decades."
       ]
     },
     {
@@ -49,7 +50,7 @@
       "heading": "{{climberName}}'s rise from {{climberRankFirstYearOrd}} to {{climberLatestRankOrd}} is the largest climb into the top ten",
       "kind": "prose",
       "prose": [
-        "In {{firstYear}}, {{climberName}} ranked {{climberRankFirstYearOrd}}. By {{latestYear}} it ranks {{climberLatestRankOrd}} in current US dollars, the largest climb by any country from {{firstYear}} into {{latestYear}}'s top ten.",
+        "In {{firstYear}}, {{climberName}} ranked {{climberRankFirstYearOrd}}. By {{latestYear}} it ranks {{climberLatestRankOrd}} in current US dollars, the largest climb by any country from {{firstYear}} into {{latestYear}}'s top ten. {{climberName}} also ranks 4th in <a href=\"/data/life-expectancy-by-country\" class=\"text-brand hover:text-brand-dark underline underline-offset-2\">life expectancy</a>, one of a small number of countries in the top ten on both measures.",
         "Inside the current top 20, the largest gain since 2000 belongs to {{gainerName}}, which moved from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at ${{gainerValueFmt}}."
       ]
     },
