@@ -1,0 +1,94 @@
+{
+  "slug": "internet-users-by-country",
+  "category": "technology",
+  "entityType": "countries",
+  "valuePrefix": "",
+  "valueDecimals": 1,
+  "valueFormat": "standard",
+  "title": "Internet Users by Country, {{firstYear}}–{{latestYear}}",
+  "shortTitle": "Internet Users by Country",
+  "eyebrow": "Data Report",
+  "chips": [
+    { "label": "Technology", "href": "/data" },
+    { "label": "Time series", "href": "/data" },
+    { "label": "World Bank", "href": "/data" }
+  ],
+  "metaTitle": "Internet Users by Country {{latestYear}}: Full Rankings & {{yearSpan}}-Year Trends",
+  "metaDescription": "{{leaderName}} leads {{latestYear}} internet penetration at {{leaderValueFmt}}% of population. Full country rankings, {{firstYear}}–{{latestYear}}, sortable table, and downloadable CSV.",
+  "schemaDescription": "Individuals using the internet ({{unit}}) for {{reportingEconomiesLatest}} {{entityType}}, {{firstYear}}–{{latestYear}}, compiled from {{sourceNameFull}}, with computed annual rankings.",
+  "itemListTemplate": "Internet users {{latestYear}}: {{value}}% of population, world rank {{rank}}",
+  "standfirst": "All {{reportingEconomiesLatest}} countries with World Bank data, ranked {{firstYear}}–{{latestYear}}. {{leaderName}} leads {{latestYear}} at {{leaderValueFmt}}%.",
+  "card_summary": "Individuals using the internet as a share of population, for every reporting country. Rankings recalculated for each year since 1990.",
+  "definition": "Internet users as a percentage of population measures the share of individuals who have used the internet from any location in the last three months via any device. It is the standard measure of a country's internet penetration.",
+  "byline": {
+    "authorName": "Daniel Grainger",
+    "authorRole": "Founder",
+    "authorHref": "/about",
+    "publishedISO": "2026-07-30",
+    "publishedHuman": "30 July 2026"
+  },
+  "keyTakeaways": [
+    "<b>{{leaderName}}</b> leads {{latestYear}} at <b>{{leaderValueFmt}}%</b> of population, followed by <b>{{rank2Name}}</b> at <b>{{rank2ValueFmt}}%</b> and <b>{{rank3Name}}</b> at <b>{{rank3ValueFmt}}%</b>.",
+    "<b>{{overlapCount}} of {{firstYear}}'s top ten</b> countries remain in the top ten in {{latestYear}}: {{overlapList}}.",
+    "Among {{latestYear}}'s top ten, <b>{{climberName}}</b> recorded the largest climb, rising from <b>{{climberRankFirstYearOrd}}</b> in {{firstYear}} to <b>{{climberLatestRankOrd}}</b> in {{latestYear}}.",
+    "Inside the current top 20, <b>{{gainerName}}</b> gained the most since 2000, rising from <b>{{gainerRank2000Ord}}</b> to <b>{{gainerLatestRankOrd}}</b> at <b>{{gainerValueFmt}}%</b>.",
+    "The global median internet penetration rose from <b>{{medianFirstYearFmt}}%</b> in {{firstYear}} to <b>{{medianLatestFmt}}%</b> in {{latestYear}}.",
+    "<b>{{reportingEntitiesFirstYear}}</b> countries reported values in {{firstYear}}, against <b>{{reportingEconomiesLatest}}</b> in {{latestYear}}."
+  ],
+  "sections": [
+    {
+      "id": "movement",
+      "heading": "{{overlapCount}} of {{firstYear}}'s top ten countries remain in the top ten",
+      "note": "Rank position, {{firstYear}} → {{latestYear}} · top 12 countries of {{latestYear}} · {{firstYear}} axis breaks below rank 20",
+      "kind": "slope",
+      "prose": [
+        "The internet penetration ranking has changed almost completely since {{firstYear}}. Only {{overlapCount}} of that year's top ten countries remain in {{latestYear}}'s top ten: {{overlapList}}. Early adoption leaders in the 1990s have been overtaken by countries that reached near-universal coverage through mobile broadband expansion in the 2010s."
+      ]
+    },
+    {
+      "id": "climber",
+      "heading": "{{climberName}} rose from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}",
+      "kind": "prose",
+      "prose": [
+        "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}.",
+        "Inside the current top 20, the largest gain since 2000 belongs to {{gainerName}}, which moved from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at {{gainerValueFmt}}% of population."
+      ]
+    },
+    {
+      "id": "rankings",
+      "heading": "Full rankings: internet users by country, {{latestYear}}",
+      "note": "Trajectory shows each country's annual series indexed to its own {{firstYear}}–{{latestYear}} range",
+      "kind": "table"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which country has the highest internet penetration in {{latestYear}}?",
+      "a": "{{leaderName}} leads at {{leaderValueFmt}}% of population, followed by {{rank2Name}} at {{rank2ValueFmt}}% and {{rank3Name}} at {{rank3ValueFmt}}%."
+    },
+    {
+      "q": "What is the global median internet penetration?",
+      "a": "The median across all {{reportingEconomiesLatest}} countries rose from {{medianFirstYearFmt}}% in {{firstYear}} to {{medianLatestFmt}}% in {{latestYear}}."
+    },
+    {
+      "q": "Which country gained the most in the rankings since 2000?",
+      "a": "Inside the current top 20, {{gainerName}} gained the most, rising from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at {{gainerValueFmt}}% of population."
+    },
+    {
+      "q": "How is internet use measured?",
+      "a": "The World Bank defines internet users as individuals who have used the internet from any location in the last three months, via any device including mobile phones, tablets, personal computers, and gaming consoles."
+    },
+    {
+      "q": "How often is this data updated?",
+      "a": "The World Bank publishes updated estimates annually. This page is rebuilt from the latest release, retrieved {{retrievedAtHuman}}."
+    }
+  ],
+  "methodology": [
+    "Figures are individuals using the internet as a percentage of population, as published in the {{sourceLink}} (indicator IT.NET.USER.ZS), retrieved {{retrievedAtHuman}}. Rankings are computed among all countries with reported data for each year; countries with no reported value in a given year are excluded from that year's ranking. Trajectory sparklines index each country's series to its own {{firstYear}}–{{latestYear}} range and are not comparable in level across rows.",
+    "This dataset is published by Ranking Atlas and may be cited or reproduced with attribution and a link to this page."
+  ],
+  "sourceUrl": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
+  "sourceName": "World Bank WDI",
+  "keywords": ["internet users", "internet penetration", "digital access", "country rankings", "World Bank", "technology", "1990-2023"],
+  "related_slugs": ["population-by-country", "gdp-per-capita-by-country", "life-expectancy-by-country"]
+}
