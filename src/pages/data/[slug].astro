@@ -35,9 +35,10 @@ const valueFormat = config.valueFormat || 'standard';
 const trimTrailing = (s: string) => s.replace(/\.?0+\s*$/, '');
 const fmtNum = (n: number) => {
   if (valueFormat === 'compact') {
-    if (n >= 1000000000) return trimTrailing((n / 1000000000).toFixed(2)) + ' billion';
-    if (n >= 1000000) return trimTrailing((n / 1000000).toFixed(1)) + ' million';
-    return Math.round(n).toLocaleString('en-US');
+    if (n >= 1000000000000) return valuePrefix + trimTrailing((n / 1000000000000).toFixed(2)) + ' trillion';
+    if (n >= 1000000000) return valuePrefix + trimTrailing((n / 1000000000).toFixed(2)) + ' billion';
+    if (n >= 1000000) return valuePrefix + trimTrailing((n / 1000000).toFixed(1)) + ' million';
+    return valuePrefix + Math.round(n).toLocaleString('en-US');
   }
   const rounded = valueDecimals > 0 ? Number(n.toFixed(valueDecimals)) : Math.round(n);
   return rounded.toLocaleString('en-US', { minimumFractionDigits: valueDecimals, maximumFractionDigits: valueDecimals });

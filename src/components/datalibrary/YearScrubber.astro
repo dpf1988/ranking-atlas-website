@@ -43,9 +43,10 @@ const latestYear = years[years.length - 1];
 const trimZ = (s: string) => { let r = s; while (r.endsWith('0')) r = r.slice(0, -1); if (r.endsWith('.')) r = r.slice(0, -1); return r; };
 const fmt = (n: number) => {
   if (valueFormat === 'compact') {
-    if (n >= 1000000000) return trimZ((n / 1000000000).toFixed(2)) + 'bn';
-    if (n >= 1000000) return trimZ((n / 1000000).toFixed(1)) + 'm';
-    return Math.round(n).toLocaleString('en-US');
+    if (n >= 1000000000000) return valuePrefix + trimZ((n / 1000000000000).toFixed(2)) + 'tn';
+    if (n >= 1000000000) return valuePrefix + trimZ((n / 1000000000).toFixed(2)) + 'bn';
+    if (n >= 1000000) return valuePrefix + trimZ((n / 1000000).toFixed(1)) + 'm';
+    return valuePrefix + Math.round(n).toLocaleString('en-US');
   }
   const rounded = valueDecimals > 0 ? Number(n.toFixed(valueDecimals)) : Math.round(n);
   return valuePrefix + rounded.toLocaleString('en-US', { minimumFractionDigits: valueDecimals, maximumFractionDigits: valueDecimals });
@@ -148,9 +149,10 @@ const scrubberData = { years, series: series.map(s => ({ name: s.name, values: s
   const trimZ2 = (s: string) => { let r = s; while (r.endsWith('0')) r = r.slice(0, -1); if (r.endsWith('.')) r = r.slice(0, -1); return r; };
   const fmt2 = (n: number) => {
     if (vf === 'compact') {
-      if (n >= 1000000000) return trimZ2((n / 1000000000).toFixed(2)) + 'bn';
-      if (n >= 1000000) return trimZ2((n / 1000000).toFixed(1)) + 'm';
-      return Math.round(n).toLocaleString('en-US');
+      if (n >= 1000000000000) return vp + trimZ2((n / 1000000000000).toFixed(2)) + 'tn';
+      if (n >= 1000000000) return vp + trimZ2((n / 1000000000).toFixed(2)) + 'bn';
+      if (n >= 1000000) return vp + trimZ2((n / 1000000).toFixed(1)) + 'm';
+      return vp + Math.round(n).toLocaleString('en-US');
     }
     const r = vd > 0 ? Number(n.toFixed(vd)) : Math.round(n);
     return vp + r.toLocaleString('en-US', { minimumFractionDigits: vd, maximumFractionDigits: vd });
