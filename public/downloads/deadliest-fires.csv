@@ -1,0 +1,17 @@
+iso,year,event,deaths,source,confidence
+GRC,2018,Mati / Attica (23 July),104,Final toll incl. later hospital deaths; initial official 102,HIGH
+GRC,2007,"Summer fire season, Peloponnese/Euboea/Attica (June-Sept)",84,"TIME/Belspo/official reporting; academic sources 78, Wikipedia 85 - reported range 78-85, 84 most widely cited",HIGH
+PRT,2017,Pedrogao Grande complex (17-20 June),66,Official inquiry toll; MDPI/Portugal Resident,HIGH
+PRT,2017,"October fires, central/northern Portugal (13-18 Oct)",51,Portugal Resident (66+51=117 govt total); Wikipedia lists 45; govt total 117 (116 civilians + 1 firefighter) - annual total 117 used,HIGH
+GRC,2023,"Season incl. Evros megafire (20 deaths, 18 migrants) + Attica/central",28,"Wikipedia season total, consistent with CBC/AFP itemised reporting",HIGH
+TUR,2025,"Season: Eskisehir 10 firefighters/AKUT (23 July), Odemis 3, Bursa firefighter, others",17,CNN 24 Jul (13 to date) + subsequent; trackers 'at least 17' - floor of 17 used,VERIFY
+TUR,2024,Diyarbakir-Mardin fire (June),11,Al Jazeera via Wildfire Today; reports 11-15 - floor of 11 used,VERIFY
+TUR,2021,"Mediterranean/Aegean fires (28 Jul-12 Aug), incl. Manavgat",9,Wikipedia (9); some contemporaneous reports 8,HIGH
+PRT,2024,"September fires, central/northern (15-20 Sept), incl. 4 firefighters",9,Wikipedia/SIC; official reporting,HIGH
+ESP,2022,"Season: Zamora firefighter, Galicia farmer, others",4,AP/CBC Jul 2022 (2 confirmed); season total approx 4-5 - floor of 4 used,VERIFY
+ESP,2017,"October Iberian fires, Galicia (13-18 Oct)",4,Wikipedia/contemporaneous AP,HIGH
+CYP,2021,"Arakapas/Limassol fire (3-5 July), four Egyptian farm workers",4,Reuters/Al Jazeera/BBC 4-5 Jul 2021; worst in republic's history at the time,HIGH
+ESP,2025,"Season: 2 civilians (Tres Cantos/Madrid area), Leon volunteer firefighter, Castile-y-Leon firefighter",4,Wikipedia 2025 European wildfires + AP Aug 2025; floor - final season total may be higher,VERIFY
+PRT,2025,Season: two firefighters (August),2,AP/NewsOnAir 19 Aug 2025; floor,VERIFY
+CYP,2025,"Limassol/Malia fire (23-24 July), couple fleeing in vehicle",2,Wikipedia/Cyprus Mail; worst fire in country's history,HIGH
+PRT,2022,Firefighting aircraft pilot crash (15 July),1,AP via Global News Jul 2022,HIGH

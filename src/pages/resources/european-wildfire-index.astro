@@ -1,0 +1,680 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RelatedResearch from '../../components/RelatedResearch.astro';
+import PullQuote from '../../components/PullQuote.astro';
+
+const metaDescription = "Satellite mapping records 11.05 million hectares of Europe burned since 2006. Indexed against each country's size, two countries have lost nearly a quarter of their land area.";
+
+const jsonLdArticle = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The European Wildfire Index: Two Decades of Burned Land, Ranked by Country",
+  "description": metaDescription,
+  "url": "https://ranking-atlas.com/resources/european-wildfire-index",
+  "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about" },
+  "datePublished": "2026-07-30T00:00:00+00:00",
+  "dateModified": "2026-07-30T00:00:00+00:00",
+  "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
+};
+
+const jsonLdDataset = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "European Wildfire Index",
+  "description": "Country-level burned-area index for 36 EFFIS-monitored European countries, 2006-2026 YTD.",
+  "url": "https://ranking-atlas.com/resources/european-wildfire-index",
+  "creator": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" },
+  "temporalCoverage": "2006/2026",
+  "distribution": [
+    { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://ranking-atlas.com/downloads/european-wildfire-index.csv" },
+    { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://ranking-atlas.com/downloads/deadliest-fires.csv" }
+  ]
+};
+
+// ─── DATA (verbatim from CSVs) ───
+
+
+// France annual burned area (from european-wildfire-index.csv)
+const franceYears = [2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026];
+const franceHa = [1751,2631,1694,7974,4653,4831,3298,891,4667,2046,10674,20626,2528,43561,14547,30652,66337,22350,12268,36951,91024];
+
+// Top 10 burn intensity (from rank_burn_intensity.csv)
+const intensityCountries = ['Montenegro','Portugal','Albania','North Macedonia','Bosnia & Herz.','Greece','Cyprus','Croatia','Italy','Spain'];
+const intensityPct = [23.68,22.87,17.93,13.20,13.06,7.61,5.19,4.68,3.79,3.76];
+
+// Decade-over-decade shift (from rank_decade_shift.csv)
+const shiftCountries = ['Romania','France','United Kingdom','Türkiye','Serbia','Hungary','Cyprus','Montenegro','Bosnia & Herz.','Portugal','Croatia','North Macedonia','Spain','Norway','Italy','Sweden','Bulgaria','Belgium','Greece','Ireland','Albania'];
+const shiftPct = [3288,656,513,507,271,218,180,145,134,121,118,97,86,70,65,60,39,9,2,1,-13];
+
+// Deadliest fires (from copy_final.md italic line, verbatim)
+const deadliestFires = [
+  { event: 'Mati, Greece', date: 'Jul 2018', deaths: '104' },
+  { event: 'August firestorms, Greece', date: 'Aug 2007', deaths: '67' },
+  { event: 'Pedrógão Grande, Portugal', date: 'Jun 2017', deaths: '66' },
+  { event: 'October fires, Portugal', date: 'Oct 2017', deaths: '51' },
+  { event: 'Evros, Greece', date: 'Aug 2023', deaths: '20' },
+  { event: 'Almería, Spain', date: 'Jul 2026', deaths: 'at least 12' },
+  { event: 'Diyarbakır–Mardin, Türkiye', date: 'Jun 2024', deaths: 'at least 11' },
+  { event: 'Eskişehir, Türkiye', date: 'Jul 2025', deaths: '10' },
+  { event: 'September fires, Portugal', date: 'Sep 2024', deaths: '9' },
+  { event: 'Mediterranean fires, Türkiye', date: '2021', deaths: '9' },
+  { event: 'Arakapas, Cyprus', date: 'Jul 2021', deaths: '4' },
+  { event: 'Limassol, Cyprus', date: 'Jul 2025', deaths: '2' },
+];
+
+// Full league table (from league_table.csv)
+const leagueTable = [
+  { country: 'Montenegro', burned: 327005, haPer1k: 23675, pct: 23.68, decadeChange: '+145%', worstYear: 2017, worstHa: 51531, ytd: 8837 },
+  { country: 'Portugal', burned: 2109543, haPer1k: 22874, pct: 22.87, decadeChange: '+121%', worstYear: 2017, worstHa: 563530, ytd: 37422 },
+  { country: 'Albania', burned: 515343, haPer1k: 17926, pct: 17.93, decadeChange: '−13%', worstYear: 2007, worstHa: 127491, ytd: 731 },
+  { country: 'North Macedonia', burned: 339438, haPer1k: 13201, pct: 13.20, decadeChange: '+97%', worstYear: 2024, worstHa: 95214, ytd: 1629 },
+  { country: 'Bosnia & Herzegovina', burned: 668548, haPer1k: 13055, pct: 13.06, decadeChange: '+134%', worstYear: 2020, worstHa: 100107, ytd: 19020 },
+  { country: 'Greece', burned: 1003866, haPer1k: 7608, pct: 7.61, decadeChange: '+2%', worstYear: 2007, worstHa: 271715, ytd: 4249 },
+  { country: 'Cyprus', burned: 48006, haPer1k: 5189, pct: 5.19, decadeChange: '+180%', worstYear: 2025, worstHa: 13527, ytd: 291 },
+  { country: 'Croatia', burned: 264920, haPer1k: 4681, pct: 4.68, decadeChange: '+118%', worstYear: 2017, worstHa: 67666, ytd: 3318 },
+  { country: 'Italy', burned: 1144530, haPer1k: 3789, pct: 3.79, decadeChange: '+65%', worstYear: 2007, worstHa: 153481, ytd: 69336 },
+  { country: 'Spain', burned: 1901297, haPer1k: 3758, pct: 3.76, decadeChange: '+86%', worstYear: 2025, worstHa: 393079, ytd: 206768 },
+  { country: 'Bulgaria', burned: 266658, haPer1k: 2416, pct: 2.42, decadeChange: '+39%', worstYear: 2007, worstHa: 67598, ytd: 831 },
+  { country: 'Romania', burned: 564291, haPer1k: 2367, pct: 2.37, decadeChange: '+3,288%', worstYear: 2022, worstHa: 153155, ytd: 11957 },
+  { country: 'Serbia', burned: 162111, haPer1k: 1835, pct: 1.83, decadeChange: '+271%', worstYear: 2024, worstHa: 38954, ytd: 2582 },
+  { country: 'Türkiye', burned: 1070330, haPer1k: 1366, pct: 1.37, decadeChange: '+507%', worstYear: 2021, worstHa: 202130, ytd: 11782 },
+  { country: 'Ireland', burned: 64003, haPer1k: 917, pct: 0.92, decadeChange: '+1%', worstYear: 2011, worstHa: 16724, ytd: 2450 },
+  { country: 'United Kingdom', burned: 176759, haPer1k: 723, pct: 0.72, decadeChange: '+513%', worstYear: 2025, worstHa: 47879, ytd: 21871 },
+  { country: 'France', burned: 294930, haPer1k: 542, pct: 0.54, decadeChange: '+656%', worstYear: 2022, worstHa: 66337, ytd: 91024 },
+  { country: 'Slovenia', burned: 6371, haPer1k: 314, pct: 0.31, decadeChange: '—', worstYear: 2022, worstHa: 4388, ytd: 354 },
+  { country: 'Malta', burned: 66, haPer1k: 209, pct: 0.21, decadeChange: '—', worstYear: 2020, worstHa: 34, ytd: 0 },
+  { country: 'Hungary', burned: 14669, haPer1k: 158, pct: 0.16, decadeChange: '+218%', worstYear: 2022, worstHa: 7287, ytd: 508 },
+  { country: 'Belgium', burned: 4716, haPer1k: 154, pct: 0.15, decadeChange: '+9%', worstYear: 2011, worstHa: 2180, ytd: 299 },
+  { country: 'Sweden', burned: 42529, haPer1k: 95, pct: 0.10, decadeChange: '+60%', worstYear: 2018, worstHa: 21320, ytd: 185 },
+  { country: 'Germany', burned: 18241, haPer1k: 51, pct: 0.05, decadeChange: '—', worstYear: 2025, worstHa: 5475, ytd: 2170 },
+  { country: 'Latvia', burned: 3221, haPer1k: 50, pct: 0.05, decadeChange: '—', worstYear: 2018, worstHa: 2493, ytd: 318 },
+  { country: 'Norway', burned: 19142, haPer1k: 50, pct: 0.05, decadeChange: '+70%', worstYear: 2019, worstHa: 4515, ytd: 1589 },
+  { country: 'Netherlands', burned: 2024, haPer1k: 49, pct: 0.05, decadeChange: '—', worstYear: 2020, worstHa: 822, ytd: 547 },
+  { country: 'Denmark', burned: 1634, haPer1k: 38, pct: 0.04, decadeChange: '—', worstYear: 2018, worstHa: 463, ytd: 70 },
+  { country: 'Austria', burned: 2123, haPer1k: 25, pct: 0.03, decadeChange: '—', worstYear: 2022, worstHa: 1016, ytd: 273 },
+  { country: 'Poland', burned: 7279, haPer1k: 23, pct: 0.02, decadeChange: '—', worstYear: 2020, worstHa: 5383, ytd: 1458 },
+  { country: 'Czechia', burned: 1581, haPer1k: 20, pct: 0.02, decadeChange: '—', worstYear: 2022, worstHa: 1436, ytd: 41 },
+  { country: 'Slovakia', burned: 879, haPer1k: 18, pct: 0.02, decadeChange: '—', worstYear: 2025, worstHa: 362, ytd: 696 },
+  { country: 'Estonia', burned: 558, haPer1k: 12, pct: 0.01, decadeChange: '—', worstYear: 2018, worstHa: 385, ytd: 299 },
+  { country: 'Finland', burned: 3967, haPer1k: 12, pct: 0.01, decadeChange: '—', worstYear: 2021, worstHa: 2558, ytd: 66 },
+  { country: 'Switzerland', burned: 377, haPer1k: 9, pct: 0.01, decadeChange: '—', worstYear: 2022, worstHa: 235, ytd: 0 },
+  { country: 'Lithuania', burned: 584, haPer1k: 9, pct: 0.01, decadeChange: '—', worstYear: 2023, worstHa: 305, ytd: 46 },
+  { country: 'Luxembourg', burned: 0, haPer1k: 0, pct: 0.00, decadeChange: '—', worstYear: '—', worstHa: 0, ytd: 0 },
+];
+
+// Season 2026 YTD (from season_2026_ytd.csv)
+const seasonTable = [
+  { country: 'Ukraine*', ytd: 273314, avg: null, multiple: null, worstYear: null, worstHa: null },
+  { country: 'Spain', ytd: 206768, avg: 95065, multiple: 2.18, worstYear: 2025, worstHa: 393079 },
+  { country: 'France', ytd: 91024, avg: 14747, multiple: 6.17, worstYear: 2022, worstHa: 66337 },
+  { country: 'Italy', ytd: 69336, avg: 57227, multiple: 1.21, worstYear: 2007, worstHa: 153481 },
+  { country: 'Portugal', ytd: 37422, avg: 105477, multiple: 0.35, worstYear: 2017, worstHa: 563530 },
+  { country: 'United Kingdom', ytd: 21871, avg: 8838, multiple: 2.47, worstYear: 2025, worstHa: 47879 },
+  { country: 'Bosnia & Herzegovina', ytd: 19020, avg: 33427, multiple: 0.57, worstYear: 2020, worstHa: 100107 },
+  { country: 'Romania', ytd: 11957, avg: 28215, multiple: 0.42, worstYear: 2022, worstHa: 153155 },
+  { country: 'Türkiye', ytd: 11782, avg: 53517, multiple: 0.22, worstYear: 2021, worstHa: 202130 },
+  { country: 'Montenegro', ytd: 8837, avg: 16350, multiple: 0.54, worstYear: 2017, worstHa: 51531 },
+  { country: 'Greece', ytd: 4249, avg: 50193, multiple: 0.08, worstYear: 2007, worstHa: 271715 },
+  { country: 'Croatia', ytd: 3318, avg: 13246, multiple: 0.25, worstYear: 2017, worstHa: 67666 },
+  { country: 'Serbia', ytd: 2582, avg: 8106, multiple: 0.32, worstYear: 2024, worstHa: 38954 },
+  { country: 'Ireland', ytd: 2450, avg: 3200, multiple: 0.77, worstYear: 2011, worstHa: 16724 },
+  { country: 'Germany', ytd: 2170, avg: 912, multiple: 2.38, worstYear: 2025, worstHa: 5475 },
+];
+
+function fmtNum(n: number): string { return n.toLocaleString('en-GB'); }
+
+---
+
+<Layout
+  title="The European Wildfire Index: Two Decades of Burned Land, Ranked by Country | Ranking Atlas"
+  description={metaDescription}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdArticle)} />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdDataset)} />
+
+<div class="bg-white">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="pt-20 md:pt-28 pb-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-[11px] uppercase tracking-[0.14em] text-brand font-semibold mb-3 text-center">Data Report</div>
+      <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.15] mb-3 text-center">
+        The European Wildfire Index: two decades of burned land, ranked by country
+      </h1>
+      <div class="bg-bg-paper border border-ink/8 rounded-md p-6 mt-6 mb-8">
+        <p class="text-body text-[15px] md:text-[16px] leading-[1.7] italic mb-4">
+          Satellite mapping records 11.05 million hectares of Europe burned since 2006 — an area larger than Portugal itself. Indexed against each country's size, the burden is starkly uneven: two countries have lost the equivalent of nearly a quarter of their entire land area, while France, the fastest-rising fire country in Western Europe, has already passed its worst full year on record with the peak of the 2026 season still ahead.
+        </p>
+        <p class="text-[13px] text-muted">By Daniel Grainger · Ranking Atlas · July 2026 · 12 min read</p>
+      </div>
+
+      <!-- Hero chart: France annual burned area -->
+      <div class="bg-white rounded-md border border-ink/8 p-6 mb-6">
+        <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">France: annual EFFIS-mapped burned area, 2006–2026 YTD</div>
+        <div class="text-[12px] text-muted mb-6">Hectares. 2026 is season to date (30 July). Previous record year (2022) and 2026 highlighted.</div>
+        <div class="space-y-1.5">
+          {franceYears.map((year, i) => {
+            const ha = franceHa[i];
+            const maxHa = 91024;
+            const widthPct = Math.max((ha / maxHa) * 100, 0.5);
+            const isRecord2026 = year === 2026;
+            const isRecord2022 = year === 2022;
+            const barColor = isRecord2026 ? 'bg-accent' : isRecord2022 ? 'bg-accent/60' : 'bg-brand-slate/40';
+            const labelColor = (isRecord2026 || isRecord2022) ? 'text-accent font-semibold' : 'text-muted';
+            return (
+              <div class="flex items-center gap-2">
+                <div class="w-[40px] text-right text-[11px] text-ink font-medium shrink-0">{year}</div>
+                <div class="flex-1 h-5 bg-bg-paper rounded overflow-hidden">
+                  <div class={`h-full rounded ${barColor}`} style={`width:${widthPct}%`}></div>
+                </div>
+                <div class={`w-[70px] text-right text-[11px] ${labelColor} shrink-0`}>{fmtNum(ha)}{isRecord2026 ? ' *' : ''}</div>
+              </div>
+            );
+          })}
+        </div>
+        <p class="text-[11px] text-muted mt-3">* 2026 season to date (30 July). Source: EFFIS / Copernicus.</p>
+      </div>
+
+      <!-- Embed block -->
+      <details class="bg-bg-paper border border-ink/8 rounded-md mb-8">
+        <summary class="px-5 py-3 text-[13px] font-semibold text-ink cursor-pointer select-none">Embed this chart</summary>
+        <div class="px-5 pb-4">
+          <p class="text-[12px] text-muted mb-2">Copy and paste to embed with attribution:</p>
+          <pre class="bg-white border border-ink/8 rounded p-3 text-[11px] text-body overflow-x-auto whitespace-pre-wrap"><code>&lt;iframe src="https://ranking-atlas.com/resources/european-wildfire-index" width="100%" height="620" style="border:none;" title="France burned area 2006–2026 — European Wildfire Index — Ranking Atlas"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:12px;margin-top:4px"&gt;Source: &lt;a href="https://ranking-atlas.com/resources/european-wildfire-index"&gt;The European Wildfire Index — Ranking Atlas&lt;/a&gt;&lt;/p&gt;</code></pre>
+        </div>
+      </details>
+
+      <!-- Anchor nav -->
+      <nav class="bg-bg-paper border border-ink/8 rounded-md p-5" aria-label="Article sections">
+        <p class="text-[14px] font-semibold text-ink mb-3">Navigation</p>
+        <ul class="flex flex-col space-y-2 text-[14px]">
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key takeaways</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#season-2026" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The 2026 season</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#decade-shift" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The fires are moving north</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#burn-intensity" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">A quarter of two countries has burned</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#deadliest" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Europe's deadliest fires</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#league-table" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Two decades, country by country</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#methodology" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Methodology</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#download" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Download the data</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ═══ OVERVIEW ═══ -->
+  <section class="py-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          The European Forest Fire Information System (EFFIS), the European Commission's satellite fire-mapping programme, has recorded every wildfire of approximately 30 hectares or larger across Europe since 2006. This study compiles that record into a single country-level index for 36 monitored countries: total area burned from 2006 to 2025, burn intensity normalised by national land area, decade-over-decade change, and a live layer covering the 2026 season to date.
+        </p>
+        <p>
+          The figures were retrieved directly from EFFIS on 30 July 2026 and are stated as satellite-mapped totals throughout. To our knowledge, this is the first published index to rank every EFFIS-monitored country on normalised, like-for-like mapped data across the full two-decade record.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KEY TAKEAWAYS ═══ -->
+  <section id="key-takeaways" class="py-16 bg-bg-paper border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Key takeaways</h2>
+      <ul class="space-y-2 list-disc pl-6 text-body text-[15px] leading-[1.7]">
+        <li><strong>11,051,539 hectares of Europe burned between 2006 and 2025</strong> across the 36 countries in the index — an area larger than Portugal, Hungary, or Austria.</li>
+        <li><strong>France has already burned past its worst year on record.</strong> 91,024 hectares have been mapped in 2026 to date, against 66,337 hectares in all of 2022, the previous full-year record — with August, historically the peak month, still ahead. The season so far stands at 6.2 times France's twenty-year average.</li>
+        <li><strong>Montenegro tops the burn-intensity index: 23.7% of its entire land area burned in twenty years.</strong> Portugal is second at 22.9% (2,109,543 hectares), Albania third at 17.9%.</li>
+        <li><strong>France recorded a +656% increase in burned area decade-over-decade</strong> (2016–2025 vs 2006–2015), the largest rise of any major Western European country. The United Kingdom rose +513%, Türkiye +507%, Romania +3,288% from a low base.</li>
+        <li><strong>Spain's 2026 season is running at 2.18 times its twenty-year average</strong> (206,768 hectares to date), twelve months after 2025 became its worst mapped year on record (393,079 hectares).</li>
+        <li><strong>At least 400 wildfire deaths were recorded across the index countries 2006–2025, dominated by single catastrophic events.</strong> The Mati fire alone killed 104 people in one afternoon. Adjusted for population, Greece (20.8 deaths per million) and Portugal (12.1) carry an order of magnitude more of the human toll than any other country.</li>
+        <li><strong>Greece's decade total was nearly flat (+2%)</strong> while Bosnia and Herzegovina (+134%), Croatia (+118%), Portugal (+121%) and Cyprus (+180%) all more than doubled.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══ PULL QUOTE ═══ -->
+  <section class="py-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <PullQuote
+        quote="We deliberately didn't model causes — the record speaks plainly enough on its own. France passing its worst full year on record in July, and the steepest twenty-year rises appearing in countries with no tradition of fire seasons, are facts of the mapping data. Why it's happening is a question for climate scientists; where it's happening is now documented."
+        attribution="Daniel Grainger, founder, Ranking Atlas"
+      />
+    </div>
+  </section>
+
+  <!-- ═══ THE 2026 SEASON (France record + season table) ═══ -->
+  <section id="season-2026" class="py-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">France has already passed its worst wildfire year on record</h2>
+
+      <!-- France annual bar chart -->
+      <div class="bg-white rounded-md border border-ink/8 p-6 mb-8">
+        <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">France: annual EFFIS-mapped burned area, 2006–2026 YTD</div>
+        <div class="text-[12px] text-muted mb-6">Hectares. 2026 is season to date (30 July). Previous record year (2022) and 2026 highlighted.</div>
+        <div class="space-y-1.5">
+          {franceYears.map((year, i) => {
+            const ha = franceHa[i];
+            const maxHa = 91024;
+            const widthPct = Math.max((ha / maxHa) * 100, 0.5);
+            const isRecord2026 = year === 2026;
+            const isRecord2022 = year === 2022;
+            const barColor = isRecord2026 ? 'bg-accent' : isRecord2022 ? 'bg-accent/60' : 'bg-brand-slate/40';
+            const labelColor = (isRecord2026 || isRecord2022) ? 'text-accent font-semibold' : 'text-muted';
+            return (
+              <div class="flex items-center gap-2">
+                <div class="w-[40px] text-right text-[11px] text-ink font-medium shrink-0">{year}</div>
+                <div class="flex-1 h-5 bg-bg-paper rounded overflow-hidden">
+                  <div class={`h-full rounded ${barColor}`} style={`width:${widthPct}%`}></div>
+                </div>
+                <div class={`w-[70px] text-right text-[11px] ${labelColor} shrink-0`}>{fmtNum(ha)}{isRecord2026 ? ' *' : ''}</div>
+              </div>
+            );
+          })}
+        </div>
+        <p class="text-[11px] text-muted mt-3">* 2026 season to date (30 July). Source: EFFIS / Copernicus.</p>
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          By 30 July 2026, EFFIS had mapped 91,024 hectares of burned land in France. The previous full-year record, set in the Gironde fires of 2022, was 66,337 hectares. The 2026 season passed it with five months of the year remaining and before August, which has historically produced Europe's largest fires.
+        </p>
+        <p class="italic text-[14px] text-muted">
+          France, EFFIS-mapped: 2026 to date: 91,024 ha · Previous record (2022): 66,337 ha · Twenty-year annual average: 14,747 ha · Season so far vs average: 6.2×
+        </p>
+        <p>
+          The United Kingdom is also running well above trend at 21,871 hectares to date, 2.5 times its twenty-year average, following its worst mapped year in 2025 (47,879 hectares). Italy stands at 69,336 hectares, 1.2 times its average. Spain's 206,768 hectares to date is 2.18 times its average and follows the country's worst mapped year in 2025.
+        </p>
+        <p class="italic text-[13px] text-muted">
+          Note: EFFIS satellite-mapped totals differ from figures reported by national agencies, which use different measurement methods and thresholds. National statements have placed France's 2026 total higher; this study uses EFFIS mapping consistently across all countries and years.
+        </p>
+      </div>
+
+      <!-- Season table (inside this section) -->
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink leading-tight mt-12 mb-4">The 2026 season so far</h3>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-8">
+        <p>
+          As of 30 July, the 2026 season has mapped 273,314 hectares in Ukraine, 206,768 in Spain, 91,024 in France, 69,336 in Italy and 37,422 in Portugal. Measured against each country's own twenty-year average, France (6.2×), the United Kingdom (2.5×) and Spain (2.18×) are running furthest above trend among major countries. This table is refreshed weekly against the live EFFIS record; figures are as retrieved on 30 July 2026.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-md border border-ink/8 mb-4">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-ink/8 bg-bg-paper">
+              <th class="px-3 py-3 font-semibold text-ink whitespace-nowrap">Country</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right whitespace-nowrap">2026 YTD ha</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right whitespace-nowrap">20-yr avg</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right whitespace-nowrap">× avg</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right whitespace-nowrap">Worst yr</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right whitespace-nowrap">Worst ha</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/6">
+            {seasonTable.map((row) => {
+              const isFrance = row.country === 'France';
+              const rowClass = isFrance ? 'bg-accent/5' : 'hover:bg-bg-paper';
+              const multipleStr = row.multiple !== null ? `${row.multiple.toFixed(2)}×` : '—';
+              const isAboveTrend = row.multiple !== null && row.multiple > 1;
+              const multipleColor = isAboveTrend ? 'text-accent font-semibold' : 'text-muted';
+              return (
+                <tr class={`transition-colors ${rowClass}`}>
+                  <td class="px-3 py-2.5 text-ink font-medium whitespace-nowrap">{row.country}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{fmtNum(row.ytd)}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{row.avg !== null ? fmtNum(row.avg) : '—'}</td>
+                  <td class={`px-3 py-2.5 text-right tabular-nums ${multipleColor}`}>{multipleStr}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{row.worstYear ?? '—'}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{row.worstHa !== null ? fmtNum(row.worstHa) : '—'}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[11px] text-muted">* Ukraine excluded from twenty-year rankings; EFFIS coverage begins 2020, totals substantially war-affected. France highlighted (record-year pace). Source: EFFIS / Copernicus, retrieved 30 July 2026.</p>
+    </div>
+  </section>
+
+  <!-- ═══ FIRES MOVING NORTH (decade shift) ═══ -->
+  <section id="decade-shift" class="py-16 bg-bg-paper border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Europe's fires are moving north and west</h2>
+
+      <!-- Diverging bar chart -->
+      <div class="bg-white rounded-md border border-ink/8 p-6 mb-8">
+        <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Decade-over-decade change in burned area</div>
+        <div class="text-[12px] text-muted mb-6">2016–2025 vs 2006–2015. Countries with ≥1,000 ha in the first decade. Romania (+3,288%) truncated for readability.</div>
+        <div class="space-y-2">
+          {shiftCountries.map((country, i) => {
+            const pct = shiftPct[i];
+            const displayPct = Math.min(Math.abs(pct), 700);
+            const maxDisplay = 700;
+            const widthPct = (displayPct / maxDisplay) * 100;
+            const isRiser = pct > 0;
+            const barColor = isRiser ? 'bg-accent' : 'bg-brand-slate';
+            const labelColor = isRiser ? 'text-accent' : 'text-brand-slate';
+            const label = pct > 0 ? `+${fmtNum(pct)}%` : `${pct}%`;
+            return (
+              <div class="flex items-center gap-2">
+                <div class="w-[130px] md:w-[150px] text-right text-[12px] text-ink font-medium shrink-0 truncate">{country}</div>
+                <div class="flex-1 h-5 bg-bg-paper rounded overflow-hidden">
+                  <div class={`h-full rounded ${barColor}`} style={`width:${widthPct}%`}></div>
+                </div>
+                <div class={`w-[80px] text-right text-[12px] font-semibold ${labelColor} shrink-0`}>{label}</div>
+              </div>
+            );
+          })}
+        </div>
+        <div class="flex items-center gap-4 mt-4 text-[11px] text-muted">
+          <div class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-sm bg-accent"></span>Increase</div>
+          <div class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-sm bg-brand-slate"></span>Decrease</div>
+        </div>
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Comparing 2016–2025 against 2006–2015 reveals the geography of escalation. The steepest rises are not in the Mediterranean heartland but on its edges and to its north.
+        </p>
+        <p>
+          Romania's burned area rose from 16,180 hectares in the first decade to 548,111 in the second, a +3,288% increase. France rose +656% (34,436 to 260,494 hectares), the United Kingdom +513% (24,805 to 151,954), Türkiye +507% (151,490 to 918,840), Serbia +271%, Hungary +218%, Cyprus +180%.
+        </p>
+        <p>
+          The traditional fire countries tell a different story. Greece's decade total rose just 2%. Albania's fell 13%. Spain rose 86% and Italy 65% — substantial, but a fraction of the increases recorded to their north. The burden is not simply growing; it is spreading into countries whose landscapes, budgets and emergency services were not built around an annual fire season.
+        </p>
+        <p class="italic text-[14px] text-muted">
+          Decade-over-decade change, 2016–2025 vs 2006–2015: Romania +3,288% · France +656% · United Kingdom +513% · Türkiye +507% · Serbia +271% · Hungary +218% · Cyprus +180% · Montenegro +145% · Bosnia and Herzegovina +134% · Portugal +121% · Croatia +118% · Spain +86% · Italy +65% · Greece +2% · Albania −13%
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BURN INTENSITY ═══ -->
+  <section id="burn-intensity" class="py-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Nearly a quarter of two European countries has burned in twenty years</h2>
+
+      <!-- Intensity bar chart -->
+      <div class="bg-white rounded-md border border-ink/8 p-6 mb-8">
+        <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Burn intensity index: share of national land area burned, 2006–2025</div>
+        <div class="text-[12px] text-muted mb-6">Cumulative EFFIS-mapped burned area as a percentage of each country's territory. Top 10 countries.</div>
+        <div class="space-y-2.5">
+          {intensityCountries.map((country, i) => {
+            const pct = intensityPct[i];
+            const maxPct = intensityPct[0];
+            const widthPct = (pct / maxPct) * 100;
+            const isHighlight = country === 'Montenegro';
+            const barColor = isHighlight ? 'bg-accent' : 'bg-brand-slate';
+            const textColor = isHighlight ? 'text-accent' : 'text-muted';
+            return (
+              <div class="flex items-center gap-3">
+                <div class="w-[140px] md:w-[160px] text-right text-[13px] text-ink font-medium shrink-0 truncate">{country}</div>
+                <div class="flex-1 h-7 bg-bg-paper rounded overflow-hidden">
+                  <div class={`h-full rounded ${barColor}`} style={`width:${widthPct}%`}></div>
+                </div>
+                <div class={`w-[60px] text-right text-[13px] font-semibold ${textColor} shrink-0`}>{pct.toFixed(1)}%</div>
+              </div>
+            );
+          })}
+        </div>
+        <p class="text-[11px] text-muted mt-4">Source: EFFIS / Copernicus. Land area: World Bank. Montenegro highlighted.</p>
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Dividing each country's cumulative 2006–2025 burned area by its land area produces the burn-intensity index — the share of a country's territory burned over two decades, counting reburned land each time it burns.
+        </p>
+        <p>
+          Montenegro leads the index: 327,005 hectares burned against 13,812 km² of territory, equivalent to 23.7% of the country. Portugal follows at 22.9%, having burned 2,109,543 hectares — the largest cumulative area of any country in the index bar none in absolute terms as well. Albania (17.9%), North Macedonia (13.2%) and Bosnia and Herzegovina (13.1%) complete the top five: four of the five most fire-burdened countries in Europe, relative to their size, are in the Western Balkans.
+        </p>
+        <p class="italic text-[14px] text-muted">
+          Burn intensity, 2006–2025, top ten: Montenegro 23.7% · Portugal 22.9% · Albania 17.9% · North Macedonia 13.2% · Bosnia and Herzegovina 13.1% · Greece 7.6% · Cyprus 5.2% · Croatia 4.7% · Italy 3.8% · Spain 3.8%
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DEADLIEST FIRES ═══ -->
+  <section id="deadliest" class="py-16 bg-bg-paper border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Europe's deadliest fire events, 2006–2026</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-8">
+        <p>
+          Compiling every itemised, verified fatal wildfire event across the index countries between 2006 and 2025 produces a record of at least 400 deaths — concentrated overwhelmingly in a small number of catastrophic events rather than spread across seasons.
+        </p>
+        <p>
+          The Mati fire of 23 July 2018, east of Athens, remains the deadliest single European fire of the period: 104 deaths in a single afternoon. The firestorms of late August 2007 in the Peloponnese killed 67 in five days, within a Greek season that killed at least 84. Portugal's Pedrógão Grande complex killed 66 in June 2017; the October fires that followed killed 51 more, bringing Portugal's 2017 toll to 117. The Evros megafire of 2023 — the largest single fire ever recorded in the EU at 94,250 hectares — killed 20, eighteen of them migrants sheltering in the forest.
+        </p>
+      </div>
+
+      <!-- Plain typographic table -->
+      <div class="overflow-x-auto bg-white rounded-md border border-ink/8 mb-8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-ink/8 bg-bg-paper">
+              <th class="px-4 py-3 font-semibold text-ink">Event</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Date</th>
+              <th class="px-4 py-3 font-semibold text-ink text-right">Deaths</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/6">
+            {deadliestFires.map((fire) => (
+              <tr class="hover:bg-bg-paper transition-colors">
+                <td class="px-4 py-3 text-ink">{fire.event}</td>
+                <td class="px-4 py-3 text-right text-muted whitespace-nowrap">{fire.date}</td>
+                <td class="px-4 py-3 text-right text-ink font-medium whitespace-nowrap">{fire.deaths}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+        <p>
+          Adjusted for population, the human toll falls overwhelmingly on two countries: Greece has recorded at least 20.8 wildfire deaths per million residents across the two decades and Portugal 12.1 — an order of magnitude above any other country in the index. The full itemised event list, with sources, is included in the downloadable dataset; totals are verified minimums.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LEAGUE TABLE ═══ -->
+  <section id="league-table" class="py-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Two decades of fire, country by country</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-8">
+        <p>
+          The full index covers all 36 monitored countries. Portugal's 2,109,543 cumulative hectares is the largest absolute total, ahead of Spain (1,901,297), Italy (1,144,530) and Greece (1,003,866). Türkiye's 1,070,330 hectares place it fifth in absolute terms despite ranking mid-table on intensity owing to its size.
+        </p>
+        <p>
+          Ukraine is reported separately: EFFIS mapping of the country begins in 2020, and its totals since — including 917,848 hectares in 2024 and 600,759 in 2025 — are substantially driven by fires in and around areas of military activity. It is excluded from the twenty-year rankings on both grounds and shown in the season table above.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-md border border-ink/8 mb-4">
+        <table class="w-full text-sm text-left" id="leagueTable">
+          <thead>
+            <tr class="border-b border-ink/8 bg-bg-paper">
+              <th class="px-3 py-3 font-semibold text-ink cursor-pointer select-none whitespace-nowrap" data-sort="country">Country</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right cursor-pointer select-none whitespace-nowrap" data-sort="burned">Total ha 2006–25</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right cursor-pointer select-none whitespace-nowrap" data-sort="haPer1k">ha per 1,000 km²</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right cursor-pointer select-none whitespace-nowrap" data-sort="pct">% of land burned</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right cursor-pointer select-none whitespace-nowrap" data-sort="decadeChange">Decade change</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right cursor-pointer select-none whitespace-nowrap" data-sort="worstYear">Worst year</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right cursor-pointer select-none whitespace-nowrap" data-sort="worstHa">Worst-year ha</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right cursor-pointer select-none whitespace-nowrap" data-sort="ytd">2026 YTD ha</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/6">
+            {leagueTable.map((row) => {
+              const isHighlight = row.country === 'Montenegro';
+              const rowClass = isHighlight ? 'bg-accent/5' : 'hover:bg-bg-paper';
+              return (
+                <tr class={`transition-colors ${rowClass}`}
+                    data-country={row.country}
+                    data-burned={row.burned}
+                    data-haper1k={row.haPer1k}
+                    data-pct={row.pct}
+                    data-decade-change={row.decadeChange}
+                    data-worst-year={row.worstYear}
+                    data-worst-ha={row.worstHa}
+                    data-ytd={row.ytd}>
+                  <td class="px-3 py-2.5 text-ink font-medium whitespace-nowrap">{row.country}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{fmtNum(row.burned)}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{fmtNum(row.haPer1k)}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{row.pct.toFixed(2)}%</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{row.decadeChange}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{row.worstYear}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{fmtNum(row.worstHa)}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{fmtNum(row.ytd)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[11px] text-muted">Click column headers to sort. Decade change shown only where the first-decade total reached at least 1,000 ha. Source: EFFIS / Copernicus, retrieved 30 July 2026.</p>
+    </div>
+  </section>
+
+  <!-- ═══ METHODOLOGY ═══ -->
+  <section id="methodology" class="py-16 bg-bg-paper border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-8">Methodology</h2>
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] italic">
+        <p>
+          All burned-area figures are satellite-mapped totals from the European Forest Fire Information System (EFFIS), part of the EU's Copernicus Emergency Management Service, which maps fires of approximately 30 hectares and larger using MODIS and VIIRS imagery. Annual country totals for 2006–2026 were retrieved programmatically from EFFIS's seasonal trend reporting service on 30 July 2026; each figure in the dataset carries its retrieval timestamp. EFFIS-mapped totals differ from national agency statistics, which use different methods and thresholds; EFFIS is used exclusively throughout for cross-country comparability. Rankings cover 2006–2025; 2026 figures are season-to-date and reported separately. Burn intensity divides cumulative burned area by national land area (World Bank), counting land that burned more than once each time it burned; it does not indicate that a fixed quarter of any country's territory has burned exactly once. Decade-over-decade change compares 2016–2025 with 2006–2015 and is reported only where the first-decade total reached at least 1,000 hectares. Ukraine is excluded from twenty-year rankings because EFFIS coverage begins in 2020 and its recent totals are substantially war-affected. Small monitored countries with no mapped fires of 30 hectares or larger in a given year record zero for that year.
+        </p>
+        <p>
+          Fatality figures are compiled per event from official tolls and contemporaneous primary reporting; the full itemised event list, with sources, is included in the downloadable dataset. Where reported tolls vary, the most widely cited figure is used and the range noted (Greece 2007: reported range 78–85; Portugal 2017: government total of 117 across the June and October events). Where season totals could not be fully itemised, the verified floor is used, so country totals and the 400-death aggregate are minimums. Events with no verified toll are excluded rather than estimated. Deaths per million uses 2024 population estimates.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DOWNLOAD ═══ -->
+  <section id="download" class="py-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-4">Download the data</h2>
+      <p class="text-body text-[15px] leading-[1.7] mb-6">
+        The full country-by-year dataset (36 countries, 2006–2026 YTD, with retrieval timestamps) and the itemised deadliest-fires compilation are available as CSVs.
+      </p>
+      <div class="space-y-4">
+        <div class="bg-white rounded-md border border-ink/8 p-6 flex items-center justify-between gap-4">
+          <div>
+            <p class="font-semibold text-ink mb-1">european-wildfire-index.csv</p>
+            <p class="text-sm text-muted">36 countries, annual burned area 2006–2026 YTD, with ISO codes and retrieval timestamps.</p>
+          </div>
+          <a href="/downloads/european-wildfire-index.csv" class="inline-flex items-center gap-2 bg-bg-warm hover:bg-white text-ink text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-ink/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
+            Download CSV
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </div>
+        <div class="bg-white rounded-md border border-ink/8 p-6 flex items-center justify-between gap-4">
+          <div>
+            <p class="font-semibold text-ink mb-1">deadliest-fires.csv</p>
+            <p class="text-sm text-muted">Itemised fatal wildfire events 2006–2025, with sources and confidence ratings.</p>
+          </div>
+          <a href="/downloads/deadliest-fires.csv" class="inline-flex items-center gap-2 bg-bg-warm hover:bg-white text-ink text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-ink/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
+            Download CSV
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+      <p class="mt-6 text-sm text-muted">
+        Citation: Ranking Atlas, "The European Wildfire Index", July 2026. Source data: European Forest Fire Information System (EFFIS), Copernicus Emergency Management Service.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ FAIR USE ═══ -->
+  <section class="py-16 bg-bg-paper border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Fair use</h2>
+      <p class="text-body text-[15px] leading-[1.7] italic">
+        This research is free to reference and republish with attribution. If you use these findings, please link to the full study as the source. For a different cut of the dataset — any country, region, or time window — or methodology questions: <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>. Same-day turnaround on data requests during the fire season.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="py-12 bg-bg-paper">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-body text-[15px] leading-[1.7] italic">
+        <a href="/" class="text-brand hover:text-brand-dark underline underline-offset-2">Ranking Atlas</a> is a specialist data campaigns firm. We turn primary-source data and original analysis into studies that earn authoritative coverage. For methodology questions or research enquiries: <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.
+      </p>
+    </div>
+  </section>
+
+  <RelatedResearch
+    items={[
+      {
+        title: "Can Station-Area Land Values Pay for Burnham's HS2?",
+        description: "15.4 million Land Registry transactions show five of seven cancelled HS2 station areas outgrew England by 7 to 40 percentage points.",
+        href: "/resources/hs2-land-value-capture",
+      },
+      {
+        title: "Who Actually Gets Scammed in America?",
+        description: "Federal fraud and survey data show sharp divides in who gets scammed, how often, and how much they lose.",
+        href: "/resources/generational-fraud",
+      },
+      {
+        title: "The Hidden Economy Behind Google Rankings",
+        description: "A six-year analysis of 140,000 publisher listings reveals how paid link markets expanded after repeated Google crackdowns.",
+        href: "/resources/the-cost-of-authority",
+      },
+    ]}
+  />
+
+</div>
+
+<!-- Sortable table script -->
+<script is:inline>
+(function(){
+  var table = document.getElementById('leagueTable');
+  if (!table) return;
+  var headers = table.querySelectorAll('th[data-sort]');
+  var tbody = table.querySelector('tbody');
+  var rows = Array.from(tbody.querySelectorAll('tr'));
+  var currentSort = '';
+  var ascending = false;
+
+  headers.forEach(function(th) {
+    th.addEventListener('click', function() {
+      var key = th.getAttribute('data-sort');
+      if (currentSort === key) { ascending = !ascending; }
+      else { currentSort = key; ascending = key === 'country'; }
+
+      rows.sort(function(a, b) {
+        var aVal, bVal;
+        if (key === 'country') {
+          aVal = a.getAttribute('data-country');
+          bVal = b.getAttribute('data-country');
+          return ascending ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+        }
+        if (key === 'decadeChange') {
+          aVal = a.getAttribute('data-decade-change');
+          bVal = b.getAttribute('data-decade-change');
+          var parseDecade = function(v) {
+            if (!v || v === '—') return -Infinity;
+            return parseFloat(v.replace(/[+%,]/g, '').replace('−','-'));
+          };
+          aVal = parseDecade(aVal);
+          bVal = parseDecade(bVal);
+        } else {
+          var attr = 'data-' + key.replace(/([A-Z])/g, function(m){ return '-' + m.toLowerCase(); });
+          aVal = parseFloat(a.getAttribute(attr)) || 0;
+          bVal = parseFloat(b.getAttribute(attr)) || 0;
+        }
+        return ascending ? aVal - bVal : bVal - aVal;
+      });
+
+      rows.forEach(function(row) { tbody.appendChild(row); });
+      headers.forEach(function(h) { h.textContent = h.textContent.replace(/ [▲▼]/, ''); });
+      th.textContent = th.textContent + (ascending ? ' ▲' : ' ▼');
+    });
+  });
+})();
+</script>
+
+</Layout>
