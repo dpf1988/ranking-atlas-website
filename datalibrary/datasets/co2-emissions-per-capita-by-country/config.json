@@ -88,5 +88,5 @@
   "sourceUrl": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
   "sourceName": "World Bank WDI",
   "keywords": ["CO2 emissions", "carbon emissions per capita", "country rankings", "World Bank", "environment data", "1970-2024"],
-  "related_slugs": ["gdp-per-capita-by-country", "life-expectancy-by-country"]
+  "related_slugs": ["gdp-per-capita-by-country", "life-expectancy-by-country", "population-by-country"]
 }

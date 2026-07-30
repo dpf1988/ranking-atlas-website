@@ -22,12 +22,19 @@ interface Props {
   unit: string;
   valuePrefix?: string;
   valueDecimals?: number;
+  valueFormat?: string;
   indicatorLabel?: string;
 }
 
-const { countries, firstYear = 1960, latestYear, prevDecadeYear, valuePrefix = '$', valueDecimals = 0, indicatorLabel = 'GDP per capita' } = Astro.props;
+const { countries, firstYear = 1960, latestYear, prevDecadeYear, valuePrefix = '$', valueDecimals = 0, valueFormat = 'standard', indicatorLabel = 'GDP per capita' } = Astro.props;
 const leaderValue = countries[0]?.latestValue || 1;
+const trimZ = (s: string) => { let r = s; while (r.endsWith('0')) r = r.slice(0, -1); if (r.endsWith('.')) r = r.slice(0, -1); return r; };
 const fmt = (n: number) => {
+  if (valueFormat === 'compact') {
+    if (n >= 1000000000) return trimZ((n / 1000000000).toFixed(2)) + 'bn';
+    if (n >= 1000000) return trimZ((n / 1000000).toFixed(1)) + 'm';
+    return Math.round(n).toLocaleString('en-US');
+  }
   const rounded = valueDecimals > 0 ? Number(n.toFixed(valueDecimals)) : Math.round(n);
   return valuePrefix + rounded.toLocaleString('en-US', { minimumFractionDigits: valueDecimals, maximumFractionDigits: valueDecimals });
 };

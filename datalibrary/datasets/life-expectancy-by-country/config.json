@@ -88,5 +88,5 @@
   "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN",
   "sourceName": "World Bank WDI",
   "keywords": ["life expectancy", "country rankings", "World Bank", "health data", "1960-2024"],
-  "related_slugs": ["gdp-per-capita-by-country", "co2-emissions-per-capita-by-country"]
+  "related_slugs": ["gdp-per-capita-by-country", "co2-emissions-per-capita-by-country", "population-by-country"]
 }

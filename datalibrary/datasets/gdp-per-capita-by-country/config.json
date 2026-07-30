@@ -73,5 +73,5 @@
   "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
   "sourceName": "World Bank WDI",
   "keywords": ["GDP per capita", "country rankings", "World Bank", "economic data", "1960-2025"],
-  "related_slugs": ["life-expectancy-by-country", "co2-emissions-per-capita-by-country"]
+  "related_slugs": ["life-expectancy-by-country", "co2-emissions-per-capita-by-country", "population-by-country"]
 }

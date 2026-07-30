@@ -1,0 +1,93 @@
+{
+  "slug": "population-by-country",
+  "category": "society",
+  "entityType": "countries",
+  "valuePrefix": "",
+  "valueDecimals": 0,
+  "valueFormat": "compact",
+  "title": "Population by Country, {{firstYear}}–{{latestYear}}",
+  "shortTitle": "Population by Country",
+  "eyebrow": "Data Report",
+  "chips": [
+    { "label": "Society", "href": "/data" },
+    { "label": "Time series", "href": "/data" },
+    { "label": "World Bank", "href": "/data" }
+  ],
+  "metaTitle": "Population by Country {{latestYear}}: Full Rankings & {{yearSpan}}-Year Trends",
+  "metaDescription": "{{leaderName}} leads {{latestYear}} population at {{leaderValueFmt}}. Full country rankings from World Bank data, {{firstYear}}–{{latestYear}} rank movement, sortable table, and downloadable CSV.",
+  "schemaDescription": "Total population for {{reportingEconomiesLatest}} {{entityType}}, {{firstYear}}–{{latestYear}}, compiled from {{sourceNameFull}}, with computed annual rankings.",
+  "itemListTemplate": "Population {{latestYear}}: {{value}}, world rank {{rank}}",
+  "standfirst": "All {{reportingEconomiesLatest}} countries with World Bank data, ranked {{firstYear}}–{{latestYear}}. {{leaderName}} leads {{latestYear}} at {{leaderValueFmt}}.",
+  "card_summary": "Total population for every country, counted in persons. Rankings recalculated for each year since 1960.",
+  "definition": "Population counts all residents of a country regardless of legal status or citizenship. It is the most widely used measure of a country's size and is the denominator behind most per-capita indicators.",
+  "byline": {
+    "authorName": "Daniel Grainger",
+    "authorRole": "Founder",
+    "authorHref": "/about",
+    "publishedISO": "2026-07-30",
+    "publishedHuman": "30 July 2026"
+  },
+  "keyTakeaways": [
+    "<b>{{leaderName}}</b> leads {{latestYear}} at <b>{{leaderValueFmt}}</b>, followed by <b>{{rank2Name}}</b> at <b>{{rank2ValueFmt}}</b> and <b>{{rank3Name}}</b> at <b>{{rank3ValueFmt}}</b>.",
+    "<b>{{overlapCount}} of {{firstYear}}'s top ten</b> countries remain in the top ten in {{latestYear}}: {{overlapList}}.",
+    "Among {{latestYear}}'s top ten, <b>{{climberName}}</b> recorded the largest climb, rising from <b>{{climberRankFirstYearOrd}}</b> in {{firstYear}} to <b>{{climberLatestRankOrd}}</b> in {{latestYear}}.",
+    "The global median population rose from <b>{{medianFirstYearFmt}}</b> in {{firstYear}} to <b>{{medianLatestFmt}}</b> in {{latestYear}}.",
+    "<b>{{reportingEntitiesFirstYear}}</b> countries reported values in {{firstYear}}, against <b>{{reportingEconomiesLatest}}</b> in {{latestYear}}."
+  ],
+  "sections": [
+    {
+      "id": "movement",
+      "heading": "{{overlapCount}} of {{firstYear}}'s top ten countries still rank in the top ten",
+      "note": "Rank position, {{firstYear}} → {{latestYear}} · top 12 countries of {{latestYear}} · {{firstYear}} axis breaks below rank 20",
+      "kind": "slope",
+      "prose": [
+        "The population ranking is among the most stable of any country-level indicator. {{overlapCount}} of {{firstYear}}'s top ten countries remain in {{latestYear}}'s top ten: {{overlapList}}. Rank changes in the top ten reflect differential fertility rates, migration flows, and in some cases territorial changes rather than short-term shifts."
+      ]
+    },
+    {
+      "id": "climber",
+      "heading": "{{climberName}} rose from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}",
+      "kind": "prose",
+      "prose": [
+        "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}.",
+        "Inside the current top 20, the largest gain since 2000 belongs to {{gainerName}}, which moved from {{gainerRank2000Ord}} in 2000 to {{gainerLatestRankOrd}} at {{gainerValueFmt}}."
+      ]
+    },
+    {
+      "id": "rankings",
+      "heading": "Full rankings: population by country, {{latestYear}}",
+      "note": "Trajectory shows each country's annual series indexed to its own {{firstYear}}–{{latestYear}} range",
+      "kind": "table"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which country has the largest population in {{latestYear}}?",
+      "a": "{{leaderName}} leads at {{leaderValueFmt}}, followed by {{rank2Name}} at {{rank2ValueFmt}} and {{rank3Name}} at {{rank3ValueFmt}}."
+    },
+    {
+      "q": "When did {{leaderName}} overtake {{rank2Name}}?",
+      "a": "{{leaderName}} overtook {{rank2Name}} as the world's most populous country in the World Bank's estimates. The downloadable CSV includes the complete annual rank history."
+    },
+    {
+      "q": "Which country climbed the population rankings most since {{firstYear}}?",
+      "a": "Among {{latestYear}}'s top ten, {{climberName}} recorded the largest climb, rising from {{climberRankFirstYearOrd}} in {{firstYear}} to {{climberLatestRankOrd}} in {{latestYear}}."
+    },
+    {
+      "q": "What is the global median population?",
+      "a": "The median across all {{reportingEconomiesLatest}} countries rose from {{medianFirstYearFmt}} in {{firstYear}} to {{medianLatestFmt}} in {{latestYear}}."
+    },
+    {
+      "q": "How often is this data updated?",
+      "a": "The World Bank publishes updated population estimates annually. This page is rebuilt from the latest release, retrieved {{retrievedAtHuman}}."
+    }
+  ],
+  "methodology": [
+    "Figures are total population as published in the {{sourceLink}} (indicator SP.POP.TOTL), retrieved {{retrievedAtHuman}}. The count includes all residents regardless of legal status or citizenship, based on the de facto definition of population. Rankings are computed among all countries with reported data for each year; countries with no reported value in a given year are excluded from that year's ranking. Trajectory sparklines index each country's series to its own {{firstYear}}–{{latestYear}} range and are not comparable in level across rows.",
+    "This dataset is published by Ranking Atlas and may be cited or reproduced with attribution and a link to this page."
+  ],
+  "sourceUrl": "https://data.worldbank.org/indicator/SP.POP.TOTL",
+  "sourceName": "World Bank WDI",
+  "keywords": ["population", "country rankings", "World Bank", "demographics", "1960-2025"],
+  "related_slugs": ["gdp-per-capita-by-country", "life-expectancy-by-country", "co2-emissions-per-capita-by-country"]
+}
