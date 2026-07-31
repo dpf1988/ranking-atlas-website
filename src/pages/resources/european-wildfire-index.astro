@@ -8,7 +8,7 @@ const metaDescription = "Satellite mapping records 11.05 million hectares of Eur
 const jsonLdArticle = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "The European Wildfire Index: Two Decades of Burned Land, Ranked by Country",
+  "headline": "The European Wildfire Index: Country Wildfire Data From 2006-2026",
   "description": metaDescription,
   "url": "https://ranking-atlas.com/resources/european-wildfire-index",
   "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about" },
@@ -126,7 +126,7 @@ function fmtNum(n: number): string { return n.toLocaleString('en-GB'); }
 ---
 
 <Layout
-  title="The European Wildfire Index: Two Decades of Burned Land, Ranked by Country | Ranking Atlas"
+  title="The European Wildfire Index: Country Wildfire Data From 2006-2026 | Ranking Atlas"
   description={metaDescription}
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLdArticle)} />
@@ -139,7 +139,7 @@ function fmtNum(n: number): string { return n.toLocaleString('en-GB'); }
     <div class="max-w-3xl mx-auto px-6">
       <div class="text-[11px] uppercase tracking-[0.14em] text-brand font-semibold mb-3 text-center">Data Report</div>
       <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.15] mb-3 text-center">
-        The European Wildfire Index: two decades of burned land, ranked by country
+        The European Wildfire Index: Country Wildfire Data From 2006-2026
       </h1>
       <div class="bg-bg-paper border border-ink/8 rounded-md p-6 mt-6 mb-8">
         <p class="text-body text-[15px] md:text-[16px] leading-[1.7] italic mb-4">
