@@ -173,6 +173,7 @@ const jsonLdGraph: any[] = [
   },
   {
     "@type": "Dataset",
+    "@id": canonicalUrl,
     "name": `${c.shortTitle}, ${dataset.temporalCoverage.startYear}–${m.latestYear}`,
     "description": c.schemaDescription,
     "url": canonicalUrl,
@@ -185,7 +186,7 @@ const jsonLdGraph: any[] = [
       { "@type": "PropertyValue", "name": "Annual world rank" },
     ],
     "keywords": c.keywords,
-    "license": c.license || "https://creativecommons.org/licenses/by/4.0/",
+    "license": c.license,
     "isAccessibleForFree": true,
     "dateModified": publishedISO,
     "distribution": [

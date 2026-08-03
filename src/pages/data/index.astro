@@ -102,14 +102,12 @@ const itemListElement = cards.map((c, i) => ({
   'position': i + 1,
   'item': {
     '@type': 'Dataset',
+    '@id': `https://ranking-atlas.com/data/${c.slug}`,
     'name': c.title,
     'description': c.summary,
     'url': `https://ranking-atlas.com/data/${c.slug}`,
     'creator': orgAuthor,
-    'publisher': orgAuthor,
-    'datePublished': c.publishedISO,
     ...(c.license ? { 'license': c.license } : {}),
-    'isAccessibleForFree': true,
   },
 }));
 
