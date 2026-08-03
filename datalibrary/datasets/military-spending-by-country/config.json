@@ -9,9 +9,18 @@
   "shortTitle": "Military Spending by Country",
   "eyebrow": "Data Report",
   "chips": [
-    { "label": "Economy", "href": "/data" },
-    { "label": "Time series", "href": "/data" },
-    { "label": "World Bank", "href": "/data" }
+    {
+      "label": "Economy",
+      "href": "/data"
+    },
+    {
+      "label": "Time series",
+      "href": "/data"
+    },
+    {
+      "label": "World Bank",
+      "href": "/data"
+    }
   ],
   "metaTitle": "Military Spending by Country {{latestYear}}: Full Rankings & {{yearSpan}}-Year Trends",
   "metaDescription": "{{leaderName}} leads {{latestYear}} military spending at {{leaderValueFmt}}. Full country rankings from World Bank data, {{firstYear}}–{{latestYear}} rank movement, sortable table, and downloadable CSV.",
@@ -93,6 +102,17 @@
   ],
   "sourceUrl": "https://data.worldbank.org/indicator/MS.MIL.XPND.CD",
   "sourceName": "World Bank WDI",
-  "keywords": ["military spending", "defence budget", "country rankings", "World Bank", "1960-2024"],
-  "related_slugs": ["gdp-by-country", "gdp-per-capita-by-country", "population-by-country"]
+  "keywords": [
+    "military spending",
+    "defence budget",
+    "country rankings",
+    "World Bank",
+    "1960-2024"
+  ],
+  "related_slugs": [
+    "gdp-by-country",
+    "gdp-per-capita-by-country",
+    "population-by-country"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/"
 }

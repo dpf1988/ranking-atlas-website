@@ -9,9 +9,18 @@
   "shortTitle": "Internet Users by Country",
   "eyebrow": "Data Report",
   "chips": [
-    { "label": "Technology", "href": "/data" },
-    { "label": "Time series", "href": "/data" },
-    { "label": "World Bank", "href": "/data" }
+    {
+      "label": "Technology",
+      "href": "/data"
+    },
+    {
+      "label": "Time series",
+      "href": "/data"
+    },
+    {
+      "label": "World Bank",
+      "href": "/data"
+    }
   ],
   "metaTitle": "Internet Users by Country {{latestYear}}: Full Rankings & {{yearSpan}}-Year Trends",
   "metaDescription": "{{leaderName}} leads {{latestYear}} internet penetration at {{leaderValueFmt}}% of population. Full country rankings, {{firstYear}}–{{latestYear}}, sortable table, and downloadable CSV.",
@@ -90,6 +99,19 @@
   ],
   "sourceUrl": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
   "sourceName": "World Bank WDI",
-  "keywords": ["internet users", "internet penetration", "digital access", "country rankings", "World Bank", "technology", "1990-2023"],
-  "related_slugs": ["population-by-country", "gdp-per-capita-by-country", "life-expectancy-by-country"]
+  "keywords": [
+    "internet users",
+    "internet penetration",
+    "digital access",
+    "country rankings",
+    "World Bank",
+    "technology",
+    "1990-2023"
+  ],
+  "related_slugs": [
+    "population-by-country",
+    "gdp-per-capita-by-country",
+    "life-expectancy-by-country"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/"
 }

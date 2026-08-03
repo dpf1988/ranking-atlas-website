@@ -8,9 +8,18 @@
   "shortTitle": "GDP Per Capita by Country",
   "eyebrow": "Data Report",
   "chips": [
-    { "label": "Economy", "href": "/data" },
-    { "label": "Time series", "href": "/data" },
-    { "label": "World Bank", "href": "/data" }
+    {
+      "label": "Economy",
+      "href": "/data"
+    },
+    {
+      "label": "Time series",
+      "href": "/data"
+    },
+    {
+      "label": "World Bank",
+      "href": "/data"
+    }
   ],
   "metaTitle": "GDP Per Capita by Country {{latestYear}}: Full Rankings & {{yearSpan}}-Year Trends",
   "metaDescription": "{{leaderName}} leads {{latestYear}} GDP per capita at ${{leaderValueFmt}}. Full country rankings from World Bank data, {{firstYear}}–{{latestYear}} rank movement, sortable table, and downloadable CSV.",
@@ -73,6 +82,17 @@
   ],
   "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
   "sourceName": "World Bank WDI",
-  "keywords": ["GDP per capita", "country rankings", "World Bank", "economic data", "1960-2025"],
-  "related_slugs": ["gdp-by-country", "life-expectancy-by-country", "population-by-country"]
+  "keywords": [
+    "GDP per capita",
+    "country rankings",
+    "World Bank",
+    "economic data",
+    "1960-2025"
+  ],
+  "related_slugs": [
+    "gdp-by-country",
+    "life-expectancy-by-country",
+    "population-by-country"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/"
 }

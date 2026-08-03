@@ -82,6 +82,7 @@
 
   "sourceUrl": "https://example.com/source",
   "sourceName": "Source Short Name",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
 
   "keywords": ["keyword1", "keyword2", "keyword3"],
 

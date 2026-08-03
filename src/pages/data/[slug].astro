@@ -185,7 +185,8 @@ const jsonLdGraph: any[] = [
       { "@type": "PropertyValue", "name": "Annual world rank" },
     ],
     "keywords": c.keywords,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license": c.license || "https://creativecommons.org/licenses/by/4.0/",
+    "isAccessibleForFree": true,
     "dateModified": publishedISO,
     "distribution": [
       { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": csvAbsUrl },

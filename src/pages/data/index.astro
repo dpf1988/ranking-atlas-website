@@ -30,6 +30,7 @@ interface CardData {
   summary: string;
   metaLine: string;
   publishedISO: string;
+  license: string;
 }
 
 function firstSentence(s: string): string {
@@ -75,6 +76,7 @@ if (fs.existsSync(DATASET_ROOT)) {
       summary,
       metaLine,
       publishedISO: cfg.byline?.publishedISO ?? data.retrievedAt ?? '',
+      license: cfg.license || '',
     });
   }
 }
@@ -106,6 +108,8 @@ const itemListElement = cards.map((c, i) => ({
     'creator': orgAuthor,
     'publisher': orgAuthor,
     'datePublished': c.publishedISO,
+    ...(c.license ? { 'license': c.license } : {}),
+    'isAccessibleForFree': true,
   },
 }));
 

@@ -8,9 +8,18 @@
   "shortTitle": "CO2 Emissions Per Capita by Country",
   "eyebrow": "Data Report",
   "chips": [
-    { "label": "Environment", "href": "/data" },
-    { "label": "Time series", "href": "/data" },
-    { "label": "World Bank", "href": "/data" }
+    {
+      "label": "Environment",
+      "href": "/data"
+    },
+    {
+      "label": "Time series",
+      "href": "/data"
+    },
+    {
+      "label": "World Bank",
+      "href": "/data"
+    }
   ],
   "metaTitle": "CO2 Emissions Per Capita by Country {{latestYear}}: Full Rankings & {{yearSpan}}-Year Trends",
   "metaDescription": "{{leaderName}} leads {{latestYear}} CO2 emissions per capita at {{leaderValueFmt}} t CO2e. Full country rankings from World Bank data, {{firstYear}}–{{latestYear}} rank movement, sortable table, and downloadable CSV.",
@@ -88,6 +97,18 @@
   ],
   "sourceUrl": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
   "sourceName": "World Bank WDI",
-  "keywords": ["CO2 emissions", "carbon emissions per capita", "country rankings", "World Bank", "environment data", "1970-2024"],
-  "related_slugs": ["gdp-per-capita-by-country", "life-expectancy-by-country", "population-by-country"]
+  "keywords": [
+    "CO2 emissions",
+    "carbon emissions per capita",
+    "country rankings",
+    "World Bank",
+    "environment data",
+    "1970-2024"
+  ],
+  "related_slugs": [
+    "gdp-per-capita-by-country",
+    "life-expectancy-by-country",
+    "population-by-country"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/"
 }

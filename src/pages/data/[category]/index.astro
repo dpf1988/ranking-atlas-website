@@ -28,6 +28,7 @@ interface DatasetCardData {
   summary: string;
   metaLine: string;
   publishedISO: string;
+  license: string;
 }
 
 function firstSentence(s: string): string {
@@ -67,6 +68,7 @@ function loadAll(): DatasetCardData[] {
       summary,
       metaLine,
       publishedISO: cfg.byline?.publishedISO ?? data.retrievedAt ?? '',
+      license: cfg.license || '',
     });
   }
   return cards;
@@ -117,6 +119,8 @@ const jsonLdGraph: any[] = [
           'creator': orgAuthor,
           'publisher': orgAuthor,
           'datePublished': c.publishedISO,
+          ...(c.license ? { 'license': c.license } : {}),
+          'isAccessibleForFree': true,
         },
       })),
     },

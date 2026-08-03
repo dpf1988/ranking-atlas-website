@@ -161,6 +161,11 @@ for (const field of requiredConfigFields) {
   else fail(`config.${field} missing (required for generic template)`);
 }
 
+// 4g. License must be present and an absolute URL
+if (!cfg.license) fail('config.license missing (required for Dataset schema)');
+else if (!/^https?:\/\//.test(cfg.license)) fail(`config.license is not an absolute URL: ${cfg.license}`);
+else pass(`config.license: ${cfg.license}`);
+
 // 5. Config tokens must all resolve against the generic token set
 const cfgStr = JSON.stringify(cfg);
 const usedTokens = [...cfgStr.matchAll(/\{\{(\w+)\}\}/g)].map(x => x[1]);
