@@ -27,7 +27,8 @@ const jsonLdDataset = {
   "temporalCoverage": "2006/2026",
   "distribution": [
     { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://ranking-atlas.com/downloads/european-wildfire-index.csv" },
-    { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://ranking-atlas.com/downloads/deadliest-fires.csv" }
+    { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://ranking-atlas.com/downloads/deadliest-fires.csv" },
+    { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://ranking-atlas.com/downloads/highland-wildfire-data.csv" }
   ]
 };
 
@@ -61,6 +62,15 @@ const deadliestFires = [
   { event: 'Arakapas, Cyprus', date: 'Jul 2021', deaths: '4' },
   { event: 'Limassol, Cyprus', date: 'Jul 2025', deaths: '2' },
 ];
+
+// Highland Scotland regional cut (from EFFIS fire perimeters, 2016-2026)
+// Source: EFFIS WFS modis.ba.poly.{year}, clipped by geometric intersection to Highland (S12000017)
+// Area computed in EPSG:27700 (BNG). Boundaries simplified at 0.01° tolerance.
+// Boundary: ONS Open Geography Portal, LAD May 2025 (BGC), Countries December 2025 (BGC)
+const highlandYears = [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026];
+const highlandHa = [503,2884,10472,12583,701,1796,4305,6379,1825,11455,4428];
+const scotlandHa = [825,3339,10753,21852,3089,5040,7510,7460,2295,30231,5980];
+const ukPerimHa = [1197,5130,18033,29391,14410,8092,22893,9344,2497,54008,25200];
 
 // Full league table (from league_table.csv)
 const leagueTable = [
@@ -195,6 +205,7 @@ function fmtNum(n: number): string { return n.toLocaleString('en-GB'); }
           <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#burn-intensity" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Proportion of land area burned</a></li>
           <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#deadliest" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Europe's deadliest fires</a></li>
           <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#league-table" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The full index</a></li>
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#highland" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Highland Scotland</a></li>
           <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#methodology" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Methodology</a></li>
           <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#download" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Download the data</a></li>
         </ul>
@@ -544,6 +555,115 @@ function fmtNum(n: number): string { return n.toLocaleString('en-GB'); }
     </div>
   </section>
 
+  <!-- ═══ HIGHLAND SCOTLAND ═══ -->
+  <section id="highland" class="py-16 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Highland Scotland: a regional cut of the fire record</h2>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mb-8">
+        <p>
+          EFFIS fire perimeter polygons, clipped to the Highland council area (25,657 km²), produce a sub-national series for 2016 to 2026 that is not available from the country-level seasonal trend data used elsewhere in this study. Highland is the largest council area in Scotland by land area and the largest in the United Kingdom, covering approximately a third of Scotland's territory and a tenth of the UK's.
+        </p>
+      </div>
+
+      <!-- Highland annual bar chart -->
+      <div class="bg-white rounded-md border border-ink/8 p-6 mb-8">
+        <div class="font-serif font-semibold text-[16px] text-ink leading-tight mb-1">Highland: EFFIS-mapped burned area, 2016–2026 YTD</div>
+        <div class="text-[12px] text-muted mb-6">Hectares. 2026 is season to date (5 August). Peak year (2019) and 2025 highlighted.</div>
+        <div class="space-y-1.5">
+          {highlandYears.map((year, i) => {
+            const ha = highlandHa[i];
+            const maxHa = 12583;
+            const widthPct = Math.max((ha / maxHa) * 100, 0.5);
+            const isPeak = year === 2019;
+            const is2025 = year === 2025;
+            const is2026 = year === 2026;
+            const barColor = isPeak ? 'bg-accent' : (is2025 || is2026) ? 'bg-accent/60' : 'bg-brand-slate/40';
+            const labelColor = (isPeak || is2025 || is2026) ? 'text-accent font-semibold' : 'text-muted';
+            return (
+              <div class="flex items-center gap-2">
+                <div class="w-[40px] text-right text-[11px] text-ink font-medium shrink-0">{year}</div>
+                <div class="flex-1 h-5 bg-bg-paper rounded overflow-hidden">
+                  <div class={`h-full rounded ${barColor}`} style={`width:${widthPct}%`}></div>
+                </div>
+                <div class={`w-[70px] text-right text-[11px] ${labelColor} shrink-0`}>{fmtNum(ha)}{is2026 ? ' *' : ''}</div>
+              </div>
+            );
+          })}
+        </div>
+        <p class="text-[11px] text-muted mt-3">* 2026 season to date (5 August). Source: EFFIS / Copernicus fire perimeters, clipped to Highland council area (ONS, S12000017).</p>
+      </div>
+
+      <!-- Highland data table -->
+      <div class="overflow-x-auto bg-white rounded-md border border-ink/8 mb-4">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-ink/8 bg-bg-paper">
+              <th class="px-3 py-3 font-semibold text-ink whitespace-nowrap">Year</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right whitespace-nowrap">Highland ha</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right whitespace-nowrap">Scotland ha</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right whitespace-nowrap">UK ha</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right whitespace-nowrap">Highland % of Scotland</th>
+              <th class="px-3 py-3 font-semibold text-ink text-right whitespace-nowrap">Highland % of UK</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/6">
+            {highlandYears.map((year, i) => {
+              const hHa = highlandHa[i];
+              const sHa = scotlandHa[i];
+              const uHa = ukPerimHa[i];
+              const pctScot = sHa > 0 ? (hHa / sHa * 100).toFixed(1) : '0.0';
+              const pctUk = uHa > 0 ? (hHa / uHa * 100).toFixed(1) : '0.0';
+              const isPeak = year === 2019;
+              const rowClass = isPeak ? 'bg-accent/5' : 'hover:bg-bg-paper';
+              return (
+                <tr class={`transition-colors ${rowClass}`}>
+                  <td class="px-3 py-2.5 text-ink font-medium">{year}{year === 2026 ? ' *' : ''}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{fmtNum(hHa)}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{fmtNum(sHa)}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{fmtNum(uHa)}</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{pctScot}%</td>
+                  <td class="px-3 py-2.5 text-right text-muted tabular-nums">{pctUk}%</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[11px] text-muted">* 2026 season to date (5 August). UK column is perimeter totals (see methodology note on divergence from seasonal trend). Source: EFFIS / Copernicus fire perimeters.</p>
+
+      <div class="space-y-6 text-body text-[15px] leading-[1.7] mt-8">
+        <p>
+          Between 2016 and 2025, EFFIS mapped 52,903 hectares of burned land within the Highland council area, 57.3% of Scotland's total (92,394 hectares) and 32.1% of the UK's perimeter total (164,995 hectares). A single council area covering a tenth of the UK's land area accounted for nearly a third of its mapped fire burden over the period.
+        </p>
+        <p>
+          Highland's worst mapped year was 2019 (12,583 hectares), when 34 fires of 30 hectares or larger were recorded, accounting for 57.6% of Scotland's burned area and 42.8% of the UK total that year. The second-largest year was 2025 (11,455 hectares), followed by 2018 (10,472 hectares across 24 fires of 30 hectares or larger). In 2018 and 2019, Highland accounted for 97.4% and 57.6% of Scotland's mapped burned area respectively: the majority of Scotland's fire burden in both years fell within a single council area.
+        </p>
+        <p>
+          The 2025 data illustrates the difference between satellite-mapped perimeters and ground estimates of area affected. Scottish Land and Estates estimated the Carrbridge and Dava fires of late June and early July 2025 affected 11,827 hectares (29,225 acres), which landowners described as the largest fires in Scotland's recorded history. EFFIS mapped the Dava complex as a single perimeter of 9,809 hectares, of which 4,728 hectares (48.2%) falls inside the Highland council area and the remainder in Moray. The divergence between the two figures reflects the difference between satellite-mapped perimeter area and ground-based estimates of area affected, and the boundary split attributing only the Highland portion of the complex to the Highland total.
+        </p>
+        <p>
+          Highland fire is concentrated in spring. Across 2016 to 2025, an average of 65% of the annual mapped burned area occurred by the end of April and 99.6% by the end of June. July fires are close to absent from the record: the mapped July total across the nine years 2016 to 2024 is 168 hectares. The Cairngorms fire that began on 15 July 2026 accounts for 3,346 hectares of Highland's 2026 total, making it the only July fire above 200 hectares in the eleven-year perimeter record, and the fourth-largest single Highland fire perimeter recorded since 2016. The largest is a Caithness and Sutherland fire of 13 May 2019 (5,428 hectares); the Dava complex of 28 June 2025 is second on its Highland portion (4,728 hectares).
+        </p>
+        <p class="italic text-[14px] text-muted">
+          Ten-year average monthly distribution of Highland burned area, 2016–2025: Jan 1.0% · Feb 2.4% · Mar 19.9% · Apr 41.8% · May 25.2% · Jun 9.4% · Jul 0.3% · Aug–Dec 0.1%
+        </p>
+        <p>
+          The Cairngorms National Park spans four council areas (Highland, Moray, Aberdeenshire and Perth and Kinross) and covers 4,527 km², so it is reported separately from the Highland council series rather than as a subset of it. Across 2016 to 2024, EFFIS mapped 697 hectares of burned land inside the park, with no single fire perimeter exceeding 55 hectares. The fire that began on 15 July 2026 mapped 3,346 hectares inside the park: 4.8 times the park's entire 2016 to 2024 total, and the largest EFFIS-mapped fire perimeter within the boundary since the perimeter record begins. The park's cumulative 2016 to 2026 mapped burn is 6,467 hectares, 1.43% of its land area, of which 78% was mapped in 2025 and 2026.
+        </p>
+        <p class="italic text-[14px] text-muted">
+          Cairngorms National Park, EFFIS-mapped perimeters: 2016 0 ha · 2017 0 ha · 2018 73 ha · 2019 52 ha · 2020 112 ha · 2021 326 ha · 2022 51 ha · 2023 35 ha · 2024 47 ha · 2025 1,489 ha · 2026 4,281 ha (season to date)
+        </p>
+        <p>
+          Decade-over-decade change cannot be computed for Highland because the EFFIS fire perimeter product, which is required for sub-national analysis, is publicly available from 2016 only (see methodology). The 2026 season to date stands at 4,428 hectares across 12 fires of 30 hectares or larger; the Cairngorms fire that began on 15 July in the Glenmore and Loch Morlich area was still active at retrieval and accounts for 3,347 hectares of the total. The figure will rise as mapping of the active fire completes. For context, the United Kingdom as a whole recorded a +513% decade-over-decade increase in the country-level seasonal trend data used in the main index, the third-steepest rise in Europe after Romania and France.
+        </p>
+        <p class="italic text-[14px] text-muted">
+          Highland, EFFIS-mapped perimeters, 2016–2025: total 52,903 ha · ten-year average 5,290 ha/yr · worst year 2019 (12,583 ha) · share of Scotland 57.3% · share of UK 32.1% · 2026 season to date 4,428 ha (Cairngorms fire 3,347 ha, still active at retrieval)
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ METHODOLOGY ═══ -->
   <section id="methodology" class="py-16 bg-bg-paper border-b border-ink/8">
     <div class="max-w-3xl mx-auto px-6">
@@ -551,6 +671,9 @@ function fmtNum(n: number): string { return n.toLocaleString('en-GB'); }
       <div class="space-y-6 text-body text-[15px] leading-[1.7] italic">
         <p>
           All burned-area figures are satellite-mapped totals from the European Forest Fire Information System (EFFIS), part of the EU's Copernicus Emergency Management Service, which maps fires of approximately 30 hectares and larger using MODIS and VIIRS imagery. Annual country totals for 2006–2026 were retrieved programmatically from EFFIS's seasonal trend reporting service on 30 July 2026; each figure in the dataset carries its retrieval timestamp. EFFIS-mapped totals differ from national agency statistics, which use different methods and thresholds; EFFIS is used exclusively throughout for cross-country comparability. Rankings cover 2006–2025; 2026 figures are season-to-date and reported separately. Burn intensity divides cumulative burned area by national land area (World Bank), counting land that burned more than once each time it burned; it does not indicate that a fixed quarter of any country's territory has burned exactly once. Decade-over-decade change compares 2016–2025 with 2006–2015 and is reported only where the first-decade total reached at least 1,000 hectares. Ukraine is excluded from twenty-year rankings because EFFIS coverage begins in 2020 and its recent totals are substantially war-affected. Small monitored countries with no mapped fires of 30 hectares or larger in a given year record zero for that year.
+        </p>
+        <p>
+          The Highland Scotland regional cut uses EFFIS fire perimeter polygons (the modis.ba.poly product) rather than the seasonal-trend country totals used for all other figures in this study. The two are not directly interchangeable: perimeter totals sum individual mapped fire polygons, while the seasonal-trend API reports aggregated national figures, and the two can diverge by 10 to 15 per cent in a given year. The EFFIS perimeter product includes mapped perimeters below the nominal 30-hectare reporting threshold, down to approximately 1 hectare; this differs from the seasonal-trend country data used elsewhere in the study, where the approximately-30-hectare floor applies. Counts of fires quoted in the Highland section are restricted to perimeters of 30 hectares or larger in their full EFFIS extent, while burned-area totals include all mapped perimeters intersecting the boundary regardless of size. Highland totals should still be read as a mapped-fire floor rather than a complete record, since the perimeter product does not capture every ground-level burn. The perimeter product is publicly available via the EFFIS WFS from 2016 only; pre-2016 perimeters require a formal data request and are not included. Each fire polygon is attributed to Highland or Scotland by geometric intersection: the area of overlap between the fire perimeter and each boundary is computed in British National Grid (EPSG:27700), so fires that straddle a boundary are split proportionally rather than attributed in full to one side. Boundaries are the Highland council area (ONS Open Geography Portal, Local Authority Districts May 2025, generalised clipped, code S12000017) and the Scotland country boundary (ONS, Countries December 2025, generalised clipped), simplified at 0.01° tolerance for computation; the simplification introduces negligible area error at the scale of fires mapped by EFFIS. The Cairngorms National Park series uses the designated park boundary from the Scottish Government protected sites dataset (post-2010 boundary including the Perth and Kinross extension), intersected in EPSG:27700 on the same basis as the Highland series. The park boundary overlaps the Highland council area and extends into Moray, Aberdeenshire and Perth and Kinross; the two series overlap and must not be summed.
         </p>
         <p>
           Fatality figures are compiled per event from official tolls and contemporaneous primary reporting; the full itemised event list, with sources, is included in the downloadable dataset. Where reported tolls vary, the most widely cited figure is used and the range noted (Greece 2007: reported range 78–85; Portugal 2017: government total of 117 across the June and October events). Where season totals could not be fully itemised, the verified floor is used, so country totals and the 400-death aggregate are minimums. Events with no verified toll are excluded rather than estimated. Deaths per million uses World Bank 2024 population estimates.
@@ -564,7 +687,7 @@ function fmtNum(n: number): string { return n.toLocaleString('en-GB'); }
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-4">Download the data</h2>
       <p class="text-body text-[15px] leading-[1.7] mb-6">
-        The full country-by-year dataset (36 countries, 2006–2026 YTD, with retrieval timestamps) and the itemised deadliest-fires compilation are available as CSVs.
+        The full country-by-year dataset (36 countries, 2006–2026 YTD, with retrieval timestamps), the itemised deadliest-fires compilation, and the Highland Scotland regional cut are available as CSVs.
       </p>
       <div class="space-y-4">
         <div class="bg-white rounded-md border border-ink/8 p-6 flex items-center justify-between gap-4">
@@ -583,6 +706,17 @@ function fmtNum(n: number): string { return n.toLocaleString('en-GB'); }
             <p class="text-sm text-muted">Itemised fatal wildfire events 2006–2025, with sources and confidence ratings.</p>
           </div>
           <a href="/downloads/deadliest-fires.csv" class="inline-flex items-center gap-2 bg-bg-warm hover:bg-white text-ink text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-ink/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
+            Download CSV
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+        <div class="bg-white rounded-md border border-ink/8 p-6 flex items-center justify-between gap-4">
+          <div>
+            <p class="font-semibold text-ink mb-1">highland-wildfire-data.csv</p>
+            <p class="text-sm text-muted">Highland, Scotland and UK annual burned area from EFFIS perimeters, 2016–2026 YTD, with retrieval timestamp.</p>
+          </div>
+          <a href="/downloads/highland-wildfire-data.csv" class="inline-flex items-center gap-2 bg-bg-warm hover:bg-white text-ink text-[13px] font-semibold tracking-tight px-4 py-2 rounded border border-ink/12 shadow-[0_3px_8px_-2px_rgba(15,27,61,0.14),0_1px_2px_rgba(15,27,61,0.06)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.18),0_2px_4px_-1px_rgba(15,27,61,0.08)] hover:-translate-y-px transition-all duration-200 shrink-0">
             Download CSV
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           </a>

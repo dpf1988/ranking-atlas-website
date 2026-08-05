@@ -1,0 +1,185 @@
+{
+  "retrieval_timestamp": "2026-08-05T01:07:18.419Z",
+  "method": "geometric intersection, area computed in EPSG:27700 (British National Grid), boundaries simplified at 0.001° tolerance",
+  "boundary_source": "ONS Open Geography Portal, LAD May 2025 (BGC)",
+  "scotland_boundary_source": "ONS Open Geography Portal, Countries December 2025 (BGC)",
+  "highland_lad_code": "S12000017",
+  "effis_endpoint": "https://maps.effis.emergency.copernicus.eu/effis",
+  "coverage": "2016-2026 (2026 is season to date)",
+  "annual": {
+    "2016": {
+      "uk_ha": 1197,
+      "uk_fires": 9,
+      "scotland_ha": 825,
+      "scotland_fires": 5,
+      "highland_ha": 503,
+      "highland_fires": 2
+    },
+    "2017": {
+      "uk_ha": 5130,
+      "uk_fires": 19,
+      "scotland_ha": 3339,
+      "scotland_fires": 10,
+      "highland_ha": 2884,
+      "highland_fires": 8
+    },
+    "2018": {
+      "uk_ha": 18033,
+      "uk_fires": 79,
+      "scotland_ha": 10753,
+      "scotland_fires": 35,
+      "highland_ha": 10472,
+      "highland_fires": 27
+    },
+    "2019": {
+      "uk_ha": 29391,
+      "uk_fires": 137,
+      "scotland_ha": 21852,
+      "scotland_fires": 76,
+      "highland_ha": 12583,
+      "highland_fires": 41
+    },
+    "2020": {
+      "uk_ha": 14410,
+      "uk_fires": 115,
+      "scotland_ha": 3089,
+      "scotland_fires": 29,
+      "highland_ha": 701,
+      "highland_fires": 4
+    },
+    "2021": {
+      "uk_ha": 8092,
+      "uk_fires": 234,
+      "scotland_ha": 5040,
+      "scotland_fires": 159,
+      "highland_ha": 1796,
+      "highland_fires": 47
+    },
+    "2022": {
+      "uk_ha": 22893,
+      "uk_fires": 460,
+      "scotland_ha": 7510,
+      "scotland_fires": 181,
+      "highland_ha": 4305,
+      "highland_fires": 89
+    },
+    "2023": {
+      "uk_ha": 9344,
+      "uk_fires": 112,
+      "scotland_ha": 7460,
+      "scotland_fires": 64,
+      "highland_ha": 6379,
+      "highland_fires": 37
+    },
+    "2024": {
+      "uk_ha": 2497,
+      "uk_fires": 39,
+      "scotland_ha": 2295,
+      "scotland_fires": 24,
+      "highland_ha": 1825,
+      "highland_fires": 10
+    },
+    "2025": {
+      "uk_ha": 54008,
+      "uk_fires": 1224,
+      "scotland_ha": 30231,
+      "scotland_fires": 603,
+      "highland_ha": 11455,
+      "highland_fires": 187
+    },
+    "2026": {
+      "uk_ha": 25200,
+      "uk_fires": 369,
+      "scotland_ha": 5980,
+      "scotland_fires": 148,
+      "highland_ha": 4428,
+      "highland_fires": 36
+    }
+  },
+  "flagged_fires": [
+    {
+      "year": 2025,
+      "id": "265707",
+      "firedate": "2025-04-04 01:02:00",
+      "province": "Dumfries & Galloway",
+      "commune": "Dumfries and Galloway",
+      "effis_ha": 6720,
+      "bng_total_ha": 6719,
+      "scotland_ha": 6719,
+      "highland_ha": 0,
+      "highland_pct": "0.0"
+    },
+    {
+      "year": 2025,
+      "id": "273772",
+      "firedate": "2025-06-28 11:53:00",
+      "province": "Inverness & Nairn and Moray, Badenoch & Strathspey",
+      "commune": "West Moray",
+      "effis_ha": 9809,
+      "bng_total_ha": 9804,
+      "scotland_ha": 9804,
+      "highland_ha": 4728,
+      "highland_pct": "48.2"
+    },
+    {
+      "year": 2025,
+      "id": "267476",
+      "firedate": "2025-04-08 01:05:00",
+      "province": "Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute",
+      "commune": "Argyll and Bute Mainland",
+      "effis_ha": 889,
+      "bng_total_ha": 889,
+      "scotland_ha": 886,
+      "highland_ha": 0,
+      "highland_pct": "0.0"
+    },
+    {
+      "year": 2025,
+      "id": "267478",
+      "firedate": "2025-04-06 11:55:00",
+      "province": "Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute",
+      "commune": "Argyll and Bute Mainland",
+      "effis_ha": 617,
+      "bng_total_ha": 617,
+      "scotland_ha": 617,
+      "highland_ha": 0,
+      "highland_pct": "0.0"
+    },
+    {
+      "year": 2025,
+      "id": "267477",
+      "firedate": "2025-04-10 12:00:00",
+      "province": "Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute",
+      "commune": "Arran and Cumbrae",
+      "effis_ha": 528,
+      "bng_total_ha": 528,
+      "scotland_ha": 528,
+      "highland_ha": 0,
+      "highland_pct": "0.0"
+    },
+    {
+      "year": 2025,
+      "id": "267480",
+      "firedate": "2025-04-11 11:40:00",
+      "province": "Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute",
+      "commune": "Lochaber",
+      "effis_ha": 1080,
+      "bng_total_ha": 1081,
+      "scotland_ha": 1081,
+      "highland_ha": 1081,
+      "highland_pct": "100.0"
+    },
+    {
+      "year": 2026,
+      "id": "561570",
+      "firedate": "2026-07-15 11:47:00",
+      "province": "Inverness & Nairn and Moray, Badenoch & Strathspey",
+      "commune": "Badenoch and Strathspey",
+      "effis_ha": 3347,
+      "bng_total_ha": 3346,
+      "scotland_ha": 3346,
+      "highland_ha": 3346,
+      "highland_pct": "100.0"
+    }
+  ]
+}

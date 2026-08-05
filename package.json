@@ -13,8 +13,18 @@
     "lucide-astro": "^0.556.0"
   },
   "devDependencies": {
+    "@turf/area": "^7.4.0",
+    "@turf/bbox": "^7.4.0",
+    "@turf/bbox-polygon": "^7.4.0",
+    "@turf/boolean-overlap": "^7.4.0",
+    "@turf/boolean-point-in-polygon": "^7.4.0",
+    "@turf/centroid": "^7.4.0",
+    "@turf/helpers": "^7.4.0",
+    "@turf/intersect": "^7.4.0",
+    "@turf/simplify": "^7.4.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.1",
+    "proj4": "^2.21.0",
     "tailwindcss": "^3.4.17"
   }
 }
