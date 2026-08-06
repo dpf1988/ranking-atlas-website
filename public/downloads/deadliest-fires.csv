@@ -1,3 +1,7 @@
+# Source: EFFIS, Copernicus Emergency Management Service; official tolls and primary reporting.
+# Licence: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+# Contains modified Copernicus Emergency Management Service information 2026.
+# Compiled by Ranking Atlas, ranking-atlas.com
 iso,year,event,deaths,source,confidence
 GRC,2018,Mati / Attica (23 July),104,Final toll incl. later hospital deaths; initial official 102,HIGH
 GRC,2007,"Summer fire season, Peloponnese/Euboea/Attica (June-Sept)",84,"TIME/Belspo/official reporting; academic sources 78, Wikipedia 85 - reported range 78-85, 84 most widely cited",HIGH

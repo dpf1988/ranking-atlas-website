@@ -403,8 +403,9 @@ const citeText = `Ranking Atlas (${retrievedAt.getUTCFullYear()}). ${c.shortTitl
             <h3 class="text-[12px] font-semibold tracking-[0.14em] uppercase text-brand mb-3">Methodology &amp; Fair Use</h3>
             <p class="font-serif italic text-[15.5px] leading-[1.7] text-[#334155] mb-3">{currencyLine}</p>
             {c.methodology.map((p: string) => (
-              <p class="font-serif italic text-[15.5px] leading-[1.7] text-[#334155] mb-3 last:mb-0" set:html={p} />
+              <p class="font-serif italic text-[15.5px] leading-[1.7] text-[#334155] mb-3" set:html={p} />
             ))}
+            <p class="font-serif italic text-[15.5px] leading-[1.7] text-[#334155] mb-0"><strong class="text-ink">Data licence.</strong> Source: {dataset.source.name}. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" class="text-brand hover:text-brand-dark underline underline-offset-2">CC BY 4.0</a>. Retrieved {retrievedAtHuman}.</p>
           </div>
           <div class="bg-[#EEF2FA] border border-[#DCE4F5] rounded-md p-6 md:p-8 max-w-[820px]">
             <div class="flex items-center justify-between gap-4 mb-3">

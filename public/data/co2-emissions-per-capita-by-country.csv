@@ -1,3 +1,6 @@
+# Source: World Bank World Development Indicators.
+# Licence: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+# Compiled by Ranking Atlas, ranking-atlas.com
 iso3,iso2,name,region,income_level,year,value,rank
 PLW,pw,"Palau","East Asia & Pacific","High income",1970,175.475017593244,1
 PLW,pw,"Palau","East Asia & Pacific","High income",1971,169.640275533634,1

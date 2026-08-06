@@ -1,3 +1,5 @@
+# Source: Primary data collected by Ranking Atlas, April 2026. AI model outputs (ChatGPT-4o, Claude Sonnet, Gemini 2.5 Flash, Perplexity Sonar Pro).
+# Compiled by Ranking Atlas, ranking-atlas.com
 full_name,gender,classification_method,role,total_mentions,mentions_openai,mentions_anthropic,mentions_perplexity,mentions_gemini,mentions_by_category,first_mention_context
 Sir Tim Berners-Lee,M,gender-guesser,academic,331,107,114,37,73,"{""ICT"": 227, ""software engineering"": 20, ""networking and telecommunications"": 84}","Often credited as the inventor of the World Wide Web, Berners-Lee's work has fundamentally transformed how information is shared and accessed globally."
 Vinton G. Cerf,M,llm-high,practitioner,315,105,107,15,88,"{""ICT"": 170, ""networking and telecommunications"": 144, ""software engineering"": 1}","Known as one of the ""fathers of the Internet,"" Cerf co-designed the TCP/IP protocols that form the backbone of modern internet communications."

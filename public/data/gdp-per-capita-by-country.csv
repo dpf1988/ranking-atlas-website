@@ -1,3 +1,6 @@
+# Source: World Bank World Development Indicators.
+# Licence: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+# Compiled by Ranking Atlas, ranking-atlas.com
 iso3,iso2,name,region,income_level,year,value,rank
 LUX,lu,"Luxembourg","Europe & Central Asia","High income",1960,2261.17741836594,4
 LUX,lu,"Luxembourg","Europe & Central Asia","High income",1961,2241.36003221423,5

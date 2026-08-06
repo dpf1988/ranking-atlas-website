@@ -1,3 +1,6 @@
+# Source: World Bank World Development Indicators.
+# Licence: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+# Compiled by Ranking Atlas, ranking-atlas.com
 iso3,iso2,name,region,income_level,year,value,rank
 IND,in,"India","South Asia","Lower middle income",1960,435990338,2
 IND,in,"India","South Asia","Lower middle income",1961,446564729,2

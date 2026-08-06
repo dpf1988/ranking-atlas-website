@@ -1,3 +1,7 @@
+# Source: EFFIS, Copernicus Emergency Management Service; ONS Open Geography Portal; Scottish Government.
+# Licence: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/); OGL v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
+# Contains modified Copernicus Emergency Management Service information 2026; contains OS data Crown copyright and database right 2026.
+# Compiled by Ranking Atlas, ranking-atlas.com
 year,uk_burned_ha,uk_fires,scotland_burned_ha,scotland_fires,highland_burned_ha,highland_fires,retrieval_timestamp
 2016,1197,9,825,5,503,2,2026-08-05T01:07:18.419Z
 2017,5130,19,3339,10,2884,8,2026-08-05T01:07:18.419Z

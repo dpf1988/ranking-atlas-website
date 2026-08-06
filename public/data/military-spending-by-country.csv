@@ -1,3 +1,6 @@
+# Source: World Bank World Development Indicators.
+# Licence: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+# Compiled by Ranking Atlas, ranking-atlas.com
 iso3,iso2,name,region,income_level,year,value,rank
 USA,us,"United States","North America","High income",1960,47346552670.2126,1
 USA,us,"United States","North America","High income",1961,49879770605.0578,1
