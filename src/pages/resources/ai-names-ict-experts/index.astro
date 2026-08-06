@@ -81,7 +81,7 @@ const jsonLd = {
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">Key Takeaways</h2>
       <ul class="space-y-2 list-disc pl-6 text-body text-[15px] leading-[1.7]">
         <li><strong>Ask AI for top tech founders and it names one woman for roughly every ten men.</strong> The female share for founders and CEOs was <strong>9.8%</strong> across 2,802 mentions, against a 28% workforce baseline.</li>
-        <li><strong>Five of six ICT sub-categories underrepresented women</strong> relative to their own workforce figures. Software engineering showed the widest gap: <strong>15.3%</strong> named, against a <strong>22%</strong> workforce share.</li>
+        <li><strong>Five of six ICT sub-categories underrepresented women</strong> relative to their own workforce figures. Software engineering showed the widest gap: <strong>15.3%</strong> named, against a <strong>20.3%</strong> workforce share.</li>
         <li><strong>One wording change nearly doubled how many women AI named.</strong> Across the nine non-control variants, query phrasing alone moved the female share from <strong>11.8%</strong> to <strong>27.8%</strong>, with the models, topics, and categories held constant.</li>
         <li><strong>The more the models agreed, the more male the answer got.</strong> Of the 56 individuals named by all four models, fewer than <strong>one in five</strong> were women. Among names returned by only one model, it was closer to <strong>one in four</strong>.</li>
         <li><strong>The AI that searches the live web did worst.</strong> Perplexity, the only retrieval-augmented model, returned <strong>18.5%</strong> female, below the three trained models' <strong>21.0%</strong> average.</li>
@@ -209,9 +209,9 @@ const jsonLd = {
             <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Software engineering</td>
               <td class="px-4 py-3 text-right font-semibold text-viz-red">15.3%</td>
-              <td class="px-4 py-3 text-right text-muted">22%</td>
-              <td class="px-4 py-3 text-right font-semibold text-viz-red">+6.7 pp</td>
-              <td class="px-4 py-3 text-muted">BLS 2025 / WomenHack</td>
+              <td class="px-4 py-3 text-right text-muted">20.3%</td>
+              <td class="px-4 py-3 text-right font-semibold text-viz-red">+5.0 pp</td>
+              <td class="px-4 py-3 text-muted">BLS CPS Table 11, 2025 (occupation: software developers)</td>
             </tr>
             <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">AI and machine learning</td>
@@ -229,10 +229,10 @@ const jsonLd = {
             </tr>
             <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Cloud and infrastructure</td>
-              <td class="px-4 py-3 text-right font-semibold text-viz-green">20.0%</td>
-              <td class="px-4 py-3 text-right text-muted">14%</td>
-              <td class="px-4 py-3 text-right font-semibold text-viz-green">−6.0 pp</td>
-              <td class="px-4 py-3 text-muted">Statista 2025 / WomenHack</td>
+              <td class="px-4 py-3 text-right text-muted">20.0%</td>
+              <td class="px-4 py-3 text-right text-muted">19.5%*</td>
+              <td class="px-4 py-3 text-right text-muted">+0.5 pp</td>
+              <td class="px-4 py-3 text-muted">Eurostat 2025 (all ICT specialists, EU)</td>
             </tr>
             <tr class="hover:bg-bg-paper transition-colors">
               <td class="px-4 py-3 font-medium text-ink">Data and analytics</td>
@@ -243,6 +243,7 @@ const jsonLd = {
             </tr>
           </tbody>
         </table>
+        <p class="text-[13px] text-muted mt-2">* No sub-category baseline is published for cloud and infrastructure; the all-roles EU figure for ICT specialists is used as the baseline for this row.</p>
       </div>
 
       <div class="max-w-3xl space-y-6 text-body text-[15px] leading-[1.7]">
@@ -250,10 +251,10 @@ const jsonLd = {
           Each tech field has its own workforce baseline, so a figure that looks low against the overall 28% mark may sit above or below its own sector's share. Measured that way, <strong>five of six sub-categories underrepresented women.</strong>
         </p>
         <p>
-          Software engineering had the widest shortfall: <strong>15.3%</strong> named, against a Bureau of Labor Statistics workforce figure of <strong>22%</strong>. Networking and telecommunications, AI and machine learning, cybersecurity, and data and analytics all came in below their sector baselines too.
+          Software engineering had the widest shortfall: <strong>15.3%</strong> named, against a Bureau of Labor Statistics workforce figure of <strong>20.3%</strong> for software developers (BLS CPS Table 11, 2025). Networking and telecommunications, AI and machine learning, cybersecurity, and data and analytics all came in below their sector baselines too.
         </p>
         <p>
-          One field ran the other way. In <strong>cloud and infrastructure</strong>, the models named women <strong>20.0%</strong> of the time against a workforce share of just <strong>14%</strong>: the single sub-category where AI named more women than the field actually employs.
+          One field was close to parity. In <strong>cloud and infrastructure</strong>, the models named women <strong>20.0%</strong> of the time against a workforce share of <strong>19.5%</strong> of ICT specialists in EU employment (Eurostat, 2025): the single sub-category where AI representation roughly matched the workforce baseline.
         </p>
       </div>
     </div>
@@ -589,9 +590,9 @@ const jsonLd = {
                 <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">ICT (overall)</td><td class="px-4 py-3 text-right text-muted">28%</td><td class="px-4 py-3 text-muted">Women in Tech Network / CompTIA State of the Tech Workforce 2024</td></tr>
                 <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">AI and machine learning</td><td class="px-4 py-3 text-right text-muted">22%</td><td class="px-4 py-3 text-muted">Stanford AI Index 2024 / Interface EU</td></tr>
                 <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Cybersecurity</td><td class="px-4 py-3 text-right text-muted">22%</td><td class="px-4 py-3 text-muted">ISC2 Cybersecurity Workforce Study 2024</td></tr>
-                <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Software engineering</td><td class="px-4 py-3 text-right text-muted">22%</td><td class="px-4 py-3 text-muted">BLS 2025 / WomenHack</td></tr>
+                <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Software engineering</td><td class="px-4 py-3 text-right text-muted">20.3%</td><td class="px-4 py-3 text-muted">BLS, CPS Table 11, 2025 (occupation: software developers)</td></tr>
                 <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Data and analytics</td><td class="px-4 py-3 text-right text-muted">30%</td><td class="px-4 py-3 text-muted">World Economic Forum 2025</td></tr>
-                <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Cloud and infrastructure</td><td class="px-4 py-3 text-right text-muted">14%</td><td class="px-4 py-3 text-muted">Statista 2025 / WomenHack</td></tr>
+                <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Cloud and infrastructure</td><td class="px-4 py-3 text-right text-muted">19.5%*</td><td class="px-4 py-3 text-muted">Eurostat 2025 (all ICT specialists, EU; no sub-category split published)</td></tr>
                 <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Networking and telecommunications</td><td class="px-4 py-3 text-right text-muted">19%</td><td class="px-4 py-3 text-muted">Eurostat / ITU composite</td></tr>
               </tbody>
             </table>
@@ -602,7 +603,7 @@ const jsonLd = {
       <p class="text-body text-[15px] leading-[1.7] mt-6">These patterns reflect how AI systems prioritise sources and citations when generating answers.</p>
       <div class="font-serif italic text-[15px] leading-[1.7] text-body mt-8 space-y-3">
         <p><strong class="text-ink">Data licences and attribution.</strong> AI model outputs (ChatGPT-4o, Claude Sonnet, Gemini 2.5 Flash, Perplexity Sonar Pro) are primary data collected by Ranking Atlas, April 2026.</p>
-        <p>Workforce baseline figures cited with attribution from the following sources: <a href="https://www.comptia.org/content/research/state-of-the-tech-workforce" class="text-brand hover:text-brand-dark underline underline-offset-2">CompTIA, State of the Tech Workforce 2024</a> (ICT overall 28%). <a href="https://aiindex.stanford.edu/report/" class="text-brand hover:text-brand-dark underline underline-offset-2">Stanford HAI, AI Index Report 2024</a> / Interface EU (AI/ML 22%). <a href="https://www.isc2.org/research" class="text-brand hover:text-brand-dark underline underline-offset-2">ISC2, Cybersecurity Workforce Study 2024</a> (cybersecurity 22%). <a href="https://www.bls.gov/cps/" class="text-brand hover:text-brand-dark underline underline-offset-2">US Bureau of Labor Statistics 2025</a> / WomenHack (software engineering 22%); US federal government data, public domain. <a href="https://www.weforum.org/publications/global-gender-gap-report-2025/" class="text-brand hover:text-brand-dark underline underline-offset-2">World Economic Forum, Global Gender Gap Report 2025</a> (data and analytics 30%). Statista 2025 / WomenHack (cloud and infrastructure 14%); cited with attribution. <a href="https://ec.europa.eu/eurostat" class="text-brand hover:text-brand-dark underline underline-offset-2">Eurostat</a> / <a href="https://www.itu.int/" class="text-brand hover:text-brand-dark underline underline-offset-2">ITU</a> composite (networking and telecommunications 19%).</p>
+        <p>Workforce baseline figures cited with attribution from the following sources: <a href="https://www.comptia.org/content/research/state-of-the-tech-workforce" class="text-brand hover:text-brand-dark underline underline-offset-2">CompTIA, State of the Tech Workforce 2024</a> (ICT overall 28%). <a href="https://aiindex.stanford.edu/report/" class="text-brand hover:text-brand-dark underline underline-offset-2">Stanford HAI, AI Index Report 2024</a> / Interface EU (AI/ML 22%). <a href="https://www.isc2.org/research" class="text-brand hover:text-brand-dark underline underline-offset-2">ISC2, Cybersecurity Workforce Study 2024</a> (cybersecurity 22%). <a href="https://www.bls.gov/cps/cpsaat11.htm" class="text-brand hover:text-brand-dark underline underline-offset-2">BLS, Current Population Survey, Table 11 (Employed persons by detailed occupation, sex, race, and Hispanic or Latino ethnicity), 2025 annual averages</a> (software developers: 20.3%); US federal government data, public domain. <a href="https://www.weforum.org/publications/global-gender-gap-report-2025/" class="text-brand hover:text-brand-dark underline underline-offset-2">World Economic Forum, Global Gender Gap Report 2025</a> (data and analytics 30%). <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=ICT_specialists_in_employment" class="text-brand hover:text-brand-dark underline underline-offset-2">Eurostat, ICT specialists in employment (isoc_sks_itsps), 2025</a> (ICT specialists, all roles: 19.5%); cited with attribution. <a href="https://ec.europa.eu/eurostat" class="text-brand hover:text-brand-dark underline underline-offset-2">Eurostat</a> / <a href="https://www.itu.int/" class="text-brand hover:text-brand-dark underline underline-offset-2">ITU</a> composite (networking and telecommunications 19%).</p>
       </div>
     </div>
   </section>
