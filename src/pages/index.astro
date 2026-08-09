@@ -62,14 +62,14 @@ const eyebrowText = "text-[11px] uppercase tracking-[0.14em] font-semibold text-
              Pauses on hover. Respects prefers-reduced-motion. -->
         <div class="lg:col-span-6 lg:-mr-6 xl:-mr-12 relative">
           <div class="fan-container relative aspect-[6/5]">
-            <!-- Card 0: The Intermediary (initial back-left) -->
-            <a href="https://theintermediary.co.uk/2026/07/hs2-land-value-uplift-real-but-uneven-ranking-atlas-finds/" target="_blank" rel="noopener" aria-label="Read on The Intermediary" data-fan-card class="fan-card fan-back-left group hidden md:block absolute top-0 left-1/2 w-[76%] aspect-[6/5]">
-              <article class="h-full rounded-md border border-ink/10 shadow-[0_20px_40px_-15px_rgba(15,27,61,0.28)] overflow-hidden bg-white flex flex-col">
+            <!-- Card 0: Forbes (initial front, LCP-critical, always visible on mobile) -->
+            <a href="https://www.forbes.com/sites/christopherelliott/2026/08/07/wildfires-travel-when-to-cancel-vacation/" target="_blank" rel="noopener" aria-label="Read on Forbes" data-fan-card class="fan-card fan-front group absolute top-0 left-1/2 w-full md:w-[76%] aspect-[6/5]">
+              <article class="h-full rounded-md border border-ink/10 shadow-[0_30px_60px_-15px_rgba(15,27,61,0.28),0_10px_25px_-10px_rgba(15,27,61,0.18)] overflow-hidden bg-white flex flex-col">
                 <header class="flex items-center px-4 py-2 bg-bg-paper border-b border-ink/[0.08]">
-                  <span class="font-serif font-semibold text-[13px] text-ink tracking-tight">The Intermediary</span>
+                  <span class="font-serif font-semibold text-[13px] text-ink tracking-tight">Forbes</span>
                 </header>
                 <div class="flex-1 overflow-hidden">
-                  <img src="/images/intermediary-hs2.webp" alt="Ranking Atlas HS2 land value analysis covered in The Intermediary" class="w-full h-full object-cover object-left-top" loading="lazy" />
+                  <img src="/images/forbes.webp" alt="Ranking Atlas research featured in Forbes: wildfires and travel" class="w-full h-full object-cover object-left-top" fetchpriority="high" />
                 </div>
               </article>
             </a>
@@ -86,14 +86,14 @@ const eyebrowText = "text-[11px] uppercase tracking-[0.14em] font-semibold text-
               </article>
             </a>
 
-            <!-- Card 2: Metro (initial front, LCP-critical, always visible on mobile) -->
-            <a href="https://metro.co.uk/2026/07/16/london-neighbourhood-house-prices-fell-97-500-despite-hs2-hopes-29136202/" target="_blank" rel="noopener" aria-label="Read on Metro" data-fan-card class="fan-card fan-front group absolute top-0 left-1/2 w-full md:w-[76%] aspect-[6/5]">
-              <article class="h-full rounded-md border border-ink/10 shadow-[0_30px_60px_-15px_rgba(15,27,61,0.28),0_10px_25px_-10px_rgba(15,27,61,0.18)] overflow-hidden bg-white flex flex-col">
+            <!-- Card 2: Metro (initial back-left) -->
+            <a href="https://metro.co.uk/2026/07/16/london-neighbourhood-house-prices-fell-97-500-despite-hs2-hopes-29136202/" target="_blank" rel="noopener" aria-label="Read on Metro" data-fan-card class="fan-card fan-back-left group hidden md:block absolute top-0 left-1/2 w-[76%] aspect-[6/5]">
+              <article class="h-full rounded-md border border-ink/10 shadow-[0_20px_40px_-15px_rgba(15,27,61,0.28)] overflow-hidden bg-white flex flex-col">
                 <header class="flex items-center px-4 py-2 bg-bg-paper border-b border-ink/[0.08]">
                   <span class="font-serif font-semibold text-[13px] text-ink tracking-tight">Metro</span>
                 </header>
                 <div class="flex-1 overflow-hidden">
-                  <img src="/images/metro-hs2.webp" alt="Ranking Atlas analysis featured in Metro: Old Oak Common house prices fell £97,500 despite HS2 hopes" class="w-full h-full object-cover object-top" fetchpriority="high" />
+                  <img src="/images/metro-hs2.webp" alt="Ranking Atlas analysis featured in Metro: Old Oak Common house prices fell £97,500 despite HS2 hopes" class="w-full h-full object-cover object-top" loading="lazy" />
                 </div>
               </article>
             </a>
@@ -125,6 +125,9 @@ const eyebrowText = "text-[11px] uppercase tracking-[0.14em] font-semibold text-
           <a href="https://www.coventrytelegraph.net/news/local-news/hs2-revival-andy-burnhams-1027bn-34285597" target="_blank" rel="noopener" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in Coventry Live">
             <img src="/assets/images/press-logos/coventry-live.svg" alt="Coventry Live" class="h-5 md:h-6 object-contain" />
           </a>
+          <a href="https://www.forbes.com/sites/christopherelliott/2026/08/07/wildfires-travel-when-to-cancel-vacation/" target="_blank" rel="noopener" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in Forbes">
+            <span class="font-serif font-bold text-[17px] md:text-[20px] whitespace-nowrap text-ink tracking-tight italic">Forbes</span>
+          </a>
           <a href="https://www.thisismoney.co.uk/money/buytolet/article-15968671/Seven-ten-landlords-say-no-pets-despite-new-rules-heres-hardest-pet-friendly-home.html" target="_blank" rel="noopener" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300" aria-label="Ranking Atlas coverage in This is Money">
             <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">This is Money</span>
           </a>
@@ -154,6 +157,9 @@ const eyebrowText = "text-[11px] uppercase tracking-[0.14em] font-semibold text-
             </a>
             <a href="https://www.coventrytelegraph.net/news/local-news/hs2-revival-andy-burnhams-1027bn-34285597" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
               <img src="/assets/images/press-logos/coventry-live.svg" alt="" class="h-5 md:h-6 object-contain" />
+            </a>
+            <a href="https://www.forbes.com/sites/christopherelliott/2026/08/07/wildfires-travel-when-to-cancel-vacation/" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
+              <span class="font-serif font-bold text-[17px] md:text-[20px] whitespace-nowrap text-ink tracking-tight italic">Forbes</span>
             </a>
             <a href="https://www.thisismoney.co.uk/money/buytolet/article-15968671/Seven-ten-landlords-say-no-pets-despite-new-rules-heres-hardest-pet-friendly-home.html" target="_blank" rel="noopener" tabindex="-1" class="shrink-0 opacity-60 hover:opacity-100 transition duration-300">
               <span class="font-serif font-semibold text-[13px] md:text-[15px] whitespace-nowrap text-ink tracking-tight">This is Money</span>
