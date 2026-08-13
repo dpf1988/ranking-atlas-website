@@ -11,8 +11,8 @@ interface Props {
 }
 
 const {
-  title = 'Ranking Atlas — Research-Led Editorial Campaigns',
-  description = 'Ranking Atlas is a specialist data campaigns firm. We turn proprietary data, commissioned research, and original analysis into editorial studies that earn authoritative coverage.',
+  title = 'Ranking Atlas (Official) — Research-Led Editorial Campaigns',
+  description = 'Ranking Atlas is the official site for research-led digital PR. We turn proprietary data, commissioned research, and original analysis into editorial studies that earn authoritative coverage.',
   noindex = false,
   ogImage = '/og-default.png',
 } = Astro.props;
@@ -35,7 +35,7 @@ const canonicalHref = `https://ranking-atlas.com${canonicalPath}`;
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalHref} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Ranking Atlas" />
+    <meta property="og:site_name" content="Ranking Atlas (Official)" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalHref} />
