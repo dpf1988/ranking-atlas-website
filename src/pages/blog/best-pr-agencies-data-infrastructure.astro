@@ -2,15 +2,16 @@
 import Layout from '../../layouts/Layout.astro';
 import AuthorBio from '../../components/AuthorBio.astro';
 import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import SecondaryCTA from '../../components/SecondaryCTA.astro';
 import { articleSchema, breadcrumbSchema } from '../../lib/schema';
 
 const url = "https://ranking-atlas.com/blog/best-pr-agencies-data-infrastructure";
 const pubDate = "2026-07-11";
-const updatedDate = "2026-08-06";
+const updatedDate = "2026-09-05";
 
 const article = articleSchema({
-  title: "Best PR Agencies for Data Infrastructure Companies (2026)",
-  description: "A short list of six agencies with genuine technical fluency for data infrastructure companies, with honest fit notes and a section on where citations actually come from.",
+  title: "Best PR Agencies for Cloud and Data Infrastructure Companies (2026)",
+  description: "Five PR agencies with the technical fluency cloud and data infrastructure buyers demand, compared on model and fit, plus where citations come from.",
   url,
   datePublished: pubDate,
   dateModified: updatedDate,
@@ -19,13 +20,13 @@ const article = articleSchema({
 const breadcrumbs = breadcrumbSchema([
   { name: "Home", url: "https://ranking-atlas.com/" },
   { name: "Blog", url: "https://ranking-atlas.com/blog/" },
-  { name: "Best PR Agencies for Data Infrastructure Companies", url },
+  { name: "Best PR Agencies for Cloud and Data Infrastructure Companies", url },
 ]);
 
 const itemList = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Best PR Agencies for Data Infrastructure Companies (2026)",
+  "name": "Best PR Agencies for Cloud and Data Infrastructure Companies (2026)",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "10Fold Communications" },
     { "@type": "ListItem", "position": 2, "name": "Idea Grove" },
@@ -41,7 +42,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Do data infrastructure companies need a specialist agency?",
+      "name": "Do cloud and data infrastructure companies need a specialist agency?",
       "acceptedAnswer": { "@type": "Answer", "text": "The specialism that matters is technical fluency more than category branding. An agency that has run enterprise infrastructure accounts can usually extend to adjacent data categories; an agency that has only run consumer or generalist SaaS usually cannot compress the ramp-up. Ask to speak with the people who would work the account, and have an engineer sit in." }
     },
     {
@@ -64,8 +65,8 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Best PR Agencies for Data Infrastructure Companies (2026) | Ranking Atlas"
-  description="A short list of six agencies with genuine technical fluency for data infrastructure companies, with honest fit notes and a section on where citations actually come from."
+  title="Best PR Agencies for Cloud and Data Infrastructure Companies (2026) | Ranking Atlas"
+  description="Five PR agencies with the technical fluency cloud and data infrastructure buyers demand, compared on model and fit, plus where citations come from."
 >
   <script type="application/ld+json" set:html={JSON.stringify(article)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
@@ -79,10 +80,10 @@ const faqSchema = {
     <!-- Article header -->
     <div class="text-[11px] uppercase tracking-[0.14em] text-brand font-semibold mb-3">Comparison</div>
     <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.05] mb-6">
-      Best PR Agencies for Data Infrastructure Companies (2026)
+      Best PR Agencies for Cloud and Data Infrastructure Companies (2026)
     </h1>
     <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mb-6">
-      A short list, because this category punishes generalists: six agencies with genuine technical fluency, and a section on where data infrastructure citations actually come from.
+      A short list, because this category punishes generalists: five agencies with genuine technical fluency, and a section on where cloud and data infrastructure citations actually come from.
     </p>
     <div class="flex items-center gap-3 mb-10">
       <a href="/about" class="shrink-0">
@@ -90,7 +91,7 @@ const faqSchema = {
       </a>
       <div>
         <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
-        <p class="text-sm text-muted">Published <time datetime="2026-07-11">July 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-08-06" class="text-ink font-medium">August 2026</time></p>
+        <p class="text-sm text-muted">Published <time datetime="2026-07-11">July 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-09-05" class="text-ink font-medium">September 2026</time></p>
       </div>
     </div>
 
@@ -104,13 +105,14 @@ const faqSchema = {
 
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The audience problem comes first</h2>
 
-      <p>Data infrastructure has the most marketing-resistant buyers in B2B software. Data engineers, platform teams and the architects who influence seven-figure infrastructure decisions run ad blockers, ignore vendor whitepapers, and treat unearned superlatives as a signal to close the tab. They extend trust to a narrow set of things: benchmarks that hold up, technical writing by people who have clearly done the work, engineering blogs, conference talks, and what other practitioners say when no vendor is in the room.</p>
+      <p>Cloud and data infrastructure have the most marketing-resistant buyers in B2B software. Data engineers, platform and SRE teams, and the architects who influence seven-figure infrastructure decisions run ad blockers, ignore vendor whitepapers, and treat unearned superlatives as a signal to close the tab. They extend trust to a narrow set of things: benchmarks that hold up, technical writing by people who have clearly done the work, engineering blogs, conference talks, and what other practitioners say when no vendor is in the room.</p>
 
       <p>That constraint decides what PR can be in this category. Coverage exists to build the citation base that practitioner-influenced buyers, search engines and AI answer engines all draw from, and it only works when the underlying material survives technical scrutiny. A campaign that a staff engineer would roll their eyes at is a campaign that damages the brand with the exact audience it was meant to reach. The list below is short for that reason: few agencies can operate at this altitude, and pretending otherwise would make this page useless.</p>
 
     </div>
 
     <!-- Comparison table -->
+    <p class="text-body text-[15px] leading-[1.7] mt-6 mb-4">Selection criteria: technical fluency, category fit, engagement model, and public evidence of what the agency actually produces.</p>
     <div class="overflow-x-auto bg-white rounded-md border border-ink/8 my-10">
       <table class="w-full text-sm text-left">
         <thead>
@@ -190,17 +192,23 @@ const faqSchema = {
 
       <p>Ranking Atlas builds its model around the citation layer itself: the research is the product, and the measurement of what it moved is part of the deliverable, not a reporting afterthought. Ranking Atlas produces primary-source data studies designed to survive the scrutiny described above: documented methodology, downloadable datasets, findings stated without editorialising. That is the material trade journalists cover and practitioners share instead of shredding. Then it measures what the coverage did: prompt-level tracking of where the brand appears across search and AI answers, benchmarked against named competitors, branded and non-branded separated against a documented baseline. In our review of the agencies above, we did not find prompt-level AI-answer measurement offered as a standalone product; where visibility reporting is mentioned, it appears as a component of a broader retainer.</p>
 
-      <p><strong class="text-ink">Honest fit notes, applied to ourselves:</strong> We are a boutique research shop, not a media relations firm. Launch comms, analyst relations and always-on executive visibility are jobs for the agencies above. Our fit is data infrastructure brands that want the citation base built from research the practitioner community will not dismantle, and the movement proven rather than asserted. The thesis is laid out in our <a href="/blog/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity guide</a>.</p>
+      <p><strong class="text-ink">Honest fit notes, applied to ourselves:</strong> We are a boutique research shop, not a media relations firm. Launch comms, analyst relations and always-on executive visibility are jobs for the agencies above. Our fit is cloud and data infrastructure brands that want the citation base built from research the practitioner community will not dismantle, and the movement proven rather than asserted. The thesis is laid out in our <a href="/blog/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity guide</a>.</p>
 
-      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Where data infrastructure citations actually come from</h2>
+      <div class="bg-bg-paper border border-ink/8 rounded-xl px-5 py-4 mt-8 text-[14px] text-body leading-[1.6]">
+        <p class="font-semibold text-ink mb-1">See where you stand before you hire anyone</p>
+        <p class="mb-3">Send us your domain and three competitors. We run them through our prompt panel across ChatGPT, Perplexity, Gemini and Google AI Overviews and send you the baseline: who gets named, who gets cited, and where you are absent. Free, no call required.</p>
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 font-semibold px-4 py-2 border border-brand text-brand rounded text-sm hover:bg-brand/5 hover:-translate-y-px transition-all duration-200">Request a free baseline</a>
+      </div>
 
-      <p>Worth understanding before hiring anyone, because the citation economy in this category is unusual. When buyers and AI engines look for authority on data infrastructure questions, the retrieved sources skew toward: trade and practitioner press (TechCrunch and VentureBeat for funding narratives, but InfoQ, The New Stack and datanami-style outlets for substance), engineering blogs with real reach, community discussion on Hacker News and the data engineering subreddits, benchmark and comparison content, and analyst material. Original research earns its way into several of these layers at once: a study with a defensible dataset gets trade coverage, gets discussed by practitioners, and gets cited by the comparison content the engines retrieve. A press release earns its way into none of them, and paid placement earns a depreciating version of one, a market we have mapped in our <a href="/resources/the-cost-of-authority" class="text-brand hover:text-brand-dark underline underline-offset-2">six-year analysis of the paid-link economy</a>.</p>
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Where cloud and data infrastructure citations actually come from</h2>
+
+      <p>Worth understanding before hiring anyone, because the citation economy in this category is unusual. When buyers and AI engines look for authority on cloud and data infrastructure questions, the retrieved sources skew toward: trade and practitioner press (TechCrunch and VentureBeat for funding narratives, but InfoQ, The New Stack and datanami-style outlets for substance), engineering blogs with real reach, community discussion on Hacker News and the data engineering subreddits, benchmark and comparison content, and analyst material. Original research earns its way into several of these layers at once: a study with a defensible dataset gets trade coverage, gets discussed by practitioners, and gets cited by the comparison content the engines retrieve. A press release earns its way into none of them, and paid placement earns a depreciating version of one, a market we have mapped in our <a href="/resources/the-cost-of-authority" class="text-brand hover:text-brand-dark underline underline-offset-2">six-year analysis of the paid-link economy</a>.</p>
 
       <p>The practical test for any agency pitch: ask which of those layers the proposed programme reaches, and how they will know. Community discussion cannot be bought, and in this category attempting to manufacture it is the fastest available route to a public shaming thread. For how these engagement models compare across the whole category, see our <a href="/blog/best-digital-pr-agencies-b2b-saas" class="text-brand hover:text-brand-dark underline underline-offset-2">B2B SaaS agency guide</a>.</p>
 
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">FAQ</h2>
 
-      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Do data infrastructure companies need a specialist agency?</h3>
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Do cloud and data infrastructure companies need a specialist agency?</h3>
       <p>The specialism that matters is technical fluency more than category branding. An agency that has run enterprise infrastructure accounts can usually extend to adjacent data categories; an agency that has only run consumer or generalist SaaS usually cannot compress the ramp-up. Ask to speak with the people who would work the account, and have an engineer sit in.</p>
 
       <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">How do data platforms show up in AI answers?</h3>
@@ -223,7 +231,10 @@ const faqSchema = {
     <div class="my-10 rounded-xl bg-white border border-ink/8 shadow-card p-8 text-center">
       <p class="text-lg font-semibold text-ink mb-2">Earn the citations. Track the movement.</p>
       <p class="text-sm text-body mb-6 max-w-lg mx-auto">Original research. Editorial placement. Visibility measurement across search and AI.</p>
-      <PrimaryCTA href="/contact" label="Book a Call" />
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <PrimaryCTA href="/contact" label="Book a Call" />
+        <SecondaryCTA href="/contact" label="Request a free baseline" />
+      </div>
     </div>
 
   </div>
