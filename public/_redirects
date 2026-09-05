@@ -1,8 +1,11 @@
-https://ranking-atlas.co/*  https://ranking-atlas.com/:splat  301!
-https://www.ranking-atlas.co/*  https://ranking-atlas.com/:splat  301!
-http://ranking-atlas.co/*  https://ranking-atlas.com/:splat  301!
-http://www.ranking-atlas.co/*  https://ranking-atlas.com/:splat  301!
-/library/*  /resources  301
-/library  /resources  301
-/resources/plastic-surgery-patient-age/*  /resources  301
-/resources/plastic-surgery-patient-age  /resources  301
+# Trailing-slash stripping — splat-based, force. Placed in _redirects
+# so it runs after netlify.toml rules (slug migrations) but before
+# Netlify's default static-file serving.
+/blog/*/ /blog/:splat 301!
+/resources/*/ /resources/:splat 301!
+/data/*/ /data/:splat 301!
+/contact/ /contact 301!
+/about/ /about 301!
+/blog/ /blog 301!
+/resources/ /resources 301!
+/data/ /data 301!
