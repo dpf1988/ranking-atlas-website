@@ -6,20 +6,20 @@ import RelatedResearch from '../../components/RelatedResearch.astro';
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Who Actually Gets Scammed in America?",
-  "description": "Federal fraud and survey data show sharp divides in who gets scammed, how often, and how much they lose.",
+  "headline": "Fraud Statistics 2026: How Many Americans Get Scammed, and How Much They Lose",
+  "description": "BJS estimated 23.9M Americans experienced identity theft in the prior 12 months. FTC reported $12.5B in fraud losses in 2024.",
   "url": "https://ranking-atlas.com/resources/generational-fraud",
   "image": "https://ranking-atlas.com/assets/images/resources/generational-fraud/hero.jpg",
   "author": { "@type": "Person", "name": "Daniel Grainger", "url": "https://ranking-atlas.com/about" },
   "datePublished": "2026-03-15T00:00:00+00:00",
-  "dateModified": "2026-05-14T00:00:00+00:00",
+  "dateModified": "2026-09-05T00:00:00+00:00",
   "publisher": { "@type": "Organization", "name": "Ranking Atlas", "url": "https://ranking-atlas.com" }
 };
 ---
 
 <Layout
-  title="Who Actually Gets Scammed in America? | Ranking Atlas"
-  description="Federal fraud and survey data show sharp divides in who gets scammed, how often, and how much they lose."
+  title="Fraud Statistics 2026: Victims, Losses & Age Groups | Ranking Atlas"
+  description="BJS estimated 23.9M Americans experienced identity theft in the prior 12 months. FTC reported $12.5B in fraud losses in 2024."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
@@ -30,7 +30,7 @@ const jsonLd = {
     <div class="max-w-3xl mx-auto px-6">
       <div class="text-[11px] uppercase tracking-[0.14em] text-brand font-semibold mb-3 text-center">Data Report</div>
       <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.15] mb-3 text-center">
-        Who Actually Gets Scammed in America?
+        Fraud Statistics 2026: How Many Americans Get Scammed, and How Much They Lose
       </h1>
       <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mt-2 mb-8">
         Federal fraud and survey data show sharp divides in who gets scammed, how often, and how much they lose (and it's not who you think).
@@ -49,12 +49,13 @@ const jsonLd = {
         <p class="text-[13px] text-muted">Content Written By:</p>
         <p class="text-[13px] text-muted">Daniel Grainger</p>
         <p class="text-[13px] text-muted">Founder, Ranking Atlas</p>
-        <p class="text-[13px] text-muted">Published March 2026</p>
+        <p class="text-[13px] text-muted">Published March 2026 · Updated September 2026</p>
       </div>
 
       <nav class="bg-bg-paper border border-ink/8 rounded-md p-5" aria-label="Article sections">
         <p class="text-[14px] font-semibold text-ink mb-3">Navigation</p>
         <ul class="flex flex-col space-y-2 text-[14px]">
+          <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#headline-numbers" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">The Headline Numbers</a></li>
           <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#key-takeaways" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Key Takeaways</a></li>
           <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#identity-theft-by-age" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Identity Theft Rate Peaks Among Americans Aged 50 to 64</a></li>
           <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#frequency-vs-severity" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Adults Over Eighty Lose Four Times More Per Incident Than Adults in Their Twenties</a></li>
@@ -65,6 +66,46 @@ const jsonLd = {
           <li class="flex items-center gap-2.5"><span aria-hidden="true" class="inline-block w-1.5 h-1.5 rounded-full border border-ink/30 shrink-0"></span><a href="#limitations" class="text-brand hover:text-brand-dark hover:underline underline-offset-2">Limitations</a></li>
         </ul>
       </nav>
+    </div>
+  </section>
+
+  <!-- ── 1b. The Headline Numbers ──────────────────────────────────────── -->
+  <section id="headline-numbers" class="py-16 bg-bg-paper border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mb-6">The Headline Numbers</h2>
+
+      <p class="text-body text-[15px] leading-[1.7] mb-6">There is no single authoritative annual figure for all Americans who are scammed because the major datasets measure different parts of the fraud universe; BJS measures survey-estimated identity theft, while FTC data measures reported consumer fraud.</p>
+
+      <dl class="space-y-4 text-[15px] leading-[1.7]">
+        <div class="border-b border-ink/8 pb-4">
+          <dt class="font-semibold text-ink">Identity-theft prevalence</dt>
+          <dd class="text-body mt-1">BJS estimated that 23.9 million Americans aged 16 and older experienced identity theft in the prior 12 months, based on its 2021 survey.</dd>
+        </div>
+        <div class="border-b border-ink/8 pb-4">
+          <dt class="font-semibold text-ink">FTC fraud reports</dt>
+          <dd class="text-body mt-1">The FTC Consumer Sentinel Network received 2,600,678 fraud reports in 2024.</dd>
+        </div>
+        <div class="border-b border-ink/8 pb-4">
+          <dt class="font-semibold text-ink">Reported fraud losses</dt>
+          <dd class="text-body mt-1">Consumers reported $12.537 billion in fraud losses to the FTC in 2024.</dd>
+        </div>
+        <div class="border-b border-ink/8 pb-4">
+          <dt class="font-semibold text-ink">Underreporting</dt>
+          <dd class="text-body mt-1">FTC underreporting-adjusted estimates cited by AARP put 2023 fraud losses at $23.7 billion to $158.3 billion.</dd>
+        </div>
+        <div class="border-b border-ink/8 pb-4">
+          <dt class="font-semibold text-ink">Highest victimisation rate</dt>
+          <dd class="text-body mt-1">Americans aged 50–64 had the highest identity-theft victimisation rate at 10.9% in the BJS data.</dd>
+        </div>
+        <div class="border-b border-ink/8 pb-4">
+          <dt class="font-semibold text-ink">Highest median loss by age</dt>
+          <dd class="text-body mt-1">People aged 80 and older who lost money to fraud had a median loss of $1,650 in FTC 2024 data.</dd>
+        </div>
+        <div class="pb-2">
+          <dt class="font-semibold text-ink">Police reporting</dt>
+          <dd class="text-body mt-1">Only 6.6% of identity-theft victims reported the incident to police or another law-enforcement agency in the BJS data.</dd>
+        </div>
+      </dl>
     </div>
   </section>
 
@@ -113,7 +154,7 @@ const jsonLd = {
         </table>
       </div>
       <p class="mt-4 text-sm text-muted max-w-3xl">
-        Source: <a href="https://bjs.ojp.gov/library/publications/victims-identity-theft-2021" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">BJS NCJ 306474</a>, Table 2 (2021 survey data). Population denominators: <a href="https://www.census.gov/data/tables/time-series/demo/popest/2020s-national-detail.html" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">US Census Bureau NC-EST2024-AGESEX-RES</a>. Implied affected population applies 2021 BJS rates to 2024 Census figures for directional illustration.
+        Source: <a href="https://bjs.ojp.gov/library/publications/victims-identity-theft-2021" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">BJS NCJ 306474</a>, Table 2 (2021 survey data). Population denominators: <a href="https://www.census.gov/data/tables/time-series/demo/popest/2020s-national-detail.html" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark underline underline-offset-2">US Census Bureau Vintage 2024 Population Estimates</a>. Implied affected population applies 2021 BJS rates to 2024 Census figures for directional illustration.
       </p>
 
       <div class="space-y-6 text-body text-[15px] leading-[1.7] mt-8">
@@ -307,7 +348,7 @@ const jsonLd = {
           <li><a href="https://www.ic3.gov/annualreport/reports" target="_blank" rel="noopener noreferrer" class="font-semibold text-ink hover:text-brand underline underline-offset-2 decoration-brand/30 hover:decoration-brand">FBI IC3 Annual Report 2024:</a> cybercrime complaint volumes and internet fraud losses.</li>
           <li><a href="https://www.ftc.gov/reports/consumer-sentinel-network-data-book-2024" target="_blank" rel="noopener noreferrer" class="font-semibold text-ink hover:text-brand underline underline-offset-2 decoration-brand/30 hover:decoration-brand">FTC Consumer Sentinel Network Data Book 2024:</a> consumer-reported fraud, identity theft, and loss data by age and contact method.</li>
           <li><a href="https://bjs.ojp.gov/library/publications/victims-identity-theft-2021" target="_blank" rel="noopener noreferrer" class="font-semibold text-ink hover:text-brand underline underline-offset-2 decoration-brand/30 hover:decoration-brand">BJS Victims of Identity Theft 2021 (NCJ 306474):</a> survey-based population victimisation rates from the National Crime Victimization Survey Identity Theft Supplement. The 2021 ITS questionnaire was redesigned; BJS states the data is not comparable to prior years.</li>
-          <li><a href="https://www.census.gov/data/tables/time-series/demo/popest/2020s-national-detail.html" target="_blank" rel="noopener noreferrer" class="font-semibold text-ink hover:text-brand underline underline-offset-2 decoration-brand/30 hover:decoration-brand">US Census Bureau Vintage 2024 Population Estimates (NC-EST2024-AGESEX-RES):</a> national population denominators by age group.</li>
+          <li><a href="https://www.census.gov/data/tables/time-series/demo/popest/2020s-national-detail.html" target="_blank" rel="noopener noreferrer" class="font-semibold text-ink hover:text-brand underline underline-offset-2 decoration-brand/30 hover:decoration-brand">US Census Bureau Vintage 2024 Population Estimates:</a> national population denominators by age group.</li>
           <li><a href="https://www.aarp.org/pri/topics/work-finances-retirement/fraud-consumer-protection/2025-fraud-survey/" target="_blank" rel="noopener noreferrer" class="font-semibold text-ink hover:text-brand underline underline-offset-2 decoration-brand/30 hover:decoration-brand">AARP 2025 Fraud Survey:</a> probability-based national sample (n=1,423, plus or minus 3.4% confidence interval) conducted via NORC AmeriSpeak, February 2025.</li>
           <li><a href="https://www.fdic.gov/household-survey/2023-fdic-national-survey-unbanked-and-underbanked-households-report" target="_blank" rel="noopener noreferrer" class="font-semibold text-ink hover:text-brand underline underline-offset-2 decoration-brand/30 hover:decoration-brand">FDIC 2023 National Survey of Unbanked and Underbanked Households:</a> used for digital banking access data only; FDIC does not measure fraud directly.</li>
         </ul>
