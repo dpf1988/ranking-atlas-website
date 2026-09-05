@@ -2,6 +2,15 @@
   command = "npm run build"
   publish = "dist"
 
+# ── www → apex ────────────────────────────────────────────────────────
+[[redirects]]
+  from = "https://www.ranking-atlas.com/*"
+  to = "https://ranking-atlas.com/:splat"
+  status = 301
+  force = true
+
+# ── Slug migration redirects (specific, before generic rules) ────────
+
 [[redirects]]
   from = "/the-cost-of-authority"
   to = "/resources/the-cost-of-authority"
@@ -64,7 +73,17 @@
   status = 301
 
 [[redirects]]
+  from = "/resources/citation-equity/"
+  to = "/blog/citation-equity"
+  status = 301
+
+[[redirects]]
   from = "/resources/chatgpt-search-visibility"
+  to = "/blog/chatgpt-search-visibility"
+  status = 301
+
+[[redirects]]
+  from = "/resources/chatgpt-search-visibility/"
   to = "/blog/chatgpt-search-visibility"
   status = 301
 
@@ -74,30 +93,64 @@
   status = 301
 
 [[redirects]]
+  from = "/resources/press-release-ai-citation-2026/"
+  to = "/blog/press-release-ai-citation-2026"
+  status = 301
+
+[[redirects]]
   from = "/resources/earned-links-vs-paid-links"
   to = "/blog/earned-links-vs-paid-links"
   status = 301
 
-# Trailing-slash policy: strip trailing slash from any non-root URL.
-# force = false lets static files (CSS, JS, fonts, images in _astro/ and assets/)
-# serve normally before redirect logic runs. Without this, asset routing breaks.
+[[redirects]]
+  from = "/resources/earned-links-vs-paid-links/"
+  to = "/blog/earned-links-vs-paid-links"
+  status = 301
+
+# ── Static asset passthrough ─────────────────────────────────────────
+# Serve static assets directly so the trailing-slash rules below
+# (which use force = true) never intercept them. Belt-and-suspenders
+# guard after disabling Netlify Pretty URLs (which caused the original
+# force = false workaround in 910f529).
+[[redirects]]
+  from = "/_astro/*"
+  to = "/_astro/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/fonts/*"
+  to = "/fonts/:splat"
+  status = 200
+  force = true
+
+# ── Trailing-slash policy ────────────────────────────────────────────
+# Strip trailing slash from any non-root URL. force = true is safe now
+# that Pretty URLs is disabled in the Netlify UI. The asset passthrough
+# rules above ensure CSS/JS/fonts/sitemaps are never intercepted.
 [[redirects]]
   from = "/:path/"
   to = "/:path"
   status = 301
-  force = false
+  force = true
 
 [[redirects]]
   from = "/:first/:second/"
   to = "/:first/:second"
   status = 301
-  force = false
+  force = true
 
 [[redirects]]
   from = "/:first/:second/:third/"
   to = "/:first/:second/:third"
   status = 301
-  force = false
+  force = true
 
 [[plugins]]
   package = "./plugins/netlify-plugin-indexnow"
