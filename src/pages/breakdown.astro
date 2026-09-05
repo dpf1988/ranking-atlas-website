@@ -51,4 +51,16 @@ const jsonLd = {
       </div>
     </div>
   </section>
+  <script is:inline>
+    (function() {
+      var fired = false;
+      var form = document.getElementById('breakdown-form');
+      if (!form) return;
+      form.addEventListener('focusin', function() {
+        if (fired) return;
+        fired = true;
+        if (typeof gtag === 'function') gtag('event', 'form_start', { form_name: 'breakdown', page_path: location.pathname });
+      });
+    })();
+  </script>
 </Layout>

@@ -115,6 +115,7 @@
       })
         .then(function(res) {
           if (res.ok) {
+            if (typeof gtag === 'function') gtag('event', 'form_submit_success', { form_name: 'breakdown', page_path: location.pathname });
             form.classList.add('hidden');
             if (successState) {
               successState.classList.remove('hidden');
