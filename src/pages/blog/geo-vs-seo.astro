@@ -6,11 +6,11 @@ import { articleSchema, breadcrumbSchema } from '../../lib/schema';
 
 const url = "https://ranking-atlas.com/blog/geo-vs-seo";
 const pubDate = "2026-07-11";
-const updatedDate = "2026-07-11";
+const updatedDate = "2026-09-05";
 
 const article = articleSchema({
-  title: "GEO vs SEO: What Actually Changed and What Didn't",
-  description: "Three things changed, the foundations did not, and the evidence for both is measurable. The mechanics, the research, and the honest boundary of what GEO tactics can do.",
+  title: "GEO vs SEO: Differences, Overlap, and What to Do in 2026",
+  description: "GEO optimises for citations in AI answers; SEO for rankings. What's different, what's the same, and which tactics the research supports.",
   url,
   datePublished: pubDate,
   dateModified: updatedDate,
@@ -51,13 +51,18 @@ const faqSchema = {
       "name": "What is the difference between GEO and AEO?",
       "acceptedAnswer": { "@type": "Answer", "text": "Mostly vocabulary drawing boundaries around the same work: AEO (answer engine optimisation) usually refers to structuring content for direct-answer surfaces, GEO to visibility inside generative responses broadly. The mechanics cover both, and no buyer decision should hinge on the acronym." }
     },
+    {
+      "@type": "Question",
+      "name": "Do I need both GEO and SEO?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, and the dependency runs one way: AI engines source answers through search retrieval, so SEO is the substrate GEO sits on. A sensible programme keeps the SEO foundation for retrievability, makes every page extractable, builds earned citations in independent sources, and measures at the prompt level against a baseline." }
+    },
   ]
 };
 ---
 
 <Layout
-  title="GEO vs SEO: What Actually Changed and What Didn't | Ranking Atlas"
-  description="Three things changed, the foundations did not, and the evidence for both is measurable. The mechanics, the research, and the honest boundary of what GEO tactics can do."
+  title="GEO vs SEO: Differences, Overlap, and What to Do in 2026 | Ranking Atlas"
+  description="GEO optimises for citations in AI answers; SEO for rankings. What's different, what's the same, and which tactics the research supports."
 >
   <script type="application/ld+json" set:html={JSON.stringify(article)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
@@ -81,7 +86,7 @@ const faqSchema = {
       </a>
       <div>
         <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
-        <p class="text-sm text-muted">Published <time datetime="2026-07-11">July 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-07-11" class="text-ink font-medium">July 2026</time></p>
+        <p class="text-sm text-muted">Published <time datetime="2026-07-11">July 2026</time> &nbsp;·&nbsp; Updated <time datetime="2026-09-05" class="text-ink font-medium">September 2026</time></p>
       </div>
     </div>
 
@@ -90,21 +95,65 @@ const faqSchema = {
 
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The short answer</h2>
 
-      <p>SEO optimises pages to rank in a list of results. GEO (generative engine optimisation) optimises a brand to be cited inside AI-generated answers from ChatGPT, Perplexity, Gemini and Google's AI Overviews. The foundations overlap almost completely, because AI engines retrieve their sources through search infrastructure and weight the same authority signals search always rewarded. What genuinely changed is threefold: answers are synthesised across sources rather than ranked, which makes corroboration across multiple independent sources the threshold for being named; the set of cited sources has partially decoupled from rankings, with community and editorial content weighted far above paid anything; and the unit of measurement moved from keywords and clicks to prompts and mentions. A brand that treats GEO as new on-page tricks will win little. A brand that treats it as reputation-building measured at the prompt level is doing the discipline properly, which is why the honest one-line summary is: GEO is what SEO always claimed to be about, with the pretence removed.</p>
+      <p>SEO optimises pages to rank in a list of results. GEO (generative engine optimisation) optimises a brand to be cited inside AI-generated answers from ChatGPT, Perplexity, Gemini and Google's AI Overviews. The foundations overlap almost completely, because AI engines retrieve their sources through search infrastructure and weight the same authority signals search always rewarded.</p>
 
-      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">What stayed the same</h2>
+      <p>What genuinely changed is threefold: answers are synthesised across sources rather than ranked, which makes corroboration across multiple independent sources the threshold for being named; the set of cited sources has partially decoupled from rankings, with community and editorial content weighted far above paid anything; and the unit of measurement moved from keywords and clicks to prompts and mentions. A brand that treats GEO as new on-page tricks will win little. A brand that treats it as reputation-building measured at the prompt level is doing the discipline properly, which is why the honest one-line summary is: GEO is what SEO always claimed to be about, with the pretence removed.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">GEO and SEO Defined</h2>
+
+      <p><strong class="text-ink">SEO (search engine optimisation)</strong> is the practice of making pages rank in a list of search results. The user sees ten links and picks one; position is the metric, and authority and relevance are the signals that determine it.</p>
+
+      <p><strong class="text-ink">GEO (generative engine optimisation)</strong> is the practice of making a brand get cited inside AI-generated answers from ChatGPT, Perplexity, Gemini and Google's AI Overviews. The user gets one synthesised answer that names a small number of brands; corroboration across independent sources is the threshold for being named.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">GEO vs SEO at a Glance</h2>
+
+      <div class="overflow-x-auto bg-white rounded-md border border-ink/8">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-ink/8 bg-bg-paper">
+              <th class="px-4 py-3 font-semibold text-ink"></th>
+              <th class="px-4 py-3 font-semibold text-ink">SEO</th>
+              <th class="px-4 py-3 font-semibold text-ink">GEO</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Goal</td><td class="px-4 py-3 text-muted">Rank pages in a list of results</td><td class="px-4 py-3 text-muted">Get a brand cited inside AI-generated answers</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Where you appear</td><td class="px-4 py-3 text-muted">Ten ranked sources; user picks one</td><td class="px-4 py-3 text-muted">One synthesised answer naming a handful of brands</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Unit of measurement</td><td class="px-4 py-3 text-muted">Keywords, positions and clicks</td><td class="px-4 py-3 text-muted">Prompts, mentions and cited sources</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Success metric</td><td class="px-4 py-3 text-muted">Rank and organic traffic</td><td class="px-4 py-3 text-muted">Brand mention rate and citation share across a tracked prompt set</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Primary signal</td><td class="px-4 py-3 text-muted">Crawlability, indexation and domain authority</td><td class="px-4 py-3 text-muted">Corroboration across independent retrieved sources</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">What decides inclusion</td><td class="px-4 py-3 text-muted">A contest between pages</td><td class="px-4 py-3 text-muted">A contest between reputations, adjudicated across the whole retrieved set</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Time to see movement</td><td class="px-4 py-3 text-muted">Not specified on this page</td><td class="px-4 py-3 text-muted">Visibility compounds across successive campaigns over months</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-muted">Summary of the analysis below.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">What GEO and SEO Have in Common</h2>
 
       <p>Start with the continuity, because the rebrand industry prefers you skip it. AI citation is overwhelmingly a retrieval event: Ahrefs found 88% of the URLs ChatGPT cites come straight from live search. The engines do not have a private index of the web; they query search infrastructure, retrieve pages, and synthesise from what comes back. Which means everything that governs retrievability still governs AI visibility: crawlability, indexation, content that ranks for the underlying queries, and the authority that gets a domain trusted in the first place. Google's own position is that AI Overviews draw on its core ranking systems.</p>
 
       <p>The authority layer carried over too. <a href="https://muckrack.com/blog/what-is-ai-reading-may-2026" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Muck Rack's 2026 analysis of 25 million AI citations</a> found earned media accounts for 84% of them, against 0.3% for paid and advertorial content. The sources engines trust are substantially the sources search always trusted: editorial publications, established references, genuine community discussion. Anyone selling GEO as an escape from the slow work of building authority is selling the one thing the data says does not exist.</p>
 
-      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The three things that actually changed</h2>
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">GEO vs SEO: the Three Real Differences</h2>
 
-      <p><strong class="text-ink">First: synthesis replaced ranking, and corroboration became the threshold.</strong> A ranked results page shows ten sources and lets the user pick. A generated answer names a handful of brands, chosen by synthesis across everything retrieved. In practice, engines name the brands that appear across multiple independent retrieved sources and drop the ones supported by a single source, including a brand's own site. We have watched this mechanism operate in our own tracking: a well-built page can become a cited source for a competitive commercial question within days, while the brand behind it stays out of the named recommendations until other retrieved sources corroborate it. Ranking was a contest between pages. Being named is a contest between reputations, adjudicated across the whole retrieved set. The full mechanism is in our <a href="/blog/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity guide</a>.</p>
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">1. Synthesis Replaced Ranking</h3>
 
-      <p><strong class="text-ink">Second: the cited-source mix decoupled from rankings.</strong> <a href="https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">BrightEdge data</a> shows only around 17% of AI Overview citations come from pages ranking in the organic top ten, so a number-one ranking no longer purchases presence in the answer above it. And the mix shifted toward independent human opinion: Semrush's cross-engine analysis found Reddit is the single most cited domain in AI responses, appearing in over 11% of them. The engines are triangulating what people say when nobody paid them, which is precisely why the licensing deals exist and why the platforms now defend that data aggressively.</p>
+      <p>A ranked results page shows ten sources and lets the user pick. A generated answer names a handful of brands, chosen by synthesis across everything retrieved. In practice, engines name the brands that appear across multiple independent retrieved sources and drop the ones supported by a single source, including a brand's own site.</p>
 
-      <p><strong class="text-ink">Third: the measurement unit changed.</strong> SEO measured keywords, positions and clicks. Those numbers are decaying as evidence: Ahrefs measured AI Overviews cutting click-through on top-ranking content by 58%, and the large answer engines resolve most questions with no click at all. What predicts visibility in the new layer is presence and mention: <a href="https://ahrefs.com/blog/ai-overview-brand-correlation/" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Ahrefs' study across 75,000 brands</a> found branded web mentions correlate three times more strongly with AI visibility than backlinks (0.664 against 0.218). So the honest dashboard changed shape: a fixed set of buyer prompts, tracked across engines on a schedule, logging who gets named and which sources get cited, benchmarked against competitors, with branded and non-branded prompts reported separately, because our own audits keep finding brands near-omnipresent on prompts containing their name and absent from the questions buyers actually ask. Which metrics survive that shift, and which do not, is covered in our <a href="/blog/measure-brand-visibility-ai-search" class="text-brand hover:text-brand-dark underline underline-offset-2">measurement guide</a>.</p>
+      <p>We have watched this mechanism operate in our own tracking: a well-built page can become a cited source for a competitive commercial question within days, while the brand behind it stays out of the named recommendations until other retrieved sources corroborate it. Ranking was a contest between pages. Being named is a contest between reputations, adjudicated across the whole retrieved set. The full mechanism is in our <a href="/blog/citation-equity" class="text-brand hover:text-brand-dark underline underline-offset-2">citation equity guide</a>.</p>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">2. Cited Sources Decoupled From Rankings</h3>
+
+      <p><a href="https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">BrightEdge data</a> shows only around 17% of AI Overview citations come from pages ranking in the organic top ten, so a number-one ranking no longer purchases presence in the answer above it.</p>
+
+      <p>And the mix shifted toward independent human opinion: <a href="https://www.semrush.com/blog/most-cited-domains-ai/" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Semrush's cross-engine analysis</a> found Reddit is the single most cited domain in AI responses, appearing in over 11% of them. The engines are triangulating what people say when nobody paid them, which is precisely why the licensing deals exist and why the platforms now defend that data aggressively.</p>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">3. The Measurement Unit Changed</h3>
+
+      <p>SEO measured keywords, positions and clicks. Those numbers are decaying as evidence: Ahrefs measured AI Overviews cutting click-through on top-ranking content by 58%, and the large answer engines resolve most questions with no click at all.</p>
+
+      <p>What predicts visibility in the new layer is presence and mention: <a href="https://ahrefs.com/blog/ai-overview-brand-correlation/" class="text-brand hover:text-brand-dark underline underline-offset-2" rel="noopener" target="_blank">Ahrefs' study across 75,000 brands</a> found branded web mentions correlate three times more strongly with AI visibility than backlinks (0.664 against 0.218). So the honest dashboard changed shape: a fixed set of buyer prompts, tracked across engines on a schedule, logging who gets named and which sources get cited, benchmarked against competitors, with branded and non-branded prompts reported separately, because our own audits keep finding brands near-omnipresent on prompts containing their name and absent from the questions buyers actually ask. Which metrics survive that shift, and which do not, is covered in our <a href="/blog/measure-brand-visibility-ai-search" class="text-brand hover:text-brand-dark underline underline-offset-2">measurement guide</a>.</p>
 
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">What the research says about on-page GEO tactics</h2>
 
@@ -116,7 +165,9 @@ const faqSchema = {
 
       <p>So here is the line every vendor comparison blurs. Content-only GEO, structuring your own pages for extraction and publishing answer-shaped material on your own domain, can reliably do two things: win citations on questions where few good sources exist, and maximise the odds that your retrievable pages get used when they are retrieved. On uncontested long-tail prompts, that alone earns visibility fast.</p>
 
-      <p>What it cannot do is manufacture the corroboration threshold on contested commercial prompts, and the shortcut industry that grew up around that gap is currently being dismantled in public. Self-published rankings and seeded community mentions demonstrably worked as an arbitrage, and the correction arrived on schedule: Reddit now deploys LLM-based detection against coordinated GEO spam, removing on the order of 25,000 posts a day, with vendors' already-cited posts deleted retroactively, and deleted content excluded from the licensing feeds engines train and retrieve from. Because citation is retrieval, a deleted source is a dead citation the same day. The durable route to corroboration is the one that was always true: coverage and mentions in sources you do not control and could not have bought, earned because the material deserved them. The economics of that trade against rented alternatives are in our <a href="/blog/digital-pr-vs-link-building" class="text-brand hover:text-brand-dark underline underline-offset-2">digital PR versus link building comparison</a>.</p>
+      <p>What it cannot do is manufacture the corroboration threshold on contested commercial prompts, and the shortcut industry that grew up around that gap is currently being dismantled in public. Self-published rankings and seeded community mentions demonstrably worked as an arbitrage, and the correction arrived on schedule: Reddit now deploys LLM-based detection against coordinated GEO spam, removing on the order of 25,000 posts a day, with vendors' already-cited posts deleted retroactively, and deleted content excluded from the licensing feeds engines train and retrieve from. Because citation is retrieval, a deleted source is a dead citation the same day.</p>
+
+      <p>The durable route to corroboration is the one that was always true: coverage and mentions in sources you do not control and could not have bought, earned because the material deserved them. The economics of that trade against rented alternatives are in our <a href="/blog/digital-pr-vs-link-building" class="text-brand hover:text-brand-dark underline underline-offset-2">digital PR versus link building comparison</a>.</p>
 
       <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">What a sensible programme looks like in 2026</h2>
 
@@ -138,6 +189,9 @@ const faqSchema = {
 
       <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">What is the difference between GEO and AEO?</h3>
       <p>Mostly vocabulary drawing boundaries around the same work: AEO (answer engine optimisation) usually refers to structuring content for direct-answer surfaces, GEO to visibility inside generative responses broadly. The mechanics above cover both, and no buyer decision should hinge on the acronym.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Do I need both GEO and SEO?</h3>
+      <p>Yes, and the dependency runs one way: AI engines source answers through search retrieval, so SEO is the substrate GEO sits on. A sensible programme keeps the SEO foundation for retrievability, makes every page extractable, builds earned citations in independent sources, and measures at the prompt level against a baseline.</p>
 
     </div>
 
