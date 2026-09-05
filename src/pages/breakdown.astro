@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BreakdownForm from '../components/BreakdownForm.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Get Your AI Visibility Breakdown",
+  "url": "https://ranking-atlas.com/breakdown",
+  "description": "Send us your website and up to three competitors. We'll show you who AI engines name, who they cite, and where you're missing, in a short video walkthrough."
+};
+---
+
+<Layout
+  title="Get Your AI Visibility Breakdown | Ranking Atlas"
+  description="Send us your website and up to three competitors. We'll show you who AI engines name, who they cite, and where you're missing, in a short video walkthrough."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <section class="pt-32 pb-16 md:pt-44 md:pb-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+
+        <!-- LEFT: hero copy -->
+        <div class="lg:pt-4">
+          <Eyebrow label="Free Diagnostic" />
+          <h1 class="font-serif font-medium text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] tracking-tight text-ink leading-[1.05] mb-6">
+            See where you show up in AI search, and where you don't
+          </h1>
+          <p class="font-sans font-normal text-[18px] md:text-[20px] text-ink leading-snug mb-8">
+            Send us your website and up to three competitors. We'll show you who AI engines name, who they cite, and where you're missing, with a short video walkthrough of what the numbers mean. No call, no deck.
+          </p>
+
+          <h2 class="font-serif font-semibold text-xl tracking-tight text-ink leading-tight mb-4">What you'll get</h2>
+          <ul class="space-y-3 text-body text-[15px] leading-[1.7]">
+            <li><strong class="text-ink">Named and cited:</strong> which brands the engines name and which sources they draw on, for buyer questions in your category.</li>
+            <li><strong class="text-ink">Where you're missing:</strong> the non-branded questions where competitors appear and you don't.</li>
+            <li><strong class="text-ink">A 5 to 8 minute video</strong> walking through your specific result, not a template.</li>
+          </ul>
+          <p class="text-sm text-muted mt-6">
+            Read about <a href="/blog/measure-brand-visibility-ai-search" class="text-brand hover:text-brand-dark underline underline-offset-2">how the measurement works</a>.
+          </p>
+        </div>
+
+        <!-- RIGHT: form -->
+        <div>
+          <BreakdownForm />
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,137 @@
+---
+---
+
+<div id="breakdown-form-wrap">
+  <form id="breakdown-form" name="breakdown" method="POST" data-netlify="true" netlify-honeypot="_gotcha" class="bg-white rounded-3xl border border-ink/8 shadow-md p-6 lg:p-7 space-y-4">
+    <input type="hidden" name="form-name" value="breakdown" />
+
+    <div>
+      <label for="bd-email" class="block text-sm font-semibold mb-1.5 text-ink">
+        Work email <span class="text-brand">*</span>
+      </label>
+      <input id="bd-email" name="email" type="email" required placeholder="you@company.com" autocomplete="email"
+        class="breakdown-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-ink"
+        style="border-color: rgba(10,15,30,0.13);" />
+    </div>
+
+    <div>
+      <label for="bd-website" class="block text-sm font-semibold mb-1.5 text-ink">
+        Your website <span class="text-brand">*</span>
+      </label>
+      <input id="bd-website" name="website" type="url" required placeholder="https://yourcompany.com" autocomplete="url"
+        class="breakdown-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-ink"
+        style="border-color: rgba(10,15,30,0.13);" />
+    </div>
+
+    <div>
+      <label for="bd-competitor1" class="block text-sm font-semibold mb-1.5 text-ink">
+        Competitor 1 <span class="text-brand">*</span>
+      </label>
+      <input id="bd-competitor1" name="competitor1" type="url" required placeholder="https://competitor.com"
+        class="breakdown-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-ink"
+        style="border-color: rgba(10,15,30,0.13);" />
+    </div>
+
+    <div>
+      <label for="bd-competitor2" class="block text-sm font-semibold mb-1.5 text-ink">
+        Competitor 2
+      </label>
+      <input id="bd-competitor2" name="competitor2" type="url" placeholder="https://competitor2.com"
+        class="breakdown-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-ink"
+        style="border-color: rgba(10,15,30,0.13);" />
+    </div>
+
+    <div>
+      <label for="bd-competitor3" class="block text-sm font-semibold mb-1.5 text-ink">
+        Competitor 3
+      </label>
+      <input id="bd-competitor3" name="competitor3" type="url" placeholder="https://competitor3.com"
+        class="breakdown-input w-full border rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors text-ink"
+        style="border-color: rgba(10,15,30,0.13);" />
+    </div>
+
+    <!-- Honeypot -->
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;height:0;width:0;opacity:0;" aria-hidden="true" />
+
+    <div id="bd-form-error" class="hidden bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3">
+      Something went wrong. Please email <a href="mailto:contact@ranking-atlas.com" class="underline font-medium">contact@ranking-atlas.com</a>
+    </div>
+
+    <div class="flex justify-center">
+      <button id="bd-form-submit" type="submit"
+        class="bg-brand hover:bg-brand-dark text-white font-semibold py-3 px-8 rounded text-sm shadow-[0_3px_8px_-2px_rgba(15,27,61,0.22),0_1px_2px_rgba(15,27,61,0.10)] hover:shadow-[0_6px_14px_-4px_rgba(15,27,61,0.28),0_2px_4px_-1px_rgba(15,27,61,0.12)] hover:-translate-y-px transition-all duration-200 flex items-center justify-center gap-2">
+        <span id="bd-submit-text">Get Your AI Visibility Breakdown</span>
+        <div id="bd-submit-spinner" class="hidden w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+      </button>
+    </div>
+
+    <p class="text-center text-sm text-muted mt-3">
+      Free. No call required. Delivered by email within 3 working days.
+    </p>
+  </form>
+
+  <!-- Success state -->
+  <div id="breakdown-success" class="hidden bg-white rounded-3xl border border-ink/8 shadow-md p-6 lg:p-7">
+    <p class="text-sm font-semibold text-brand uppercase tracking-[0.14em] mb-2">Queued.</p>
+    <p class="text-base text-body leading-relaxed mb-4">
+      Your breakdown will land in your inbox within 3 working days. It covers who AI engines name for your category, who they cite, and where you're missing.
+    </p>
+    <a href="/contact" class="text-sm font-medium text-brand hover:text-brand-dark transition-colors underline underline-offset-2">
+      Want to talk it through when it arrives? Book a call
+    </a>
+  </div>
+</div>
+
+<style>
+  .breakdown-input:focus {
+    border-color: theme('colors.brand') !important;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.13);
+  }
+</style>
+
+<script>
+  document.querySelectorAll('#breakdown-form').forEach(function(form) {
+    var submitBtn = form.querySelector('#bd-form-submit');
+    var submitText = form.querySelector('#bd-submit-text');
+    var submitSpinner = form.querySelector('#bd-submit-spinner');
+    var errorMsg = form.querySelector('#bd-form-error');
+    var successState = document.getElementById('breakdown-success');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitText) submitText.textContent = 'Sending...';
+      if (submitSpinner) submitSpinner.classList.remove('hidden');
+      if (errorMsg) errorMsg.classList.add('hidden');
+
+      var data = new FormData(form);
+      var params = new URLSearchParams(data);
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
+      })
+        .then(function(res) {
+          if (res.ok) {
+            form.classList.add('hidden');
+            if (successState) {
+              successState.classList.remove('hidden');
+              successState.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          } else {
+            if (errorMsg) errorMsg.classList.remove('hidden');
+          }
+        })
+        .catch(function() {
+          if (errorMsg) errorMsg.classList.remove('hidden');
+        })
+        .finally(function() {
+          if (submitBtn) submitBtn.disabled = false;
+          if (submitText) submitText.textContent = 'Get Your AI Visibility Breakdown';
+          if (submitSpinner) submitSpinner.classList.add('hidden');
+        });
+    });
+  });
+</script>

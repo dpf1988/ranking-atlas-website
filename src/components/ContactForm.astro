@@ -2,7 +2,8 @@
 ---
 
 <div id="contact-form-wrap">
-  <form id="contact-form" class="bg-white rounded-3xl border border-ink/8 shadow-md p-6 lg:p-7 space-y-4">
+  <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="_gotcha" class="bg-white rounded-3xl border border-ink/8 shadow-md p-6 lg:p-7 space-y-4">
+    <input type="hidden" name="form-name" value="contact" />
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
         <label for="name" class="block text-sm font-semibold mb-1.5 text-ink">
@@ -41,7 +42,7 @@
         style="border-color: rgba(10,15,30,0.13);"></textarea>
     </div>
 
-    <!-- Honeypot: hidden from humans, bots fill it, Formspree drops the submission -->
+    <!-- Honeypot: hidden from humans, bots fill it, Netlify drops the submission -->
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;height:0;width:0;opacity:0;" aria-hidden="true" />
 
     <!-- Error state (success handled by swap-to-booking below) -->
@@ -84,7 +85,7 @@
 
 <style>
   .contact-input:focus {
-    border-color: #1E3A8A !important;
+    border-color: theme('colors.brand') !important;
     box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.13);
   }
 </style>
@@ -116,12 +117,18 @@
       var email = form.querySelector('#email').value;
       var website = form.querySelector('#website').value;
       var message = form.querySelector('#message').value;
-      var gotcha = form.querySelector('[name=_gotcha]') ? form.querySelector('[name=_gotcha]').value : '';
 
-      fetch('https://formspree.io/f/xojkolng', {
+      var params = new URLSearchParams();
+      params.append('form-name', 'contact');
+      params.append('name', name);
+      params.append('email', email);
+      params.append('website', website);
+      params.append('message', message);
+
+      fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ name: name, email: email, website: website, message: message, _replyto: email, _gotcha: gotcha }),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
       })
         .then(function(res) {
           if (res.ok) {
