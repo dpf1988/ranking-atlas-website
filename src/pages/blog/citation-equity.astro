@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import SecondaryCTA from '../../components/SecondaryCTA.astro';
 import AuthorBio from '../../components/AuthorBio.astro';
 import RelatedResearch from '../../components/RelatedResearch.astro';
 import Definition from '../../components/Definition.astro';
@@ -532,7 +533,8 @@ const breadcrumbs = breadcrumbSchema([
     <p class="text-lg md:text-xl text-white/70 leading-relaxed mb-8">
       Original research. Editorial placement. Visibility measurement across search and AI.
     </p>
-    <PrimaryCTA href="/contact" />
+    <PrimaryCTA />
+    <SecondaryCTA href="/contact" label="Get in touch" />
   </div>
 </section>
 

@@ -64,7 +64,7 @@ Ranking Atlas is a digital PR agency built for the AI search era. The homepage i
 - **Three pillars:** Original Research / Editorial Production / Visibility Measurement
 - **Engagement model:** "Baseline. Build. Measure." Documented baseline, research-led campaign, ongoing prompt-level measurement
 - **Measurement language:** prompt-level tracking, competitor benchmarking, documented baseline, branded vs non-branded visibility
-- **CTA label:** "Book a Call" everywhere. Do not change this label. It matches the actual next step in the buyer journey (a scoping call, not a self-serve purchase) and survives the pricing question. Previous label "Start a Campaign" was retired 2026-07.
+- **CTA label:** Default primary CTA: "See Your AI Visibility" → /breakdown. Default secondary CTA: "Get in touch" → /contact. No calendar booking on the site. Contextual overrides only when explicitly instructed. Previous label "Book a Call" retired 2026-09.
 
 **Deprecated positioning (do not reintroduce):**
 - "Guaranteed minimum placements" or any contractual placement floor language

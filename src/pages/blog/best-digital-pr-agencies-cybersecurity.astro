@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import AuthorBio from '../../components/AuthorBio.astro';
 import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import SecondaryCTA from '../../components/SecondaryCTA.astro';
 import { articleSchema, breadcrumbSchema } from '../../lib/schema';
 
 const url = "https://ranking-atlas.com/blog/best-digital-pr-agencies-cybersecurity";
@@ -250,7 +251,8 @@ const faqSchema = {
     <div class="my-10 rounded-xl bg-white border border-ink/8 shadow-card p-8 text-center">
       <p class="text-lg font-semibold text-ink mb-2">Earn the citations. Track the movement.</p>
       <p class="text-sm text-body mb-6 max-w-lg mx-auto">Original research. Editorial placement. Visibility measurement across search and AI.</p>
-      <PrimaryCTA href="/contact" label="Book a Call" />
+      <PrimaryCTA />
+      <SecondaryCTA href="/contact" label="Get in touch" />
     </div>
 
   </div>
