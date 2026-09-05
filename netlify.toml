@@ -131,26 +131,30 @@
   force = true
 
 # ── Trailing-slash policy ────────────────────────────────────────────
-# Strip trailing slash from any non-root URL. force = true is safe now
-# that Pretty URLs is disabled in the Netlify UI. The asset passthrough
-# rules above ensure CSS/JS/fonts/sitemaps are never intercepted.
+# Strip trailing slash from any non-root URL. force = false is required:
+# with force = true, Netlify's named-segment patterns (/:path/) match
+# extensionless paths even WITHOUT a trailing slash, causing infinite
+# redirect loops on every page. With force = false the rules only fire
+# when no static file exists at the from path. Pretty URLs is disabled
+# in the Netlify UI so no content is served at trailing-slash paths,
+# meaning these rules now fire correctly for /slug/ → /slug.
 [[redirects]]
   from = "/:path/"
   to = "/:path"
   status = 301
-  force = true
+  force = false
 
 [[redirects]]
   from = "/:first/:second/"
   to = "/:first/:second"
   status = 301
-  force = true
+  force = false
 
 [[redirects]]
   from = "/:first/:second/:third/"
   to = "/:first/:second/:third"
   status = 301
-  force = true
+  force = false
 
 [[plugins]]
   package = "./plugins/netlify-plugin-indexnow"
