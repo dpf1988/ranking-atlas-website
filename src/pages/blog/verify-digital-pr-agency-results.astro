@@ -1,0 +1,365 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import PrimaryCTA from '../../components/PrimaryCTA.astro';
+import SecondaryCTA from '../../components/SecondaryCTA.astro';
+import RelatedResearch from '../../components/RelatedResearch.astro';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
+
+const url = "https://ranking-atlas.com/blog/verify-digital-pr-agency-results";
+const pubDate = "2026-09-06";
+const updatedDate = "2026-09-06";
+
+const article = articleSchema({
+  title: "How to Verify a Digital PR Agency's Results Before You Sign",
+  description: "Seven checks to make before paying a digital PR agency: the story, the list, the pitch, the timing, the journalist, the URLs, and the measurement.",
+  url,
+  datePublished: pubDate,
+  dateModified: updatedDate,
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", url: "https://ranking-atlas.com/" },
+  { name: "Blog", url: "https://ranking-atlas.com/blog/" },
+  { name: "How to Verify a Digital PR Agency's Results", url },
+]);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What should you ask a digital PR agency before signing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ask for the proposed story as a headline, the journalists targeted and the reason for each, a pitch the agency has sent and the coverage it produced, the send schedule, the process for answering journalists, live URLs for recent placements with link status marked, and the measurement framework, including a baseline captured before the campaign starts." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you verify a digital PR placement?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Open the URL. Confirm it is original editorial rather than syndication, sponsored content, a guest post, or paid placement. Confirm the client is named. Confirm whether there is a link, whether it is dofollow or nofollow, and which page it points to. Confirm nothing was paid or exchanged for it. Count syndicated copies of one article as one placement." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should a digital PR agency guarantee placements?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A guaranteed number of placements is common and workable, provided the contract defines what counts and the agency's pitch volume is realistic for the number. A guarantee of coverage in a specific named publication is different. No agency controls an editor's decisions, so a named-title guarantee is either a paid placement described as earned, or a promise the agency cannot keep." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take for coverage to land?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A single data-led campaign typically runs two to three weeks from first send to the end of follow-up, with coverage arriving unevenly across that window and occasionally for weeks after. The effect on search and AI visibility compounds across successive campaigns over months, which is why a baseline matters. Without one there is no way to distinguish movement from noise." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a mention without a link worth anything?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, and less than a link. Editorial mentions in relevant, independently published sources can contribute to the external evidence available to search and AI systems when they assess a brand, whether or not the mention contains a link. For search authority, the link still matters. The problem is not unlinked mentions. It is agencies reporting them as if they were linked placements." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do journalists ignore pitches?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because most pitches deserve it. A reporter's inbox holds more pitches than there are hours to read them, and most are commentary offers, template subject lines, or stories sent to the wrong desk. The pitches that get opened are specific to the recipient, lead with a finding and a number, and arrive when the desk is planning. That is a description of work, and it is the work a buyer should be paying an agency to do." }
+    },
+  ]
+};
+---
+
+<Layout
+  title="How to Verify a Digital PR Agency's Results Before You Sign | Ranking Atlas"
+  description="Seven checks to make before paying a digital PR agency: the story, the list, the pitch, the timing, the journalist, the URLs, and the measurement."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(article)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<div class="bg-white">
+<article class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Article header -->
+    <div class="text-[11px] uppercase tracking-[0.14em] text-brand font-semibold mb-3">Guide</div>
+    <h1 class="font-serif font-medium text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] tracking-tight text-ink leading-[1.05] mb-6">
+      How to Verify a Digital PR Agency's Results Before You Sign
+    </h1>
+    <p class="font-serif italic text-[15px] md:text-[16px] leading-[1.55] text-body mb-6">
+      Most agency engagements that end in "the placements never came" were decided before a single pitch went out. The failure is visible in the first meeting if the buyer knows what to ask. Seven checks, what a bad answer sounds like, what to verify, and what a credible agency should be able to show you.
+    </p>
+    <div class="flex items-center gap-3 mb-10">
+      <a href="/about" class="shrink-0">
+        <img src="/assets/images/author/daniel-headshot.jpg" alt="Daniel Grainger" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      </a>
+      <div>
+        <p class="text-sm font-medium text-ink">By <a href="/about" class="text-brand hover:text-brand-dark transition-colors">Daniel Grainger</a>, founder of Ranking Atlas</p>
+        <p class="text-sm text-muted">Published <time datetime="2026-09-06">September 2026</time></p>
+      </div>
+    </div>
+
+    <!-- Editorial note -->
+    <div class="bg-[#FEF9C3] border border-viz-amber/20 rounded-xl px-5 py-3 mb-10 text-[14px] text-body leading-[1.6]">
+      <strong class="text-ink">Editorial note:</strong> this guide describes how digital PR campaigns succeed and fail in general terms and does not assess any named agency. Ranking Atlas sells digital PR services and has an interest in how buyers evaluate them. The checks below apply to us as much as to anyone, and a section near the end says so. Where a sentence describes our own practice rather than a published finding, it is written as practice.
+    </div>
+
+    <!-- Body -->
+    <div class="space-y-6 text-body text-[15px] leading-[1.7]">
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The short answer</h2>
+
+      <p>Before paying a digital PR agency, ask for seven things: the story they intend to pitch, stated as a headline; the journalists who will receive it and the reason each is on the list; a pitch they have sent for another client, with the coverage it produced; their send schedule; what happens when a journalist replies; live URLs for placements earned in the last ninety days, with link status marked; and how they will measure what the coverage did. An agency that can answer all seven in the first conversation is unusual. An agency that cannot answer any of them is giving you very little evidence that its process can deliver, however good the proposal looks.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Why the placements never come</h2>
+
+      <p>When placements don't come, the failure is often visible upstream of the sending. Three things have changed in journalists' inboxes and most agencies have not changed with them.</p>
+
+      <p>Pitching got cheap. Generative tools cut the cost of writing a pitch to almost nothing, so the volume arriving on a reporter's desk rose while newsrooms kept shrinking. A journalist on a busy beat now receives more pitches than they can open. Anything generic is deleted unread, and generic is exactly what a cheap pitch is.</p>
+
+      <p>Commentary stopped being a story. "Our client's CEO is available to comment on the interest rate decision" was a weak pitch a decade ago and is a non-event now, because every competitor's CEO is also available. A journalist needs something that does not exist until the agency produces it: a finding, a number, a dataset, a ranking. Something the article cannot be written without.</p>
+
+      <p>Lists replaced targeting. Agencies bought databases and started calling a filtered export a media list. The result is a pitch about UK house prices landing with a technology correspondent in Ohio, which teaches that correspondent to delete the sender's next email as well.</p>
+
+      <p>An agency that pitches commentary to an unsegmented list with a template subject line and no timing discipline is stacking the odds against itself. Not because journalists are unfair, but because that pitch is competing with dozens of others that are equally weak, and the reporter's rational response is to open none of them. The buyer paid for placements and bought a process that could not produce them. The seven checks exist to catch that process before the contract is signed.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">1. Ask what the story is</h2>
+
+      <p>The question is simple. What is the headline of the campaign you are proposing to run for us?</p>
+
+      <p>A digital PR campaign that works is built around a story journalists can use, and in practice that means data: a survey with a defensible sample, an analysis of public records, a price index, a ranking of places or products, a dataset nobody has assembled before. A story is a finding, evidence for the finding, relevance to a specific readership, and an angle the journalist can write from. That is what earns editorial coverage, and it is the part most proposals skip because it is the expensive part. The agency's real product is not the sending. It is the information asset that gives a journalist a reason to publish.</p>
+
+      <p>Ask the agency to describe the last three stories they pitched for other clients and the coverage each earned. Ask what the finding was and where the data came from. If the answers are about the client's expertise, their thought leadership, their unique perspective, the agency does not have a story and is planning to send commentary.</p>
+
+      <p>A bad answer sounds like: "We'll leverage your executives' insights across our media relationships."</p>
+
+      <p>A good answer names a finding, a number, and a source.</p>
+
+      <p>What to verify: the headline, the dataset behind it, and whether either exists yet.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">2. Ask who will receive it, and why</h2>
+
+      <p>A media list is not a spreadsheet of email addresses. It is built from the story, after the story exists, and every journalist on it is there for a reason the agency can state in one sentence.</p>
+
+      <p>Segmentation is where most of the work happens. One dataset produces several stories depending on who is reading. A national finding goes to the nationals as a national number. The same finding goes to every regional title as that region's number against the national figure. The trade press gets the segment that matters to its readers. Three pitches, three subject lines, three reasons to care, one dataset:</p>
+
+      <div class="bg-bg-paper border border-ink/8 rounded-md px-5 py-4 my-4 text-[14px] italic text-body leading-[1.6]">
+        <p class="text-xs uppercase tracking-wider text-muted font-semibold not-italic mb-2">Illustrative figures</p>
+        <ul class="space-y-1 list-disc pl-5">
+          <li>National: "UK house prices rose 4.1% in the year to August."</li>
+          <li>Regional: "Leeds house prices rose 6.3%, against 4.1% nationally."</li>
+          <li>Trade: "First-time buyer purchases fell in every region except two."</li>
+        </ul>
+      </div>
+
+      <p>Ask to see a media list the agency built for a comparable campaign, with the beat and the reason beside each name. Ask how many segments the proposed campaign will have and what distinguishes them. Ask how the list is built: by hand from the story, or by exporting a database on a keyword.</p>
+
+      <p>A bad answer sounds like: "We have access to a database of fifty thousand journalists."</p>
+
+      <p>A good answer describes segments, cuts, and why a specific desk will care.</p>
+
+      <p>What to verify: a real list with a stated reason per name, and the number of distinct pitch versions planned.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">3. Ask how the pitch gets read</h2>
+
+      <p>A pitch competes for a few seconds of attention against everything else that arrived that morning. Specificity is what survives that.</p>
+
+      <p>The subject line carries the finding and a number, localised to the recipient's beat. The first sentence of the body is the finding, not an introduction. The pitch offers one story, not a menu. It links to the study so the journalist can verify without replying. It offers a same-day cut for the journalist's own patch. It is short, because the decision to keep reading is made in the first two lines.</p>
+
+      <p>Ask the agency to show you a pitch they have actually sent, and then ask for the chain behind it: which journalist received it, what they replied, and the URL of the article it produced. A pitch that cannot be traced to a placement is a writing sample. A pitch that can is evidence.</p>
+
+      <p>A bad answer sounds like: a template with placeholders where the publication name goes.</p>
+
+      <p>A good answer is a sent email, a named recipient, and a live URL.</p>
+
+      <p>What to verify: pitch to journalist to reply to published URL, as one chain.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">4. Ask when they send</h2>
+
+      <p>Timing decides whether a good pitch is seen at all. In practice we send mid-week, in the morning in the journalist's own time zone, when desks are planning the day, and we do not send on Fridays. A story that lands the same morning as a major news event in its own category will lose to it, so the schedule has to be able to move. A sequence of two or three touches spaced over a fortnight gives a reporter who missed the first email another chance without becoming a nuisance. A daily follow-up does the opposite.</p>
+
+      <p>Ask for the send schedule for the proposed campaign. Ask how the agency handles a news event that collides with the send. Ask how many follow-ups are sent and how far apart.</p>
+
+      <p>A bad answer sounds like: "We send as soon as the content is ready."</p>
+
+      <p>A good answer is a calendar.</p>
+
+      <p>What to verify: a written schedule with send days, follow-up spacing, and a rule for moving it.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">5. Ask how they treat journalists</h2>
+
+      <p>Journalist relationships are an operational asset, and they are held by the sender, not the client. Repeated irrelevant pitches from the same address make future outreach harder, particularly in a specialist inbox where the reporter sees the same names every week. An agency that has taught a desk to ignore it will struggle to place a good story there for its next client.</p>
+
+      <p>Respect is operational. It means replying to a journalist within the hour when they ask for data, a cut, or a quote, because their deadline is today. It means delivering the cut that was offered. It means honouring an embargo without being reminded. It means stopping when a journalist says stop, and never re-sending the same story under a new subject line. It means never putting thirty reporters on one email. It means the sender is a named person who will still be answering that address in a year.</p>
+
+      <p>Ask what happens when a journalist replies. Ask who answers and how fast. Ask whether the agency has ever been asked by a publication to stop pitching, and what it did.</p>
+
+      <p>A bad answer sounds like: no process at all.</p>
+
+      <p>A good answer describes a named person, a response time, and a rule for stopping.</p>
+
+      <p>What to verify: the name of the person who answers journalists, and the response time they commit to.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">6. Ask for live URLs with link status</h2>
+
+      <p>This is the check most buyers already know to make, and it still gets fudged. Ask for every placement the agency earned in the last ninety days, as live URLs. Then read them.</p>
+
+      <p>A publication logo is not evidence of an earned placement. Coverage comes in kinds that look identical on a slide and are worth very different amounts: original editorial, syndication of that editorial across a publisher's other titles, a guest contribution written by the agency, sponsored or partner content, advertorial, paid placement, affiliate content, and a mention with no link at all. For each URL, establish which kind it is. Establish whether the client is named. Establish whether there is a link, whether it is dofollow or nofollow, and which page it points to. Establish whether money or a reciprocal link changed hands.</p>
+
+      <p>Syndicated copies of one article are one placement, not several. An agency that reports twelve placements from one story that ran across a regional publisher's twelve sites is reporting one placement.</p>
+
+      <p>A bad answer sounds like: "We've been featured in" followed by twenty mastheads and no URLs.</p>
+
+      <p>A good answer is a list with a URL, a date, the client, the kind of coverage, and the link status in every row.</p>
+
+      <p>What to verify: for each URL, coverage type, client named, link present, follow status, paid or earned.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">7. Ask how they will measure what the coverage did</h2>
+
+      <p>Placements are the input. The output is what they moved, and an agency that only reports the input is reporting its own effort rather than the client's result. A useful measurement stack has four layers, and none of them can be read without a baseline captured before the first pitch goes out. Which metrics belong in that stack and which do not is covered in our <a href="/blog/digital-pr-kpis" class="text-brand hover:text-brand-dark underline underline-offset-2">digital PR KPI guide</a>.</p>
+
+      <p>Coverage: placements earned, unique publications, original against syndicated.</p>
+
+      <p>Authority: referring domains, which of them are publications the client's buyers read, which page each link points to, follow status.</p>
+
+      <p>Search: rankings and impressions for the questions those buyers ask, separated into branded queries, where the client is already visible, and non-branded ones, where visibility has to be earned.</p>
+
+      <p>AI answers: whether the brand is named when the same buyer questions are put to ChatGPT, Perplexity, Gemini and Google's AI Overviews, which sources those answers cite, and how that compares with named competitors. Editorial coverage does not translate directly into AI citations, and any agency that says it does is overclaiming. What it does is expand the set of independent sources those systems can retrieve from, which is the condition for being named at all. Running the same prompts before and after a campaign is how a buyer finds out whether the coverage reached that layer. Our guide to <a href="/blog/how-to-get-cited-by-chatgpt" class="text-brand hover:text-brand-dark underline underline-offset-2">how to get cited by ChatGPT</a> covers the mechanism. Our guide to <a href="/blog/measure-brand-visibility-ai-search" class="text-brand hover:text-brand-dark underline underline-offset-2">measuring brand visibility in AI search</a> covers the method.</p>
+
+      <p>Revenue attribution belongs to the client's own data, not the agency's estimates. An agency that claims revenue from PR without access to the client's pipeline is guessing.</p>
+
+      <p>A bad answer sounds like: a monthly PDF with a "reach" figure in the tens of millions.</p>
+
+      <p>A good answer is a before and an after, on the same prompts and queries, against named competitors.</p>
+
+      <p>What to verify: that a baseline will be captured before the campaign, and what it will contain.</p>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">What a credible agency should be able to show you</h2>
+
+      <p>Put the seven checks together and a verifiable engagement has a recognisable shape. The story exists before the contract does, as a stated headline with a dataset behind it. The media list can be read, and every name on it has a reason. A previous pitch can be traced to a reply and a published URL. The send schedule is written down. The process for a journalist's reply names a person and a response time. Prior placements are live URLs with coverage type and link status marked in every row. A baseline is captured before the first pitch goes out, and the final report compares against it.</p>
+
+      <p>The contract should reflect the same standard. It should define what counts as a placement: original editorial, live, with the client named, and with link status disclosed. It should say what is billable and what is not. An agency that resists that definition is telling you what it intends to count.</p>
+
+      <h3 class="font-serif font-semibold text-lg tracking-tight text-ink mt-8 mb-3">Apply these checks to Ranking Atlas</h3>
+
+      <div class="bg-bg-paper border border-ink/8 rounded-xl px-5 py-4 mt-4 text-[14px] text-body leading-[1.6]">
+        <p>If we are asking you to verify another agency's process, you should be able to ask us for the same evidence: the headline before the contract, the list with reasons, a traceable pitch, the schedule, the person who answers journalists, ninety days of live placement URLs with coverage type and link status, and the baseline. <a href="/contact" class="text-brand hover:text-brand-dark underline underline-offset-2 font-medium">Ask</a>, and we will send it.</p>
+      </div>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">The buyer's verification checklist</h2>
+
+      <div class="overflow-x-auto bg-white rounded-md border border-ink/8 my-4">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-ink/8 bg-bg-paper">
+              <th class="px-4 py-3 font-semibold text-ink">Check</th>
+              <th class="px-4 py-3 font-semibold text-ink">Ask for</th>
+              <th class="px-4 py-3 font-semibold text-ink">Verify</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">1. Story</td><td class="px-4 py-3 text-muted">The campaign headline and the dataset behind it</td><td class="px-4 py-3 text-muted">Both exist, or a plan to produce them</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">2. Targeting</td><td class="px-4 py-3 text-muted">A media list with beat and reason per name</td><td class="px-4 py-3 text-muted">Segments and distinct pitch versions</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">3. Pitch</td><td class="px-4 py-3 text-muted">A sent pitch and the placement it produced</td><td class="px-4 py-3 text-muted">Pitch → journalist → reply → URL</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">4. Timing</td><td class="px-4 py-3 text-muted">The send schedule</td><td class="px-4 py-3 text-muted">Send days, follow-up spacing, collision rule</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">5. Journalists</td><td class="px-4 py-3 text-muted">The reply process</td><td class="px-4 py-3 text-muted">Named person, response time, stop rule</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">6. Placements</td><td class="px-4 py-3 text-muted">Ninety days of live URLs</td><td class="px-4 py-3 text-muted">Coverage type, client named, link, follow status, paid or earned</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">7. Measurement</td><td class="px-4 py-3 text-muted">The baseline plan</td><td class="px-4 py-3 text-muted">Captured before the campaign, across search and AI answers</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">Red flags</h2>
+
+      <div class="overflow-x-auto bg-white rounded-md border border-ink/8 my-4">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-ink/8 bg-bg-paper">
+              <th class="px-4 py-3 font-semibold text-ink">What you hear</th>
+              <th class="px-4 py-3 font-semibold text-ink">What it usually means</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/6">
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">"We'll leverage your thought leadership"</td><td class="px-4 py-3 text-muted">No story; commentary pitching</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">"We have a database of 50,000 journalists"</td><td class="px-4 py-3 text-muted">No segmentation; export-and-send</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">"Guaranteed coverage in [named national title]"</td><td class="px-4 py-3 text-muted">Paid placement, or a promise that cannot be kept honestly</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">A logo wall instead of URLs</td><td class="px-4 py-3 text-muted">Syndication, unlinked mentions, or nothing verifiable</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">"Reach: 40 million"</td><td class="px-4 py-3 text-muted">One syndicated piece counted forty times</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">No baseline before the campaign</td><td class="px-4 py-3 text-muted">No way to show what the coverage did</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">"We send as soon as it's ready"</td><td class="px-4 py-3 text-muted">No timing discipline</td></tr>
+            <tr class="hover:bg-bg-paper transition-colors"><td class="px-4 py-3 font-medium text-ink">Can't show a sent pitch with its outcome</td><td class="px-4 py-3 text-muted">The pitches are templates</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="font-serif font-semibold text-xl md:text-[1.5rem] tracking-tight text-ink leading-tight mt-10 mb-4">FAQ</h2>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">What should you ask a digital PR agency before signing?</h3>
+      <p>Ask for the proposed story as a headline, the journalists targeted and the reason for each, a pitch the agency has sent and the coverage it produced, the send schedule, the process for answering journalists, live URLs for recent placements with link status marked, and the measurement framework, including a baseline captured before the campaign starts.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">How do you verify a digital PR placement?</h3>
+      <p>Open the URL. Confirm it is original editorial rather than syndication, sponsored content, a guest post, or paid placement. Confirm the client is named. Confirm whether there is a link, whether it is dofollow or nofollow, and which page it points to. Confirm nothing was paid or exchanged for it. Count syndicated copies of one article as one placement.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Should a digital PR agency guarantee placements?</h3>
+      <p>A guaranteed number of placements is common and workable, provided the contract defines what counts and the agency's pitch volume is realistic for the number. A guarantee of coverage in a specific named publication is different. No agency controls an editor's decisions, so a named-title guarantee is either a paid placement described as earned, or a promise the agency cannot keep.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">How long does it take for coverage to land?</h3>
+      <p>A single data-led campaign typically runs two to three weeks from first send to the end of follow-up, with coverage arriving unevenly across that window and occasionally for weeks after. The effect on search and AI visibility compounds across successive campaigns over months, which is why a baseline matters. Without one there is no way to distinguish movement from noise.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Is a mention without a link worth anything?</h3>
+      <p>Yes, and less than a link. Editorial mentions in relevant, independently published sources can contribute to the external evidence available to search and AI systems when they assess a brand, whether or not the mention contains a link. For search authority, the link still matters. The problem is not unlinked mentions. It is agencies reporting them as if they were linked placements.</p>
+
+      <h3 class="font-serif font-semibold text-base text-ink mt-6 mb-2">Why do journalists ignore pitches?</h3>
+      <p>Because most pitches deserve it. A reporter's inbox holds more pitches than there are hours to read them, and most are commentary offers, template subject lines, or stories sent to the wrong desk. The pitches that get opened are specific to the recipient, lead with a finding and a number, and arrive when the desk is planning. That is a description of work, and it is the work a buyer should be paying an agency to do.</p>
+
+    </div>
+
+    <!-- Update note -->
+    <div class="border-t border-ink/8 mt-10 pt-6">
+      <p class="text-sm text-muted italic">Corrections welcome: <a href="mailto:contact@ranking-atlas.com" class="text-brand hover:text-brand-dark underline underline-offset-2">contact@ranking-atlas.com</a>.</p>
+    </div>
+
+    <!-- CTA card -->
+    <div class="my-10 rounded-xl bg-white border border-ink/8 shadow-card p-8 text-center">
+      <p class="text-lg font-semibold text-ink mb-2">Earn the citations. Track the movement.</p>
+      <p class="text-sm text-body mb-6 max-w-lg mx-auto">Original research. Editorial placement. Visibility measurement across search and AI.</p>
+      <PrimaryCTA />
+      <SecondaryCTA href="/contact" label="Get in touch" />
+    </div>
+
+  </div>
+</article>
+
+<RelatedResearch
+  items={[
+    {
+      title: "Best Digital PR Agencies for B2B SaaS (2026)",
+      description: "The field sorted by engagement model: what each type of agency is structurally built to deliver.",
+      href: "/blog/best-digital-pr-agencies-b2b-saas",
+    },
+    {
+      title: "Best Digital PR Agencies for Cybersecurity Companies (2026)",
+      description: "Most agencies serving this category are communications firms. Digital PR is a different job.",
+      href: "/blog/best-digital-pr-agencies-cybersecurity",
+    },
+    {
+      title: "Best Digital PR Agencies for Fintech SaaS (2026)",
+      description: "Seven agencies that earn editorial coverage and AI citations for fintech software companies.",
+      href: "/blog/best-digital-pr-agencies-fintech-saas",
+    },
+    {
+      title: "Best Digital PR Agencies UK (2026)",
+      description: "The UK digital PR market sorted by what each agency is actually constructed to do.",
+      href: "/blog/best-digital-pr-agencies-uk",
+    },
+    {
+      title: "Best PR Agencies for Privacy and Consent Management SaaS (2026)",
+      description: "There is no dedicated privacy-tech PR agency. Here is what to hire instead.",
+      href: "/blog/best-pr-agencies-privacy-consent-saas",
+    },
+    {
+      title: "Best PR Agencies for Cloud and Data Infrastructure Companies (2026)",
+      description: "Five agencies with the technical fluency cloud and data infrastructure buyers demand.",
+      href: "/blog/best-pr-agencies-data-infrastructure",
+    },
+  ]}
+/>
+
+<AuthorBio />
+
+</div>
+
+</Layout>
