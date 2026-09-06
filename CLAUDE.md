@@ -163,6 +163,17 @@ Full reference: docs/writing-style.md
 - Do not push incremental commits
 - Do not include "Co-Authored-By: Claude" in commit messages
 - PowerShell command chaining: ; not &&
+- Never push to main or trigger a deploy without an explicit "push" or "merge and push" instruction in the current message
 
 ## Updating canonical references
 If positioning-core.md, design-system.md, or writing-style.md is updated in the project knowledge base, treat that update as authoritative and bring this CLAUDE.md into alignment.
+
+## Changelog 5-6 Sep 2026
+- Contact form migrated from Formspree to Netlify Forms (form name "contact"); new /breakdown lead page with Netlify form "breakdown"; Formspree removed from CSP
+- Cal.com booking embed removed from contact page and CSP; no calendar on the site
+- Primary CTA site-wide: "See Your AI Visibility" → /breakdown; secondary: "Get in touch" → /contact; previous label "Book a Call" retired
+- GA4 added site-wide (G-6XN48YX93J) with cta_click, form_start and form_submit_success custom events
+- robots.txt added with Sitemap directive; www → apex 301 redirect added to netlify.toml
+- Netlify Pretty URLs disabled in UI; trailing-slash redirects use force = false (force = true causes infinite redirect loops on Netlify with named-segment patterns)
+- Pages edited: generational-fraud (retitle + headline numbers), haro-alternatives (table + pitch section + experience claims), chatgpt-search-visibility / how-to-get-cited-by-chatgpt / measure-brand-visibility-ai-search (cluster differentiation + cross-links), geo-vs-seo (definitions + comparison table + H3 structure), best-pr-agencies-data-infrastructure (cloud scope + CRO)
+- New pages: /breakdown (AI visibility diagnostic lead page), /blog/verify-digital-pr-agency-results (seven-check guide with inline SVG figures and nine inbound links)
