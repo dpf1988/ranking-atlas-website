@@ -1,3 +1,5 @@
+**DEPRECATED: superseded by docs/positioning.md, which is now the commercial source of truth.**
+
 # Ranking Atlas — Positioning Core
 
 Canonical reference. All outbound, web copy, LinkedIn, pitches, and thought leadership derive from this document. If a draft conflicts with this core, fix the draft.

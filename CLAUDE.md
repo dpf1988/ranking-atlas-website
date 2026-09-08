@@ -164,6 +164,7 @@ Full reference: docs/writing-style.md
 - Do not include "Co-Authored-By: Claude" in commit messages
 - PowerShell command chaining: ; not &&
 - Never push to main or trigger a deploy without an explicit "push" or "merge and push" instruction in the current message
+- Read docs/positioning.md before writing or editing any commercial copy (homepage, pricing, contact, breakdown, comparison-page Ranking Atlas entries). positioning-core is deprecated.
 
 ## Updating canonical references
 If positioning-core.md, design-system.md, or writing-style.md is updated in the project knowledge base, treat that update as authoritative and bring this CLAUDE.md into alignment.
