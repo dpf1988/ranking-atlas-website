@@ -1,10 +1,10 @@
 # Ranking Atlas Content Strategy
 
-Complementary to `positioning-core.md` (category, language) and `writing-style.md` (voice, rhythm, structure). This document owns content architecture, linking rules, and the pillar policy.
+Complementary to `positioning.md` (category, language) and `writing-style.md` (voice, rhythm, structure). This document owns content architecture, linking rules, and the pillar policy.
 
 ## Content types
 
-**Pillar.** The canonical definitional or strategic answer for a major entity in the citation equity category. Pillars ship with a 100-150 word extractable Definition block (see below) and follow the Article Header Pattern from design-system.md. Ranking Atlas targets 3–6 pillars over its lifetime.
+**Pillar.** The canonical definitional or strategic answer for a major entity in citation equity as the methodology behind citation acquisition, per positioning.md. Pillars ship with a 100-150 word extractable Definition block (see below) and follow the Article Header Pattern from design-system.md. Ranking Atlas targets 3–6 pillars over its lifetime.
 
 **Essay.** Point-of-view argument or framework explanation. Shorter than a pillar, sharper thesis, fewer evidence sections. Example: Why Earned Links Beat Paid Links.
 
@@ -20,16 +20,16 @@ Complementary to `positioning-core.md` (category, language) and `writing-style.m
 
 ## URL policy
 
-All long-form content lives under `/resources/`. This is Ranking Atlas's established convention and the Netlify redirect layer is built around it. Do not move content to root-level URLs.
+Studies, data reports and original research live under `/resources/`. Essays, guides and comparison pages live under `/blog/`. Do not move content to root-level URLs.
 
 - Pillars: `/resources/<pillar-slug>/`
 - Spokes: `/resources/<pillar-slug>/<spoke-slug>/`
 - Tools: `/resources/tools/<tool-slug>/`
-- Posts (future): `/blog/<post-slug>/`
+- Essays, guides, comparisons: `/blog/<slug>/`
 
 ## Strict pillar policy
 
-A pillar is the canonical definitional or strategic answer for a major entity in the citation equity category. Promotion of a piece to pillar status requires:
+A pillar is the canonical definitional or strategic answer for a major entity in citation equity as the methodology behind citation acquisition, per positioning.md. Promotion of a piece to pillar status requires:
 
 1. Explicit definitional or strategic role in the category
 2. A 100-150 word extractable Definition block via `<Definition>` component
@@ -52,7 +52,7 @@ Everything else is an Essay, Data Report, Guide, spoke, tool, or post. Ranking A
 
 Every pillar ships with a 100-150 word extractable definition block via the `<Definition>` component. The block must be self-contained, declarative, and copy-paste-able without surrounding context.
 
-This is the primary surface LLMs lift when answering "what is X" queries. It is the single most important piece of copy on a pillar page. Treat it like the money sentence from positioning-core.md: written with intention, revised until dense.
+This is the primary surface LLMs lift when answering "what is X" queries. It is the single most important piece of copy on a pillar page. Treat it like the money sentence from positioning.md: written with intention, revised until dense.
 
 The first sentence must be the short-form definition that works as a standalone quote.
 
@@ -60,7 +60,7 @@ Exception: data reports do not need a Definition block because they do not intro
 
 ## Voice rules
 
-Per CLAUDE.md, positioning-core.md, and writing-style.md:
+Per CLAUDE.md, positioning.md, and writing-style.md:
 
 - No em dashes in prose (enforced by scripts/lint-content.mjs)
 - No "not X, but Y" sentence-initial constructions (enforced)
